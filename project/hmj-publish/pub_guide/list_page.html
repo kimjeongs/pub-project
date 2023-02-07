@@ -1,0 +1,2334 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Hyundai Mobility 온라인 판매 사이트 구축 CODING GUIDE</title>
+
+    <!-- 코딩 가이드용 -->
+    <link rel="stylesheet" href="docs/guide.css">
+    <link rel="stylesheet" href="docs/prism.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="docs/prism.js"></script>
+	<script type="text/javascript" src="docs/plugin.js"></script>
+	<!-- //코딩 가이드용 -->
+	
+	<script type="text/javascript" src="../assets/js/lib/common-lib.js"></script>
+	<script type="text/javascript" src="../assets/js/lib/variable.js"></script>
+	<script type="text/javascript" src="../assets/js/common.js"></script>
+
+	<script>
+		$(function(){
+			$('.view_code').on('click', function(){
+				$(this).next('.code-toolbar').toggleClass('open');
+			});
+		});
+		$(window).scroll(function() {
+			if($(this).scrollTop() > 440 ){
+				$('#listHead').addClass('fixed')
+			} else if ($(this).scrollTop() <= 440) {
+				$('#listHead').removeClass('fixed')
+			}
+		})
+	</script>	
+</head>
+
+<body>
+<div class="wrap">
+	<div class="header">
+		<div><em>Hyundai Mobility 온라인 판매 사이트 구축</em> project coding guide</div>
+		<span>
+			<i class="iconfont iconxinlogopc hidden-xs"></i>
+            <i class="iconfont iconxinlogopc hidden-lg hidden-md hidden-sm"></i>
+		</span>
+	</div>
+	<div class="content" id="codingGiuide">
+		<h1>LIST PAGE</h1>
+		<div class="coding_type">
+			<!--<a href="coding_guide_step_mob.html" title="mobile" class="active">mobile</a>-->
+			<a href="coding_guide_default.html" title="coding list">CODING GUIDE PAGE</a>
+		</div>
+		<div class="ver_view">
+			<p>Version : <b>0.0.01</b></p>
+			<p>Start Day : <b>2021.05.07</b></p>
+			<p>Coding : <b>JQuery&amp;HTML5&amp;CSS3</b></p>
+		</div>
+
+		<div class="box">
+			<h2>이슈사항</h2>
+			<ol class="atten" reversed>
+				<li>이슈타이틀 - <span class="font_color01">강조부분</span> 이슈내용</li>
+				<!-- <li><span class="font_color01">강조부분</span>내용부분</li> -->
+			</ol>
+		</div>
+		<ul class="guide_menu">
+			<li><a href="#HOME">Main/공통 Layout</a></li>
+			<li><a href="#Model">Model</a></li>			
+			<li><a href="#Purchase">Purchase</a></li>	
+			<li><a href="#Service">Service</a></li>
+			<li><a href="#Brand">Brand</a></li>
+			<li><a href="#Mocean">Mocean</a></li>
+			<li><a href="#My">My</a></li>
+			<li><a href="#Store">Shop</a></li>
+			<li><a href="#Members">Members</a></li>
+			<li><a href="#Order">Order</a></li>
+			<li><a href="#Email">Email</a></li>
+			<li><a href="#Common">Common</a></li>
+		</ul>
+		<table class="guide_list" id="listHead">
+			<colgroup>
+				<col style="width:10%;">
+				<col style="width:12%;">
+				<col style="width:25%;">
+				<col style="width:7%;">
+				<col style="width:7%;">
+				<col style="width:8%;">
+				<col>
+			</colgroup>
+			<thead>
+			<tr>
+				<th>2Depth</th>
+				<th>3Depth</th>
+				<th>ID or Page name</th>
+				<th>State</th>
+				<th>View</th>
+				<th>Name</th>
+				<th>Descriptions</th>
+			</tr>
+			</thead>
+		</table>
+
+		<table class="guide_list">
+		<colgroup>
+			<col style="width:10%;">
+			<col style="width:12%;">
+			<col style="width:25%;">
+			<col style="width:7%;">
+			<col style="width:7%;">
+			<col style="width:8%;">
+			<col>
+		</colgroup>
+		<tbody>	
+		<!-- <tr>
+			<th colspan="7">공통</th>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		<tr>
+			<th colspan="7" id="HOME">Main/공통 Layout</th>
+		</tr>	
+		<tr>
+			<td class="txtLeft">HOME</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-010</td>
+			<td class="end"></td>
+			<td><a href="../html/SC-FE-CO-010.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">HOME (Skeleton Ui)</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-010_2</td>
+			<td class="end"></td>
+			<td><a href="../html/SC-FE-CO-010_2.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Model">model (IONIQ5, NEXO)</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">간편견적</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CN-101</td>
+			<td class="end">완료</td>
+			<td><a href="../html/model/SC-FE-CN-101.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">IONIQ 5</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">NEXO</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Purchase">purchase (차량검색, 견적/시승, 구매안내)</th>
+		</tr>
+		<!-- <tr>
+			<td class="txtLeft">차량검색</td>
+			<td class="txtLeft">내차추천받기</td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		<tr>
+			<td class="txtLeft">사양백과</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CN-408</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CN-408.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">견적/시승</td>
+			<td class="txtLeft">거점Map</td>
+			<td class="txtLeft">SC-FE-TD-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-001.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">거점Map Anycar</td>
+			<td class="txtLeft">SC-FE-TD-002</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-002.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">SC-FE-TD-116 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">신청안내</td>
+			<td class="txtLeft">SC-FE-TD-110</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-110.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">신청자정보</td>
+			<td class="txtLeft">SC-FE-TD-102</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-102.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">신청자정보(비회원)</td>
+			<td class="txtLeft">SC-FE-TD-103</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-103.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승장소및모델선택</td>
+			<td class="txtLeft">SC-FE-TD-104</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-104.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">희망일시선택</td>
+			<td class="txtLeft">SC-FE-TD-105</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-105.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">신청정보확인</td>
+			<td class="txtLeft">SC-FE-TD-107</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-107.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">SC-FE-TD-112, SC-FE-TD-114 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승신청접수완료</td>
+			<td class="txtLeft">SC-FE-TD-108</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-108.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인정보 수집 및 이용 (layer popup)</td>
+			<td class="txtLeft">SC-FE-TD-112</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-112.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인 정보 처리 위탁 (layer popup)</td>
+			<td class="txtLeft">SC-FE-TD-114</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-114.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승 서비스 신청시의 주의 사항 (layer popup)</td>
+			<td class="txtLeft">SC-FE-TD-117</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-117.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상품·캠페인 등의 안내 (layer popup)</td>
+			<td class="txtLeft">SC-FE-TD-118</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-118.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">보유차량 정보 (layer popup)</td>
+			<td class="txtLeft">SC-FE-TD-116</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-TD-116.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">구매안내</td>
+			<td class="txtLeft">온라인 구매가이드 - 차량 선택 및 견적 확인</td>
+			<td class="txtLeft">SC-FE-PU-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-900.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">온라인 구매가이드 - 계약</td>
+			<td class="txtLeft">SC-FE-PU-901</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-901.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">온라인 구매가이드 - 차고지 등록 서류 반송</td>
+			<td class="txtLeft">SC-FE-PU-902</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-902.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">온라인 구매가이드 - 잔금 결제</td>
+			<td class="txtLeft">SC-FE-PU-903</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-903.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">온라인 구매가이드 - 차량 인수</td>
+			<td class="txtLeft">SC-FE-PU-904</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-904.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정부보조금정책</td>
+			<td class="txtLeft">SC-FE-PU-920</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-920.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이달의 구매혜택</td>
+			<td class="txtLeft">SC-FE-PU-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-PU-910.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">견적/견적내기</td>
+			<td class="txtLeft">상세견적</td>
+			<td class="txtLeft">SC-FE-CP-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-100.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량계약</td>
+			<td class="txtLeft">SC-FE-CP-300</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-300.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약접수 완료(은행송금)</td>
+			<td class="txtLeft">SC-FE-CP-200</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-200.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약접수 완료</td>
+			<td class="txtLeft">SC-FE-CP-210</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-210.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">액세서리 상품설명</td>
+			<td class="txtLeft">SC-FE-CP-110</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-110.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">판매불가 지역 안내</td>
+			<td class="txtLeft">SC-FE-CP-120</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-120.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">판매불가 지역 안내(동의)</td>
+			<td class="txtLeft">SC-FE-CP-121</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-121.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">매장 상세 지도보기</td>
+			<td class="txtLeft">SC-FE-CP-130</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-130.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이달의 구매혜택</td>
+			<td class="txtLeft">SC-FE-CP-140</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-140.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정보 보조금 정책</td>
+			<td class="txtLeft">SC-FE-CP-150</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-150.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">지불상세 팝업</td>
+			<td class="txtLeft">SC-FE-CP-310</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-310.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인정보수집 이용동의</td>
+			<td class="txtLeft">SC-FE-CP-320</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-320.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">자동차 주문 특약 동의</td>
+			<td class="txtLeft">SC-FE-CP-330</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-CP-330.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">referral Code</td>
+			<td class="txtLeft">브릿지 페이지</td>
+			<td class="txtLeft">SC-FE-RC-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-RC-001.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">Referral Code  : 나의 RC</td>
+			<td class="txtLeft">SC-FE-RC-101</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-RC-101.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft">SC-FE-RC-102 팝업 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">나의 RC -reward 현황 없는 경우</td>
+			<td class="txtLeft">SC-FE-RC-101-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-RC-101-nodata.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">Referral Code  : 소개코드</td>
+			<td class="txtLeft">SC-FE-RC-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-RC-100.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>	
+		<tr>
+			<td class="txtLeft">다운로드</td>
+			<td class="txtLeft">카탈로그/가격표 다운로드</td>
+			<td class="txtLeft">SC-FE-DL-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-DL-100.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">카탈로그/가격표 다운로드-nodata</td>
+			<td class="txtLeft">SC-FE-DL-100-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-DL-100-nodata.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">취급설명서 다운로드</td>
+			<td class="txtLeft">SC-FE-DL-101</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-DL-101.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>	
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">취급설명서 다운로드-nodata</td>
+			<td class="txtLeft">SC-FE-DL-101-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-DL-101-nodata.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>	
+		<tr>
+			<td class="txtLeft">브랜드거점</td>
+			<td class="txtLeft">브랜드거점 소개</td>
+			<td class="txtLeft">SC-FE-BP-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-BP-100.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">브랜드거점위치 팝업[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-BP-110</td>
+			<td class="end">완료</td>
+			<td><a href="../html/purchase/SC-FE-BP-110.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Service">service(현대서비스, 정비예약, 충전서비스, 현대 로드사이드 어시스턴스, 리콜정보, BLUELINK, 빌트인캠, 네이게이션/빌트인캠 업데이트, 제휴서비스, 앱설치안내</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">현대서비스</td>
+			<td class="txtLeft">서비스 소개</td>
+			<td class="txtLeft">SC-FE-MI-500</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-500.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서비스 소개- 준비중</td>
+			<td class="txtLeft">SC-FE-MI-500-coming</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-500-coming.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서비스네트워크</td>
+			<td class="txtLeft">SC-FE-MI-510</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-510.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">정비예약</td>
+			<td class="txtLeft">신청 안내</td>
+			<td class="txtLeft">SC-FE-MI-010</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-010.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량 선택</td>
+			<td class="txtLeft">SC-FE-MI-005</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-005.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량 없음</td>
+			<td class="txtLeft">SC-FE-MI-005-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-005-nodata.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">방문자 정보</td>
+			<td class="txtLeft">SC-FE-MI-002</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-002.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비센터 선택</td>
+			<td class="txtLeft">SC-FE-MI-003</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-003.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">희망일 선택</td>
+			<td class="txtLeft">SC-FE-MI-004</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-004.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비정보 입력</td>
+			<td class="txtLeft">SC-FE-MI-006</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-006.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비 예약 완료</td>
+			<td class="txtLeft">SC-FE-MI-007</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-007.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">보증수리</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-MI-520</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-520.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">MOCEAN</td>
+			<td class="txtLeft">MOCEAN소개</td>
+			<td class="txtLeft">SC-FE-PD-410</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-410.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">Bluelink</td>
+			<td class="txtLeft">Bluelink소개</td>
+			<td class="txtLeft">SC-FE-PD-311</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-311.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">안전보안</td>
+			<td class="txtLeft">SC-FE-PD-312</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-312.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">원격제어</td>
+			<td class="txtLeft">SC-FE-PD-313</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-313.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량관리</td>
+			<td class="txtLeft">SC-FE-PD-314</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-314.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인화/위치기반</td>
+			<td class="txtLeft">SC-FE-PD-315</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-315.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">EV/FCEV</td>
+			<td class="txtLeft">SC-FE-PD-316</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-316.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용안내</td>
+			<td class="txtLeft">SC-FE-PD-317</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-317.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">빌트인캠</td>
+			<td class="txtLeft">빌트인캠 소개</td>
+			<td class="txtLeft">SC-FE-PD-321</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-321.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용안내(동영상)</td>
+			<td class="txtLeft">SC-FE-PD-322</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-322.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용안내(다운로드)</td>
+			<td class="txtLeft">SC-FE-PD-323</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-323.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용안내(셋팅)</td>
+			<td class="txtLeft">SC-FE-PD-324</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-324.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서비스안내</td>
+			<td class="txtLeft">SC-FE-PD-325</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-325.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">내비게이션/빌트인캠 업데이트</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-PD-330</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-330.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">충전 서비스</td>
+			<td class="txtLeft">충전소</td>
+			<td class="txtLeft">SC-FE-CH-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-CH-001.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft">SC-FE-CH-002, SC-FE-CH-003 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft">로드사이드 어시스턴스</td>
+			<td class="txtLeft">로드사이드 어시스턴스</td>
+			<td class="txtLeft">SC-FE-MI-300</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-300.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">리콜</td>
+			<td class="txtLeft">리콜 정보/ 대상 차량 조회</td>
+			<td class="txtLeft">SC-FE-MI-400</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-400.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">리콜/개선대책/캠페인 안내 상세</td>
+			<td class="txtLeft">SC-FE-MI-401</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-401.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">리콜 차량 조회 (결과있음)</td>
+			<td class="txtLeft">SC-FE-MI-402</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-402.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">리콜 차량 조회 (결과없음)</td>
+			<td class="txtLeft">SC-FE-MI-402-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-MI-402-nodata.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">앱설치안내</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-PD-340</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-340.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">제휴서비스</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-PD-350</td>
+			<td class="end">완료</td>
+			<td><a href="../html/service/SC-FE-PD-350.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Store">Shop</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">Shop 메인</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SD-001.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-001.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">SC-FE-SD003 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft">SHOP 카테고리 목록 </td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SD-002.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-002.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">매핑 상품 없음</td>
+			<td class="txtLeft">SC-FE-SD-002-nodata.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-002-nodata.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">SHOP 상품 상세</td>
+			<td class="txtLeft">전체</td>
+			<td class="txtLeft">SC-FE-SD-100.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-100.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">SC-FE-SD102(관심항목), SC-FE-SD103, SC-FE-SD104(장바구니담기) 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상담상품</td>
+			<td class="txtLeft">SC-FE-SD-100-type2.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-100-type2.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상담 신청서</td>
+			<td class="txtLeft">SC-FE-SD-106.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-106.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">2021-10-25 추가</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상담 신청 완료</td>
+			<td class="txtLeft">SC-FE-SD-107.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-SD-107.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">2021-10-25 추가</td>
+		</tr>
+		<tr>
+			<td class="txtLeft">Curatioin</td>
+			<td class="txtLeft">콘텐츠 View </td>
+			<td class="txtLeft">SC-FE-CU-201.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/shop/SC-FE-CU-201.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+
+		<tr>
+			<th colspan="7" id="Brand">brand (브랜드스토리, 라이프스타일)</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">이벤트</td>
+			<td class="txtLeft">리스트</td>
+			<td class="txtLeft">SC-FE-BR-287</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BR-287.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">리스트-nodata</td>
+			<td class="txtLeft">SC-FE-BR-287-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BR-287-nodata.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상세</td>
+			<td class="txtLeft">SC-FE-BR-288</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BR-288.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft">PC_SC-FE-BR-289 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft">브랜드 스토리</td>
+			<td class="txtLeft">index</td>
+			<td class="txtLeft">SC-FE-BS-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-900.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">IONIQ</td>
+			<td class="txtLeft">SC-FE-BS-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-910.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">環境の日</td>
+			<td class="txtLeft">SC-FE-BS-911</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-911.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">ア─スデイ</td>
+			<td class="txtLeft">SC-FE-BS-912</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-912.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">IAA2021</td>
+			<td class="txtLeft">SC-FE-BS-913</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-913.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">カ─ボンニュ─トラル</td>
+			<td class="txtLeft">SC-FE-BS-914</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-914.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">라이프스타일</td>
+			<td class="txtLeft">仲川希良</td>
+			<td class="txtLeft">SC-FE-BS-920</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-920.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">渡辺こころ</td>
+			<td class="txtLeft">SC-FE-BS-921</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-921.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">上士幌町</td>
+			<td class="txtLeft">SC-FE-BS-922</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-922.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">江上賢悟</td>
+			<td class="txtLeft">SC-FE-BS-923</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-923.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">島津冬樹</td>
+			<td class="txtLeft">SC-FE-BS-924</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-924.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">岡野道子</td>
+			<td class="txtLeft">SC-FE-BS-925</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-925.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">松井龍哉</td>
+			<td class="txtLeft">SC-FE-BS-926</td>
+			<td class="end">완료</td>
+			<td><a href="../html/brand/SC-FE-BS-926.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="My">My</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">index</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-MP-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-100.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">등록차량 없을 시</td>
+			<td class="txtLeft">SC-FE-MP-100-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-100-nodata.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">내차량정보</td>
+			<td class="txtLeft">보유차량 정보</td>
+			<td class="txtLeft">SC-FE-MP-300</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-300.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">보유차량 없음</td>
+			<td class="txtLeft">SC-FE-MP-303</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-303.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">보유차량 삭제 (popup)</td>
+			<td class="txtLeft">SC-FE-MP-302</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-302.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<!-- <tr>
+			<td class="txtLeft">My Pick</td>
+			<td class="txtLeft">즐겨찾기</td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">최근본히스토리</td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		<tr>
+			<td class="txtLeft">나의 활동</td>
+			<td class="txtLeft">관심항목</td>
+			<td class="txtLeft">SC-FE-MP-401</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-401.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">관심항목-nodata</td>
+			<td class="txtLeft">SC-FE-MP-401-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-401-nodata.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승 예약/변경 (회원)</td>
+			<td class="txtLeft">SC-FE-TD-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-900.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승 예약/변경 (회원) 없을때</td>
+			<td class="txtLeft">SC-FE-TD-900-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-900-nodata.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승 예약/변경 (비회원 로그인)</td>
+			<td class="txtLeft">SC-FE-TD-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-910.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시승 예약/변경 (비회원)</td>
+			<td class="txtLeft">SC-FE-TD-911</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-911.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비 예약/변경</td>
+			<td class="txtLeft">SC-FE-MI-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MI-900.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비 예약/변경 (내역없음)</td>
+			<td class="txtLeft">SC-FE-MI-900-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MI-900-nodata.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비 예약 취소</td>
+			<td class="txtLeft">SC-FE-MI-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MI-910.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">정비 센터 안내</td>
+			<td class="txtLeft">SC-FE-MI-920</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MI-920.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+
+		<tr>
+			<td class="txtLeft">고객만족도 조사</td>
+			<td class="txtLeft">비회원 로그인</td>
+			<td class="txtLeft">SC-FE-TD-400</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-400.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">고객만족조 조사 설문</td>
+			<td class="txtLeft">SC-FE-TD-401</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-401.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">고객만족조 조사 완료</td>
+			<td class="txtLeft">SC-FE-TD-402</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-TD-402.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">My Contract</td>
+			<td class="txtLeft">견적내역조회</td>
+			<td class="txtLeft">SC-FE-CN-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CN-900.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<!-- <tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량계약관리</td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">Referral Code관리</td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		<tr>
+			<td class="txtLeft">My shop (car)</td>
+			<td class="txtLeft">차량 주문/배송</td>
+			<td class="txtLeft">SC-FE-CP-500</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-500.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">개발용</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량 주문/배송</td>
+			<td class="txtLeft">SC-FE-CP-500_v2</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-500_v2.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">차량 계약관련 변경 개발용</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약확정</td>
+			<td class="txtLeft">SC-FE-CP-520</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-520.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">UI 확인용</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서류 접수완료</td>
+			<td class="txtLeft">SC-FE-CP-530</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-530.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차고지 등록완료</td>
+			<td class="txtLeft">SC-FE-CP-540</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-540.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제요청(현금/신용카드)</td>
+			<td class="txtLeft">SC-FE-CP-550</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-550.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제요청(할부-선납금x)</td>
+			<td class="txtLeft">SC-FE-CP-551</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-551.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제요청(할부-선납금o)</td>
+			<td class="txtLeft">SC-FE-CP-551_2</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-551_2.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제요청(현금 미입금)</td>
+			<td class="txtLeft">SC-FE-CP-552</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-552.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제요청(할부-할부사입금예정일X)</td>
+			<td class="txtLeft">SC-FE-CP-553</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-553.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금 결제완료</td>
+			<td class="txtLeft">SC-FE-CP-560</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-560.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량등록</td>
+			<td class="txtLeft">SC-FE-CP-570</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-570.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량등록</td>
+			<td class="txtLeft">SC-FE-CP-570</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-570.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">배송시작</td>
+			<td class="txtLeft">SC-FE-CP-580</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-580.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">인도완료</td>
+			<td class="txtLeft">SC-FE-CP-590</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-590.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">인도미확정</td>
+			<td class="txtLeft">SC-FE-CP-591</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-591.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약취소(현금 환불계좌 입력)</td>
+			<td class="txtLeft">SC-FE-CP-600</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-600.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약취소(취소완료)</td>
+			<td class="txtLeft">SC-FE-CP-601</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-601.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약취소(취소완료)-환불금액이 없을 경우</td>
+			<td class="txtLeft">SC-FE-CP-601_2</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-601_2.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량 주문/배송 - data 없음</td>
+			<td class="txtLeft">SC-FE-CP-500-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-500-nodata.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft">''</td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량주문 만족도 조사</td>
+			<td class="txtLeft">SC-FE-CP-592</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-592.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문상태 안내[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CP-220</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-220.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량상태 안내[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CP-501</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-501.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">액세서리 취소[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CP-502</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-502.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">딜리버리 방식변경[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CP-503</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CP-503.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">My shop</td>
+			<td class="txtLeft">주문상세</td>
+			<td class="txtLeft">SC-FE-SB901</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB901.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문취소 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-SB902</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB902.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문취소 완료 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-SB903</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB903.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">반품접수 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-SB904</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB904.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">반품접수 완료 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-SB905</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB905.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문내역 없음</td>
+			<td class="txtLeft">SC-FE-SB906</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-SB906.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">쿠폰함</td>
+			<td class="txtLeft">내 쿠폰 조회</td>
+			<td class="txtLeft">SC-FE-MP-500</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-500.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">보유 쿠폰 없음</td>
+			<td class="txtLeft">SC-FE-MP-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-nodata.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">회원정보관리</td>
+			<td class="txtLeft">비밀번호 확인 페이지</td>
+			<td class="txtLeft">SC-FE-MP-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-900.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">회원정보수정 목록</td>
+			<td class="txtLeft">SC-FE-MP-901</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-901.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">기본회원 정보 수정 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-902</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-902.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">휴대폰 번호 수정 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-903</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-903.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">배송지 주소 정보 수정 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-904</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-904.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차고지 주소 정보 수정 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-905</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-905.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">거주지 주소 정보 수정 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-906</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-906.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">PIN번호 변경 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-907</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-907.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">비밀번호 변경 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-908</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-908.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서비스 가입관리</td>
+			<td class="txtLeft">SC-FE-MP-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-910.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">회원탈퇴</td>
+			<td class="txtLeft">SC-FE-MP-920</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-920.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">회원탈퇴 case 안내 [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-MP-920_1</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-920_1.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">고객센터</td>
+			<td class="txtLeft">1:1 상담</td>
+			<td class="txtLeft">SC-FE-CU-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-CU-100.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>	
+		<!-- <tr>
+			<td class="txtLeft">설정</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		<tr>
+			<th colspan="7" id="Members">members (회원가입, 휴면계정, 로그인)</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">회원가입</td>
+			<td class="txtLeft">휴대전화 점유인증</td>
+			<td class="txtLeft">SC-FE-ME-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-100.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용약관동의</td>
+			<td class="txtLeft">SC-FE-ME-110</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-110.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">약관 상세 팝업</td>
+			<td class="txtLeft">SC-FE-ME-111</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-111.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">서비스 이용 약관 동의-서비스 채널 진입</td>
+			<td class="txtLeft">SC-FE-ME-112</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-112.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">회원가입완료</td>
+			<td class="txtLeft">SC-FE-ME-140</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-140.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">회원가입완료(레퍼럴코드 경로 진입)</td>
+			<td class="txtLeft">SC-FE-ME-141</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-141.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">로그인</td>
+			<td class="txtLeft">로그인 Gate [LayerPopup]</td>
+			<td class="txtLeft">SC-FE-ME-300</td>
+			<td class="end">완료</td>
+			<td><a href="../html/member/SC-FE-ME-300.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Email">Email</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">Email</td>
+			<td class="txtLeft">견적서</td>
+			<td class="txtLeft">SC-FE-CN-300</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CN-300.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문취소완료</td>
+			<td class="txtLeft">SC-FE-SB-502</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-SB-502.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">1:1문의등록알림</td>
+			<td class="txtLeft">SC-FE-CU-403</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CU-403.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약접수완료</td>
+			<td class="txtLeft">SC-FE-CP-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-900.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차고지등록</td>
+			<td class="txtLeft">SC-FE-CP-905</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-905.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금결제</td>
+			<td class="txtLeft">SC-FE-CP-906</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-906.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금결제-할부</td>
+			<td class="txtLeft">SC-FE-CP-906-2</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-906-2.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">잔금결제완료</td>
+			<td class="txtLeft">SC-FE-CP-907</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-907.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">차량인도완료</td>
+			<td class="txtLeft">SC-FE-CP-910</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-910.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">계약취소안내</td>
+			<td class="txtLeft">SC-FE-CP-911</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-911.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상세견적</td>
+			<td class="txtLeft">SC-FE-CP-913</td>
+			<td class="end">완료</td>
+			<td><a href="../html/email/SC-FE-CP-913.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Order">Order (장바구니/결제)</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">장바구니</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-001.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft">옵션변경 레이어팝업 (SC-FE-SB002) 포함</td>
+		</tr>
+		<tr>
+			<td class="txtLeft">장바구니 상품없음</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-003</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-003.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">주문서</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-004</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-004.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">배송지 목록 [레이어팝업]</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-005</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-005.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">배송지 등록/수정 [레이어팝업]</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-006</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-006.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">주문 완료</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-007</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-007.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">주문 실패</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-008</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-008.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">이용 약관</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-SB-009</td>
+			<td class="end">완료</td>
+			<td><a href="../html/order/SC-FE-SB-009.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<th colspan="7" id="Common">common (알림, 검색, 공유, 약관/방침, 쿠키사용동의, 에러)</th>
+		</tr>
+		<tr>
+			<td class="txtLeft">우편번호 검색</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-001.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">우편번호 검색결과 있음</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-002</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-002.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">우편번호 검색결과 없음</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-003</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-003.html" target="_blank">View</a></td>
+			<td>황선희</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">알림</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-MP-201</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-201.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">알림-nodata</td>
+			<td class="txtLeft">SC-FE-MP-201-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/my/SC-FE-MP-201-nodata.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">통합검색</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-901</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-901.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">통합검색-detail</td>
+			<td class="txtLeft">SC-FE-CO-901-detail</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-901-detail.html" target="_blank">View</a></td>
+			<td>이슬비</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">약관/방침</td>
+			<td class="txtLeft">개인정보처리방침</td>
+			<td class="txtLeft">SC-FE-FA-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-FA-100.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인정보처리방침 팝업용</td>
+			<td class="txtLeft">SC-FE-FA-100_old</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-FA-100_old.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용약관</td>
+			<td class="txtLeft">SC-FE-FA-101</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-FA-101.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">이용약관 팝업용</td>
+			<td class="txtLeft">SC-FE-FA-101_old</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-FA-101_old.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">개인정보취급방침</td>
+			<td class="txtLeft">SC-FE-FA-102</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-FA-102.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">쿠키활용동의</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CA-100</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CA-100.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">에러</td>
+			<td class="txtLeft">404에러</td>
+			<td class="txtLeft">SC-FE-CO-600</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-600.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">500에러</td>
+			<td class="txtLeft">SC-FE-CO-700</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-700.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">시스템 에러</td>
+			<td class="txtLeft">SC-FE-CO-800</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-800.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">네트워크 에러</td>
+			<td class="txtLeft">SC-FE-CO-900</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-900.html" target="_blank">View</a></td>
+			<td>신예진</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">1:1 문의</td>
+			<td class="txtLeft">1:1 상담 문의</td>
+			<td class="txtLeft">SC-FE-CU-001</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-001.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">Shop 상품 상세 화면에서 유입 시[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CU-002</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-002.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">주문내역 상세 화면에서 유입 시[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CU-003</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-003.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">구매상담 신청[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CU-004</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-004.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">1:1 상담 접수 완료</td>
+			<td class="txtLeft">SC-FE-CU-010</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-010.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">1:1 상담 접수 완료-shop/주문[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CU-011</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-011.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">1:1 상담 접수 완료-구매상담[LayerPopup]</td>
+			<td class="txtLeft">SC-FE-CU-012</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-012.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">FAQ</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CU-200</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-200.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">검색 결과</td>
+			<td class="txtLeft">SC-FE-CU-200-02</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-200-02.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">검색 결과 없음</td>
+			<td class="txtLeft">SC-FE-CU-200-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-200-nodata.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">공지사항</td>
+			<td class="txtLeft">목록</td>
+			<td class="txtLeft">SC-FE-CU-300.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-300.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">목록-nodata</td>
+			<td class="txtLeft">SC-FE-CU-300-nodata</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-300-nodata.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">상세</td>
+			<td class="txtLeft">SC-FE-CU-310.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-310.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">메인 노출 팝업</td>
+			<td class="txtLeft">SC-FE-CU-400.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CU-400.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">사이트맵</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-CO-601.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-CO-601.html" target="_blank">View</a></td>
+			<td>김정승</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">리사이클</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-RE-100.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-RE-100.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<tr>
+			<td class="txtLeft">비상대응</td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft">SC-FE-EE-100.html</td>
+			<td class="end">완료</td>
+			<td><a href="../html/common/SC-FE-EE-100.html" target="_blank">View</a></td>
+			<td>이송</td>
+			<td class="txtLeft"></td>
+		</tr>
+		<!-- <tr>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="txtLeft"></td>
+			<td class="end"></td>
+			<td><a href="../html/.html" target="_blank">View</a></td>
+			<td></td>
+			<td class="txtLeft"></td>
+		</tr> -->
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="btn-top-box">
+	<a href="#" title="move to top" role="button" class="btn-top">
+		<span class="blind">Top</span>
+	</a>
+</div>
+
+</body>
+</html>

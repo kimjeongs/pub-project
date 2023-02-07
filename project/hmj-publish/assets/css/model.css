@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* 간편견적 메인 */
+.easy-estimate.hmj-container .hmj-content .top-tit-box{
+    padding: 0;
+}
+.easy-estimate .top-img{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+.easy-estimate .top-img img{
+    min-width: 1920px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.easy-estimate .hmj-content .top-img .top-img-text{
+    max-width: 1120px;
+    margin: auto;
+}
+.easy-estimate .top-img .top-img-text h3{
+    position: absolute;
+    padding: 0;
+    top: auto;
+    bottom: 40px;
+    font-weight: 500;
+}
+@media screen and (min-width: 1120px){
+    .easy-estimate .tab-box-wrap{
+        margin-top: 70px;
+    }
+    .easy-estimate .tab-box-list li .car-imgage{
+        position: absolute;
+        top: 55px;
+        left: 0;
+        margin: 24px auto 26px;
+        height: 208px;
+        width: 100%;
+        text-align: center;
+    }
+    .easy-estimate .tab-box-list li .car-imgage img{
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.5;
+        transition: all .3s ease-in;
+    }
+    .easy-estimate .tab-box-list li.active .car-imgage img{
+        opacity: 1;
+    }
+    .easy-estimate .tab-box-cont{
+        padding-top: 258px;
+    }
+    .easy-estimate .tab-box-cont .tab-box-item{
+        width: 50%;
+    }
+    .easy-estimate .tab-box-cont .tab-box-item:nth-of-type(1){
+        float: left;
+    }
+    .easy-estimate .tab-box-cont .tab-box-item:nth-of-type(2){
+        float: right;
+    }
+}
+@media screen and (max-width: 1119px) {
+    .easy-estimate .top-img{
+        height: 180px;
+    }
+    .easy-estimate .top-img img{
+        width: auto;
+        height: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+    .easy-estimate .top-img .top-img-text{
+        padding: 0 20px;
+    }
+    .easy-estimate .top-img .top-img-text h3 {
+        width: 55%
+    }
+    .easy-estimate .tab-box-list li .car-imgage{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 56px;
+        width: 200%;
+		height: 33.88vw;
+        margin: 24px 0;
+        padding: 0 20px;
+        text-align: center;
+    }
+	.easy-estimate .tab-box-list li.active .car-imgage img{
+		height: 100%;
+	}
+    .easy-estimate .tab-box-list li.active .car-imgage{
+        display: block;    
+    }
+    .easy-estimate .tab-box-list li:nth-of-type(2) .car-imgage{
+        left: -100%;
+    }
+    .easy-estimate .tab-box-cont{
+        margin-top: 33.88vw;
+        padding: 48px 20px 0;
+        transition: none;
+    }
+}
+/* E: 간편견적 메인 */

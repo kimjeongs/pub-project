@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css?version=0.00000002">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117856487-1');
+</script>
+<script>
+function roleChange(){
+    var role    = $("#role option:selected").val();
+    var roleNm  = $("#role option:selected").text();
+    $("#mberRoleSeCode").val(role);
+    $("#mberRoleSeCodeNm").val(roleNm);
+    //alert($("#mberRoleSeCodeNm").val());
+    document.getElementById('frmRoleChange').submit();
+}
+
+function questBannerClose(){
+    if($("#top-notice").css("display") == "none"){
+        jQuery("#top-notice").show();
+    } else {
+        jQuery("#top-notice").hide();
+        $("#header").removeAttr('class');
+    }
+}
+
+function goMyPage(){
+    document.getElementById('frmMypage').submit();
+}
+</script>
+</head>
+<body>
+	<div id="top">
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+				<!-- notice -->
+				<!-- //notice -->
+				<div class="header-inner">
+					<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+					<div class="header-utill">
+						<div class="user-name"><strong>YEEP선생님</strong>님 환영합니다</div>
+						<div class="hedaer-notice">
+							<button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+						</div>
+						<div class="user-state">
+							<label class="invisible" >역할</label>
+						</div>
+						<div class="utill-btn">
+							<a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+							<a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+						</div>
+					</div>
+					<ul class="gnb">
+						<li>
+							<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+								<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+								<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+								<li><a href="/intro/startupIntro.do">Go스타트업 소개</a></li>
+								<li><a href="/intro/onlnPtIntro.do">온라인사업설명회 소개</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/clas/classMain.do">수업 /동아리</a></strong>
+							<ul class="two-dept">
+								<li><a href="/clas/classMain.do">수업</a></li>
+								<li><a href="/aprt/aprtMain.do">동아리</a></li>
+								<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go스타트업</a></strong>
+							<ul class="two-dept">
+								<li><a href="javascript:startUp();">Go스타트업</a></li>
+								<li><a href="/onln/onlnPtHomeList.do">온라인사업설명회</a></li>
+								<!--<li><a href="javascript:alert(  '준비 중입니다'  );">YEEP 마켓</a></li>-->
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+								<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+								<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+								<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+								<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+								<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+								<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/notiBbsList.do">이용안내</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+								<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+								<li><a href="/noti/useInqList.do">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			<link rel="stylesheet" type="text/css" href="css/cl.css">
+			<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+			<script type="text/javascript" src="http://dev.yeep.kr/script/jquery.form.js"></script>
+			<form id="frm" name="frm"  method="post">
+				<input type="hidden" name="clasNo" id="clasNo" value="">
+				<input type="hidden" name="grpNo" id="grpNo" value="">
+				<input type="hidden" name="crseNo" id="crseNo" value="">
+				<!-- container -->
+				<div id="container" tabindex="0">
+					<div class="page-location">
+						<ul>
+							<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+							<li><a href="/clas/classMain.do">수업</a></li>
+						</ul>
+					</div>
+					<div id="createClassStep3Block" class="content-width">
+						<h2 class="page-title">수업개설</h2>
+						<div class="open-step">
+							<img src="images/cl/img_open_step03.png" alt="3. 교육 과정 설정" />
+							<ol class="invisible">
+								<li>수업 정보 입력</li>
+								<li>수업 구성원 설정</li>
+								<li title="현재 순서">수업 과정 설정</li> <!-- 2019-10-28 문구수정 -->
+								<li>개설 완료</li>
+							</ol>
+							<div class="open-desc bg-step02">
+								기본으로 제공되는 수업 과정에 다른 수업 과정의 모듈을 추가 하여 선생님만의 수업 과정을 만들 수 있습니다.<br />
+								차시 단위로는 추가가 불가능하니 추가하고자 하는 차시가 있는 경우<br />우선 모듈을 추가하여 저장한 후 수업 과정 목록에서 사용할 차시만 선택해주세요.
+								<a href="https://yeep.kr/noti/notiBbsDetail.do?bltnNo=946" target="_blank" title="YEEP 사용자 매뉴얼 보기 새창 열림" class="btn-white">YEEP 사용자 매뉴얼 보기<span class="arw"></span></a>
+							</div>
+						</div>
+
+						<div class="page-sub-title-style">
+							<h3 class="sub-title">수업 과정 모듈 추가</h3>
+						</div>
+
+						<div class="module-container">
+							<div class="module-wrap">
+								<h4 class="title">추가할 수업 모듈 선택</h4>
+								<ul class="module-info">
+									<li>수업 과정 선택 후 원하는 <span>모듈</span>를 선택하여 <strong>[추가]</strong> 버튼을 눌러주세요.</li>
+									<li>드래그 앤 드랍을 활용한 방법은 <a href="#" title="가이드 자세히보기(새창)">[가이드 <img src="images/cl/btn_guide_module.png" alt="" />]</a>를 클릭하여 확인해주세요.</li>
+								</ul>
+								<div class="select-class">
+									<select>
+										<option>수업 과정 선택</option>
+									</select>
+									<a href="#" class="btn-selected">보기</a>
+								</div>
+								<div class="module-tree-bx">
+									<!-- 수업과정 선택 전 -->
+									<div class="start-cmnt">수업과정을 선택하여 추가하고자 하는<br />모듈을 확인해 주세요.</div>
+									<!-- TREE MENU -->
+									<div id="classMenu1" class="class-tree">
+										
+									</div>
+								</div>
+							</div>
+							<div class="module-wrap">
+								<h4 class="title">최종 수업 과정</h4>
+								<ul class="module-info">
+									<li>선택한 <span>타이틀</span> 하위과정으로 모듈 수업 과정이 추가됩니다.</li>
+									<li>저장 후 수업 과정 목록에서 사용하지 않을 차시를 제외할 수 있습니다.</li>
+								</ul>
+								<strong class="class-name">2020 초등 동아리 과정</strong>
+								<div class="module-tree-bx">
+									<div id="classMenu2" class="class-tree">
+										<ul>
+											 <li class="isFolder isExpanded">
+												제 1권
+												<ul>
+													<li class="isFolder isExpanded">기업가정신이란 <!-- 이동가능한 모듈의 color="#627baf" -->
+														<ul>
+															<li class="isFolder">M1 오리엔테이션
+																<ul>
+																	<li>오리엔테이션</li>
+																</ul>
+															</li>
+															<li class="isFolder">M2 기업가정신 알기1
+																<ul>
+																	<li>세상의 변화, 일의 변화</li>
+																	<li>기업가정신이란?</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li class="isFolder isExpanded">
+												제 2권
+												<ul>
+													<li class="isFolder isExpanded">핵심역량으로서의 기업가 정신 <!-- 이동가능한 모듈의 color="#627baf" -->
+														<ul>
+															<li class="isFolder">M1 핵심역량(1) - 의사소통
+																<ul>
+																	<li>의사소통역량(3) - 중재하고 조정하기</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<a href="#" class="btn-add-module" title="수업과정 추가하기">추가</a>
+						</div>
+
+						<script type="text/javascript" src="js/jquery.easytree.js"></script>
+						<link rel="stylesheet" type="text/css" href="css/ui.easytree.css">
+						<script>
+							function dropped1(event, nodes, isSourceNode, source, isTargetNode, target) {
+								if (isSourceNode && !isTargetNode) { // left to right drop
+									easyTree2.addNode(source, target.id);
+									easyTree1.removeNode(source.id);
+									easyTree2.rebuildTree(); // rebuild 'other' tree
+								}
+							}
+							function dropped2(event, nodes, isSourceNode, source, isTargetNode, target) {
+								if (isSourceNode && !isTargetNode) { // Right to left drop
+									easyTree2.removeNode(source.id);
+									easyTree1.addNode(source, target.id);
+									easyTree1.rebuildTree(); // rebuild 'other' tree
+								}
+							}
+							var easyTree1 = $('#classMenu1').easytree({
+								enableDnd: true,
+								dropped: dropped1
+							});
+							var easyTree2 = $('#classMenu2').easytree({
+								enableDnd: true,
+								dropped: dropped2
+							});
+						</script>
+						
+
+						<div class="btn-center">
+							<a href="javascript:;" id="btnOpenClass" class="btn-big-orange-line">취소</a>
+							<a href="javascript:;" id="btnMain" class="btn-big-orange">저장</a>
+						</div>
+					</div>
+				</div>
+				<!-- //container -->
+			</form>
+
+		</div>
+		<div id="footer">
+			<!-- footer -->
+			<div class="footer-utill-area">
+				<ul class="footer-utill">
+					<li><a href="/noti/useInqList.do">이용문의</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+				</ul>
+			</div>
+			<!-- 2018-04-17 디자인요청 수정 -->
+			<div class="footer-cont">
+				<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+				<p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+				<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+				<ul class="site_link">
+					<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+					<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+					<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+				</ul>
+			</div>
+			<!-- //2018-04-17 디자인요청 수정 -->
+			<!-- //footer -->
+		</div> <!-- //wrap -->
+	</div>
+</body>
+</html>

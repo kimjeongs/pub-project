@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>주니어 커리어넷</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+<link rel="stylesheet" type="text/css" href="css/content.css" />
+<script type="text/javascript"  src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript"  src="js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.slider-movie').bxSlider({
+            auto: false,
+            autoControls: true,
+            stopAutoOnClick: false,
+            pager: false,
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            minSlides: 1,
+            maxSlides: 2,
+            slideMargin: 63,
+            slideWidth: 197
+        });
+    });
+</script> 
+</head>
+
+<body class="color-movie">
+	<div id="skipNavi">
+		<a href="#container" class="skipNavi">본문바로가기</a>
+		<a href="#gnb" class="skipNavi" >메뉴바로가기</a>
+	</div>
+	<!-- HEADER -->
+	<div id="header">
+		<div class="topmenu">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">아이디/비밀번호 찾기</a></li>
+				<li><a href="#">로그아웃</a></li>
+				<li><a href="#">마이페이지</a></li>
+			</ul>
+		</div>
+		<div id="gnbWrap">
+			<div class="gnb">
+				<h1 class="logo-header"><a href="#"><img src="images/common/logo_header.png" alt="주니어커리어넷" /></a></h1>
+				<ul class="menu">
+					<li><a href="#" class="depth1 mn1">나를 알아보아요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">저학년 진로흥미탐색</a></li>
+								<li><a href="#">고학년 진로흥미탐색</a></li>
+								<li><a href="#">진로카드로 나를 알아봐요</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn2">진로정보를 찾아봐요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">주니어 진로동영상</a></li>
+								<li><a href="#">주니어 직업정보</a></li>
+								<li><a href="#">미래 직업정보</a></li>
+								<li><a href="#">미래 사회의 직업</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn3">진로고민이 있어요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">진로탐험대</a></li>
+								<li><a href="#">친구야 도와줘</a></li>
+								<li><a href="#">진로상담</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="btn-search-open">검색하기</a> <!-- 검색창 활성화 상태 class 'close' 추가 -->
+			</div>
+			<div class="gnb-search-wrap"> <!-- 검색창 활성화 상태 class 'open' 추가 -->
+				<div class="gnb-search-bx">
+					<input type="text" placeholder="진로정보를 탐색해보아요!" class="gnb-search-input" />
+					<a href="#" class="btn-search">검색</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //HEADER -->
+	<hr>
+	<!-- CONTENT -->
+	<div id="container">
+		<div class="content">
+			<h2 class="cont-title">주니어 직업정보</h2>
+			<div class="cont-tab-wrap">
+				<ul>
+					<li><a href="#">주니어 진로동영상</a></li>
+					<li class="on"><a href="#">주니어 직업정보</a></li><!-- 탭 활성화 상태 class="on"추가 -->
+					<li><a href="#">미래 직업정보</a></li>
+					<li><a href="#">미래 사회의 직업</a></li>
+				</ul>
+			</div>
+            <div class="job-info">
+                <div class="inner">
+                    <div class="job-detail">
+                        <h3 class="job-tit"><em class="future">미래</em><span>상품·공간 스토리텔러</span></h3>
+                        <p class="job-txt"><span>홍보를 위해 상품이나 서비스와 관련된 스토리를 만들어요.</span></p>
+                        <div class="count">
+                            <span class="hits" title="조회수">12356</span>
+                            <div class="tooltip-box">
+                                <div class="like-cont">
+                                    <a href="#" class="like">좋아요</a><!--좋아요 class="on"-->
+                                    <span>52</span>
+                                </div>
+                                <span class="tooltip">이미 추천한 직업정보예요</span><!-- 이미 추천한 동영상일시 -->
+                            </div>
+                        </div>
+                        <div class="job-about">
+                            <div class="img-cont">
+                                <img src="images/info/img_about_job.png" alt="상품·공간 스토리텔러">
+                            </div>
+                            <ul class="about-list">
+                                <li><a href="#qna1"><span>어떤 일을 하나요?</span></a></li>
+                                <li><a href="#qna2"><span>어떻게 하면 될 수 있나요?</span></a></li>
+                                <li><a href="#qna3"><span>어떤 지식, 흥미, 가치관을 가져야 하나요?</span></a></li>
+                                <li><a href="#qna4"><span>예상 연봉은 어떻게 되나요?</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="about-cont">
+                            <div id="qna1">
+                                <strong class="about-tit qna01">어떤 일을 하나요?</strong>
+                                <ul class="dot-list02">
+                                    <li>제품 및 서비스, 공간 등과 연관된 이야기를 흥미롭게 펼쳐내면서 고객이 특정 상품을 구매하거나 서비스 등을 이용할 수 있도록 유도합니다.</li>
+                                    <li>제품의 이미지를 강화하거나 다른 제품과의 차별과를 위해 전략을 세우고 제품에 담긴 감성과 이야기를 구성하여 소비자에게 전달합니다.</li>
+                                </ul>
+                            </div>
+                            <div id="qna2">
+                                <strong class="about-tit qna02">어떻게 하면 될 수 있나요?</strong>
+                                <ul class="dot-list02">
+                                    <li>스토리를 구성해야 하기 때문에 국문학을 전공하는 게 유리하며 마케팅, 경영학 분야를 전공하는 것도 도움이 됩니다.</li>
+                                    <li>이야기를 다루기 때문에 책을 많이 읽어야 하며 예민한 감수성과 관찰력으로 사물을 포착할 수 있어야 합니다.</li>
+                                    <li>포착한 것을 자신만의 방식으로 변형하고 구성하는 상상력과 사고 능력 등이 있어야 합니다.</li>
+                                    <li>대학에서 스토리텔링학, 문화콘텐츠학, 문예창작학 등을 전공하면 유리합니다.</li>
+                                </ul>
+                            </div>
+                            <div id="qna3">
+                                <strong class="about-tit qna03">어떤 지식, 흥미, 가치관을 가져야 하나요?</strong>
+                                <div class="about-info-box">
+                                    <div class="info01">
+                                        <em>필요한 지식</em>
+                                        <ul>
+                                            <li>역사</li>
+                                            <li>교육 및 훈련</li>
+                                            <li>국어</li>
+                                            <li>안전과 보안</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info02">
+                                        <em>흥미 유형</em>
+                                        <ul>
+                                            <li>멋쟁이형</li>
+                                            <li>친절이형</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info03">
+                                        <em>가치관</em>
+                                        <ul>
+                                            <li>애국</li>
+                                            <li>고용안정</li>
+                                            <li>심신의 안녕</li>
+                                            <li>이타</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="qna4">
+                                <strong class="about-tit qna04">예상 연봉은 어떻게 되나요?</strong>
+                                <p class="about-desc">하위(25%) 3,586만원 | 중간(50%) 4,704만원 | 상위(25%) 5,258만원</p>
+                            </div>
+                        </div>
+                        <div class="more-box">
+                            <!-- 관련 동영상 있을시-->
+                            <div class="movie-cont">
+                                <p class="tit">이 직업에 관한 영상을 볼 수 있어요.</p>
+                                <ul class="slider-movie">
+                                    <li class="career">
+                                        <a href="#">
+                                            <span class="img-cont"><img src="images/info/img_mv05.png"
+                                                    alt="미래 꿈을 JOB다 - 미래 유망직업 총결산 MBC 드림주니어"></span>
+                                            <p class="mv-tit">미래 꿈을 JOB다 - 미래 유망직업 총결산 MBC 드림주니어 미래 유망직업 총결산 MBC 드림주니어</p>
+                                        </a>
+                                    </li>
+                                    <li class="junior">
+                                        <a href="#">
+                                            <span class="img-cont"><img src="images/info/img_mv_junior.png"
+                                                    alt="미래 꿈을 JOB다 - 미래 유망직업 총결산 MBC 드림주니어"></span>
+                                            <p class="mv-tit">미래 꿈을 JOB다 - 미래 유망직업 총결산 MBC 드림주니어 미래 유망직업 총결산 MBC 드림주니어</p>
+                                        </a>
+                                    </li>
+                                    <li class="other-mv">
+                                        <a href="#">
+                                            <span class="img-cont"><img src="images/info/img_other_mv.png" alt="다른 직업정보 동영상 더보기"></span>
+                                            <p class="mv-tit">다른 직업정보 동영상<br>더보기</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 관련 동영상 있을시-->
+                            <div class="about-tag">
+                                <p class="tit">다음 키워드로 직업을 검색해보세요.</p>
+                                <ul class="tag">
+                                    <li><a href="#">국문학과</a></li>
+                                    <li><a href="#">문예창작과</a></li>
+                                    <li><a href="#">경영학과</a></li>
+                                    <li><a href="#">마케팅전문가</a></li>
+                                    <li><a href="#">광고 및 홍보 전문가</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="btn-light-gray">목록으로 돌아가기</button>
+                    </div>
+                </div>
+            </div>
+			<div class="page-control-area">
+                <a href="#container" class="btn-page-gotop">위로 올라가기</a>
+            </div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+	<div id="dim"></div>
+	<hr>
+	<!-- FOOTER -->
+	<div id="footer">
+		<div class="footer-menu">
+			<ul class="policy">
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/mberInfoPrtcPopup.do','','width=715, height=775, menubar=no, status=no, left=300');">개인정보처리방침</a></li>
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+				<li><a href="http://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do" target="_blank" title="새창 열림">이용문의</a></li>
+			</ul>
+			<div class="family-site">
+				<a href="#" class="fam-title" title="관련사이트 보기">관련사이트</a> <!-- 목록 활성화 상태 class="active" 추가 -->
+				<ul class="site-list">
+					<li><a href="https://www.career.go.kr/cnet/front/main/main.do" target="_blank" title="새창으로 이동">커리어넷</a></li>
+					<li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창으로 이동">원격영상 진로멘토링</a></li>
+					<li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창으로 이동">YEEP</a></li>
+					<li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창으로 이동">꿈길</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="address">
+			<div class="copyright">
+				주소 : 30147 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원<br />
+				운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 │ 지원 : 교육부<br />
+				COPYRIGHTS ⓒ KRIVET ALL RIGHTS RESERVED
+			</div>
+			<div class="logo-gov">
+				<a href="https://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창 열림)"><img src="images/common/img_gov_logo01.png" alt="교육부 Ministry of Education" /></a>
+				<a href="http://www.krivet.re.kr/ku/index.jsp" target="_blank" title="한국직업능력개발원 바로가기(새창 열림)"><img src="images/common/img_gov_logo02.png" alt="한국직업능력개발원 KRIVET" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- //FOOTER -->
+</body>
+</html>

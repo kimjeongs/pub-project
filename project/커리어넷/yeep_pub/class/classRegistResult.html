@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css?version=0.00000002">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117856487-1');
+</script>
+<script>
+function roleChange(){
+    var role    = $("#role option:selected").val();
+    var roleNm  = $("#role option:selected").text();
+    $("#mberRoleSeCode").val(role);
+    $("#mberRoleSeCodeNm").val(roleNm);
+    //alert($("#mberRoleSeCodeNm").val());
+    document.getElementById('frmRoleChange').submit();
+}
+
+function questBannerClose(){
+    if($("#top-notice").css("display") == "none"){
+        jQuery("#top-notice").show();
+    } else {
+        jQuery("#top-notice").hide();
+        $("#header").removeAttr('class');
+    }
+}
+
+function goMyPage(){
+    document.getElementById('frmMypage').submit();
+}
+</script>
+</head>
+<body>
+	<div id="top">
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+				<!-- notice -->
+				<!-- //notice -->
+				<div class="header-inner">
+					<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+					<div class="header-utill">
+						<div class="user-name"><strong>YEEP선생님</strong>님 환영합니다</div>
+						<div class="hedaer-notice">
+							<button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+						</div>
+						<div class="user-state">
+							<label class="invisible" >역할</label>
+						</div>
+						<div class="utill-btn">
+							<a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+							<a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+						</div>
+					</div>
+					<ul class="gnb">
+						<li>
+							<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+								<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+								<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+								<li><a href="/intro/startupIntro.do">Go스타트업 소개</a></li>
+								<li><a href="/intro/onlnPtIntro.do">온라인사업설명회 소개</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/clas/classMain.do">수업 /동아리</a></strong>
+							<ul class="two-dept">
+								<li><a href="/clas/classMain.do">수업</a></li>
+								<li><a href="/aprt/aprtMain.do">동아리</a></li>
+								<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go스타트업</a></strong>
+							<ul class="two-dept">
+								<li><a href="javascript:startUp();">Go스타트업</a></li>
+								<li><a href="/onln/onlnPtHomeList.do">온라인사업설명회</a></li>
+								<!--<li><a href="javascript:alert(  '준비 중입니다'  );">YEEP 마켓</a></li>-->
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+								<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+								<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+								<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+								<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+								<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+								<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/notiBbsList.do">이용안내</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+								<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+								<li><a href="/noti/useInqList.do">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			<link rel="stylesheet" type="text/css" href="css/cl.css">
+			<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+			<script type="text/javascript" src="http://dev.yeep.kr/script/jquery.form.js"></script>
+			<form id="frm" name="frm"  method="post">
+				<input type="hidden" name="clasNo" id="clasNo" value="">
+				<input type="hidden" name="grpNo" id="grpNo" value="">
+				<input type="hidden" name="crseNo" id="crseNo" value="">
+				<!-- container -->
+				<div id="container" tabindex="0">
+					<div class="page-location">
+						<ul>
+							<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+							<li><a href="/clas/classMain.do">수업</a></li>
+						</ul>
+					</div>
+            
+					<div class="content-width">
+						<h2 class="page-title">수업개설</h2>
+						<div class="open-step">
+							<img src="images/cl/img_open_step04.png" alt="4. 개설 완료" />
+							<ol class="invisible">
+								<li>수업 정보 입력</li>
+								<li>수업 구성원 설정</li>
+								<li>교육 과정 설정</li>
+								<li title="현재 순서">개설 완료</li>
+							</ol>
+
+							<div class="class-open-finish">
+								<strong class="tit">"수업 개설이 <em>완료</em>되었습니다."</strong>
+								<div class="code-class">
+									<span class="codebx">수업 참여 코드&nbsp; : &nbsp;<strong id="subsAthnCd">7r5NZW9Lnk8N</strong></span>
+									<input type="text" id="hdnSubsAthnCd" name="hdnSubsAthnCd" value="7r5NZW9Lnk8N" 
+										style="position:absolute;top:0;left:0;width:1px;height:1px;margin:0;padding:0;border:0;"  title="수업 참여 코드"/>
+									<a href="javascript:;" id="btnClasEnterCdCopy" class="copy" title="수업참여코드 복사">복사</a>
+								</div>
+								<p class="cmnt">‘수업 참여하기’ 에 위 코드를 입력하여, 학생이 해당 수업에 직접 참여할 수 있습니다.<br />수업 참여 코드는 ‘수업 관리’ 에서 다시 확인 하실 수 있습니다.</p>			
+							</div>
+
+							<div class="list-board img-type1">
+								<table>
+									<caption>개설된 수업 목록 - 학교급, 수업명, 구성원, 수업과정, 수업기간으로 구성된 표입니다.</caption> <!-- 2019-11-12 cpation수정 -->
+									<colgroup>
+										<col style="width:15%;">
+										<col style="width:25%;">
+										<col>
+										<col style="width:10%;">
+										<col style="width:20%;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">학교급</th>
+											<th scope="col">수업명</th>
+											<th scope="col">구성원</th>
+											<th scope="col">수업 과정</th> <!-- 2019-11-12 text 수정 -->
+											<th scope="col">수업 기간</th> <!-- 2019-11-12 text 수정 -->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>초등학교</td>
+											<td class="t-left"><a href="javascript:;" id="btnClassDetail" title="수업정보 상세보기">권장수업TEST</a></td>
+											<td class="t-left">(17명) 남고딩,초딩남1</td>
+											<td>2차시</td>
+											<td>2019.09.01 ~ 2020.02.29</td> 
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="btn-center">
+							<a href="javascript:;" id="btnOpenClass" class="btn-big-orange-line">추가 수업 개설</a>
+							<a href="javascript:;" id="btnMain" class="btn-big-orange">메인으로</a>
+						</div>
+					</div>
+				</div>
+				<!-- //container -->
+			</form> 
+
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+					document.title="수업 개설 < 수업 < YEEP";
+				});
+
+				
+				$(document).on("click", "#btnMain", function(){
+					$(location).attr('href', '/clas/classMain.do');
+				});
+				
+				
+				$(document).on("click", "#btnOpenClass", function(){
+					$("#frm").attr('action', '/clas/classRegist.do');
+					$("#frm").attr('method',"post");
+					$("#frm").submit();
+				});
+				
+				$(document).on("click", "#btnClassDetail", function(){
+					$("#frm").attr('action', '/clas/classDtlMain.do');
+					$("#frm").attr('method',"post");
+					$("#frm").submit();
+				});
+				
+				$(document).on("click", "#btnClasEnterCdCopy", function() {
+					try {
+						$("#hdnSubsAthnCd").select();
+						var successful = document.execCommand('copy');  
+						alert('수업 참여 코드가 복사되었습니다.'); 
+					} catch (err) { 
+						alert('이 브라우저는 지원하지 않습니다.'); 
+					}
+				});
+			</script>
+		</div>
+		<div id="footer">
+			<!-- footer -->
+			<div class="footer-utill-area">
+				<ul class="footer-utill">
+					<li><a href="/noti/useInqList.do">이용문의</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+				</ul>
+			</div>
+			<!-- 2018-04-17 디자인요청 수정 -->
+			<div class="footer-cont">
+				<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+				<p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+				<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+				<ul class="site_link">
+					<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+					<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+					<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+				</ul>
+			</div>
+			<!-- //2018-04-17 디자인요청 수정 -->
+			<!-- //footer -->
+		</div> <!-- //wrap -->
+	</div>
+</body>
+</html>

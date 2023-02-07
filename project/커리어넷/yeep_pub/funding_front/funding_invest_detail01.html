@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="url" property="og:url"           content="?coNo="/>
+    <meta name="type" property="og:type"          content="website"/>
+    <meta name="title" property="og:title"         content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description"   content=" - "/>
+    <meta name="image" property="og:image"         content="/img"/>
+
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<title>YEEP</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/2019.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice --><!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="http://dev.yeep.kr/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="utill-btn">
+                            <a href="/cmmn/sso/api/user.agent.3.do">로그인1</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+                <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/in.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="javascript:;" id="goHome"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/intro/yeepIntro.do">기업체험</a></li>
+                        <li>
+                            <a href="#">크라우드 펀딩</a>
+                            <ul class="location-menu">
+                                <li><a href="#">크라우드 펀딩</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-box small">
+                    <div class="inner">
+                        <h2 class="page-title"><span>크라우드 <strong>펀딩</strong></span></h2>
+                        <p class="page-title-text">
+                            여러분의 아이디어를 <strong>크라우드 펀딩을 통해 실현시켜 보세요.</strong>
+                        </p>
+                        <div class="btn-area">
+                            <a href="#" class="btn-small-white type2">프로젝트 만들기</a>
+                            <a href="#" class="btn-small-dark-gray type2">로그인</a>
+                        </div>
+                        <img class="bg-img" src="../funding_front/images/2019/img_topbox_01.png" alt="크라우드 펀딩">
+                    </div>
+                </div>
+                <div class="content-width">
+                    <div class="funding-support-detail">
+                        <div class="tit-cont">
+                            <span class="part">콘텐츠(문화/미디어)</span>
+                            <h3 class="tit">프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트</h3>
+                            <h4 class="sub-tit">프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트제목프로젝트제목</h4>
+                        </div>
+                        <div class="support-state">
+                            <div class="left">
+                                <div class="img-cont">
+                                    <div class="img">
+                                        <img src="../funding_front/images/2019/img_support_detail.png" alt="프로젝트제목">
+                                    </div>
+                                    <ul class="icon">
+                                        <li class="funding-type02">투자형</li>
+                                        <!-- <li class="success">성공</li> -->
+                                    </ul>
+                                </div>
+                                <div class="bottom">
+                                    <p class="name">YEEP기업명</p>
+                                    <ul class="link">
+                                        <li class="yt"><a href="#" target="_blank"><img src="../funding_front/images/2019/ico_yt.png" alt="유튜브"></a></li>
+                                        <li class="hp"><a href="#" target="_blank"><img src="../funding_front/images/2019/ico_hp.png" alt="홈페이지"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="progress-state">
+                                    <span class="money"><strong>690,000</strong><span class="lg-leaf"><img src="../funding_front/images/2019/ico_leaf_big.png"
+                                            alt="잎"></span> 달성</span>
+                                    <span class="percent"><strong>60</strong> %</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="ing" style="width: 60%">
+                                        <span class="ing-bar"></span>
+                                        <img class="rocket" src="../funding_front/images/2019/ico_rocket.png" alt="60%">
+                                    </div>
+                                </div>
+                                <ul class="progress-info">
+                                    <li>
+                                        <em>목표금액</em> <span>2,000,000</span><span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png" alt="잎"></span>
+                                    </li>
+                                    <li>
+                                        <em>계좌당 금액</em> <span>2,000,000</span><span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png"
+                                                alt="잎"></span> / 1계좌
+                                    </li>
+                                    <li>
+                                        <em>기간</em><span class="state">47일 남음</span>2019.06.27 ~ 2019.08.25
+                                    </li>
+                                    <li>
+                                        <em>투자수</em>20명 투자(20계좌 발행)
+                                    </li>
+                                </ul>
+                                <div class="btn-area">
+                                    <button type="button" class="btn-big-orange">투자하기</button>
+                                    <!-- 관심등록 클릭시 클래스 on 추가, 재클릭시 on 제거 -->
+                                    <button type="button" class="btn-like on">
+                                        <span class="like">관심등록 <span>(12)</span></span>
+                                    </button>
+                                </div>
+                                <p class="info-txt">
+                                    <span class="funding-state">펀딩 진행중</span>
+                                    목표 금액만큼 계좌가 모집되면 펀딩은 자동 종료됩니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="scroller-anchor"></div>
+                        <div class="tab-fix-cont scroller">
+                            <div class="tab-fix">
+                                <!-- 상위 탭 -->
+                                <ul class="tab-list">
+                                    <li class="active"><a href="">사업설명서</a></li>
+                                    <li><a href="#">스타트업 소개</a></li>
+                                    <li><a href="#">응원글</a></li>
+                                    <li><a href="#">문의하기</a></li>
+                                </ul>
+                                <!-- //상위 탭 -->
+
+                                <!-- 하위 메뉴 -->
+                                <ul class="intro-menu">
+                                    <li class="on"><a href="#">아이템 소개</a></li>
+                                    <li><a href="#">사업추진 전략</a></li>
+                                    <li><a href="#">투자 조건</a></li>
+                                </ul>
+                                <!-- //하위 메뉴 -->
+                            </div>
+                        </div>
+                        <div class="tab-cont">
+                            <h5 class="tab-cont-title">사업설명서</h5>
+                            <div class="intro-list">
+                                <div class="tit-cont">
+                                    <strong class="tit">사업설명서 제목입니다.</strong>
+                                </div>
+                                <ul class="list">
+                                    <li class="list01">
+                                        <strong>아이템 소개</strong>
+                                        <ul class="dot-list-round">
+                                            <li>
+                                                <strong>아이템 이름</strong>
+                                                <p>공기처럼 가벼운 뿔테 안경, 에어그램</p>
+                                            </li>
+                                            <li>
+                                                <strong>아이템 개발 동기</strong>
+                                                <p>#가벼운뿔테안경, #가볍다, #티타늄보다튼튼한뿔테</p>
+                                            </li>
+                                            <li>
+                                                <strong>아이템 개요</strong>
+                                                <img src="../funding_front/images/2019/img_invest_item.png" alt="아이템 개요">
+                                                <p>우리가 뿔테 안경을 만들면서 고민한 건 딱 세 가지 입니다.<br>
+                                                    안경은 하루 10시간 이상 내 얼굴을 누르는 것. 그럼 동전보다 가볍게 만들자.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list04">
+                                        <strong>사업추진 전략</strong>
+                                        <ul class="dot-list-round">
+                                            <li>
+                                                <strong>주요 고객</strong>
+                                                <ul class="dot-list01-sm">
+                                                    <li>
+                                                        <em>성별 :</em> 여성
+                                                    </li>
+                                                    <li>
+                                                        <em>나이 :</em> 10대 이하, 20대
+                                                    </li>
+                                                    <li>
+                                                        <em>지역 :</em> 서울, 경기, 인천, 경기도
+                                                    </li>
+                                                </ul>
+                                                <p>예쁘면서도 가벼운 뿔테 안경을 좋아하는 온라인에 익숙한 전국의 10,20대 남녀</p>
+                                            </li>
+                                            <li>
+                                                <strong>마케팅 전략</strong>
+                                                <div class="marketing-graph">
+                                                    <ul class="chart-txt">
+                                                        <li>
+                                                            제품<span>Product</span>
+                                                        </li>
+                                                        <li>
+                                                            촉진<span>Promotion</span>
+                                                        </li>
+                                                        <li>
+                                                            유통<span>Price</span>
+                                                        </li>
+                                                        <li>
+                                                            가격<span>Place</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="graph">
+                                                        <canvas id="myChart" width="400" height="400"></canvas>
+                                                        <script>
+                                                            var ctx = document.getElementById('myChart');
+                                                            var myChart = new Chart(ctx, {
+                                                                type: 'radar',
+                                                                data: {
+                                                                    labels: ['제품', '촉진', '유통', '가격'],
+                                                                    datasets: [{
+                                                                        data: [13,17,15,12],
+                                                                        backgroundColor: ['rgba(255,168,95,0.2)'],
+                                                                        borderColor: ['rgba(255,168,95,1)'],
+                                                                        borderWidth: 1,
+                                                                        pointRadius: 4,
+                                                                        pointBorderColor: '#fff',
+                                                                        pointBackgroundColor: 'orange',
+                                                                        pointHoverBackgroundColor: '#fff',
+                                                                        pointHoverBorderColor: 'orange',
+                                                                        pointBorderWidth:1,
+                                                                    }]
+                                                                },
+                                                                options: {
+                                                                    legend: {
+                                                                        display: false,
+                                                                    },
+                                                                    maintainAspectRatio: true,
+                                                                    scale: {
+                                                                        ticks: {
+                                                                            beginAtZero: true,
+                                                                            max: 25,
+                                                                            min: 0,
+                                                                            stepSize: 5
+                                                                        },
+                                                                        pointLabels: {
+                                                                            fontSize: 15,
+                                                                            fontStyle:'bold',
+                                                                            fontColor:'transparent'
+                                                                        },
+                                                                        
+                                                                        gridLines: {
+                                                                            color: '#d4d4d4',
+                                                                            borderDash : [2]
+                                                                        },
+                                                                        angleLines: {
+                                                                            color: '#ebebeb'
+                                                                        },
+                                                                    },
+                                                                    tooltips: {
+                                                                      
+                                                                        backgroundColor: ['#5d6d82'],
+                                                                        titleFontSize :13,
+                                                                        displayColors:false,
+                                                                        callbacks: {
+                                                                            label: function (tooltipItem) {
+                                                                                return Number(tooltipItem.yLabel);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            });
+                                                            
+                                                            
+
+                                                        </script>
+                                                    </div>
+                                                    <div class="graph-desc">
+                                                        <p class="p-txt">
+                                                            <span>가격</span>과 <span>제품</span>에 강점을 가진 제품입니다.
+                                                        </p>
+                                                        <ul class="p-list">
+                                                            <li>
+                                                                <span class="ico"><img src="../funding_front/images/2019/ico_p_desc01.png" alt="제품" /></span>
+                                                                <div class="desc">
+                                                                    <strong>제품<span><span class="point">P</span>roduct</span></strong>
+                                                                    <p>패션 감각과 내구성을 동시에 잡은 신개념 뿔테<br>안경</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span class="ico"><img src="../funding_front/images/2019/ico_p_desc02.png" alt="가격" /></span>
+                                                                <div class="desc">
+                                                                    <strong>가격<span><span class="point">P</span></span>rice</strong>
+                                                                    <p>유사 제품 대비 낮은 가격<br>
+                                                                    50,000원</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span class="ico"><img src="../funding_front/images/2019/ico_p_desc03.png" alt="촉진" /></span>
+                                                                <div class="desc">
+                                                                    <strong>촉진<span><span class="point">P</span>romotion</span></strong>
+                                                                    <p>페이스북과 인스타그램을 통한 홍보 활동</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <span class="ico"><img src="../funding_front/images/2019/ico_p_desc04.png" alt="유통 " /></span>
+                                                                <div class="desc">
+                                                                    <strong>유통<span><span class="point">P</span>lace</span></strong>
+                                                                    <p>온라인 쇼핑몰 판매를 통한<br>
+                                                                    직접 배송</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list02">
+                                        <strong>펀딩 조건</strong>
+                                        <div class="data-board type02">
+                                            <table>
+                                                <caption>계좌당 금액, 목표 발행 계좌, 배당률, 펀딩 종료일, 배당금 지급 방법으로 구성된 표</caption>
+                                                <colgroup>
+                                                    <col style="width: 145px">
+                                                    <col>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="row">계좌당 금액</th>
+                                                        <td>
+                                                            <span>200,000</span>
+                                                            <span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png" alt="잎"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">목표 발행 계좌</th>
+                                                        <td>15계좌</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">배당률</th>
+                                                        <td>50%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">펀딩 종료일</th>
+                                                        <td>2020. 03. 20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">배당금 지급 방법</th>
+                                                        <td>프로젝트 달성 결과(펀딩 받은 금액)에 따른 배당률을 적용하여 배당금을 지급합니다.<br>
+                                                        (목표 금액의 70%을 넘게 펀딩 받지 못한 경우 펀딩한 금액은 전액 반환됩니다.)</td>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // 탭 fixable
+                $(window).scroll(function (e) {
+                    var scroller_anchor = $(".scroller-anchor").offset().top;
+                    if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed') {
+                        $('.scroller').css({
+                            'position': 'fixed',
+                            'top': '0px',
+                            'left': '0px',
+                            'width': '100%',
+                            'margin-top': '0px'
+                        }); $('.scroller-anchor').css('height', '135px');
+                    }
+                    else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative') {
+                        $('.scroller-anchor').css('height', '0px');
+                        $('.scroller').css({
+                            'position': 'relative',
+                            'margin-top': '0px'
+                        });
+                    }
+                });
+            </script>
+            <!-- //container -->
+        </div>
+        <div id="footer">
+        <!-- footer -->
+            <div class="footer-utill-area">
+                <ul class="footer-utill">
+                    <li><a href="/noti/useInqList.do">이용문의</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                </ul>
+            </div>
+            <!-- 2018-04-17 디자인요청 수정 -->
+            <div class="footer-cont">
+                <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                <ul class="site_link">
+                    <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                    <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                    <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                </ul>
+            </div>
+            <!-- //2018-04-17 디자인요청 수정 -->
+        </div>
+        <!-- //footer -->
+            
+    </div>
+    <!-- //wrap -->
+</body>
+</html>

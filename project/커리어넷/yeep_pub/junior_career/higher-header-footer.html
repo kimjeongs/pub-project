@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-90429556-4"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>커리어넷</title>
+    <!-- 공통으로 쓰이는 js -->
+    <script src="http://211.253.133.40:14001/js/common/core.js"></script>
+    <script src="http://211.253.133.40:14001/js/common/string.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/common/utils.js"></script>
+    <script src="http://211.253.133.40:14001/js/common/axios.js"></script>
+    <script src="http://211.253.133.40:14001/js/common/vue.js"></script>
+    <script src="https://unpkg.com/vue-async-computed@3.4.1"></script>
+    <script src="http://211.253.133.40:14001//web/js/share.js"></script>
+    <script src="http://211.253.133.40:14001/js/momentjs/moment.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/momentjs/moment-with-locales.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/momentjs/moment-range.min.js"></script>
+    <script src="http://211.253.133.40:14001//web//js/swal/sweetalert2.js?v=1"></script>
+    <script src="http://211.253.133.40:14001/js/videojs/ie8/videojs-ie8.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/videojs/video.js"></script>
+    <script src="http://211.253.133.40:14001/js/validator.js"></script>
+    <script src="http://211.253.133.40:14001/js/flatpickr/flatpickr.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/flatpickr/ko.js"></script>
+    <script src="http://211.253.133.40:14001/js/velocity.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/js.cookie-2.2.0.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/Chart.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/chartjs-plugin-datalabels.js"></script>
+    <script src="http://211.253.133.40:14001/js/html2canvas.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/jspdf.min.js"></script>
+    <script src="http://211.253.133.40:14001/js/common/string.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001/web/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001/web/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001/web/css/content.css" />
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001/web/js/swal/sweetalert2.css" />
+    <link rel="stylesheet" href="http://211.253.133.40:14001//js/videojs/video-js.css" />
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001//js/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001//js/common/vue2-animate.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/css/print.css"/> -->
+    <style>
+        #ct {outline: none;}
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="http://211.253.133.40:14001/web/css/css-loader.css" />
+    <style> #ct {background-color: white;} </style>
+	
+    <link rel="stylesheet" type="text/css" href="css/junior_psycho.css" /> <!-- 2019-12-13 주니어 고학년 흥미검사css -->
+
+</head>
+<body class="print-body">
+<div id="wrap" v-cloak="" class="junior-psycho-wrap"> <!-- 2019-12-13 클래스추가 'junior-psycho-wrap' -->
+    <div class="header_common_test header_dev_lightgreen printhide">
+        <div class="test_inner_header">
+			<h1 class="tit_logo">
+				<a href="http://www.career.go.kr/cnet/front/main/main.do" class="link_logo">
+					<img src="images/psycho/logo_psycho_header.png" alt="주니어 커리어넷" /> <!-- 2019-12-13 로고이미지 변경 -->
+				</a>
+			</h1>
+			<div id="gnb" class="gnb_test">
+				<div class="item_menu" v-bind:class="{gnb_on:isMenu}" v-on:click="fn_menu_close()">
+					<a href="javascript:void(0)" class="btn_gnb" v-on:click="isMenu = !isMenu" title="주니어 커리어넷으로 바로가기(새창 열림)">
+						<img src="images/psycho/btn_psycho_gohome.png" alt="주니어 커리어넷 홈" /> <!-- 2019-12-13 홈버튼 변경 -->
+					</a>
+				</div>
+
+			</div>
+			<h2 class="tit_cont">
+				<span class="txt_tit">{{ testNm }}</span>
+			</h2>
+			<div v-if="aroNo != null &amp;&amp; aroNo != '' &amp;&amp; !isPopup" class="btn_tempsave2">
+				<a v-on:click="go_otherinspct()" class="btn-round-head ico_another">다른검사 확인하기</a>
+			</div>
+			<div class="item_share" style="float: right;">
+				<strong class="hidden">검사 결과 메뉴</strong>
+				<ul class="list_item">
+					<li>
+						<a href="javascript:window.print()" class="btn_item" title="인쇄">
+							<span class="ico_common ico_print">인쇄</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="btn_item" title="검사결과 다운로드">
+							<span class="ico_common ico_down" v-on:click="fn_download()">검사결과 다운로드</span>
+						</a>
+					</li>
+					<li v-bind:class="{on: isEmail}">
+						<!-- [개발]메일발송 레이어 활성화시 클래스 'on' 추가 -->
+						<a href="javascript:void(0)" class="btn_item" v-on:click="fn_menu_close('isEmail')" title="이메일 보내기">
+							<span class="ico_common ico_mail">메일발송</span>
+						</a>
+						<div class="layer_mail">
+							<div class="common_active_layer">
+								<div class="layer_head head_type_line">
+									<strong class="tit_layer">메일발송</strong>
+								</div>
+								<div class="layer_body">
+									<table class="common_tbl">
+										<caption>
+											<span class="hidden">메일 발송을 위한 작성표</span>
+										</caption>
+										<colgroup>
+											<col width="132" />
+										</colgroup>
+										<tbody>
+										<tr>
+											<th scope="row">이메일 제목</th>
+											<td>[커리어넷]{{ user.name }}님의 {{ testNm }} 결과입니다.</td>
+										</tr>
+										<tr>
+											<th scope="row">이메일 주소</th>
+											<td>
+												<label for="inpEmail" class="hidden">이메일 주소 입력</label>
+												<div class="common_ipt_wrap">
+													<input type="text" id="inpEmail" class="ipt_txt_comm" placeholder="이메일 주소 입력" v-model="user.email" />
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="layer_foot">
+									<div class="common_btn_wrap">
+											<span class="inner_btn">
+											<a href="javascript:void(0)" role="button" class="btn_comm btn_active" v-on:click="fn_send_email()">메일발송</a>
+										</span>
+									</div>
+									<button type="button" class="btn_close" v-on:click="isEmail = !isEmail">
+										<span class="ico_common">닫기</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li v-bind:class="{on: isShare}">
+						<!-- [개발]메일발송 레이어 활성화시 클래스 'on' 추가 -->
+						<a href="javascript:void(0)" class="btn_item" v-on:click="fn_menu_close('isShare')" title="공유하기">
+							<span class="ico_common ico_share">공유하기</span>
+						</a>
+						<div class="layer_share">
+							<div class="common_active_layer">
+								<div class="layer_head head_type_line">
+									<strong class="tit_layer">공유하기</strong>
+								</div>
+								<div class="layer_body">
+									<ul class="common_list_sns">
+										<li>
+											<a href="javascript:shareLinkFaceBook()" class="link_sns">
+												<span class="ico_common ico_facebook">페이스북</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:shareLinkTwitter()" class="link_sns">
+												<span class="ico_common ico_twitter">트위터</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:shareLinkKakaostory()" class="link_sns">
+												<span class="ico_common ico_kstory">카카오스토리</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:shareLinkClassting()" class="link_sns">
+												<span class="ico_common ico_classting">클래스팅</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="layer_foot">
+									<div class="common_ipt_wrap type_url">
+										<label for="iptUrl" class="hidden">링크 주소</label>
+										<input type="text" id="iptUrl" class="item_url" v-bind:value="get_link()" readonly="readonly" />
+										<button type="button" class="btn_copy" v-on:click="fn_copy()">복사</button>
+									</div>
+									<button type="button" class="btn_close" v-on:click="isShare = !isShare">
+										<span class="ico_common">닫기</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+    <div id="ct" class="ct_dev ct_dev_lightgreen" tabindex="-1">
+        <div class="inner_default">
+            <div class="cont_result">
+                <h3 class="tit_result"><span class="txt_inner">진로흥미탐색(고학년용) 결과표</span></h3>
+                <p class="txt_guide">본 진로흥미탐색의 결과는 여러분들이 진로 선택을 할 때 고려해야 할 여러 가지 사항 중의 하나로서, 흥미뿐만 아니라 여러분의 성격, 능력, 가치, 직업정보 등을 함께 고려하는 것이 바람직한 진로 선택 과정입니다.</p>
+
+                <!-- isMember , user:{name:'',gneder:'',school:'',grade:'',niceId:''} , inspct:{beginDtm:'',grade:'',sexdstn:''}-->
+                <div>
+					<table class="tbl_result">
+						<caption class="hidden">검사자 정보</caption>
+						<thead>
+						<tr><th scope="col">이름</th><th scope="col">성별</th><th scope="col">소속</th><th scope="col">학년<span v-if="inspct.trgetSe =='100206' || inspct.trgetSe =='100207'">(나이)</span></th><th scope="col">나이스식별번호</th><th scope="col">검사일</th></tr>
+						</thead>
+						<tbody>
+						<tr class="ft_type2" v-if="!isMember">
+							<td>{{inspct.nm == null ? '-' : inspct.nm}}</td>
+							<td>{{inspct.sexdstn == '100323' ? '남자':'여자'}}</td>
+							<td>{{inspct.schul == null ? '-' : inspct.schul}}</td>
+							<td>{{inspct.grade == null ? '-' : inspct.grade+'학년'}}<span v-if="inspct.trgetSe =='100206'">{{inspct.grade == null ? '' : '(' + (inspct.grade+13) + '세)'}}</span><span v-if="inspct.trgetSe =='100207'">{{inspct.grade == null ? '' : '(' + (inspct.grade+16) + '세)'}}</span></td>
+							<td>-</td>
+							<td>{{get_dtm(inspct.beginDtm)}}</td>
+						</tr>
+						<tr class="ft_type2" v-if="isMember">
+							<td>{{inspct.nm == null ? '-' : user.name}}</td>
+							<td>{{inspct.sexdstn == '100323' ? '남자':'여자'}}</td>
+							<td>{{inspct.schul == null ? '-' : inspct.schul}}</td>
+							<td>{{inspct.grade == null ? '-' : inspct.grade+'학년'}}<span v-if="inspct.trgetSe =='100206'">{{inspct.grade == null ? '' : '(' + (inspct.grade+13) + '세)'}}</span><span v-if="inspct.trgetSe =='100207'">{{inspct.grade == null ? '' : '(' + (inspct.grade+16) + '세)'}}</span></td>
+							<td>{{inspct.neis}}</td>
+							<td>{{get_dtm(inspct.beginDtm)}}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+                <strong class="tit_result_item">
+                    <span class="txt_tit">1. {{inspct.id > 0 ? user.name + '님의 흥미유형 탐색 결과 (T점수)' : '나의 흥미유형 탐색 결과(T점수)' }}</span>
+                </strong>
+                <div class="pagebreaker"></div>
+                <strong class="tit_result_item">
+                    <span class="txt_tit">2. {{inspct.id > 0 ? user.name + '님의 주요 흥미유형과 관련된 특성 및 추천 직업' : '나의 주요 흥미유형과 관련된 특성 및 추천 직업' }}</span>
+                </strong>
+                <div class="pagebreaker"></div>
+                <strong class="tit_result_item">
+                    <span class="txt_tit">3. {{inspct.id > 0 ? user.name + '님의 흥미유형과 관련된 학습방법' : '나의 흥미와 관련된 학습방법' }}</span>
+                </strong>
+                <div class="pagebreaker"></div>
+                <strong class="tit_result_item">
+                    <span class="txt_tit">4. 진로흥미탐색이란?</span>
+                </strong>
+                <div class="pagebreaker"></div>
+                <strong class="tit_result_item">
+                    <span class="txt_tit">5. 합리적인 진로선택 과정</span>
+                </strong>
+                <strong class="tit_result_item">
+                    <span class="txt_tit">6. 응답성실도</span>
+                </strong>
+                <div class="pagebreaker"></div>
+                <div class="box_common_service printhide">
+                    <strong class="tit_box">이런 활동을 해보아요.</strong>
+                    <div class="item_box txt_item_box">
+                        <p class="service_desc">세상에 존재하는 무궁무진한 직업들 중에서 내가 가장 행복하게 일할 수 있는 직업은 무엇일까요? 많이 보고 들을수록 그 해답이 나에게 가까워질 수 있습니다.</p>
+                    </div>
+                    <div class="item_box txt_check_box">
+                        <strong class="tit_item">진로흥미탐색 결과와 관련된 활동</strong>
+                        <div class="item_inner">
+                            <span class="check_info">
+                                <span class="desc_info">나의 유형의 강점과 약점을 정리해보기</span>
+                                <span class="desc_info">나의 유형의 대표직업 중 궁금한 직업에 대한 정보 탐색해보기</span>
+                                <span class="desc_info">나의 과거, 현재, 미래를 살펴보고 내가 좋아하는 것을 떠올려보기 </span>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="list_service"> <!-- 2019-12-13 링크 및 문구수정 -->
+                        <li><a href="/jr/counsel/ins" class="link_service service1" target="_blank">진로상담 받기</a></li>
+                        <li><a href="/jr/counsel/list" class="link_service service2" target="_blank">공개상담 살펴보기</a></li>
+                        <li><a href="/jr/juniorjob/list" class="link_service service3" target="_blank">주니어 직업정보</a></li>
+                        <li><a href="/jr/nextjob/list" class="link_service service4" target="_blank">미래 직업정보</a></li>
+                    </ul>
+                    <div class="item_box">
+                        <strong class="tit_item">교사 및 학부모를 위한 정보</strong>
+                        <div class="item_inner">
+                            진로흥미탐색 (고학년용) 활용안내서를 다운로드 받을 수 있습니다.
+                            <a href="http://www.career.go.kr/cnet/front/commbbs/courseMenu/commBbsView.do?BBS_SEQ=139993" class="link_down" target="_blank"><span class="hidden">다운로드</span></a>
+                        </div>
+                    </div>
+                    <div class="item_box">
+                        <strong class="tit_item">전국 17개 시도교육청의 홈페이지에 방문해보세요.</strong>
+                        <div class="item_inner">
+                            <q-select2 v-bind:options="edus" v-bind:selected.sync="edu" placeholder="지역"></q-select2>
+                            <a href="javascript:void(0)" class="btn_visit" v-on:click="go_edu()">방문하기</a>
+                        </div>
+                    </div>
+                    <div class="item_box">
+                        <strong class="tit_item">우리 지역 진로교육센터를 찾아가보세요. 전문상담원들이 여러분을 기다리고 있어요.</strong>
+                        <div class="item_inner">
+                            <q-select2 v-bind:options="edcs" v-bind:selected.sync="edc" placeholder="지역"></q-select2>
+                            <a href="javascript:void(0)" class="btn_visit" v-on:click="go_edc()">방문하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box_bottom_service printhide">
+			<div class="wrap_more">
+					<span class="info_data" v-if="aroNo != null &amp;&amp; aroNo != '' &amp;&amp; !isPopup">
+						<a v-on:click="go_otherinspct()" class="link_more" target="_blank">다른검사 확인하기</a>
+					</span> 
+				<span class="info_data" v-if="aroNo == null || aroNo == ''">
+					<a href="http://www.career.go.kr/cnet/front/examen/inspctMain.do" class="link_more" target="_blank">심리검사목록으로 이동</a>
+					<a href="#" class="link_more" target="_blank">주니어 커리어넷 홈페이지로 이동</a> <!-- 2019-12-13 문구수정 -->
+				</span>
+				<a href="#" class="link_top">TOP</a>
+			</div>
+		</div>
+    </div>
+    <div id="ft" class="printhide">
+    <div class="wrap_footer">
+        <div class="inner_footer">
+            <div class="ft_top">
+                문의사항이 있을 경우 이용문의를 이용해주세요. <!-- 2019-12-13 커리어넷 문구삭제 -->
+                <a href="http://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do" class="link_qna">이용문의바로가기 ></a>
+            </div>
+            <dl class="desc_oper">
+                <dt>운영 :</dt>
+                <dd>한국직업능력개발원 국가진로교육연구본부 진로교육센터</dd>
+                <dt>지원 :</dt>
+                <dd>교육부</dd>
+            </dl>
+            <strong class="hidden">연구 및 서비스 분야</strong>
+            <div class="set_research">
+                <span class="info_research">진로지도 관련 정책 및 제도운영에 대한 연구</span>
+                <span class="info_research">직업·진로정보 생산보급</span>
+                <span class="info_research">직업 및 직업의 의식연구</span>
+            </div>
+            <div class="set_research">
+                <span class="info_research">직업안정정책 및 제도에 관한 연구</span>
+                <span class="info_research">직업·진로 관련 검사도구 및 프로그램 개발 및 보급</span>
+            </div>
+            <div class="set_research">
+                <span class="info_research">진로상담 및 교육 서비스</span>
+                <span class="info_research">진로관련 전문가 연수</span>
+            </div>
+            <em class="copyright">
+                COPYRIGHTS © KRIVET ALL RIGHTS RESERVED.
+            </em>
+            <div class="set_link">
+                <strong class="hidden">사이트 링크</strong>
+                <ul class="list_site">
+                    <li>
+                        <a href="http://www.moe.go.kr/main.do" target="_blank" title="새창 열림" class="link_site site_edu">
+                            <span class="ico_common">교육부</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.krivet.re.kr/" target="_blank" title="새창 열림" class="link_site site_krivet">
+                            <span class="ico_common">한국직업능력개발원</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<input id="seq" type="hidden" value="38918277" /><div id="divLoading" class="loader loader-default" data-text="생성중"></div></body>
+
+<!-- 사용자 js -->
+
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        var app = new Vue({
+            el: '#wrap',
+            data: {
+                inspctSeq:''
+                , testNm:'진로흥미탐색(고학년용)'
+                , user: {name:'비회원'}
+                , result: {}
+                , inspct:{}
+                , prev: null
+                ,isMenu:false
+                ,isMember:false
+                , aroNo: null
+                ,rmap:[
+                    {
+                        mscl: '101950'
+                        ,initial:'R'
+                        ,enname: 'Realistic'
+                        ,name: '현실형'
+                        ,comment: [
+                            '손재주가 있어 만들기를 잘하고 기계를 좋아하며, 여러 가지 장비를 잘 다룬다.'
+                            ,'추상적이며 깊은 생각이 필요한 문제를 다루는 것보다, 활동적이고 몸을 움직여서 하는 일을 더 좋아한다.'
+                            ,'솔직하고 성실하지만, 자신의 생각이나 감정을 말로 표현하는 것을 어려워 할 수 있다.'
+                            ,'자신의 행동에 대한 성과가 뚜렷하고 즉각적으로 나타날 때 보람을 느낀다.'
+                            ,'예를 들어, 자동차를 다루는 엔지니어는 자동차를 고친 후에 제대로 잘 작동하는 것을 보면서 뿌듯함을 느낀다.']
+                        ,cur:['나는 책상에 앉아서 공부하는 것보다 여러 가지 체험 활동을 하며 공부(운동, 견학 등)하는 것을 좋아하는 편이다.'
+                            ,'나는 글을 쓰고 발표하는 과제보다 직접 손으로 무엇인가 만들거나 실습하는 과제를 더 좋아하는 편이다.']
+                        ,new:['기왓장도 함께 맞들면 가볍답니다. 어려운 문제풀이 공부를 친구들과 함께 하다보면 재밌는 공부의 맛을 느낀답니다.'
+                            ,'내가 해결할 수 없는 문제라고 포기하지 마세요. 주변 사람에게 끝까지 물어보아 해결하는 습관을 가지세요. 분명 놀라운 학습 성과를 경험하게 될 것입니다.']
+
+                    }
+                    ,{
+                        mscl: '101951'
+                        ,initial:'I'
+                        ,name: '탐구형'
+                        ,enname: 'Investigative'
+                        ,comment: [
+                            '꼼꼼하게 관찰하는 것을 좋아하며, 내용을 이해하기 위해 자료 수집 등에 노력을 기울인다.'
+                            ,'논리적으로 생각하는 것을 좋아하며, 창의적으로 새로운 일에 도전하는 것을 좋아한다.'
+                            ,'혼자서 하는 일에 집중하는 경우가 많기 때문에 여러 친구들과 어울리지 않거나 수줍음을 타는 것으로 보일 수도 있다.'
+                            ,'자유로운 상황에서 자신의 지적호기심을 채우는 활동을 할 때 기쁨을 느낀다.'
+                            ,'예를 들면, 대학에서 연구를 하면서 새로운 것을 발견하거나 자연적•사회적 현상들을 분석하여 왜 그런지를 알아갈 때 만족감을 얻는다.']
+                        ,cur:['나는 선생님이 정해준 주제를 깊이 탐구하여 개념과 원리를 이해하고 나만의 방법으로 차근차근 공부하는 편이다.'
+                            ,'나는 조용히 집중할 수 있는 곳에서 혼자 공부하는 것을 좋아한다.']
+                        ,new:['혼자서 공부하는 것 외에도 다양한 학습방법을 시도해보는 습관으로부터 공부의 자신감이 생깁니다.'
+                            ,'친구들의 의견을 통하여 내가 알지 못하는 것을 이해하며 다양한 논리의 관점을 배울 수 있답니다.']
+
+                    }
+                    ,{
+                        mscl: '101952'
+                        ,initial:'A'
+                        ,name: '예술형'
+                        ,enname: 'Artistic'
+                        ,comment: [
+                            '상상력과 감수성이 풍부하여 자기만의 세계로 빠져들어 상상하기를 좋아한다.'
+                            ,'자신에게 어울리는 스타일을 잘 찾아내고 이를 자신만의 독특한 방식으로 표현한다.'
+                            ,'학교에서 배우는 과목 중에 국어, 음악, 미술을 좋아하는 친구들이 많다.'
+                            ,'정해진 규칙이나 틀에 박힌 생활을 싫어하고, 독립적으로 일하는 것을 더 좋아한다.'
+                            ,'새로운 것을 독창적으로 표현하고 만들어 낼 때 보람을 느낀다.'
+                            ,'매일매일 무언가 다른 것, 새로운 방식으로 자신만의 것을 만들어낼 때 만족감을 얻는다.'
+                            ,'예를 들면, 미디어콘텐츠 창작자는 나만의 영상을 만들고 편집하여 여러 사람들에게 자신의 결과물을 보여줄 때 만족감을 얻는다.']
+                        ,cur:['나는 틀에 박힌 과제보다는 나만의 독창적인 아이디어를 낼 수 있는 과제를 좋아하고 정성을 쏟는 편이다.'
+                            ,'나는 좋아하는 문제(과목)부터 먼저 풀고 가능하면 다양한 방식(그림, 노래, 단어 등)으로 상상하며 공부하는 것을 좋아한다.']
+                        ,new:['하고 싶을 때 원하는 공부만 하기보다, 매일매일 성실하게 하나씩 공부하다 보면 ‘공부의 힘’이 무럭무럭 자라난답니다.'
+                            ,'나만의 공부하는 시간·장소·자리를 만들어보세요. 공부에 놀라운 변화가 생깁니다.']
+
+                    }
+                    ,{
+                        mscl: '101953'
+                        ,name: '사회형'
+                        ,initial:'S'
+                        ,enname: 'Social'
+                        ,comment: [
+                            '다른 사람의 감정을 잘 이해하고 함께 공감해주며, 친구들과 좋은 관계를 유지하길 원한다.'
+                            ,'어려운 사람을 보면, 도움을 주고 싶어하기 때문에 학교와 가정에서 봉사하는 것을 좋아한다.'
+                            ,'다른 사람들에게 무엇인가를 설명하고, 가르치거나, 도와주는 활동을 좋아한다.'
+                            ,'사물만을 대상으로 하는 활동보다는 사람들과 관련된 일을 더 좋아한다.'
+                            ,'다른 사람들의 문제를 해결하는데 도움을 주고 성장시켜 준다는 느낌을 받을 때 만족감을 느낀다.'
+                            ,'예를 들어, 어린 아이나 청소년들을 교육하고 그들이 변화하는 모습을 볼 때 보람을 느낀다.']
+                        ,cur:['나는 혼자 공부하기 보다는 친구들과 함께 어울리며 하는 것을 좋아한다.'
+                            ,'나는 어려운 문제에 부닥치면 혼자 해결하기보다 주변사람에게 이것저것 물어보면서 해결하는 편이다.']
+                        ,new:['때로는 혼자 집중해서 공부하는 것도 시도해 보세요.'
+                            ,'자기주도적인 학습 습관을 형성하면 학습 성과가 쑥쑥 올라갑니다.']
+
+                    }
+                    ,{
+                        mscl: '101954'
+                        ,name: '진취형'
+                        ,initial:'E'
+                        ,enname: 'Enterprising'
+                        ,comment: [
+                            '친구들과 활동을 할 때 주로 리더 역할을 하고, 사교적이다.'
+                            ,'다른 친구들을 설득하고 토론하는 것을 좋아한다.'
+                            ,'자신감이 있으며, 활기차고, 자기주장이 뚜렷하다.'
+                            ,'모험을 시도하는 것을 두려워하지 않고 경쟁적인 활동에 참여한다.'
+                            ,'외향적이고 적극적인 성격으로 주목받기를 원한다.'
+                            ,'목표를 설정하고 달성하는 것을 좋아하는 반면, 장시간 탐구하거나 이론을 파악하는 활동에는 어려움을 느낄 수 있다.'
+                            ,'자신의 주장을 다른 사람에게 효과적으로 설득하거나, 목표한 일을 달성했을 때 만족감을 느낀다.'
+                            ,'예를 들어, 학급에서 대표를 맡아서 축제를 기획할 때 친구들에게 역할을 적절하게 나눠주고 효율적으로 계획을 세워 축제를 성공적으로 이끌어 냈을 때 보람을 느낀다.']
+                        ,cur:['나는 특정 주제에 대한 조별토론과 내가 돋보이는 과제에 참여하여 리더십을 발휘하는 것을 좋아하는 편이다.'
+                            ,'나는 시험범위 전부를 성실하게 공부하기보다는 시험 예상 문제를 선택하여 공부하는 편이다.']
+                        ,new:['하나를 이해하고 다음 단계에서 두 개를 이해하며 점차 응용력을 확대하면 공부할 때 공부의 재미를 느끼게 된답니다. 물론, 친구들이 부러워하고 리더십도 쑥쑥!!'
+                            ,'항상 모든 범위를 다 공부하고 시험을 치르겠다는 결심을 해보세요. 성실하게 노력하면 좋은 결과를 얻게 될 것입니다.']
+
+                    }
+                    ,{
+                        mscl: '101955'
+                        ,name: '관습형'
+                        ,initial:'C'
+                        ,enname: 'Conventional'
+                        ,comment: [
+                            '어떤 일에 대해 미리 준비하고 대비하는 성향이 강하다.'
+                            ,'노트에 기록하거나 정리하는 꼼꼼한 일을 잘 한다.'
+                            ,'성실하며, 세부사항을 잘 다루고 책임감 있게 자신에게 주어진 일을 잘 수행한다.'
+                            ,'숫자를 이용하는 활동을 좋아하며, 약속을 잘 지키고 학교 규칙과 질서를 잘 지킨다.'
+                            ,'창의성을 발휘하는 일이나 다른 사람을 이끌어가는 활동보다는 잘 짜여진 규칙 안에서 일하는 것을 좋아한다.'
+                            ,'자신의 노력으로 인해 학급이나 조직이 원활하게 돌아갈 때 보람을 느낀다.'
+                            ,'예를 들면, 회계사는 회사의 수익과 지출 등이 적힌 보고서를 읽고 숫자가 맞는지 꼼꼼하게 검토할 때 만족감을 느낀다.']
+                        ,cur:['나는 공부할 때 가능하면 정해진 내 자리에서 교과서 순서대로 꼼꼼하게 살펴보며 공부하는 편이다.'
+                            ,'나는 어려운 문제를 풀 때, 가능하면 기존에 알고 있거나 수업에서 배운 그대로의 방법으로 해결하는 편이다.']
+                        ,new:['시간 관리를 하면서 자신에게 가장 취약한 부분을 먼저 공부하는 것이 공부를 잘하는 비결이랍니다.'
+                            ,'다른 사람들의 문제해결 방식이나 공부하는 방법에 관심을 가져보고 이들의 방법을 적절하게 내 공부하는 방식에 적용해 보세요. 분명, 큰 학습 성취를 맛보게 될 것입니다.']
+
+                    }
+                ]
+                , rjobs:[]
+                ,scores:[]
+                , sorted:[{mscl:{name:''}},{mscl:{name:''}}]
+                ,type:'R-C'
+                ,isMoreShow: false
+                ,edus:[{ value:'http://www.sen.go.kr', text:'서울특별시'},{ value:'http://www.pen.go.kr', text:'부산광역시'},{ value:'http://www.dge.go.kr', text:'대구광역시'},{ value:'http://www.ice.go.kr', text:'인천광역시'},{ value:'http://www.gen.go.kr', text:'광주광역시'},{ value:'http://www.dje.go.kr', text:'대전광역시'},{ value:'http://www.use.go.kr', text:'울산광역시'},{ value:'http://www.sje.go.kr', text:'세종특별자치시'},
+                    { value:'http://www.goe.go.kr', text:'경기도'},{ value:'http://www.gwe.go.kr', text:'강원도'},{ value:'http://www.cbe.go.kr', text:'충청북도'},{ value:'http://www.cne.go.kr', text:'충청남도'},{ value:'http://www.jbe.go.kr', text:'전라북도'},{ value:'http://www.jne.go.kr', text:'전라남도'},{ value:'http://www.gbe.kr', text:'경상북도'},{ value:'http://www.gne.go.kr', text:'경상남도'},{ value:'http://www.jje.go.kr', text:'제주특별자치도'}]
+                ,edcs:[{text:'서울특별시',value:'https://www.jinhak.or.kr/uat/uia/main.do'},{text:'부산광역시',value:'https://dream.pen.go.kr/center/'},{text:'대구광역시',value:'http://www.dge.go.kr/jinhak/main.do'},{text:'인천광역시',value:'http://www.ice.go.kr/main.do?s=jinhak'},{text:'광주광역시',value:'http://jinhak.gen.go.kr/'},{text:'대전광역시',value:'http://www.edurang.net/main.do?s=course'},{text:'울산광역시',value:'http://career.use.go.kr/main.do'},{text:'세종특별자치시',value:'http://career.sje.go.kr/index.do?sso=ok'},{text:'경기도',value:'https://jinhak.goedu.kr/'},{text:'강원도',value:'https://jinro.gwe.go.kr/'},{text:'충청북도',value:'http://jinro.cbe.go.kr/home/main.php'},{text:'충청남도',value:'http://career.edus.or.kr/main.do?s=career'},{text:'전라북도',value:'http://jinro.jbe.go.kr/main/main.jbe'},{text:'전라남도',value:'http://jdream.jne.go.kr/'},{text:'경상북도',value:'http://jinhak.gbe.kr/'},{text:'경상남도',value:'http://www.gne.go.kr/jinro/index.gne'},{text:'제주특별자치도',value:'http://www.jje.go.kr/jinro/index.jje'}]
+                ,edc:''
+                ,edu:''
+                , isPrev :false
+                , chart : null
+                , curChartData:[]
+                , prevChartData:[]
+                , chartData:{}
+                , email:''
+                , isEmail:false
+                , isShare:false
+                , tempdata:null
+                , getSh_Link:'http://www.career.go.kr/cnet/front/examen/course_search_list.do'
+                , getSh_Title:'커리어넷에서 진로흥미탐색(고학년)을 실시했습니다.'
+            },
+            methods: {
+                get_dtm:function(dtm){ return moment(dtm).format("YYYY.MM.DD");}
+                ,get_rjobs:function(mscl) {
+                    for(var i = 0; i < this.rjobs.length ;i++) {
+                        if(this.rjobs[i].msclNo == mscl) return this.rjobs[i].list;
+                    }
+                    return [];
+                }
+                ,get_responsestatus:function(){
+                    var f = 0 , l = 0  , msg = [
+                        ["응답 패턴, 응답 시간에 이상이 없습니다.","응답 시간이 지나치게 짧아 재검사를 요청했습니다."]
+                        ,["응답 패턴이 이상이 있어 재검사를 요청했습니다.","응답 시간, 패턴에 이상이 있어 재검사를 요청했습니다."]
+                    ];
+                    if(moment(this.inspct.endDtm).diff(moment(this.inspct.beginDtm)) < 2*60*1000) f = 1;
+                    // 응답 분석
+                    var temp = String(this.inspct.answers);
+                    var anss = temp.split(' ');
+                    var atbl = [];
+                    for(var i = 0 ; i < anss.length ; i++) {
+                        var ans = anss[i].split('=');
+                        if(atbl[ans[1]] == null) atbl[ans[1]] = 0;
+                        atbl[ans[1]] += 1;
+                    }
+                    for(var i = 0 ; i < atbl.length ; i++) {
+                        if(atbl[i] > 19) {
+                            l = 1;
+                            break;
+                        }
+                    }
+                    return msg[f][l];
+                }
+                ,go_edu:function(){
+                    if(this.edu != '') window.open(this.edu,"");
+                }
+                ,go_edc:function(){
+                    if(this.edc != '') window.open(this.edc,"");
+                }
+                ,prevBtn:function(){
+                    this.drawRadar();
+                }
+                ,drawRadar :function() {
+                    this.chartData = {
+                        labels: ["R 현실형", "I 탐구형", "A 예술형", "S 사회형", "E 진취형", "C 관습형"],
+                        datasets: [{
+                            backgroundColor: "rgba(252, 174, 73, 0.5)"
+                            ,data: this.scores.map(function(item){ return item.t;})
+                        }]
+                    };
+                    if(this.prevChartData != null && this.prevChartData.length > 0 && this.isPrev) {
+                        this.chartData.datasets[1] = { backgroundColor: "rgba(186, 208, 219, 0.5)", data: this.prevChartData };
+                    }
+                    if(app.chart != null) app.chart.destroy();
+
+                    app.chart = new Chart('chart-0', { type: 'radar', data: this.chartData
+                        , options: {
+                            showTooltips: true
+                            , layout:{padding:10}
+                            , legend: {display: false}
+                            , responsive: true
+                            , maintainAspectRatio: true
+                            , scale: {
+                                ticks: { display: false,beginAtZero: true, max: 100 , stepSize : 20 }
+                                ,pointLabels: { fontSize: 18 }
+                            }
+                            ,plugins: {
+                                datalabels: {
+                                    color: function(context) {
+                                        if(context.datasetIndex == 0) {
+                                            if(app.scores[context.dataIndex].rank == 1 || app.scores[context.dataIndex].rank == 2) {
+                                                return '#269bed';
+                                            }
+                                        }
+                                        return '#333';
+                                    }
+                                    ,padding: 4
+                                    ,font: {
+                                        size: 18
+                                        ,weight: 'bold'
+                                    }
+                                    ,align: function(context) {
+                                        return 'end';
+                                    }
+                                    ,anchor: function(context) {
+                                        return 'end';
+                                    }
+                                    ,formatter: function(value, context) {
+                                        if(context.datasetIndex == 0) {
+                                            if (app.scores[context.dataIndex].rank == 1 || app.scores[context.dataIndex].rank == 2) {
+                                                return '★ ' + value;
+                                            }
+                                            return value;
+                                        }
+                                        return '';
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+                ,fn_send_email:function(){
+                    var rex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                    if(rex.test(this.user.email) == false) {
+                        swal('이메일 주소를 형식에 맞게 올바르게 입력해주세요.');
+                        return false;
+                    }
+                    var param = {
+                        mailCd:'51',
+                        toId: this.isMember ? this.inspct.id : '',
+                        toName:this.user.name,
+                        toEmail:this.user.email,
+                        fromEmail:'webmaster@career.go.kr',
+                        fromName:'커리어넷',
+                        Subject:'[커리어넷]'+this.user.name+'님의 '+this.testNm+' 결과입니다.',
+                        mapLong: window.location.href
+                    };
+                    axios.post("/api/psycho/sendmail",param).then(function (response) {
+                        swal('메일이 발송 되었습니다.');
+                        app.isEmail = false;
+                    });
+                }
+                ,fn_download33:function () {
+                    setTimeout(function() {
+                        document.querySelector("#divLoading").classList.add("is-active");
+                        html2canvas(document.getElementById("ct"), {
+                            onrendered: function (canvas) {
+                                var imgData = canvas.toDataURL('image/jpeg');
+                                var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
+                                var imgHeight = canvas.height * imgWidth / canvas.width;
+                                var doc = new jsPDF('p', 'mm',[210, imgHeight]);
+                                var position = 0;
+                                doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                                doc.save('report'+moment().format('YYYYMMDDHHMMSS')+'.pdf');
+                                document.querySelector("#divLoading").classList.remove("is-active");
+                                swal('결과표가 다운로드 되었습니다.');
+                            }
+                        });
+                    }, 500);
+                }
+                ,fn_download:function () {
+                    document.querySelector("#divLoading").classList.add("is-active");
+                    var href = window.myredirecturl + '/cnet/front/inspect/testpdfnew.do?QESTNR_SEQ='+app.inspct.qestnrSeq+'&INSPCT_SEQ='+app.inspct.seq ;
+                    axios({
+                        url: href,
+                        method: 'GET',
+                        responseType: 'blob', // important
+                    }).then(function(response){
+                        if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                            var blob = new Blob([response.data], {type:'application/octet-stream'});
+                            window.navigator.msSaveBlob(blob, 'report'+moment().format('YYYYMMDDHHMMSS')+'.pdf');
+                        } else {
+                            var url = window.URL.createObjectURL(new Blob([response.data]));
+                            var link = document.createElement('a');
+                            link.href = url;
+                            link.setAttribute('download', 'report'+moment().format('YYYYMMDDHHMMSS')+'.pdf');
+                            document.body.appendChild(link); link.click();
+                        }
+                        document.querySelector("#divLoading").classList.remove("is-active");
+                    });
+                }
+                ,fn_copy:function () {
+                    var copyText = document.getElementById("iptUrl");
+                    copyText.select();
+                    document.execCommand("Copy");
+                    swal('복사되었습니다.');
+                }
+                ,get_link:function(){
+                    return window.location.href;
+                }
+                ,fn_fixed:function (v) {
+                    return parseInt(v).toFixed(0);
+                }
+                ,go_juniorjob:function (seq , jobNm) {
+                    var tabVal = '';
+                    if('가' <= jobNm && jobNm < '나') tabVal = 0;
+                    else if('나' <= jobNm && jobNm < '마') tabVal = 1;
+                    else if('마' <= jobNm && jobNm < '바') tabVal = 2;
+                    else if('바' <= jobNm && jobNm < '사') tabVal = 3;
+                    else if('사' <= jobNm && jobNm < '아') tabVal = 4;
+                    else if('아' <= jobNm && jobNm < '자') tabVal = 5;
+                    else if('자' <= jobNm && jobNm < '차') tabVal = 6;
+                    else if('차' <= jobNm && jobNm < '파') tabVal = 7;
+                    else if('파' <= jobNm ) tabVal = 8;
+                    else if('A' <= jobNm && jobNm < 'z') tabVal = 9;
+
+                    return "http://www.career.go.kr/cnet/front/base/juniorJob/juniorView.do?JUNIOR_SEQ="+seq + "&tabVal=" + tabVal;
+                }
+                ,fn_menu_close:function (args) {
+                	if(args == 'isEmail'){
+                		app.isEmail = !app.isEmail;
+                		if(app.isEmail == true && app.isShare == true){
+                			app.isShare = !app.isShare;
+                		}
+                	}else if(args == 'isShare'){
+                		app.isShare = !app.isShare;
+						if(app.isShare == true && app.isEmail == true){
+							app.isEmail = !app.isEmail;
+						}
+                	}
+                	if(app.isMenu == true){
+                		app.isEmail = false;
+                		app.isShare = false;
+                	}
+                }
+            },
+            computed: {
+
+            }
+        });
+        app.$nextTick(function () {
+            app.inspctSeq = urlParams["seq"];
+            axios.get("/api/psycho/report?seq="+app.inspctSeq).then(function (response) {
+                if(response.data != null && response.data != '') {
+                    app.inspct = response.data.inspct;
+                    if(app.inspct != null) {
+                        if(app.inspct.id != null) {
+                            if(Number(app.inspct.id) > 2000000000) {
+                                app.inspct.neis = "" + (Number(app.inspct.id) - 2000000000);
+                            } else {
+                                app.inspct.neis = "" + (Number(app.inspct.id) - 1000000000);
+                            }
+                        }
+                    }if(app.inspct != null) {
+                        if(app.inspct.id != null) {
+                            if(Number(app.inspct.id) > 2000000000) {
+                                app.inspct.neis = "" + (Number(app.inspct.id) - 2000000000);
+                            } else {
+                                app.inspct.neis = "" + (Number(app.inspct.id) - 1000000000);
+                            }
+                        }
+                    }
+                    if (response.data.user != null) app.user = response.data.user;
+                    app.user.email = app.inspct.email;
+                    app.result = response.data.result;
+                    app.prev = response.data.prev;
+                    if(app.prev == null) app.isPrev = false;
+                }
+                if(app.inspct.id > 0) {
+                    app.isMember = true;
+                    if(app.prev != null) {
+                        var temp =  app.prev.tScore.split(" ");
+                        for(var i = 0 ; i < 6; i++) {
+                            var ttt = temp[i].split("=");
+                            app.prevChartData[i] = ttt[1];
+                        }
+                        app.isPrev = false;
+                    }
+                } else {
+                    swal({html:"비회원은 "+ app.testNm +" 결과를 재확인 할 수 없습니다. <br />결과표를 다운로드 해주세요.",showCancelButton: true,confirmButtonText: '결과표 다운로드',cancelButtonText: '닫기'}).then(function(result){
+                        if(result.value){
+                            app.fn_download();
+                        }
+                    });
+                }
+                var tempp = app.result.pScore.split(" ");
+                var tempt = app.result.tScore.split(" ");
+                var tempw = app.result.wonScore.split(" ");
+                for(var i = 0 ; i < 6; i++) {
+                    var tt = tempt[i].split("=");
+                    var pp = tempp[i].split("=");
+                    var ww = tempw[i].split("=");
+                    app.scores[i] = {mscl : app.rmap[i] ,w:ww[1] ,p : pp[1] , t : parseInt(tt[1]).toFixed(0)};
+                    app.curChartData[i] = tt[1];
+                }
+                app.sorted = clone(app.scores);
+                app.sorted.sort(function(a,b){
+                    return b.t - a.t;
+                });
+                for(var i = 0 ; i < app.scores.length; i++) {
+                    if(app.sorted[0].mscl.mscl == app.scores[i].mscl.mscl) app.scores[i].rank = 1;
+                    if(app.sorted[1].mscl.mscl == app.scores[i].mscl.mscl) app.scores[i].rank = 2;
+                }
+                app.type = app.sorted[0].mscl.initial+"-"+ app.sorted[1].mscl.initial;
+                setTimeout(function(){ app.drawRadar(); }, 500);
+            });
+            axios.get("/api/psycho/interest/elementary/juniors").then(function (response) {
+                if(response.data != null && response.data.length > 5) {
+                    app.rjobs = response.data;
+                }
+            });
+        });
+        function menuHoverClass(element) {
+		    element.classList.toggle('on');
+		}
+        /*]]>*/
+    </script>
+
+</html>
+

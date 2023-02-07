@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> 문의하기 | YEEP </title>
+    <link rel="stylesheet" type="text/css" href="https://yeep.kr/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/2019.css">
+    <script type="text/javascript" src="/script/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/script/design.js"></script>
+</head>
+<body>
+    <div id="popupWrap">
+        <h1 class="popup-title">문의하기</h1>
+        <div class="data-board popup-project">
+            <table>
+                <caption>작성자, 비밀글, 제목, 내용으로 구성된 표</caption>
+                <colgroup>
+                    <col style="width: 100px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="row">작성자</th>
+                        <td>YEEP 천사</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">비밀글</th>
+                        <td>
+                            <span class="checkbox02">
+                                <input type="checkbox" id="chk1">
+                                <label for="chk1">비밀글</label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="inpText">제목</label></th>
+                        <td class="input-td">
+                            <span class="tit-input-limit" style="width:100%;">
+                                <span><em>0</em>/30</span>
+                                <input type="text" style="width:100%;" id="inpText" class="txt" maxlength="30">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="textArea">내용</label></th>
+                        <td class="input-td">
+                            <span class="textarea-limit">
+                                <span><em>0</em>/500</span>
+                                <textarea style="height:220px;" id="textArea" class="textarea" maxlength="500"></textarea>
+                            </span>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="popup-page-btn">
+            <a href="#" class="btn-big-white popup-btn">취소</a>
+            <a href="#" class="btn-big-orange popup-btn">등록</a>
+        </div>
+    </div>
+</body>
+</html>

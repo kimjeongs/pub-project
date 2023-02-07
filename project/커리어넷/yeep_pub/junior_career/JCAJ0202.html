@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>주니어 커리어넷</title>
+<link rel="stylesheet" type="text/css" href="css/content.css" />
+<script type="text/javascript"  src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"  src="js/common.js"></script>
+</head>
+
+<body class="color-interest">
+	<div id="skipNavi">
+		<a href="#container" class="skipNavi">본문바로가기</a>
+		<a href="#gnb" class="skipNavi" >메뉴바로가기</a>
+	</div>
+	<!-- HEADER -->
+	<div id="header">
+		<div class="topmenu">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">아이디/비밀번호 찾기</a></li>
+				<li><a href="#">로그아웃</a></li>
+				<li><a href="#">마이페이지</a></li>
+			</ul>
+		</div>
+		<div id="gnbWrap">
+			<div class="gnb">
+				<h1 class="logo-header"><a href="#"><img src="images/common/logo_header.png" alt="주니어커리어넷" /></a></h1>
+				<ul class="menu">
+					<li><a href="#" class="depth1 mn1">나를 알아보아요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">저학년 진로흥미탐색</a></li>
+								<li><a href="#">고학년 진로흥미탐색</a></li>
+								<li><a href="#">주니어 진로카드</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn2">진로정보를 찾아봐요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">주니어 진로동영상</a></li>
+								<li><a href="#">주니어 직업정보</a></li>
+								<li><a href="#">미래 직업정보</a></li>
+								<li><a href="#">미래 사회의 직업</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn3">진로고민이 있어요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">진로탐험대</a></li>
+								<li><a href="#">친구야 도와줘</a></li>
+								<li><a href="#">진로상담</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="btn-search-open">검색하기</a> <!-- 검색창 활성화 상태 class 'close' 추가 -->
+			</div>
+			<div class="gnb-search-wrap"> <!-- 검색창 활성화 상태 class 'open' 추가 -->
+				<div class="gnb-search-bx">
+					<input type="text" placeholder="진로정보를 탐색해보아요!" class="gnb-search-input" />
+					<a href="#" class="btn-search">검색</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //HEADER -->
+	<hr>
+	<!-- CONTENT -->
+	<div id="container">
+		<div class="content">
+			<h2 class="cont-title">저학년 진로흥미탐색</h2>
+			<!-- tab -->
+			<div class="cont-tab-wrap">
+				<ul>
+					<li class="on"><a href="#">저학년 진로흥미탐색</a></li> <!-- 탭 활성화 상태 class="on"추가 -->
+					<li><a href="#">고학년 진로흥미탐색</a></li>
+					<li><a href="#">주니어 진로카드</a></li>
+				</ul>
+			</div>
+			<!-- //tab -->
+
+			<!-- arojunior 자기이해 결과 -->
+			<div class="cont-arojunior">
+				<div class="welcome-cmnt">자기이해 결과가 나왔습니다.<br /> 원하는 유형을 선택하여 직업정보를 살펴보세요.</div>
+				<div class="arojunior-container result">
+					<p class="painter-robot"></p>
+					<div class="screen">
+						<div class="step-wrap">
+							<ul>
+								<li class="mn01 complete"><a href="#">직업의 중요성</a></li> <!-- 완성 class="complete" 진행중 class="current" -->
+								<li class="mn02 current"><a href="#">자기이해</a></li>
+								<li class="mn03"><a href="#">나의다짐</a></li>
+							</ul>
+						</div>
+						<!-- 결과 -->
+						<div class="mytype-result-bx" id="printArea"> <!-- 프린트 되는 영역 #printArea -->
+							<h4 class="title-result">
+								<span class="bx">나에게 가장 적합한 유형은</span>
+								<p class="type"><strong>뚝딱이</strong>입니다.</p>
+							</h4>
+							<p class="desc-reulst">뚝딱이 형의 친구들은 손재주가 있어 만들기를 좋아하고,<br />
+							연장, 기계와 같은 도구를 잘 다룹니다.<br />
+							그리고 활동적이고 몸을 움직이는 것을 좋아하지요.<br />
+							뚝딱이는 솔직하고 성실하면서도 수줍음이 많은 사람이랍니다.</p>
+							<!-- 그래프 -->
+							<div class="graph-result">
+								<ul>
+									<li>
+										<div class="chat1">
+											<span class="star"><img src="images/interest/img_aroj_result_graph.png" alt="" /></span>
+											<span class="per"><img src="images/interest/img_aroj_graph01.png" alt="" style="height:100%" />100%</span>
+										</div>
+										<span class="subject">뚝딱이</span>
+									</li>
+									<li>
+										<div class="chat2">
+											<span class="per"><img src="images/interest/img_aroj_graph02.png" alt="" style="height:83.33%" />83.33%</span>
+										</div>
+										<span class="subject">탐험이</span>
+									</li>
+									<li>
+										<div class="chat3">
+											<span class="per"><img src="images/interest/img_aroj_graph03.png" alt="" style="height:47%" />47%</span>
+										</div>
+										<span class="subject">멋쟁이</span>
+									</li>
+									<li>
+										<div class="chat4">
+											<span class="per"><img src="images/interest/img_aroj_graph04.png" alt="" style="height:72.62%" />72.62%</span>
+										</div>
+										<span class="subject">친절이</span>
+									</li>
+									<li>
+										<div class="chat5">
+											<span class="per"><img src="images/interest/img_aroj_graph05.png" alt="" style="height:85%" />85%</span>
+										</div>
+										<span class="subject">씩씩이</span>
+									</li>
+									<li>
+										<div class="chat6">
+											<span class="per"><img src="images/interest/img_aroj_graph06.png" alt="" style="height:85%" />85%</span>
+										</div>
+										<span class="subject">성실이</span>
+									</li>
+								</ul>
+							</div>
+							<!-- //그래프 -->
+
+							<!-- 이미지명: 뚝딱이(img_aroj_result_character01.png), 성실이img_aroj_result_character02.png), 씩씩이(img_aroj_result_character03.png), 탐험이(img_aroj_result_character04.png), 멋쟁이(img_aroj_result_character05.png), 친절이(img_aroj_result_character06.png) -->
+							<img src="images/interest/img_aroj_result_character01.png" alt="뚝딱이 이미지" class="img-my-character" />
+							<a href="#" class="btn-print-result" title="결과 그래프 인쇄하기" onClick="print();">인쇄하기</a>
+						</div>
+						<!-- //결과 -->
+					</div>
+					<!-- 대표직업 -->
+					<div class="type-info-bx">
+						<span class="bg-notespring"></span>
+						<div class="type-list">
+							<ul>
+								<li class="type01 on">
+									<a href="#"><span class="img-character character01"></span>뚝딱이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">뚝딱이</strong>
+											<p>뚝딱이 형의 친구들은 손재주가 있어<br />만들기를 좋아하고, 연장, 기계와 같은<br />도구를 잘 다룹니다.<br />그리고 활동적이고 몸을 움직이는 것을 좋아하지요. 뚝딱이는 솔직하고 성실<br />하면서도 수줍음이 많은 사람이랍니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>뚝딱이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="type02"><a href="#"><span class="img-character character02"></span> 탐험이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">탐험이</strong>
+											<p>탐험이 형의 친구들은 세심히 관찰하는 것을 좋아합니다.<br />합리적이며 정확하고 창의적으로 새로운 일에 도전하는 것을 좋아하지요.<br />논리적이며 탐구심, 독립성, 호기심이<br />많다는 특징을 가지고 있답니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>탐험이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="type03"><a href="#"><span class="img-character character03"></span> 멋쟁이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">멋쟁이</strong>
+											<p>멋쟁이 형의 친구들은 상상력과 감정이 품부하여 자기만의 세계로 빠져드는<br />'상상하기'를 좋아합니다.<br />자신의 옷과 머리를 멋있게 꾸밀 줄 알고 자기만의 독특한 방식으로 표현을 하지요. 멋쟁이는 학교에서 배우는 과목 중에 국어, 음악, 미술을 좋아하는 친구들이<br />많답니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>멋쟁이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="type04"><a href="#"><span class="img-character character04"></span> 친절이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">친절이</strong>
+											<p>친절이 형의 친구들은 친구와 좋은 관계를 유지하고 협동하는 것을 좋아합니다.<br />어려운 사람을 보면, 무엇을 도와줄까<br />생각하기 때문에 학교와 가정에서 봉사하는 것을 잘한답니다.<br />친절이는 이해심이 많고 따뜻한 마음을 가진 친구들입니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>친절이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="type05"><a href="#"><span class="img-character character05"></span> 씩씩이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">씩씩이</strong>
+											<p>씩씩이 형의 친구들은 교실에서 주저함 없이 자기의견을 발표할 줄 알고<br />모든 일을 열심히 합니다.<br />친구들 앞에 압장서서 설득하고 지도하는 능력을 가지고 있습니다.<br />씩씩이는 사교적이고, 모험심이 강한<br />친구들이 많답니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>씩씩이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="type06"><a href="#"><span class="img-character character06"></span> 성실이</a>
+									<div class="type-job-wrap">
+										<div class="type-info">
+											<strong class="name">성실이</strong>
+											<p>성실이 형의 친구들은 자신이 계획한대로 꾸준히 실천하기 때문에<br />노트에 기록, 정리하는 꼼꼼한 일을 잘 한답니다. 또한 정직하고 계산하고 활동을 좋아합니다.<br />성실이는 책임감이 강하며, 약속을 잘<br />지키고 학교 규칙과 질서를 잘 지키는<br />친구들이 많습니다.</p>
+										</div>
+										<div class="type-job-list">
+											<strong class="name">"<span>성실이</span>" 형에게 잘 맞는 대표 직업은?</strong>
+											<ul>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사이버범죄 수사관</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">미디어 콘텐츠 창작자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">사물인터넷(IoT)개발자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">반려동물 행동상담원</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">음향 및 녹음기사</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">정보시스템 운영자</span></a></li>
+												<li><a href="#"><img class="img_thumb" src="https://www.career.go.kr//cnet/front/base/juniorJob/thumbnail.do?seq=36913&amp;no=1&amp;width=190" alt="빅데이터전문가의 설명을 돕기 위한 일러스트"><span class="job-title"">게임테크니컬 아티스트</span></a></li>
+												<li class="btn-aroj-more-job"><a href="#" target="_blank" title="직업정보 더 보러가기(새창)">더 보러 가기</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //대표직업 -->
+				</div>
+				<div class="btn-result-bottom">
+					<a href="#" class="left"><img src="images/interest/btn_aroj_testback.png" alt="자기이해 탐색 다시하기" /></a>
+					<a href="#" class="right"><img src="images/interest/btn_aroj_nextlabel.png" alt="나의 다짐 작성하기" /></a>
+				</div>
+			</div>
+			<!-- //arojunior 자기이해 결과 -->
+		</div>
+	</div>
+	<!-- //CONTENT -->
+	<div id="dim"></div>
+	<hr>
+	<!-- FOOTER -->
+	<div id="footer">
+		<div class="footer-menu">
+			<ul class="policy">
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/mberInfoPrtcPopup.do','','width=715, height=775, menubar=no, status=no, left=300');">개인정보처리방침</a></li>
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+				<li><a href="http://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do" target="_blank" title="새창 열림">이용문의</a></li>
+			</ul>
+			<div class="family-site">
+				<a href="#" class="fam-title" title="관련사이트 보기">관련사이트</a> <!-- 목록 활성화 상태 class="active" 추가 -->
+				<ul class="site-list">
+					<li><a href="https://www.career.go.kr/cnet/front/main/main.do" target="_blank" title="새창으로 이동">커리어넷</a></li>
+					<li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창으로 이동">원격영상 진로멘토링</a></li>
+					<li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창으로 이동">YEEP</a></li>
+					<li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창으로 이동">꿈길</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="address">
+			<div class="copyright">
+				주소 : 30147 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원<br />
+				운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 │ 지원 : 교육부<br />
+				COPYRIGHTS ⓒ KRIVET ALL RIGHTS RESERVED
+			</div>
+			<div class="logo-gov">
+				<a href="https://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창 열림)"><img src="images/common/img_gov_logo01.png" alt="교육부 Ministry of Education" /></a>
+				<a href="http://www.krivet.re.kr/ku/index.jsp" target="_blank" title="한국직업능력개발원 바로가기(새창 열림)"><img src="images/common/img_gov_logo02.png" alt="한국직업능력개발원 KRIVET" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- //FOOTER -->
+</body>
+</html>

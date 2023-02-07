@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="url" property="og:url"           content="?coNo="/>
+    <meta name="type" property="og:type"          content="website"/>
+    <meta name="title" property="og:title"         content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description"   content=" - "/>
+    <meta name="image" property="og:image"         content="/img"/>
+
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+    <title>YEEP</title>
+    <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/mypage2019.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+    <script>
+        $(function () {
+            $("#prjTermStart, #prjTermSEnd").datepicker({
+                dateFormat: "yy.mm.dd"
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice -->
+                <!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="user-name"><strong>YEEP지기</strong>님 환영합니다</div>
+                        <div class="hedaer-notice">
+                            <button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+                            <!--
+                            <div class="notice-layer">
+                                <strong class="notice-layer-title">알림</strong>
+                                <ul class="notice-list">
+
+                                
+                                </ul>
+                                
+                                <p class="no-notice">새로운 알림이 없습니다.</p>
+                                
+                                
+                                <button type="button" class="notice-close">알림 닫기</button>
+                            </div>
+                                -->
+                        </div>
+                        <div class="user-state">
+                            <label class="invisible" >역할</label>
+                        </div>
+                        <div class="utill-btn">
+                            <a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+                            <a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+            <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/my.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+                    </ul>
+                </div>
+                <div class="content-width">
+                    <h2 class="page-title">마이페이지</h2>
+                    <h3 class="page-sub-title">나의 <span class="lg-leaf"><img src="images/2019/ico_leaf_big.png" alt="잎"></span> 적립/사용 내역</h3>
+                    
+                    <ul class="my-info-box">
+                        <li class="account">
+                            <div class="tit-cont">
+                                <strong class="tit">사용 가능 나의 <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span></strong>
+                                <span class="tooltip-box">
+                                    <a href="#" class="tooltip-btn" title="도움말"></a>
+                                    <span class="tooltip">
+                                        <em>나의 잎이란?</em>
+                                        YEEP 프로그램 활동에서 발생한 포인트로 크라우드 펀딩에서 사용이 가능한 포인트 입니다.
+                                    </span>
+                                </span>
+                            </div>
+                            <p><strong>10,000</strong></p>
+                        </li>
+                        <li class="grade-info">
+                            <div class="tit-cont">
+                                <strong class="tit">나의 <span class="lg-leaf"><img src="images/2019/ico_leaf_big.png" alt="잎"></span> 기준안내</strong>
+                            </div>
+                            <a href="#" class="link" title="새창열림">나의 <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span> 기준안내바로가기</a>
+                        </li>
+                    </ul>
+                    <div class="page-search calendar">
+                        <div class="calendar-box">
+                            <div class="calendar">
+                                <label for="prjTermStart" class="invisible">종료날짜 선택</label>
+                                <input type="text" id="prjTermStart" value="2020.02.10">
+                            </div>
+                            <span>~</span>
+                            <div class="calendar">
+                                <label for="prjTermSEnd" class="invisible">종료날짜 선택</label>
+                                <input type="text" id="prjTermSEnd" value="2020.02.10">
+                            </div>
+                        </div>
+                        <label class="invisible" for="searchType">분류</label>
+                        <select id="searchType" name="searchType" style="width: 100px">
+                            <option value="00">전체</option>
+                            <option value="01">적립</option>
+                            <option value="02">사용</option>
+                        </select>
+                        <button type="button" class="search-btn" id="btnSearch" name="btnSearch" onclick="serchText()">검색</button>
+                    </div>
+                    <div class="top-set type02">
+                        <div class="search-count-btn">
+                            <p class="search-count">총 <strong>9</strong>건</p>
+                        </div>
+                        <ul class="right save-info">
+                            <li class="save">
+                                <em>적립</em>
+                                <span class="point">110,000</span>
+                                <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span>
+                            </li>
+                            <li class="use">
+                                <em>사용</em>
+                                <span class="point">110,000</span>
+                                <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="leaf-save-list">
+                        <div class="list-board">
+                            <table>
+                                <caption>내용, 날짜, 적립/사용구분, 적립/사용한 잎으로 구성된 표</caption>
+                                <colgroup>
+                                    <col>
+                                    <col style="width:6%;">
+                                    <col style="width:27%;">
+                                    <col style="width:10%;">
+                                </colgroup>
+                                <thead class="hidden">
+                                    <tr>
+                                        <th scope="col">내용</th>
+                                        <th scope="col">날짜</th>
+                                        <th scope="col">적립/사용구분</th>
+                                        <th scope="col">적립/사용 잎</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="save-leaf on">페트병 6개, 아티스트 에코백으로 재탄생하다. 페트병 6개, 아티스트 에코백으로 재탄생하다.</td>
+                                        <td>2019.07.19</td>
+                                        <td class="txt-save">적립</td>
+                                        <td><span class="plus">10,000</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="save-leaf">페트병 6개, 아티스트 에코백으로 재탄생하다.</td>
+                                        <td>2019.07.19</td>
+                                        <td class="txt-use">사용</td>
+                                        <td><span class="minus">10,000</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="save-leaf on">페트병 6개, 아티스트 에코백으로 재탄생하다.</td>
+                                        <td>2019.07.19</td>
+                                        <td class="txt-save">적립</td>
+                                        <td><span class="plus">10,000</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="save-leaf">페트병 6개, 아티스트 에코백으로 재탄생하다.</td>
+                                        <td>2019.07.19</td>
+                                        <td class="txt-use">사용</td>
+                                        <td><span class="minus">10,000</span></td>
+                                    </tr>
+                                    <!-- 내역 없는 경우 -->
+                                    <tr>
+                                        <td colspan="4" class="no-list">적립/사용 내역이 없습니다.</td>
+                                    </tr>
+                                    <!-- //내역 없는 경우 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="board-pagging">
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_prev_first.png" alt="처음"></a><a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_prev.png" alt="이전">
+                        </a>
+                        <strong title="현재 페이지">1</strong>
+                        <a href="#">2</a>
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_next.png" alt="다음">
+                        </a>
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_next_last.png" alt="마지막">
+                        </a>
+                    </div>
+                    <div class="leaf-guide">
+                        <strong class="tit">이용안내</strong>
+                        <ul>
+                            <li>1. 적립된 <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span> 은 크라우드 펀딩 참여시 사용할 수 있습니다.</li>
+                            <li>2. 1 <span class="s-leaf"><img src="images/2019/ico_leaf_small.png" alt="잎"></span> 당 1원과 동일한 가치로 사용할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+            </div>
+            <div id="footer">
+            <!-- footer -->
+                <div class="footer-utill-area">
+                    <ul class="footer-utill">
+                        <li><a href="/noti/useInqList.do">이용문의</a></li>
+                        <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                        <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                    </ul>
+                </div>
+                <!-- 2018-04-17 디자인요청 수정 -->
+                <div class="footer-cont">
+                    <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                    <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                    <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                    <ul class="site_link">
+                        <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                        <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                        <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                    </ul>
+                </div>
+                <!-- //2018-04-17 디자인요청 수정 -->
+
+            <!-- //footer -->
+        </div> <!-- //wrap -->
+    </div>
+</body>
+
+</html>

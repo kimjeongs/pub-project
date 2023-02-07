@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css?version=0.00000002">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117856487-1');
+</script>
+<script>
+function roleChange(){
+    var role    = $("#role option:selected").val();
+    var roleNm  = $("#role option:selected").text();
+    $("#mberRoleSeCode").val(role);
+    $("#mberRoleSeCodeNm").val(roleNm);
+    //alert($("#mberRoleSeCodeNm").val());
+    document.getElementById('frmRoleChange').submit();
+}
+
+function questBannerClose(){
+    if($("#top-notice").css("display") == "none"){
+        jQuery("#top-notice").show();
+    } else {
+        jQuery("#top-notice").hide();
+        $("#header").removeAttr('class');
+    }
+}
+
+function goMyPage(){
+    document.getElementById('frmMypage').submit();
+}
+</script>
+</head>
+<body>
+	<div id="top">
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+				<!-- notice -->
+				<!-- //notice -->
+				<div class="header-inner">
+					<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+					<div class="header-utill">
+						<div class="user-name"><strong>YEEP선생님</strong>님 환영합니다</div>
+						<div class="hedaer-notice">
+							<button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+						</div>
+						<div class="user-state">
+							<label class="invisible" >역할</label>
+						</div>
+						<div class="utill-btn">
+							<a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+							<a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+						</div>
+					</div>
+					<ul class="gnb">
+						<li>
+							<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+								<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+								<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+								<li><a href="/intro/startupIntro.do">Go스타트업 소개</a></li>
+								<li><a href="/intro/onlnPtIntro.do">온라인사업설명회 소개</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/clas/classMain.do">수업 /동아리</a></strong>
+							<ul class="two-dept">
+								<li><a href="/clas/classMain.do">수업</a></li>
+								<li><a href="/aprt/aprtMain.do">동아리</a></li>
+								<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go스타트업</a></strong>
+							<ul class="two-dept">
+								<li><a href="javascript:startUp();">Go스타트업</a></li>
+								<li><a href="/onln/onlnPtHomeList.do">온라인사업설명회</a></li>
+								<!--<li><a href="javascript:alert(  '준비 중입니다'  );">YEEP 마켓</a></li>-->
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+								<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+								<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+								<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+								<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+								<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+								<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/notiBbsList.do">이용안내</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+								<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+								<li><a href="/noti/useInqList.do">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			<link rel="stylesheet" type="text/css" href="css/cl.css">
+			<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+			<script type="text/javascript" src="http://dev.yeep.kr/script/jquery.form.js"></script>
+			<form id="frm" name="frm"  method="post">
+				<input type="hidden" name="clasNo" id="clasNo" value="">
+				<input type="hidden" name="grpNo" id="grpNo" value="">
+				<input type="hidden" name="crseNo" id="crseNo" value="">
+				<!-- container -->
+				<div id="container" tabindex="0">
+					<div class="page-location">
+						<ul>
+							<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+							<li><a href="/clas/classMain.do">수업</a></li>
+						</ul>
+					</div>
+					<div id="createClassStep1Block" class="content-width">
+						<h2 class="page-title">수업개설</h2>
+						<div class="open-step">
+							<img src="images/cl/img_open_step01.png" alt="1. 수업 정보 입력" />
+							<ol class="invisible">
+								<li title="현재 순서">수업 정보 입력</li>
+								<li>수업 구성원 설정</li>
+								<li>수업 과정 설정</li> <!-- 2019-11-12 문구수정 -->
+								<li>개설 완료</li>
+							</ol>
+							<div class="open-desc bg-step01">수업 기본 정보 (수업명/학교급/활동과정 등)를 입력합니다. <!-- 2019-11-12 '기간'문구 삭제 -->
+								<p class="note">※ 수업 개설은 교사 회원만 가능합니다.</p>
+								<a href="https://yeep.kr/noti/notiBbsDetail.do?bltnNo=946" target="_blank" title="YEEP 사용자 매뉴얼 보기 새창 열림" class="btn-white">YEEP 사용자 매뉴얼 보기<span class="arw"></span></a>
+							</div>
+						</div>
+						<div class="page-sub-title-style">
+							<h3 class="sub-title">수업 기본 정보</h3>
+						</div>
+						<div class="data-board">
+							<table>
+								<caption>수업 기본 정보입력 - 수업명, 학교급, 활동과정, 기간, 소속학교로 구성된 입력표입니다.</caption>
+								<colgroup>
+									<col style="width:20%;" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><span class="compulsory">필수정보</span> <label for="clasNm">수업명</label></th>
+										<td class="input-td">
+											<input id="clasNm" name="clasNm" type="text" class="txt" placeholder="수업명을 입력하세요."  maxlength="20" style="width:55%;" />
+											<span class="cmt"> 수업명은 추후 수정 불가능하오니, 신중히 선정해 주세요.</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><span class="compulsory">필수정보</span> <label for="schlLvlList">학교급</label></th>
+										<td class="input-td">
+											<select id="schlLvlList" name="schlLvlList" style="width:220px;">
+												<option value="">선택</option>
+												<option value="01"  >초등학교</option>											
+												<option value="02"  >중학교</option>
+												<option value="03"  >고등학교</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><span class="compulsory">필수정보</span> <label >활동 과정</label></th>
+										<td class="td-inner-box">
+											<input type="hidden" id="actCaseList" name="actCaseList" value="" />
+											<input type="hidden" id="dtlActCaseList" name="dtlActCaseList" value="" />
+											<ul class="td-select-list">
+												<li class="left"><strong class="title">활동 과정 선택</strong>
+													<ul class="wide-list">
+														<li><a href="javascript:;" name="btnActCaseCd" data-actCaseCd="01"><span>자유학기활동과정</span></a></li>
+														<li><a href="javascript:;" name="btnActCaseCd" data-actCaseCd="02"><span>창의적체험활동과정</span></a></li>
+														<li><a href="javascript:;" name="btnActCaseCd" data-actCaseCd="03"><span>교과연계형과정</span></a></li>
+													</ul>
+												</li>
+												<li class="right"><strong class="title">세부 활동 과정 선택</strong>
+													<ul class="small-list" id="ulDtlActCaseCd">
+													</ul>
+												</li>
+											</ul>
+										</td>
+									</tr>
+
+									<!-- 삭제 2019-11-12
+									<tr>
+										<th scope="row"><span class="compulsory">필수정보</span> <label for="period">기간</label></th>
+										<td class="input-td">
+											<select id="period" name="period" style="width:220px;">
+												<option value="">선택</option>
+											</select>
+											<input type="text" class="txt" id="periodStartText" value="" disabled="disabled" style="width:110px;" title="시작일자"  />
+											<input type="hidden" id="periodStart" name="periodStart" value=""  />
+											<span class="input-txt-line">-</span>
+											<input type="text" class="txt" id="periodEndText" value="" disabled="disabled" style="width:110px;" title="종료일자"  />
+											<input type="hidden" id="periodEnd" name="periodEnd" value=""  />
+										</td>
+									</tr>
+									-->
+
+									<tr>
+										<th scope="row"><span class="compulsory">필수정보</span> 소속학교</th>
+										<td class="input-td">
+											<div class="radiobox01">
+												<span class="rbox-type2">
+													<input type="radio" id="rdoSchool01" name="rdoSchool" class="text-rdo" value="01"
+														checked />
+													<label for="rdoSchool01" class="txt-none">학교선택</label>
+												</span>
+												<input type="text" id="schoolNmText" name="schoolNmText" class="txt" value="" disabled="disabled" style="width:195px;" title="학교명" />
+												<input type="hidden" id="schoolNm" name="schoolNm" value="" />
+												<input type="hidden" id="schoolCd" name="schoolCd" value="" />
+												<input type="hidden" id="schoolDstnCd" name="schoolDstnCd" value="" />
+												<input type="hidden" id="schoolAreaCd" name="schoolAreaCd" value="" />
+												<input type="hidden" id="schoolAreaNm" name="schoolAreaNm" value="" />
+												<input type="hidden" id="schoolRegionCode" name="schoolRegionCode" value="" />
+												<a href="javascript:;" id="btnFindSchool" class="btn-gray" title="새창 열림">학교검색</a>
+											</div>
+											<div class="radiobox01">
+												<span class="rbox-type3">
+													<input type="radio" id="rdoSchool02" name="rdoSchool" class="text-rdo" value="02"
+														  />
+													<label for="rdoSchool02">해당없음</label>
+												</span>
+											</div>
+											<p class="cmt break"> 본인의 소속 학교를 검색하여 선택해 주세요.</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn-center">
+							<a href="javascript:;" id="btnStep1Next" class="btn-big-orange">다음</a>
+						</div>
+					</div>
+					<div id="createClassStep2Block" class="content-width">
+						<h2 class="page-title">수업개설</h2>
+						<div class="open-step">
+							<img src="images/cl/img_open_step02.png" alt="2. 수업 구성원 설정" />
+							<ol class="invisible">
+								<li>수업 정보 입력</li>
+								<li title="현재 순서">수업 구성원 설정</li>
+								<li>수업 과정 설정</li> <!-- 2019-11-12 문구수정 -->
+								<li>개설 완료</li>
+							</ol>
+							<div class="open-desc bg-step02">구성원 추가 버튼을 클릭하여, 수업 구성원을 설정해 주세요.
+								<p class="note">
+								1) 아이디로 추가하기 : 학생의 아이디를 검색하여 구성원으로 추가할 수 있습니다.<br>
+								2) 그룹으로 추가하기 :  본인이 만든 다른 수업/동아리(YEEP/멘토링 등)를  검색하여 동일하게 구성원으로 추가할 수 있습니다.<br>
+								3) 수업 참여 코드로 추가하기 : 수업 개설 완료 후 안내되는 수업  참여 코드로 학생들이 직접 수업에 참여 할 수 있습니다.
+								</p>
+								<a href="https://yeep.kr/noti/notiBbsDetail.do?bltnNo=946" target="_blank" title="YEEP 사용자 매뉴얼 보기 새창 열림" class="btn-white">YEEP 사용자 매뉴얼 보기<span class="arw"></span></a>
+							</div>
+						</div>
+						<div class="page-sub-title-style">
+							<h3 class="sub-title">수업 구성원 설정</h3>
+							<div class="title-btn">
+								<span class="title-sum">총<strong id="memberCnt">0</strong>명</span>
+								<a href="javascript:;" id="btnAddMember" class="btn-white" title="구성원 추가/삭제 새창 열림">구성원 추가/삭제</a>
+							</div>
+						</div>
+						<div class="list-board">
+							<table id="memberListTable">
+								<caption>수업 구성원 설정 목록 - 이름(아이디), 구분, 성별로 구성된 목록입니다.</caption>
+								<colgroup>
+									<col style="width:45%;" />
+									<col />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="row">이름(아이디)</th>
+										<th scope="row">구분</th>
+										<th scope="row">성별</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="noMember">
+										<td colspan="3" class="no-list">구성원 없이 수업을 개설할 수 있으며, ‘수업 관리’ 에서 추후 변경 가능합니다.<br />구성원 설정을 원할 경우, ‘구성원 추가/삭제’ 버튼을 클릭하세요.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btn-center">
+							<a href="javascript:;" id="btnStep2Before" class="btn-big-white">이전</a>
+							<a href="javascript:;" id="btnStep2Next" class="btn-big-orange">다음</a>
+						</div>
+					</div>
+					<div id="createClassStep3Block" class="content-width">
+						<h2 class="page-title">수업개설</h2>
+						<div class="open-step">
+							<img src="images/cl/img_open_step03.png" alt="3. 교육 과정 설정" />
+							<ol class="invisible">
+								<li>수업 정보 입력</li>
+								<li>수업 구성원 설정</li>
+								<li title="현재 순서">수업 과정 설정</li> <!-- 2019-11-12 문구수정 -->
+								<li>개설 완료</li>
+							</ol>
+							<div class="open-desc bg-step02">
+								<!-- 2019-11-12 문구수정 -->
+								수업을 진행할 과정과 수업기간을 설정하세요.
+								<br />교사의 재량으로 필요한 항목만 선택할 수 있으며, 개설 이후 ‘수업 과정 설정 ’ 메뉴에서 수정할 수 있습니다. 
+								<!-- 2019-11-12 삭제
+								<p class="note">※ 학생이 <span class="essential">★</span> 표시된 필수 과정의 과제를 모두 등록해야, Go! startup 가상창업체험 활동의 기회가 주어집니다.</p>
+								-->
+								<a href="https://yeep.kr/noti/notiBbsDetail.do?bltnNo=946" target="_blank" title="YEEP 사용자 매뉴얼 보기 새창 열림" class="btn-white">YEEP 사용자 매뉴얼 보기<span class="arw"></span></a>
+							</div>
+						</div>
+
+						<div class="page-sub-title-style">
+							<h3 class="sub-title">수업 과정 설정</h3><!-- 2019-11-12 문구수정 -->
+							<div class="title-btn">
+								<a href="javascript:;" id="btnRecommandClass"  class="btn-white" title="권장 수업 보기 새창 열림">권장 수업 보기</a>
+							</div>
+						</div>
+						<!-- 2019-11-12 테이블 추가 -->
+						<div class="data-board">
+							<table>
+								<caption>수업 과정 설정표 - 과정명, 수업기간으로 구성된 입력표입니다.</caption>
+								<colgroup>
+									<col style="width:20%;" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><label for="processName">과정명</label></th>
+										<td class="input-td">
+											<select id="processName" name="processName">
+												<option value="">기본과정</option>
+												<option value="01">주제별 과정</option>
+											</select>
+											<select id="processNameDtl" name="processName" style="width:35%;">
+												<option value="">2019년 초등과정</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="classTermYear1">수업기간</label></th>
+										<td class="input-td">
+											<select id="classTermYear1" name="classTermSel">
+												<option>2019</option>
+												<option>2020</option>
+											</select>
+											<select id="classTermMonth1" name="processName">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option selected>10</option>
+												<option>11</option>
+												<option>12</option>
+											</select>
+											<span class="input-txt-line">-</span>
+											<select id="classTermYear2" name="classTermSel">
+												<option>2019</option>
+												<option selected>2020</option>
+											</select>
+											<select id="classTermMonth2" name="processName">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option selected>10</option>
+												<option>11</option>
+												<option>12</option>
+											</select>
+											<span class="cmt"> 진행 기간은 최대 1년까지 설정할 수 있습니다.</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- //2019-11-12 테이블 추가 -->
+
+						<div class="board-type01 mrg-top-20"> <!-- 2019-11-12 클래스추가 -->
+							<table id="courseListTable">
+								<caption>교육과정 설정 목록 - 과정명, 진로교육 성취지표, 핵심역량 지표, 난이도, 사용여부 선택으로 구성된 표입니다.</caption><!-- 2019-11-12 caption 수정 -->
+								<colgroup><!-- 2019-11-12 colgroup width 수정 -->
+									<col style="width:23%;" />
+									<col style="width:5%;" />
+									<col />
+									<col style="width:16%;" />
+									<col style="width:14%;" />
+									<col style="width:13%;" />
+									<col style="width:13%;" />
+								</colgroup>
+								<thead>
+									<tr class="bg-type1">
+										<th scope="col" colspan="3">과정명</th>
+										<th scope="col">진로교육 성취지표</th>
+										<th scope="col">핵심역량 지표</th>
+										<th scope="col">난이도</th>
+										<th scope="col">
+											<div class="checkbox01">
+												<input id="allCheck" name="allCheck" type="checkbox"  />
+												<label class="" for="allCheck" title="전체선택 됨">사용여부</label>
+											</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style='height:150px;'>
+										<td colspan='7' class='check-txt'>수업내역이 없습니다.</td> <!-- 2019-11-12 col 수정 -->
+									</tr>
+									<tr>
+										<th scope="col" colspan="7">1권</th> <!-- 2019-11-12 col 수정 -->
+									</tr>
+									<tr>
+										<td colspan="7" class="class-tit">Ⅰ. 오리엔테이션</td> <!-- 2019-11-12 col 수정 -->
+									</tr>
+									<tr>
+										<td rowspan="2" class="sstit">m1. 오리엔테이션</td>
+										<td class="t-center"><img src="http://dev2.yeep.kr:5080/images/common/icon_star.png" alt="필수과정"></td>
+										<td>01. YEEP 체계의 이해</td>
+										<td class="no-line t-center">MⅡ 2.2.1</td>
+										<td class="no-line t-center">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+										<td class="no-line t-center">
+											<span class="star">
+												<span class="level-1">난이도1</span>
+											</span>
+										</td>
+										<td class="no-line t-center">
+											<div class="checkbox01">
+												<input id="chc01" type="checkbox">
+												<label class="txt-none" for="chc01">사용여부</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="t-center">-</td>
+										<td>02. 기업 생태계에 대한 이해</td>
+										<td class="t-center no-line">MⅡ 2.3</td>
+										<td class="t-center no-line">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+										<td class="no-line t-center">
+											<span class="star">
+												<span class="level-2">난이도2</span>
+											</span>
+										</td>
+										<td class="no-line t-center">
+											<div class="checkbox01">
+												<input id="chc02" type="checkbox">
+												<label class="txt-none" for="chc02">사용여부</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="7" class="check-txt">총 <strong>12</strong> 차시</td><!-- 2019-11-12 col 수정 -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<!-- 2019-11-12 플로팅메뉴 -->
+						<div class="scroller-anchor"></div>
+						<div class="scroller btn-center">
+							<a href="javascript:;" id="btnStep3Before" class="btn-big-white">이전</a>
+							<a href="javascript:;" class="btn-big-orange-line">수업 과정 추가</a>
+							<a href="javascript:;" id="btnSave" class="btn-big-orange">개설완료</a>
+						</div>
+
+						<script> //플로팅 버튼영역
+							$(window).ready(function () {
+								$('.content-width').addClass('pos-relative');
+							});
+							$(document).scroll(function() {									
+								if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+									$('.scroller').removeClass('FixedLayoutfunction');
+									$('.scroller-anchor').css('height','0');
+								} else {
+									$('.scroller').addClass('FixedLayoutfunction');
+									$('.scroller-anchor').css('height','120px');
+								}
+								return false;
+							});
+						</script>
+					</div>
+				</div>
+				<!-- //container -->
+			</form>
+
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					document.title="수업 개설 < 수업 < YEEP";
+
+					if( $("#schlLvlList").val() != '' ) {
+						fnGetSemeDstnList();
+						$('#period').val('');
+						$('#period').change();
+					}
+
+					if( $("input:radio[name=rdoSchool]:checked").val() == '01' ) {
+						$('#btnFindSchool').unbind('click', false);
+					} else {
+						$('#btnFindSchool').bind('click', false);
+						$('#schoolCd').val('');
+						$('#schoolNm').val('');
+						$('#schoolNmText').val('');
+						$("#schoolDstnCd").val('');
+						$("#schoolAreaCd").val('');
+						$("#schoolAreaNm").val('');
+						$("#schoolRegionCode").val('');
+					}
+
+					if( $("input:radio[name=rdoSchool]:checked").val() == '01' ) {
+						$('#btnFindSchool').unbind('click', false);
+					} else {
+						$('#btnFindSchool').bind('click', false);
+					}
+
+				});
+
+				$(document).on("change", "#schlLvlList", function(event) {
+					if( $("#actCaseList").val() == '03') {
+						if( $(this).val() == ""  ) {
+							$("#actCaseList").val("");
+							$("a[name=btnActCaseCd]").removeClass("active");
+							$("a[name=btnActCaseCd]").removeAttr("title");
+						}
+
+						fnGetDetailActCaseCode();
+					}
+
+					fnGetSemeDstnList();
+					fnGetCourseList();
+				});
+
+
+
+				//동적 조회로 수정
+				$(document).on("click", "a[name=btnActCaseCd]", function(event) {
+					$("#actCaseList").val($(this).attr("data-actCaseCd"));
+					$("a[name=btnActCaseCd]").removeClass("active").removeAttr("title");
+					$(this).addClass("active").attr("title", "선택됨");
+					fnGetDetailActCaseCode();
+				});
+
+				$(document).on("click", "a[name=btnDtlActCaseCd]", function(event) {
+					$("#dtlActCaseList").val($(this).attr("data-dtlActCaseCd"));
+					$("a[name=btnDtlActCaseCd]").removeClass("active").removeAttr("title");
+					$(this).addClass("active").attr("title", "선택됨");
+				});
+
+				function fnGetDetailActCaseCode() {
+					$("#ulDtlActCaseCd").empty();
+					$("#dtlActCaseList").val('');
+
+					if( $("#actCaseList").val() == "" ) {
+						return;
+					}
+
+					if( $("#actCaseList").val() == "03" && $("#schlLvlList").val() == "" ) {
+						alert("교과연계형 과정을 선택하려면 우선 학교급을 선택해야 합니다.");
+						$("#schlLvlList").focus();
+						$("#actCaseList").val("");
+						$("a[name=btnActCaseCd]").removeClass("active");
+						$("a[name=btnActCaseCd]").removeAttr("title");
+						return;
+					}
+
+					$.ajax({
+						type : "POST",
+						async: false,
+						dataType : "json",
+						data : {
+								"grpCd" : 'DTL_ACT_CLAS_CD',
+								"upDetlCd" : $("#actCaseList").val()
+							   },
+						url :  "/common/code/ajax/list.do",
+						success : function(data){
+							setDetailActCaseCode(data);
+						},
+						beforeSend: function() {
+
+						},
+						complete:function(status){
+
+						},
+						error: function(xhr,  Status, error) {
+						}
+					});
+				}
+
+				var setDetailActCaseCode = function(data) {
+					var subCodeHtml = '';
+					$.each(data.data, function(i, code) {
+						if( $("#actCaseList").val() == '03' ) {
+							if( $("#schlLvlList").val() ==  code.dtlCdDescText) {
+								subCodeHtml += '<li><a href="javascript:;" name="btnDtlActCaseCd" data-dtlActCaseCd="' + code.dtlCd + '" ><span>' + code.dtlCdNm + '</span></a></li>';
+							}
+						} else {
+							subCodeHtml += '<li><a href="javascript:;" name="btnDtlActCaseCd" data-dtlActCaseCd="' + code.dtlCd + '" ><span>' + code.dtlCdNm + '</span></a></li>';
+						}
+					});
+
+					$("#ulDtlActCaseCd").append(subCodeHtml);
+
+				};
+
+
+				/*기간 설정에 대한로직*/
+				$("#period").on('change', function() {
+					$("#periodStartText").val('');
+					$("#periodEndText").val('');
+					$("#periodStart").val('');
+					$("#periodEnd").val('');
+					if( $(this).val() != '' ) {
+						$("#periodStartText").val($("#period option:selected").attr("startDt"));
+						$("#periodEndText").val($("#period option:selected").attr("endDt"));
+						$("#periodStart").val($("#period option:selected").attr("startDt"));
+						$("#periodEnd").val($("#period option:selected").attr("endDt"));
+					}
+
+					fnGetCourseList();
+				});
+
+
+				function fnGetSemeDstnList(){
+					$("select[id=period] option[value!='']").remove();
+					$("#periodStartText").val('');
+					$("#periodEndText").val('');
+					$("#periodStart").val('');
+					$("#periodEnd").val('');
+
+					if( $("#schlLvlList").val() == '' ) {
+						return;
+					}
+
+					$.ajax({
+						type : "POST",
+						dataType : "json",
+						async: false,
+						data : {
+								"schlLvlCd"    : $("#schlLvlList").val()
+							   },
+						url : "/clas/selectSemeDstnCdList.do",
+						success : function(data) {
+
+							var subCodeHtml = "";
+							if(data.code=="success") {
+
+								$.each(data.data, function(i, code) {
+									subCodeHtml += '<option value="' + code.semeDstnCd + '"  startDt="' + code.startYmd + '" endDt="' + code.endYmd + '"">' + code.semeDstnNm + '</option>';
+								});
+							}
+
+							$("select[id=period]").append(subCodeHtml);
+
+						},
+						complete:function(status){
+						},
+						error: function(xhr,  Status, error) {
+						}
+					});
+
+				}
+
+
+				$(document).on("change", "input:radio[name=rdoSchool]", function(event) {
+					if( $("input:radio[name=rdoSchool]:checked").val() == '01' ) {
+						$('#btnFindSchool').unbind('click', false);
+					} else {
+						$('#btnFindSchool').bind('click', false);
+						$('#schoolCd').val('');
+						$('#schoolNm').val('');
+						$('#schoolNmText').val('');
+						$("#schoolDstnCd").val('');
+						$("#schoolAreaCd").val('');
+						$("#schoolAreaNm").val('');
+						$("#schoolRegionCode").val('');
+					}
+				});
+
+				var popupSchoolFind;
+				$(document).on("click", "#btnFindSchool", function() {
+					var name   = "schoolPop";
+					var width  = 500;
+					var height = 680;
+					var popUrl = "/common/schoolFindPop.do?callbackFunc=fnSetSchoolCd" ;
+					var popOption = "width=" + width + ", height=" + height + ", toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no;";
+					if(!popupSchoolFind || popupSchoolFind == null || (popupSchoolFind && popupSchoolFind.closed) ) {
+						popupSchoolFind = window.open(popUrl, name, popOption);
+					} else {
+						popupSchoolFind.close();
+						popupSchoolFind = window.open(popUrl, name, popOption);
+					}
+					popupSchoolFind.focus();
+				});
+
+
+
+				function fnSetSchoolCd(data) {
+					$("#schoolCd").val(data.schoolCd);
+					$("#schoolNm").val(data.schoolNm);
+					$("#schoolNmText").val(data.schoolNm);
+					$("#schoolDstnCd").val(data.schoolDstnCd);
+					$("#schoolAreaCd").val(data.schoolAreaCd);
+					$("#schoolAreaNm").val(data.schoolAreaNm);
+					$("#schoolRegionCode").val(data.schoolRegionCode);
+				}
+
+				$(document).on("click", "#btnStep1Next", function() {
+					if( !step1Validation() ) {
+						return;
+					}
+
+					$("#createClassStep1Block").hide();
+					$("#createClassStep2Block").show();
+					location.hash = 'createClassStep2Block';
+
+				});
+
+
+				$(document).on("click", "#btnStep2Before", function() {
+
+					$("#createClassStep1Block").show();
+					$("#createClassStep2Block").hide();
+					location.hash = 'createClassStep1Block';
+
+				});
+
+				$(document).on("click", "#btnStep2Next", function() {
+					if( $('#memberListTable > tbody > tr.exception').length > 0) {
+						if( !confirm('수업은 학생 회원만 이용 가능합니다. 학생이 아닌 회원을 포함하여 수업을 개설 하시겠습니까?') ) {
+							return;
+						}
+					}
+
+					$("#createClassStep2Block").hide();
+					$("#createClassStep3Block").show();
+					location.hash = 'createClassStep3Block';
+
+				});
+
+
+				$(document).on("click", "#btnStep3Before", function() {
+					$("#createClassStep2Block").show();
+					$("#createClassStep3Block").hide();
+					location.hash = 'createClassStep2Block';
+				});
+
+
+				function step1Validation() {
+					if( $.trim($("#clasNm").val()) == '' ) {
+						alert('수업명을 입력하세요.');
+						$("#clasNm").focus();
+						return false;
+					}
+
+
+					if( $("#schlLvlList").val() == '' ) {
+						alert('학교급을 선택하세요.');
+						$("#schlLvlList").focus();
+						return false;
+					}
+
+
+					if( $("#actCaseList").val() == '' ) {
+						alert('활동 과정을 선택하세요.');
+						$("#actCaseList").focus();
+						return false;
+					}
+
+					if( $("#dtlActCaseList").val() == '' ) {
+						alert('세부 활동 과정을 선택하세요.');
+						$("#dtlActCaseList").focus();
+						return false;
+					}
+
+					if( $("#period").val() == '' ) {
+						alert('기간을 선택하세요.');
+						$("#period").focus();
+						return false;
+					}
+
+					if( $("input:radio[name=rdoSchool]:checked").val() == '01' && $("#schoolCd").val() == '' ) {
+						alert('소속 학교를 선택하세요.');
+						return false;
+					}
+
+
+					return true;
+				}
+
+				var popupAddMember;
+				$(document).on("click", "#btnAddMember", function() {
+					var name   = "addMemberPop";
+					var width  = 980;
+					var height = 950;
+					var popUrl = "/common/addMemberPop.do?callbackFunc=fnAddMember" ;
+					var popOption = "width=" + width + ", height=" + height + ", toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no;";
+					if(!popupAddMember || popupAddMember == null || (popupAddMember && popupAddMember.closed) ) {
+						popupAddMember = window.open(popUrl, name, popOption);
+					} else {
+						popupAddMember.close();
+						popupAddMember = window.open(popUrl, name, popOption);
+					}
+					popupAddMember.focus();
+				});
+
+
+
+				function fnAddMember(data) {
+					var memberHtml = '';
+					$.each(data, function(idx, value) {
+						if( value.dstnCd == '210102' || value.dstnCd == '210103' || value.dstnCd == '210104' ) {
+							memberHtml += '<tr>';
+						} else {
+							memberHtml += '<tr class="exception" title="대상이 아님">';
+						}
+						memberHtml += '<td>' + value.mbrNm + '(' + value.loginId + ')</td>';
+						memberHtml += '<td>' + value.dstnNm + '</td>';
+						memberHtml += '<td>';
+						memberHtml += value.sexNm
+						memberHtml += '<input type="hidden" name="mbrNo" value="' + value.mbrNo + '">';
+						memberHtml += '<input type="hidden" name="mbrNm" value="' + value.mbrNm + '">';
+						memberHtml += '<input type="hidden" name="loginId" value="' + value.loginId + '">';
+						memberHtml += '<input type="hidden" name="dstnCd" value="' + value.dstnCd + '">';
+						memberHtml += '<input type="hidden" name="dstnNm" value="' + value.dstnNm + '">';
+						memberHtml += '<input type="hidden" name="sexNm" value="' + value.sexNm + '">';
+						memberHtml += '</td>';
+						memberHtml += '</tr>';
+					});
+
+					if( memberHtml == '' ) {
+						memberHtml += '<tr class="noMember">';
+						memberHtml += '<td colspan="3" class="no-list">구성원 없이 수업을 개설할 수 있으며, ‘수업 관리’ 에서 추후 변경 가능합니다.<br />구성원 설정을 원할 경우, ‘구성원 추가/삭제’ 버튼을 클릭하세요.</td>';
+						memberHtml += '</tr>';
+					}
+
+					$('#memberListTable > tbody > tr').remove();
+					$("#memberListTable").append(memberHtml);
+					$("#memberCnt").text($('#memberListTable > tbody > tr[class!=noMember]').length);
+
+				}
+
+
+				function fnGetGroupMemberList(groupNo){
+
+					$.ajax({
+						type : "POST",
+						async: false,
+						dataType : "json",
+						traditional: true,
+						data : {"grpNo"    : groupNo},
+						url : "/clas/selectClassGroupMemberList.do",
+						success : function(data){
+							var searchListdata =data.data.IfMember.groupMberList;
+							var checkedRows = [];
+							$.each(searchListdata, function(idx, value) {
+								var memberInfo = new Object();
+								memberInfo.mbrNo = value.mberUniqueSn;
+								memberInfo.mbrNm = value.encptUserNm;
+								memberInfo.loginId = value.loginId;
+								memberInfo.dstnCd =  value.careerSeCode;
+								memberInfo.dstnNm = value.careerSeNm.split('(').shift();
+								memberInfo.sexNm = value.sexdstnNm.substr(0, 1);
+								checkedRows.push(memberInfo);
+							});
+
+							fnAddMember(checkedRows);
+
+						},
+						complete:function(status){
+						},
+						error: function(xhr,  Status, error) {
+						}
+					});
+
+				}
+
+
+				function fnGetCourseList() {
+					$.ajax({
+						type : "POST",
+						dataType : "json",
+						data : {
+								"crseYy"    : $("#period").val().toString().substring(0,4),
+								"schlLvl"    : $("#schlLvlList").val()
+							   },
+						url : "/clas/selectRecommendClassList.do",
+						success : function(data){
+							var searchListdata =data.data;
+
+							$("input[name=allCheck]").prop('checked', true) ;
+							$('#courseListTable > tbody > tr').remove();
+							var html ="";
+							var beforeDepth = '';
+							$.each(searchListdata, function(idx, value) {
+								if(value.CRSE_DPTH=="1"){
+									html +="<tr>";
+									html +="<th scope='col' colspan='6'>"+value.DTL_CRSE_NM+"</th>";
+									html +="</tr>";
+								}else if(value.CRSE_DPTH=="2"){
+									html +="<tr>";
+									html +="<td colspan='6' class='class-tit'>"+value.DTL_CRSE_NM+"</td>";
+									html +="</tr>";
+								}else if(value.CRSE_DPTH=="3"){
+									html +="<tr>";
+									html +="<td rowspan='"+value.DPTH_CNT+"' class='sstit'>"+value.DTL_CRSE_NM+"</td>";
+								}else if(value.CRSE_DPTH=="4"){
+									if( beforeDepth == '4' ) {
+										html +="<tr>";
+									}
+
+									if(value.MAND_YN=="Y"){
+										html +="<td name='starClass' class='t-center'><img src='/images/common/icon_star.png' alt='필수과정' /></td>";
+									}else{
+										html +="<td  class='t-center'>-</td>";
+									}
+									html +="<td>"+value.DTL_CRSE_NM+"</td>";
+									html +="<td class='no-line t-center'>"+value.ACPST_IDX_TEXT+"</td>";
+									html +="<td class='no-line t-center'>";
+									html +="<span class='star'>";
+									if(value.DFCL_CD=="01"){
+										html +="<span class='level-3'>난이도3</span>";
+									}else if(value.DFCL_CD=="02"){
+										html +="<span class='level-2'>난이도2</span>";
+									}else if(value.DFCL_CD=="03"){
+										html +="<span class='level-1'>난이도1</span>";
+									}
+									html +="</span>";
+									html +="</td>";
+									html +="<td class='no-line t-center'>";
+									html +="<div class='checkbox01'>";
+									html +="<input id='check_"+value.DTL_CRSE_NO+"' name='chkCourse' type='checkbox' value='"+value.DTL_CRSE_NO+"' checked />";
+									html +="<label class='txt-none' for='check_"+value.DTL_CRSE_NO+"' title='선택 됨' >사용여부</label>";
+									html +="</div>";
+									html +="</td>";
+									html +="</tr>";
+								}
+
+								if( idx == 0 ) {
+									$("#crseNo").val(value.CRSE_NO);
+								}
+
+								beforeDepth = value.CRSE_DPTH;
+							});
+
+							/* 2018-04-05 퍼블 수정 */
+							if(searchListdata.length > 0) {
+								html +="<tr>";
+								html +="<td colspan='6' class='check-txt' >총 <strong id='selectedCourseCnt'>0</strong> 차시를 선택하였습니다.</td>";
+								html +="</tr>";
+							} else if(searchListdata.length == 0) {
+								html +="<tr style='height:150px;'>";
+								html +="<td colspan='6' class='check-txt'>수업내역이 없습니다.</td>";
+								html +="</tr>";
+							}
+
+							$('#courseListTable').append(html);
+							$("#selectedCourseCnt").text($("input[name=chkCourse]:checked").length);
+						},
+						complete:function(status){
+						},
+						error: function(xhr,  Status, error) {
+						}
+					});
+
+				}
+
+				var popupRecommand;
+				$(document).on("click", "#btnRecommandClass", function() {
+					//alert("서비스 준비중입니다.");
+					//return;
+
+					var name   = "recommandClassPop";
+					var width  = 1480;
+					var height = 950;
+					var popUrl = "/clas/getRecommendClassPop.do?crseYy=" + $("#period").val().substring(0, 4) + "&schlLvlCd=" + $("#schlLvlList").val();
+					var popOption = "width=" + width + ", height=" + height + ", toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no;";
+					if(!popupRecommand || popupRecommand == null || (popupRecommand && popupRecommand.closed) ) {
+						popupRecommand = window.open(popUrl, name, popOption);
+					} else {
+						popupRecommand.close();
+						popupRecommand = window.open(popUrl, name, popOption);
+					}
+					popupRecommand.focus();
+				});
+
+
+				$(document).on("change","#allCheck",function() {
+					$("input[name=chkCourse]").prop('checked', $(this).is(":checked"));
+					$("#selectedCourseCnt").text($("input[name=chkCourse]:checked").length);
+
+					var allTitle = "";
+					var title = "";
+					if( $(this).is(":checked") ) {
+						allTitle = "전체선택 됨";
+						title = "선택 됨";
+					}
+					$(this).closest('div').find("label").attr("title", allTitle);
+					$("input:checkbox[name=chkCourse]").closest('div').find("label").attr("title", title);
+				});
+
+				$(document).on("change","input:checkbox[name=chkCourse]",function() {
+					$("#selectedCourseCnt").text($("input[name=chkCourse]:checked").length);
+
+					var title = "";
+					if( $(this).is(":checked") ) {
+						title = "선택 됨";
+					}
+					$(this).closest('div').find("label").attr("title", title);
+				});
+
+
+				$(document).on("click", "#btnSave", function() {
+					if( $("input:checkbox[name=chkCourse]:checked").length == 0) {
+						alert('교육 과정을 1개 이상 선택하세요.');
+						return;
+					}
+
+					$loading.show();
+					if(!confirm("수업을 개설하시겠습니까?")){
+						$loading.hide();
+						return;
+					}
+
+					var url = '/clas/createNewClass.do';
+
+					$.ajax({
+						type : "POST",
+						async: true,
+						dataType : "json",
+						data : $("#frm").serialize(),
+						url : url,
+						success : function(data){
+							if( data.code == 'failure' ) {
+								alert(data.msg);
+							} else {
+								alert(data.msg);
+
+								// 개설완료 페이지로 이동
+								$("#clasNo").val(data.data.clasNo);
+								$("#grpNo").val(data.data.grpNo);
+								$("#frm").attr('action', '/clas/classRegistResult.do');
+								$("#frm").attr('method',"post");
+								$("#frm").submit();
+							}
+						},
+						beforeSend: function() {
+							$loading.show().fadeIn('fast');
+						},
+						complete:function(status){
+							$loading.fadeOut();
+						},
+						error: function(xhr,  Status, error) {
+						}
+					});
+				});
+			</script>
+
+		</div>
+		<div id="footer">
+			<!-- footer -->
+			<div class="footer-utill-area">
+				<ul class="footer-utill">
+					<li><a href="/noti/useInqList.do">이용문의</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+					<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+				</ul>
+			</div>
+			<!-- 2018-04-17 디자인요청 수정 -->
+			<div class="footer-cont">
+				<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+				<p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+				<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+				<ul class="site_link">
+					<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+					<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+					<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+				</ul>
+			</div>
+			<!-- //2018-04-17 디자인요청 수정 -->
+			<!-- //footer -->
+		</div> <!-- //wrap -->
+	</div>
+</body>
+</html>

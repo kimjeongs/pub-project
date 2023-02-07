@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="http://dev.yeep.kr/assets/js/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<script>
+$(document).on('ready', function () {
+	CKEDITOR.replace( 'prjKeynoteEditor', { // 프로젝트 특징 에디터
+		toolbarGroups: [
+			{ name: 'styles', groups: [ 'styles' ] },
+			{ name: 'mode', groups: [ 'mode' ] },
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'editing', groups: [ 'editing' ] },
+			{ name: 'basicstyles', groups: [ 'basicstyles' ] },
+			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'insert', groups: [ 'insert' ] },
+			{ name: 'colors', groups: [ 'colors' ] },
+			{ name: 'tools', groups: [ 'tools' ] },
+			{ name: 'others', groups: [ 'others' ] }
+		],
+      // Remove the redundant buttons from toolbar groups defined above.
+		removeButtons: 'Font,CreateDiv,Language,Anchor,Flash,PageBreak,Iframe,NumberedList,ShowBlocks',
+
+      //media embed
+      extraPlugins: 'embed,autoembed,uploadimage,image2',
+      height: 300,
+
+      uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      contentsCss: [ CKEDITOR.basePath + 'contents.css', 'https://sdk.ckeditor.com/samples/assets/css/widgetstyles.css' ],
+      embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
+
+      image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+      image2_captionedClass: [ 'image-captioned' ]
+    });
+
+	CKEDITOR.replace( 'prjForProgrsEditor', { // 프로젝트 진행이유 에디터
+		toolbarGroups: [
+			{ name: 'styles', groups: [ 'styles' ] },
+			{ name: 'mode', groups: [ 'mode' ] },
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'editing', groups: [ 'editing' ] },
+			{ name: 'basicstyles', groups: [ 'basicstyles' ] },
+			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'insert', groups: [ 'insert' ] },
+			{ name: 'colors', groups: [ 'colors' ] },
+			{ name: 'tools', groups: [ 'tools' ] },
+			{ name: 'others', groups: [ 'others' ] }
+		],
+      // Remove the redundant buttons from toolbar groups defined above.
+		removeButtons: 'Font,CreateDiv,Language,Anchor,Flash,PageBreak,Iframe,NumberedList,ShowBlocks',
+
+      //media embed
+      extraPlugins: 'embed,autoembed,uploadimage,image2',
+      height: 300,
+
+      uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      contentsCss: [ CKEDITOR.basePath + 'contents.css', 'https://sdk.ckeditor.com/samples/assets/css/widgetstyles.css' ],
+      embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
+
+      image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+      image2_captionedClass: [ 'image-captioned' ]
+    });
+});
+</script>
+
+</head>
+<body>
+  <main>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--sticky-top">
+		<div class="u-header__section u-header__section--admin-light g-min-height-65">
+			<div class="header-top">
+				<a href="/main/main.do" class="logo"><img class="" src="http://dev.yeep.kr//assets/img/content/sa_logo.png" alt="YEEP"></a>
+				<span class="txt g-font-size-13"><strong class="g-font-size-14">Startup</strong> 홈페이지 관리</span>
+				<div class="util-menu">				
+					<p class="txt02 g-font-size-12"><span>YEEP지기</span> 님 환영합니다</p>				
+					<!-- 2018-04-09 알림 레이어추가 -->
+					<div class="hedaer-notice">					
+						<a id="notificationsInvoker" class="ico_bell on" href="/mypage/myNotiList.do"><!-- new 노출시 on 추가 --></a>
+					</div>
+					<ul class="util">					
+						<li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+						<li><a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a></li>					
+					</ul>
+					<!-- //2018-04-09 알림 레이어추가 -->
+				</div>
+			</div>
+		
+			<nav class="navbar no-gutters g-pa-0 sa-nav">
+			  <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12" style="width: 410px;">
+				<!-- Logo -->
+				<a href="/comng/startUpAdminMain.do?coNo=199" class="align-self-center g-font-size-28 company-logo">초등학교_고스타트업02</a>
+				<!-- End Logo -->
+				<!-- Sidebar Toggler -->
+				<a class="js-side-nav u-header__nav-toggler d-flex align-self-center" href="#" style="display:none !important;" data-hssm-class="" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+				  <i class="hs-admin-align-left"></i>
+				</a>
+				<!-- End Sidebar Toggler -->
+			  </div>
+			  <div class="company-util">
+				<ul>
+					<li class="g-font-size-14">회원 <strong>0</strong>명</li>
+					<li class="g-font-size-14">전문가 <strong>0</strong>명</li>
+					<li class="g-font-size-16"><strong>0</strong> 점</li>
+				</ul>
+				<a href="/startup/eleGoStartup02" target="_blank" class="text-center g-font-size-13 g-color-white g-rounded-25 g-py-5 g-px-20">홈페이지</a>
+			  </div>
+			</nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <section class="container-fluid px-0 g-pt-105">
+    	<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+        <!-- Sidebar Nav -->
+        <div id="sideNav" class="col-auto g-width-250 u-sidebar-navigation--light"><!-- 2018-04-11 반응형 삭제로 인한 수정 -->
+          <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
+            <!-- 관리 홈 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminMain.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"> <i class="hs-admin-window"></i> </span>
+				<span class="media-body align-self-center">관리 홈</span>
+              </a>
+            </li>
+            <!-- End 관리 홈 -->
+
+            <!-- 기본정보 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpHomepageReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-notepad"></i></span>
+                <span class="media-body align-self-center">기본정보</span>
+              </a>
+            </li>
+            <!-- End 기본정보 -->
+
+            <!-- 템플릿 선택 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminTemplit.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layers-alt"></i></span>
+                <span class="media-body align-self-center">템플릿 선택</span>
+              </a>
+            </li>
+            <!-- End 템플릿 선택 -->
+
+            <!-- 메뉴/콘텐츠 관리 --><!-- 2018-04-10 공통 메뉴순서 변경 -->
+            <li id="menuContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu3">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layout-grid-2"></i></span>
+                <span class="media-body align-self-center">메뉴/콘텐츠 관리</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <!-- 구성원 권한 관리: Submenu-1 -->
+			  <ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 메뉴관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/menuMng.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-media-center-alt"></i></span>
+					<span class="media-body align-self-center">메뉴관리</span>
+				  </a>
+				</li>
+				<!-- End 메뉴관리 -->
+				<!-- 메인관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/startUpAdminMainReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-tab-window"></i></span>
+					<span class="media-body align-self-center">메인관리</span>
+				  </a>
+				</li>
+				<!-- End 메인관리 -->
+
+				<!-- 구성원 소개 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/memberMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">구성원 소개 관리</span>
+				  </a>
+				</li>
+				<!-- End 구성원 소개 관리 -->
+			  </ul>
+            </li>
+            <!-- End 메뉴/콘텐츠 관리 --><!-- //2018-04-10 공통 메뉴순서 변경 -->
+
+            <!-- MOU 관리 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/mouMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-world"></i></span>
+                <span class="media-body align-self-center">MOU 관리</span>
+              </a>
+            </li>
+            <!-- End MOU 관리 -->
+
+            <!-- 홍보 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/AdvBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-blackboard"></i></span>
+                <span class="media-body align-self-center">홍보 게시판</span>
+              </a>
+
+            </li>
+            <!-- End 홍보 게시판 -->
+
+            <!-- 퀘스트 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/QstBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-comments-smiley"></i></span>
+                <span class="media-body align-self-center">퀘스트 게시판</span>
+              </a>
+            </li>
+            <!-- End 퀘스트 게시판 -->
+
+			<!-- 명함 제작 -->
+			<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+				<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/cardList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">명함 제작</span>
+				</a>
+			</li>
+			<!-- End 명함 제작 -->
+
+            <!-- UI 설정 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/settingMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-settings"></i></span>
+                <span class="media-body align-self-center">설정</span>
+              </a>
+            </li>
+            <!-- End 설정 -->
+
+            <!-- 통계 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-pie-chart"></i></span>
+                <span class="media-body align-self-center">통계</span>
+              </a>
+            </li>
+            <!-- End 통계 -->
+
+            <!-- 온라인 사업설명회 관리  -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-desktop"></i></span>
+                <span class="media-body align-self-center">온라인 사업설명회 관리</span>
+              </a>
+            </li>
+            <!-- End 온라인 사업설명회 관리  -->
+
+			<!-- 크라우드 펀딩  -->
+             <li id="fundingContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu4">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-cloud"></i></span>
+                <span class="media-body align-self-center">크라우드 펀딩</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 전체 프로젝트 현황 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-clipboard"></i></span>
+					<span class="media-body align-self-center">전체 프로젝트 현황</span>
+				  </a>
+				</li>
+				<!-- End 전체 프로젝트 현황 -->
+				<!-- 프로젝트 준비 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-archive"></i></span>
+					<span class="media-body align-self-center">프로젝트 준비</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 준비 -->
+				<!-- 프로젝트 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-reload"></i></span>
+					<span class="media-body align-self-center">프로젝트 관리</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 관리 -->
+				<!-- 문의글 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-marker-alt"></i></span>
+					<span class="media-body align-self-center">문의글 관리</span>
+				  </a>
+				</li>
+				<!-- End 문의글 관리 -->
+				<!-- 활동보고서 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-volume"></i></span>
+					<span class="media-body align-self-center">활동보고서</span>
+				  </a>
+				</li>
+				<!-- End 활동보고서 -->
+			  </ul>
+            </li>
+            <!-- End 크라우드 펀딩  -->
+          </ul>
+        </div>
+        <!-- End Sidebar Nav -->
+
+        	<div class="col g-ml-0 g-pb-40--md"><!-- 2018-04-09 반응형 삭제로 인한 수정 -->
+         		<div class="g-bg-lightblue-v10-opacity-0_5 g-pa-20 h-100">
+						<!-- Container -->
+						<form>
+							<div class="card g-brd-gray-light-v7 u-card-v1 g-pa-15 g-pa-25-30--md h-100">
+								<!-- contents -->
+								<header class="title-inline">
+									<h2 class="g-font-size-24 g-color-black mb-0">프로젝트 신청</h2>
+								</header>
+
+								<hr class="d-flex g-brd-gray-light-v7 g-mt-20 g-mb-35">
+
+								<div class="project-approval-bx card g-brd-1 g-brd-gray-light-v7 g-bg-gray-light-v12 g-rounded-3 g-pa-10">
+									<p class="mb-0">
+										<span class="state-reg ing">작성중</span> <!-- 상태 class : 작성중 'ing' / 승인대기 'standby' / 승인완료 'complete' / 반려 'return' -->
+										<span class="state-reg standby">승인대기</span>
+										<span class="state-reg complete">승인완료</span>
+										<span class="state-reg return">반려</span>
+										<strong>[리워드형]</strong> 우리나라 전통 인형 만들기 프로젝트</span>
+									</p>
+								</div>
+
+								<div class="table-top-util brd-bottom">
+									<p class="left-area"><span class="txt-bar">후원자들에게 보여줄 소개글을 작성한 후 오픈 신청을 해주세요.<br />임시 저장하여 언제든지 수정할 수 있으니 구성원들과 함께 멋진 소개글을 작성해주세요.</span></p>
+									<p class="right-area"><a href="#" class="btn-white-arrow"><span>프로젝트 목록</span></a></p>
+								</div>
+
+								<ol class="reg-step-list"> <!-- '완료' class="complete" / '작성중' class="current" -->
+									<li class="complete"><span class="num">1</span><span class="txt-bx"><strong class="step">STEP1</strong>기초정보 등록 <a href="#" title="STEP1 바로가기"><span class="state">완료</span></a></span></li>
+									<li class="current"><span class="num">2</span><span class="txt-bx"><strong class="step">STEP2</strong>소개글 작성 <span class="state">작성전</span></span></li>
+									<li><span class="num">3</span><span class="txt-bx"><strong class="step">STEP3</strong>오픈 신청 <span class="state">신청전</span></span></li>
+									<li><span class="num">4</span><span class="txt-bx"><strong class="step">STEP4</strong>승인 확인</span></li>
+								</ol>
+
+								<h3 class="title-sub-blt g-font-size-16 g-color-black mb-0 g-mt-35">프로젝트 소개</h3>
+								<div class="table-top-util">
+									<p class="left-area">후원자들에게 보여줄 우리 프로젝트에 대한 소개글을 작성해주세요. 소개글을 작성이 어렵거나 작성하는 방법이 궁금하시면 작성 가이드를 클릭하여 읽어보세요</p>
+									<p class="right-area"><span class="essential">* 필수입력</span></p>
+								</div>
+								<table class="board-view add-disabled">
+									<colgroup>
+										<col style="width:17%;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjKeyPoint">프로젝트 핵심 포인트</label>
+												<a href="#tipbx01" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx01"></a>
+											</th>
+											<td>
+												<div class="check-num">
+													<input type="text" id="prjKeyPoint" class="form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="프로젝트 핵심 포인트를 입력해주세요." maxlength="30" /><span id="coNmTextCnt">0 / 30</span> <!-- 비활성화 상태 disabled 추가 (form요소 모두 공통) -->
+												</div>
+												<div class="tip-bx collapse" id="tipbx01">
+													소개글 가장 위에 보여질 내용으로 프로젝트 소개글을 대표하는 문구입니다.<br />후원자가 프로젝트 핵심 포인트을 보고 매력을 느낄만한 포인트를 생각해보세요.
+													<p class="ex">[예시] 친환경을 지향하면서 소비자 입장을 생각하고 만든 안전하고 완벽한 친환경 자전거를 만들겠습니다.</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjSummary">프로젝트 개요</label>
+												<a href="#tipbx02" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx02"></a>
+											</th>
+											<td>
+												<div class="align-self-center check-num">
+													<div class="textarea-box form-control g-brd-gray-light-v7 g-rounded-4">
+														<textarea id="prjSummary" class="g-resize-none g-pt-10" rows="2" placeholder="프로젝트 개요를 작성해 주세요." maxlength="200"></textarea>
+														<span>0 / 200</span>
+													</div>
+												</div>
+												<div class="tip-bx collapse" id="tipbx02">
+													프로젝트 통해 완성하시려고 하는 아이디어나 아이템의 핵심을 간략하게 설명해 주세요.<br />누가, 무엇을, 왜, 어떻게 만드는지 등을 떠올리며 육하원칙에 따라 작성하면 쉽습니다.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjKeynoteEditor">프로젝트 특징</label>
+												<a href="#tipbx03" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx03"></a>
+											</th>
+											<td>
+												<div id="prjKeynoteEditor"></div>
+												<div class="tip-bx collapse" id="tipbx03">
+													우리 프로젝트가 가진 특징과 장점을 입력해주세요.  우리만의 남다른 내용이 구체적으로 들어가면 더욱 좋습니다.<br />아이디어나 아이템에 대한 이미지나 링크 등을 사용하여 풍부하게 구성해보세요.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjForProgrsEditor">프로젝트 진행이유</label>
+												<a href="#tipbx04" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx04"></a>
+											</th>
+											<td>
+												<div id="prjForProgrsEditor"></div>
+												<div class="tip-bx collapse" id="tipbx04">
+													목표 금액으로 설정하신 금액이 왜 필요한지를 구체적으로 알려주어야 합니다.<br />여러분이 크라우드 펀딩을 받기 위해 프로젝트를 진행하는 이유를 이미지와 링크 등을 통해서 작성해보세요.<br />후원자들은 여러분의 활동을 지원하기 위해 펀딩에 참여하는 것이기 때문에, 구체적인 프로젝트 진행의 목적을 작성하는 것이 중요합니다.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjFundingPlan">펀딩 금액 사용 계획</label>
+												<a href="#tipbx05" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx05"></a>
+											</th>
+											<td>
+												<div class="align-self-center check-num">
+													<div class="textarea-box form-control g-brd-gray-light-v7 g-rounded-4">
+														<textarea id="prjFundingPlan" class="g-resize-none g-pt-10" rows="2" placeholder="펀딩 금액 사용 계획을 작성해 주세요." maxlength="200"></textarea>
+														<span>0 / 200</span>
+													</div>
+												</div>
+												<div class="tip-bx collapse" id="tipbx05">
+													펀딩 자금을 어떻게 활용할 것인지 계획을 기재해 주세요.<br />실제 제품을 생산한다고 가정을 하고, 제품이 출시되기 전까지 발생되는 비용에 대한 사용계획으로 생각할 수 있습니다.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjThanksTo">감사의 말</label>
+												<a href="#tipbx06" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx06"></a>
+											</th>
+											<td>
+												<div class="align-self-center check-num">
+													<div class="textarea-box form-control g-brd-gray-light-v7 g-rounded-4">
+														<textarea id="prjThanksTo" class="g-resize-none g-pt-10" rows="2" placeholder="감사의 말을 작성해 주세요." maxlength="200"></textarea>
+														<span>0 / 200</span>
+													</div>
+												</div>
+												<div class="tip-bx collapse" id="tipbx06">
+													프로젝트를 읽어 준 사람들과 펀딩에 참여해 준 사람들에게 감사의 말을 입력해 주세요.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<h3 class="title-sub-blt g-font-size-16 g-color-black mb-0 g-mt-40">스타트업 소개</h3>
+								<div class="table-top-util">
+									<p class="left-area">우리 스타트업에 대한 소개와 우리 스타트업의 홈페이지 주소를 작성해주세요.</p>
+									<p class="right-area"><span class="essential">* 필수입력</span></p>
+								</div>
+								<table class="board-view add-disabled">
+									<colgroup>
+										<col style="width:17%;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjCorpIntro">스타트업 소개</label>
+												<a href="#tipbx07" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx07"></a>
+											</th>
+											<td>
+												<div class="align-self-center check-num">
+													<div class="textarea-box form-control g-brd-gray-light-v7 g-rounded-4">
+														<textarea id="prjCorpIntro" class="g-resize-none g-pt-10" rows="2" placeholder="스타트업 소개를 작성해 주세요." maxlength="200"></textarea>
+														<span>0 / 200</span>
+													</div>
+												</div>
+												<div class="tip-bx collapse" id="tipbx07">
+													사람들에게 우리 스타트업을 소개해주세요. 우리는 어떤 스타트업인지, 우리가 하고자 하는 것은 무엇인지 등을 작성해주시면 좋습니다.
+													<p class="ex">[예시] 고객전달예정</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="prjUrlHomepage">홈페이지 주소</label>
+												<a href="#tipbx08" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx08"></a>
+											</th>
+											<td>
+												<div class="check-num">
+													<input type="text" id="prjUrlHomepage" class="form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="홈페이지 주소를 입력하세요" maxlength="30" /><span id="coNmTextCnt">0 / 30</span>
+												</div>
+												<div class="tip-bx collapse" id="tipbx08">
+													홈페이지 주소를 입력해주세요. 고스타트업 홈페이지 외에 소개하고 싶은 다른 홈페이지를 입력해도 좋습니다.
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500">
+												<label for="prjUrlYoutube">유튜브 영상 주소</label>
+												<a href="#tipbx09" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx09"></a>
+											</th>
+											<td>
+												<div class="check-num">
+													<input type="text" id="prjUrlYoutube" class="form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="유튜브 영상 주소를 입력하세요" maxlength="30" /><span id="coNmTextCnt">0 / 30</span>
+												</div>
+												<div class="tip-bx collapse" id="tipbx09">
+													우리 스타트업을 소개할 영상 주소가 있다면 입력해주세요. 
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="scroller-anchor"></div>
+								<div class="scroller btn-bottom-wrap u-divider-center">
+								  <button type="reset" class="btn btn-md u-btn-white g-width-160 g-mr-10">이전</button>
+								  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">저장 후 다음</button> <!-- 작성 중(최초 진입 시), 반려 시 노출 -->
+								  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">다음</button> <!-- 승인 대기, 승인완료 상태 시 노출 -->
+								  <button type="buitton" class="g-pos-abs g-right-20 btn btn-md u-btn-blue g-width-160 g-ml-10">임시 저장</button>
+								</div>
+
+								<script> //플로팅 버튼영역
+								$(document).ready(function () {
+									$('.u-card-v1').addClass('g-overflow-visible-important');
+								});
+								$(document).scroll(function() {									
+									if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+										$('.scroller').addClass('FixedLayoutfunction');
+										$('.u-card-v1').removeClass('g-overflow-visible-important');
+									} else {
+										$('.scroller').removeClass('FixedLayoutfunction');
+										$('.scroller-anchor').css('height','120px');
+										$('.u-card-v1').addClass('g-overflow-visible-important');
+									}
+								});
+								</script>
+								
+
+								<!-- End contents -->
+							</div>
+							<!-- End Container -->
+						</form>
+						<!-- //Container -->
+
+						<form id="FrmDtl" name="FrmDtl" method="post" action="http://dev.yeep.kr/comng/QstBbsInfo.do?coNo=199&hmpgUrlText=eleGoStartup02">
+							<input type="hidden" name="questNo" id="questNo"/>
+						</form>
+
+						<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation_sa.js" ></script>
+						<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(){
+								var paging = new pager();
+								paging.renderPager("pageBlock", "pageMove");
+							});
+							function pageMove(pageIndex){
+								console.log("pageMove pageIndex = "+pageIndex);
+								if( $("#searchType").val() == '' ) {
+									$("#searchText").val('') ;
+								}
+								$("#currentPage").val(pageIndex);
+								console.log(pageIndex);
+								$("#FrmSrch").submit();
+							}
+							function goEdit(){
+								location.href="/comng/QstBbsInfo.do"
+							}
+
+							//상세화면 이동
+							function fnDetail(questNo){
+								$("#questNo").val(questNo);
+								$("#FrmDtl").submit();
+							}
+						</script>
+						<!-- Footer -->
+						<footer id="footer" class="u-footer--bottom-sticky u-header__section--admin-dark g-pa-10">
+							<div class="row align-items-center">
+								<!-- Footer Copyrights -->
+								<div class="col-md-12 text-center text-md-center">
+									<small class="d-block g-font-size-12 txt-copyrights">&copy; 2018 © All Rights Reserved.</small>
+								</div>
+								<!-- End Footer Copyrights -->
+							</div>
+						</footer>
+						<!-- End Footer -->
+        		</div>
+      		</div>
+      	</div>
+    </section>
+  </main>
+</body>
+</html>

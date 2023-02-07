@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css?version=0.00000002">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+</head>
+<body>
+	<div id="top">
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+				<!-- notice -->
+				<!-- //notice -->
+				<div class="header-inner">
+					<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+					<div class="header-utill">
+						<div class="user-name"><strong>YEEP선생님</strong>님 환영합니다</div>
+						<div class="hedaer-notice">
+							<button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+						</div>
+						<div class="user-state">
+							<label class="invisible" >역할</label>
+						</div>
+						<div class="utill-btn">
+							<a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+							<a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+						</div>
+					</div>
+					<ul class="gnb">
+						<li>
+							<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+								<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+								<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+								<li><a href="/intro/startupIntro.do">Go스타트업 소개</a></li>
+								<li><a href="/intro/onlnPtIntro.do">온라인사업설명회 소개</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/clas/classMain.do">수업 /동아리</a></strong>
+							<ul class="two-dept">
+								<li><a href="/clas/classMain.do">수업</a></li>
+								<li><a href="/aprt/aprtMain.do">동아리</a></li>
+								<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go스타트업</a></strong>
+							<ul class="two-dept">
+								<li><a href="javascript:startUp();">Go스타트업</a></li>
+								<li><a href="/onln/onlnPtHomeList.do">온라인사업설명회</a></li>
+								<!--<li><a href="javascript:alert(  '준비 중입니다'  );">YEEP 마켓</a></li>-->
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+								<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+								<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+								<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+								<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+								<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+								<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/notiBbsList.do">이용안내</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+								<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+								<li><a href="/noti/useInqList.do">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			<link rel="stylesheet" type="text/css" href="css/cl.css">
+			<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+			<script type="text/javascript" src="http://dev.yeep.kr/script/jquery.form.js"></script>
+			<form id="frm" name="frm"  method="post">
+				<input type="hidden" name="clasNo" id="clasNo" value="">
+				<input type="hidden" name="grpNo" id="grpNo" value="">
+				<input type="hidden" name="crseNo" id="crseNo" value="">
+				<!-- container -->
+				<div id="container" tabindex="0">
+					<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+					<div class="page-location">
+						<ul>
+							<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+							<li><a href="/clas/classMain.do">수업/동아리</a></li>
+							<li>
+								<a href="#">수업</a>
+								<ul class="location-menu">
+									<li><a href="#" id="classMain">수업</a></li>
+									<li><a href="javascript:;" id="aprtMain">동아리</a></li>
+									<li><a href="javascript:;" id="mentorMainList">멘토링</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="content-width">
+						<h2 class="page-title">수업</h2>
+						<div class="group-info-bg management">
+							<div class="group-info">
+								<div class="class-short-cut"  style="display:none;">
+									<select id="comboClassList" title="수업 바로가기">
+									</select>
+									<a href="javascript:void(0);" id="btnClassMove">이동</a>
+								</div>				
+								<span class="img">
+									<img src="http://dev.yeep.kr/img/common/thumb_class_no_image4.jpg" alt="">
+								</span>
+								<strong class="tit"><em class="elementary">초</em> 권장수업TEST</strong>
+								<ul class="info-list">
+									<li>자유학기활동과정</li>
+									<li>주제선택활동</li>
+									<li>2차시</li>
+									<li>지도교사 : YEEP선생님</li>
+								</ul>
+								<div class="date">
+									<span>2019.09.01 ~ 2020.02.29</span><strong class="ing">진행중</strong>
+								</div>
+							</div>
+						</div>
+
+
+						<div id="tabs" class="class-info-cont">
+							<!-- tab -->
+							<ul class="tab-list">
+								<li rel= "tab1" id="btn1"><a href="javascript:void(0);">수업 정보</a></li>
+								<li rel= "tab2" id="btn2"><a href="javascript:void(0);">게시판</a></li>
+								<li rel= "tab3" id="btn3"><a href="javascript:void(0);">한줄 메모</a></li>
+								<!-- 교사만 과제, 수업관리 표시 -->
+								<li rel= "tab4" id="btn4"><a href="javascript:void(0);">과제 관리</a></li>
+								<li rel= "tab5" id="btn5"><a href="javascript:void(0);">수업 관리</a></li>
+							</ul>
+							<!-- //tab -->
+							<h3 class="hidden-title" id="hiddenDtlTabText" >수업 정보</h3>
+							<div id="tab1" class="tab-cont">
+								<!-- 수업 리스트  메인-->
+								<div id="tab-cont_info_list" style="display:none;">
+									<h3 class="tab-cont-title">수업 정보 내용</h3>
+									<div class="icon-btn-type">
+										<!-- <a href="javascript:eduFileDown('2017_YEEP중학교용_교안_통합본.pdf', '2017_YEEP중학교용_교안_통합본.pdf', '/clas/workbook')" class="plan-down"><span> 2017 교안 통합본 다운로드</span></a> -->
+										<!-- <a href="javascript:eduFileDown('2017_YEEP중학교용_워크북_통합본.pdf', '2017_YEEP중학교용_워크북_통합본.pdf', '/clas/workbook')" class="plan-down"><span>2017 워크북 통합본 다운로드</span></a> -->
+									</div>
+									<div id="tbClassInfo" class="board-type01 bdtitle-type"></div>
+								</div>
+
+
+								<!-- 수업 상세 -->
+								<div id="tab-cont_info_homework">
+									<!-- 수업 상세  메인-->
+									<h3 class="tab-cont-title">수업 정보 상세 내용</h3>
+									<div id="homework_main" class="class-detail">
+										<em>[ 제1권 ]lv2</em><strong>1212 - 중요과정</strong>
+										<span class="compulsory">중요 과정</span> <!-- 2019-11-12 text수정 -->
+										<ul class="link">
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div id="tab3" class="tab-cont" style="display: none;"></div>
+		
+							<!-- 교사만 과제, 수업관리 표시 -->
+							<div id="tab4" class="tab-cont" style="display: none;"></div>
+							<div id="tab5" class="tab-cont">
+								<form id="attaFile" name="attaFile"  enctype="multipart/form-data" method="post">
+									<input type="hidden" name="originImgSrc" id="originImgSrc" value="">
+									<input type="hidden" name="grpNo" value="">
+									<input type="hidden" name="clasNo"  value="">
+									<input type="hidden" name="crseNo"  value="">
+									<input type="hidden" name="period"  value="">
+									<input type="hidden" name="schlLvlList"  value="">
+
+									<div class="page-sub-title-style">
+										<h3 class="sub-title">수업 과정 설정</h3> <!-- 2019-11-12 text 수정 -->
+										<!-- 2019-11-12 삭제
+										<p class="title-text">학생이 필수 과정의 과제를 모두 등록해야, Go! startup 활동이 가능합니다.</p> -->
+										<div class="title-btn">
+											<a href="javascript:;" id="btnRecommandClass" class="btn-white" title="권장 수업보기 새창 열림">권장 수업보기</a>
+										</div>
+									</div>
+
+									<!-- 2019-11-12 테이블 추가 -->
+									<div class="data-board">
+										<table>
+											<caption>수업 과정 설정표 - 과정명, 수업기간으로 구성된 입력표입니다.</caption>
+											<colgroup>
+												<col style="width:20%;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row"><label for="processName">과정명</label></th>
+													<td>2019년 초등과정</td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="classTermYear1">수업기간</label></th>
+													<td class="input-td">
+														<select id="classTermYear1" name="classTermSel">
+															<option>2019</option>
+															<option>2020</option>
+														</select>
+														<select id="classTermMonth1" name="processName">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+															<option>6</option>
+															<option>7</option>
+															<option>8</option>
+															<option>9</option>
+															<option selected>10</option>
+															<option>11</option>
+															<option>12</option>
+														</select>
+														<span class="input-txt-line">-</span>
+														<select id="classTermYear2" name="classTermSel">
+															<option>2019</option>
+															<option selected>2020</option>
+														</select>
+														<select id="classTermMonth2" name="processName">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+															<option>6</option>
+															<option>7</option>
+															<option>8</option>
+															<option>9</option>
+															<option selected>10</option>
+															<option>11</option>
+															<option>12</option>
+														</select>
+														<span class="cmt"> 진행 기간은 최대 1년까지 설정할 수 있습니다.</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- //2019-11-12 테이블 추가 -->
+
+									<div class="board-type01 mrg-top-20"> <!-- 2019-11-12 class 추가 -->
+										<table id="courseListTable">
+											<colgroup> <!-- 2019-11-12 colgroup 수정 -->
+												<col style="width:23%;" />
+												<col style="width:5%;" />
+												<col />
+												<col style="width:17%;" />
+												<col style="width:14%;" /> <!-- 2019-11-12 col 추가 -->
+												<col style="width:14%;" />
+												<col style="width:12%;" />
+											</colgroup>
+											<thead>
+												<tr class="bg-type1">
+													<th scope="col" colspan="3">과정명</th>
+													<th scope="col">진로교육 성취지표</th>
+													<th scope="col">핵심역량 지표</th> <!-- 2019-11-12 td 추가 -->
+													<th scope="col">난이도</th>
+													<th scope="col">사용여부</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr style='height:150px;'>
+													<td colspan='7' class='check-txt'>수업내역이 없습니다.</td> <!-- 2019-11-12 colspan 수정 -->
+												</tr>
+												<tr>
+													<th scope="col" colspan="7">제1권</th> <!-- 2019-11-12 colspan 수정 -->
+												</tr>
+												<tr>
+													<td colspan="7" class="class-tit">lv2</td> <!-- 2019-11-12 colspan 수정 -->
+												</tr>
+												<tr>
+													<td rowspan="1" class="sstit">1212</td>
+													<td class="t-center"><img src="http://dev.yeep.kr/images/common/icon_star.png" alt="중요과정"></td> <!-- 2019-11-12 alt 수정 -->
+													<td>01. YEEP 체계의 이해</td>
+													<td class="no-line t-center">ㅍㅍㅍㅍㅍㅍ</td>
+													<td class="no-line t-center">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+													<td class="no-line t-center"><span class="star"><span class="level-2">난이도2</span></span></td>
+													<td class="no-line t-center">
+														<div class="checkbox01"><input id="check_4" name="chkCourse" type="checkbox" checked="checked" value="4" dtlclasno="13842"><label class="txt-none" for="check_4" title="선택 됨">사용여부</label></div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="col" colspan="7">제2권</th>
+												</tr>
+													<tr>
+														<td colspan="7" class="class-tit">lv2</td>
+													</tr>
+													<tr>
+														<td rowspan="1" class="sstit">lv3</td>
+														<td class="t-center">-</td>
+														<td>일반 과정</td>
+														<td class="no-line t-center"></td>
+														<td class="no-line t-center">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+														<td class="no-line t-center"><span class="star"><span class="level-2">난이도2</span></span></td>
+														<td class="no-line t-center"><div class="checkbox01"><input id="check_10" name="chkCourse" type="checkbox" checked="checked" value="10" dtlclasno="13843"><label class="txt-none" for="check_10" title="선택 됨">사용여부</label></div></td>
+													</tr>
+													<tr><td colspan="7" class="check-txt">총 <strong id="selectedCourseCnt">2</strong> 차시를 선택하였습니다.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</form>
+							</div>		
+						</div>
+					</div>
+				</div>
+				<!-- //container -->
+			</div>
+			<div id="footer">
+				<!-- footer -->
+				<div class="footer-utill-area">
+					<ul class="footer-utill">
+						<li><a href="/noti/useInqList.do">이용문의</a></li>
+						<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+						<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+						<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+					</ul>
+				</div>
+				<!-- 2018-04-17 디자인요청 수정 -->
+				<div class="footer-cont">
+					<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+					<p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+					<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+					<ul class="site_link">
+						<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+						<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+						<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+					</ul>
+				</div>
+				<!-- //2018-04-17 디자인요청 수정 -->
+				<!-- //footer -->
+			</div> <!-- //wrap -->
+		</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+.career_edu{
+  background:#199097;
+  height:125px;
+  margin:43px 0 0 0;
+  position:relative;
+}
+.career_edu:after{
+  background:url(../images/img_career_edu.png) no-repeat;
+  content:'';
+  display:block;
+  position:absolute;
+  right:30px;
+  top:-30px;
+  width:250px;
+  height:213px;
+}
+.career_edu_tab{
+  padding:36px 0 0 32px;
+}
+.career_edu_tab li {
+  display:inline-block;
+}
+.career_edu_tab li a{
+  width:314px;
+  height:57px;
+  line-height:57px;
+  text-align:center;
+  color:#fff;
+  display:block;
+  background:#63b4b8;
+  font-size:18px;
+  font-weight:400;
+  font-family: 'Noto Sans KR', '돋움', dotum, sans-serif;
+}
+.career_edu_tab li.active a{
+  color:#000;
+  background:#fff;
+}
+.career_edu_cont {
+    margin-top: 77px;
+}
+.career_edu_cont h3{
+    font-size:24px;
+    margin:35px 0 19px 0;
+    color:#000;
+}
+.career_edu_cont h3:before{
+    content:"";
+    display:inline-block;
+    border-left:3px solid #ed1c24;
+    margin:0 3px 0 0;
+    width:2px;
+    height:20px;
+}
+.career_edu_cont h4 {
+    margin-top: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    line-height: 20px;
+}
+.career_edu_cont .desc-txt {
+    margin-top: 21px;
+    font-size: 14px;
+    color: #000;
+    line-height: 24px;
+}
+.career_edu_cont p {
+	font-size:14px;
+	line-height:24px;
+}
+.career_edu_cont .info-txt + p {
+    margin-top: 10px;
+}
+.career_edu_cont .info-txt {
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #199097;
+}
+.career_edu_cont .info-txt:before {
+    color: #199097;
+    font-weight: 500;
+    font-size: 10px;
+    content: '▶';
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.career_edu_cont .venndiagram {
+    padding: 20px 0 20px 50px;
+    margin-top: 20px;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+.career_edu_cont .venndiagram .img {
+    float: left;
+    width: 194px;
+}
+.career_edu_cont .desc-hide {
+    display: none;
+}
+.career_edu_cont .venndiagram .desc {
+    float: left;
+    width: 700px;
+    padding: 40px 0 40px 65px;
+    box-sizing: border-box;
+}
+.career_edu_cont .venndiagram .desc li {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+.career_edu_cont .venndiagram .desc li+li {
+    margin-top: 30px;
+}
+.career_edu_cont .venndiagram .desc li em{
+    display: block;
+    color: #000;
+    text-indent: -26px;
+    line-height: 24px;
+}
+.career_edu_cont .venndiagram .desc li em .num {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border: 1px solid #b8b8b8;
+    border-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    line-height: 18px;
+    text-indent: 0;
+}
+.career_edu_cont .program-img {
+    margin-top: 25px;
+}
+.career_edu_cont .table_wrap {
+    margin-top: 30px;
+}
+.ui-tab-menu {
+    position: relative;
+    margin: 30px 0 15px;
+    overflow: hidden;
+}
+.ui-tab-menu:after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #cecece;
+    z-index: -1;
+}

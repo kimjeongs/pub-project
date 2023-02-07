@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+<script src="jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#datepickerStart, #datepickerEnd").datepicker({
+		  dateFormat: "yy.mm.dd"
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="top">
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+			<!-- notice --><!-- //notice -->
+			<div class="header-inner">
+				<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+				<div class="header-utill">
+					<div class="utill-btn">
+						<a href="/cmmn/sso/api/user.agent.3.do">로그인1</a>
+						<a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+						<a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+					</div>
+				</div>
+				<ul class="gnb">
+					<li>
+						<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+							<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+							<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+							<li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+							<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+							<li><a href="/noti/useInqList.do">이용문의</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+						<ul class="two-dept">
+							<li><a href="/clas/classMain.do">수업</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+						<ul class="two-dept">
+							<li><a href="/aprt/aprtMain.do">동아리</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+						<ul class="two-dept">
+							<!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+							<!-- 2018-04-29 임시로 주소 변경. -->
+
+							<li><a href="javascript:startUp();">Go! startup</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+							<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+							<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+							<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+						<ul class="two-dept">
+							<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+							<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+							<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+							<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container" tabindex="0">
+			<div class="page-location">
+				<ul>
+					<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+					<li><a href="/clas/classMain.do">온라인 사업설명회</a></li>
+				</ul>
+			</div>
+
+			<link rel="stylesheet" type="text/css" href="on.css">
+			<div class="content-width">
+				<h2 class="page-title">온라인 사업설명회</h2>
+				<!-- 비회원 -->
+				<div class="box-noti">
+					<span><strong>온라인 사업설명회</strong>를 통해 실전 역량을 발전시켜 보세요.</span>
+					<div class="btn-center">
+						<a href="https://api.career.go.kr/cloud/api/mber/type.do" class="btn-big-white">회원가입</a>
+						<a href="/cmmn/sso/api/user.agent.3.do" class="btn-big-orange">로그인</a>
+					</div>
+				</div>
+				<!-- //비회원 -->
+				<!-- 회원 개인화영역 -->
+				<div class="mybz-bx">
+					<p class="mybz-cmnt">오늘 HACCAP 기업의 온라인 설명회가 진행됩니다.  / 오늘 참관 가능한 <em class="num">5</em>개의 설명회가 예정되어 있습니다.</p>
+					<ul class="mybz-list">
+						<li>
+							<span class="state progress">진행중</span> <!-- 상태값 class : 진행중 'progress', 예정 'standby' -->
+							<a href="#" class="title">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<span class="date">2020-03-15 (16:00~18:00)</span>
+							<a href="#" class="btn-mybz enter">입장하기</a> <!-- 버튼상태 class : 입장하기 'enter', 상세보기 '상세보기' -->
+						</li>
+						<li>
+							<span class="state standby">예정</span>
+							<a href="#" class="title">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<span class="date">2020-03-15 (16:00~18:00)</span>
+							<a href="#" class="btn-mybz">상세보기</a>
+						</li>
+						<li>
+							<span class="state standby">예정</span>
+							<a href="#" class="title">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 경기도교육청 주관 온라인 사업설명회 경기도교육청 주관 온라인 사업설명회</a>
+							<span class="date">2020-03-15 (16:00~18:00)</span>
+							<a href="#" class="btn-mybz">상세보기</a>
+						</li>
+						<li>
+							<span class="state standby">예정</span>
+							<a href="#" class="title">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<span class="date">2020-03-15 (16:00~18:00)</span>
+							<a href="#" class="btn-mybz">상세보기</a>
+						</li>
+						<li>
+							<span class="state standby">예정</span>
+							<a href="#" class="title">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<span class="date">2020-03-15 (16:00~18:00)</span>
+							<a href="#" class="btn-mybz">상세보기</a>
+						</li>
+					</ul>
+				</div>
+				<!-- //회원 개인화영역 -->
+
+				<div class="page-search">
+					<fieldset>
+					<legend>온라인 사업설명회 검색</legend>
+					<p class="sort-list">
+						<input type="radio" id="searchTy1" name="searchTy" checked="checked" /><label for="searchTy1">전체</label>
+						<input type="radio" id="searchTy2" name="searchTy" /><label for="searchTy2">진행중</label>
+						<input type="radio" id="searchTy3" name="searchTy" /><label for="searchTy3">모집</label>
+						<input type="radio" id="searchTy4" name="searchTy" /><label for="searchTy4">예정</label>
+						<input type="radio" id="searchTy5" name="searchTy" /><label for="searchTy5">종료</label>
+					</p>
+					<div class="search-grp-wrap">
+						<select id="searchGroup">
+							<option>전체</option>
+							<option>제목</option>
+							<option>내용</option>
+							<option>진행일</option>
+						</select>
+						<input type="text" class="txt" placeholder="검색어를 입력하세요" style="display:none;"> <!-- '전체, 제목, 내용' 선택일때 입력박스 -->
+						<span> <!-- 진행일 선택일때 입력박스 -->
+							<input type="text" id="datepickerStart" title="시작일 선택" class="datepicker" /><span class="moire">~</span><input type="text" id="datepickerEnd" title="종료일 선택" class="datepicker" />
+						</span>
+						<button type="button" class="search-btn">검색</button>
+					</div>
+					<fieldset>
+				</div>
+
+				<!-- search-results -->
+				<div class="search-results">
+					<h3 class="hidden-title" id="hiddenTabText" >온라인 사업설명회 검색결과 목록</h3>
+					<!-- 검색결과 count -->
+					<div class="search-count-btn">
+						<p class="search-count"><strong>사업설명회</strong>로 <strong>내용</strong> 검색결과 (총 <strong>15</strong>건)</p>
+					</div>
+
+					 <!-- 검색결과가 없을경우 -->
+					<ul class="search-results-list online">
+						<li class="none-cont">검색 결과가 없습니다.</li>
+					</ul>
+					<!-- //검색결과가 없을경우 -->
+
+					<!-- 검색결과가 있을경우 -->
+					<ul class="search-results-list online">
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 서울시 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p> <!-- 상태값 class : 진행중 'progress' / 모집 'recruit' / 예정 'standby' / 종료 'closed' -->
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">누구나 신청할 수 있는<br />모집 중인 사업설명회 입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="request" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 신청하기">신청하기</a> <!-- 버튼상태 class : 입장하기,발표참가 'enter' / 신청하기 'request' / 신청마감 'closed' / 신청완료 'complete' -->
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">[HACCAP] HACCAP 동아리 전용 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 있음 (상세 참조)</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p>
+								<p class="mask"><a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">신청제약 조건이 있는<br />모집 중인 사업설명회 입니다.<br />상세보기를 확인해 주세요. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="request" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 신청하기">신청하기</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 경기도 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state standby">예정</p>
+								<p class="mask"><a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">신청이 마감되어 사업설명회<br />진행이 예정되었습니다. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="closed" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 신청마감">신청마감</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 한국기업가정신재단한국기업가정신재단한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state progress">진행중</p>
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">진행 중인 사업설명회입니다.<br />입장하기를 눌러주세요. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="enter" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 입장하기">입장하기</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state progress">진행중</p>
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">참가 기업입니다.<br />발표를 위해 입장해 주세요.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="enter" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 발표참가">발표참가</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state closed">종료</p>
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">종료된 사업설명회입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p>
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">이미  참가 신청한 사업설명회 입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="complete" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 신청완료">신청완료</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[이미지없음] 서울시 이미지없음 예선 상세보기">[이미지없음] 서울시 이미지없음 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="img_onlinebz_noimg.jpg" alt="" /></span>
+								<p class="state standby">예정</p>
+								<p class="mask"><a href="#" title="[이미지없음] 서울시 이미지없음 예선 상세보기">이미 참가 신청한 사업설명회 입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[이미지없음] 서울시 이미지없음 예선 상세보기">상세보기</a>
+								<a href="#" class="complete" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 신청완료">신청완료</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 서울시 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p> <!-- 상태값 class : 진행중 'progress' / 모집 'recruit' / 예정 'standby' / 종료 'closed' -->
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">누구나 신청할 수 있는<br />모집 중인 사업설명회 입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="request" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 신청하기">신청하기</a> <!-- 버튼상태 class : 입장하기,발표참가 'enter' / 신청하기 'request' / 신청마감 'closed' / 신청완료 'complete' -->
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">[HACCAP] HACCAP 동아리 전용 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 있음 (상세 참조)</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p>
+								<p class="mask"><a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">신청제약 조건이 있는<br />모집 중인 사업설명회 입니다.<br />상세보기를 확인해 주세요. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="request" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 신청하기">신청하기</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 경기도 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state standby">예정</p>
+								<p class="mask"><a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">신청이 마감되어 사업설명회<br />진행이 예정되었습니다. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="closed" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 신청마감">신청마감</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 서울시 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p> <!-- 상태값 class : 진행중 'progress' / 모집 'recruit' / 예정 'standby' / 종료 'closed' -->
+								<p class="mask"><a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">누구나 신청할 수 있는<br />모집 중인 사업설명회 입니다.</a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 상세보기">상세보기</a>
+								<a href="#" class="request" title="[서울시 대회] 서울시 교육청배 청소년 창업부문 설명회 예선 신청하기">신청하기</a> <!-- 버튼상태 class : 입장하기,발표참가 'enter' / 신청하기 'request' / 신청마감 'closed' / 신청완료 'complete' -->
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">[HACCAP] HACCAP 동아리 전용 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 있음 (상세 참조)</li>
+								<li>주관 : 한국기업가정신재단</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state recruit">모집</p>
+								<p class="mask"><a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">신청제약 조건이 있는<br />모집 중인 사업설명회 입니다.<br />상세보기를 확인해 주세요. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="request" title="[HACCAP] HACCAP 동아리 전용 온라인 사업설명회 신청하기">신청하기</a>
+							</p>
+						</li>
+						<li>
+							<a href="#" class="title" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회</a>
+							<ul class="info-group">
+								<li>진행일시 : 2020-04-01 16:00~16:30</li>
+								<li>신청자격 : 자격 제한 없음</li>
+								<li>주관 : 경기도 교육청</li>
+							</ul>
+							<div class="pic-group">
+								<span class="img"><img src="thumnail.jpg" alt="" /></span>
+								<p class="state standby">예정</p>
+								<p class="mask"><a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">신청이 마감되어 사업설명회<br />진행이 예정되었습니다. </a></p>
+							</div>
+							<p class="btn-group">
+								<a href="#" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 상세보기">상세보기</a>
+								<a href="#" class="closed" title="[5개 기업 선착순] 경기도교육청 주관 온라인 사업설명회 신청마감">신청마감</a>
+							</p>
+						</li>
+					</ul>
+					<!-- //검색결과가 있을경우 -->
+
+					<div id = "search-more">
+						<a href="javascript:searchMoreClasList();" class="btn-more" title="온라인사업설명회 목록 추가 펼침" >더보기</a>
+					</div>
+					<!-- //온라인 사업설명회 검색결과 -->
+				</div>
+				<!-- //search-results -->
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<div id="footer">
+		<!-- footer --><!-- //footer -->
+    </div>
+	<!-- //wrap -->
+
+</div>
+</body>
+
+</html>

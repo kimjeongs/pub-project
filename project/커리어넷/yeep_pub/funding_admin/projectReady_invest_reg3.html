@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="http://dev.yeep.kr/assets/js/ckeditor/ckeditor.js"></script>
+<script src="jquery-ui.js"></script> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" type="text/css" href="jquery-ui.css"> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" href="css/custom.css">
+<script>
+	$(function() {
+		$("#fundTermStart, #fundTermSEnd").datepicker({
+		  dateFormat: "yy.mm.dd"
+		});
+	});
+</script>
+</head>
+<body>
+  <main>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--sticky-top">
+		<div class="u-header__section u-header__section--admin-light g-min-height-65">
+			<div class="header-top">
+				<a href="/main/main.do" class="logo"><img class="" src="/assets/img/content/sa_logo.png" alt="YEEP"></a>
+				<span class="txt g-font-size-13"><strong class="g-font-size-14">Startup</strong> 홈페이지 관리</span>
+				<div class="util-menu">				
+					<p class="txt02 g-font-size-12"><span>YEEP지기</span> 님 환영합니다</p>				
+					<!-- 2018-04-09 알림 레이어추가 -->
+					<div class="hedaer-notice">					
+						<a id="notificationsInvoker" class="ico_bell on" href="/mypage/myNotiList.do"><!-- new 노출시 on 추가 --></a>
+					</div>
+					<ul class="util">					
+						<li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+						<li><a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a></li>					
+					</ul>
+					<!-- //2018-04-09 알림 레이어추가 -->
+				</div>
+			</div>
+		
+			<nav class="navbar no-gutters g-pa-0 sa-nav">
+			  <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12" style="width: 410px;">
+				<!-- Logo -->
+				<a href="/comng/startUpAdminMain.do?coNo=199" class="align-self-center g-font-size-28 company-logo">초등학교_고스타트업02</a>
+				<!-- End Logo -->
+				<!-- Sidebar Toggler -->
+				<a class="js-side-nav u-header__nav-toggler d-flex align-self-center" href="#" style="display:none !important;" data-hssm-class="" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+				  <i class="hs-admin-align-left"></i>
+				</a>
+				<!-- End Sidebar Toggler -->
+			  </div>
+			  <div class="company-util">
+				<ul>
+					<li class="g-font-size-14">회원 <strong>0</strong>명</li>
+					<li class="g-font-size-14">전문가 <strong>0</strong>명</li>
+					<li class="g-font-size-16"><strong>0</strong> 점</li>
+				</ul>
+				<a href="/startup/eleGoStartup02" target="_blank" class="text-center g-font-size-13 g-color-white g-rounded-25 g-py-5 g-px-20">홈페이지</a>
+			  </div>
+			</nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <section class="container-fluid px-0 g-pt-105">
+    	<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+        <!-- Sidebar Nav -->
+        <div id="sideNav" class="col-auto g-width-250 u-sidebar-navigation--light"><!-- 2018-04-11 반응형 삭제로 인한 수정 -->
+          <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
+            <!-- 관리 홈 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminMain.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"> <i class="hs-admin-window"></i> </span>
+				<span class="media-body align-self-center">관리 홈</span>
+              </a>
+            </li>
+            <!-- End 관리 홈 -->
+
+            <!-- 기본정보 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpHomepageReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-notepad"></i></span>
+                <span class="media-body align-self-center">기본정보</span>
+              </a>
+            </li>
+            <!-- End 기본정보 -->
+
+            <!-- 템플릿 선택 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminTemplit.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layers-alt"></i></span>
+                <span class="media-body align-self-center">템플릿 선택</span>
+              </a>
+            </li>
+            <!-- End 템플릿 선택 -->
+
+            <!-- 메뉴/콘텐츠 관리 --><!-- 2018-04-10 공통 메뉴순서 변경 -->
+            <li id="menuContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu3">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layout-grid-2"></i></span>
+                <span class="media-body align-self-center">메뉴/콘텐츠 관리</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <!-- 구성원 권한 관리: Submenu-1 -->
+			  <ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 메뉴관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/menuMng.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-media-center-alt"></i></span>
+					<span class="media-body align-self-center">메뉴관리</span>
+				  </a>
+				</li>
+				<!-- End 메뉴관리 -->
+				<!-- 메인관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/startUpAdminMainReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-tab-window"></i></span>
+					<span class="media-body align-self-center">메인관리</span>
+				  </a>
+				</li>
+				<!-- End 메인관리 -->
+
+				<!-- 구성원 소개 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/memberMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">구성원 소개 관리</span>
+				  </a>
+				</li>
+				<!-- End 구성원 소개 관리 -->
+			  </ul>
+            </li>
+            <!-- End 메뉴/콘텐츠 관리 --><!-- //2018-04-10 공통 메뉴순서 변경 -->
+
+            <!-- MOU 관리 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/mouMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-world"></i></span>
+                <span class="media-body align-self-center">MOU 관리</span>
+              </a>
+            </li>
+            <!-- End MOU 관리 -->
+
+            <!-- 홍보 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/AdvBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-blackboard"></i></span>
+                <span class="media-body align-self-center">홍보 게시판</span>
+              </a>
+
+            </li>
+            <!-- End 홍보 게시판 -->
+
+            <!-- 퀘스트 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/QstBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-comments-smiley"></i></span>
+                <span class="media-body align-self-center">퀘스트 게시판</span>
+              </a>
+            </li>
+            <!-- End 퀘스트 게시판 -->
+
+			<!-- 명함 제작 -->
+			<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+				<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/cardList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">명함 제작</span>
+				</a>
+			</li>
+			<!-- End 명함 제작 -->
+
+            <!-- UI 설정 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/settingMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-settings"></i></span>
+                <span class="media-body align-self-center">설정</span>
+              </a>
+            </li>
+            <!-- End 설정 -->
+
+            <!-- 통계 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-pie-chart"></i></span>
+                <span class="media-body align-self-center">통계</span>
+              </a>
+            </li>
+            <!-- End 통계 -->
+
+            <!-- 온라인 사업설명회 관리  -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-desktop"></i></span>
+                <span class="media-body align-self-center">온라인 사업설명회 관리</span>
+              </a>
+            </li>
+            <!-- End 온라인 사업설명회 관리  -->
+
+			<!-- 크라우드 펀딩  -->
+             <li id="fundingContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu4">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-cloud"></i></span>
+                <span class="media-body align-self-center">크라우드 펀딩</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 전체 프로젝트 현황 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-clipboard"></i></span>
+					<span class="media-body align-self-center">전체 프로젝트 현황</span>
+				  </a>
+				</li>
+				<!-- End 전체 프로젝트 현황 -->
+				<!-- 프로젝트 준비 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-archive"></i></span>
+					<span class="media-body align-self-center">프로젝트 준비</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 준비 -->
+				<!-- 프로젝트 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-reload"></i></span>
+					<span class="media-body align-self-center">프로젝트 관리</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 관리 -->
+				<!-- 문의글 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-marker-alt"></i></span>
+					<span class="media-body align-self-center">문의글 관리</span>
+				  </a>
+				</li>
+				<!-- End 문의글 관리 -->
+				<!-- 활동보고서 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-volume"></i></span>
+					<span class="media-body align-self-center">활동보고서</span>
+				  </a>
+				</li>
+				<!-- End 활동보고서 -->
+			  </ul>
+            </li>
+            <!-- End 크라우드 펀딩  -->
+          </ul>
+        </div>
+        <!-- End Sidebar Nav -->
+
+        	<div class="col g-ml-0 g-pb-40--md"><!-- 2018-04-09 반응형 삭제로 인한 수정 -->
+         		<div class="g-bg-lightblue-v10-opacity-0_5 g-pa-20 h-100">
+					<script>
+						$(document).on('ready', function () {
+							document.title="Startup 홈페이지 관리 | Go! startup | YEEP";
+						  // initialization of range datepicker
+						  $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+						  // initialization of custom scrollbar
+						  $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+						  // initialization of HSDropdown component
+						  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
+						  // initialization of sidebar navigation component
+						  $.HSCore.components.HSSideNav.init('.js-side-nav');
+
+						  // initialization of datatables
+						  //$.HSCore.components.HSDatatables.init('.js-datatable');
+
+						  // initialization of custom select
+						  $('.js-select').selectpicker();
+						});
+					  </script>
+
+						<!-- Container -->
+						<form>
+							<div class="card g-brd-gray-light-v7 u-card-v1 g-pa-15 g-pa-25-30--md h-100">
+								<!-- contents -->
+								<header class="title-inline">
+									<h2 class="g-font-size-24 g-color-black mb-0">프로젝트 신청</h2>
+								</header>
+
+								<hr class="d-flex g-brd-gray-light-v7 g-mt-20 g-mb-35">
+
+								<div class="project-approval-bx card g-brd-1 g-brd-gray-light-v7 g-bg-gray-light-v12 g-rounded-3 g-pa-10">
+									<p class="mb-0">
+										<span class="state-reg ing">작성중</span> <!-- 상태 class : 작성중 'ing' / 승인대기 'standby' / 승인완료 'complete' / 반려 'return' -->
+										<span class="state-reg standby">승인대기</span>
+										<span class="state-reg complete">승인완료</span>
+										<span class="state-reg return">반려</span>
+										<strong>[투자형]</strong> 우리나라 전통 인형 만들기 프로젝트
+									</p>
+								</div>
+
+								<div class="table-top-util brd-bottom">
+									<p class="left-area"><span class="txt-bar">펀딩 조건 설정에 앞서 우리 프로젝트가 제품 제작형인지, 서비스 제공형인지 선택해주세요.</span></p>
+									<p class="right-area"><a href="#" class="btn-white-arrow"><span>프로젝트 목록</span></a></p>
+								</div>
+
+								<ol class="reg-step-list invest-step2"> <!-- '완료' class="complete" / '작성중' class="current" -->
+									<li class="complete"><span class="num">1</span><span class="txt-bx"><strong class="step">STEP1</strong>기초정보 등록 <a href="#"><span class="state">완료</span></a></span></li>
+									<li class="complete"><span class="num">2</span><span class="txt-bx"><strong class="step">STEP2</strong>사업설명서 작성  <a href="#"><span class="state">완료</span></a></span></li>
+									<li class="current"><span class="num">3</span><span class="txt-bx"><strong class="step">STEP3</strong>펀딩 조건 설정 <span class="state">작성전</span></span></li> <!-- 작성중 -->
+									<li><span class="num">4</span><span class="txt-bx"><strong class="step">STEP4</strong>오픈 신청 <span class="state">신청전</span></span></li>
+									<li><span class="num">5</span><span class="txt-bx"><strong class="step">STEP5</strong>승인 확인</span></li>
+								</ol>
+								
+								<div role="tabpanel">
+									<ul class="nav funding-type-wrap" role="tablist">
+										<li class="selected" role="presentation"> <!-- 선택된 조건 : li class="selected" -->
+											<a href="#fundingTy01" aria-controls="fundingTy01" role="tab" data-toggle="tab" class="type1 active">
+											<strong class="title-type">제품 제작형</strong>
+											<button type="button" class="btn btn-default u-btn-darkgray">제품제작형 신청</button>
+											<p class="desc"><strong>펀딩을 통한 투자금으로 <span class="color-orange">제품을 제작하는 경우</span></strong>제작할 제품의 가격과 제조할 수량을 입력하여 펀딩 받을 금액을 설정하고 배당률을 설정합니다</p>
+											</a>
+										</li>
+										<li role="presentation">
+											<a href="#fundingTy02" aria-controls="fundingTy02" role="tab" data-toggle="tab" class="type2">
+											<strong class="title-type">서비스 제공형</strong>
+											<button type="button" class="btn btn-default u-btn-darkgray">제품제작형 신청</button>
+											<p class="desc"><strong>펀딩을 통한 투자금으로 <span class="color-orange">서비스를 준비하는 경우</span></strong>제공할 서비스의 가격과 제공할 서비스 수를 입력하여 펀딩 받을 금액을 설정하고 배당률을 설정합니다.</p>
+											</a>
+										</li>
+									</ul>
+
+									<div class="tab-content">
+										<div id="fundingTy01" role="tabpanel" class="tab-pane active btd-gray-bx funding-type-info">
+											<strong class="title-info type1">제품 제작형 펀딩 조건 설정</strong>
+											<p class="txt-info">펀딩 조건 결정에 앞서 시뮬레이션을 통해 펀딩 받을 조건을 설정합니다.<br />
+											좌측의 펀딩 결과 시뮬레이션 예시는 목표 수량을 모두 제조 및 판매하고 펀딩에 성공했을 때에 결과를 보여주고 있습니다.<br />
+											예시를 보고 우측에서 우리 프로젝트의 펀딩 조건을 설정하고 결과를 시뮬레이션 해보세요.<br />
+											우리가 현실에서 사용하는 원화(\)와 잎은 동일한 가치를 지녔다고 가정합니다. ( 원 : 잎 = 1 : 1 )<br />
+											<span class="color-orange">목표 금액의 70% 이상을 펀딩 받지 못하면 펀딩 받은 금액을 모두 투자자에게 돌려줘야 한다는 점에 유의하여
+											입력 값을 수정하며 원하는 결과가 나올 때까지 시뮬레이션 한 후 펀딩 조건을 결정해주세요.</span></p>
+										</div>
+										<div id="fundingTy02" role="tabpanel" class="tab-pane btd-gray-bx funding-type-info">
+											<strong class="title-info type2">서비스 제공형 펀딩 조건 설정</strong>
+											<p class="txt-info">펀딩 조건 결정에 앞서 시뮬레이션을 통해 펀딩 받을 조건을 설정합니다.<br />
+											좌측의 펀딩 결과 시뮬레이션 예시는 목표 수량을 모두 판매하고 펀딩에 성공했을 때에 결과를 보여주고 있습니다.<br />
+											예시를 보고 우측에서 우리 프로젝트의 펀딩 조건을 설정하고 결과를 시뮬레이션 해보세요.<br />
+											우리가 현실에서 사용하는 원화(\)와 잎은 동일한 가치를 지녔다고 가정합니다. ( 원 : 잎 = 1 : 1 )<br />
+											<span class="color-orange">목표 금액의 70% 이상을 펀딩 받지 못하면 펀딩 받은 금액을 모두 투자자에게 돌려줘야 한다는 점에 유의하여
+											입력 값을 수정하며 원하는 결과가 나올 때까지 시뮬레이션 한 후 펀딩 조건을 결정해주세요.</span></p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="simulation-wrap">
+									<div class="simulation-list ex-list">
+										<div class="table-top-util">
+											<div class="left-area"><h3 class="title-sub-blt g-font-size-16 g-color-black mb-0">펀딩 결과 시뮬레이션 예시</h3></div>
+										</div>
+										<table class="board-view">
+											<colgroup>
+												<col style="width:27%;">
+												<col style="width:20%;">
+												<col />
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">항목</th>
+													<th scope="col">금액/수</th>
+													<th scope="col">설명</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!-- 항목1 -->
+												<!-- 제품 제작형  -->
+												<tr>
+													<th scope="row">제품 판매 가격(잎)</th>
+													<td class="num">10,000</td>
+													<td class="g-font-size-13">제품 1개당 판매 가격(소비자 가격)</td>
+												</tr>
+												<!-- 서비스 제공형
+												<tr>
+													<th scope="row">서비스 판매 가격(잎)</th>
+													<td class="num">10,000</td>
+													<td class="g-font-size-13">서비스 1건당 판매 가격(소비자 가격)</td>
+												</tr>
+												-->
+												<!-- //항목1 -->
+
+												<!-- 항목2 -->
+												<!-- 제품 제작형  -->
+												<tr>
+													<th scope="row">목표 제조 수량(개)</th>
+													<td class="num">500</td>
+													<td class="g-font-size-13">제조할 제품의 수</td>
+												</tr>
+												<!-- 서비스 제공형
+												<tr>
+													<th scope="row">목표 수량(건)</th>
+													<td class="num">500</td>
+													<td class="g-font-size-13">판매할 서비스의 수</td>
+												</tr>
+												-->
+												<!-- //항목2 -->
+
+												<tr>
+													<th scope="row" class="item-color01">총 매출(잎)</th>
+													<td class="num"><strong>5,000,000</strong></td>
+													<td class="g-font-size-13">제품 판매 가격 X 목표 수량</td>
+												</tr>
+												<tr>
+													<th scope="row" class="item-color01">총 원가(잎)</th>
+													<td class="num"><strong>3,000,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color02">총 매출</span> X 0.6</td>
+												</tr>
+												<tr>
+													<th scope="row" class="item-color02"><strong>총 판매 수익(잎)</strong></th>
+													<td class="num"><strong>2,000,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color02">총 매출</span> – <span class="item-color02">총 원가</span></td>
+												</tr>
+												<tr class="division">
+													<th scope="row">배당률(%)</th>
+													<td class="num">25%</td>
+													<td class="g-font-size-13"><span class="item-color03">총 판매 수익</span>에서 배당할 금액 비율</td>
+												</tr>
+												<tr>
+													<th scope="row" class="item-color03">배당 금액(잎)</th>
+													<td class="num"><strong>500,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color03">총 판매 수익</span> X 배당률</td>
+												</tr>
+												<tr>
+													<th scope="row" class="item-color04"><strong>기업 이익금(잎)</strong></th>
+													<td class="num"><strong>1,500,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color03">총 판매 수익</span> – <span class="item-color04">배당 금액</span></td>
+												</tr>
+												<tr class="division">
+													<th scope="row" class="item-color02"><strong>펀딩 금액(잎)</strong></th>
+													<td class="num"><strong>3,000,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color02">총 원가</span></td>
+												</tr>
+												<tr>
+													<th scope="row">발행 계좌 수(계좌)</th>
+													<td class="num">15</td>
+													<td class="g-font-size-13">발행할 계좌의 수(투자 받을 사람 수)</td>
+												</tr>
+												<tr>
+													<th scope="row">계좌당 가격(잎)</th>
+													<td class="num">200,000</td>
+													<td class="g-font-size-13"><span class="item-color02">펀딩 금액</span> / 발행 계좌 수</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr class="division">
+													<th scope="row" class="item-color04"><strong>기업 이익금(잎)</strong></th>
+													<td class="num"><strong>1,500,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color03">총 판매 수익</span> – <span class="item-color04">배당 금액</span></td>
+												</tr>
+												<tr>
+													<th scope="row"><strong>성공 축하금(잎)</strong></th>
+													<td class="num"><strong>1,000,000</strong></td>
+													<td class="g-font-size-13">목표 달성 시 지급되는 금액</td>
+												</tr>
+												<tr>
+													<th scope="row"><strong>최종 이익금(잎)</strong></th>
+													<td class="num"><strong>2,500,000</strong></td>
+													<td class="g-font-size-13"><span class="item-color04">기업 이익금</span> + 성공 축하금</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+									<div class="simulation-list insert-list">
+										<h3 class="title">펀딩 결과 시뮬레이션 예시 <p class="sub-title blit">순서대로 시뮬레이션한 후 [이 결과로 사용] 버튼을 눌러주세요.</p></h3>
+										<table class="board-view">
+											<colgroup>
+												<col style="width:35%;">
+												<col />
+											</colgroup>
+											<tbody>
+												<!-- 항목1 -->
+												<!-- 제품 제작형 -->
+												<tr class="group1 top">
+													<th scope="row" title="필수입력">
+														<label for="insertItem01">제품 판매 가격(잎)</label>
+														<span class="essential">*</span>
+													</th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem01" class="form-control" placeholder="100~1,000,000" aria-label="제품 판매가격 입력" />
+														</div>
+													</td>
+												</tr>
+												<!-- 서비스 제공형
+												<tr class="group1 top">
+													<th scope="row" title="필수입력">
+														<label for="insertItem01">서비스 판매 가격(잎)</label>
+														<span class="essential">*</span>
+													</th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem01" class="form-control" placeholder="100~1,000,000" aria-label="서비스 판매가격 입력" />
+														</div>
+													</td>
+												</tr>
+												-->
+												<!-- //항목1 -->
+
+												<!-- 항목2 -->
+												<!-- 제품 제작형 -->
+												<tr class="group1">
+													<th scope="row" title="필수입력"><label for="insertItem02">목표 제조 수량(개)</label><span class="essential">*</span></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem02" class="form-control" placeholder="10~10,000" aria-label="목표 제조수량 입력" />
+														</div>
+														<button type="button" class="btn btn-check-available">유효성 검사하기</button>
+													</td>
+												</tr>
+												<!-- 서비스 제공형
+												<tr class="group1">
+													<th scope="row" title="필수입력"><label for="insertItem02">목표 수량(개)</label><span class="essential">*</span></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem02" class="form-control" placeholder="10~10,000" aria-label="목표 수량 입력" />
+														</div>
+														<button type="button" class="btn btn-check-available">유효성 검사하기</button>
+													</td>
+												</tr>
+												-->
+												<!-- //항목2 -->
+
+												<tr class="group1">
+													<th scope="row" class="item-color01"><label for="insertItem03">예상 총 매출(잎)</label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem03" class="form-control" aria-label="예상되는 총 매출 값" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group1">
+													<th scope="row" class="item-color01"><label for="insertItem04">예상 총 원가(잎)</label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem04" class="form-control" aria-label="예상되는 총 원가 값" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group1 bottom">
+													<th scope="row" class="item-color02"><label for="insertItem05"><strong>예상 총 판매 수익(잎)</strong></label></th>
+													<td class="g-pb-14">
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem05" class="form-control" aria-label="예상되는 총 판매 수익 값" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="division group2 top">
+													<th scope="row" title="필수입력"><label for="insertItem06">배당률(%)</label><span class="essential">*</span></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem06" class="form-control" placeholder="10~50" aria-label="배당률 입력" />
+														</div>
+														<button type="button" class="btn btn-check-available">유효성 검사하기</button>
+													</td>
+												</tr>
+												<tr class="group2">
+													<th scope="row" class="item-color03"><label for="insertItem07">배당 금액(잎)</label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem07" class="form-control" aria-label="예상되는 배당 금액" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group2 bottom">
+													<th scope="row" class="item-color04"><label for="insertItem08"><strong>예상 기업 이익금(잎)</strong></label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem08" class="form-control" aria-label="예상되는 기업 이익금" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="division group3 top">
+													<th scope="row"><label for="insertItem09">펀딩 금액(잎)</label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem09" class="form-control" aria-label="계산된 펀딩 금액" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group3">
+													<th scope="row" title="필수입력"><label for="insertItem10">목표 발행 계좌 수(계좌)</label><span class="essential">*</span></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem10" class="form-control" placeholder="5~50" aria-label="목표 발행 계좌 수 입력" />
+														</div>
+														<button type="button" class="btn btn-check-available">유효성 검사하기</button>
+													</td>
+												</tr>
+												<tr class="group3 bottom">
+													<th scope="row"><label for="insertItem11">계좌당 가격(잎)</label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem11" class="form-control" aria-label="계산된 계좌당 가격" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr class="division group4 top">
+													<th scope="row"><label for="insertItem12"><strong>예상 기업 이익금(잎)</strong></label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem12" class="form-control" aria-label="예상되는 기업 이익금" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group4">
+													<th scope="row"><label for="insertItem13"><strong>성공 축하금(잎)</strong></label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem13" class="form-control" aria-label="예상되는 성공 축하금" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+												<tr class="group4 bottom">
+													<th scope="row"><label for="insertItem14"><strong>예상 최종 이익금(잎)</strong></label></th>
+													<td>
+														<div class="input-group input-group-sm">
+															<input type="text" id="insertItem14" class="form-control" aria-label="예상되는 최종 이익금" value="9,999,999" readonly />
+														</div>
+													</td>
+												</tr>
+											</tfoot>
+										</table>
+										<div class="btn-simulation-submit u-divider-center">
+											<button type="button" class="btn-submit">이 결과로 사용하기</button>
+										</div>
+									</div>
+								</div>
+
+								<table class="board-view">
+									<colgroup>
+										<col style="width:17%;">
+										<col />
+									</colgroup>
+									<tbody>
+										<th scope="row">펀딩 기간 설정</th>
+										<td>
+											<div class="date row g-mb-5">
+												<div class="col-auto align-self-center g-width-270 g-px-10">
+													<input type="text" id="fundTermStart" class="datepickler form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="시작날짜 선택">
+												</div>
+												<div class="col-auto align-self-center g-pa-0">~</div>
+												<div class="col-auto align-self-center g-width-270 g-px-10">
+													<input type="text" id="fundTermSEnd" class="datepickler form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="종료날짜 선택">
+												</div>
+											</div>
+											<p class="g-mb-0">펀딩 목표 금액을 고려하여 크라우드 펀딩을 진행할 기간을 선택해주세요.<br />최소 2주일부터 1개월까지 선택할 수 있습니다. 승인에 시간이 소요될 수 있다는 것을 참고해주세요</p>
+										</td>
+									</tbody>
+								</table>
+
+								<div class="table-top-util">
+									<h3 class="title-sub-blt g-font-size-16 g-color-black mb-0">펀딩 조건 미리보기</h3>
+								</div>
+								<table class="board-view u-divider-center">
+									<colgroup>
+										<col style="width:20%;">
+										<col style="width:20%;">
+										<col style="width:20%;">
+										<col style="width:20%;">
+										<col />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">목표 발행 계좌</th>
+											<th scope="col">계좌당 금액</th>
+											<th scope="col">펀딩 목표 금액</th>
+											<th scope="col">배당률</th>
+											<th scope="col">펀딩기간</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="g-brd-left-none">20</td>
+											<td>200,000</td>
+											<td>4,000,000</td>
+											<td>50%</td>
+											<td>2099.11.30~2099.12.31</td>
+										</tr>
+										<tr>
+											<td colspan="5" class="g-brd-left-none g-line-height-1_8">
+												<!-- 해당사항 없는 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">펀딩 진행을 위한 펀딩 조건이 설정되었습니다.</span><br />
+													[저장 후 다음] 버튼을 눌러 설정한 펀딩 조건으로 프로젝트 오픈을 신청해주세요.
+												</div>
+												<!-- 예상 총 매출이 180,000,000 초과인 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">예상 총 매출이 너무 높아 펀딩 금액이 너무 높게 설정되었습니다.</span><br />
+													예상 총 매출이1,000,000잎~180,000,000잎이 되도록 판매 가격 혹은 목표 수량을 수정하여 계산한 후 다시 선택해주세요.
+												</div>
+												<!-- 예상 총 매출이 1,000,000 미만인 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">예상 총 매출이 너무 낮아 펀딩 금액이 너무 낮게 설정되었습니다.</span><br />
+													예상 총 매출이1,000,000잎~180,000,000잎이 되도록 판매 가격 혹은 목표 수량을 수정하여 계산한 후 다시 선택해주세요.
+												</div>
+												<!-- 계좌당 금액이 200,000 초과인 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">계좌당 금액이 너무 높게 설정되었습니다.</span><br />
+													계좌당 금액이 10,000~200,000잎이 되도록 목표 발행 계좌를 수정하여 계산한 후 다시 선택해주세요.
+												</div>
+												<!-- 계좌당 금액이 10,000 미만인 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">계좌당 금액이 너무 낮게 설정되었습니다.</span><br />
+													계좌당 금액이 10,000~200,000잎이 되도록 목표 발행 계좌를 수정하여 계산한 후 다시 선택해주세요.
+												</div>
+												<!-- 예상 총 매출이 10,000,000 초과 180,000,000미만인 경우 -->
+												<div class="project-info-comment g-brd-bottom-none">
+													<span class="g-font-size-20">펀딩 금액이 다소 높게 설정 되어 목표 달성에 실패할 가능성이 있습니다.</span><br />
+													그래도 설정한 펀딩 조건으로 프로젝트 진행을 원하시면 [저장 후 다음] 버튼을 눌러 프로젝트 오픈을 신청해주세요.
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="scroller-anchor"></div>
+								<div class="scroller btn-bottom-wrap u-divider-center">
+								  <button type="reset" class="btn btn-md u-btn-white g-width-160 g-mr-10">이전</button>
+								  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">저장 후 다음</button>
+								  <!--<button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">다음</button>-->
+								  <button type="buitton" class="g-pos-abs g-right-20 btn btn-md u-btn-blue g-width-160 g-ml-10">임시 저장</button>
+								</div>
+
+								<script> //플로팅 버튼영역
+								$(document).ready(function () {
+									$('.u-card-v1').addClass('g-overflow-visible-important');
+								});
+								$(document).scroll(function() {									
+									if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+										$('.scroller').addClass('FixedLayoutfunction');
+										$('.u-card-v1').removeClass('g-overflow-visible-important');
+									} else {
+										$('.scroller').removeClass('FixedLayoutfunction');
+										$('.scroller-anchor').css('height','120px');
+										$('.u-card-v1').addClass('g-overflow-visible-important');
+									}
+								});
+								</script>
+								<!-- End contents -->
+							</div>
+							<!-- End Container -->
+						</form>
+						<!-- //Container -->
+
+						<form id="FrmDtl" name="FrmDtl" method="post" action="http://dev.yeep.kr/comng/QstBbsInfo.do?coNo=199&hmpgUrlText=eleGoStartup02">
+							<input type="hidden" name="questNo" id="questNo"/>
+						</form>
+
+						<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation_sa.js" ></script>
+						<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(){
+								var paging = new pager();
+								paging.renderPager("pageBlock", "pageMove");
+							});
+							function pageMove(pageIndex){
+								console.log("pageMove pageIndex = "+pageIndex);
+								if( $("#searchType").val() == '' ) {
+									$("#searchText").val('') ;
+								}
+								$("#currentPage").val(pageIndex);
+								console.log(pageIndex);
+								$("#FrmSrch").submit();
+							}
+							function goEdit(){
+								location.href="/comng/QstBbsInfo.do"
+							}
+
+							//상세화면 이동
+							function fnDetail(questNo){
+								$("#questNo").val(questNo);
+								$("#FrmDtl").submit();
+							}
+						</script>
+						<!-- Footer -->
+						<footer id="footer" class="u-footer--bottom-sticky u-header__section--admin-dark g-pa-10">
+							<div class="row align-items-center">
+								<!-- Footer Copyrights -->
+								<div class="col-md-12 text-center text-md-center">
+									<small class="d-block g-font-size-12 txt-copyrights">&copy; 2018 © All Rights Reserved.</small>
+								</div>
+								<!-- End Footer Copyrights -->
+							</div>
+						</footer>
+						<!-- End Footer -->
+        		</div>
+      		</div>
+      	</div>
+    </section>
+  </main>
+</body>
+</html>

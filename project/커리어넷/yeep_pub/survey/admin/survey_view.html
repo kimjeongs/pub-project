@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="jquery-ui.js"></script> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" type="text/css" href="jquery-ui.css"> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" href="css/custom.css">
+<script>
+	$(function() {
+		$("#surveyTermStart, #surveyTermEnd").datepicker({ //설문조사기간
+		  dateFormat: "yy.mm.dd"
+		});
+		$('#surveyTermStart').datepicker('setDate', 'today'); //설문조사 시작날짜 오늘 설정
+		$('#surveyTermEnd').datepicker('setDate', '+7D'); //설문조사 종료날짜 일주일 설정
+	});
+</script>
+</head>
+<body>
+  <main>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--sticky-top">
+		<div class="u-header__section u-header__section--admin-light g-min-height-65">
+			<div class="header-top">
+				<a href="/main/main.do" class="logo"><img class="" src="/assets/img/content/sa_logo.png" alt="YEEP"></a>
+				<span class="txt g-font-size-13"><strong class="g-font-size-14">Startup</strong> 홈페이지 관리</span>
+				<div class="util-menu">				
+					<p class="txt02 g-font-size-12"><span>YEEP지기</span> 님 환영합니다</p>				
+					<!-- 2018-04-09 알림 레이어추가 -->
+					<div class="hedaer-notice">					
+						<a id="notificationsInvoker" class="ico_bell on" href="/mypage/myNotiList.do"><!-- new 노출시 on 추가 --></a>
+					</div>
+					<ul class="util">					
+						<li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+						<li><a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a></li>					
+					</ul>
+					<!-- //2018-04-09 알림 레이어추가 -->
+				</div>
+			</div>
+		
+			<nav class="navbar no-gutters g-pa-0 sa-nav">
+			  <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12" style="width: 410px;">
+				<!-- Logo -->
+				<a href="/comng/startUpAdminMain.do?coNo=199" class="align-self-center g-font-size-28 company-logo">초등학교_고스타트업02</a>
+				<!-- End Logo -->
+				<!-- Sidebar Toggler -->
+				<a class="js-side-nav u-header__nav-toggler d-flex align-self-center" href="#" style="display:none !important;" data-hssm-class="" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+				  <i class="hs-admin-align-left"></i>
+				</a>
+				<!-- End Sidebar Toggler -->
+			  </div>
+			  <div class="company-util">
+				<ul>
+					<li class="g-font-size-14">회원 <strong>0</strong>명</li>
+					<li class="g-font-size-14">전문가 <strong>0</strong>명</li>
+					<li class="g-font-size-16"><strong>0</strong> 점</li>
+				</ul>
+				<a href="/startup/eleGoStartup02" target="_blank" class="text-center g-font-size-13 g-color-white g-rounded-25 g-py-5 g-px-20">홈페이지</a>
+			  </div>
+			</nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <section class="container-fluid px-0 g-pt-105">
+    	<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+        <!-- Sidebar Nav -->
+        <div id="sideNav" class="col-auto g-width-250 u-sidebar-navigation--light"><!-- 2018-04-11 반응형 삭제로 인한 수정 -->
+          <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
+            <!-- 관리 홈 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminMain.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"> <i class="hs-admin-window"></i> </span>
+				<span class="media-body align-self-center">관리 홈</span>
+              </a>
+            </li>
+            <!-- End 관리 홈 -->
+
+            <!-- 기본정보 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpHomepageReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-notepad"></i></span>
+                <span class="media-body align-self-center">기본정보</span>
+              </a>
+            </li>
+            <!-- End 기본정보 -->
+
+            <!-- 템플릿 선택 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminTemplit.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layers-alt"></i></span>
+                <span class="media-body align-self-center">템플릿 선택</span>
+              </a>
+            </li>
+            <!-- End 템플릿 선택 -->
+
+            <!-- 메뉴/콘텐츠 관리 --><!-- 2018-04-10 공통 메뉴순서 변경 -->
+            <li id="menuContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu3">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layout-grid-2"></i></span>
+                <span class="media-body align-self-center">메뉴/콘텐츠 관리</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <!-- 구성원 권한 관리: Submenu-1 -->
+			  <ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 메뉴관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/menuMng.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-media-center-alt"></i></span>
+					<span class="media-body align-self-center">메뉴관리</span>
+				  </a>
+				</li>
+				<!-- End 메뉴관리 -->
+				<!-- 메인관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/startUpAdminMainReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-tab-window"></i></span>
+					<span class="media-body align-self-center">메인관리</span>
+				  </a>
+				</li>
+				<!-- End 메인관리 -->
+
+				<!-- 구성원 소개 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/memberMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">구성원 소개 관리</span>
+				  </a>
+				</li>
+				<!-- End 구성원 소개 관리 -->
+			  </ul>
+            </li>
+            <!-- End 메뉴/콘텐츠 관리 --><!-- //2018-04-10 공통 메뉴순서 변경 -->
+
+            <!-- MOU 관리 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/mouMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-world"></i></span>
+                <span class="media-body align-self-center">MOU 관리</span>
+              </a>
+            </li>
+            <!-- End MOU 관리 -->
+
+            <!-- 홍보 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/AdvBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-blackboard"></i></span>
+                <span class="media-body align-self-center">홍보 게시판</span>
+              </a>
+
+            </li>
+            <!-- End 홍보 게시판 -->
+
+            <!-- 퀘스트 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/QstBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-comments-smiley"></i></span>
+                <span class="media-body align-self-center">퀘스트 게시판</span>
+              </a>
+            </li>
+            <!-- End 퀘스트 게시판 -->
+
+			<!-- 명함 제작 -->
+			<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+				<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/cardList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">명함 제작</span>
+				</a>
+			</li>
+			<!-- End 명함 제작 -->
+
+            <!-- UI 설정 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/settingMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-settings"></i></span>
+                <span class="media-body align-self-center">설정</span>
+              </a>
+            </li>
+            <!-- End 설정 -->
+
+            <!-- 통계 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-pie-chart"></i></span>
+                <span class="media-body align-self-center">통계</span>
+              </a>
+            </li>
+            <!-- End 통계 -->
+
+            <!-- 온라인 사업설명회 관리  -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-desktop"></i></span>
+                <span class="media-body align-self-center">온라인 사업설명회 관리</span>
+              </a>
+            </li>
+            <!-- End 온라인 사업설명회 관리  -->
+
+			<!-- 크라우드 펀딩  -->
+             <li id="fundingContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu4">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-cloud"></i></span>
+                <span class="media-body align-self-center">크라우드 펀딩</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 전체 프로젝트 현황 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-clipboard"></i></span>
+					<span class="media-body align-self-center">전체 프로젝트 현황</span>
+				  </a>
+				</li>
+				<!-- End 전체 프로젝트 현황 -->
+				<!-- 프로젝트 준비 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-archive"></i></span>
+					<span class="media-body align-self-center">프로젝트 준비</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 준비 -->
+				<!-- 프로젝트 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-reload"></i></span>
+					<span class="media-body align-self-center">프로젝트 관리</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 관리 -->
+				<!-- 문의글 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-marker-alt"></i></span>
+					<span class="media-body align-self-center">문의글 관리</span>
+				  </a>
+				</li>
+				<!-- End 문의글 관리 -->
+				<!-- 활동보고서 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-volume"></i></span>
+					<span class="media-body align-self-center">활동보고서</span>
+				  </a>
+				</li>
+				<!-- End 활동보고서 -->
+			  </ul>
+            </li>
+            <!-- End 크라우드 펀딩  -->
+          </ul>
+        </div>
+        <!-- End Sidebar Nav -->
+
+		<div class="col g-ml-0 g-pb-40--md"><!-- 2018-04-09 반응형 삭제로 인한 수정 -->
+			<div class="g-bg-lightblue-v10-opacity-0_5 g-pa-20 h-100">
+				<script>
+					$(document).on('ready', function () {
+						document.title="Startup 홈페이지 관리 | Go! startup | YEEP";
+						// initialization of range datepicker
+						$.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+						// initialization of custom scrollbar
+						$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+						// initialization of HSDropdown component
+						$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
+						// initialization of sidebar navigation component
+						$.HSCore.components.HSSideNav.init('.js-side-nav');
+
+						// initialization of datatables
+						//$.HSCore.components.HSDatatables.init('.js-datatable');
+
+						// initialization of custom select
+						$('.js-select').selectpicker();
+					});
+				</script>
+
+				<!-- Container -->
+				<form>
+					<div class="card g-brd-gray-light-v7 u-card-v1 g-pa-15 g-pa-25-30--md h-100">
+						<!-- contents -->
+						<header class="title-inline">
+							<h2 class="g-font-size-24 g-color-black mb-0">설문 상세보기</h2>
+						</header>
+
+						<hr class="d-flex g-brd-gray-light-v7 g-mt-20 g-mb-35">
+
+						<table class="board-view">
+							<colgroup>
+								<col style="width:17%;">
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="g-font-weight-400">
+										<label for="surveyTitle">상태 </label>
+									</th>
+									<td>
+										<span class="g-bg-blue g-rounded-15 g-py-5 text-center g-px-25 g-color-white" data-toggle="tooltip" data-placement="bottom">대기</span>
+										<span class="g-bg-deeporange g-rounded-15 g-py-5 text-center g-px-25 g-color-white" data-toggle="tooltip" data-placement="bottom">진행중</span>
+										<span class="g-bg-gray-dark-v3 g-rounded-15 g-py-5 text-center g-px-25 g-color-white" data-toggle="tooltip" data-placement="bottom">종료 </span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400" title="필수입력">
+										<label for="surveyTitle"><span class="g-color-deeporange">*</span> 설문조사 제목</label>
+									</th>
+									<td>
+										  <input type="text" id="surveyTitle" class="form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-10" placeholder="설문조사의 주제가 드러나는 제목을 입력해 주세요." value="여러분은 공부할 때 어디서 공부하나요? ">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400" title="필수입력">
+										<label for="surveyExplain"><span class="g-color-deeporange">*</span> 설문조사 설명</label>
+									</th>
+									<td>
+										  <textarea id="surveyExplain" rows="5" cols="10" class="form-control g-brd-gray-light-v7 g-rounded-4 g-resize-none g-px-20 g-py-10" placeholder="YEEP 회원이 설문조사에 참여할 수 있도록 설문조사를 실시하는 목적과 의도 등을 입력해 주세요.&#10;본 내용은 설문조사 목록에서 노출됩니다.">
+객관적 의견과 발전적인 아이디어를 수렴할 수 있도록 설문조사에 참여해주세요!</textarea>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400" title="필수입력">
+										<label for="surveyTermStart"><span class="g-color-deeporange">*</span> 설문조사 기간</label>
+									</th>
+									<td>
+										<div class="row">
+											<div class="col-auto align-self-center g-width-270 g-px-15">
+												<input type="text" id="surveyTermStart" class="datepickler form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="시작날짜 선택">
+											</div>
+											<div class="col-auto align-self-center g-pa-0">~</div>
+											<div class="col-auto align-self-center g-width-270 g-px-15">
+												<input type="text" id="surveyTermEnd" class="datepickler form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="종료날짜 선택">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400" title="필수입력">
+										<label for="surveyTarget"><span class="g-color-deeporange">*</span> 설문조사 대상</label>
+									</th>
+									<td>
+										<div class="chk-group">
+											<label for="surveyTargetAll" class="u-check g-pl-25 g-my-0 g-mr-30"">
+												<input type="checkbox" id="surveyTargetAll" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 전체
+											</label>
+											<label for="surveyTarget01" class="u-check g-pl-25 g-my-0 g-mr-20""">
+												<input type="checkbox" id="surveyTarget01" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 초등학생
+											</label>
+											<label for="surveyTarget02" class="u-check g-pl-25 g-my-0 g-mr-20"">
+												<input type="checkbox" id="surveyTarget02" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 중학생
+											</label>
+											<label for="surveyTarget03" class="u-check g-pl-25 g-my-0 g-mr-20"">
+												<input type="checkbox" id="surveyTarget03" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 고등학생
+											</label>
+											<label for="surveyTarget04" class="u-check g-pl-25 g-my-0 g-mr-20"">
+												<input type="checkbox" id="surveyTarget04" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 대학생
+											</label>
+											<label for="surveyTarget05" class="u-check g-pl-25 g-my-0 g-mr-20"">
+												<input type="checkbox" id="surveyTarget05" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 일반
+											</label>
+											<label for="surveyTarget06" class="u-check g-pl-25 g-my-0 g-mr-20"">
+												<input type="checkbox" id="surveyTarget06" name="surveyTarget" class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0"><div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0"><i class="fa" data-check-icon="&#xf00c"></i></div> 교사
+											</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400">
+										<label for="surveyImage">이미지</label>
+									</th>
+									<td>
+										<img src="images/img_sample.jpg" />
+										<div class="file-input file-btn-type">
+											<input type="file" id="surveyImage" />
+											<label for="surveyImage">파일찾기</label>
+										</div>
+										<button type="button" class="btn btn-md u-btn-outline-gray-dark-v6">삭제</button>
+										<p class="g-my-0 g-mt-10">설문조사가 주목될 수 있도록 설문조사와 어울리는 이미지를 등록해주세요. 이미지를 등록하지 않으면 스타트업 로고가 기본 노출됩니다.<br />
+										권장 사이즈 (  *** X  *** , 50MB 이하)</p>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" class="g-font-weight-400">
+										<label>설문 내용</label>
+									</th>
+									<td>
+										<button type="button" class="btn u-btn-outline-darkgray"><i class="hs-admin-check-box g-mr-5"></i> 설문조사 보기</button>
+										<p class="g-my-0 g-mt-10">설문 내용은 수정할 수 없습니다.</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="board-detail-box g-mt-60">
+							<div class="title">
+								<div class="page-sub-title-style">
+									<h3 class="sub-title">응답 결과 상세</h3>
+								</div>
+							</div>
+
+							<!-- 상태가 대기/진행중일때 -->
+							<div class="cont u-divider-center">
+								<p class="my-0">※ 응답 결과는 설문 기간 종료 후 확인할 수 있습니다.</p>
+							</div>
+							<!-- //상태가 대기/진행중일때 -->
+
+							<!-- 상태가 종료일 때 -->
+							<div class="file">
+								<em class="g-width-120">설문 응답 결과</em>
+								<span>총  40명 응답
+									<button type="button" class="btn btn-sm u-btn-bluegray g-color-white g-ml-10" title="엑셀 다운로드"><i class="hs-admin-download g-mr-5"></i> 결과 다운로드</button>
+								</span>
+								<p class="g-pl-120 g-pt-10 g-font-size-13 g-color-primary">※ 응답 비율은 객관식에 한하여 노출됩니다. 주관식 응답은 엑셀 다운로드로 확인해주세요. </p>
+							</div>
+							<!-- 결과표 -->
+							<div class="cont">
+								<p><strong class="g-font-weight-500 g-color-black g-font-size-16 g-mr-20">1번. 우리의 서비스가 귀하에게 얼마나 도움이 되었습니까?</strong> 총 응답자수 40명 (객관식 단답 선택)</p>
+								<div class="table-responsive">
+									<table class="table u-table--v1 table-striped">
+										<colgroup>
+											<col>
+											<col style="width:10%;">
+											<col style="width:10%;">
+										</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">답변 내용</th>
+											<th scope="col" class="u-divider-center">응답자 수</th>
+											<th scope="col" class="u-divider-center">비율</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>전혀 도움이 되지 않았다.</td>
+											<td class="u-divider-center"><strong>999</strong> / 999</td>
+											<td class="u-divider-center">100%</td>
+										</tr>
+										<tr>
+											<td>도움이 되지 않았다.</td>
+											<td class="u-divider-center"><strong>15</strong> / 40</td>
+											<td class="u-divider-center">37.5%</td>
+										</tr>
+										<tr>
+											<td>보통이다.</td>
+											<td class="u-divider-center"><strong>1</strong> / 40</td>
+											<td class="u-divider-center">2.5%</td>
+										</tr>
+										<tr>
+											<td>도움이 되었다.</td>
+											<td class="u-divider-center"><strong>12</strong> / 40</td>
+											<td class="u-divider-center">30%</td>
+										</tr>
+										<tr>
+											<td>매우 도움이 되었다.</td>
+											<td class="u-divider-center"><strong>8</strong> / 40</td>
+											<td class="u-divider-center">20%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //결과표 -->
+							<!-- 결과표 -->
+							<div class="cont">
+								<p><strong class="g-font-weight-500 g-color-black g-font-size-16 g-mr-20">9번. 향후 커리어넷의 주요 콘텐츠를 개선하려면 어떤 방향에 특히 초점을 두어야 한다고 생각하십니까?</strong> 총 응답자수 10명 (객관식 복수 선택)</p>
+								<div class="table-responsive">
+									<table class="table u-table--v1 table-striped">
+										<colgroup>
+											<col>
+											<col style="width:10%;">
+											<col style="width:10%;">
+										</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">답변 내용</th>
+											<th scope="col" class="u-divider-center">응답자 수</th>
+											<th scope="col" class="u-divider-center">비율</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>직업정보, 학과정보, 학교정보 등 기본적인 진로정보를 강화해야 한다.</td>
+											<td class="u-divider-center"><strong>999</strong> / 999</td>
+											<td class="u-divider-center">100%</td>
+										</tr>
+										<tr>
+											<td>진로상담 등을 통하여 이용자들의 고민을 들어주고 해결책을 찾는 서비스를 강화해야 한다.</td>
+											<td class="u-divider-center"><strong>15</strong> / 40</td>
+											<td class="u-divider-center">37.5%</td>
+										</tr>
+										<tr>
+											<td>학교에서 활용할 수 있는 다양한 진로 심리검사를 개발하고 소개해야 한다.</td>
+											<td class="u-divider-center"><strong>1</strong> / 40</td>
+											<td class="u-divider-center">2.5%</td>
+										</tr>
+										<tr>
+											<td>진로교육용 각종 매뉴얼이나 가이드북을 개발하여 소개해야 한다.</td>
+											<td class="u-divider-center"><strong>12</strong> / 40</td>
+											<td class="u-divider-center">30%</td>
+										</tr>
+										<tr>
+											<td>뉴스레터 등을 통하여 진로교육에 관한 최신 정보를 더 많이 제공해야 한다.</td>
+											<td class="u-divider-center"><strong>8</strong> / 40</td>
+											<td class="u-divider-center">20%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //결과표 -->
+							<!-- //상태가 종료일 때 -->
+						</div>
+
+						<div class="u-divider-center g-my-60">
+						  <button type="reset" class="btn btn-md u-btn-outline-gray-dark-v6 g-width-160 g-mr-10">목록</button>
+						  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">수정</button>
+						</div>
+						<!-- End contents -->
+					</div>
+					<!-- End Container -->
+				</form>
+				<!-- //Container -->
+
+				<form id="FrmDtl" name="FrmDtl" method="post" action="http://dev.yeep.kr/comng/QstBbsInfo.do?coNo=199&hmpgUrlText=eleGoStartup02">
+					<input type="hidden" name="questNo" id="questNo"/>
+				</form>
+
+				<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation_sa.js" ></script>
+				<script type="text/javascript">
+					document.addEventListener("DOMContentLoaded", function(){
+						var paging = new pager();
+						paging.renderPager("pageBlock", "pageMove");
+					});
+					function pageMove(pageIndex){
+						console.log("pageMove pageIndex = "+pageIndex);
+						if( $("#searchType").val() == '' ) {
+							$("#searchText").val('') ;
+						}
+						$("#currentPage").val(pageIndex);
+						console.log(pageIndex);
+						$("#FrmSrch").submit();
+					}
+					function goEdit(){
+						location.href="/comng/QstBbsInfo.do"
+					}
+
+					//상세화면 이동
+					function fnDetail(questNo){
+						$("#questNo").val(questNo);
+						$("#FrmDtl").submit();
+					}
+				</script>
+				<!-- Footer -->
+				<footer id="footer" class="u-footer--bottom-sticky u-header__section--admin-dark g-pa-10">
+					<div class="row align-items-center">
+						<!-- Footer Copyrights -->
+						<div class="col-md-12 text-center text-md-center">
+							<small class="d-block g-font-size-12 txt-copyrights">&copy; 2018 © All Rights Reserved.</small>
+						</div>
+						<!-- End Footer Copyrights -->
+					</div>
+				</footer>
+				<!-- End Footer -->
+			</div>
+		</div>
+     </div>
+    </section>
+  </main>
+</body>
+</html>

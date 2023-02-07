@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="url" property="og:url"           content="?coNo="/>
+    <meta name="type" property="og:type"          content="website"/>
+    <meta name="title" property="og:title"         content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description"   content=" - "/>
+    <meta name="image" property="og:image"         content="/img"/>
+
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<title>YEEP</title>
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/su.css">
+	<link rel="stylesheet" type="text/css" href="css/2019.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice --><!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="http://dev.yeep.kr/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="utill-btn">
+                            <a href="/cmmn/sso/api/user.agent.3.do">로그인1</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+                <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/in.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="javascript:;" id="goHome"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/intro/yeepIntro.do">기업체험</a></li>
+                        <li>
+                            <a href="#">크라우드 펀딩</a>
+                            <ul class="location-menu">
+                                <li><a href="javascript:;">크라우드 펀딩</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-box small">
+                    <div class="inner">
+                        <h2 class="page-title"><span>크라우드 <strong>펀딩</strong></span></h2>
+                        <p class="page-title-text">
+                            여러분의 아이디어를 <strong>크라우드 펀딩을 통해 실현시켜 보세요.</strong>
+                        </p>
+                        <div class="btn-area">
+                            <a href="#" class="btn-small-white type2">프로젝트 만들기</a>
+                            <a href="#" class="btn-small-dark-gray type2">로그인</a>
+                        </div>
+                        <img class="bg-img" src="../funding_front/images/2019/img_topbox_01.png" alt="크라우드 펀딩">
+                    </div>
+                </div>
+                <div class="content-width">
+                    <ul class="tab-list type02">
+                        <li class="on"><a href="#">전체</a></li>
+                        <li><a href="#">리워드형</a></li>
+                        <li><a href="#">투자형</a></li>
+                    </ul>
+                    <div class="tab-cont">
+                        <!-- [개발] 탭별 접근성 컨텐츠 제목 들어감 -->
+                        <h3 class="tab-cont-title">전체 목록</h3>
+                        <!-- <h3 class="tab-cont-title">리워드형 목록</h3> -->
+                        <!-- <h3 class="tab-cont-title">투자형 목록</h3> -->
+                        <!-- //탭별 접근성 컨텐츠 제목 들어감 -->
+
+                        <div class="tab-list-swiper">
+                            <div class="swiper-container tab-list-menu">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide list01 on"><a href="#">전체보기</a></li>
+                                    <li class="swiper-slide list02"><a href="#">IT(ICT/IOT)</a></li>
+                                    <li class="swiper-slide list03"><a href="#">관광</a></li>
+                                    <li class="swiper-slide list04"><a href="#">광고</a></li>
+                                    <li class="swiper-slide list05"><a href="#">디자인</a></li>
+                                    <li class="swiper-slide list06"><a href="#">콘텐츠</a></li>
+                                    <li class="swiper-slide list07"><a href="#">패션/미용</a></li>
+                                    <li class="swiper-slide list08"><a href="#">생활/안전</a></li>
+                                    <li class="swiper-slide list09"><a href="#">사회적기업<br>/NGO</a><br></li>
+                                    <li class="swiper-slide list10"><a href="#">식품</a></li>
+                                    <li class="swiper-slide list11"><a href="#">애완동물</a></li>
+                                    <li class="swiper-slide list12"><a href="#">업사이클링<br>(UP-CYCLING)</a></li>
+                                    <li class="swiper-slide list13"><a href="#">예술</a></li>
+                                    <li class="swiper-slide list14"><a href="#">의료</a></li>
+                                    <li class="swiper-slide list15"><a href="#">과학</a></li>
+                                    <li class="swiper-slide list16"><a href="#">환경</a></li>
+                                    <li class="swiper-slide list17"><a href="#">기타</a></li>
+                                </ul>
+                            </div>
+                            <!-- Add Arrows -->
+                            <a href="#" class="swiper-button-next btn-next"></a>
+                            <a href="#" class="swiper-button-prev btn-prev"></a>
+                        </div>
+                        <div class="search-list-cont">
+                            <div class="page-search">
+                                <!-- 탭 메뉴 -->
+                                <ul class="state">
+                                    <li class="on"><a href="#">전체</a></li>
+                                    <li><a href="#">진행중</a></li>
+                                    <li><a href="#">종료</a></li>
+                                </ul>
+                                <!-- //탭 메뉴 -->
+                                <div class="search-box">
+                                    <label class="invisible" for="searchText">검색어</label>
+                                    <input type="text" class="txt" id="searchText">
+                                    <button type="button" class="search-btn">검색</button>
+                                </div>
+                            </div>
+                            <div class="search-results">
+                                <!-- [개발] 탭별 접근성 컨텐츠 제목 들어감 -->
+                                <h4 class="tab-cont-title">전체 목록</h4>
+                                <!-- <h4 class="tab-cont-title">진행중 목록</h4> -->
+                                <!-- <h4 class="tab-cont-title">종료 목록</h4> -->
+                                <!-- //탭별 접근성 컨텐츠 제목 들어감 -->
+
+                                <!-- 검색결과 -->
+                                <div class="search-count-btn">
+                                    <p class="search-count">
+                                        총 <strong>15</strong>건
+                                    </p>
+                                    
+                                    <div class="count-btn">
+                                        <label for="sortBySelect" class="invisible">모금액 높은순</label>
+                                        <select id="sortBySelect" name="sortBySelect">
+                                            <option value="01" selected="selected">모금액 높은순</option>
+                                            <option value="02">모금률 높은순</option>
+                                            <option value="03">최신순</option>
+                                            <option value="04">추천순</option>
+                                            <option value="05">마감임박순</option>
+                                        </select>
+                                        <button type="button" class="btn-gray" onclick="selectCorpEvlHomeList();">보기</button>
+                                    </div>
+                                </div>
+                                <div class="search-results-wrap">
+                                    <ul class="search-results-list">
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 40%;">40</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>40</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search01.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type01">리워드형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="day">9일 남음</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                    <span class="success">성공</span>
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 100%;">100</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>100</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search02.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type02">투자형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="finish">종료</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                    <span class="fail">실패</span>
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 70%;">70</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>70</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search03.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type02">투자형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="finish">종료</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 70%;">70</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>70</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search01.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type01">리워드형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="day">9일 남음</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 70%;">70</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>70</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search02.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type02">투자형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="day">오늘마감</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <a href="#">
+                                                    어딘가에 두고 왔을지 모르는 유럽의 여름은 이렇게
+                                                </a>
+                                            </strong>
+                                            <div class="progress-bar">
+                                                <div class="bar"><span style="width: 70%;">70</span></div>
+                                                <div class="progress">
+                                                    <span class="won">2,690,000</span>원
+                                                    <span class="separate">/</span>
+                                                    <span class="percent"><em>70</em> %</span>
+                                                </div>
+                                            </div>
+                                            <div class="img">
+                                                <a href="#">
+                                                    <img src="../funding_front/images/2019/img_funding_search03.png" alt="어딘가에 두고 왔을지 모르는 유럽의 여름 이렇게">
+                                                    <span class="type type02">투자형</span>
+                                                </a>
+                                            </div>
+                                            <div class="bottom-txt">
+                                                <span class="part">콘텐츠(문화/미디어)</span>
+                                                <span class="day">오늘마감</span>
+                                            </div>
+                                        </li>
+    
+                                        <!-- 검색결과 없음 -->
+                                        <!-- <li class="none-cont">검색된 결과가 없습니다.</li> -->
+                                        <!-- //검색결과 없음 -->
+                                    </ul>
+                                </div>
+                                <!-- //검색결과 -->
+                            </div>
+                            <div class="board-pagging">
+                                <a href="#" class="img-pagging">
+                                    <img src="https://yeep.kr/images/common/pagging_prev_first.png" alt="처음"></a>
+                                <a href="#" class="img-pagging">
+                                    <img src="https://yeep.kr/images/common/pagging_prev.png" alt="이전">
+                                </a>
+                                <strong title="현재 페이지">1</strong>
+                                <a href="#">2</a>
+                                <a href="#" class="img-pagging">
+                                    <img src="https://yeep.kr/images/common/pagging_next.png" alt="다음">
+                                </a>
+                                <a href="#" class="img-pagging">
+                                    <img src="https://yeep.kr/images/common/pagging_next_last.png" alt="마지막">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+
+            <script type="text/javascript">
+
+                 var mySwiper = new Swiper('.tab-list-menu', {
+
+                        slidesPerView: 12,
+                        spaceBetween: 10,
+                        slidesPerGroup: 12,
+                        loop: false,
+                        loopFillGroupWithBlank: false,
+                       
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    })
+
+            </script>
+        </div>
+        <div id="footer">
+        <!-- footer -->
+            <div class="footer-utill-area">
+                <ul class="footer-utill">
+                    <li><a href="/noti/useInqList.do">이용문의</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                </ul>
+            </div>
+            <!-- 2018-04-17 디자인요청 수정 -->
+            <div class="footer-cont">
+                <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                <ul class="site_link">
+                    <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                    <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                    <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                </ul>
+            </div>
+            <!-- //2018-04-17 디자인요청 수정 -->
+        </div>
+        <!-- //footer -->
+            
+    </div>
+    <!-- //wrap -->
+</body>
+</html>

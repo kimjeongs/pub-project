@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>커리어넷 | 진로정보망 커리어넷</title>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/common_renew.js"></script>
+<link rel="stylesheet" type="text/css" href="css/common_renew.css" />
+<link rel="stylesheet" type="text/css" href="css/main_renew.css" />
+</head>
+
+<body>
+	<!-- Skip -->
+	<div id="skip">
+		<a href="#container" class="skipNavi">본문바로가기</a>
+		<a href="#headerR" class="skipNavi" >메뉴바로가기</a>
+	</div>
+	<!-- //Skip -->
+
+	<!-- HEADER -->
+	<div id="headerR"> <!-- gnb서브메뉴 활성화될때 class="open" 추가 -->
+		<div class="hdTop-warp">
+			<h1 class="hd-logo"><a href="#"><img src="images/img_logo_header.jpg" alt="Career Net 진로정보망 커리어넷 로고" /></a></h1>
+			<div class="topMenu">
+				<ul class="hd-util">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">아이디/비밀번호 찾기</a></li>
+					<li class="alrimMn">
+						<a href="#" title="메뉴보기">알림마당</a>
+						<ul class="submenu">
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">행사∙이벤트</a></li>
+							<li><a href="#">드림레터 구독</a></li>
+							<li><a href="#">뉴스레터</a></li>
+							<li><a href="#">커리어넷앱 소개</a></li>
+							<li><a href="#">이용안내</a></li>
+							<li><a href="#">이용문의 및 오류제보</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="hd-search">
+					<input type="text" id="hdSearch" title="검색어를 입력해주세요" class="input-hdsrch" />
+					<a href="#" title="검색결과 보기" class="btn-hdsrch">검색하기</a>
+				</div>
+			</div>
+		</div>
+
+		<script>
+		$(document).ready(function(){
+			$('.topMenu .alrimMn a').on('click', function(e){ //알림마당 메뉴 열고닫기
+				e.preventDefault();
+				var _this = $(this);
+
+				if(!_this.is('.on')){
+					_this.addClass('on').attr('title','메뉴닫기');
+				}else{
+					_this.removeClass('on').attr('title','메뉴보기');
+				}
+			});
+		});
+		</script>
+
+		<!-- gnb -->
+		<div class="gnb">
+			<ul> <!-- 메뉴 활성화 상태일때 li에 class="on" 추가 -->
+				<li><a href="#"><span class="depth1">진로심리검사</span></a>
+					<div class="submenu">
+						<p class="submenu-title">
+							<strong>진로심리검사</strong>
+							진로문제로 고민하는 학생&middot;학부모를 위해 진로상담 서비스를 제공합니다.
+						</p>
+						<ul class="submenu-list">
+							<li><a href="#">심리검사</a></li>
+							<li><a href="#">진로탐색 프로그램</a></li>
+							<li><a href="#">진로심리검사 이용안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><span class="depth1">진로상담</span></a>
+					<div class="submenu">
+						<p class="submenu-title">
+							<strong>진로상담</strong>
+							진로문제로 고민하는 학생&middot;학부모를 위해 진로상담 서비스를 제공합니다.
+						</p>
+						<ul class="submenu-list">
+							<li><a href="#">상담신청</a></li>
+							<li><a href="#">친구들의 상담보기</a></li>
+							<li><a href="#">이주의 베스트 상담</a></li>
+							<li><a href="#">친구야~도와줘!!</a></li>
+							<li><a href="#">진로솔루션</a></li>
+							<li><a href="#">진로 탐험대</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><span class="depth1">직업&middot;학과정보</span></a>
+					<div class="submenu">
+						<p class="submenu-title">
+							<strong>직업&middot;학과정보</strong>
+							진로문제로 고민하는 학생&middot;학부모를 위해 진로상담 서비스를 제공합니다.
+						</p>
+						<ul class="submenu-list">
+							<li><a href="#">직업정보</a></li>
+							<li><a href="#">미래유망직업</a></li>
+							<li><a href="#">해외의 신 직업</a></li>
+							<li><a href="#">어린이&middot;직업정보</a></li>
+							<li><a href="#">학과정보</a></li>
+							<li><a href="#">직업인 인터뷰</a></li>
+							<li><a href="#">학교정보</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><span class="depth1">진로동영상</span></a>
+					<div class="submenu">
+						<p class="submenu-title">
+							<strong>진로동영상</strong>
+							진로문제로 고민하는 학생&middot;학부모를 위해 진로상담 서비스를 제공합니다.
+						</p>
+						<ul class="submenu-list">
+							<li><a href="#">전체 프로그램</a></li>
+							<li><a href="#">나를 위한 동영상</a></li>
+							<li><a href="#">연도별 동영상</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><span class="depth1">진로 자료실</span></a>
+					<div class="submenu">
+						<p class="submenu-title">
+							<strong>진로 자료실</strong>
+							진로문제로 고민하는 학생&middot;학부모를 위해 진로상담 서비스를 제공합니다.
+						</p>
+						<ul class="submenu-list">
+							<li><a href="#">교사&middot;연구자용 자료</a></li>
+							<li><a href="#">연구선도학교 및 연구회</a></li>
+							<li><a href="#">진로교육 연구대회</a></li>
+							<li><a href="#">진로교육 현황조사</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="mbtype-menu">
+				<strong>회원유형별 맞춤 추천</strong>
+				<ul>
+					<li><a href="#" title="초등학생 맞춤추천 보기">초등학생</a></li>
+					<li><a href="#" title="중학생 맞춤추천 보기">중학생</a></li>
+					<li><a href="#" title="고등학생 맞춤추천 보기">고등학생</a></li>
+					<li><a href="#" title="대학생,일반 맞춤추천 보기">대학생&middot;일반</a></li>
+					<li><a href="#" title="학부모 맞춤추천 보기">학부모</a></li>
+					<li><a href="#" title="교사 맞춤추천 보기">교사</a></li>
+				</ul>
+				<p class="sns-link">
+					<a href="https://www.facebook.com/mycareernet" target="_blank" title="새창 열림"><img src="images/btn_hd_facebook.png" alt="페이스북" /></a>
+					<a href="http://www.classting.com/careernet" target="_blank" title="새창 열림"><img src="images/btn_hd_classting.png" alt="클래스팅" /></a>
+					<a href="https://instagram.com/careerfuture" target="_blank" title="새창 열림"><img src="images/btn_hd_instagram.png" alt="인스타그램" /></a>
+				</p>
+			</div>
+		</div>
+		<!-- //gnb -->
+	</div>
+	<!-- //HEADER -->
+	<hr>
+	<!-- CONTENT -->
+	<div id="container">
+		<div class="main-visual-area">
+			<div class="main-visual">
+				<h2 class="slogan"><span>꿈, 미래, 진로!</span> 함께하는 진로정보망</h2>
+				<div class="member-type">
+					<h5 class="invisible">회원유형별 맞춤 추천</h5>
+					<ul>
+						<li><a href="#" class="mb01" title="초등학생 맞춤 서비스 바로가기">초등학생</a></li>
+						<li><a href="#" class="mb02" title="중학생 맞춤 서비스 바로가기">중학생</a></li>
+						<li><a href="#" class="mb03" title="고등학생 맞춤 서비스 바로가기">고등학생</a></li>
+						<li><a href="#" class="mb04" title="대학생,일반 맞춤 서비스 바로가기">대학생일반</a></li>
+						<li><a href="#" class="mb05" title="학부모 맞춤 서비스 바로가기">학부모</a></li>
+						<li><a href="#" class="mb06" title="교사 맞춤 서비스 바로가기">교사</a></li>
+					</ul>
+				</div>
+				<div class="main-search-bx">
+					<h3 class="txt-info">커리어넷의 <span>다양한 진로정보</span>를 찾아보세요.</h3>
+					<div class="input-wrap">
+						<select class="sel-srch-type">
+							<option>통합검색</option>
+							<option>직업정보</option>
+							<option>학과정보</option>
+						</select>
+						<input type="text" id="mainSrchInput" placeholder="카워드를 입력해주세요." class="input-main-search" />
+						<a href="#" title="검색결과 보기" class="btn-main-search">검색</a>
+					</div>
+					<div class="tag-keyword">
+						<h5 class="invisible">추천태그</h5>
+						<a href="#"><span>#4차산업혁명</span></a>
+						<a href="#"><span>#인공지능</span></a>
+						<a href="#"><span>#방송</span></a>
+						<a href="#"><span>#영화</span></a>
+						<a href="#"><span>#스포츠</span></a>
+						<a href="#"><span>#특수교육</span></a>
+						<a href="#"><span>#창업</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-notice-area">
+			<div class="main-notice">
+				<h4 class="notice-title"><span class="alrim"></span>공지사항</h4>
+				<div class="notice-item-warp">
+					<ul class="notice-slider bxslider">
+						<li><span class="icon-new-notice">new</span><a href="#">1진로교육 공감콘텐츠 공모전 &lt세상에 네 꿈을 펼쳐봐&gt;</a><span class="date-notice">2019-08-14</span></li>
+						<li><a href="#">2진로교육 공감콘텐츠 공모전 &lt세상에 네 꿈을 펼쳐봐&gt;</a><span class="date-notice">2019-08-14</span></li>
+						<li><a href="#">3진로교육 공감콘텐츠 공모전 진로교육 공감콘텐츠 공모전 진로교육 공감콘텐츠 공모전 &lt세상에 네 꿈을 펼쳐봐&gt;</a><span class="date-notice">2019-08-14</span></li>
+						<li><a href="#">4진로교육 공감콘텐츠 공모전</a><span class="date-notice">2019-08-14</span></li>
+						<li><a href="#">5진로교육 공감콘텐츠 공모전</a><span class="date-notice">2019-08-14</span></li>
+					</ul>
+				</div>
+				<a href="#" class="btn-more-notice" title="공지사항 더보기">더보기</a>
+			</div>
+		</div>
+		<div class="main-banner-area">
+			<div class="main-banner">
+				<div class="banner-zone dream">
+					<ul class="banner-slider bxslider">
+						<li><a href="#"><img src="images/@sample_img_banner01.jpg" alt="자유학기제 웹진 꿈트리 바로가기" /></a></li>
+						<li><a href="#"><img src="images/@sample_img_banner01.jpg" alt="자유학기제 웹진 꿈트리 바로가기" /></a></li>
+					</ul>
+				</div>
+				<div class="banner-zone jinroMv">
+					<h4 class="banner-title">진로동영상</h4>
+					<ul class="jinroMv-slider bxslider">
+						<li>
+							<a href="#">
+								<img src="images/@sample_img_banner02.jpg" alt="농업에서 발견한 창업의 기회" />
+								<span class="mvtitle">1 감자로도 스타트업을 박영민님 [나우미래21]</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/@sample_img_banner02.jpg" alt="농업에서 발견한 창업의 기회" />
+								<span class="mvtitle">2 감자로도 스타트업을 박영민님 [나우미래21]</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" class="btn-more-banner" title="진로동영상 더보기">더보기</a>
+				</div>
+				<div class="banner-zone jinroCard">
+					<h4 class="banner-title">진로카드</h4>
+					<a href="#"><img src="images/@sample_img_banner03.jpg" alt="나의 가치관에 맞는 직업과 학과정보를 탐색해보세요." /></a>
+					<a href="#" class="btn-more-banner" title="진로카드 더보기">더보기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim-new"></div>
+	<script>
+		$(document).ready(function(){ //공지사항 슬라이드
+			var NoticeSlider = $('.notice-slider').bxSlider({
+				mode: 'vertical',
+				auto: true,
+				pager: true,
+				controls: false,
+				autoControls: true,
+				autoControlsCombine: true,
+				stopAutoOnClick: true,
+				slideWidth: 613,
+				onSliderLoad: function () {
+					$('.bx-stop').click(function () {
+						NoticeSlider.stopAuto();
+						return false;
+					});
+					$('.bx-start').click(function () {
+						NoticeSlider.stopAuto();
+						return false;
+					});
+				}
+			});
+			var BannerSlider = $('.banner-slider').bxSlider({ //배너 슬라이드
+				auto: true,
+				pager: false,
+				controls: true,
+				autoControls: true,
+				autoControlsCombine: true,
+				stopAutoOnClick: true,
+				slideWidth: 254,
+				onSliderLoad: function () {
+					$('.bx-stop').click(function () {
+						BannerSlider.stopAuto();
+						return false;
+					});
+					$('.bx-start').click(function () {
+						BannerSlider.stopAuto();
+						return false;
+					});
+				}
+			});
+			var JinroMvSlider = $('.jinroMv-slider').bxSlider({ //진로동영상 슬라이드
+				auto: true,
+				pager: false,
+				controls: true,
+				autoControls: true,
+				autoControlsCombine: true,
+				stopAutoOnClick: true,
+				slideWidth: 254,
+				onSliderLoad: function () {
+					$('.bx-stop').click(function () {
+						JinroMvSlider.stopAuto();
+						return false;
+					});
+					$('.bx-start').click(function () {
+						JinroMvSlider.stopAuto();
+						return false;
+					});
+				}
+			});
+
+			$(".bx-start").attr('title','시작');
+			$(".bx-stop").attr('title','멈춤');
+
+		});
+	</script>
+	<!-- //CONTENT -->
+	<hr>
+	<!-- FOOTER -->
+	<div id="footerR">
+		<div class="footer-menu">
+			<ul class="footer-menu-list">
+				<li><a href="#this" title="새창 열림" onclick="window.open('https://www.career.go.kr/cnet/front/main/mberInfoPrtcPopup.do','','width=715, height=775, menubar=no, status=no, left=300');">개인정보처리방침</a></li>
+				<li><a href="#this" title="새창 열림" onclick="window.open('https://www.career.go.kr/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+				<li><a href="https://www.career.go.kr/cnet/front/useInfo/faqUseInfo.do">이용안내</a></li>
+				<li><a href="https://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do">이용문의</a></li>
+				<li><a href="https://www.career.go.kr/cnet/front/eng/eng_home_new.do" target="_blank" title="새창 열림">English</a></li>
+				<li><a href="https://www.career.go.kr/cnet/front/openapi/openApiMainCenter.do">오픈API</a></li>
+				<li><a href="https://www.career.go.kr/cnet/front/useInfo/sitemap.do">사이트맵</a></li>
+			</ul>
+			<div class="family-site">
+				<h5 class="family-site-title"><a href="#none" title="관련사이트 보기">FAMILY SITE</a></h5>
+				<ul class="family-site-layer">
+					<li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창">원격영상진로멘토링</a></li>
+					<li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창">YEEP</a></li>
+					<li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창">꿈길</a></li>
+					<li><a href="https://www.career.go.kr/cnet/front/base/job/jobList.do#tab3" target="_blank" title="새창">적성유형별 직업탐색</a></li>
+					<li><a href="http://www.moe.go.kr/main.do" target="_blank" title="새창 열림">교육부</a></li>
+					<li><a href="http://www.krivet.re.kr/" target="_blank" title="새창 열림">한국직업능력개발원</a></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+		$(document).ready(function(){
+			$('.family-site .family-site-title').on('click', function(e){ //FAMILY SITE 메뉴 열고닫기
+				e.preventDefault();
+				var _this = $(this);
+				if(!_this.is('.on')){
+					_this.addClass('on').attr('title','관련사이트 닫기');
+				}else{
+					_this.removeClass('on').attr('title','관련사이트 보기');
+				}
+			});
+		});
+		</script>
+		<div class="address">
+			<div class="copyright">주소 : 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원 커리어넷<br />
+			운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 | 지원 : 교육부<br />
+			COPYRIGHTS © KRIVET ALL RIGHTS RESERVED.</div>
+			<div class="logo-site">
+				<a href="http://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창)"><img src="images/img_logo_footer_link1.jpg" alt="교육부" /></a>
+				<a href="http://www.krivet.re.kr/" target="_blank" title="한국직업능력개발원 바로가기(새창)"><img src="images/img_logo_footer_link2.jpg" alt="한국직업능력개발원"></a>
+				<a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기(새창)"><img src="images/img_logo_footer_link3.jpg" alt="국가공인 웹 접근성 품질인증마크"></a>
+			</div>
+		</div>
+	</div>
+	<!-- //FOOTER -->
+
+</body>
+</html>

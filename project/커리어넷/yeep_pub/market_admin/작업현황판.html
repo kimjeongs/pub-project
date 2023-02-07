@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>YEEP</title>
+		<style type="text/css">
+			html, body {
+				margin:0;
+				padding:0;
+			}
+			html {
+				overflow-y:scroll;
+			}
+			body {
+				color:#666;
+				background-color:#fff;
+				font:12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+			}
+			a {
+				color:#27e;
+				text-decoration:none;
+			}
+			a:focus,
+			a:hover,
+			a:active {
+				text-decoration:underline;
+			}
+			.header {
+				padding:.5em;
+			}
+				.header h1 {
+					display:inline;
+					margin-right:1em;
+					color:#000;
+					font-size:2em;
+				}
+				.header ul {
+					display:inline;
+					font-size:1.5em;
+					list-style:none;
+				}
+				.header ul li {
+					display:inline;
+				}
+			.group-title {
+				margin-top:1em;
+				color:#000;
+				font-weight:bold;
+				font-size:1.5em;
+			}
+			table {
+				width:100%;
+				border-collapse:collapse;
+				border-spacing:0;
+			}
+				table caption {
+					display:none;
+				}
+				table th {
+					color:#333;
+					background-color:#eee;
+				}
+				table th,
+				table td {
+					padding:0 .5em;
+					border:1px solid #ddd;
+					text-align:left;
+				}
+				table th,
+				table td.stat,
+				table td.date {
+					text-align:center;
+				}
+				table tr.even,
+				table tr td.multi {
+					background-color:#fafafa;
+				}
+				table tr.add td {
+					background-color:#fd0;
+				}
+				table tr.modify td {
+					background-color:#fffeb4;
+				}
+				table tr.hover td {
+					background-color:#eee;
+				}
+			table tr.none td {
+				color:#000;
+				background-color:#fc8989;
+			}
+			table tr.up td {
+				background-color:#ffe9f5;
+			}
+				.section {
+					margin:3em 0;
+				}
+				body.js .section {
+					margin:0;
+				}
+					.section .title {
+						margin:0;
+						padding:0;
+						color:#000;
+						font-weight:bold;
+						font-size:100%;
+					}
+					body.js .section .title {
+						padding:.5em;
+						border:1px solid #ccc;
+						background-color:#ddd;
+						cursor:pointer;
+					}
+					body.js .section + .section .title {
+						border-top:0;
+					}
+						body.js .section .title .page-count {
+							color:#666;
+							font-weight:normal;
+						}
+					body.js .section .content {
+						display:none;
+					}
+				#sb-body{border:none !important;}
+				.new-file {background:#bceff4;}
+		</style>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$.fn.stat = function (options) {
+					var settings = $.extend({
+							title: 'h2.title',
+							content: 'div.content',
+							files: 'tbody tr',
+							stat: 'td.stat',
+							index: 0,
+							openAll: false,
+							speed: 'fast'
+						}, options),
+						all_sections = this,
+						header = $('div.header');
+					return this.each(function () {
+						var self = this,
+							$self = $(self),
+							title_text = [],
+							completed = 0;
+						self.section_title = $(settings.title, $self);
+						self.content = $(settings.content, $self);
+						self.files = $(settings.files, $self);
+						self.files.each(function () {
+							var stat = $(settings.stat, this);
+							stat.each(function () {
+								var text = $(this).text();
+								if (text) {
+									completed++;
+								}
+							});
+						});
+						self.files
+							.bind('mouseenter', function () {
+								$(this).addClass('hover');
+							})
+							.bind('mouseleave', function () {
+								$(this).removeClass('hover');
+							});
+						title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+						self.section_title.html(title_text.join(''));
+						self.section_title.bind('click', function () {
+							self.content.slideToggle(settings.speed);
+						});
+						if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+							self.content.css('display', 'block');
+						}
+					});
+				};
+				$(document).ready(function () {
+					$('div.section').stat({ openAll: true });
+					$('#total').text($('tbody tr').length);
+					$('tbody tr:even').addClass('even');
+					$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+				});
+			}(jQuery));
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">document.body.className += ' js';</script>
+		<div class="header">
+			<h1>작업현황판</h1>
+		</div>
+		<!--<p><a target="_blank" href="./html_guide/layout.html">layout 가이드</a> | <a href="./html_guide/content.html">공통 가이드</a> | <a target="_blank" href="./html_guide/popup_layout.html">popup 가이드</a></p>-->
+		<div class="section" style="margin:0 10px;">
+			<h2 class="title">YEEP 마켓</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="4">제품 관리</td>
+							<td>제품목록</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketPrd_list.html">marketPrd_list.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>제품등록/수정</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketPrd_reg.html">marketPrd_reg.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>제품상세</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketPrd_view.html">marketPrd_view.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>미리보기</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="popup_marketPreview.html">popup_marketPreview.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td>사용자화면 디자인컨펌 후 작업예정</td>
+						</tr>
+						<tr>
+							<td rowspan="2">판매 관리</td>
+							<td>판매 내역 조회</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketSale_list.html">marketSale_list.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>제품별 판매 수익 조회</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketIncome_list.html">marketIncome_list.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">문의글 관리</td>
+							<td>목록</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketQna_list.html">marketQna_list.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>상세</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="marketQna_view.html">marketQna_view.html</a></td>
+							<td class="stat"></td>
+							<td class="date">2019-10-18</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>* 부트스트랩 참고 : <a href="http://bootstrapk.com" target="_blank">http://bootstrapk.com</a></p>
+			<p>* 아이콘 클래스 참고 : /hs-admin-icons/hs-admin-icons.css (클래스명 검색하고 화면에서 확인해보기)</p>
+		</div>
+	</body>
+</html>

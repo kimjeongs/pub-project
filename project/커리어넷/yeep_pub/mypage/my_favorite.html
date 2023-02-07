@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="url" property="og:url"           content="?coNo="/>
+    <meta name="type" property="og:type"          content="website"/>
+    <meta name="title" property="og:title"         content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description"   content=" - "/>
+    <meta name="image" property="og:image"         content="/img"/>
+
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<title>YEEP</title>
+    <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/mypage2019.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice -->
+                <!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="user-name"><strong>YEEP지기</strong>님 환영합니다</div>
+                        <div class="hedaer-notice">
+                            <button type="button" class="notice-icon notice-new" onClick="javascript:location.href='/mypage/myNotiList.do' ">알림 레이어 열기</button>
+                            <!--
+                            <div class="notice-layer">
+                                <strong class="notice-layer-title">알림</strong>
+                                <ul class="notice-list">
+
+                                
+                                </ul>
+                                
+                                <p class="no-notice">새로운 알림이 없습니다.</p>
+                                
+                                
+                                <button type="button" class="notice-close">알림 닫기</button>
+                            </div>
+                                -->
+                        </div>
+                        <div class="user-state">
+                            <label class="invisible" >역할</label>
+                        </div>
+                        <div class="utill-btn">
+                            <a href="#" onClick="javascript:goMyPage()" class="member-link">마이페이지</a>
+                            <a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+            <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/my.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+                    </ul>
+                </div>
+                <div class="content-width">
+                    <h2 class="page-title">마이페이지</h2>
+                    <h3 class="page-sub-title">관심 프로젝트</h3>
+                    <div class="search-count-btn">
+                        <p class="search-count">총 <strong>9</strong>건</p>
+                    </div>
+                    <div class="favorite-list">
+                        <ul class="project-list">
+                            <li>
+                                <span class="project-img">
+                                    <span><img src="images/2019/img_project_ing01.png"
+                                            alt="책상 위의 작은 감동 '향기가 있는 다육이 카드'"></span>
+                                </span>
+                                <span class="project-cont">
+                                    <span>리워드형</span>
+                                    <strong><a href="">책상 위의 작은 감동 '향기가 있는 다육이 카드' 책상 위의 작은 감동 '향기가 있는 다육이 카드'</a></strong>
+                                </span>
+                                <em class="project-date">2019.07.17~2019.08.01</em>
+                                <em class="project-state">
+                                    <button type="button" class="btn-white small">관심등록취소</button>
+                                </em>
+                            </li>
+                            <li>
+                                <span class="project-img">
+                                    <span><img src="images/2019/img_project_ing02.png"
+                                            alt="책상 위의 작은 감동 '향기가 있는 다육이 카드'"></span>
+                                </span>
+                                <span class="project-cont">
+                                    <span>투자형</span>
+                                    <strong><a href="">[후니코]다기능 반려동물 이동가방! 후니코 무무백!</a></strong>
+                                </span>
+                                <em class="project-date">2019.07.17~2019.08.01</em>
+                                <em class="project-state">
+                                    <button type="button" class="btn-white small">관심등록취소</button>
+                                </em>
+                            </li>
+                            <li>
+                                <span class="project-img">
+                                    <span><img src="images/2019/img_project_ing02.png" alt="책상 위의 작은 감동 '향기가 있는 다육이 카드'"></span>
+                                </span>
+                                <span class="project-cont">
+                                    <span>리워드형</span>
+                                    <strong><a href="">책상 위의 작은 감동 '향기가 있는 다육이 카드'</a></strong>
+                                </span>
+                                <em class="project-date">2019.07.17~2019.08.01</em>
+                                <em class="project-state">
+                                    <button type="button" class="btn-white small">관심등록취소</button>
+                                </em>
+                            </li>
+                            <li>
+                                <span class="project-img">
+                                    <span><img src="images/2019/img_project_ing02.png" alt="책상 위의 작은 감동 '향기가 있는 다육이 카드'"></span>
+                                </span>
+                                <span class="project-cont">
+                                    <span>리워드형</span>
+                                    <strong><a href="">책상 위의 작은 감동 '향기가 있는 다육이 카드'</a></strong>
+                                </span>
+                                <em class="project-date">2019.07.17~2019.08.01</em>
+                                <em class="project-state">
+                                    <button type="button" class="btn-white small">관심등록취소</button>
+                                </em>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="board-pagging">
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_prev_first.png" alt="처음"></a><a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_prev.png" alt="이전">
+                        </a>
+                        <strong title="현재 페이지">1</strong>
+                        <a href="#">2</a>
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_next.png" alt="다음">
+                        </a>
+                        <a href="#" class="img-pagging">
+                            <img src="https://yeep.kr/images/common/pagging_next_last.png" alt="마지막">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+            </div>
+            <div id="footer">
+            <!-- footer -->
+                <div class="footer-utill-area">
+                    <ul class="footer-utill">
+                        <li><a href="/noti/useInqList.do">이용문의</a></li>
+                        <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                        <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                    </ul>
+                </div>
+                <!-- 2018-04-17 디자인요청 수정 -->
+                <div class="footer-cont">
+                    <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                    <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                    <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                    <ul class="site_link">
+                        <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                        <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                        <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                    </ul>
+                </div>
+                <!-- //2018-04-17 디자인요청 수정 -->
+
+            <!-- //footer -->
+        </div> <!-- //wrap -->
+    </div>
+</body>
+
+</html>

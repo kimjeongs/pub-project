@@ -1,0 +1,101 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> 권장 수업 보기 < YEEP </title>
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/in.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+
+
+</head>
+<body>
+<input type="hidden" id="crseYy" name="crseYy" value="2019" />
+
+	<div id="popupWrap">
+		<h1 class="popup-title">권장수업 보기</h1>
+		<div class="page-search">
+			<select id="schlLvlList" name="schlLvlList" title="학교급">
+				
+					<option value="01" selected>초등학교</option>
+				
+					<option value="02" >중학교</option>
+				
+					<option value="03" >고등학교</option>
+				
+			</select>
+
+			<select id="rcmnClasList" style="width:294px;" title="학교선택">
+				<option value="">선택</option>
+				
+					<option value="30" selected>삭제용_22</option>
+				
+					<option value="31" >초딩용 2018</option>
+				
+					<option value="35" >초딩5</option>
+				
+					<option value="36" >중딩</option>
+				
+			</select>
+			<button type="button" class="search-btn" onclick="fnSearch()">보기</button>
+		</div>
+		<h2 class="stit"><span id="title">핵심역량 지표 추가 테스트</span> 권장 수업</h2>
+		<div class="board-type01">
+			<table id="tblClass">
+				<caption>교육 과정 설정 - 과정명, 진로교육 성취지표, 핵심역량 지표, 난이로도 구성된 표입니다.</caption> <!-- 2019-11-12 caption수정 -->
+				<colgroup> <!-- 2019-11-12 colgroup width 수정 -->
+				    <col style="width:23%;" />
+					<col style="width:5%;" />
+					<col />
+					<col style="width:14%;" />
+					<col style="width:14%;" /> <!-- 2019-11-12 col 추가 -->
+					<col style="width:12%;" />
+				</colgroup>
+				<thead>
+					<tr class="bg-type1">
+						<th scope="col" colspan="3">과정명</th>
+						<th scope="col">진로교육 성취지표</th>
+						<th scope="col">핵심역량 지표</th> <!-- 2019-11-12 col 추가 -->
+						<th scope="col">난이도</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="col" colspan="6">제1권</th> <!-- 2019-11-12 colspan 수정 -->
+					</tr>
+					<tr>
+						<td colspan="6" class="class-tit">기업가정신이란</td> <!-- 2019-11-12 colspan 수정 -->
+					</tr>
+					<tr>
+						<td rowspan="1" class="sstit">m1 오리엔테이션</td>
+						<td class="t-center"><img src="http://dev.yeep.kr/images/common/icon_star.png" alt="중요과정"></td> <!-- 2019-11-12 alt 수정 -->
+						<td>오리엔테이션1</td>
+						<td class="no-line t-center">지표</td>
+						<td class="no-line t-center">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+						<td class="no-line t-center"><span class="star"><span class="level-2">난이도2</span></span></td>
+					</tr>
+					<tr>
+						<td rowspan="1" class="sstit">m2 기업가정신 알기2</td>
+						<td class="t-center">-</td>
+						<td>세상의 변화, 일의 변화</td>
+						<td class="no-line t-center"></td>
+						<td class="no-line t-center">창의적 사고 역량</td> <!-- 2019-11-12 td 추가 -->
+						<td class="no-line t-center"><span class="star"><span class="level-1">난이도1</span></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="popup-page-btn">
+			<a id="close" href="javascript:void(0);" class="btn-big-white popup-btn">닫기</a>
+		</div>
+	</div>
+</body>
+</html>

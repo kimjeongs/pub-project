@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="http://dev.yeep.kr/assets/js/ckeditor/ckeditor.js"></script>
+<script src="Chart.min.js" ></script> <!-- chart js -->
+<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<section class="container">
+	<header class="header g-pt-70 u-divider-center g-mb-30">
+		<h1 class="g-font-size-26 g-color-blue">&lt;활동보고서&gt;</h1>
+		<p class="g-font-size-20 pa-0 g-ma-0">[투자형] 친환경 전기 자전거 프로젝트명이 들어가는 곳</p>
+	</header>
+	<div class="jumbotron g-bg-white g-py-0 g-px-0">
+		<h3 class="title-sub-blt g-mb-10">프로젝트 정보</h3>
+		<table class="board-view">
+			<colgroup>
+				<col style="width:20%;">
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" class="g-font-weight-500">프로젝트명</th>
+					<td>프로젝트 제목</td>
+				</tr>
+				<tr>
+					<th scope="row" class="g-font-weight-500">스타트업명</th>
+					<td>고스타트업 기업명</td>
+				</tr>
+				<tr>
+					<th scope="row" class="g-font-weight-500">모금 기간</th>
+					<td>2020.12.01~2020.12.31</td>
+				</tr>
+				<!-- 투자형 -->
+				<tr>
+					<th scope="row" class="g-font-weight-500">목표 계좌수 및<br />계좌당 금액</th>
+					<td>60계좌/100,000원</td>
+				</tr>
+				<tr>
+					<th scope="row" class="g-font-weight-500">배당률</th>
+					<td>50%</td>
+				</tr>
+				<!-- //투자형 -->
+				<!-- 리워드형 -->
+				<tr>
+					<th scope="row" class="g-font-weight-500">목표 금액</th>
+					<td>1,000,000원</td>
+				</tr>
+				<!-- //리워드형 -->
+			</tbody>
+		</table>
+
+		<h3 class="title-sub-blt g-mt-35">펀딩 결과</h3>
+		<!-- 투자형 펀딩결과 -->
+		<table class="board-view u-divider-center">
+			<colgroup>
+				<col style="width:25%;">
+				<col style="width:25%;">
+				<col style="width:25%;">
+				<col />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="g-font-weight-500">모금 계좌수</th>
+					<th scope="col" class="g-font-weight-500">목표 달성률</th>
+					<th scope="col" class="g-font-weight-500">배당 지급액</th>
+					<th scope="col" class="g-font-weight-500">스타트업 최종 이익</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="g-brd-left-none"><strong>50</strong> 계좌</td>
+					<td><strong class="g-color-main">100</strong> %</td>
+					<td><strong class="g-color-main">500,000</strong> 원</td>
+					<td><strong class="g-color-main">100,000</strong> 원</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //투자형 펀딩결과 -->
+		<!-- 리워드형 펀딩결과 -->
+		<table class="board-view u-divider-center">
+			<colgroup>
+				<col style="width:33%;">
+				<col style="width:33%;">
+				<col />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" class="g-font-weight-500">후원건수</th>
+					<th scope="col" class="g-font-weight-500">후원 금액</th>
+					<th scope="col" class="g-font-weight-500">목표 달성률</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="g-brd-left-none"><strong>50</strong> 건</td>
+					<td><strong>800,000</strong> 원</td>
+					<td><strong>80</strong> % (목표 달성 성공)</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //리워드형 펀딩결과 -->
+
+		<h3 class="title-sub-blt g-mt-35">활동 소감</h3>
+		<table class="board-view">
+			<colgroup>
+				<col style="width:20%;">
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" class="g-font-weight-500"><label for="learnendFromFnd">펀딩을 통해<br />얻은 것</label></th>
+					<td>
+						<div class="align-self-center check-num">
+							펀딩을 통해 얻은 것 사용자가 작성한 내용입니다.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="g-font-weight-500"><label for="supplementFnd">펀딩 재도전시,<br />보완할 점</label></th>
+					<td>
+						<div class="align-self-center check-num">
+							펀딩 재도전시, 보완할 점 사용자가 작성한 내용입니다.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="g-font-weight-500"><label for="planFnd">향후 계획</label></th>
+					<td>
+						<div class="align-self-center check-num">
+							향후 계획 사용자가 작성한 내용입니다.
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="u-divider-center">
+		<button type="button" class="btn btn-default u-btn-darkgray" id="reportPrint">인쇄하기</button>
+	 </div>
+</section>
+</body>
+</html>

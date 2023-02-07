@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="url" property="og:url" content="?coNo="/>
+    <meta name="type" property="og:type" content="website"/>
+    <meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description" content=" - "/>
+    <meta name="image" property="og:image" content="/img"/>
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<title>YEEP</title>
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css?version=0.00000002">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-117856487-1');
+	</script>
+	<script>
+		function roleChange(){
+			var role    = $("#role option:selected").val();
+			var roleNm  = $("#role option:selected").text();
+			$("#mberRoleSeCode").val(role);
+			$("#mberRoleSeCodeNm").val(roleNm);
+			//alert($("#mberRoleSeCodeNm").val());
+			document.getElementById('frmRoleChange').submit();
+		}
+
+		function questBannerClose(){
+			if($("#top-notice").css("display") == "none"){
+				jQuery("#top-notice").show();
+			} else {
+				jQuery("#top-notice").hide();
+				$("#header").removeAttr('class');
+			}
+		}
+
+		function goMyPage(){
+			document.getElementById('frmMypage').submit();
+		}
+	</script>
+</head>
+<body>
+	<div id="top">
+		<script>
+			var $loading = $('<div style="position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:#000; opacity:0.6; filter:alpha(opacity="60")"><img src ="/images/common/load.gif" style="position: absolute; top: 50%; left: 49%;" alt="로딩중입니다"></div>').appendTo(document.body).hide();
+			$(document).ready(function() {
+				// noti swiper
+				var swiperNotiBanner = new Swiper('.noti-swiper', { //2018-07-18 수정
+					height:52,
+					autoHeight:true,
+					spaceBetween: 0,
+					slidesPerView: 1,
+					loop: true,
+					direction: 'vertical',
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+					}
+				});
+				//웹접근성 시작,정지 버튼 추가 2019-08-09
+				$(".swiper-button-pause").click(function(){
+				  swiperNotiBanner.autoplay.stop();
+				  $(".swiper-button-play").show();
+				  $(this).hide();
+				});
+				$(".swiper-button-play").click(function(){
+				  swiperNotiBanner.autoplay.start();
+				  $(".swiper-button-pause").show();
+				  $(this).hide();
+				});
+			});
+
+			function aprtJoinPop(aprtNo){
+				var popUrl = "/aprt/aprtJoinPop.do?aprtNo="+aprtNo;
+				var width = "971";
+				var height = "550";
+				var popOption = "width="+width+", height="+height+", resizable=yes, scrollbars=no, status=1;";
+				popupObject = window.open(popUrl,aprtNo,popOption);
+				popupObject.window.focus();
+			}
+
+			function startUp(){
+				var openYn = "Y";
+				if(openYn == 'Y'){
+					location.href="/evl/corpEvlHomeList.do";
+				}else{
+					location.href="/main/startupSample.do";
+				}
+			}
+		</script>
+
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->		
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+				<!-- notice -->
+				<!-- //notice -->
+				<div class="header-inner">
+					<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+					<div class="header-utill">
+						<div class="utill-btn">
+							<a href="/cmmn/sso/api/user.agent.3.do">로그인</a>
+							<a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+							<a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+						</div>
+					</div>
+					<ul class="gnb">
+						<li>
+							<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+								<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+								<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+								<li><a href="/intro/startupIntro.do">Go스타트업 소개</a></li>
+								<li><a href="/intro/onlnPtIntro.do">온라인사업설명회 소개</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/clas/classMain.do">수업 /동아리</a></strong>
+							<ul class="two-dept">
+								<li><a href="/clas/classMain.do">수업</a></li>
+								<li><a href="/aprt/aprtMain.do">동아리</a></li>
+								<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go스타트업</a></strong>
+							<ul class="two-dept">
+								<li><a href="javascript:startUp();">Go스타트업</a></li>
+								<li><a href="/onln/onlnPtHomeList.do">온라인사업설명회</a></li>
+								<!--<li><a href="javascript:alert(  '준비 중입니다'  );">YEEP 마켓</a></li>-->
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+								<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+								<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+								<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+								<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+								<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+								<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong class="one-dept"><a href="/noti/notiBbsList.do">이용안내</a></strong>
+							<ul class="two-dept menu-name-long">
+								<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+								<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+								<li><a href="/noti/useInqList.do">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			<form id="frm" name="frm">
+				<input type="hidden" name="loginId" id="loginId" value="">
+				<input type="hidden" name="loginInSeNm" id="loginInSeNm" value="">
+				<input type="hidden" name="loginInSeCD" id="loginInSeCD" value="">
+				<input type="hidden" name="currentPage" id="currentPage" value="1"/>
+				<input type="hidden" name="pageSize" id="pageSize" value="10"/>
+			</form>
+			<!-- container -->
+			<div id="container" tabindex="0">
+			<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/cl.css">
+			<div class="page-location">
+				<ul>
+					<li class="home"><a href="/main/main.do"><img src="http://dev2.yeep.kr:5080/images/common/icon_home.png" alt="홈"></a></li>
+					<li><a href="/clas/classMain.do">수업/동아리</a></li>
+					<li>
+						<a href="#">수업</a>
+						<ul class="location-menu">
+							<li><a href="#" id="classMain">수업</a></li>
+							<li><a href="javascript:;" id="aprtMain">동아리</a></li>
+							<li><a href="javascript:;" id="mentorMainList">멘토링</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content-width">
+				<h2 class="page-title">수업</h2>
+				
+				<!-- 수업 리스트 영역 -->
+				<div class="tab-btn">
+					<ul class="tab-list tab-width-fixed" style="vertical-align:top;">
+						<li rel="tab1" id="btn1" class="active"><a href="javascript:void(0);">진행중인 수업</a></li>
+						<li rel="tab3" id="btn3"><a href="javascript:void(0);">종료된 수업</a></li>
+					</ul>
+					<div class="tab-btn-area">
+						<a href="javascript:goRegist();" class="add-btn">수업개설</a>
+					</div>
+				</div>
+				<div class="tab-cont" id="tab1" style="display: block;">
+					<h3 class="tab-cont-title">진행중인 수업</h3>
+					<div class="class-box">
+						<ul class="class-list">
+							<li><span class="class-img"><span><img src="http://dev.yeep.kr/img/common/class_no_image2.jpg" alt="수업대표 사진 - 190308 등록 고등수업1" /></span></span><span class="class-cont"><strong><em class="icon-high">고</em> <a href="/clas/classDtlMain.do?clasNo=330&amp;grpNo=582&amp;mbrNo=a1234">190308 등록 고등수업1</a></strong>	<span>자유학기활동과정</span><span>주제선택활동</span><span>31차시</span><span>지도교사 : 남교사1</span></span><em class="class-date">2019.03.01 ~ 2020.02.29</em><em class="class-state ing">진행중</em></li>
+						</ul>
+					</div>
+				</div>
+				<h3 class="hidden-title" id="hiddenTabText" >진행중인 수업</h3>
+
+				<!-- 삭제 2019-10-28
+				<ul class="quick-menu">
+					<li class="menu-type01">
+						<a href="/intro/clasIntro.do">
+							<strong>수업소개</strong>
+							<span>수업 프로그램 안내와 특징,<br>활용 예시를 확인할 수 있어요</span>
+						</a>
+					</li>
+					<li class="menu-type02">
+						<a href="/intro/startupIntro.do">
+							<strong>Go! startup</strong>
+							<span>홈페이지 개설을 통해<br>가상창업체험 활동에 도전하세요!</span>
+						</a>
+					</li>
+					<li class="menu-type03">
+						<a href="/mentor/mentorMainList.do">
+							<strong>멘토링</strong>
+							<span>궁금한 점이 있거나, 생각이 풀리지 않을 땐<br>전문가에게 도움을 요청해보세요!</span>
+						</a>
+					</li>
+					<li class="menu-type04">
+						<a href="/noti/rfrcDataList.do">
+							<strong>자료실</strong>
+							<span>다양한 분야별 자료를 확인하여<br>기업가 정신에 대한 이해를 높여보세요</span>
+						</a>
+					</li>
+				</ul>
+				-->
+
+				<div class="page-search">
+					<label class="invisible" for="searchGroup">분류</label>
+					<select id="searchGroup">
+						<option value="01">수업명</option>
+						<option value="02">지도교사</option>
+					</select>
+					<label class="invisible" for="searchText">검색어</label>
+					<input type="text" class="txt" id="searchText" placeholder="검색어를 입력하세요">
+					<button type="button" class="search-btn" onclick="searchClasList(1);">검색</button>
+				</div>
+				<div class="search-results">
+					<!-- 수업 검색결과 -->
+					<div class="search-count-btn">
+						<p class="search-count">총 <strong id="searchCnt">0</strong>건이 검색되었습니다.</p>
+						<div class="count-btn">
+							<label for="schoolSelect" class="invisible">학교급 선택</label>
+							<select id="schoolSelect">
+								<option value="">초/중/고 전체</option>
+								 <option value="01">초등학교</option>
+								<option value="02">중학교</option>
+								<option value="03">고등학교</option>
+							</select>
+							<label for="typeSelect" class="invisible">수업유형 선택</label>
+							<select id="typeSelect">
+								<option value="" selected>전체 수업</option>
+								<option value="02">진행중인 수업</option>
+								<option value="03">종료된 수업</option>
+							</select>
+							<button type="button" class="btn-gray" onclick="searchClasList(1);">보기</button>
+						</div>
+					</div>
+					 <!-- 수업 검색결과 -->
+					<ul class="search-results-list">
+						<li><div class="results-img"><img src="http://dev.yeep.kr/img/common/thumb_class_no_image5.jpg" alt="수업대표 사진 - 내부요청 #5903 확인" /></div><span class="results-cont"><strong><em class="icon-elementary">초</em><a href="/clas/classDtlMain.do?clasNo=362&amp;grpNo=726">내부요청 #5903 확인</a></strong><span><strong class="course">활동 과정 : </strong>자유학기활동과정</span><span>진로탐색활동</span><em><strong class="course">교육 과정 : </strong>2차시</em></span><em><span class="date-state">2019.03.01 ~ 2020.02.29<em class="ing">진행중</em></span></em></li>
+						<li><div class="results-img"><em><img src="http://dev.yeep.kr/img/common/thumb_class_no_image5.jpg" alt="수업대표 사진 - test" /></em></div><em><span class="results-cont"><strong><em class="icon-high">고</em><a href="/clas/classDtlMain.do?clasNo=361&amp;grpNo=711">test</a></strong><span><strong class="course">활동 과정 : </strong>자유학기활동과정</span><span>동아리활동</span><em><strong class="course">교육 과정 : </strong>29차시</em></span><em><span class="date-state">2019.09.01 ~ 2020.02.29<em class="ing">진행중</em></span></em></em></li>
+						<li><div class="results-img"><em><em><img src="http://dev.yeep.kr/img/common/thumb_class_no_image1.jpg" alt="수업대표 사진 - test" /></em></em></div><em><em><span class="results-cont"><strong><em class="icon-junior-high">중</em><a href="/clas/classDtlMain.do?clasNo=360&amp;grpNo=710">test</a></strong><span><strong class="course">활동 과정 : </strong>자유학기활동과정</span><span>동아리활동</span><em><strong class="course">교육 과정 : </strong>26차시</em></span><em><span class="date-state">2019.09.01 ~ 2020.02.29<em class="ing">진행중</em></span></em></em></em></li>
+					</ul>
+					<div id = "search-more">
+						<a href="javascript:searchMoreClasList();" class="btn-more" title="수업목록 추가 펼침" >더보기</a>
+					</div>
+					<!-- //수업 검색결과 -->
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+		<script></script>
+	</div>
+	<div id="footer">
+		<!-- footer -->
+		<div class="footer-utill-area">
+			<ul class="footer-utill">
+				<li><a href="/noti/useInqList.do">이용문의</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+				<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+			</ul>
+		</div>
+		<!-- 2018-04-17 디자인요청 수정 -->
+		<div class="footer-cont">
+			<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+			<p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+			<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+			<ul class="site_link">
+				<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+				<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+				<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+			</ul>
+		</div>
+		<!-- //2018-04-17 디자인요청 수정 -->
+		<!-- //footer -->
+    </div>
+	<!-- //wrap -->
+	</div>
+</body>
+
+</html>

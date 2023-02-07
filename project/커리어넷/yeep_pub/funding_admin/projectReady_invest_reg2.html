@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="http://dev.yeep.kr/assets/js/ckeditor/ckeditor.js"></script>
+<script src="jquery-ui.js"></script> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" type="text/css" href="jquery-ui.css"> <!-- 2019-08-08 datepicker -->
+<link rel="stylesheet" href="css/custom.css">
+<script>
+$(document).on('ready', function () {
+	CKEDITOR.replace( 'itemIntroEditor', { // 아이템 소개 에디터
+		toolbarGroups: [
+			{ name: 'styles', groups: [ 'styles' ] },
+			{ name: 'mode', groups: [ 'mode' ] },
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'editing', groups: [ 'editing' ] },
+			{ name: 'basicstyles', groups: [ 'basicstyles' ] },
+			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'insert', groups: [ 'insert' ] },
+			{ name: 'colors', groups: [ 'colors' ] },
+			{ name: 'tools', groups: [ 'tools' ] },
+			{ name: 'others', groups: [ 'others' ] }
+		],
+      // Remove the redundant buttons from toolbar groups defined above.
+		removeButtons: 'Font,CreateDiv,Language,Anchor,Flash,PageBreak,Iframe,NumberedList,ShowBlocks',
+
+      //media embed
+      extraPlugins: 'embed,autoembed,uploadimage,image2',
+      height: 500,
+
+      uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      contentsCss: [ CKEDITOR.basePath + 'contents.css', 'https://sdk.ckeditor.com/samples/assets/css/widgetstyles.css' ],
+      embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
+
+      image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+      image2_captionedClass: [ 'image-captioned' ]
+    });
+
+	CKEDITOR.replace( 'bzPlanEditor', { // 사업추진 전략 에디터
+		toolbarGroups: [
+			{ name: 'styles', groups: [ 'styles' ] },
+			{ name: 'mode', groups: [ 'mode' ] },
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'editing', groups: [ 'editing' ] },
+			{ name: 'basicstyles', groups: [ 'basicstyles' ] },
+			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'insert', groups: [ 'insert' ] },
+			{ name: 'colors', groups: [ 'colors' ] },
+			{ name: 'tools', groups: [ 'tools' ] },
+			{ name: 'others', groups: [ 'others' ] }
+		],
+      // Remove the redundant buttons from toolbar groups defined above.
+		removeButtons: 'Font,CreateDiv,Language,Anchor,Flash,PageBreak,Iframe,NumberedList,ShowBlocks',
+
+      //media embed
+      extraPlugins: 'embed,autoembed,uploadimage,image2',
+      height: 500,
+
+      uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      contentsCss: [ CKEDITOR.basePath + 'contents.css', 'https://sdk.ckeditor.com/samples/assets/css/widgetstyles.css' ],
+      embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
+
+      image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+      image2_captionedClass: [ 'image-captioned' ]
+    });
+
+	CKEDITOR.replace( 'startUpIntroEditor', { // 스타트업 소개 에디터
+		toolbarGroups: [
+			{ name: 'styles', groups: [ 'styles' ] },
+			{ name: 'mode', groups: [ 'mode' ] },
+			{ name: 'undo', groups: [ 'undo' ] },
+			{ name: 'editing', groups: [ 'editing' ] },
+			{ name: 'basicstyles', groups: [ 'basicstyles' ] },
+			{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'insert', groups: [ 'insert' ] },
+			{ name: 'colors', groups: [ 'colors' ] },
+			{ name: 'tools', groups: [ 'tools' ] },
+			{ name: 'others', groups: [ 'others' ] }
+		],
+      // Remove the redundant buttons from toolbar groups defined above.
+		removeButtons: 'Font,CreateDiv,Language,Anchor,Flash,PageBreak,Iframe,NumberedList,ShowBlocks',
+
+      //media embed
+      extraPlugins: 'embed,autoembed,uploadimage,image2',
+      height: 500,
+
+      uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      contentsCss: [ CKEDITOR.basePath + 'contents.css', 'https://sdk.ckeditor.com/samples/assets/css/widgetstyles.css' ],
+      embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
+
+      image2_alignClasses: [ 'image-align-left', 'image-align-center', 'image-align-right' ],
+      image2_captionedClass: [ 'image-captioned' ]
+    });
+});
+</script>
+</head>
+<body>
+  <main>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--sticky-top">
+		<div class="u-header__section u-header__section--admin-light g-min-height-65">
+			<div class="header-top">
+				<a href="/main/main.do" class="logo"><img class="" src="/assets/img/content/sa_logo.png" alt="YEEP"></a>
+				<span class="txt g-font-size-13"><strong class="g-font-size-14">Startup</strong> 홈페이지 관리</span>
+				<div class="util-menu">				
+					<p class="txt02 g-font-size-12"><span>YEEP지기</span> 님 환영합니다</p>				
+					<!-- 2018-04-09 알림 레이어추가 -->
+					<div class="hedaer-notice">					
+						<a id="notificationsInvoker" class="ico_bell on" href="/mypage/myNotiList.do"><!-- new 노출시 on 추가 --></a>
+					</div>
+					<ul class="util">					
+						<li><a href="/mypage/myPageMainList.do">마이페이지</a></li>
+						<li><a href="/cmmn/sso/api/user.sso.logout.do">로그아웃</a></li>					
+					</ul>
+					<!-- //2018-04-09 알림 레이어추가 -->
+				</div>
+			</div>
+		
+			<nav class="navbar no-gutters g-pa-0 sa-nav">
+			  <div class="col-auto d-flex flex-nowrap u-header-logo-toggler g-py-12" style="width: 410px;">
+				<!-- Logo -->
+				<a href="/comng/startUpAdminMain.do?coNo=199" class="align-self-center g-font-size-28 company-logo">초등학교_고스타트업02</a>
+				<!-- End Logo -->
+				<!-- Sidebar Toggler -->
+				<a class="js-side-nav u-header__nav-toggler d-flex align-self-center" href="#" style="display:none !important;" data-hssm-class="" data-hssm-is-close-all-except-this="true" data-hssm-target="#sideNav">
+				  <i class="hs-admin-align-left"></i>
+				</a>
+				<!-- End Sidebar Toggler -->
+			  </div>
+			  <div class="company-util">
+				<ul>
+					<li class="g-font-size-14">회원 <strong>0</strong>명</li>
+					<li class="g-font-size-14">전문가 <strong>0</strong>명</li>
+					<li class="g-font-size-16"><strong>0</strong> 점</li>
+				</ul>
+				<a href="/startup/eleGoStartup02" target="_blank" class="text-center g-font-size-13 g-color-white g-rounded-25 g-py-5 g-px-20">홈페이지</a>
+			  </div>
+			</nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <section class="container-fluid px-0 g-pt-105">
+    	<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+        <!-- Sidebar Nav -->
+        <div id="sideNav" class="col-auto g-width-250 u-sidebar-navigation--light"><!-- 2018-04-11 반응형 삭제로 인한 수정 -->
+          <ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
+            <!-- 관리 홈 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminMain.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"> <i class="hs-admin-window"></i> </span>
+				<span class="media-body align-self-center">관리 홈</span>
+              </a>
+            </li>
+            <!-- End 관리 홈 -->
+
+            <!-- 기본정보 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpHomepageReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-notepad"></i></span>
+                <span class="media-body align-self-center">기본정보</span>
+              </a>
+            </li>
+            <!-- End 기본정보 -->
+
+            <!-- 템플릿 선택 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/startUpAdminTemplit.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layers-alt"></i></span>
+                <span class="media-body align-self-center">템플릿 선택</span>
+              </a>
+            </li>
+            <!-- End 템플릿 선택 -->
+
+            <!-- 메뉴/콘텐츠 관리 --><!-- 2018-04-10 공통 메뉴순서 변경 -->
+            <li id="menuContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu3">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-layout-grid-2"></i></span>
+                <span class="media-body align-self-center">메뉴/콘텐츠 관리</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <!-- 구성원 권한 관리: Submenu-1 -->
+			  <ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 메뉴관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/menuMng.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-media-center-alt"></i></span>
+					<span class="media-body align-self-center">메뉴관리</span>
+				  </a>
+				</li>
+				<!-- End 메뉴관리 -->
+				<!-- 메인관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/startUpAdminMainReg.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-layout-tab-window"></i></span>
+					<span class="media-body align-self-center">메인관리</span>
+				  </a>
+				</li>
+				<!-- End 메인관리 -->
+
+				<!-- 구성원 소개 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/comng/memberMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">구성원 소개 관리</span>
+				  </a>
+				</li>
+				<!-- End 구성원 소개 관리 -->
+			  </ul>
+            </li>
+            <!-- End 메뉴/콘텐츠 관리 --><!-- //2018-04-10 공통 메뉴순서 변경 -->
+
+            <!-- MOU 관리 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/mouMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-world"></i></span>
+                <span class="media-body align-self-center">MOU 관리</span>
+              </a>
+            </li>
+            <!-- End MOU 관리 -->
+
+            <!-- 홍보 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/AdvBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-blackboard"></i></span>
+                <span class="media-body align-self-center">홍보 게시판</span>
+              </a>
+
+            </li>
+            <!-- End 홍보 게시판 -->
+
+            <!-- 퀘스트 게시판 -->
+            <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/QstBbsList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-comments-smiley"></i></span>
+                <span class="media-body align-self-center">퀘스트 게시판</span>
+              </a>
+            </li>
+            <!-- End 퀘스트 게시판 -->
+
+			<!-- 명함 제작 -->
+			<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+				<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/cardList.do?hmpgUrlText=eleGoStartup02&coNo=199">
+					<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-id-badge"></i></span>
+					<span class="media-body align-self-center">명함 제작</span>
+				</a>
+			</li>
+			<!-- End 명함 제작 -->
+
+            <!-- UI 설정 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/settingMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-settings"></i></span>
+                <span class="media-body align-self-center">설정</span>
+              </a>
+            </li>
+            <!-- End 설정 -->
+
+            <!-- 통계 -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-pie-chart"></i></span>
+                <span class="media-body align-self-center">통계</span>
+              </a>
+            </li>
+            <!-- End 통계 -->
+
+            <!-- 온라인 사업설명회 관리  -->
+             <li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+              <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="/comng/statisticsMng.do?coNo=199&hmpgUrlText=eleGoStartup02">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-desktop"></i></span>
+                <span class="media-body align-self-center">온라인 사업설명회 관리</span>
+              </a>
+            </li>
+            <!-- End 온라인 사업설명회 관리  -->
+
+			<!-- 크라우드 펀딩  -->
+             <li id="fundingContents" class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item " >
+			   <a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#" data-hssm-target="#subMenu4">
+                <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"><i class="hs-admin-cloud"></i></span>
+                <span class="media-body align-self-center">크라우드 펀딩</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon"><i class="hs-admin-angle-right"></i></span>
+                <span class="u-side-nav--has-sub-menu__indicator"></span>
+              </a>
+			  <ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- 전체 프로젝트 현황 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-clipboard"></i></span>
+					<span class="media-body align-self-center">전체 프로젝트 현황</span>
+				  </a>
+				</li>
+				<!-- End 전체 프로젝트 현황 -->
+				<!-- 프로젝트 준비 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-archive"></i></span>
+					<span class="media-body align-self-center">프로젝트 준비</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 준비 -->
+				<!-- 프로젝트 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-reload"></i></span>
+					<span class="media-body align-self-center">프로젝트 관리</span>
+				  </a>
+				</li>
+				<!-- End 프로젝트 관리 -->
+				<!-- 문의글 관리 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-marker-alt"></i></span>
+					<span class="media-body align-self-center">문의글 관리</span>
+				  </a>
+				</li>
+				<!-- End 문의글 관리 -->
+				<!-- 활동보고서 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item">
+				  <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#">
+					<span class="d-flex align-self-center g-mr-15 g-mt-minus-1"><i class="hs-admin-volume"></i></span>
+					<span class="media-body align-self-center">활동보고서</span>
+				  </a>
+				</li>
+				<!-- End 활동보고서 -->
+			  </ul>
+            </li>
+            <!-- End 크라우드 펀딩  -->
+          </ul>
+        </div>
+        <!-- End Sidebar Nav -->
+
+        	<div class="col g-ml-0 g-pb-40--md"><!-- 2018-04-09 반응형 삭제로 인한 수정 -->
+         		<div class="g-bg-lightblue-v10-opacity-0_5 g-pa-20 h-100">
+					<script>
+						$(document).on('ready', function () {
+							document.title="Startup 홈페이지 관리 | Go! startup | YEEP";
+						  // initialization of range datepicker
+						  $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+						  // initialization of custom scrollbar
+						  $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+						  // initialization of HSDropdown component
+						  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+
+						  // initialization of sidebar navigation component
+						  $.HSCore.components.HSSideNav.init('.js-side-nav');
+
+						  // initialization of datatables
+						  //$.HSCore.components.HSDatatables.init('.js-datatable');
+
+						  // initialization of custom select
+						  $('.js-select').selectpicker();
+						});
+					  </script>
+
+						<!-- Container -->
+						<form>
+							<div class="card g-brd-gray-light-v7 u-card-v1 g-pa-15 g-pa-25-30--md h-100">
+								<!-- contents -->
+								<header class="title-inline">
+									<h2 class="g-font-size-24 g-color-black mb-0">프로젝트 신청</h2>
+								</header>
+
+								<hr class="d-flex g-brd-gray-light-v7 g-mt-20 g-mb-35">
+
+								<div class="project-approval-bx card g-brd-1 g-brd-gray-light-v7 g-bg-gray-light-v12 g-rounded-3 g-pa-10">
+									<p class="mb-0">
+										<span class="state-reg ing">작성중</span> <!-- 상태 class : 작성중 'ing' / 승인대기 'standby' / 승인완료 'complete' / 반려 'return' -->
+										<span class="state-reg standby">승인대기</span>
+										<span class="state-reg complete">승인완료</span>
+										<span class="state-reg return">반려</span>
+										<strong>[투자형]</strong> 우리나라 전통 인형 만들기 프로젝트
+									</p>
+								</div>
+
+								<div class="table-top-util brd-bottom">
+									<p class="left-area"><span class="txt-bar">프로젝트사업설명서를 작성해주세요.</span></p>
+									<p class="right-area"><a href="#" class="btn-white-arrow"><span>프로젝트 목록</span></a></p>
+								</div>
+
+								<ol class="reg-step-list invest-step2"> <!-- '완료' class="complete" / '작성중' class="current" -->
+									<li class="complete"><span class="num">1</span><span class="txt-bx"><strong class="step">STEP1</strong>기초정보 등록 <a href="#"><span class="state">완료</span></a></span></li>
+									<li class="current"><span class="num">2</span><span class="txt-bx"><strong class="step">STEP2</strong>사업설명서 작성 <span class="state">설정전</span></span></li> <!-- 설정중 -->
+									<li><span class="num">3</span><span class="txt-bx"><strong class="step">STEP3</strong>펀딩 조건 설정 <span class="state">작성전</span></span></li>
+									<li><span class="num">4</span><span class="txt-bx"><strong class="step">STEP4</strong>오픈 신청 <span class="state">신청전</span></span></li>
+									<li><span class="num">5</span><span class="txt-bx"><strong class="step">STEP5</strong>승인 확인</span></li>
+								</ol>
+
+								<div class="btd-gray-bx">
+									사업설명서는 투자자들에게 보여줄 내용으로, 우리 아이템과 사업의 내용을 자세하게 적는 것이 좋습니다.<br />
+									사전에 활동한 마일스톤 내용을 기초자료로 하여 구성원들과 충분히 협업하여 투자자에게 보이는 최종 사업설명서를 작성해주세요.<br />
+									<span class="g-font-size-14 text-muted">※ 처음 선택했던 마일스톤이 아닌 다른 마일스톤의 내용을 불러오기 원하는 경우 다른 마일스톤을 선택한 후 [변경하기]를 눌러주세요.</span>
+									<div class="dot-title-wrap">
+										<strong class="title">사전 프로젝트 분석 활동</strong>
+										<div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0 w-25">
+											<select class="js-select u-select--v2-select w-100" title="프로젝트 분석 선택"> <!-- 비활성화 상태 disabled 추가 (form요소 모두 공통) -->
+												<option>IT(ICT/IOT)</option>
+												<option>관광</option>
+												<option>광고</option>
+												<option>디자인</option>
+												<option>콘텐츠(문화/미디어)</option>
+												<option>패션/미용</option>
+												<option>사회적기업/NGO</option>
+												<option>생활/안전</option>
+												<option>식품</option>
+												<option>애완동물(PET)</option>
+												<option>업사이클링(up-cycling)</option>
+												<option>예술</option>
+												<option>의료</option>
+												<option>과학</option>
+												<option>환경</option>
+												<option>기타</option>
+											</select>
+											<i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
+										</div>
+										<button type="button" class="btn btn-default u-btn-bluegray">변경하기</button>
+										<button type="button" class="btn btn-default u-btn-darkgray">프로젝트 분석 다시하기</button>
+									</div>
+								</div>
+								
+								
+								<div class="table-top-util">
+									<div class="left-area"><h3 class="title-sub-blt g-font-size-16 g-color-black mb-0 g-mt-35">사업설명서</h3></div>
+									<p class="right-area"><span class="essential">* 필수입력</span></p>
+								</div>
+								<table class="board-view add-disabled">
+									<colgroup>
+										<col style="width:17%;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="bzDocumtTitle">사업설명서 제목</label>
+												<a href="#tipbx01" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx01"></a>
+											</th>
+											<td>
+												<div class="check-num">
+													<input type="text" id="bzDocumtTitle" class="form-control g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" placeholder="사업설명서 제목을 입력하세요" maxlength="30" /><span id="coNmTextCnt">0 / 30</span>
+												</div>
+												<div class="tip-bx collapse" id="tipbx01">
+													사업설명서 제목은 가장 상단에 위치하여 투자자의 눈에 가장 먼저 들어옵니다.<br />
+													다른 프로젝트의 사업설명서와 다르다는 생각이 들게끔 투자자의 호기심과 기대감을 불러 일으킬만한 제목이면 좋겠죠?<br />
+													너무 딱딱한 문장보다는 실생활에 쓰일만한 표현을 사용하고 숫자를 활용하는 방법을 추천합니다.
+													<p class="ex">[예시] "단 하나의 카드" 결제를 간편하게</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="itemIntroEditor">아이템 소개</label>
+												<a href="#tipbx02" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx02"></a>
+											</th>
+											<td>
+												<div id="itemIntroEditor">
+													<p><span style="font-size:20px;"><strong>아이템 이름</strong></span></p>
+													<p>공기처럼 가벼운 뿔테 안경, 에어그램</p/>
+													<p><span style="font-size:20px;"><strong>아이템 개발 동기</strong></span></p>
+													<p>#가벼운뿔테안경, #가볍다, #티타늄보다튼튼한뿔테</p>
+													<p><span style="font-size:20px;"><strong>아이템 개요</strong></span></p>
+													<p><img src="images/img_sample.jpg" alt="" width="320" height="180" /></p>
+													<p>우리가 뿔테 안경을 만들면서 고민한 건 딱 세 가지 입니다.</p>
+													<p>안경은 하루 10시간 이상 내 얼굴을 누르는 것. 그럼 동전보다 가볍게 만들자.</p>
+												</div>
+												<div class="tip-bx collapse" id="tipbx02">
+													<ul>
+														<li>프로젝트 분석에서 작성했던 내용을 기반으로 투자자에게 보여줄 아이템 소개 내용을 작성해주세요. 아래 항목들을 참고해서 작성하되,<br />
+														사람들의 이목을 끌만한 이미지나 문구를 활용한다면 펀딩 받을 확률이 높아질 것입니다.</li>
+														<li>- 아이템 이름
+															<p>아이템 이름이 투자자들의 매력을 끌만한가요? 일반적인 명칭에 더해 아이템의 특징과 브랜드가 들어가면 더욱 좋습니다.</p>
+															<p class="ex">[예시] 카드계의 혁명, SAB카드</p>
+														</li>
+														<li>- 아이템 개발 동기
+															<p>평소에 기존 제품이나 서비스의 불편함을 느껴 이를 해결하기 위해 아이템을 개발한다면 불편함의 내용과 문제 해결 내용을,<br />
+															새로운 형태의 아이템이거나 우리 생활을 한 층 더 편리하게 해줄 아이템을 개발한다면 그 내용을 해쉬 태그 형식으로 적어주세요.</p>
+															<p class="ex">[예시] #너무많은카드, #꽉찬지갑, #불편해</p>
+														</li>
+														<li>- 아이템 개요
+															<p>먼저 아이템의 이미지를 넣어주세요. 꼭 아이템 사진을 넣을 필요는 없습니다. 그림이나 도면 등 사람들이 이미지를 보고 어떤 아이템인지 이해할 수 있는 이미지라면 충분합니다. 그 다음 아이템의 기능, 용도, 특성 등을 정리해보고 아이템을 구매했을 때의 효과와 장점을 작성해보세요. 마지막으로 우리 아이템의 독창성이 무엇인지, 기존 제품과 어떻게 다른지, 기존 제품의 문제점을 어떻게 해결했는지 작성해봅니다. 유사한 제품이 존재하지 않으면 어떤 점에서 다른 제품과 비교할 수 없는지를 생각하면 좋습니다.</p>
+															<p class="ex">[예시] 카드로 꽉 차서 두꺼워진 지갑  때문에 불편하신 경험 한번쯤 있으시죠?<br />
+															카드를 꺼내려고 지갑을 열었을 때 많은 카드 때문에 카드 찾기가 불편하고 꺼내기 어려우신 적 한 번쯤은 있으실 겁니다.<br />
+															SAB카드는 그런 문제를 한번에 해결해드립니다.<br />
+															4차 산업혁명에 맞는 혁신적인 SAB카드!!<br /><br />
+															<img src="images/img_sample3.jpg" alt="아이템 소개 이미지" /><br /><br />
+															여러장의 카드를 단 하나 SAB카드로 통합해드립니다.<br />
+															최대 30개의 카드를 SAB카드 하나로! 모든 은행 카드 통합이 가능합니다.<br />
+															NFC지원으로 교통카드까지 한번에 사용 가능합니다.<br /><br />
+															스마트폰 내 어플로 잠금설정으로 카드를 잃어버려도 걱정 無!!<br /><br />
+															무선충전을 이용한 편리한 충전방식원하는 색상과 사진으로 세상에 단 하나뿐인 카드를 만들어 보세요.</p>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="bzPlanEditor">사업추진 전략</label>
+												<a href="#tipbx03" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx03"></a>
+											</th>
+											<td>
+												<div class="editor" id="bzPlanEditor">
+													<p><span style="font-size:20px;"><strong>주요 고객</strong></span></p>
+													<p>성별 : 여성</p>
+													<p>나이 : 10대 이하, 20대</p>
+													<p>지역 : 서울, 경기, 인천, 경기도</p>
+													<p>예쁘면서도 가벼운 뿔테 안경을 좋아하는 온라인에 익숙한 전국의 10,20대 남녀</p>
+												</div>
+												<div class="tip-bx collapse" id="tipbx03">
+													프로젝트 분석에서 선택한 주요 고객의 내용을 조금 더 풍성하게 다듬어보세요.<br />
+													주요 고객을 설정한 이유나 주요 고객에 대한 추가적인 설명과 덧붙인다면 투자자에게 믿음을 줄 수 있습니다.
+													<p class="ex">[예시]<br />
+													<strong>주요 고객</strong><br />
+													우리 아이템의 주요 고객을 분석해 보았습니다.<br /><br />
+													성별 : 여성, 남성<br />
+													나이 : 50대, 60대 이상<br />
+													지역 : 전국<br /><br />
+													하지만 조금 더 고객을 세분화하여 저희 뿔테 안경 에어그램을 구매할 목표 대상을 정리해봤습니다.<br />
+													“스마트폰에 익숙하지 않지만 많은 카드를 갖고 다니기 귀찮은 중장년층”<br /><br />
+													스마트폰에 익숙한 세대는 스마트폰 하나로 모든 카드를 이용할 수 있지만 스마트폰에 익숙하지 않은 50대 이상의 사람들은 지갑 두둑히 카드를 넣고 다닙니다. 너무 많은 카드를 가지고 다니기 귀찮지만 스마트폰 카드 기능은 사용할 수 없는 사람들, SAB카드는 이런 사람들을 고객으로 삼았습니다.
+													</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="table-top-util">
+									<div class="left-area"><h3 class="title-sub-blt g-font-size-16 g-color-black mb-0 g-mt-40">마케팅 믹스</h3></div>
+									<p class="right-area"><span class="essential">* 필수입력</span></p>
+								</div>
+								<div class="btd-gray-bx marketing-mix">
+									<div class="mmix-map">
+										<div class="mmix-insert-group">
+											<div class="mmix-title">
+												<strong>목표시장</strong>
+												<p class="desc">제품(Product), 가격(Price), 유통(Place), 촉진(Promotion)의 측면에서 키워드를 작성해봅시다.</p>
+											</div>
+											<ul class="insert-items">
+												<li class="item1">
+													<strong class="item-title">*제품<span class="eng">Product</span></strong>
+													<div class="item-cont">
+														<textarea cols="10" rows="3" placeholder="[예시] 튼튼하고 공기처럼 가벼운 뿔테 안경" maxlength="30">튼튼하면서도 공기처럼 가벼운&#10;뿔테 안경</textarea>
+														<p class="point-sel">
+															<span>점수</span>
+															<select>
+																<option>선택</option>
+																<option>0</option>
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+																<option>4</option>
+																<option>5</option>
+																<option>6</option>
+																<option>7</option>
+																<option>8</option>
+																<option>9</option>
+																<option>10</option>
+																<option>11</option>
+																<option>12</option>
+																<option>13</option>
+																<option>14</option>
+																<option>15</option>
+																<option>16</option>
+																<option>17</option>
+																<option>18</option>
+																<option>19</option>
+																<option selected>20</option>
+																<option>21</option>
+																<option>22</option>
+																<option>23</option>
+																<option>24</option>
+																<option>25</option>
+															</select> / 25
+														</p>
+													</div>
+												</li>
+												<li class="item2 left-title">
+													<strong class="item-title">*가격<span class="eng">Price</span></strong>
+													<div class="item-cont">
+														<textarea cols="10" rows="3" placeholder="[예시] 합리적인 가격 50,000원" maxlength="30">합리적인 가격 50,000원</textarea>
+														<p class="point-sel"><span>점수</span>
+															<select>
+																<option>선택</option>
+																<option>0</option>
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+																<option>4</option>
+																<option>5</option>
+																<option>6</option>
+																<option>7</option>
+																<option>8</option>
+																<option>9</option>
+																<option>10</option>
+																<option>11</option>
+																<option>12</option>
+																<option>13</option>
+																<option>14</option>
+																<option>15</option>
+																<option>16</option>
+																<option selected>17</option>
+																<option>18</option>
+																<option>19</option>
+																<option>20</option>
+																<option>21</option>
+																<option>22</option>
+																<option>23</option>
+																<option>24</option>
+																<option>25</option>
+															</select> / 25
+														</p>
+													</div>
+												</li>
+												<li class="item3">
+													<strong class="item-title">*유통<span class="eng">Place</span></strong>
+													<div class="item-cont">
+														<textarea cols="10" rows="3" placeholder="[예시] 온라인 쇼핑몰을 통한 직접 판매와 배송" maxlength="30">온라인 쇼핑몰을 통한 직접 판매와 배송</textarea>
+														<p class="point-sel"><span>점수</span>
+															<select>
+																<option>선택</option>
+																<option>0</option>
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+																<option>4</option>
+																<option>5</option>
+																<option>6</option>
+																<option>7</option>
+																<option>8</option>
+																<option>9</option>
+																<option>10</option>
+																<option>11</option>
+																<option>12</option>
+																<option>13</option>
+																<option>14</option>
+																<option>15</option>
+																<option>16</option>
+																<option>17</option>
+																<option>18</option>
+																<option>19</option>
+																<option selected>20</option>
+																<option>21</option>
+																<option>22</option>
+																<option>23</option>
+																<option>24</option>
+																<option>25</option>
+															</select> / 25
+														</p>
+													</div>
+												</li>
+												<li class="item4 left-title">
+													<strong class="item-title">*촉진<span class="eng">Promotion</span></strong>
+													<div class="item-cont">
+														<textarea cols="10" rows="3" placeholder="[예시] 페이스북, 인스타그램을 통한 홍보" maxlength="30">페이스북, 인스타그램을 통한 홍보</textarea>
+														<p class="point-sel"><span>점수</span>
+															<select>
+																<option>선택</option>
+																<option>0</option>
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+																<option>4</option>
+																<option>5</option>
+																<option>6</option>
+																<option>7</option>
+																<option>8</option>
+																<option>9</option>
+																<option>10</option>
+																<option>11</option>
+																<option>12</option>
+																<option>13</option>
+																<option>14</option>
+																<option>15</option>
+																<option>16</option>
+																<option>17</option>
+																<option>18</option>
+																<option selected>19</option>
+																<option>20</option>
+																<option>21</option>
+																<option>22</option>
+																<option>23</option>
+																<option>24</option>
+																<option>25</option>
+															</select> / 25
+														</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<p class="comment">* 사용자 펀딩 화면에는 그래프 형식으로 보이게 됩니다.</p>
+									</div>
+								</div>
+
+								<h3 class="title-sub-blt g-font-size-16 g-color-black mb-0 g-mt-40">스타트업 소개</h3>
+								<div class="table-top-util">
+									<p class="left-area">우리 스타트업에 대한 소개와 우리 스타트업의 홈페이지 주소를 작성해주세요.</p>
+									<p class="right-area"><span class="essential">* 필수입력</span></p>
+								</div>
+								<table class="board-view add-disabled">
+									<colgroup>
+										<col style="width:17%;">
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row" class="g-font-weight-500" title="필수입력">
+												<span class="essential">*</span>
+												<label for="startUpIntroEditor">스타트업 소개</label>
+												<a href="#tipbx04" class="tip collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="tipbx04"></a>
+											</th>
+											<td>
+												<div class="editor" id="startUpIntroEditor">
+													<p><span style="font-size:20px;"><strong>스타트업 소개</strong></span></p>
+													<p>프로젝트 분석>아이템 및 스타트업 소개>스타트업소개>스타트업소개 입력 내용</span></p>
+													<p><span style="font-size:20px;"><strong>스타트업 비전</strong></span></p>
+													<p>프로젝트 분석>아이템 및 스타트업 소개>스타트업소개>스타트업비전 입력 내용</span></p>
+													<p><span style="font-size:20px;"><strong>스타트업 역량</strong></span></p>
+													<p>창의성, 문제해결력, 도전력</span></p>
+													<p><span style="font-size:20px;"><strong>스타트업 구성원 소개</strong></span></p>
+													<p>이환희(CEO) - 회사 대표 및 업무 총괄을 담당합니다.</span></p>
+												</div>
+												<div class="tip-bx collapse" id="tipbx04">
+													프로젝트 분석에서 선택한 스타트업 소개 내용을 기반으로 투자자에게 우리 스타트업을 소개해주세요.<br />
+													아래 항목들을 참고해서 작성하되, 사람들의 이목을 끌만한 이미지나 문구를 활용한다면 우리 아이템에 대한 신뢰가 높아질 것입니다.
+													<p class="ex">[예시]<br />
+														<strong>스타트업 소개</strong><br />
+														남들이 보기에는 어린 나이이지만 멋진 카드를 만들어 세상을 놀라게 하자는 생각 하나로 뭉쳤습니다. 우리는 카드키즈입니다.<br /><br />
+														<strong>스타트업 비전</strong><br />
+														“스마트폰이 어려운 모든 사람에게 필요한 단 한 장의 카드!”<br />
+														스마트폰을 사용하기 어려운 모든 사람들이 우리가 만들 단 한 장의 카드로 편리하게 생활할 수 있도록 하는 것이 카드키즈의 비전입니다.<br /><br />
+														<strong>스타트업 역량</strong><br />
+														창의성, 문제해결력, 도전력<br />
+														모두가 스마트폰과 새로운 기계를 생각할 때에 우리는 역발상을 통해 문제를 해결하고자 합니다. <br /><br />
+														<strong>스타트업 구성원 소개</strong><br />
+														김찬진(CEO) – 회사 대표 및 경영 총괄을 담당합니다.<br />
+														이철수(CTO) – 카드 IC칩과 결제 기술에 대한 전문가입니다.<br />
+														박택진(CFO) – 회사의 안정적인 재무를 책임집니다.
+													</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="scroller-anchor"></div>
+								<div class="scroller btn-bottom-wrap u-divider-center">
+								 <button type="reset" class="btn btn-md u-btn-white g-width-160 g-mr-10">이전</button>
+								  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">저장 후 다음</button>
+								  <button type="button" class="btn btn-md u-btn-lightblue-v3 g-width-160">다음</button>
+								  <button type="buitton" class="g-pos-abs g-right-20 btn btn-md u-btn-blue g-width-160 g-ml-10">임시 저장</button>
+								</div>
+
+								<script> //플로팅 버튼영역
+								$(document).ready(function () {
+									$('.u-card-v1').addClass('g-overflow-visible-important');
+								});
+								$(document).scroll(function() {									
+									if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+										$('.scroller').addClass('FixedLayoutfunction');
+										$('.u-card-v1').removeClass('g-overflow-visible-important');
+									} else {
+										$('.scroller').removeClass('FixedLayoutfunction');
+										$('.scroller-anchor').css('height','120px');
+										$('.u-card-v1').addClass('g-overflow-visible-important');
+									}
+								});
+								</script>
+								<!-- End contents -->
+							</div>
+							<!-- End Container -->
+						</form>
+						<!-- //Container -->
+
+						<form id="FrmDtl" name="FrmDtl" method="post" action="http://dev.yeep.kr/comng/QstBbsInfo.do?coNo=199&hmpgUrlText=eleGoStartup02">
+							<input type="hidden" name="questNo" id="questNo"/>
+						</form>
+
+						<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation_sa.js" ></script>
+						<script type="text/javascript">
+							document.addEventListener("DOMContentLoaded", function(){
+								var paging = new pager();
+								paging.renderPager("pageBlock", "pageMove");
+							});
+							function pageMove(pageIndex){
+								console.log("pageMove pageIndex = "+pageIndex);
+								if( $("#searchType").val() == '' ) {
+									$("#searchText").val('') ;
+								}
+								$("#currentPage").val(pageIndex);
+								console.log(pageIndex);
+								$("#FrmSrch").submit();
+							}
+							function goEdit(){
+								location.href="/comng/QstBbsInfo.do"
+							}
+
+							//상세화면 이동
+							function fnDetail(questNo){
+								$("#questNo").val(questNo);
+								$("#FrmDtl").submit();
+							}
+						</script>
+						<!-- Footer -->
+						<footer id="footer" class="u-footer--bottom-sticky u-header__section--admin-dark g-pa-10">
+							<div class="row align-items-center">
+								<!-- Footer Copyrights -->
+								<div class="col-md-12 text-center text-md-center">
+									<small class="d-block g-font-size-12 txt-copyrights">&copy; 2018 © All Rights Reserved.</small>
+								</div>
+								<!-- End Footer Copyrights -->
+							</div>
+						</footer>
+						<!-- End Footer -->
+        		</div>
+      		</div>
+      	</div>
+    </section>
+  </main>
+</body>
+</html>

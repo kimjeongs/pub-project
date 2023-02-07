@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="url" property="og:url"           content="?coNo="/>
+    <meta name="type" property="og:type"          content="website"/>
+    <meta name="title" property="og:title"         content="[YEEP 가상기업평가] "/>
+    <meta name="description" property="og:description"   content=" - "/>
+    <meta name="image" property="og:image"         content="/img"/>
+
+	<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<title>YEEP</title>
+	<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/2019.css">
+	<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+	<!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice --><!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="http://dev.yeep.kr/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="utill-btn">
+                            <a href="/cmmn/sso/api/user.agent.3.do">로그인1</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+                <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/in.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="javascript:;" id="goHome"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/intro/yeepIntro.do">기업체험</a></li>
+                        <li>
+                            <a href="#">크라우드 펀딩</a>
+                            <ul class="location-menu">
+                                <li><a href="#">크라우드 펀딩</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-box small">
+                    <div class="inner">
+                        <h2 class="page-title"><span>크라우드 <strong>펀딩</strong></span></h2>
+                        <p class="page-title-text">
+                            여러분의 아이디어를 <strong>크라우드 펀딩을 통해 실현시켜 보세요.</strong>
+                        </p>
+                        <div class="btn-area">
+                            <a href="#" class="btn-small-white type2">프로젝트 만들기</a>
+                            <a href="#" class="btn-small-dark-gray type2">로그인</a>
+                        </div>
+                        <img class="bg-img" src="../funding_front/images/2019/img_topbox_01.png" alt="크라우드 펀딩">
+                    </div>
+                </div>
+                <div class="content-width">
+                    <div class="funding-support invest">
+                        <strong class="support-tit">우리의 프로젝트에 투자해주셔서 감사합니다.</strong>
+                        <p class="support-txt">투자금을 소중하게 사용하겠습니다.</p>
+                        <div class="data-board">
+                            <table>
+                                <caption>나의 보유 잎, 계좌당 금액, 투자금액, 최종 투자 금액으로 구성된 표</caption>
+                                <colgroup>
+                                    <col style="width: 165px">
+                                    <col >
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="row">나의 보유 잎</th>
+                                        <td><span class="holding leaf">10,000,000</span><span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png" alt="잎"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">계좌당 금액</th>
+                                        <td><span>200,000</span><span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png" alt="잎"></span> / 1계좌</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="inputMoney">투자금액</label></th>
+                                        <td>
+                                            <div class="input-money">
+                                                <input type="text" placeholder="3" id="inputMoney" style="width: 33px;"> 계좌
+                                            </div>
+                                            <ul class="important-text">
+                                                <li>하나의 프로젝트에 1인당 3계좌까지 펀딩할 수 있습니다.</li>
+                                                <li>투자 후에는 취소가 불가능합니다.</li>
+                                                <li>펀딩 종료 후 달성 결과에 따라 배당률을 적용하여 배당금이 지급됩니다.</li>
+                                            </ul>
+                                            <p class="info-txt">(목표 금액의 70%을 넘게 펀딩받지 못한 경우 펀딩한 금액은 전액 반환됩니다.)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">최종 투자 금액</th>
+                                        <td><span>600,000</span><span class="s-leaf"><img src="../funding_front/images/2019/ico_leaf_small.png" alt="잎"></span> / 3계좌</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="btn-center">
+                            <a href="#" class="btn-big-orange">투자하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //container -->
+        </div>
+        <div id="footer">
+        <!-- footer -->
+            <div class="footer-utill-area">
+                <ul class="footer-utill">
+                    <li><a href="/noti/useInqList.do">이용문의</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                </ul>
+            </div>
+            <!-- 2018-04-17 디자인요청 수정 -->
+            <div class="footer-cont">
+                <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                <ul class="site_link">
+                    <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                    <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                    <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                </ul>
+            </div>
+            <!-- //2018-04-17 디자인요청 수정 -->
+        </div>
+        <!-- //footer -->
+            
+    </div>
+    <!-- //wrap -->
+</body>
+</html>

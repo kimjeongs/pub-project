@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>주니어 커리어넷</title>
+<link rel="stylesheet" type="text/css" href="css/content.css" />
+<script type="text/javascript"  src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"  src="js/common.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.btn-popular').on('click',function(e){
+            e.preventDefault();
+
+            var search = $('.popular-search').hasClass('on');
+            console.log(search)
+
+            if(search) {
+                $('.btn-popular').text('열기');
+                $('.popular-search').removeClass('on')
+            }else {
+                $('.btn-popular').text('닫기');
+                $('.popular-search').addClass('on');
+            }
+
+        })
+    });
+</script>
+</head>
+
+<body class="color-green">
+	<div id="skipNavi">
+		<a href="#container" class="skipNavi">본문바로가기</a>
+		<a href="#gnb" class="skipNavi" >메뉴바로가기</a>
+	</div>
+	<!-- HEADER -->
+	<div id="header">
+		<div class="topmenu">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">아이디/비밀번호 찾기</a></li>
+				<li><a href="#">로그아웃</a></li>
+				<li><a href="#">마이페이지</a></li>
+			</ul>
+		</div>
+		<div id="gnbWrap">
+			<div class="gnb">
+				<h1 class="logo-header"><a href="#"><img src="images/common/logo_header.png" alt="주니어커리어넷" /></a></h1>
+				<ul class="menu">
+					<li><a href="#" class="depth1 mn1">나를 알아보아요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">저학년 진로흥미탐색</a></li>
+								<li><a href="#">고학년 진로흥미탐색</a></li>
+								<li><a href="#">진로카드로 나를 알아봐요</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn2">진로정보를 찾아봐요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">주니어 진로동영상</a></li>
+								<li><a href="#">주니어 직업정보</a></li>
+								<li><a href="#">미래 직업정보</a></li>
+								<li><a href="#">미래 사회의 직업</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn3">진로고민이 있어요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">진로탐험대</a></li>
+								<li><a href="#">친구야 도와줘</a></li>
+								<li><a href="#">진로상담</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="btn-search-open">검색하기</a> <!-- 검색창 활성화 상태 class 'close' 추가 -->
+			</div>
+			<div class="gnb-search-wrap"> <!-- 검색창 활성화 상태 class 'open' 추가 -->
+				<div class="gnb-search-bx">
+					<input type="text" placeholder="진로정보를 탐색해보아요!" class="gnb-search-input" />
+					<a href="#" class="btn-search">검색</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //HEADER -->
+	<hr>
+	<!-- CONTENT -->
+	<div id="container">
+		<div class="content">
+			<div class="popular-wrap">
+			    <div class="cont-search">
+    				<input type="text" id="conteSearch" placeholder="검색어를 입력해주세요." class="input-search-cont" />
+    				<a href="#" class="btn-search-cont"><img src="images/common/btn_cont_search.png" alt="검색" /></a>
+                </div>
+                <div class="popular-search">
+                    <strong class="tit">인기검색어</strong>
+                    <div class="popular-simple-list">
+                        <ul class="list">
+                            <li><a href="#"><span>5</span>문화콘텐츠기획</a></li>
+                        </ul>
+                    </div>
+                    <div class="popular-all-list">
+                        <ul class="list">
+                            <li class="hot"><a href="#"><span>1</span>영상</a></li>
+                            <li class="hot"><a href="#"><span>2</span>친구야도와줘</a></li>
+                            <li class="hot"><a href="#"><span>3</span>웹개발자</a></li>
+                            <li><a href="#"><span>4</span>직업군인</a></li>
+                            <li><a href="#"><span>5</span>문화콘텐츠기획</a></li>
+                            <li><a href="#"><span>6</span>국방연구원</a></li>
+                            <li><a href="#"><span>7</span>동물마술사</a></li>
+                            <li><a href="#"><span>8</span>수학자</a></li>
+                            <li><a href="#"><span>9</span>의사</a></li>
+                            <li><a href="#"><span>10</span>뮤지컬 배우</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn-popular">닫기</button>
+                </div>
+			</div>
+            <div class="all-menu">
+                <ul class="list">
+                    <li class="on"><a href="#"><strong>전체</strong><span>30</span></a></li>
+                    <li><a href="#"><strong>진로 동영상</strong><span>10</span></a></li>
+                    <li><a href="#"><strong>주니어 직업정보</strong><span>4</span></a></li>
+                    <li><a href="#"><strong>미래 직업정보</strong><span>5</span></a></li>
+                    <li><a href="#"><strong>진로카드</strong><span>3</span></a></li>
+                    <li><a href="#"><strong>진로상담</strong><span>2</span></a></li>
+                    <li><a href="#"><strong>친구야 도와줘</strong><span>2</span></a></li>
+                </ul>
+            </div>
+            <div class="all-cont">
+                <div class="junior-movie">
+                    <div class="inner">
+                        <h2 class="menu-tit">주니어 진로 동영상<span>10</span></h2>
+                        <ul class="movie-list">
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv05.png" alt="뮤지컬 배우 -드림주니어, 뮤지컬">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">뮤지컬 배우 -드림주니어, 뮤지컬뮤지컬뮤지컬</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv06.png" alt="뮤지컬 배우 -드림주니어, 뮤지컬">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">뮤지컬 배우 -드림주니어, 뮤지컬뮤지컬뮤지컬 뮤지컬뮤지컬뮤지컬뮤지컬뮤지컬뮤지컬</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv07.png" alt="폴리아티스트-영화효과음의 꽃">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">폴리아티스트-영화효과음의 꽃</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv08.png" alt="폴리아티스트-영화효과음의 꽃">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">폴리아티스트-영화효과음의 꽃</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv05.png" alt="뮤지컬 배우 -드림주니어, 뮤지컬">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">뮤지컬 배우 -드림주니어, 뮤지컬뮤지컬뮤지컬</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv06.png" alt="뮤지컬 배우 -드림주니어, 뮤지컬">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">뮤지컬 배우 -드림주니어, 뮤지컬뮤지컬뮤지컬</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv07.png" alt="폴리아티스트-영화효과음의 꽃">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">폴리아티스트-영화효과음의 꽃</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="movie-img">
+                                        <img src="images/info/img_mv08.png" alt="폴리아티스트-영화효과음의 꽃">
+                                    </div>
+                                    <p class="part">드림주니어-탐나는 진로탐사대</p>
+                                    <p class="movie-tit line2">폴리아티스트-영화효과음의 꽃</p>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-info">
+                    <div class="inner">
+                        <h2 class="menu-tit">주니어 직업정보<span>10</span></h2>
+                        <ul class="job-list">
+                            <li class="future"><!-- 미래직업 표시 class="future"-->
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job01.png" alt="사이버범죄 수사관"></div>
+                                    <strong class="job-tit">사이버범죄 수사관</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job02.png" alt="게임 테크니컬 아티스트"></div>
+                                    <strong class="job-tit">게임 테크니컬 아티스트</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job03.png" alt="인공지능 전문가"></div>
+                                    <strong class="job-tit">인공지능 전문가</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job04.png" alt="사물인터넷(IoT) 개발자"></div>
+                                    <strong class="job-tit">사물인터넷(IoT) 개발자</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job05.png" alt="사이버범죄 수사관"></div>
+                                    <strong class="job-tit">사이버범죄 수사관</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job06.png" alt="사이버범죄 수사관"></div>
+                                    <strong class="job-tit">사이버범죄 수사관</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job07.png" alt="사이버범죄 수사관"></div>
+                                    <strong class="job-tit">사이버범죄 수사관</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="job-cont">
+                                    <div class="img-cont"><img src="images/info/img_job08.png" alt="사이버범죄 수사관"></div>
+                                    <strong class="job-tit">사이버범죄 수사관</strong>
+                                    <div class="count">
+                                        <span class="tit">조회수 :</span>
+                                        <span class="num">447</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fjob-info">
+                    <div class="inner">
+                        <h2 class="menu-tit">미래 직업정보<span>10</span></h2>
+						<!-- 테마별 검색결과 컬러 클래스  
+						로봇 li class="robot" / 바이오 class="bio" / 연결 class="connect" / 안전 class="safety" / 에너지 class="energy" / 놀이 class="play" /	건강 class="health" / 의식주 class="necessity" / 디자인 class="design" -->
+                        <ul class="counsel-list">
+                            <li class="robot">
+                                <a href="#">
+                                    <strong class="txt line1">드론 콘텐츠</strong>
+                                    <p class="desc">드론으로 다양한 콘텐츠를 만들어요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">로봇</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="bio">
+                                <a href="#">
+                                    <strong class="txt line1">개인 미디어 콘텐츠 제작자</strong>
+                                    <p class="desc">내가 표현하고 싶은 것들을 영상 콘텐츠로 만들어요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">바이오</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="connect">
+                                <a href="#">
+                                    <strong class="txt line1">반려동물 훈련·상담사</strong>
+                                    <p class="desc">인터넷에서 내가 원하는 정보를 찾아주는 일을 해요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">연결</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="safety">
+                                <a href="#">
+                                    <strong class="txt line1">스포츠 심리 상담원</strong>
+                                    <p class="desc">운동선수들의 마음 건강을 보살펴요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">안전</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="energy">
+                                <a href="#">
+                                    <strong class="txt line1">게임 기획자</strong>
+                                    <p class="desc">누구나 쉽게 즐길 수 있는 게임을 만들어요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">에너지</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="play">
+                                <a href="#">
+                                    <strong class="txt line1">문화 콘텐츠 전문가</strong>
+                                    <p class="desc">문화를 다양한 콘텐츠로 만들어요</p>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                        <span class="theme">놀이</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card-list-wrap">
+                    <div class="inner">
+                        <h2 class="menu-tit">진로카드<span>10</span></h2>
+                        <ul class="course-card-list">
+                            <li class="type02">
+                                <a href="#" class="card-box">
+                                    <span>알쏭달쏭</span>
+                                    <div class="card-img"><img src="images/card/banjjag/01_before.jpg" alt="가족"></div>
+                                    <strong>가족</strong>
+                                </a>
+                            </li>
+                            <li class="type03">
+                                <a href="#" class="card-box">
+                                    <span>으쓱으쓱</span>
+                                    <div class="card-img"><img src="images/card/banjjag/02_before.jpg" alt="건강"></div>
+                                    <strong>건강</strong>
+                                </a>
+                                <!-- <div class="card-label">1</div> -->
+                                <!-- 선택 카드 순번시 사용 -->
+                            </li>
+                            <li class="type02">
+                                <a href="#" class="card-box">
+                                    <span>알쏭달쏭</span>
+                                    <div class="card-img"><img src="images/card/banjjag/03_before.jpg" alt="권위"></div>
+                                    <strong>권위</strong>
+                                </a>
+                                <!-- <div class="card-label">2</div> -->
+                                <!-- 선택 카드 순번시 사용 -->
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/04_before.jpg" alt="기쁨"></div>
+                                    <strong>기쁨</strong>
+                                </a>
+                            </li>
+                            <li class="type03">
+                                <a href="#" class="card-box">
+                                    <span>으쓱으쓱</span>
+                                    <div class="card-img"><img src="images/card/banjjag/05_before.jpg" alt="능력발휘"></div>
+                                    <strong>능력발휘</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/06_before.jpg" alt="다양성"></div>
+                                    <strong>다양성</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/07_before.jpg" alt="대인관계"></div>
+                                    <strong>대인관계</strong>
+                                </a>
+                            </li>
+                            <li class="type02">
+                                <a href="#" class="card-box">
+                                    <span>알쏭달쏭</span>
+                                    <div class="card-img"><img src="images/card/banjjag/08_before.jpg" alt="도전"></div>
+                                    <strong>도전</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/09_before.jpg" alt="리더십 발휘"></div>
+                                    <strong>리더십 발휘</strong>
+                                </a>
+                            </li>
+                            <li class="type03">
+                                <a href="#" class="card-box">
+                                    <span>으쓱으쓱</span>
+                                    <div class="card-img"><img src="images/card/banjjag/10_before.jpg" alt="보수"></div>
+                                    <strong>보수</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/11_before.jpg" alt="사랑"></div>
+                                    <strong>사랑</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card-box">
+                                    <span>반짝반짝</span>
+                                    <div class="card-img"><img src="images/card/banjjag/12_before.jpg" alt="사회적 인정"></div>
+                                    <strong>사회적 인정</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="junior-counsel">
+                    <div class="inner">
+                        <h2 class="menu-tit">진로상담<span>10</span></h2>
+                        <ul class="counsel-list">
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">우리 커리어넷은 무슨 일을 할까요?우리 커리어넷은 무슨 일을 할까요?우리 커리어넷은 무슨 일을 할까요?</strong>
+                                    <div class="reply">
+                                        <span class="on">답변완료</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">승무원은 어떤 직업인가요?</strong>
+                                    <div class="reply">
+                                        <span>답변대기</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">도대체 모르겠어요!</strong>
+                                    <div class="reply">
+                                        <span>답변대기</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">엄마는 피아노를 하라고 나는 래퍼가 하고싶은데YO</strong>
+                                    <div class="reply">
+                                        <span>답변대기</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">대통령 할아버지는 무슨일을 하나요?</strong>
+                                    <div class="reply">
+                                        <span class="on">답변완료</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong class="txt">커피는 못먹는데 바리스타가 될수 있나요?</strong>
+                                    <div class="reply">
+                                        <span>답변대기</span>
+                                        2019-05-05
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help">
+                    <div class="inner">
+                        <h2 class="menu-tit">친구야 도와줘<span>10</span></h2>
+                        <ul class="counsel-list">
+                            <li>
+                                <a href="#">
+                                    <span class="date ing">진행중</span>
+                                    <strong class="txt line2">전 하고싶은게 너무 많아요.</strong>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="date">2019년 10월</span>
+                                    <strong class="txt line2">공부가 너무 어려워요.</strong>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="date">2019년 10월</span>
+                                    <strong class="txt line2">이번 여름방학에 뭘 하면 좋을
+                                    까요?</strong>
+                                    <div class="bottom">
+                                        <div class="count">
+                                            <span class="hits" title="조회수">12356</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="btn-area">
+                            <button class="btn-light-gray">더보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+			<div class="page-control-area">
+                <div class="re-search">
+                    <a href="#"><img src="images/common/ico_search.png" alt="새로 검색"></a>
+                    <span class="txt">새로 검색</span>
+                </div>
+                <a href="#container" class="btn-page-gotop">위로 올라가기</a>
+            </div>
+		</div>
+	</div>
+	<!-- //CONTENT -->
+	<div id="dim"></div>
+	<hr>
+	<!-- FOOTER -->
+	<div id="footer">
+		<div class="footer-menu">
+			<ul class="policy">
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/mberInfoPrtcPopup.do','','width=715, height=775, menubar=no, status=no, left=300');">개인정보처리방침</a></li>
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+				<li><a href="http://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do" target="_blank" title="새창 열림">이용문의</a></li>
+			</ul>
+			<div class="family-site">
+				<a href="#" class="fam-title" title="관련사이트 보기">관련사이트</a> <!-- 목록 활성화 상태 class="active" 추가 -->
+				<ul class="site-list">
+					<li><a href="https://www.career.go.kr/cnet/front/main/main.do" target="_blank" title="새창으로 이동">커리어넷</a></li>
+					<li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창으로 이동">원격영상 진로멘토링</a></li>
+					<li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창으로 이동">YEEP</a></li>
+					<li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창으로 이동">꿈길</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="address">
+			<div class="copyright">
+				주소 : 30147 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원<br />
+				운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 │ 지원 : 교육부<br />
+				COPYRIGHTS ⓒ KRIVET ALL RIGHTS RESERVED
+			</div>
+			<div class="logo-gov">
+				<a href="https://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창 열림)"><img src="images/common/img_gov_logo01.png" alt="교육부 Ministry of Education" /></a>
+				<a href="http://www.krivet.re.kr/ku/index.jsp" target="_blank" title="한국직업능력개발원 바로가기(새창 열림)"><img src="images/common/img_gov_logo02.png" alt="한국직업능력개발원 KRIVET" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- //FOOTER -->
+</body>
+</html>

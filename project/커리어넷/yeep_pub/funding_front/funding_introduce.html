@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="url" property="og:url" content="?coNo=" />
+    <meta name="type" property="og:type" content="website" />
+    <meta name="title" property="og:title" content="[YEEP 가상기업평가] " />
+    <meta name="description" property="og:description" content=" - " />
+    <meta name="image" property="og:image" content="/img" />
+
+    <link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+    <title>YEEP</title>
+    <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/2019.css">
+    <script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+    <script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+    <script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js"></script>
+    <script type="text/javascript" src="http://dev.yeep.kr/script/common.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="skipNavi">
+            <a href="#container">본문 영역으로 바로가기</a>
+        </div>
+        <div id="wrap">
+            <!-- header -->
+            <div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+                <!-- notice --><!-- //notice -->
+                <div class="header-inner">
+                    <h1 class="logo"><a href="http://dev.yeep.kr/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+                    <div class="header-utill">
+                        <div class="utill-btn">
+                            <a href="/cmmn/sso/api/user.agent.3.do">로그인1</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+                            <a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+                        </div>
+                    </div>
+                    <ul class="gnb">
+                        <li>
+                            <strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                                <li><a href="/intro/clasIntro.do">수업 소개</a></li>
+                                <li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+                                <li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+                                <li><a href="/noti/notiBbsList.do">공지사항</a></li>
+                                <li><a href="/noti/useInqList.do">이용문의</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/clas/classMain.do">수업</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/aprt/aprtMain.do">동아리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+                            <ul class="two-dept">
+                                <!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+                                <!-- 2018-04-29 임시로 주소 변경. -->
+
+                                <li><a href="javascript:startUp();">Go! startup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+                                <li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+                                <li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+                                <li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+                            <ul class="two-dept">
+                                <li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+                            <ul class="two-dept menu-name-long">
+                                <li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+                                <li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+                                <li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+                                <li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- container -->
+            <div id="container" tabindex="0">
+                <link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/in.css">
+                <div class="page-location">
+                    <ul>
+                        <li class="home"><a href="javascript:;" id="goHome"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+                        <li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+                        <li>
+                            <a href="#">크라우드 펀딩 소개</a>
+                            <ul class="location-menu">
+                                <li><a href="javascript:;" id="yeepIntro">YEEP 소개</a></li>
+                                <li><a href="#" id="clasIntro">수업 소개</a></li>
+                                <li><a href="javascript:;" id="aprtIntro">동아리 소개</a></li>
+                                <li><a href="javascript:;" id="startupIntro">Go! startup 소개</a></li>
+                                <li><a href="#">크라우드 펀딩 소개</a></li>
+                                <li><a href="javascript:;" id="notiBbsIntro">공지사항</a></li>
+                                <li><a href="javascript:;" id="useInqIntro">이용문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-box">
+                    <div class="inner">
+                        <h2 class="page-title"><span>크라우드 <strong>펀딩</strong></span> 소개</h2>
+                        <p class="page-title-text">
+                            여러분의 아이디어를<br>
+                            <strong>크라우드 펀딩을 통해 실현시켜 보세요.</strong>
+                        </p>
+                        <img class="bg-img" src="../funding_front/images/2019/img_topbox_01.png" alt="크라우드 펀딩 소개">
+                    </div>
+                </div>
+                <div class="content-width">
+                    <p class="page-intro-title"><strong>크라우드 펀딩</strong>은</p>
+                    <p class="page-intro-title-txt">가상 화폐를 기반으로 자금 조달을 조달하게 할 수 있는 체험형 투자 유치 프로그램으로 자금 조달을 위한 아이디어/아이템을 분석 등의 체험을 제공하기 위해 구성되어 있습니다.</p>
+                    <div class="page_intro_img">
+                        <img src="../funding_front/images/2019/img_page_intro_01.png" alt="크라우드 펀딩">
+                    </div>
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">소개</h3>
+                    </div>
+                    <p class="sub-title-text">
+                        크라우드 펀딩(CROWDFUNDING)이란 대중(CROWD)에게 돈(자금)을 모은다(FUNDING)는 의미입니다.<br>
+                        YEEP 크라우드 펀딩은 가상 화폐 잎을 기반으로 하는 가상의 투자 프로그램으로 스타트업이 창업과정에서 자금을 마련하는 방법을 가상체험 해보고, 투자자들의 반응을 확인해<br>
+                        볼 수 있는 프로그램입니다.<br>
+                        YEEP 일반 회원은 가능성과 성장성이 있는 스타트업에 투자를 하고 성과에 따라 보상을 받을 수 있는 경험을 체험할 수 있습니다.<br>
+                    </p>
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">특징</h3>
+                    </div>
+                    <ul class="dot-list02">
+                        <li>스타트업이 자신의 아이템을 심도있게 분석하고 이를 기반으로 투자자에게 매력적으로 사업을 소개하는 방법을 체험</li>
+                        <li>투자 조건 설정을 통해 제품 생산 및 유통의 과정을 간접 체험하고 상호 가치 교환의 습득</li>
+                        <li>크라우드 펀딩을 희망하는 스타트업 동아리는 조건 없이 참가 가능</li>
+                        <li>프로젝트 신청 과정(난이도), 정산 방식 등에 따라 리워드형과 투자형 유형으로 구분</li>
+                    </ul>
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">목적</h3>
+                    </div>
+                    <p class="sub-title-text">
+                        창업 동아리(스타트업)의 창업체험 활동으로 모의 자금조달을 학습할 수 있는 크라우드 펀딩 플랫폼을 제공하겠습니다 .<br>
+                        크라우드 펀딩을 통해 각 사용자가 가치를 측정하고, 상호간에 가치를 교환할 수 있으며 창업 아이템 및 창업 활동의 과정을 학습할 수 있습니다.
+                    </p>
+                    <ul class="dot-list02">
+                        <li>스타트업이 자금을 조달하는 방법 중 크라우드 펀딩을 모의 체험함으로써 창업 활동의 생태계에 대해 이해</li>
+                        <li>구제적 사업계획, 투자계획을 통한 창업아이템(제품/아이디어)에 대한 고찰, 시장 수요 조사, 자본 조달 과정 등을 학습</li>
+                        <li>투자유치, 자금조달 등 스타트업의 성장을 체험하고 기업가 정신 고취</li>
+                    </ul>
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">크라우드 펀딩 유형</h3>
+                    </div>
+                    <p class="sub-title-text">
+                        YEEP 크라우드 펀딩은 <strong>리워드형</strong>과 <strong>투자형</strong> 두 가지 유형이 있습니다.<br>
+                        프로젝트를 만드는 과정과 투자 방식 등에 따라 우리 스타트업과 나에게 적합한 유형의 크라우드 펀딩을 경험해보세요.
+                    </p>
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">스타트업의 프로젝트 진행 방법</h3>
+                    </div>
+                    <p class="sub-title-text">
+                        스타트업은 프로젝트를 신청하여 YEEP 사용자로부터 필요한 자금을 모금할 수 있습니다.<br>
+                        크라우드 펀딩 유형에 따라 정해진 과정을 통해 프로젝트를 진행해보세요.
+                    </p>
+                    <div class="type-box-cont bg-img">
+                        <div class="type-box">
+                            <div class="top">
+                                <strong class="type-tit">리워드형</strong>
+                                <p class="type-txt">
+                                    <strong>후원자로부터 후원을 받는 형식의 펀딩입니다.</strong>
+                                    간단한 프로젝트 소개글 작성으로 크라우드 펀딩을 경험해 볼 수 있습니다.
+                                </p>
+                            </div>
+                            <div class="use-step">
+                                <ul>
+                                    <li>
+                                        <span class="step-txt">Step 1.</span>
+                                        <strong class="tit">프로젝트 만들기</strong>
+                                        <div class="cont type01">
+                                            <p class="txt01">크라우드 펀딩 목록에서 프로젝트 만들기를
+                                            통해 프로젝트를 진행할 기업을 선택합니다.</p>
+                                            <p class="txt02">※ Go!스타트업이 오픈되어 있어야 신청할 수<br>있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 2.</span>
+                                        <strong class="tit">프로젝트 등록</strong>
+                                        <div class="cont type02">
+                                            <p class="txt01">스타트업 관리로 이동하여 리워드형 유형을
+                                            선택하고 프로젝트 기초 정보를 등록합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 3.</span>
+                                        <strong class="tit">소개글 작성</strong>
+                                        <div class="cont type03">
+                                            <p class="txt01">후원자에게 프로젝트의 내용을 소개하는<br>프로젝트 소개글을 작성합니다.</p>
+                                            <p class="txt02">※ 작성 도중 임시저장하여 언제든지 수정할 수<br>있습니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <span class="step-txt">Step 4.</span>
+                                        <strong class="tit">오픈 신청</strong>
+                                        <div class="cont type04">
+                                            <p class="txt01">모금을 시작할 수 있도록 프로젝트 오픈을<br>신청합니다. 승인 반려된 경우 내용을 수정<br>하여 다시 신청할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 5.</span>
+                                        <strong class="tit">모금 진행</strong>
+                                        <div class="cont type05">
+                                            <p class="txt01">오픈이 승인되면 모금기간 동안 모금이 진행됩니다. 목표 금액을 달성해도 모금은 계속<br>진행됩니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 6.</span>
+                                        <strong class="tit">프로젝트 종료</strong>
+                                        <div class="cont type06">
+                                            <p class="txt01">프로젝트가 종료되면 후원자에게 소정의<br>보상을 제공합니다. 보상 활동을 한 후<br>모금액을 수령합니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="use-step-info">
+                                <strong class="title">YEEP 사용자의 후원 방법</strong>
+                                <p class="text">
+                                    스타트업의 프로젝트를 살펴 보고 프로젝트에 후원할 수 있습니다.<br>
+                                    리워드 유형을 후원하면 스타트업이 제공하는 소정의 보상 (ex 감사카드) 과 함께 크라우드 펀딩 참여 보상금이 제공됩니다.<br>
+                                    창업을 희망하는 스타트업을 위해 여러분의 참여와 관심을 보여주세요!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="type-box-cont">
+                        <div class="type-box">
+                            <div class="top">
+                                <strong class="type-tit">투자형</strong>
+                                <p class="type-txt">
+                                    <strong>투자자로부터 투자를 받는 형식의 펀딩입니다.</strong>
+                                    아이템 분석부터 사업설명서 작성까지, 창업과정에서 꼭 필요한 활동을 모의체험 및 학습할 수 있는 유형입니다.<br>
+                                    프로젝트 생성시 투자 조건을 설정할 수 있으며 해당 펀딩에 투자한 투자자는 투자에 따른 배당금을 수령할 수 있습니다.
+                                </p>
+                            </div>
+                            <div class="use-step col4">
+                                <ul>
+                                    <li>
+                                        <span class="step-txt">Step 1.</span>
+                                        <strong class="tit">프로젝트 만들기</strong>
+                                        <div class="cont type01">
+                                            <p class="txt01">크라우드 펀딩 목록에서<br>프로젝트 만들기를 통해<br>프로젝트를 진행할 기업을<br>선택합니다.</p>
+                                            <p class="txt02">※ Go!스타트업이 오픈되어<br>있어야 신청할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 2.</span>
+                                        <strong class="tit">프로젝트 등록</strong>
+                                        <div class="cont type02">
+                                            <p class="txt01">스타트업 관리로 이동하여 투자형 유형을 선택하고<br>프로젝트 기초 정보를 등록 합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 3.</span>
+                                        <strong class="tit">프로젝트 분석 수행</strong>
+                                        <div class="cont type07">
+                                            <p class="txt01">프로젝트 분석 활동을 통해 아이디어와 아이템을 분석<br>하고 이에 따라 투자 조건을 설정합니다.</p>
+                                            <p class="txt02">※ 작성 도중 임시저장하여<br>언제든지 수정할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 4.</span>
+                                        <strong class="tit">사업설명서 작성</strong>
+                                        <div class="cont type08">
+                                            <p class="txt01">투자자에게 프로젝트 내용과 투자 조건을 소개할 사업<br>설명서를 작성합니다.</p>
+                                            <p class="txt02">※ 작성 도중 임시저장하여<br>언제든지 수정할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <span class="step-txt">Step 5.</span>
+                                        <strong class="tit">오픈 신청</strong>
+                                        <div class="cont type04">
+                                            <p class="txt01">모금을 시작할 수 있도록<br>프로젝트 오픈을 신청<br>합니다. 승인 반려된 경우<br>내용을 수정하여 다시<br>신청할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 6.</span>
+                                        <strong class="tit">모금 진행</strong>
+                                        <div class="cont type05">
+                                            <p class="txt01">오픈이 승인되면 모금기간 동안 모금이 진행됩니다.<br>목표 금액을 달성되면 모금은 자동 종료됩니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 7.</span>
+                                        <strong class="tit">프로젝트 종료</strong>
+                                        <div class="cont type06">
+                                            <p class="txt01">프로젝트가 종료되면 투자금을 수령하고 YEEP 마켓에<br>제품을 등록합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="step-txt">Step 8.</span>
+                                        <strong class="tit">투자 정산</strong>
+                                        <div class="cont type09">
+                                            <p class="txt01">펀딩 축하금을 지급받고<br>투자 조건에 따라 투자자에게 배당금을 지급합니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="use-step-info">
+                                <strong class="title">YEEP 사용자의 투자 방법</strong>
+                                <p class="text">
+                                    스타트업의 사업설명서, 투자 조건 등을 살펴본 후 프로젝트에 투자할 수 있습니다.<br>
+                                    투자자 입장으로 스타트업과 창업 아이템을 엄정히 평가해 볼 수 있으며 이러한 과정을 통해 자신의 창업 아이디어와 아이템에 시장의 눈을 반영해 볼 수도 있을 것입니다.<br>
+                                    투자형에 투자를 하면 결과에 따라 배당금을 수령할 수 있으며 크라우드 펀딩 참여로 발생하는 참여 보상금이 지급됩니다.<br>
+                                    스타트업이 발전적으로 성장할 수 있도록 여러분이 투자자가 되어 주세요!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="page-sub-title-style">
+                        <h3 class="sub-title">크라우드 펀딩 예시</h3>
+                    </div>
+                    <p class="sub-title-text">
+                        스타트업의 프로젝트가 리워드형과 투자형 유형에 따라 등록됩니다.<br>
+                        크라우드 펀딩에 참여한 펀딩진행 상황을 홈페이지에서 실시간으로 확인이 가능합니다.
+                    </p>
+                    <ul class="funding-ex">
+                        <li>
+                            <em><span>1</span>목록화면</em>
+                            <div class="img">
+                                <img src="../funding_front/images/2019/img_funding_ex01.png" alt="목록화면">
+                            </div>
+                            <span class="click">
+                                <img src="../funding_front/images/2019/img_funding_ex_click.png" alt="목록을 클릭하면 상세화면으로">
+                            </span>
+                        </li>
+                        <li>
+                            <em><span>2</span>상세화면</em>
+                            <div class="img">
+                                <img src="../funding_front/images/2019/img_funding_ex02.png" alt="상세화면">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //container -->
+        </div>
+        <div id="footer">
+        <!-- footer -->
+            <div class="footer-utill-area">
+                <ul class="footer-utill">
+                    <li><a href="/noti/useInqList.do">이용문의</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01"  target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+                    <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02"  target="_blank" title="개인정보처리방침 새창 열림"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&bltnNo=392">이메일주소 무단수집거부</a></li>
+                </ul>
+            </div>
+            <!-- 2018-04-17 디자인요청 수정 -->
+            <div class="footer-cont">
+                <address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)</address>
+                <p>이용문의: yeep@koef.or.kr | 운영: 한국청년기업가정신재단 | 지원: 교육부</p>
+                <p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+                <ul class="site_link">
+                    <li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link1.png" alt="교육부 로고"></a></li>
+                    <li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="새창 열림"><img src="http://dev.yeep.kr/images/common/footer_link2.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+                    <li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="http://dev.yeep.kr/images/common/footer_link3.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+                </ul>
+            </div>
+            <!-- //2018-04-17 디자인요청 수정 -->
+        </div>
+        <!-- //footer -->
+            
+    </div>
+    <!-- //wrap -->
+</body>
+</html>

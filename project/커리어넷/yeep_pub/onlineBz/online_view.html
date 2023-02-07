@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="url" property="og:url" content="?coNo="/>
+<meta name="type" property="og:type" content="website"/>
+<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+<meta name="description" property="og:description" content=" - "/>
+<meta name="image" property="og:image" content="/img"/>
+<link rel="shortcut icon" href="http://dev.yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+<title>YEEP</title>
+<link rel="stylesheet" type="text/css" href="http://dev.yeep.kr/css/common.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<script type="text/javascript" src="http://dev.yeep.kr/script/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/swiper.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/design.js"></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/pagenation.js" ></script>
+<script type="text/javascript" src="http://dev.yeep.kr/script/common.js" ></script>
+<script src="jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#datepickerStart, #datepickerEnd").datepicker({
+		  dateFormat: "yy.mm.dd"
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="top">
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+		</div>
+		<div id="wrap">
+			<!-- header -->
+			<div id="header"><!-- 상단 알림 보일때 'top-notice-view' class 추가 -->
+			<!-- notice --><!-- //notice -->
+			<div class="header-inner">
+				<h1 class="logo"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/logo.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+				<div class="header-utill">
+					<div class="utill-btn">
+						<a href="/cmmn/sso/api/user.agent.3.do">로그인</a>
+						<a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a>
+						<a href="https://api.career.go.kr/cloud/api/mber/id/search.do">아이디/비밀번호찾기</a>
+					</div>
+				</div>
+				<ul class="gnb">
+					<li>
+						<strong class="one-dept"><a href="/intro/yeepIntro.do">YEEP 소개</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+							<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+							<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+							<li><a href="/intro/startupIntro.do">Go! startup 소개</a></li>
+							<li><a href="/noti/notiBbsList.do">공지사항</a></li>
+							<li><a href="/noti/useInqList.do">이용문의</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/clas/classMain.do">수업</a></strong>
+						<ul class="two-dept">
+							<li><a href="/clas/classMain.do">수업</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/aprt/aprtMain.do">동아리</a></strong>
+						<ul class="two-dept">
+							<li><a href="/aprt/aprtMain.do">동아리</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/evl/corpEvlHomeList.do">Go! startup</a></strong>
+						<ul class="two-dept">
+							<!-- <li><a href="/evl/corpEvlHomeList.do">Go! startup</a></li> -->
+							<!-- 2018-04-29 임시로 주소 변경. -->
+
+							<li><a href="javascript:startUp();">Go! startup</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/cpthb/contestSummary.do">창업경진대회</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/cpthb/contestSummary.do">창업경진대회 안내</a></li>
+							<li><a href="/cpthb/eventSchedule.do">창업경진대회 신청</a></li>
+							<li><a href="/cpthb/contestCaseList.do">창업경진대회 우수사례</a></li>
+							<li><a href="/cpthb/contestGalleryList.do">창업경진대회 갤러리</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/mentor/mentorMainList.do">멘토링</a></strong>
+						<ul class="two-dept">
+							<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="one-dept"><a href="/noti/eduExlntCaseList.do">자료실</a></strong>
+						<ul class="two-dept menu-name-long">
+							<li><a href="/noti/eduExlntCaseList.do">교육활용사례</a></li>
+							<li><a href="/noti/rschLeadSchList.do">연구·선도학교</a></li>
+							<li><a href="/noti/kldgChaEList.do">지식채널e</a></li>
+							<li><a href="/noti/rfrcDataList.do">참고자료</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container" tabindex="0">
+			<div class="page-location">
+				<ul>
+					<li class="home"><a href="/main/main.do"><img src="http://dev.yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+					<li><a href="/clas/classMain.do">온라인 사업설명회</a></li>
+				</ul>
+			</div>
+
+			<link rel="stylesheet" type="text/css" href="on.css">
+			<div class="content-width">
+				<h2 class="page-title">온라인 사업설명회</h2>
+
+				<div class="scroller-anchor"></div>
+				<div class="online-titbx scroller">
+					<div class="wrapper">
+						<strong class="title">[5개 기업 선착순] 경기도 교육청 주관 온라인 사업설명회</strong>
+						<ul class="information">
+							<li>진행일시 : 2020년 05월 01일 (16:00~17:00)</li>
+							<li>주관 : 경기도교육청 </li>
+						</ul>
+						<a href="#" class="btn-online-view request" title="[5개 기업 선착순] 경기도 교육청 주관 온라인 사업설명회 신청하기">신청하기</a> <!-- 팝업사이즈 width=650px height=540px, 버튼 class : 신청하기 'request' / 신청마감 'closed' / 입장하기, 발표참가 'enter' / 신청완료 'complete' -->
+					</div>
+				</div>
+
+				<div class="online-detail-wrap">
+					<div class="online-detail-info">
+						<div class="pic-area">
+							<p class="img"><img src="thumnail.jpg" alt="" /></p> <!-- 이미지 없을때 "img_onlinebz_noimg.jpg" -->
+							<span class="state recruit">모집</span><!-- 상태 class : 모집 'recruit' / 예정 'standby' / 진행중 'progress' / 종료 'closed' -->
+							<div class="recruit-percent">
+								<p class="title"><strong>모집 현황</strong> : <em>3</em> / 5</p>
+								<p class="progress_bar">
+									<span class="inner_bar" style="width:60%" title="60%"></span> <!-- style="width:percentage값" title="percentage값" -->
+								</p>
+							</div>
+						</div>
+						<div class="info-area">
+							<strong class="title">[5개 기업 선착순] 경기도 교육청 주관 온라인 사업설명회</strong>
+							<ul class="infomation-detail">
+								<li><strong>진행일시</strong> 2020년 05월 01일 (16:00~17:00)</li>
+								<li><strong>주관</strong> 경기도교육청</li>
+								<li><strong>참가 기업 모집 기간</strong> 2020년 04월 01일~04월 20일</li>
+								<li><strong>참가 모집 수</strong> 총 <em>5</em>개 Startup 기업</li>
+								<li><strong>참관 안내</strong> 공개 사업설명회입니다. 진행일시에 누구나 참관이 가능합니다.<br />(진행일시 30분 전에 노출되는 입장하기 버튼을 눌러 입장 가능) </li>
+								<li class="notice"><strong>※ 참가 신청제약</strong> 사업설명회 신청전에 Go! Startup이 개설되어 있어야 하며, 기업의 소재 지역 정보에서 지역이 <em>경기도, 서울특별시</em> 소재에 해당해야 합니다. (Go! Startup 관리에서 소재 지역을 확인할 수 있습니다.) </li>
+							</ul>
+						</div>
+					</div>
+					<div class="online-detail-cont">
+						<div class="page-sub-title-style">
+							<h3 class="sub-title">상세내용</h3>
+						</div>
+						<div class="cont-bx">
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />
+							유달리 부적응 학생이 많았던 어느 고등학교에서<br />학생들은 각자의 역할에 따라 새로운 도전을 시작했습니다.<br /><br />
+							학교 이곳저곳을 누비며 친구들의 고민을 조사하고, 서로의 아이디어를 모아 문제를 해결하는 과정에서<br />협업의 즐거움과 숨겨진 창의력을 자연스럽게 알게 됩니다.<br />
+							다양한 창업체험교육을 통해 교과서에서 배운 지식이 생활에서 어떻게 활용되는지,<br />사람들에게 실질적으로 필요한 것은 무엇이고, 내가 정말 좋아하는 것은 무엇인지 발견합니다.<br /><br />
+							신소재 체온조절 옷, USB 충전 냉‧온팩 등 직접 제품울 구상, 제작, 홍보까지 해내며<br />학생들 스스로 성장 가능성을 확인할 수 있는 시간입니다.<br />이들은 학교를 통해 세상을 한발 먼저 경험하며 미래의 인재로 성장 중입니다. <br /><br />#창업체험교육 #기업가정신교육 #스스로만들어내는미래<br /><br />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script> // 제목박스 영역 fixable
+		$(window).scroll(function(e) {
+			var scroller_anchor = $(".scroller-anchor").offset().top;
+			if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed'){   
+				$('.scroller').css({
+					'position': 'fixed',
+					'top': '0px',
+					'left':'0px',
+					'width':'100%',
+					'margin-top': '0px'
+				}); $('.scroller-anchor').css('height', '135px');
+			}
+			else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative'){   
+				$('.scroller-anchor').css('height', '0px');
+				$('.scroller').css({
+					'position': 'relative',
+					'margin-top': '63px'
+				});
+			}
+		});
+		</script>
+		<!-- //container -->
+	</div>
+	<div id="footer">
+		<!-- footer --><!-- //footer -->
+    </div>
+	<!-- //wrap -->
+
+</div>
+</body>
+
+</html>

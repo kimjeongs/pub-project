@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>주니어커리어넷 - 퍼블리싱 작업현황판</title>
+		<style type="text/css">
+			html, body {
+				margin:0;
+				padding:0;
+			}
+			html {
+				overflow-y:scroll;
+			}
+			body {
+				color:#666;
+				background-color:#fff;
+				font:12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+			}
+			a {
+				color:#27e;
+				text-decoration:none;
+			}
+			a:focus,
+			a:hover,
+			a:active {
+				text-decoration:underline;
+			}
+			.header {
+				padding:.5em;
+			}
+				.header h1 {
+					display:inline;
+					margin-right:1em;
+					color:#000;
+					font-size:2em;
+				}
+				.header ul {
+					display:inline;
+					font-size:1.5em;
+					list-style:none;
+				}
+				.header ul li {
+					display:inline;
+				}
+			.group-title {
+				margin-top:1em;
+				color:#000;
+				font-weight:bold;
+				font-size:1.5em;
+			}
+			table {
+				width:100%;
+				border-collapse:collapse;
+				border-spacing:0;
+			}
+				table caption {
+					display:none;
+				}
+				table th {
+					color:#333;
+					background-color:#eee;
+				}
+				table th,
+				table td {
+					padding:0 .5em;
+					border:1px solid #ddd;
+					text-align:left;
+				}
+				table th,
+				table td.stat,
+				table td.date {
+					text-align:center;
+				}
+				table tr.even,
+				table tr td.multi {
+					background-color:#fafafa;
+				}
+				table tr.add td {
+					background-color:#fd0;
+				}
+				table tr.modify td {
+					background-color:#fffeb4;
+				}
+				table tr.hover td {
+					background-color:#eee;
+				}
+			table tr.none td {
+				color:#000;
+				background-color:#fc8989;
+			}
+			table tr.up td {
+				background-color:#ffe9f5;
+			}
+				.section {
+					margin:3em 0;
+				}
+				body.js .section {
+					margin:0;
+				}
+					.section .title {
+						margin:0;
+						padding:0;
+						color:#000;
+						font-weight:bold;
+						font-size:100%;
+					}
+					body.js .section .title {
+						padding:.5em;
+						border:1px solid #ccc;
+						background-color:#ddd;
+						cursor:pointer;
+					}
+					body.js .section + .section .title {
+						border-top:0;
+					}
+						body.js .section .title .page-count {
+							color:#666;
+							font-weight:normal;
+						}
+					body.js .section .content {
+						display:none;
+					}
+				#sb-body{border:none !important;}
+				.new-file {background:#bceff4;}
+		</style>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$.fn.stat = function (options) {
+					var settings = $.extend({
+							title: 'h2.title',
+							content: 'div.content',
+							files: 'tbody tr',
+							stat: 'td.stat',
+							index: 0,
+							openAll: false,
+							speed: 'fast'
+						}, options),
+						all_sections = this,
+						header = $('div.header');
+					return this.each(function () {
+						var self = this,
+							$self = $(self),
+							title_text = [],
+							completed = 0;
+						self.section_title = $(settings.title, $self);
+						self.content = $(settings.content, $self);
+						self.files = $(settings.files, $self);
+						self.files.each(function () {
+							var stat = $(settings.stat, this);
+							stat.each(function () {
+								var text = $(this).text();
+								if (text) {
+									completed++;
+								}
+							});
+						});
+						self.files
+							.bind('mouseenter', function () {
+								$(this).addClass('hover');
+							})
+							.bind('mouseleave', function () {
+								$(this).removeClass('hover');
+							});
+						title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+						self.section_title.html(title_text.join(''));
+						self.section_title.bind('click', function () {
+							self.content.slideToggle(settings.speed);
+						});
+						if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+							self.content.css('display', 'block');
+						}
+					});
+				};
+				$(document).ready(function () {
+					$('div.section').stat({ openAll: true });
+					$('#total').text($('tbody tr').length);
+					$('tbody tr:even').addClass('even');
+					$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+				});
+			}(jQuery));
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">document.body.className += ' js';</script>
+		<div class="header">
+			<h1>작업현황판</h1>
+		</div>
+		<!--<p><a target="_blank" href="./html_guide/layout.html">layout 가이드</a> | <a href="./html_guide/content.html">공통 가이드</a> | <a target="_blank" href="./html_guide/popup_layout.html">popup 가이드</a></p>-->
+		<div class="section" style="margin:0 10px;">
+			<h2 class="title">주니어커리어넷</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>로그인</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="pop_login.html">pop_login.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-03</td>
+							<td></td>
+                        </tr>
+                        <tr>
+							<td rowspan="6">메인</td>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="main.html">main.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-03</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">진로카드 선택 레이어 팝업</td>
+                            <td>1단계 답변</td>
+                            <td></td>
+                            <td><a target="_blank" href="pop-career-card01.html">pop-career-card01.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-12</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td>2단계 답변</td>
+							<td></td>
+							<td><a target="_blank" href="pop-career-card02.html">pop-career-card02.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-12</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3단계 답변</td>
+							<td></td>
+							<td><a target="_blank" href="pop-career-card03.html">pop-career-card03.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-12</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">통합검색</td>
+							<td>결과있음</td>
+							<td></td>
+							<td><a target="_blank" href="JCSC01.html">JCSC01.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>결과없음</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCSC02.html">JCSC02.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-05</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="21">나를 알아보아요</td>
+							<td rowspan="10">저학년 진로흥미탐색<br />(아로주니어)</td>
+							<td>인트로_비회원</td>
+							<td></td>
+							<td><a target="_blank" href="JCAJ0000.html">JCAJ0000.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>인트로_회원</td>
+							<td></td>
+							<td><a target="_blank" href="JCAJ0001.html">JCAJ0001.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="5">직업의 중요성</td>
+							<td>인트로</td>
+							<td><a target="_blank" href="JCAJ0100.html">JCAJ0100.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>STEP</td>
+							<td><a target="_blank" href="JCAJ0101.html">JCAJ0101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>첫째</td>
+							<td><a target="_blank" href="JCAJ0102.html">JCAJ0102.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>둘째</td>
+							<td><a target="_blank" href="JCAJ0103.html">JCAJ0103.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>셋째</td>
+							<td><a target="_blank" href="JCAJ0104.html">JCAJ0104.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">자기이해</td>
+							<td>색칠놀이</td>
+							<td><a target="_blank" href="JCAJ0201.html">JCAJ0201.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>결과</td>
+							<td><a target="_blank" href="JCAJ0202.html">JCAJ0202.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>나의다짐</td>
+							<td></td>
+							<td><a target="_blank" href="JCAJ0301.html">JCAJ0301.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="4">고학년 진로흥미탐색</td>
+							<td>비회원</td>
+							<td></td>
+							<td><a target="_blank" href="higher-grade01.html">higher-grade01.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-28</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>회원</td>
+                            <td></td>
+                            <td><a target="_blank" href="higher-grade02.html">higher-grade02.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>학교찾기팝업</td>
+                            <td></td>
+                            <td><a target="_blank" href="pop-search-school.html">pop-search-school.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>프로그램 헤더, 결과표(이런 활동을 해보아요.)</td>
+                            <td></td>
+                            <td><a target="_blank" href="higher-header-footer.html">higher-header-footer.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="7">주니어 진로카드</td>
+							<td>intro</td>
+							<td></td>
+							<td><a target="_blank" href="JCCD0000.html">JCCD0000.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-02</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td rowspan="3">목록</td>
+							<td>반짝반짝</td>
+							<td><a target="_blank" href="JCCD010101.html">JCCD010101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td>으쓱으쓱</td>
+							<td><a target="_blank" href="JCCD010102.html">JCCD010102.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td>알쏭달쏭</td>
+							<td><a target="_blank" href="JCCD010103.html">JCCD010103.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td>카드선정</td>
+							<td></td>
+							<td><a target="_blank" href="JCCD0201.html">JCCD0201.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-03</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td>카드선정 상세</td>
+							<td></td>
+							<td><a target="_blank" href="JCCD0301.html">JCCD0301.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td>카드선정 결과</td>
+							<td></td>
+							<td><a target="_blank" href="JCCD0401.html">JCCD0401.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+                        </tr>
+						<tr>
+							<td rowspan="14">진로정보를 찾아봐요</td>
+							<td rowspan="5">주니어 진로동영상</td>
+							<td>전체목록</td>
+							<td></td>
+							<td><a target="_blank" href="JCMV0101.html">JCMV0101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-22</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>검색결과</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCMV0102.html">JCMV0102.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-22</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>검색결과 없음</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCMV0103.html">JCMV0103.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-22</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>프로그램목록</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCMV02.html">JCMV02.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-22</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>동영상 상세</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCMV03.html">JCMV03.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-25</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="4">주니어 직업정보</td>
+							<td>목록</td>
+							<td></td>
+							<td><a target="_blank" href="joblist.html">joblist.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-25</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>검색결과 없음</td>
+                            <td></td>
+                            <td><a target="_blank" href="joblist-none.html">joblist-none.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-25</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>상세</td>
+                            <td></td>
+                            <td><a target="_blank" href="job-detail.html">job-detail.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-25</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>상세(동영상없음)</td>
+                            <td></td>
+                            <td><a target="_blank" href="job-detail02.html">job-detail02.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-25</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="3">미래 직업정보</td>
+							<td>테마 목록</td>
+							<td></td>
+							<td><a target="_blank" href="fjob-intro.html">fjob-intro.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-22</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>테마별 목록</td>
+                            <td></td>
+                            <td><a target="_blank" href="fjob-list.html">fjob-list.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>상세</td>
+                            <td></td>
+                            <td><a target="_blank" href="fjob-detail.html">fjob-detail.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="2">미래 사회의 직업</td>
+							<td>인트로</td>
+							<td></td>
+							<td><a target="_blank" href=".html"></a></td>
+							<td class="stat"></td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>직업세계 이해</td>
+							<td></td>
+							<td><a target="_blank" href=".html"></a></td>
+							<td class="stat"></td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="20">진로고민이 있어요</td>
+							<td rowspan="13">진로탐험대</td>
+							<td>인트로</td>
+							<td></td>
+							<td><a target="_blank" href="JCJT00.html">JCJT00.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>메인</td>
+							<td></td>
+							<td><a target="_blank" href="JCJT01.html">JCJT01.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="6">목록</td>
+							<td>탐험기지</td>
+							<td><a target="_blank" href="JCJT0201.html">JCJT0201.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>직업별(메인카테고리)</td>
+							<td><a target="_blank" href="JCJT0202.html">JCJT0202.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>직업별(서브카테고리)</td>
+							<td><a target="_blank" href="JCJT020201.html">JCJT020201.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>진로별</td>
+							<td><a target="_blank" href="JCJT0203.html">JCJT0203.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>진학별</td>
+							<td><a target="_blank" href="JCJT0204.html">JCJT0204.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>학습·적응별</td>
+							<td><a target="_blank" href="JCJT0205.html">JCJT0205.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-16</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="5">상세</td>
+							<td>탐험기지</td>
+							<td><a target="_blank" href="JCJT0301.html">JCJT0301.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>직업별</td>
+							<td><a target="_blank" href="JCJT0302.html">JCJT0302.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>진로별</td>
+							<td><a target="_blank" href="JCJT0303.html">JCJT0303.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>진학별</td>
+							<td><a target="_blank" href="JCJT0304.html">JCJT0304.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>학습·적응별</td>
+							<td><a target="_blank" href="JCJT0305.html">JCJT0305.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-12-13</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="3">친구야 도와줘</td>
+							<td>고민도와주기</td>
+							<td></td>
+							<td><a target="_blank" href="JCHF0101.html">JCHF0101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-22</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>지난고민보기</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCHF0102.html">JCHF0102.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-22</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>팝업</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCHF0103.html">JCHF0103.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-15</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="4">진로상담</td>
+							<td>목록</td>
+							<td></td>
+							<td><a target="_blank" href="JCCO0101.html">JCCO0101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-11-28</td>
+							<td></td>
+                        </tr>
+                        <tr>
+                            <td>상세</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCCO0102.html">JCCO0102.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>신청</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCCO0201.html">JCCO0201.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>신청완료</td>
+                            <td></td>
+                            <td><a target="_blank" href="JCCO0202.html">JCCO0202.html</a></td>
+                            <td class="stat">퍼블작업완료</td>
+                            <td class="date">2019-11-28</td>
+                            <td></td>
+                        </tr>
+						<tr>
+							<td rowspan="15">마이페이지</td>
+							<td rowspan="3">나의 진로활동</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0101.html">JCMY0101.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-06</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>임시저장</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0102.html">JCMY0102.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-06</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>데이터 없음</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0103.html">JCMY0103.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-06</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="3">나의 흥미탐색</td>
+							<td>저학년</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0201.html">JCMY0201.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>고학년</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0202.html">JCMY0202.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-06</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>결과 없음</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0203.html">JCMY0203.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-06</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="5">나의 진로정보</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0301.html">JCMY0301.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="4">데이터 없음</td>
+							<td>모아보기</td>
+							<td><a target="_blank" href="JCMY0302.html">JCMY0302.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>주니어 직업정보</td>
+							<td><a target="_blank" href="JCMY0303.html">JCMY0303.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>미래 직업정보</td>
+							<td><a target="_blank" href="JCMY0304.html">JCMY0304.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>주니어 진로동영상</td>
+							<td><a target="_blank" href="JCMY0305.html">JCMY0305.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-05</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">나의 진로상담</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0401.html">JCMY0401.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>이력 없음</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0402.html">JCMY0402.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">내가 도와준 친구 고민</td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0501.html">JCMY0501.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>고민 이력 없음</td>
+							<td></td>
+							<td><a target="_blank" href="JCMY0502.html">JCMY0502.html</a></td>
+							<td class="stat">퍼블작업완료</td>
+							<td class="date">2019-12-04</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>* Layout : <a href="layout.html" target="_blank">layout.html</a></p>
+		</div>
+	</body>
+</html>

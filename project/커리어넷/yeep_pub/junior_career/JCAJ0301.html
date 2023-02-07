@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>주니어 커리어넷</title>
+<link rel="stylesheet" type="text/css" href="css/content.css" />
+<script type="text/javascript"  src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"  src="js/common.js"></script>
+</head>
+
+<body class="color-interest">
+	<div id="skipNavi">
+		<a href="#container" class="skipNavi">본문바로가기</a>
+		<a href="#gnb" class="skipNavi" >메뉴바로가기</a>
+	</div>
+	<!-- HEADER -->
+	<div id="header">
+		<div class="topmenu">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">아이디/비밀번호 찾기</a></li>
+				<li><a href="#">로그아웃</a></li>
+				<li><a href="#">마이페이지</a></li>
+			</ul>
+		</div>
+		<div id="gnbWrap">
+			<div class="gnb">
+				<h1 class="logo-header"><a href="#"><img src="images/common/logo_header.png" alt="주니어커리어넷" /></a></h1>
+				<ul class="menu">
+					<li><a href="#" class="depth1 mn1">나를 알아보아요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">저학년 진로흥미탐색</a></li>
+								<li><a href="#">고학년 진로흥미탐색</a></li>
+								<li><a href="#">주니어 진로카드</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn2">진로정보를 찾아봐요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">주니어 진로동영상</a></li>
+								<li><a href="#">주니어 직업정보</a></li>
+								<li><a href="#">미래 직업정보</a></li>
+								<li><a href="#">미래 사회의 직업</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" class="depth1 mn3">진로고민이 있어요</a>
+						<div class="submenu">
+							<ul class="submenu-list">
+								<li><a href="#">진로탐험대</a></li>
+								<li><a href="#">친구야 도와줘</a></li>
+								<li><a href="#">진로상담</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="btn-search-open">검색하기</a> <!-- 검색창 활성화 상태 class 'close' 추가 -->
+			</div>
+			<div class="gnb-search-wrap"> <!-- 검색창 활성화 상태 class 'open' 추가 -->
+				<div class="gnb-search-bx">
+					<input type="text" placeholder="진로정보를 탐색해보아요!" class="gnb-search-input" />
+					<a href="#" class="btn-search">검색</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //HEADER -->
+	<hr>
+	<!-- CONTENT -->
+	<div id="container">
+		<div class="content">
+			<h2 class="cont-title">저학년 진로흥미탐색</h2>
+			<!-- tab -->
+			<div class="cont-tab-wrap">
+				<ul>
+					<li class="on"><a href="#">저학년 진로흥미탐색</a></li> <!-- 탭 활성화 상태 class="on"추가 -->
+					<li><a href="#">고학년 진로흥미탐색</a></li>
+					<li><a href="#">주니어 진로카드</a></li>
+				</ul>
+			</div>
+			<!-- //tab -->
+
+			<!-- arojunior 나의다짐 -->
+			<div class="cont-arojunior">
+				<div class="welcome-cmnt">꿈을 위해 나는 어떤 노력을 해야 할까요?<br />나의 다짐을 작성하고 부모님, 친구들과 함께 이야기해요.</div>
+				<div class="arojunior-container result" id="printArea">
+					<p class="painter-robot"></p>
+					<div class="screen">
+						<div class="step-wrap">
+							<ul>
+								<li class="mn01 complete"><a href="#">직업의 중요성</a></li> <!-- 완성 class="complete" 진행중 class="current" -->
+								<li class="mn02 complete"><a href="#">자기이해</a></li>
+								<li class="mn03 current"><a href="#">나의다짐</a></li>
+							</ul>
+						</div>
+						<!-- 결과 -->
+						<div class="promise-bx">
+							<p class="mySchl-input-wrap">
+								<input type="text" id="schName" class="input-txt" placeholder="초등학교" style="width:250px;" />
+								<input type="text" id="gradeNum" class="input-txt" placeholder="학년" style="width:144px;" />
+								<input type="text" id="classNum" class="input-txt" placeholder="반" style="width:144px;" />
+								<input type="text" id="stdName" class="input-txt" placeholder="이름" style="width:205px;" />
+							</p>
+							<div class="myThink-input-wrap">
+								<h4 class="title01">자기이해</h4>
+								<div class="input-wrap">
+									<h5 class="title02">친구의 생각</h5>
+									<ul>
+										<li>나의 친구들은 나를 <input type="text" id="promInput01" class="input-txt2" placeholder="예: 멋쟁이" style="width:210px" /> 라고 부른다.</li>
+										<li>나의 친구들은 나에게 <input type="text" id="promInput02" class="input-txt2" placeholder="예: 정리정돈을" style="width:210px" /> 잘한다고 한다.</li>
+									</ul>
+								</div>
+								<div class="input-wrap">
+									<h5 class="title02">나의 생각</h5>
+									<ul>
+										<li>나는 <input type="text" id="promInput03" class="input-txt2" placeholder="예: 수학과 과학을 잘하고, 발표를" style="width:420px" /> 잘한다.</li>
+										<li>나는 <input type="text" id="promInput04" class="input-txt2" placeholder="예: 친구들과 함께 어울리고 이야기 하는 것을" style="width:420px" /> 잘한다.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="promise-bx">
+						<span class="bg-notespring"></span>
+						<div class="myThink-input-wrap">
+							<div class="input-wrap">
+								<h5 class="title02">나의 미래</h5>
+								<ul>
+									<li>나의 꿈은 <input type="text" id="promInput05" class="input-txt2" placeholder="예: 의사" style="width:195px" /> 이다.</li>
+									<li>내가 원하는 직업은 <input type="text" id="promInput06" class="input-txt2" placeholder="예: 의사" style="width:195px" /> 이다.</li>
+								</ul>
+							</div>
+							<div class="input-wrap">
+								<h5 class="title02">나의 미래를 위한 약속</h5>
+								<ul>
+									<li>나는 집에서 <input type="text" id="promInput07" class="input-txt2" placeholder="예: 과학책을 틈틈이 보겠다고" style="width:420px" /> 약속합니다.</li>
+									<li>내가 학교에서 <input type="text" id="promInput08" class="input-txt2" placeholder="예: 어려운 일을 솔선수범 하겠다고" style="width:420px" /> 약속합니다.</li>
+								</ul>
+							</div>
+							<div class="input-wrap">
+								<h5 class="title02">나의 다짐</h5>
+								<ul>
+									<li>나는 <input type="text" id="promInput09" class="input-txt2" placeholder="예: 따뜻한 마음을 가진 의사선생님이 되겠다고" style="width:530px" /> 다짐합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<span class="bg-balloon"></span>
+						<a href="#" class="btn-print-result" title="나의 다짐 인쇄하기" onClick="print();">인쇄하기</a>
+					</div>
+				</div>
+				<div class="btn-result-bottom">
+					<a href="#"><img src="images/interest/btn_aroj_save.png" alt="저장하고 탐색완료" /></a>
+				</div>
+			</div>
+			<!-- //arojunior 나의다짐 -->
+		</div>
+	</div>
+	<!-- //CONTENT -->
+	<div id="dim"></div>
+	<hr>
+	<!-- FOOTER -->
+	<div id="footer">
+		<div class="footer-menu">
+			<ul class="policy">
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/mberInfoPrtcPopup.do','','width=715, height=775, menubar=no, status=no, left=300');">개인정보처리방침</a></li>
+				<li><a href="#this" title="새창 열림" onclick="window.open('http://www.career.go.kr/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+				<li><a href="http://www.career.go.kr/cnet/front/commbbs/help/FcommBbsInsert.do" target="_blank" title="새창 열림">이용문의</a></li>
+			</ul>
+			<div class="family-site">
+				<a href="#" class="fam-title" title="관련사이트 보기">관련사이트</a> <!-- 목록 활성화 상태 class="active" 추가 -->
+				<ul class="site-list">
+					<li><a href="https://www.career.go.kr/cnet/front/main/main.do" target="_blank" title="새창으로 이동">커리어넷</a></li>
+					<li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창으로 이동">원격영상 진로멘토링</a></li>
+					<li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창으로 이동">YEEP</a></li>
+					<li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창으로 이동">꿈길</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="address">
+			<div class="copyright">
+				주소 : 30147 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원<br />
+				운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 │ 지원 : 교육부<br />
+				COPYRIGHTS ⓒ KRIVET ALL RIGHTS RESERVED
+			</div>
+			<div class="logo-gov">
+				<a href="https://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창 열림)"><img src="images/common/img_gov_logo01.png" alt="교육부 Ministry of Education" /></a>
+				<a href="http://www.krivet.re.kr/ku/index.jsp" target="_blank" title="한국직업능력개발원 바로가기(새창 열림)"><img src="images/common/img_gov_logo02.png" alt="한국직업능력개발원 KRIVET" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- //FOOTER -->
+</body>
+</html>

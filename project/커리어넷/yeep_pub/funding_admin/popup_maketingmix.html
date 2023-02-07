@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Title -->
+<title>Startup 홈페이지 관리 < Go! startup < YEEP</title><!-- 2018-04-09 모든페이지 적용 -->
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="css/notosanskr.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/custom.css">
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.css">
+<!-- CSS Global Icons -->
+<link rel="stylesheet" href="icon-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="hs-admin-icons/hs-admin-icons.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/animate.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+<!-- CSS Unify -->
+<link rel="stylesheet" href="http://dev.yeep.kr/assets/css/unify-admin.css">
+<!-- JS Global Compulsory -->
+<script src="http://dev.yeep.kr/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/popper.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/cookiejs/jquery.cookie.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/flatpickr/dist/js/flatpickr.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://dev.yeep.kr/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!-- JS Unify -->
+<script src="http://dev.yeep.kr/assets/js/hs.core.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.scrollbar.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.dropdown.js"></script>
+<script src="http://dev.yeep.kr/assets/js/helpers/hs.hamburgers.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.side-nav.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.range-datepicker.js"></script>
+<script src="http://dev.yeep.kr/assets/js/components/hs.datatables.js"></script>
+<!-- JS Custom -->
+<script src="http://dev.yeep.kr/assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script src="http://dev.yeep.kr/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="http://dev.yeep.kr/assets/js/ckeditor/ckeditor.js"></script>
+<script src="Chart.min.js" ></script> <!-- chart js -->
+<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<section class="container">
+	<header class="header g-pt-70 u-divider-center g-mb-30">
+		<h1 class="g-font-size-26 g-color-blue">&lt;마케팅믹스(4P)그래프&gt;</h1>
+		<p class="g-font-size-20 pa-0 g-ma-0">[투자형] 친환경 전기 자전거 프로젝트명이 들어가는 곳</p>
+	</header>
+	<div class="jumbotron mmix-graph-preview">
+		<ul class="chart-txt">
+			<li>제품<span>Product</span></li>
+			<li>유통<span>Price</span></li>
+			<li>촉진<span>Promotion</span></li>
+			<li>가격<span>Place</span></li>
+		</ul>
+		<div class="graph">
+			<canvas id="myChart" width="400" height="400"></canvas>
+			<script>
+				var ctx = document.getElementById('myChart');
+				var myChart = new Chart(ctx, {
+					type: 'radar',
+					data: {
+						labels: ['제품', '촉진', '유통', '가격'],
+						datasets: [{
+							data: [13,17,15,12],
+							backgroundColor: ['rgba(255,168,95,0.2)'],
+							borderColor: ['rgba(255,168,95,1)'],
+							borderWidth: 1,
+							pointRadius: 4,
+							pointBorderColor: '#fff',
+							pointBackgroundColor: 'orange',
+							pointHoverBackgroundColor: '#fff',
+							pointHoverBorderColor: 'orange',
+							pointBorderWidth:1,
+						}]
+					},
+					options: {
+						legend: {
+							display: false,
+						},
+						maintainAspectRatio: true,
+						scale: {
+							ticks: {
+								beginAtZero: true,
+								max: 25,
+								min: 0,
+								stepSize: 5
+							},
+							pointLabels: {
+								fontSize: 15,
+								fontStyle:'bold',
+								fontColor:'transparent'
+							},
+							
+							gridLines: {
+								color: '#d4d4d4',
+								borderDash : [2]
+							},
+							angleLines: {
+								color: '#ebebeb'
+							},
+						},
+						tooltips: {
+						  
+							backgroundColor: ['#5d6d82'],
+							titleFontSize :13,
+							displayColors:false,
+							callbacks: {
+								label: function (tooltipItem) {
+									return Number(tooltipItem.yLabel);
+								}
+							}
+						}
+					}
+				});
+			</script>
+		</div>
+		<div class="graph-desc">
+			<p class="p-txt">
+				<span>가격</span>과 <span>제품</span>에 강점을 가진 제품입니다.
+			</p>
+			<ul class="p-list">
+				<li>
+					<span class="ico"><img src="images/ico_p_desc01.png" alt="제품" /></span>
+					<div class="desc">
+						<strong>제품<span><span class="mmix-point">P</span>roduct</span></strong>
+						<p>패션 감각과 내구성을 동시에 잡은 신개념 뿔테<br>안경</p>
+					</div>
+				</li>
+				<li>
+					<span class="ico"><img src="images/ico_p_desc02.png" alt="가격" /></span>
+					<div class="desc">
+						<strong>가격<span><span class="mmix-point">P</span></span>rice</strong>
+						<p>유사 제품 대비 낮은 가격<br>
+						50,000원</p>
+					</div>
+				</li>
+				<li>
+					<span class="ico"><img src="images/ico_p_desc03.png" alt="촉진" /></span>
+					<div class="desc">
+						<strong>촉진<span><span class="mmix-point">P</span>romotion</span></strong>
+						<p>페이스북과 인스타그램을 통한 홍보 활동</p>
+					</div>
+				</li>
+				<li>
+					<span class="ico"><img src="images/ico_p_desc04.png" alt="유통" /></span>
+					<div class="desc">
+						<strong>유통<span><span class="mmix-point">P</span>lace</span></strong>
+						<p>온라인 쇼핑몰 판매를 통한<br>
+						직접 배송</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="u-divider-center">
+		<button type="button" class="btn btn-default u-btn-darkgray">확인</button>
+	 </div>
+</section>
+</body>
+</html>

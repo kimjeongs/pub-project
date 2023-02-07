@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>크리미의원</title>
+    <meta name="description" content="In this tutorial, I'm going to show you how to create portfolio page with filtering and also hover effect for each of your project. We will be using a CSS3 and jQuery filter & sort plugin called MixItUp.">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="top-banner">
+        <a href="#"><img src="img/common/img_top_banner.png" alt="보습과 영양을 한번에 건조하고 예민한 피부에 크리미 코스메틱 출시"></a>
+        <button type="button" class="btn-close">닫기</button>
+    </div>
+    <div id="wrap" class="main">
+        <div id="header">
+            <!-- class black 추가 흰배경 검은로고 -->
+            <h1><a href="#"><img src="./img/common/img_logo.png" alt="크리미의원"></a></h1>
+            <a href="#" class="m-menu">메뉴</a><!-- mobile menu -->
+            <a href="#" class="btn-search">검색</a>
+            <div id="gnb">
+                <div class="dimm-wrap">
+                    <ul>
+                        <li><a href="#">전체보기</a></li>
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">가격안내</a></li>
+                        <li><a href="#">이달의 이벤트</a></li>
+                        <li><a href="#">상담예약</a></li>
+                    </ul>
+                    <div class="quick-link">
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                        <span class="ui-select">
+                            <select>
+                                <option>대전점</option>
+                                <option>대구점</option>
+                                <option>청주점</option>
+                                <option>익산점</option>
+                                <option>유성점</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="m-gnb" style="display:none;">
+                <ul>
+                    <li class="first"><a href="#">이달의이벤트</a></li>
+                    <li class="active">
+                        <a href="#" class="title">시술/가격안내</a>
+                        <ul>
+                            <li><a href="#">레드윤곽</a></li>
+                            <li><a href="#">블루 보톡스</a></li>
+                            <li><a href="#">옐로우 피부</a></li>
+                            <li><a href="#">그린 바디</a></li>
+                            <li><a href="#">블루 제모</a></li>
+                            <li><a href="#">바이올렛 필러</a></li>
+                            <li><a href="#">레드 리프팅</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">코스메 틱</a></li>
+                    <li>
+                        <a href="#" class="title">상담</a>
+                        <ul>
+                            <li><a href="#">온라인상담</a></li>
+                            <li><a href="#">카카오상담</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="title">크리미소개</a>
+                        <ul>
+                            <li><a href="#">고객중심 크리미</a></li>
+                            <li><a href="#">크리미 소식</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">진료안내 / 오시는길</a></li>
+                    <li>
+                        <a href="#" class="title">지점보기</a>
+                        <ul>
+                            <li><a href="#">대전점</a></li>
+                            <li><a href="#">대구점</a></li>
+                            <li><a href="#">청주점</a></li>
+                            <li><a href="#">익산점</a></li>
+                            <li><a href="#">유성점</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--end 헤더-->
+
+        <!--컨텐츠영역-->
+        <div id="container">
+            <!-- ###section 1 -->
+            <div class="section1">
+                <div id="visualSlide">
+                    <!-- 클릭시 화면 전환할영역 swipe아님 -->
+                    <ul>
+                        <li class="on">
+                            <div class="aritcle">
+                                <!-- movie or img -->
+                                <img src="./img/temp/temp_top_play.jpg" alt="" />
+                            </div>
+                            <div class="obj-play">
+                                <p>필러에 대해<br>누구나 궁금한 것들!</p>
+                                <button><img src="./img/common/btn_play.png" alt="재생버튼"></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aritcle">
+                                <!-- movie or img -->
+                                <img src="./img/temp/temp_top_play.jpg" alt="" />
+                            </div>
+                            <div class="obj-play">
+                                <p>필러에 대해<br>누구나 궁금한 것들!2222</p>
+                                <button><img src="./img/common/btn_play.png" alt="재생버튼"></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aritcle">
+                                <!-- movie or img -->
+                                <img src="./img/temp/temp_top_play.jpg" alt="" />
+                            </div>
+                            <div class="obj-play">
+                                <p>영상위에 올라갈 텍스트33</p>
+                                <button><img src="./img/common/btn_play.png" alt="재생버튼"></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="aritcle">
+                                <!-- movie or img -->
+                                <img src="./img/temp/temp_top_play.jpg" alt="" />
+                            </div>
+                            <div class="obj-play">
+                                <p>영상위에 올라갈 텍스트44</p>
+                                <button><img src="./img/common/btn_play.png" alt="재생버튼"></button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="controls">
+                        <a href="#" class="slide-prev pc-only"><img src="./img/main/ico_obj_play_prev.png" alt="이전"></a>
+                        <a href="#" class="slide-next pc-only"><img src="./img/main/ico_obj_play_next.png" alt="다음"></a>
+                    </div>
+                </div>
+                <div class="banner swipe-area swiper-container pc-only">
+                    <ul class="swiper-wrapper">
+                        <!-- pc 두컷 출력 모바일 한컷 출력 -->
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner1.jpg);">
+                                <em>유성점 오픈기념 이벤트</em>
+                                <strong>크리미 유성점 오픈</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner2.jpg);">
+                                <em>건조하고 예민한피부에 보습과 영양을</em>
+                                <strong>크리미 코스메틱 출시</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner1.jpg);">
+                                <em>유성점 오픈기념 이벤트</em>
+                                <strong>크리미 유성점 오픈</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner2.jpg);">
+                                <em>건조하고 예민한피부에 보습과 영양을</em>
+                                <strong>크리미 코스메틱 출시</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-banner swipe-area swiper-container mobile-only">
+                    <ul class="swiper-wrapper">
+                        <!-- pc 두컷 출력 모바일 한컷 출력 -->
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner1.jpg);">
+                                <em>유성점 오픈기념 이벤트</em>
+                                <strong>크리미 유성점 오픈</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner2.jpg);">
+                                <em>건조하고 예민한피부에 보습과 영양을</em>
+                                <strong>크리미 코스메틱 출시</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner1.jpg);">
+                                <em>유성점 오픈기념 이벤트</em>
+                                <strong>크리미 유성점 오픈</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide"><a href="#" style="background-image:url(./img/temp/temp_banner2.jpg);">
+                                <em>건조하고 예민한피부에 보습과 영양을</em>
+                                <strong>크리미 코스메틱 출시</strong>
+                                <span>VIEW MORE</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        
+            <!-- ###section 2 -->
+            <div class="section2">
+                <div class="ctit-wrap">
+                    <h2>8월한정 이벤트시술</h2>
+                    <span class="pc-only">이달의 이벤트를 확인하세요!</span>
+                </div>
+        
+                <div class="event-slide swipe-area swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="thumb-cont">
+                                    <img class="pc-only" src="./img/temp/temp_event1.jpg" alt="크리미 심술윤곽 PAC">
+                                    <img class="mobile-only" src="./img/temp/temp_event1_m.jpg" alt="크리미 심술윤곽 PAC">
+                                </div>
+                                <div class="info-cont">
+                                    <p class="goods-title">
+                                        <span>이중턱 / 턱라인미운얼굴살정리</span>
+                                        <strong>심술윤곽PAC</strong>
+                                    </p>
+                                    <p class="goods-detail">
+                                        <span class="pc-only">윤곽주사3회+슈링크레이저100샷+<br>
+                                            사각턱보톡스50유닛</span>
+                                        <em>82,000</em> <strong>60,000<span class="unit">원</span></strong>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="thumb-cont">
+                                    <img class="pc-only" src="./img/temp/temp_event1.jpg" alt="크리미 심술윤곽 PAC">
+                                    <img class="mobile-only" src="./img/temp/temp_event1_m.jpg" alt="크리미 심술윤곽 PAC">
+                                </div>
+                                <div class="info-cont">
+                                    <p class="goods-title">
+                                        <span>이중턱 / 턱라인미운얼굴살정리</span>
+                                        <strong>조각주사</strong>
+                                    </p>
+                                    <p class="goods-detail">
+                                        <span class="pc-only">윤곽주사3회+슈링크레이저100샷+<br>
+                                            사각턱보톡스50유닛</span>
+                                        <em>82,000</em> <strong>60,000<span class="unit">원</span></strong>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="thumb-cont">
+                                    <img class="pc-only" src="./img/temp/temp_event1.jpg" alt="크리미 심술윤곽 PAC">
+                                    <img class="mobile-only" src="./img/temp/temp_event1_m.jpg" alt="크리미 심술윤곽 PAC">
+                                </div>
+                                <div class="info-cont">
+                                    <p class="goods-title">
+                                        <span>이중턱 / 턱라인미운얼굴살정리</span>
+                                        <strong>미세먼지 패키지</strong>
+                                    </p>
+                                    <p class="goods-detail">
+                                        <span class="pc-only">윤곽주사3회+슈링크레이저100샷+<br>
+                                            사각턱보톡스50유닛</span>
+                                        <em>82,000</em> <strong>60,000<span class="unit">원</span></strong>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div class="thumb-cont">
+                                    <img class="pc-only" src="./img/temp/temp_event1.jpg" alt="크리미 심술윤곽 PAC">
+                                    <img class="mobile-only" src="./img/temp/temp_event1_m.jpg" alt="크리미 심술윤곽 PAC">
+                                </div>
+                                <div class="info-cont">
+                                    <p class="goods-title">
+                                        <span>이중턱 / 턱라인미운얼굴살정리</span>
+                                        <strong>큐오필</strong>
+                                    </p>
+                                    <p class="goods-detail">
+                                        <span class="pc-only">윤곽주사3회+슈링크레이저100샷+<br>
+                                            사각턱보톡스50유닛</span>
+                                        <em>82,000</em> <strong>60,000<span class="unit">원</span></strong>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <!-- 컨트롤러를 통채로 absolute 띄워서 우측 하단에 위치시킴 -->
+                    <div class="controls pc-only">
+                        <a href="#" class="slide-prev swiper-button-prev">prev image</a>
+                        <a href="#" class="slide-next swiper-button-next">next image</a>
+                    </div>
+                </div>
+                <div class="more-wrap">
+                    <div class="ctab">
+                        <li class="on"><a href="#">심술윤곽 PAC</a></li>
+                        <li><a href="#">조각주사</a></li>
+                        <li><a href="#">미세먼지 패키지</a></li>
+                        <li><a href="#">큐오필</a></li>
+                    </div>
+                    <a href="#" class="more pc-only">더많은이벤트보기</a>
+                </div>
+            </div>
+        
+            <!-- ###section 3 -->
+            <div class="section3">
+                <div class="more-wrap">
+                    <div class="ctit-wrap">
+                        <h2>베스트 시술상품</h2>
+                        <span>베스트시술을 확인하세요!</span>
+                    </div>
+                    <a href="#" class="more pc-only">더많은이벤트보기</a>
+                </div>
+        
+                <div class="thumb-list">
+                    <div class="main-item">
+                        <a href="#">
+                            <!-- 메인아이템 뒤쪽으로 :after 속성쓰고 모든 아이템 relative 설정해서 모든 아이템 뒤에 박스 깔리게 배치 -->
+                            <div class="thumb-item">
+                                <span class="thumb"><img src="./img/temp/temp_best1.png" alt="나블라윤곽주사"></span>
+                                <span class="icon">1st</span>
+                                <p>
+                                    <strong>나블라윤곽주사</strong>
+                                    <em class="price">60,000~</em>
+                                    <span>나블라 윤곽</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="bind" style="pc에서 float 시키고 너비 33퍼센트로 배열, 모바일에선 해제">
+                        <div class="thumb-item">
+                            <a href="#">
+                                <span class="thumb"><img src="./img/temp/temp_best2.png" alt="미스코/와이코"></span>
+                                <span class="icon">2st</span>
+                                <p>
+                                    <strong>미스코/와이코</strong>
+                                    <em class="price">60,000~</em>
+                                    <span class="pc-only">크리미 제모</span>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="thumb-item">
+                            <a href="#">
+                                <span class="thumb"><img src="./img/temp/temp_best4.png" alt="나블라윤곽주사"></span>
+                                <span class="icon">3st</span>
+                                <p>
+                                    <strong>나블라윤곽주사</strong>
+                                    <em class="price">60,000~</em>
+                                    <span class="pc-only">나블라 윤곽</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bind">
+                        <div class="thumb-item">
+                            <a href="#">
+                                <span class="thumb"><img src="./img/temp/temp_best3.png" alt="PRP 지방이식"></span>
+                                <span class="icon">4st</span>
+                                <p>
+                                    <strong>PRP 지방이식</strong>
+                                    <em class="price">60,000~</em>
+                                    <span class="pc-only">실루엣 리프팅</span>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="thumb-item">
+                            <a href="#">
+                                <span class="thumb"><img src="./img/temp/temp_best5.png" alt="미스코/와이코"></span>
+                                <span class="icon">5st</span>
+                                <p>
+                                    <strong>미스코/와이코</strong>
+                                    <em class="price">60,000~</em>
+                                    <span class="pc-only">크리미 코스메틱</span>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- ###section 4 -->
+            <div class="section4">
+                <div class="ctit-wrap">
+                    <h2>#CREAMY</h2>
+                    <span>FOLLOW US @ <span>CREAMY_DAJEON</span></span>
+                </div>
+        
+                <div class="hash-slide swipe-area swiper-container pc-only">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul>
+                                <li><a href="#"><img src="./img/temp/temp_insta1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta2.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta3.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta4.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta5.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta6.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta7.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta8.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta9.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta10.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul>
+                                <li><a href="#"><img src="./img/temp/temp_insta1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta2.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta3.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta4.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta5.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta6.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta7.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta8.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta9.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta10.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="hash-slide swipe-area swiper-container mobile-only">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul>
+                                <li><a href="#"><img src="./img/temp/temp_insta1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta2.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta4.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta5.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta9.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul>
+                                <li><a href="#"><img src="./img/temp/temp_insta1.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta2.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta3.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta4.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta5.png" alt=""></a></li>
+                                <li><a href="#"><img src="./img/temp/temp_insta6.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- ###section 5 -->
+            <div class="section5">
+                <div class="inner">
+                    <div class="map"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12654.56671219863!2d127.04916423565088!3d37.539943126844264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca493a3fc0081%3A0xd98c70910b3fbde9!2z7ISc7Jq47Yq567OE7IucIOyEseuPmeq1rCDshLHsiJjrj5ky6rCA!5e0!3m2!1sko!2skr!4v1565070496909!5m2!1sko!2skr"
+                            width="100%" height="348" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                    <div class="map-info">
+                        <div class="ctit-wrap">
+                            <span>LOCATION</span>
+                            <h2>대전광역시 서구 둔산로25 3, 4층 크리미의원</h2>
+                        </div>
+                        <div class="float-wrap">
+                            <div class="in-cont">
+                                <h3>진료안내</h3>
+                                <!-- flex로 스타일작업 -->
+                                <dl>
+                                    <dt>월/금</dt>
+                                    <dd>오전10시30분~ 오후9시</dd>
+                                    <dt>화/수</dt>
+                                    <dd>오전10시30분~ 오후8시</dd>
+                                    <dt>토/공휴일</dt>
+                                    <dd>오전10시30분~ 오후4시</dd>
+                                    <dt>일요일</dt>
+                                    <dd>휴진</dd>
+                                </dl>
+                            </div>
+            
+                            <div class="in-cont">
+                                <h3>상담& 예약</h3>
+                                <a href="tel:042-489-3441" class="tel-num">042-489-3441</a>
+                                <span>카카오톡ID @크리미클리닉대전</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end container-->
+    </div>
+    <!--푸터-->
+    <footer id="footer">
+        <div class="footer-wrap">
+            <div class="left">
+                <div class="foot_nav2 pc-only">
+                    <ul>
+                        <li>
+                            <a href="#"><span>크리미의원</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>개인정보취급방침</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>이용약관 </span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot_info pc-only">
+                    <p>사업자등록번호: 511-27-58014 | 대표자명:강경완 | (대전점) 대전광역시 서구 둔산로 25 3,4층 크리미의원</p>
+                    <p>의료기관 명칭:크리미의원 | Tel:042-489-3441 | Fax:042-489-3441 </p>
+                    <p>COPYRIGHT(C)2012. CREAMYCLINIC ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="m-foot_info">
+                    <p>(대전점) 대전광역시 서구 둔산로 25 3,4층 크리미의원 ㅣ</p>
+                    <p>사업자등록번호 : 511-27-58014 ㅣ 대표자명 : 강경완 ㅣ 상호명 : 크리미의원</p>
+                    <p>COPYRIGHT(C)2012. CREAMYCLINIC ALL RIGHTS RESERVED.</p>
+                </div>
+                <ul class="sns-list pc-only">
+                    <li><a href="#"><img src="img/common/btn_facebook.png" alt="FACEBOOK" /></a></li>
+                    <li><a href="#"><img src="img/common/btn_twitter.png" alt="TWITTER" /></a></li>
+                    <li><a href="#"><img src="img/common/btn_instagram.png" alt="instagram" /></a></li>
+                    <li><a href="#"><img src="img/common/btn_in.png" alt="in" /></a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <strong class="tit">고객상담 센터</strong>
+                <p>042 . 489 .3441</p>
+                <ul>
+                    <li>평 일 <span>AM 9:00 ~ PM 7:00</span></li>
+                    <li>토요일 <span>AM 9:00 ~ PM 5:00</span></li>
+                </ul>
+            </div>
+            <div class="footer-ci mobile-only">크리미의원</div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        if (window.location.href.indexOf('#') != -1) {
+            window.location.href = window.location.href.split('#')[0];
+        }
+
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+        $(document).ready(function () {
+            var swiper = new Swiper('.banner', {
+                slidesPerView: 2,
+            });
+            var swiper = new Swiper('.m-banner', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+            var swiper = new Swiper('.event-slide', {
+                on: {
+                    slideNextTransitionEnd: function () {
+                        var idx = $(this.$el).find('.swiper-slide-active').index();
+                        $('.ctab li').eq(idx).find('a').trigger('click');
+                    },
+                    slidePrevTransitionEnd: function () {
+                        var idx = $(this.$el).find('.swiper-slide-active').index();
+                        $('.ctab li').eq(idx).find('a').trigger('click');
+                    }
+                },
+                navigation: {
+                    nextEl: '.event-slide .swiper-button-next',
+                    prevEl: '.event-slide .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+
+            $('.ctab li a').on('click', function (e) {
+                e.preventDefault();
+                var idx = $(this).parent().index();
+                var crItem = $('.event-slide').find('.swiper-pagination > span')
+                $('.ctab li a').parents().removeClass('on');
+                $(this).parents().addClass('on');
+                crItem.eq(idx).trigger('click')
+            })
+
+            var visualIdx = 0;
+            $('#visualSlide .controls .slide-next').click(function () {
+                var idx = $('#visualSlide li.on').index();
+
+                var len = $('#visualSlide li').length - 1;
+
+                if (idx + 1 > len) {
+                    visualIdx = 0;
+                } else {
+                    visualIdx++;
+                }
+                $('#visualSlide li').eq(visualIdx).addClass('on').siblings().removeClass('on')
+            });
+            $('#visualSlide .controls .slide-prev').click(function () {
+                var idx = $('#visualSlide li.on').index();
+                var len = $('#visualSlide li').length - 1;
+                if (idx - 1 < 0) {
+                    visualIdx = len;
+                } else {
+                    visualIdx--;
+                }
+                $('#visualSlide li').eq(visualIdx).addClass('on').siblings().removeClass('on')
+            });
+
+
+
+            var swiper = new Swiper('.hash-slide', {
+                navigation: {
+                    nextEl: '.hash-slide .swiper-button-next',
+                    prevEl: '.hash-slide .swiper-button-prev',
+                },
+            });
+        });
+
+        $('.m-menu').bind('click', function () {
+            var me = $(this);
+            var scrollTop = $(window).scrollTop();
+
+            if (me.is('.open')) {
+                if (scrollTop >= 1) {
+                    setTimeout(function () {
+                        $('#header').addClass('black');
+                    }, 10)
+                }
+            }
+        })
+
+        if (isMobile) {
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                if (scrollTop >= 1) {
+                    $('#header').addClass('black');
+                } else {
+                    $('#header').removeClass('black');
+                }
+            })
+        }
+    </script>
+</body>
+</html>

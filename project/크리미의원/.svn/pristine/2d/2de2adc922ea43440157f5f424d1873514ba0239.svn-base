@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>크리미의원</title>
+    <meta name="description" content="In this tutorial, I'm going to show you how to create portfolio page with filtering and also hover effect for each of your project. We will be using a CSS3 and jQuery filter & sort plugin called MixItUp.">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/asdf.css">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="top-banner">
+        <a href="#"><img src="img/common/img_top_banner.png" alt="보습과 영양을 한번에 건조하고 예민한 피부에 크리미 코스메틱 출시"></a>
+        <button type="button" class="btn-close">닫기</button>
+    </div>
+    <div id="wrap">
+        <header>
+            <div id="header" class="pc">
+                <h1 id="logo">
+                    <a href="#">
+                        <img src="img/common/logo.png" alt="크리미의원">
+                    </a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="#">전체보기</a>
+                        </li>
+                        <li>
+                            <a href="#">이달의 이벤트</a>
+                        </li>
+                        <li>
+                            <a href="#">시술/가격안내</a>
+                            <ul>
+                                <li><a href="#">레드 윤곽</a></li>
+                                <li><a href="#">블루 보톡스</a></li>
+                                <li><a href="#">옐로우 피부</a></li>
+                                <li><a href="#">그린 바디</a></li>
+                                <li><a href="#">블루 제모</a></li>
+                                <li><a href="#">바이올렛 필러</a></li>
+                                <li><a href="#">레드 리프팅</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">코스메틱</a>
+                        </li>
+                        <li>
+                            <a href="#">상담</a>
+                            <ul>
+                                <li><a href="#">온라인 상담</a></li>
+                                <li><a href="#">카카오 상담</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="snb">
+                    <ul>
+                        <li class="snb_01"><a href="#">크리미소개</a>
+                            <ul>
+                                <li><a href="#">온라인 상담</a></li>
+                                <li><a href="#">카카오 상담</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">진료안내/오시는길</a></li>
+                        <li class="site_link">
+                            <a href="#">대전점</a>
+                            <ul class="style-1">
+                                <li><a href="#">대전점</a></li>
+                                <li><a href="#">대구점</a></li>
+                                <li><a href="#">청주점</a></li>
+                                <li><a href="#">익산점</a></li>
+                                <li><a href="#">유성점</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end pc ver-->
+            <div id="header" class="mb">
+                <a href="#" class="gnb_mbtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <h1 id="logo">
+                    <a href="#">
+                        <img src="img/common/logo.png" alt="크리미의원">
+                    </a>
+                </h1>
+                <div class="search-container mb">
+                    <input type="text" placeholder="원하시는 시술을 검색해보세요" name="search">
+                    <button type="submit">
+                        <img src="img/cosmetic/search_btn.png" alt="">
+                    </button>
+                </div>
+                <div id="accordion_navi">
+                    <h3 class="month_event">이달의 이벤트</h3>
+                    <h3 class="down">시술/가격안내</h3>
+                    <div>
+                        <ul style="display: none;">
+                            <li><a href="#">레드 윤곽</a></li>
+                            <li><a href="#">블루 보톡스</a></li>
+                            <li><a href="#">옐로우 피부</a></li>
+                            <li><a href="#">그린 바디</a></li>
+                            <li><a href="#">블루 제모</a></li>
+                            <li><a href="#">바이올 렛필러</a></li>
+                            <li><a href="#">레드 리프팅</a></li>
+                        </ul>
+                    </div>
+                    <h3>코스메틱</h3>
+                    <h3 class="down">상담</h3>
+                    <div>
+                        <ul style="display: none;">
+                            <li><a href="#">온라인 상담</a></li>
+                            <li><a href="#">카카오 상담</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="down">크리미소개</h3>
+                    <div>
+                        <ul style="display: none;">
+                            <li><a href="#">고객중심 크리미</a></li>
+                            <li><a href="#">크리미 소식</a></li>
+                        </ul>
+                    </div>
+                    <h3>진료안내/오시는길</h3>
+                    <h3 class="down">지점보기</h3>
+                    <div>
+                        <ul style="display: none;">
+                            <li><a href="#">대전점</a></li>
+                            <li><a href="#">대구점</a></li>
+                            <li><a href="#">청주점</a></li>
+                            <li><a href="#">익산점</a></li>
+                            <li><a href="#">유성점</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end mb ver-->
+        </header>
+        <!--end 헤더-->
+
+        <!--컨텐츠영역-->
+        <div id="container" class="about1">
+            <div class="cont_hd">
+                <div class="pc">
+                    <img src="img/about/address_hd_pc.jpg" alt="">
+                </div>
+                <div class="mb">
+                    <img src="img/about/address_hd_mb.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="content clearfix">
+                <div class="about-tab">
+                    <ul>
+                        <li class="on"><a href="#">고객이중심이되는크리미</a></li>
+                        <li><a href="#">원장소개</a></li>
+                        <li><a href="#">크리미소식</a></li>
+                        <li><a href="#">진료안내 및 오시는길</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-wrap">
+                    <ul>
+                        <li>
+                            <div class="img"><img src="img/about/info01.png" alt="크리미는정품&정량의원칙을지킵니다."></div>
+                            <div class="text-box">
+                                <p class="tit">크리미는정품&<br>정량의원칙을지킵니다.</p>
+                                <span class="detail">
+                                    크리미에서사용되는모든약물은정품, 정량사용원칙에따라 안전하게시술됩니다. 고객분들의신뢰를최우선으로여기며, 철저한관리로원칙을지켜나가고있습니다.
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><img src="img/about/info02.png" alt="크리미는정품&정량의원칙을지킵니다."></div>
+                            <div class="text-box">
+                                <p class="tit">점심시간에도 밤에도<br>활짝열려있는크리미</p>
+                                <span class="detail">
+                                        크리미는고객분들이보다편하게진료를받을수있도록2교대근무를하고있습니다. 점심시간을확인할
+                                        필요없이언제든방문해주세요.퇴근후에도여유있게방문할수있도록야간진료를운영합니다.                                        
+                                    <em>* 월/금PM 9시, 화/수/목PM 8시까지운영</em>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img"><img src="img/about/info03.png" alt="크리미는정품&정량의원칙을지킵니다."></div>
+                            <div class="text-box">
+                                <p class="tit">합리적가격으로<br>부담없이<br>더아름다워질수있도록</p>
+                                <span class="detail">
+                                    크리미는매달다양한이벤트를진행합니다.
+                                    비용에망설이지않고, 부담없이아름다워질수있는프로모션을제안하기위해늘고민합니다.
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end content-->
+        </div>
+        <!--end container-->
+
+        <!--푸터-->
+        <footer id="footer">
+            <div class="footer-wrap">
+                <div class="left">
+                    <div class="foot_nav2 pc-only">
+                        <ul>
+                            <li>
+                                <a href="#"><span>크리미의원</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span>개인정보취급방침</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span>이용약관 </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="foot_info pc-only">
+                        <p>사업자등록번호: 511-27-58014 | 대표자명:강경완 | (대전점) 대전광역시 서구 둔산로 25 3,4층 크리미의원</p>
+                        <p>의료기관 명칭:크리미의원 | Tel:042-489-3441 | Fax:042-489-3441 </p>
+                        <p>COPYRIGHT(C)2012. CREAMYCLINIC ALL RIGHTS RESERVED.</p>
+                    </div>
+                    <div class="m-foot_info">
+                        <p>(대전점) 대전광역시 서구 둔산로 25 3,4층 크리미의원  ㅣ</p>
+                        <p>사업자등록번호 : 511-27-58014  ㅣ  대표자명 : 강경완  ㅣ  상호명 : 크리미의원</p>
+                        <p>COPYRIGHT(C)2012. CREAMYCLINIC ALL RIGHTS RESERVED.</p>
+                    </div>
+                    <ul class="sns-list pc-only">
+                        <li><a href="#"><img src="img/common/btn_facebook.png" alt="FACEBOOK" /></a></li>
+                        <li><a href="#"><img src="img/common/btn_twitter.png" alt="TWITTER" /></a></li>
+                        <li><a href="#"><img src="img/common/btn_instagram.png" alt="instagram" /></a></li>
+                        <li><a href="#"><img src="img/common/btn_in.png" alt="in" /></a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <strong class="tit">고객상담 센터</strong>
+                    <p>042 . 489 .3441</p>
+                    <ul>
+                        <li>평 일 <span>AM 9:00 ~ PM 7:00</span></li>
+                        <li>토요일 <span>AM 9:00 ~ PM 5:00</span></li>
+                    </ul>
+                </div>
+                <div class="footer-ci mobile-only">크리미의원</div>
+            </div>
+        </footer>
+    </div>
+</body></html>

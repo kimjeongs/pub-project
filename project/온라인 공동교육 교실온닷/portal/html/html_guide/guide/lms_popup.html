@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<link rel="shortcut icon" href="../../../images/common/favicon.ico">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/lms.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/lms.js"></script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../../images/lms/logo01.png" alt="온라인공동교육"></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<p class="login_datetime">2017-12-01 16:30</p>
+				</div>
+			</div>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<span class="open">펼치기</span>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+											<span class="close">닫기</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청승인</a></li>
+										<li><a href="#">수업참여승인</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth03.png" alt="수업운영현황" title="수업운영현황"></span>
+								<a href="#" class="depth1_03">수업운영현황</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<li><a href="#">출결관리</a></li>
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자전송</a></li>
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">시스템관리</a> >
+				<strong>메뉴관리</strong>
+			</div>
+			<h2 class="sub_title">시스템 레이어 가이드</h2>
+			<div class="btn_area btn_center">
+				<a href="#layerPopup1" class="btn01 btn01_01 d_layer_open">저장</a>
+				<a href="#layerPopup2" class="btn01 btn01_02 d_layer_open">취소</a>
+			</div>
+		</div>
+		
+		<!-- dimmed -->
+		<div id="dimmed"></div>
+		<!-- //dimmed -->
+
+		<!-- layer_popup -->
+
+		<div id="layerPopup1" class="layer_popup" tabindex="0">
+			<div class="pop_wrap2">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>알림</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="text_wrap">
+						<p class="text_center">
+							저장하시겠습니까?
+						</p>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area btn_center">
+						<a href="#" class="btn03 d_layer_close">확인</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+
+		<div id="layerPopup2" class="layer_popup" tabindex="0">
+			<div class="pop_wrap2">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>알림</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="text_wrap">
+						<p class="text_center">
+							취소하시겠습니까?
+						</p>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area btn_center">
+						<a href="#" class="btn03 d_layer_close">확인</a>
+						<a href="#" class="btn04 d_layer_close">취소</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+
+		<!-- //layer_popup -->
+		<footer>
+			<div class="inner">
+				<address>
+                (우) 27873 충청북도 진천군 덕산면  교학로 7(한국교육개발원)
+                <span>Tel : 043-530-9369</span>
+                <span>e-mail : freesem@kedi.re.kr</span>
+            </address>
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+	
+	
+
+</body>
+
+</html>

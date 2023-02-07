@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>알림관리</title>
+	<link rel="shortcut icon" href="../../../images/lms/favicon.ico">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/lms.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/lms.js"></script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../../images/lms/logo01.png" alt="교실온닷"></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<!-- 2018-02-03 <p class="login_datetime">2017-12-01 16:30</p> -->
+					<p class="portal_go"><a href="#">학교포털 바로가기</a></p><!-- 2018-02-03 -->
+				</div>
+			</div>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청승인</a></li>
+										<li><a href="#">수업참여승인</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth03.png" alt="수업운영현황" title="수업운영현황"></span>
+								<a href="#" class="depth1_03">수업운영현황</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<li><a href="#">출결관리</a></li>
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자전송</a></li>
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">알림관리</a> >
+				<strong>이메일발송</strong>
+			</div>
+			<h2 class="sub_title">이메일발송</h2>
+			<div class="receive_notice">
+				<ul class="send_cont">
+					<li><em>보낸사람 ｜</em><span class="member_type"><span class="icon_taecher">교사</span> 홍길동(hongildong)</span></li><!-- 2018-03-21 -->
+					<li><em>받는사람 ｜</em><span class="member_type"><span class="icon_student">학생</span> 홍길동(hongildong)</span><a href="#layerPopup1" class="d_view d_layer_open">상세보기</a></li><!-- 2018-03-21 -->
+					<li><em>보낸시간 ｜</em><span class="date">2018-01-09</span> <span class="time">16:30</span></li>
+				</ul>
+				<div class="ask_list_view_cont">
+					<div class="tit_area">
+						<p class="ellipsis_title">[수업] 안녕하세요. 개념수학 홍선생님입니다</p>
+					</div>
+					<div class="subgect_area">
+						학생들은 중·고등학교 과정을 경험하면서 자신의 미래의 삶을 살아갈 중요한 태도(Attitude)를 형성합니다. 교육심리학자들은 말합니다. “태도는 지능과 똑같이 중요하다”(Attitude is as important as intelligence) 는 말은 우리 교육이 벤치마킹하고 싶어 하는 핀란드의 어느 교실에 붙어있는 글입니다. 이 글은 지력보다 심성을 주어로 놓아 인성교육을 강조하고 있음을 느낄 수 있습니다.
+					</div>
+					<div class="add_file">
+						<strong class="tit">첨부파일</strong>
+						<div class="file_download">
+							<span class="select_all"><input type="checkbox" class="checkbox" id="sAll"><label for="sAll">전체선택</label><span>(0/3)</span></span>
+						</div>
+						<ul class="add_file_list">
+							<li class="ppt">
+								<input type="checkbox" class="checkbox" id="filePpt">
+								<label for="filePpt">기능변경안내.ppt</label>
+								<span class="vol">000MB</span>
+							</li>
+							<li class="pdf">
+								<input type="checkbox" class="checkbox" id="filePdf">
+								<label for="filePdf">기능변경안내.pdf</label>
+								<span class="vol">000MB</span>
+							</li>
+							<li class="doc">
+								<input type="checkbox" class="checkbox" id="fileDoc">
+								<label for="fileDoc">기능변경안내.pdf</label>
+								<span class="vol">000MB</span>
+							</li>
+							<li class="xls">
+								<input type="checkbox" class="checkbox" id="fileXls">
+								<label for="fileXls">기능변경안내.pdf</label>
+								<span class="vol">000MB</span>
+							</li>
+							<li class="gif">
+								<input type="checkbox" class="checkbox" id="fileUrl">
+								<label for="fileUrl">기능변경안내.pdf</label>
+								<span class="vol">000MB</span>
+							</li>
+							<li class="hwp">
+								<input type="checkbox" class="checkbox" id="fileHwp">
+								<label for="fileHwp">기능변경안내.pdf</label>
+								<span class="vol">000MB</span>
+							</li>
+						</ul>
+						<button type="button" class="btn_bg_download"><span>다운로드</span></button>
+					</div>
+				</div>
+			</div>
+			<div class="btn_area btn_center">
+				<!--2018-02-09-delete
+				<a href="#" class="btn01 btn01_01">삭제</a>
+				-->
+				<a href="#" class="btn01 btn01_02">목록</a>
+				<a href="#" class="btn01 btn01_01">메일발송</a><!-- 2018-03-21 -->
+			</div>
+		</div>
+
+		<!-- dimmed -->
+		<div id="dimmed"></div>
+		<!-- //dimmed -->
+
+		<!-- layer_popup -->
+
+		<div id="layerPopup1" class="layer_popup" tabindex="0">
+			<div class="pop_wrap2">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>수신자 발송목록</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="text_wrap2">
+						<div class="data_table data_table_col">
+							<table>
+								<caption>검색결과</caption>
+								<colgroup>
+									<col style="width: 10%;">
+									<col style="width: 15%;">
+									<col style="width: 23%;">
+									<col>
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽지않음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽지않음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>학생</td>
+										<td>hong12</td>
+										<td>읽음</td><!--2018-02-09-->
+										<td>2018-12-25 12:25</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area btn_center">
+						<a href="#" class="btn03 d_layer_close">확인</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+
+		<footer>
+			<div class="inner">
+				<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원) | 이메일 admin@classon.kr</address><!-- 2018-03-09 -->
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+
+</body>
+
+</html>

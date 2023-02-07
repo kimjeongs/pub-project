@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/base.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			var currentPercent = 10,
+				intervalCurrentPercent;
+
+			$("#classReplay").jPlayer({
+				ready: function () {
+					$(this).jPlayer("setMedia", {
+						title: "[2-1차시] 화학으로 본 세상이야기[2-1차시] 화학으로 본 세상이야기[2-1차시] 화학으로 본 세상이야기[2-1차시] 화학으로 본 세상이야기[2-1차시] 화학으로 본 세상이야기",
+						m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+						ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+						webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+						poster: "../../../images/common/img_replay_thum.png"
+					});
+				},
+				play: function(e) {
+					var _this = $(this);
+					intervalCurrentPercent = setInterval(function() {
+						var playBarW = _this.siblings('.jp-gui').find('.jp-play-bar').width(),
+							progressW = _this.siblings('.jp-gui').find('.jp-progress').width();
+						var returnPlayPercent = Math.floor((playBarW/progressW)*100)
+						console.log(returnPlayPercent);
+					},1000);
+				},
+				pause: function(e) {
+					clearInterval(intervalCurrentPercent);
+				},
+				// swfPath: "../../dist/jplayer",
+				supplied: "webmv, ogv, m4v",
+				size: {
+					width: "100%",
+					height: "auto",
+					cssClass: "jp-video-100"
+				},
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				remainingDuration: true,
+				toggleDuration: true
+			});
+
+			setTimeout(function() {
+				$("#classReplay").jPlayer("playHead", currentPercent);
+			},100);
+		});
+	</script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../images/logo01.png" alt="교실온닷"><!--2018-03-05--></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<p class="login_datetime">2017-12-01 16:30</p>
+				</div>
+			</div>
+			<a href="#" class="menu_btn menu_open on">메뉴보기</a>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<!-- 2018-03-15 delete
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth00.png" alt="메인으로" title="메인으로"></span>
+								<a href="#" class="depth1_00">메인으로</a>
+							</div>
+						</li>
+						 -->
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+										</li>
+										<li><a href="#">탈퇴회원관리</a></li>
+										<li><a href="#">개인정보조회기록</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청자관리</a></li>
+										<li><a href="#">수업참여승인</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth03.png" alt="수업운영관리" title="수업운영관리"></span>
+								<a href="#" class="depth1_03">수업운영관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<!-- 2018-03-13<li><a href="#">외부수강승인</a></li> -->
+										<li><a href="#">출결현황</a></li><!-- 2018-03-13 -->
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+										<li><a href="#">다시보기관리</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자발송</a></li><!-- 2018-03-13 -->
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth05.png" alt="WEB관리" title="WEB관리"></span>
+								<a href="#" class="depth1_05">WEB관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">공지사항</a></li>
+										<li><a href="#">이용문의</a></li>
+										<li><a href="#">자주하는질문</a></li>
+										<li><a href="#">배너관리</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth06.png" alt="통계리포트" title="통계리포트"></span>
+								<a href="#" class="depth1_06">통계리포트</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<!-- 2018-03-20 -->
+									<ul>
+										<li class="depth03">
+											<a href="#">회원통계</a>
+											<ul>
+												<!-- 2018-03-21<li><a href="#">접속통계</a></li> -->
+												<li><a href="#">가입통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">수업통계</a>
+											<ul>
+												<li><a href="#">수업개설통계</a></li>
+												<li><a href="#">수업참여통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">학습통계</a>
+											<ul>
+												<li><a href="#">출석통계</a></li>
+												<li><a href="#">학습활동참여통계</a></li>
+												<li><a href="#">수업진도통계</a></li>
+												<li><a href="#">화상참여통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">알림통계</a>
+											<ul>
+												<li><a href="#">문의이용통계</a></li>
+												<li><a href="#">알림발생통계</a></li>
+											</ul>
+										</li>
+									</ul>
+									<!-- //2018-03-20 -->
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth07.png" alt="시스템관리" title="시스템관리"></span>
+								<a href="#" class="depth1_07">시스템관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">관리자관리</a></li><!-- 2018-03-12 -->
+										<li><a href="#">IP 필터링</a></li><!-- 2018-03-13 -->
+										<li><a href="#">메뉴/권한관리</a></li><!-- 2018-03-23 -->
+										<li><a href="#">코드관리</a></li>
+										<li class="depth03">
+											<a href="#">기관정보관리</a><!-- 2018-03-13 -->
+											<ul>
+												<li><a href="#">학교정보관리</a></li><!-- 2018-03-13 -->
+												<li><a href="#">스튜디오정보관리</a></li><!-- 2018-03-13 -->
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<a href="#" class="menu_btn menu_close">메뉴닫기</a>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">수업운영관리</a> >
+				<strong>다시보기관리</strong>
+			</div>
+			<h2 class="sub_title">다시보기관리</h2>
+			<strong class="sub_list_title">수업 정보</strong>
+			<div class="data_table">
+				<table>
+					<caption>교육청 학교 수업명 차시명 담당교사 수업일이 있는 리스트</caption>
+					<colgroup>
+						<col style="width:200px;">
+						<col>
+						<col style="width:200px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">교육청</th>
+							<td>$교육청명$</td>
+							<th scope="row">학교</th>
+							<td>$학교명$</td>
+						</tr>
+						<tr>
+							<th scope="row">수업명</th>
+							<td>$수업명$</td>
+							<th scope="row">차시명</th>
+							<td>$주차$-$차시$ : $차시명$</td>
+						</tr>
+						<tr>
+							<th scope="row">담당교사</th>
+							<td colspan="3">$회원이름$($회원ID$)</td>
+						</tr>
+						<tr>
+							<th scope="row">수업일</th>
+							<td colspan="3">YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<strong class="sub_list_title">영상 정보</strong>
+			<div class="data_table">
+				<table>
+					<caption>영상보기 재생시간 재생수 자막 자막등록일 자막등록자 사용여부가 있는 리스트</caption>
+					<colgroup>
+						<col style="width:200px;">
+						<col>
+						<col style="width:200px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">영상보기</th>
+							<td colspan="3"><a href="#layerPopup1" class="btn01 btn01_02 d_layer_open">영상보기</a></td>
+						</tr>
+						<tr>
+							<th scope="row">재생시간</th>
+							<td>HH:MM:SS</td>
+							<th scope="row">재생수</th>
+							<td>$재생수$</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle01">자막</label></th>
+							<td colspan="3">
+								<textarea id="listTitle01" class="noresize" title="자막내용" style="height: 150px;"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">자막등록일</th>
+							<td>YYYY-MM-DD HH:MM</td>
+							<th scope="row">자막등록자</th>
+							<td>$회원이름$($회원ID$)</td>
+						</tr>
+						<tr>
+							<th scope="row">사용여부</th>
+							<td colspan="3">$사용여부$</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn_area btn_center">
+				<a href="#" class="btn01 btn01_01">저장</a>
+				<a href="#" class="btn01 btn01_02">취소</a>
+			</div>
+		</div>
+
+		<!-- dimmed -->
+		<div id="dimmed"></div>
+		<!-- //dimmed -->
+		<!-- layer_popup -->
+		<div id="layerPopup1" class="layer_popup" tabindex="0">
+			<div class="pop_wrap">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>수업 다시보기</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content pop_content-type02">
+					<div id="jp_container_1" class="jp-video" role="application" aria-label="media player">
+						<div class="jp-type-single">
+							<div id="classReplay" class="jp-jplayer"></div>
+							<div class="jp-gui">
+								<div class="jp-video-play">
+									<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+								</div>
+								<div class="jp-interface">
+									<div class="jp-progress">
+										<div class="jp-play-bar"></div>
+										<!-- <div class="jp-seek-bar"></div>
+											<div class="jp-play-bar"></div> -->
+										
+									</div>
+									<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+									<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+									<div class="jp-details">
+										<div class="jp-title" aria-label="title">&nbsp;</div>
+									</div>
+									<div class="jp-controls-holder">
+										<div class="jp-volume-controls">
+											<button class="jp-mute" role="button" tabindex="0">mute</button>
+											<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+											<div class="jp-volume-bar">
+												<div class="jp-volume-bar-value"></div>
+											</div>
+										</div>
+										<div class="jp-controls">
+											<button class="jp-play" role="button" tabindex="0">play</button>
+										</div>
+										<div class="jp-toggles">
+											<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="jp-no-solution">
+								<span>Update Required</span>
+								To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+							</div>
+						</div>
+					</div>
+					<textarea class="subtitles noresize" style="width: 100%;" readonly="readonly" title="수업 자막입니다">자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막자막</textarea><!-- 2018-03-14 -->
+				</div>
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+		<!-- //layer_popup -->
+
+
+		<footer>
+			<div class="inner">
+				<address>
+               	 	(우) 27873 충청북도 진천군 덕산면  교학로 7(한국교육개발원)
+	                <span>Tel : 043-530-9369</span>
+	                <span>e-mail : freesem@kedi.re.kr</span>
+	            </address>
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+</body>
+
+</html>

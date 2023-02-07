@@ -1,0 +1,1404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+	<title>관리자 포털</title>
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			overflow-y: scroll;
+		}
+
+		body {
+			color: #666;
+			background-color: #fff;
+			font: 12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+		}
+
+		a {
+			color: #27e;
+			text-decoration: none;
+		}
+
+		a:focus,
+		a:hover,
+		a:active {
+			text-decoration: underline;
+		}
+
+		.header {
+			padding: .5em;
+		}
+
+		.header h1 {
+			display: inline;
+			margin-right: 1em;
+			color: #000;
+			font-size: 2em;
+		}
+
+		.header ul {
+			display: inline;
+			font-size: 1.5em;
+			list-style: none;
+		}
+
+		.header ul li {
+			display: inline;
+		}
+
+		.group-title {
+			margin-top: 1em;
+			color: #000;
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		table caption {
+			display: none;
+		}
+
+		table th {
+			color: #333;
+			background-color: #eee;
+		}
+
+		table th,
+		table td {
+			padding: 0 .5em;
+			border: 1px solid #ddd;
+			text-align: left;
+		}
+
+		table th,
+		table td.stat,
+		table td.date {
+			text-align: center;
+		}
+
+		table tr.even,
+		table tr td.multi {
+			background-color: #fafafa;
+		}
+
+		table tr.add td {
+			background-color: #fd0;
+		}
+
+		table tr.modify td {
+			background-color: #fffeb4;
+		}
+
+		table tr.hover td {
+			background-color: #eee;
+		}
+
+		table tr.none td {
+			color: #000;
+			background-color: #fc8989;
+		}
+
+		table tr.up td {
+			background-color: #ffe9f5;
+		}
+
+		.section {
+			margin: 3em 0;
+		}
+
+		body.js .section {
+			margin: 0;
+		}
+
+		.section .title {
+			margin: 0;
+			padding: 0;
+			color: #000;
+			font-weight: bold;
+			font-size: 100%;
+		}
+
+		body.js .section .title {
+			padding: .5em;
+			border: 1px solid #ccc;
+			background-color: #ddd;
+			cursor: pointer;
+		}
+
+		body.js .section+.section .title {
+			border-top: 0;
+		}
+
+		body.js .section .title .page-count {
+			color: #666;
+			font-weight: normal;
+		}
+
+		body.js .section .content {
+			display: none;
+		}
+
+		#sb-body {
+			border: none !important;
+		}
+
+	</style>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		(function($) {
+			$.fn.stat = function(options) {
+				var settings = $.extend({
+						title: 'h2.title',
+						content: 'div.content',
+						files: 'tbody tr',
+						stat: 'td.stat',
+						index: 0,
+						openAll: false,
+						speed: 'fast'
+					}, options),
+					all_sections = this,
+					header = $('div.header');
+				return this.each(function() {
+					var self = this,
+						$self = $(self),
+						title_text = [],
+						completed = 0;
+					self.section_title = $(settings.title, $self);
+					self.content = $(settings.content, $self);
+					self.files = $(settings.files, $self);
+					self.files.each(function() {
+						var stat = $(settings.stat, this);
+						stat.each(function() {
+							var text = $(this).text();
+							if (text) {
+								completed++;
+							}
+						});
+					});
+					self.files
+						.bind('mouseenter', function() {
+							$(this).addClass('hover');
+						})
+						.bind('mouseleave', function() {
+							$(this).removeClass('hover');
+						});
+					title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+					self.section_title.html(title_text.join(''));
+					self.section_title.bind('click', function() {
+						self.content.slideToggle(settings.speed);
+					});
+					if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+						self.content.css('display', 'block');
+					}
+				});
+			};
+			$(document).ready(function() {
+				$('div.section').stat({
+					openAll: true
+				});
+				$('#total').text($('tbody tr').length);
+				$('tbody tr:even').addClass('even');
+				$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+			});
+		}(jQuery));
+
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">
+		document.body.className += ' js';
+
+	</script>
+	<div class="header">
+		<h1>작업현황판</h1>
+	</div>
+	<div class="section" style="margin-bottom:20px;">
+		<h2 class="title">가이드</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>popup</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/guide/popup_guide.html">popup_guide.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>guide</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/guide/guide.html">guide.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>첨부파일</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/guide/add_file.html">add_file.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section">
+		<h2 class="title">관리자 포털</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>관리자포털 메인</td>
+						<td></td>
+						<td></td>
+						<td>로그인전</td>
+						<td>/login/</td>
+						<td><a target="_blank" href="./html/login/A_DB_viw01.html">A_DB_viw01.html</a></td>
+						<td class="stat">2018-01-03</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="22">회원관리</td>
+						<td rowspan="8">학생조회</td>
+						<td>목록</td>
+						<td></td>
+						<td>/member/</td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_lst.html">A_MM_SI_lst.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">상세</td>
+						<td>수업현황</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det01.html">A_MM_SI_det01.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>출석부</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det02.html">A_MM_SI_det02.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>평가</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det03.html">A_MM_SI_det03.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td>팝업없음</td>
+					</tr>
+					<tr>
+						<td>설문</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det04.html">A_MM_SI_det04.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업o</td>
+					</tr>
+					<tr>
+						<td>퀴즈</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det05.html">A_MM_SI_det05.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업o</td>
+					</tr>
+					<tr>
+						<td>과제</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_det06.html">A_MM_SI_det06.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td>팝업없음</td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_SI_mod.html">A_MM_SI_mod.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">교사조회</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_TI_lst.html">A_MM_TI_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">상세</td>
+						<td>학교이동이력</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_TI_det01.html">A_MM_TI_det01.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수업개설신청이력</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_TI_det02.html">A_MM_TI_det02.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수업운영현황</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_TI_det03.html">A_MM_TI_det03.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_TI_mod.html">A_MM_TI_mod.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="7">승인관리</td>
+						<td rowspan="2">가입승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_JA_lst.html">A_MM_AM_JA_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_JA_det.html">A_MM_AM_JA_det.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">탈퇴승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_OA_lst.html">A_MM_AM_OA_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">상세</td>
+						<td>학생</td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_OA_det01.html">A_MM_AM_OA_det01.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사</td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_OA_det02.html">A_MM_AM_OA_det02.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">학교변경승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_IA_lst.html">A_MM_AM_IA_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_AM_IA_det.html">A_MM_AM_IA_det.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>탈퇴회원관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_OM_lst.html">A_MM_OM_lst.html</a></td>
+						<td class="stat">2018-03-11</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>개인정보조회기록</td>
+						<td></td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/member/A_MM_LG_lst.html">A_MM_LG_lst.html</a></td>
+						<td class="stat">2018-01-24</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">수업개설관리</td>
+						<td rowspan="2">수업개설현황</td>
+						<td></td>
+						<td>목록</td>
+						<td>/calss_set/</td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CO_lst.html">A_CA_CO_lst.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-10</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CO_viw.html">A_CA_CO_viw.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-16</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">수업신청자관리</td>
+						<td rowspan="2"></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CI_lst.html">A_CA_CI_lst.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CI_viw.html">A_CA_CI_viw.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">수업참여승인</td>
+						<td></td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CA_lst.html">A_CA_CA_lst.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-15</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/calss_set/A_CA_CA_viw.html">A_CA_CA_viw.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="14">수업운영관리</td>
+						<td rowspan="2">학교수업현황</td>
+						<td></td>
+						<td>목록</td>
+						<td>/class_management/</td>
+						<td><a target="_blank" href="./html/class_management/A_CM_SC_lst.html">A_CM_SC_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_SC_viw.html">A_CM_SC_viw.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">출결현황</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CA_lst.html">A_CM_CA_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CA_det.html">A_CM_CA_det.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">수업과제</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CH_lst.html">A_CM_CH_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CH_viw.html">A_CM_CH_viw.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">퀴즈/설문/평가</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CP_lst.html">A_CM_CP_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CP_viw.html">A_CM_CP_viw.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-28</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업문의관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CQ_lst.html">A_CM_CQ_lst.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-23</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CQ_viw.html">A_CM_CQ_viw.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CQ_mod.html">A_CM_CQ_mod.html</a></td>
+						<td class="stat">2018-02-21</td>
+						<td class="date">2018-03-23</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">다시보기관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CV_lst.html">A_CM_CV_lst.html</a></td>
+						<td class="stat">2018-03-05</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CV_det.html">A_CM_CV_det.html</a></td>
+						<td class="stat">2018-03-05</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/class_management/A_CM_CV_mod.html">A_CM_CV_mod.html</a></td>
+						<td class="stat">2018-03-05</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="8">알림관리</td>
+						<td rowspan="2">문자발송</td>
+						<td></td>
+						<td>목록</td>
+						<td>/alarm/</td>
+						<td><a target="_blank" href="./html/alarm/A_AL_SM_lst.html">A_AL_SM_lst.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_SM_rgt.html">A_AL_SM_rgt.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-20</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">이메일발송</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_EM_lst.html">A_AL_EM_lst.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_EM_viw.html">A_AL_EM_viw.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_EM_rgt.html">A_AL_EM_rgt.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-20</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">쪽지발송</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_TM_lst.html">A_AL_TM_lst.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_TM_viw.html">A_AL_TM_viw.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-21</td>
+						<td>기획확인(상세보기 팝업)</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/alarm/A_AL_TM_rgt.html">A_AL_TM_rgt.html</a></td>
+						<td class="stat">2018-02-13</td>
+						<td class="date">2018-03-20</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="16">WEB관리</td>
+						<td rowspan="4">공지사항</td>
+						<td></td>
+						<td>목록</td>
+						<td>/web/</td>
+						<td><a target="_blank" href="./html/web/A_WM_NL_lst.html">A_WM_NL_lst.html</a></td>
+						<td class="stat">2018-02-14</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_NL_viw.html">A_WM_NL_viw.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_NL_rgt.html">A_WM_NL_rgt.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_NL_mod.html">A_WM_NL_mod.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">자주하는질문</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_FQ_lst.html">A_WM_FQ_lst.html</a></td>
+						<td class="stat">2018-02-14</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_FQ_viw.html">A_WM_FQ_viw.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_FQ_rgt.html">A_WM_FQ_rgt.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_FQ_mod.html">A_WM_FQ_mod.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">문의관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_QA_lst.html">A_WM_QA_lst.html</a></td>
+						<td class="stat">2018-02-14</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_QA_det.html">A_WM_QA_det.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_QA_rgt.html">A_WM_QA_rgt.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_QA_mod.html">A_WM_QA_mod.html</a></td>
+						<td class="stat">2018-02-19</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">배너관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_BM_lst.html">A_WM_BM_lst.html</a></td>
+						<td class="stat">2018-03-07</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_BM_viw.html">A_WM_BM_viw.html</a></td>
+						<td class="stat">2018-03-07</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_BM_rgt.html">A_WM_BM_rgt.html</a></td>
+						<td class="stat">2018-03-07</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/web/A_WM_BM_mod.html">A_WM_BM_mod.html</a></td>
+						<td class="stat">2018-03-07</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="21">시스템관리</td>
+						<td rowspan="4">관리자관리</td>
+						<td></td>
+						<td>목록</td>
+						<td>/system/</td>
+						<td><a target="_blank" href="./html/system/A_SM_AM_lst.html">A_SM_AM_lst.html</a></td>
+						<td class="stat">2018-01-03</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_AM_det.html">A_SM_AM_det.html</a></td>
+						<td class="stat">2018-01-03</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_AM_rgt.html">A_SM_AM_rgt.html</a></td>
+						<td class="stat">2018-01-03</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_AM_mod.html">A_SM_AM_mod.html</a></td>
+						<td class="stat">2018-03-09</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">IP 필터링</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_IP_lst.html">A_SM_IP_lst.html</a></td>
+						<td class="stat">2018-01-24</td>
+						<td class="date">2018-02-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_IP_det.html">A_SM_IP_det.html</a></td>
+						<td class="stat">2018-01-24</td>
+						<td class="date">2018-02-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_IP_mod.html">A_SM_IP_mod.html</a></td>
+						<td class="stat">2018-01-24</td>
+						<td class="date">2018-02-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_IP_rgt.html">A_SM_IP_rgt.html</a></td>
+						<td class="stat">2018-01-24</td>
+						<td class="date">2018-02-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">메뉴/권한관리</td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_MM_rgt.html">A_SM_MM_rgt.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_MM_mod.html">A_SM_MM_mod.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">코드관리</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_CM_lst.html">A_SM_CM_lst.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_CM_mod.html">A_SM_CM_mod.html</a></td>
+						<td class="stat">2018-02-22</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_CM_rgt.html">A_SM_CM_rgt.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="8">기관정보관리</td>
+						<td rowspan="4">학교정보관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_SI_lst.html">A_SM_SI_lst.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_SI_det.html">A_SM_SI_det.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_SI_rgt.html">A_SM_SI_rgt.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_SI_mod.html">A_SM_SI_mod.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">스튜디오정보관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_TI_lst.html">A_SM_TI_lst.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_TI_det.html">A_SM_TI_det.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_TI_rgt.html">A_SM_TI_rgt.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/system/A_SM_TI_mod.html">A_SM_TI_mod.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="25">통계리포트</td>
+						<td rowspan="3">회원통계</td>
+						<td rowspan="3">가입통계</td>
+						<td>조회</td>
+						<td>/statistics/</td>
+						<td><a target="_blank" href="./html/statistics/A_TR_MS_view01.html">A_TR_MS_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_MS_view02.html">A_TR_MS_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_MS_view03.html">A_TR_MS_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">수업통계</td>
+						<td rowspan="3">수업개설통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_SS_view01.html">A_TR_SS_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_SS_view02.html">A_TR_SS_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_SS_view03.html">A_TR_SS_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업참여통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CP_view01.html">A_TR_CP_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CP_view02.html">A_TR_CP_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CP_view03.html">A_TR_CP_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="12">학습통계</td>
+						<td rowspan="3">출석통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_PS_view01.html">A_TR_PS_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_PS_view02.html">A_TR_PS_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_PS_view03.html">A_TR_PS_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">학습활동참여통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_HS_view01.html">A_TR_HS_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_HS_view02.html">A_TR_HS_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_HS_view03.html">A_TR_HS_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업진도통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CO_view01.html">A_TR_CO_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CO_view02.html">A_TR_CO_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_CO_view03.html">A_TR_CO_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">화상참여통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_NB_view01.html">A_TR_NB_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_NB_view02.html">A_TR_NB_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_NB_view03.html">A_TR_NB_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">알림통계</td>
+						<td rowspan="3">문의이용통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_QI_view01.html">A_TR_QI_view01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_QI_view02.html">A_TR_QI_view02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_QI_view03.html">A_TR_QI_view03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>알림발생통계</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/statistics/A_TR_AS_view.html">A_TR_AS_view.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="8">공통</td>
+						<td rowspan="4">etc</td>
+						<td>지원 브라우저 안내</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_ET_viw01.html">A_CM_ET_viw01.html</a></td>
+						<td class="stat">2018-02-22</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>에러</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_ET_viw02.html">A_CM_ET_viw02.html</a></td>
+						<td class="stat">2018-02-22</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>404 에러</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/UC_ER_viw01.html">UC_ER_viw01.html</a></td>
+						<td class="stat">2018-03-20</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>500 에러</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/UC_ER_viw02.html">UC_ER_viw02.html</a></td>
+						<td class="stat">2018-03-20</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">내정보관리</td>
+						<td></td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_viw.html">A_CM_viw.html</a></td>
+						<td class="stat">2018-03-11</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_mod01.html">A_CM_mod01.html</a></td>
+						<td class="stat">2018-03-11</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>비밀번호변경</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_mod02.html">A_CM_mod02.html</a></td>
+						<td class="stat">2018-03-11</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td></td>
+						<td>비밀번호초기화</td>
+						<td></td>
+						<td><a target="_blank" href="./html/user/A_CM_EM_mal01.html">A_CM_EM_mal01.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

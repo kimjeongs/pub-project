@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/base.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../images/logo01.png" alt="교실온닷"><!--2018-03-05--></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<p class="login_datetime">2017-12-01 16:30</p>
+				</div>
+			</div>
+			<a href="#" class="menu_btn menu_open on">메뉴보기</a>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<!-- 2018-03-15 delete
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth00.png" alt="메인으로" title="메인으로"></span>
+								<a href="#" class="depth1_00">메인으로</a>
+							</div>
+						</li>
+						 -->
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+										</li>
+										<li><a href="#">탈퇴회원관리</a></li>
+										<li><a href="#">개인정보조회기록</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청자관리</a></li>
+										<li><a href="#">수업참여승인</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth03.png" alt="수업운영관리" title="수업운영관리"></span>
+								<a href="#" class="depth1_03">수업운영관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<!-- 2018-03-13<li><a href="#">외부수강승인</a></li> -->
+										<li><a href="#">출결현황</a></li><!-- 2018-03-13 -->
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+										<li><a href="#">다시보기관리</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자발송</a></li><!-- 2018-03-13 -->
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth05.png" alt="WEB관리" title="WEB관리"></span>
+								<a href="#" class="depth1_05">WEB관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">공지사항</a></li>
+										<li><a href="#">이용문의</a></li>
+										<li><a href="#">자주하는질문</a></li>
+										<li><a href="#">배너관리</a></li><!-- 2018-03-13 -->
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth06.png" alt="통계리포트" title="통계리포트"></span>
+								<a href="#" class="depth1_06">통계리포트</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<!-- 2018-03-20 -->
+									<ul>
+										<li class="depth03">
+											<a href="#">회원통계</a>
+											<ul>
+												<!-- 2018-03-21<li><a href="#">접속통계</a></li> -->
+												<li><a href="#">가입통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">수업통계</a>
+											<ul>
+												<li><a href="#">수업개설통계</a></li>
+												<li><a href="#">수업참여통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">학습통계</a>
+											<ul>
+												<li><a href="#">출석통계</a></li>
+												<li><a href="#">학습활동참여통계</a></li>
+												<li><a href="#">수업진도통계</a></li>
+												<li><a href="#">화상참여통계</a></li>
+											</ul>
+										</li>
+										<li class="depth03">
+											<a href="#">알림통계</a>
+											<ul>
+												<li><a href="#">문의이용통계</a></li>
+												<li><a href="#">알림발생통계</a></li>
+											</ul>
+										</li>
+									</ul>
+									<!-- //2018-03-20 -->
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../images/icon_depth07.png" alt="시스템관리" title="시스템관리"></span>
+								<a href="#" class="depth1_07">시스템관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">관리자관리</a></li><!-- 2018-03-12 -->
+										<li><a href="#">IP 필터링</a></li><!-- 2018-03-13 -->
+										<li><a href="#">메뉴/권한관리</a></li><!-- 2018-03-23 -->
+										<li><a href="#">코드관리</a></li>
+										<li class="depth03">
+											<a href="#">기관정보관리</a><!-- 2018-03-13 -->
+											<ul>
+												<li><a href="#">학교정보관리</a></li><!-- 2018-03-13 -->
+												<li><a href="#">스튜디오정보관리</a></li><!-- 2018-03-13 -->
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<a href="#" class="menu_btn menu_close">메뉴닫기</a>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">시스템관리</a> >
+				<strong>관리자관리</strong><!-- 2018-03-12 -->
+			</div>
+			<h2 class="sub_title">관리자관리</h2><!-- 2018-03-12 -->
+			<div class="data_table"><!--2018-01-04-->
+				<em class="essential">*필수입력</em>
+				<table>
+					<caption>구분 아이디 비밀번호 비밀번호확인 이름/성별 회사 전화번호 휴대전화 이메일 비고 권한그룹 사용유무가 있는 리스트</caption>
+					<colgroup>
+						<col style="width:200px;"><!-- 2018-02-14 -->
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">구분</th>
+							<td>
+								<!-- 2018-02-14-modify-->
+								<span class="radio01">
+									<input type="radio" name="user" checked="checked" id="user1">
+									<label for="user1">관리자</label>
+									<input type="radio" name="user" id="user2">
+									<label for="user2">운영자</label>
+									<input type="radio" name="user" id="user3">
+									<label for="user3">교육청</label>
+							   </span>
+							   <!-- //2018-02-14 -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle02">아이디*</label></th>
+							<td>
+								<input type="text" id="listTitle02" class="input_txt" style="width: 50%;" placeholder="5자~10자 영문,숫자,특수문자(_),(-),(.) 사용">
+								<button class="btn02 btn02_02 form_type03">중복확인</button><!-- 2018-02-14 -->
+								<span class="txt_color03 caution">사용가능합니다.</span>
+								<span class="txt_color01 caution caution02">8자이상. 영문,숫자,특수문자나 사용 가능합니다.</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle03">비밀번호*</label></th>
+							<td>
+								<input type="text" id="listTitle03" class="input_txt form01" placeholder="8자 이상 영문,숫자,특수문자 조합을 사용">
+								<span class="txt_color01 caution caution02">8자이상. 영문,숫자,특수문자나 사용 가능합니다.</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle04">비밀번호 확인*</label></th>
+							<td>
+								<input type="password" id="listTitle04" class="input_txt form01">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle05">이름/성별*</label></th>
+							<td>
+								<!-- 2018-02-14-modify-->
+								<span class="radio01">
+									<input type="text" id="listTitle05" class="input_txt" style="width: 50%; margin-right: 10px;">
+									<input type="radio" name="gender" id="gender1" checked="checked">
+									<label for="gender1">남</label>
+									<input type="radio" name="gender" id="gender2">
+									<label for="gender2">여</label>
+								</span>
+								<!-- //2018-02-14 -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle06">회사*</label></th>
+							<td>
+								<input type="text" id="listTitle06" class="input_txt" style="width: 37.3%;">
+								<!--2018-01-04 modify-->
+								<select class="select01 form_type01" title="교육청 선택"><!-- 2018-02-14 -->
+									<option>교육청 선택</option>
+									<option>서울</option>
+									<option>광주</option>
+									<option>부산</option>
+								</select>
+								<!--//2018-01-04-->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle07">전화번호</label></th>
+							<td>
+								<input type="text" id="listTitle07" class="input_txt form01">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle08">휴대전화*</label></th><!--//2018-01-04-->
+							<!-- 2018-02-14-modify-->
+							<td>
+								<input type="text" id="listTitle08" class="input_txt form02" title="앞자리 입력">
+								<span class="mark">-</span>
+								<input type="text" class="input_txt form02" title="중간자리 입력">
+								<span class="mark">-</span>
+								<input type="text" class="input_txt form02" title="끝자리 입력">
+							</td>
+							<!-- //2018-02-14 -->
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle09">이메일*</label></th>
+							<td>
+								<input type="text" id="listTitle09" class="input_txt form02" title="이메일 계정입력"><!-- 2018-02-14 -->
+								<span class="mark">@</span>
+								<!--2018-02-14 modify-->
+								<select class="select01" title="이메일 도메인 선택">
+									<option>직접입력</option>
+									<option>gmail.com</option>
+								</select> 
+								<input type="text" class="input_txt form02 form_type01" title="직접입력">
+								<!--//2018-02-14-->
+								<span class="txt_color01 caution caution02">이메일 형식에 맞지 않습니다.</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle10">비고</label></th><!-- 2018-02-14 -->
+							<td>
+								<textarea id="listTitle10" class="form01 noresize" title="내용입력"></textarea><!-- 2018-02-14 -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle11">권한그룹*</label></th><!-- 2018-02-14 -->
+							<td>
+								<select class="select01" id="listTitle11" style="width: 56.5%;"><!-- 2018-02-14 -->
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">사용유무</th>
+							<td>
+								<!--2018-02-14 modify-->
+								<span class="radio01">
+									<input type="radio" checked="checked" name="use" id="use1">
+									<label for="use1">Y</label>
+									<input type="radio" name="use" id="use2">
+									<label for="use2">N</label>
+							   </span>
+							   <!-- //2018-02-14 -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--2018-01-04 modify-->
+			<div class="btn_area btn_center">
+				<a href="#" class="btn01 btn01_01">저장</a>
+				<a href="#" class="btn01 btn01_02">취소</a>
+			</div>
+			<!--//2018-01-04-->
+		</div>
+		<footer>
+			<div class="inner">
+				<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원) | 이메일 admin@classon.kr</address><!-- 2018-03-09 -->
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+</body>
+
+</html>

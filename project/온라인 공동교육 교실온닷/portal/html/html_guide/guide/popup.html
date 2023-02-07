@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no"/><!-- 2018-03-06 -->
+	<title>교실온닷</title>
+    <link rel="shortcut icon" href="../../../images/common/favicon.ico">
+	<link rel="stylesheet" href="../../../css/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/common.css">
+	<link rel="stylesheet" href="../../../css/uportal.css">
+	<link rel="stylesheet" href="../../../css/etc.css">
+	<link rel="stylesheet" href="../../../css/main.css">
+	<link rel="stylesheet" href="../../../css/popup.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts-more.js"></script>
+	<script type="text/javascript" src="../../../js/solid-gauge.js"></script>
+	<script type="text/javascript" src="../../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../../js/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<header id="header">
+			헤더영역
+		</header>
+		<section id="container">
+			<div class="location">
+				<div class="location_cont">
+					<a href="#">메인페이지가기 </a>
+					<div class="menu">
+						<a href="#">로그인</a>
+						<ul>
+							<li><a href="#">로그인</a></li>
+							<li><a href="#">입력 오류</a></li>
+							<li><a href="#">비밀번호 재설정</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<section class="contents">
+				<h3 class="s_title">시스템 레이어 가이드</h3>
+				<div class="btn_area btn_center">
+					<a href="#layerPopup1" class="btn_sbl d_layer_open">저장</a>
+					<a href="#layerPopup2" class="btn_swh d_layer_open">취소</a>
+				</div>
+			</section>
+			<section class="contents">
+				<h3 class="s_title">레이어 가이드</h3>
+				<div class="btn_area btn_center">
+					<a href="#layerPopup3" class="btn_sbl d_layer_open">저장</a>
+				</div>
+			</section>
+		</section>
+		
+		<!-- dimmed -->
+		<div id="dimmed"></div>
+		<!-- //dimmed -->
+		<!-- layer_popup -->
+		<div id="layerPopup1" class="layer_popup" tabindex="0">
+			<div class="pop_wrap pop_wrap2">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>알림</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="text_wrap">
+						<p class="text_center">
+							저장하시겠습니까?
+						</p>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area btn_center">
+						<a href="#" class="btn_sbl d_layer_close">확인</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+
+		<div id="layerPopup2" class="layer_popup" tabindex="0">
+			<div class="pop_wrap pop_wrap2">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>알림</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="text_wrap">
+						<p class="text_center">
+							취소하시겠습니까?
+						</p>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area btn_center">
+						<a href="#" class="btn_sbl d_layer_close">확인</a>
+						<a href="#" class="btn_swh d_layer_close">취소</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+		
+		<div id="layerPopup3" class="layer_popup" tabindex="0">
+			<div class="pop_wrap">
+				<!-- popup header -->
+				<div class="pop_header">
+					<h1>퀴즈</h1>
+				</div>
+				<!-- //popup header -->
+				<div class="pop_content">
+					<div class="board_type1_1">
+						<table>
+							<caption>퀴즈미리보기 제목, 제한시간 영역</caption>
+							<colgroup>
+								<col style="width:13%">
+								<col style="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">제목</th>
+									<td>제목이 들어갑니다.</td>
+								</tr>
+								<tr>
+									<th scope="row">제한시간</th>
+									<td>10분</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="sur_cont">
+										퀴즈내용 출력 <br>
+										퀴즈내용 출력 <br>
+										퀴즈내용 출력 <br>
+										퀴즈내용 출력 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- popup footer -->
+				<div class="pop_footer">
+					<div class="btn_area_center">
+						<a href="#" class="btn_sbl d_layer_close">닫기</a>
+					</div>
+				</div>
+				<!-- //popup footer -->
+				<button type="button" class="btn_pop_close d_layer_close"><span>닫기</span></button>
+			</div>
+		</div>
+		<!-- //layer_popup -->
+		
+		<footer id="footer">
+			푸터영역
+		</footer>
+	</div>
+	<!-- //wrap -->
+	
+	
+
+</body>
+
+</html>

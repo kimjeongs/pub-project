@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no"/><!-- 2018-03-06 -->
+	<title>교실온닷</title>
+    <link rel="shortcut icon" href="../../../images/common/favicon.ico">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/common.css">
+	<link rel="stylesheet" href="../../../css/uportal.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts-more.js"></script>
+	<script type="text/javascript" src="../../../js/solid-gauge.js"></script>
+	<script type="text/javascript" src="../../../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			Highcharts.chart('class_cont04_chart', {
+
+			    chart: {
+			        type: 'solidgauge',
+			        height: '112px',
+			        margin: 0
+			    },
+
+			    title: {
+			        text: '',
+			    },
+
+			    tooltip: {
+			        enabled: false
+			    },
+
+			    credits: {
+			        enabled: false
+			    },
+
+			    pane: {
+			        startAngle: 0,
+			        endAngle: 360,
+			        background: [{
+			            outerRadius: '110%',
+			            innerRadius: '88%',
+			            backgroundColor: '#cadded',
+			            borderWidth: 0
+			        }]
+			    },
+
+			    yAxis: {
+			        min: 0,
+			        max: 13,
+			        lineWidth: 0,
+			        tickPositions: [13],
+			        tickWidth: 0,
+			        minorTickWidth: 0,
+			        labels: {
+		                useHTML: true,
+		                borderWidth: 1,
+		                align: 'center',
+		                verticalAlign: 'middle',
+		                y: 18,
+		                style: {
+		                	color: '#333333',
+		                	fontSize: '14px',
+		                	fontWeight: 'normal',
+		                	fontFamily: 'NanumGothic, 나눔고딕, 돋움, Dotum, sans-serif',
+		                	textAlign: 'center',
+		                	lineHeight: '17px'
+		                },
+		                formatter: function(e) {
+		                	var num = this.value - this.axis.dataMax;
+					        return ("<div class='datalabel'>" + num + "명<br>신청가능</div>");
+					    }
+		            }
+			    },
+
+			    plotOptions: {
+			        solidgauge: {
+			            dataLabels: {
+			                enabled: false
+			            },
+			            linecap: 'round',
+			            stickyTracking: false,
+			            rounded: true
+			        }
+			    },
+
+			    series: [{
+			        data: [{
+			            color: '#7cb5ec',
+			            radius: '110%',
+			            innerRadius: '88%',
+			            y: 13
+			        }]
+			    }]
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<dl id="skiptoMenu">
+		<dt class="hidden"><strong>바로가기 메뉴</strong></dt>
+		<dd>
+			<a href="#container" class="accessibility01">본문 바로가기</a>
+		</dd>
+	</dl>
+	<div id="wrap">
+		<header id="header">
+			<div class="header_cont">
+				<h1><a href="#">교실온닷</a></h1>
+				<div class="my_info">
+					<a href="#" class="troon">교무실 바로가기</a>
+					<a href="#" class="schedule">수업시간표</a>
+					<a href="#" class="alarm"><span>알림</span></a>
+					<a href="#" class="login"><span>로그인</span></a>
+					<a href="#" class="join"><span>회원가입</span></a>
+				</div> <!-- 로그인 전 -->
+				<!-- <div class="my_info">
+					<a href="#" class="troon">교무실 바로가기</a>
+					<a href="#" class="schedule">수업시간표</a>
+					<a href="#" class="alarm"><span>알림</span><em>88</em></a>
+					<a href="#" class="logout"><span>로그아웃</span></a>
+				</div> --> <!-- 로그인 후 -->
+			</div>
+			<nav id="gnb">
+				<div class="gnb">
+					<ul class="gnb_link">
+						<li>
+							<a href="#gnbSubMenu">서비스</a>
+						</li>
+						<li>
+							<a href="#gnbSubMenu">수강안내</a>
+						</li>
+						<li>
+							<a href="#gnbSubMenu">수업신청</a>
+						</li>
+						<li>
+							<a href="#gnbSubMenu">이용안내</a>
+						</li>
+						<li>
+							<a href="#gnbSubMenu">마이페이지</a>
+						</li>
+					</ul>
+					<div id="gnbSubMenu" class="gnb_sub_menu">
+						<ul>
+							<li>
+								<strong>서비스</strong>
+								<ul>
+									<li><a href="#">사입소개</a></li>
+									<li><a href="#">교육과정소개</a></li>
+									<li><a href="#">참여학교현황</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>수강안내</strong>
+								<ul>
+									<li><a href="#">수강방법안내</a></li>
+									<li><a href="#">2017 수업스케줄</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>수업신청</strong>
+								<ul>
+									<li><a href="#">수업전체</a></li>
+									<li><a href="#">수업일정</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>이용안내</strong>
+								<ul>
+									<li><a href="#">공지사항</a></li>
+									<li><a href="#">자주하는질문</a></li>
+									<li><a href="#">1:1 원격지원</a></li>
+								</ul>
+							</li>
+							<!-- 학생 마이페이지 -->
+							<li style="display: none;">
+								<strong><a href="#">마이페이지</a></strong>
+								<ul>
+									<li><a href="#">나의수업</a></li>
+									<li><a href="#">문의</a></li>
+									<li><a href="#">쪽지</a></li>
+									<li><a href="#">회원정보</a></li>
+								</ul>
+							</li>
+							<!-- //학생 마이페이지 -->
+							<!-- 교사 마이페이지 -->
+							<li>
+								<strong><a href="#">마이페이지</a></strong>
+								<ul>
+									<li><a href="#">수업관리</a></li>
+									<li><a href="#">수업개설신청</a></li>
+									<li><a href="#">수업자료관리</a></li>
+									<li><a href="#">문의내역</a></li>
+									<li><a href="#">알림</a></li>
+									<li><a href="#">회원정보</a></li>
+								</ul>
+							</li>
+							<!-- //교사 마이페이지 -->
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<section id="container">
+			<div class="content_title_wrap sub_title3">
+				<div class="content_title">
+					<h2>수업신청</h2>
+					<p>진행중인 수업내용과 일정을 확인 하시고 신청하세요.</p>
+				</div>
+			</div>
+			<div class="location">
+				<div class="location_cont">
+					<a href="#">메인페이지가기 </a>
+					<div class="menu">
+						<a href="#">수업신청</a>
+						<ul>
+							<li><a href="#">서비스</a></li>
+							<li><a href="#">수강안내</a></li>
+							<li><a href="#">이용안내</a></li>
+							<li><a href="#">마이페이지</a></li>
+						</ul>
+					</div>
+					<div class="menu">
+						<a href="#">수업전체</a>
+						<ul>
+							<li><a href="#">수업일정</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<section class="contents">
+				<section class="class_box class_box_type02">
+					<div class="class_cont03">
+						<div class="class_cont03_visual">
+							<div>
+								<p class="class_cont03_icon"><span>1/2학년</span></p>
+								<img src="../../../images/portal/@thumbnail02.png" alt="말랑말랑 경제 맛보기">
+								<p class="class_cont03_txt01">수업중</p>
+							</div>
+						</div>
+						<div class="class_cont03_info">
+							<h3 class="class_cont03_txt02">말랑말랑 경제 맛보기</h3>
+							<p class="class_cont03_txt03"><em>순천여자고등학교</em>에서 <em>경제</em>과목을 <em>1/2학년</em> 대상으로 <em>13명</em> 모집합니다.</p>
+							<p class="class_cont03_txt04"><em>하선미</em> 선생님이 진행하는 “<em>말랑말랑 경제 맛보기</em>” 수업에 많은 참여와 성원 부탁 드립니다.</p>
+							<div class="class_cont03_btn">
+								<a href="#" class="icon_check"><span>수업입장</span></a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<article class="class_box_cont">
+					<section class="class_box">
+						<h3 class="class_tit01">신청정보</h3>
+						<div class="class_cont04">
+							<div class="class_cont04_date">
+								<p class="class_cont04_txt01"><strong>D-0</strong></p>
+								<p class="class_cont04_txt02">신청기간</p>
+								<p class="class_cont04_txt03">2018-01-01 ~ 2018-01-20</p>
+							</div>
+							<div class="class_cont04_num">
+								<div class="class_cont04_chart" id="class_cont04_chart"></div>
+								<p class="class_cont04_txt02">신청현황</p>
+								<p class="class_cont04_txt03">13명 신청/총 13명</p>
+							</div>
+						</div>
+					</section>
+					<section class="class_box">
+						<h3 class="class_tit01">수업정보</h3>
+						<div class="class_cont05">
+							<ul>
+								<li><strong class="class_cont05_icon01">수업기간</strong><span>2018-01-22 ~ 2018-02-13</span></li>
+								<li><strong class="class_cont05_icon02">수업시간</strong><span>수업차시별 시간 확인</span></li>
+								<li><strong class="class_cont05_icon03">첨부파일</strong><span>준비중</span></li>
+							</ul>
+						</div>
+					</section>
+				</article>
+				<article class="class_box_cont">
+					<section class="class_box">
+						<h3 class="class_tit01">수업소개</h3>
+						<div class="class_cont06">
+							<p>경제교과서 기본 개념 이해 및 시사경제, 생활경제 분석. 경제현상 사례 조사 발표, 경제시사토론을 재밌게 참여할 학생들은 신청해주세요.</p>
+						</div>
+					</section>
+					<section class="class_box">
+						<h3 class="class_tit01">선생님 소개</h3>
+						<div class="class_cont07">
+							<div class="info_teacher">
+								<div class="teacher_img">
+									<img src="../../../images/portal/img_teacher_women.png" alt="하선미 선생님">
+								</div>
+								<div class="teacher_txt">
+									<p class="class_cont07_txt01"><span>하선미</span> 선생님</p>
+									<p>순천여자고등학교</p>
+								</div>
+							</div>
+							<div class="class_cont07_txt02">
+								<p>하선미 선생님 순천여자고등학교</p>
+							</div>
+						</div>
+					</section>
+				</article>
+				<section class="class_box">
+					<h3 class="class_tit01">수업계획</h3>
+					<div class="class_cont08">
+						<ul>
+							<li>[1회-1차시]  오리엔테이션(프로그램사용법),  1/22  15:00~15:40</li>
+							<li>[1회-2차시]  오리엔테이션(수업소개),  1/22  15:40~16:20</li>
+							<li>[2회-3차시]  경제생활과 희소성,  1/23  15:00~15:40</li>
+							<li>[2회-4차시]  기회비용과 합리적 선택(1),  1/23  15:40~16:20</li>
+							<li>[3회-5차시]  기회비용과 합리적 선택(2),  1/24  15:00~15:40</li>
+							<li>[3회-6차시]  분업과 특화(1),  1/24  15:40~16:20</li>
+							<li>[4회-7차시]  분업과 특화(2),  1/29  15:00~15:40</li>
+							<li>[4회-8차시]  가계의 경제활동,  1/29  15:40~16:20</li>
+							<li>[4회-9차시]  주제발표,  1/29  16:20~17:00</li>
+							<li>[5회-10차시]  기업의 역할과 사회적 책임,  1/30  15:00~15:40</li>
+							<li>[5회-11차시]  정부의 경제적 역할,  1/30  15:40~16:20</li>
+							<li>[5회-12차시]  주제발표,  1/30  16:20~17:00</li>
+							<li>[6회-13차시]  시장의 수요공급과 시장가격,  1/31  15:00~15:40</li>
+							<li>[6회-14차시]  잉여와 시장의 효율성,  1/31  15:40~16:20</li>
+							<li>[6회-15차시]  주제발표,  1/31  16:20~17:00</li>
+							<li>[7회-16차시]  시장실패와 정부실패(1),  2/1  15:00~15:40</li>
+							<li>[7회-17차시]  시장실패와 정부실패(2),  2/1  15:40~16:20</li>
+							<li>[7회-18차시]  주제발표,  2/1  16:20~17:00</li>
+							<li>[8회-19차시]  국민경제순환과 경제성장,  2/2  15:00~15:40</li>
+							<li>[8회-20차시]  실업,  2/2  15:40~16:20</li>
+							<li>[9회-21차시]  인플레이션,  2/5  15:00~15:40</li>
+							<li>[9회-22차시]  총수요와 총공급,  2/5  15:40~16:20</li>
+							<li>[10회-23차시]  경기변동과 경제안정화정책(1),  2/6  19:00~19:40</li>
+							<li>[10회-24차시]  경기변동과 경제안정화정책(2),  2/6  19:40~20:20</li>
+							<li>[11회-25차시]  환율의 결정과 변동(1),  2/7  19:00~19:40</li>
+							<li>[11회-26차시]  환율의 결정과 변동(2),  2/7  19:40~20:20</li>
+							<li>[12회-27차시]  국제수지,  2/8  19:00~19:40</li>
+							<li>[12회-28차시]  세계시장과 국제경제,  2/8  19:40~20:20</li>
+							<li>[13회-29차시]  화폐와 금융(1),  2/9  11:00~11:40</li>
+							<li>[13회-30차시]  화폐와 금융(2),  2/9  11:40~12:20</li>
+							<li>[14회-31차시]  지필평가,  2/12  15:00~15:40</li>
+							<li>[14회-32차시]  지필평가 피드백,  2/12  15:40~16:20</li>
+							<li>[15회-33차시]  금융생활의 목표와 합리적 재무 계획,  2/13  15:00~15:40</li>
+							<li>[15회-34차시]  재무계획표 작성 및 발표,  2/13  15:40~16:20</li>
+						</ul>
+					</div>
+				</section>
+				<section class="class_box">
+					<h3 class="class_tit01">관련수업</h3>
+					<ul class="class_cont01">
+						<li>
+							<div class="class_cont01_visual">
+								<div>
+									<p class="class_cont01_icon"><span>2학년</span></p>
+									<img src="../../../images/portal/@thumbnail03.png" alt="물리Ⅱ 기본 개념 이해">
+									<p class="class_cont01_txt01">수업중</p>
+								</div>
+							</div>
+							<div class="class_cont01_info">
+								<div class="info_teacher">
+									<div class="teacher_img">
+										<img src="../../../images/portal/img_teacher_man.png" alt="조상훈 선생님">
+									</div>
+									<div class="teacher_txt">
+										<p class="class_cont01_txt02"><span>조상훈</span> 선생님</p>
+										<p>해남고등학교</p>
+									</div>
+								</div>
+								<p class="class_cont01_txt03"><a href="class02.html">물리Ⅱ 기본 개념 이해</a></p>
+								<p class="class_cont01_txt04">2018-01-10~2018-01-20</p>
+								<p class="class_cont01_txt05">과학기술과 관련된 전공 분야의 진로를 희망하는 학생들에게 물리학의 기초 소양을 기르고, 자연 현상의 탐구와 문제 해결에 적용하는데 도움을 줄 수 있는 발표·토론식 수업입니다.<p>
+							</div>
+						</li>
+						<li>
+							<div class="class_cont01_visual">
+								<div>
+									<p class="class_cont01_icon"><span>2학년</span></p>
+									<img src="../../../images/portal/@thumbnail01.png" alt="화학Ⅱ">
+									<p class="class_cont01_txt01">수업중</p>
+								</div>
+							</div>
+							<div class="class_cont01_info">
+								<div class="info_teacher">
+									<div class="teacher_img">
+										<img src="../../../images/portal/img_teacher_man.png" alt="조재호 선생님">
+									</div>
+									<div class="teacher_txt">
+										<p class="class_cont01_txt02"><span>조재호</span> 선생님</p>
+										<p>해남고등학교</p>
+									</div>
+								</div>
+								<p class="class_cont01_txt03"><a href="class03.html">화학Ⅱ</a></p>
+								<p class="class_cont01_txt04">2018-01-09~2018-01-15</p>
+								<p class="class_cont01_txt05">화학I에서 배운 개념을 바탕으로 다양한 물질의 상태와 화학 변화에 관련된 문제들을 이해하고 창의적이고 과학적으로 해결하는데 필요한 화학 지식을 갖출 수 있도록 하는 수업입니다. 화학I을 2단위 이상 이수하고 심도있게 화학에 대하여 토의하는 것에 흥미를 가지고 참석할 학생은 신청해주세요. <p>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</section>
+		<footer id="footer">
+			<div class="footer_cont_menu">
+				<div class="footer_cont">
+					<nav class="menu">
+						<a href="#">온라인공동교육</a>
+						<a href="#">개인정보처리방침</a>
+						<a href="#">저작권정책</a>
+						<a href="#">이메일주소무단수집거부</a>
+						<a href="#">이용약관</a>
+						<a href="#">사이트맵</a>
+					</nav>
+					<div class="site">
+						<a href="#" class="title">관련사이트</a>
+						<ul>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</div>
+					<a href="#header" class="top_btn">TOP</a>
+				</div>
+			</div>
+			<div class="footer_cont_info">
+				<div class="footer_cont">
+					<div class="icon">
+						<a href="#">교육부</a>
+						<a href="#">한국교욱개발원</a>
+						<a href="#">웹접근성품질마크</a>
+					</div>
+					<div class="info">
+						<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원)</address>
+						<small class="copyright">COPYRIGHT © 2018 KEDI All right reserverd.</small>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- //wrap -->
+</body>
+
+</html>

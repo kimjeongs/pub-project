@@ -1,0 +1,2202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>작업현황판_온라인 공동교육 </title>
+	<style type="text/css">
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		overflow-y: scroll;
+	}
+
+	body {
+		color: #666;
+		background-color: #fff;
+		font: 12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+	}
+
+	a {
+		color: #27e;
+		text-decoration: none;
+	}
+
+	a:focus,
+	a:hover,
+	a:active {
+		text-decoration: underline;
+	}
+
+	.header {
+		padding: .5em;
+	}
+
+	.header h1 {
+		display: inline;
+		margin-right: 1em;
+		color: #000;
+		font-size: 2em;
+	}
+
+	.header ul {
+		display: inline;
+		font-size: 1.5em;
+		list-style: none;
+	}
+
+	.header ul li {
+		display: inline;
+	}
+
+	.group-title {
+		margin-top: 1em;
+		color: #000;
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	table caption {
+		display: none;
+	}
+
+	table th {
+		color: #333;
+		background-color: #eee;
+	}
+
+	table th,
+	table td {
+		padding: 0 .5em;
+		border: 1px solid #ddd;
+		text-align: left;
+	}
+
+	table th,
+	table td.stat,
+	table td.date {
+		text-align: center;
+	}
+
+	table tr.even,
+	table tr td.multi {
+		background-color: #fafafa;
+	}
+
+	table tr.add td {
+		background-color: #fd0;
+	}
+
+	table tr.modify td {
+		background-color: #fffeb4;
+	}
+
+	table tr.hover td {
+		background-color: #eee;
+	}
+
+	table tr.none td {
+		color: #000;
+		background-color: #fc8989;
+	}
+
+	table tr.up td {
+		background-color: #ffe9f5;
+	}
+
+	.section {
+		margin: 0 0 15px;
+	}
+
+	.section .title {
+		margin: 0;
+		padding: 0;
+		color: #000;
+		font-weight: bold;
+		font-size: 100%;
+	}
+
+	body.js .section .title {
+		padding: .5em;
+		border: 1px solid #ccc;
+		background-color: #ddd;
+		cursor: pointer;
+	}
+
+	body.js .section+.section .title {
+		border-top: 0;
+	}
+
+	body.js .section .title .page-count {
+		color: #666;
+		font-weight: normal;
+	}
+
+	body.js .section .content {
+		display: none;
+	}
+
+	#sb-body {
+		border: none !important;
+	}
+
+	table tr.new td {
+		background: #cdfecc;
+	}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	(function($) {
+		$.fn.stat = function(options) {
+			var settings = $.extend({
+					title: 'h2.title',
+					content: 'div.content',
+					files: 'tbody tr',
+					stat: 'td.stat',
+					index: 0,
+					openAll: false,
+					speed: 'fast'
+				}, options),
+				all_sections = this,
+				header = $('div.header');
+			return this.each(function() {
+				var self = this,
+					$self = $(self),
+					title_text = [],
+					completed = 0;
+				self.section_title = $(settings.title, $self);
+				self.content = $(settings.content, $self);
+				self.files = $(settings.files, $self);
+				self.files.each(function() {
+					var stat = $(settings.stat, this);
+					stat.each(function() {
+						var text = $(this).text();
+						if (text) {
+							completed++;
+						}
+					});
+				});
+				self.files
+					.bind('mouseenter', function() {
+						$(this).addClass('hover');
+					})
+					.bind('mouseleave', function() {
+						$(this).removeClass('hover');
+					});
+				title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+				self.section_title.html(title_text.join(''));
+				self.section_title.bind('click', function() {
+					self.content.slideToggle(settings.speed);
+				});
+				if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+					self.content.css('display', 'block');
+				}
+			});
+		};
+		$(document).ready(function() {
+			$('div.section').stat({ openAll: true });
+			$('#total').text($('tbody tr').length);
+			$('tbody tr:even').addClass('even');
+			$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+		});
+	}(jQuery));
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">
+	document.body.className += ' js';
+	</script>
+	<div class="header">
+		<h1>작업현황판</h1>
+	</div>
+	<!-- <p class="guide-link"><a href="./guide/layout.html">layout 가이드 보기</a></p>
+		<p class="guide-link"><a href="./guide/content.html">content 가이드 보기</a></p> -->
+	<div class="section">
+		<h2 class="title">가이드</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>header,footer,location</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/new_layout.html">new_layout.html</a></td>
+						<td class="stat"></td>
+						<td class="date">2018-02-09</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout1.html">layout1.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout2.html">layout2.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout3.html">layout3.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout4.html">layout4.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout5.html">layout5.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/layout6.html">layout6.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>button</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/button.html">button.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>title</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/title.html">title.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>첨부파일</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/add_file.html">add_file.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>popup</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/html_guide/guide/popup.html">popup.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>lms_popup</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/html_guide/guide/lms_popup.html">lms_popup.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>lms_guide</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="./html/html_guide/guide/lms_guide.html">lms_guide.html</a></td>
+						<td class="stat"></td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>lms_첨부파일</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/html_guide/guide/lms_add_file.html">lms_add_file.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="section">
+		<h2 class="title">로그인, 수업신청, 수업상세</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>로그인</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/login.html">login.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="11">수업전체</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class01.html">class01.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="10">상세</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class02.html">class02.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class03.html">class03.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class04.html">class04.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class05.html">class05.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class06.html">class06.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class07.html">class07.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class08.html">class08.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class09.html">class09.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/sample/sample/class10.html">class10.html</a></td>
+						<td class="stat"></td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="section">
+		<h2 class="title">교육포털</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">메인</td>
+						<td>로그아웃</td>
+						<td></td>
+						<td></td>
+						<td>uportal/main</td>
+						<td><a target="_blank" href="html/uportal/main/U_MA_viw01.html">U_MA_viw01.html</a></td>
+						<td class="stat">2018-02-12</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>로그인</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/main/U_MA_viw02.html">U_MA_viw02.html</a></td>
+						<td class="stat">2018-02-12</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">교실온닷 소개</td>
+						<td>사업소개</td>
+						<td></td>
+						<td></td>
+						<td>uportal/service</td>
+						<td><a target="_blank" href="html/uportal/service/U_SI_BP_viw.html">U_SI_BP_viw.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교육운영방식</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/service/U_SI_EP_viw.html">U_SI_EP_viw.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>참여시⋅도교육청</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/service/U_SI_SP_viw.html">U_SI_SP_viw.html</a></td>
+						<td class="stat">2018-03-06</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수강안내</td>
+						<td>수강방법안내</td>
+						<td></td>
+						<td></td>
+						<td>uportal/c_info</td>
+						<td><a target="_blank" href="html/uportal/c_info/U_CP_CH_viw.html">U_CP_CH_viw.html</a></td>
+						<td class="stat">2018-01-25</td>
+						<td class="date">2018-03-10</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업신청</td>
+						<td rowspan="3">수업전체</td>
+						<td>목록</td>
+						<td></td>
+						<td>uportal/c_app</td>
+						<td><a target="_blank" href="html/uportal/c_app/U_CI_CA_lst.html">U_CI_CA_lst.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-07</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/c_app/U_CI_CA_det.html">U_CI_CA_det.html</a></td>
+						<td class="stat">2018-01-11</td>
+						<td class="date">2018-03-07</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/c_app/U_CI_CA_rgt.html">U_CI_CA_rgt.html</a></td>
+						<td class="stat">2018-01-25</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">이용안내</td>
+						<td rowspan="2">공지사항</td>
+						<td>목록</td>
+						<td></td>
+						<td>uportal/useguide</td>
+						<td><a target="_blank" href="html/uportal/useguide/U_SI_NW_lst.html">U_SI_NW_lst.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/useguide/U_SI_NW_det.html">U_SI_NW_det.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>자주하는 질문</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/useguide/U_SI_FQ_viw.html">U_SI_FQ_viw.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<!-- <tr>
+						<td>1:1 원격지원</td>
+						<td>조회</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/useguide/U_SI_OS_viw.html">U_SI_OS_viw.html</a></td>
+						<td class="stat">2018-01-04</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr> -->
+					<tr>
+						<td>사이트맵</td>
+						<td>조회</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/useguide/U_SI_OS_SM.html">U_SI_OS_SM.html</a></td>
+						<td class="stat">2018-03-12</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="24">학생 마이페이지</td>
+						<td>개인화페이지</td>
+						<td>목록</td>
+						<td></td>
+						<td>uportal/student</td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_DB_viw.html">U_SM_DB_viw.html</a></td>
+						<td class="stat">2018-01-25</td>
+						<td class="date">2018-03-28</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">나의수업</td>
+						<td rowspan="2">전체</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MC_CC_lst.html">U_SM_MC_CC_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MC_CC_det.html">U_SM_MC_CC_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-19</td>
+						<td>팝업없음 </td>
+					</tr>
+					<tr>
+						<td>오늘의수업</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MC_TO_lst.html">U_SM_MC_TO_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>진행예정</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MC_CM_lst.html">U_SM_MC_CM_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>진행완료</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MC_EN_lst.html">U_SM_MC_EN_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업신청내역</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_CA_lst.html">U_SM_CA_lst.html</a></td>
+						<td class="stat">2018-01-23</td>
+						<td class="date">2018-02-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_CA_det.html">U_SM_CA_det.html</a></td>
+						<td class="stat">2018-01-23</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_CA_mod.html">U_SM_CA_mod.html</a></td>
+						<td class="stat">2018-01-23</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">문의</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_QA_lst.html">U_SM_QA_lst.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_QA_det.html">U_SM_QA_det.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_QA_rgt.html">U_SM_QA_rgt.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-09</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_QA_mod.html">U_SM_QA_mod.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-09</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">쪽지</td>
+						<td rowspan="2">받은쪽지</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_AL_RE_lst.html">U_SM_AL_RE_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_AL_RE_det.html">U_SM_AL_RE_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">보낸쪽지</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_AL_SE_lst.html">U_SM_AL_SE_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_AL_SE_det.html">U_SM_AL_SE_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>쪽지쓰기</td>
+						<td>등록</td>
+						<td>팝업1</td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_AL_WR_rgt.html">U_SM_AL_WR_rgt.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">회원정보</td>
+						<td rowspan="3"></td>
+						<td>입력</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_ipt.html">U_SM_MP_ipt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_viw.html">U_SM_MP_viw.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_mod.html">U_SM_MP_mod.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-07</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>비밀번호 변경</td>
+						<td>입력</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_CP_ipt.html">U_SM_MP_CP_ipt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">회원탈퇴</td>
+						<td rowspan="2">조회</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_WD_viw01.html">U_SM_MP_WD_viw01.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/student/U_SM_MP_WD_viw02.html">U_SM_MP_WD_viw02.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="68">교사 마이페이지</td>
+						<td>개인화페이지</td>
+						<td></td>
+						<td>목록</td>
+						<td>uportal/teacher</td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_DB_viw.html">U_TM_DB_viw.html</a></td>
+						<td class="stat">2018-01-25</td>
+						<td class="date">2018-03-28</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="14">수업관리</td>
+						<td rowspan="8">수업운영</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_lst.html">U_TM_CM_TA_lst.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-15</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-수업교안</td>
+						<td>팝업1</td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det01.html">U_TM_CM_TA_det01.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-19</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-출석부</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det02.html">U_TM_CM_TA_det02.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-평가</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det03.html">U_TM_CM_TA_det03.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-설문</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det04.html">U_TM_CM_TA_det04.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-퀴즈</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det05.html">U_TM_CM_TA_det05.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-마인드맵</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det06.html">U_TM_CM_TA_det06.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세-수업과제</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_TA_det07.html">U_TM_CM_TA_det07.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>출석부</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_AB_lst.html">U_TM_CM_AB_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>평가</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_CH_lst.html">U_TM_CM_CH_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>설문</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_EV_lst.html">U_TM_CM_EV_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>퀴즈</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_QU_lst.html">U_TM_CM_QU_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>마인드맵</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_MN_lst.html">U_TM_CM_MN_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수업과제</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CM_CT_lst.html">U_TM_CM_CT_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-14</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">수업개설신청</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_lst.html">U_TM_CO_lst.html</a></td>
+						<td class="stat">2018-01-11</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_det.html">U_TM_CO_det.html</a></td>
+						<td class="stat">2018-01-11</td>
+						<td class="date">2018-03-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td rowspan="2">등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_rgt01.html">U_TM_CO_rgt01.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-03-23</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_rgt02.html">U_TM_CO_rgt02.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-02-22</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td rowspan="2">수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_mod01.html">U_TM_CO_mod01.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-02-22</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CO_mod02.html">U_TM_CO_mod02.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-02-22</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td rowspan="16">수업자료관리</td>
+						<td rowspan="3">문제은행</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ED_lst.html">U_TM_CD_ED_lst.html</a></td>
+						<td class="stat">2018-01-29</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ED_det.html">U_TM_CD_ED_det.html</a></td>
+						<td class="stat">2018-01-29</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>평가현황</td>
+						<td>팝업+팝업</td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ER_lst.html">U_TM_CD_ER_lst.html</a></td>
+						<td class="stat">2018-01-29</td>
+						<td class="date">2018-03-28</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">설문</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_PO_lst.html">U_TM_CD_PO_lst.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_PO_det.html">U_TM_CD_PO_det.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-08</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_PO_rgt.html">U_TM_CD_PO_rgt.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-12</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_PO_mod.html">U_TM_CD_PO_mod.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-12</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td rowspan="4">퀴즈</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_QZ_lst.html">U_TM_CD_QZ_lst.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_QZ_det.html">U_TM_CD_QZ_det.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-08</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_QZ_rgt.html">U_TM_CD_QZ_rgt.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-02</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_QZ_mod.html">U_TM_CD_QZ_mod.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-02</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>마인드맵</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_MI_lst.html">U_TM_CD_MI_lst.html</a></td>
+						<td class="stat">2018-02-12</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">기타자료</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ET_lst.html">U_TM_CD_ET_lst.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ET_det.html">U_TM_CD_ET_det.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-03-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ET_rgt.html">U_TM_CD_ET_rgt.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-12</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_CD_ET_mod.html">U_TM_CD_ET_mod.html</a></td>
+						<td class="stat">2018-01-08</td>
+						<td class="date">2018-02-12</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td rowspan="5">문의</td>
+						<td></td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_QA_lst.html">U_TM_QA_lst.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_QA_det.html">U_TM_QA_det.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_QA_rgt.html">U_TM_QA_rgt.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-09</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2"></td>
+						<td rowspan="2">수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_QA_mod.html">U_TM_QA_mod.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date">2018-03-09</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_QA_mod01.html">U_TM_QA_mod01.html</a></td>
+						<td class="stat">2018-02-12</td>
+						<td class="date">2018-03-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="10">알림내역</td>
+						<td rowspan="2">받은알림</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_RE_lst.html">U_TM_AL_RE_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_RE_det.html">U_TM_AL_RE_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">보낸알림</td>
+						<td>목록_쪽지</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_SE_lst.html">U_TM_AL_SE_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세_쪽지</td>
+						<td>팝업1</td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_SE_det.html">U_TM_AL_SE_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>목록_이메일</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_SE_lst02.html">U_TM_AL_SE_lst02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세_이메일</td>
+						<td>팝업1</td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_SE_det02.html">U_TM_AL_SE_det02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>목록_문자</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_SL_lst.html">U_TM_AL_SL_lst.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-02-22</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td rowspan="3">알림보내기</td>
+						<td>목록_쪽지</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_WR_rgt.html">U_TM_AL_WR_rgt.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>목록_이메일</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_WR_rgt02.html">U_TM_AL_WR_rgt02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>목록_문자</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_AL_WR_rgt03.html">U_TM_AL_WR_rgt03.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-29</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td rowspan="5">회원정보</td>
+						<td rowspan="3"></td>
+						<td>입력</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_MP_ipt.html">U_TM_MP_ipt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_MP_viw.html">U_TM_MP_viw.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_MP_mod.html">U_TM_MP_mod.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-07</td>
+						<td>반응형 없음</td>
+					</tr>
+					<tr>
+						<td>비밀번호 변경</td>
+						<td>입력</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_MP_CP_ipt.html">U_TM_MP_CP_ipt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-02-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원탈퇴</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="html/uportal/teacher/U_TM_MP_WD_viw.html">U_TM_MP_WD_viw.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-27</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section">
+		<h2 class="title">교무실(L)</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="20">회원관리</td>
+						<td rowspan="8">학생조회</td>
+						<td>목록</td>
+						<td></td>
+						<td>lms/member/</td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_lst.html">L_CM_ST_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">상세</td>
+						<td>수업현황</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det01.html">L_CM_ST_det01.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>출석부</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det02.html">L_CM_ST_det02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>평가</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det03.html">L_CM_ST_det03.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업없음</td>
+					</tr>
+					<tr>
+						<td>설문</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det04.html">L_CM_ST_det04.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업o</td>
+					</tr>
+					<tr>
+						<td>퀴즈</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det05.html">L_CM_ST_det05.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업o</td>
+					</tr>
+					<tr>
+						<td>과제</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_det06.html">L_CM_ST_det06.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td>팝업없음</td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_ST_mod.html">L_CM_ST_mod.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">교사조회</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_TE_lst.html">L_CM_TE_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-02-02</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">상세</td>
+						<td>학교이동이력</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_TE_det01.html">L_CM_TE_det01.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수업개설신청이력</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_TE_det02.html">L_CM_TE_det02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수업운영현황</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_TE_det03.html">L_CM_TE_det03.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_TE_mod.html">L_CM_TE_mod.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="7">승인관리</td>
+						<td rowspan="2">가입승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_JA_lst.html">L_CM_AE_JA_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_JA_det.html">L_CM_AE_JA_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">탈퇴승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_OA_lst.html">L_CM_AE_OA_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">상세</td>
+						<td>학생</td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_OA_det01.html">L_CM_AE_OA_det01.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사</td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_OA_det02.html">L_CM_AE_OA_det02.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">학교변경승인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_IA_lst.html">L_CM_AE_IA_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/member/L_CM_AE_IA_det.html">L_CM_AE_IA_det.html</a></td>
+						<td class="stat">2018-01-15</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="6">수업개설관리</td>
+						<td rowspan="2">수업개설</td>
+						<td>목록</td>
+						<td></td>
+						<td>lms/c_establish</td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CO_lst.html">L_CE_CO_lst.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-01-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CO_det.html">L_CE_CO_det.html</a></td>
+						<td class="stat">2018-01-12</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">신청자관리</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CR_lst.html">L_CE_CR_lst.html</a></td>
+						<td class="stat">2018-01-09</td>
+						<td class="date">2018-02-04</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CR_det.html">L_CE_CR_det.html</a></td>
+						<td class="stat">2018-01-09</td>
+						<td class="date">2018-01-29</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">수업참여승인</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CV_lst.html">L_CE_CV_lst.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-08</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_establish/L_CE_CV_det.html">L_CE_CV_det.html</a></td>
+						<td class="stat">2018-01-13</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="11">수업운영현황</td>
+						<td rowspan="2">학교수업현황</td>
+						<td>목록</td>
+						<td></td>
+						<td>lms/c_manage</td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_CC_lst.html">L_CR_CC_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_CC_det.html">L_CR_CC_det.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">출결관리</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_DA_lst.html">L_CR_DA_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_DA_det.html">L_CR_DA_det.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">수업과제</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_CT_lst.html">L_CR_CT_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_CT_det.html">L_CR_CT_det.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">퀴즈/설문/평가</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_QC_lst.html">L_CR_QC_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-02-03</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_QC_det.html">L_CR_QC_det.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-28</td>
+						<td>팝업o</td>
+					</tr>
+					<tr>
+						<td rowspan="3">수업문의관리</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_QA_lst.html">L_CR_QA_lst.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-23</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_QA_det.html">L_CR_QA_det.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>수정</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/c_manage/L_CR_QA_mod.html">L_CR_QA_mod.html</a></td>
+						<td class="stat">2018-01-17</td>
+						<td class="date">2018-03-26</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="8">알림관리</td>
+						<td rowspan="2">문자전송</td>
+						<td>등록</td>
+						<td></td>
+						<td>lms/notice</td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_SM_rgt.html">L_AL_SM_rgt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>발송이력</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_SM_lst.html">L_AL_SM_lst.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">이메일발송</td>
+						<td>등록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_EM_rgt.html">L_AL_EM_rgt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_EM_det.html">L_AL_EM_det.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이메일발송이력</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_EM_lst.html">L_AL_EM_lst.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">쪽지발송</td>
+						<td>목록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_TM_lst.html">L_AL_TM_lst.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상세</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_TM_det.html">L_AL_TM_det.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>등록</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/lms/notice/L_AL_TM_rgt.html">L_AL_TM_rgt.html</a></td>
+						<td class="stat">2018-01-16</td>
+						<td class="date">2018-03-21</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section">
+		<h2 class="title">기타</h2>
+		<div class="content">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">1depth</th>
+						<th scope="col">2depth</th>
+						<th scope="col">3depth</th>
+						<th scope="col">4depth</th>
+						<th scope="col">path</th>
+						<th scope="col">file</th>
+						<th scope="col">완료일</th>
+						<th scope="col">수정일</th>
+						<th scope="col">note</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="38">공통</td>
+						<td rowspan="3">로그인</td>
+						<td>로그인</td>
+						<td></td>
+						<td>etc/login</td>
+						<td><a target="_blank" href="html/etc/login/U_CM_LI_ipt.html">U_CM_LI_ipt.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>5회 입력 오류</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/U_CM_LI_srt.html">U_CM_LI_srt.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>비밀번호 재설정 </td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/UT_RP_ipt.html">UT_RP_ipt.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">안내(푸터)</td>
+						<td>개인정보처리방침</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/CM_IN_PI_viw.html">CM_IN_PI_viw.html</a></td>
+						<td class="stat">2018-03-08</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이용약관</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/CM_IN_UA_viw.html">CM_IN_UA_viw.html</a></td>
+						<td class="stat">2018-03-08</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이메일주소무단수집거부</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/CM_IN_EM_viw.html">CM_IN_EM_viw.html</a></td>
+						<td class="stat">2018-03-11</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">아이디/비밀번호 찾기</td>
+						<td>조회</td>
+						<td></td>
+						<td>etc/login</td>
+						<td><a target="_blank" href="html/etc/login/U_CM_FI_ipt.html">U_CM_FI_ipt.html</a></td>
+						<td class="stat">2017-12-29</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>아이디 찾기 완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/U_CM_FI_viw.html">U_CM_FI_viw.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-01-19</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>비밀번호 이메일로 찾기</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/login/U_CM_FP_ipt.html">U_CM_FP_ipt.html</a></td>
+						<td class="stat">2018-01-02</td>
+						<td class="date">2018-02-22</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="7">회원가입</td>
+						<td>회원 유형 선택</td>
+						<td>조회</td>
+						<td>etc/member</td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_MT_srt.html">U_CM_SU_MT_srt.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">학생</td>
+						<td>약관동의</td>
+						<td></td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_ST_agm.html">U_CM_SU_ST_agm.html</a></td>
+						<td class="stat">2017-12-27</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>가입정보입력</td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/member/U_CM_SU_ST_ipt.html">U_CM_SU_ST_ipt.html</a></td>
+						<td class="stat">2018-01-02</td>
+						<td class="date">2018-03-07</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>가입완료안내</td>
+						<td></td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_ST_cpl.html">U_CM_SU_ST_cpl.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="3">교사</td>
+						<td>약관동의</td>
+						<td></td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_TE_agm.html">U_CM_SU_TE_agm.html</a></td>
+						<td class="stat">2017-12-27</td>
+						<td class="date">2018-03-13</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>가입정보입력</td>
+						<td></td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_TE_ipt.html">U_CM_SU_TE_ipt.html</a></td>
+						<td class="stat">2018-01-02</td>
+						<td class="date">2018-03-10</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>가입완료안내</td>
+						<td></td>
+						<td><a target="_blank" href="./html/etc/member/U_CM_SU_TE_cpl.html">U_CM_SU_TE_cpl.html</a></td>
+						<td class="stat">2017-12-26</td>
+						<td class="date">2018-03-11</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>2주년 재동의</td>
+						<td></td>
+						<td></td>
+						<td>etc/reagree</td>
+						<td><a target="_blank" href="./html/etc/reagree/U_CM_EU_viw.html">U_CM_EU_viw.html</a></td>
+						<td class="stat">2018-01-25</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="4">etc</td>
+						<td>지원 브라우저 안내</td>
+						<td>조회</td>
+						<td>etc/info</td>
+						<td><a target="_blank" href="html/etc/info/U_ET_BI_view01.html">U_ET_BI_view01.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>에러</td>
+						<td>조회</td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/info/U_ET_BI_view02.html">U_ET_BI_view02.html</a></td>
+						<td class="stat">2018-01-05</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>404 에러</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/info/UC_ER_viw01.html">UC_ER_viw01.html</a></td>
+						<td class="stat">2018-03-20</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>500 에러</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/info/UC_ER_viw02.html">UC_ER_viw02.html</a></td>
+						<td class="stat">2018-03-20</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="17">메일링</td>
+						<td>학생 답변완료</td>
+						<td></td>
+						<td>etc/email</td>
+						<td><a target="_blank" href="html/etc/email/U_SM_QA_mal.html">U_SM_QA_mal.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사 답변완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_QA_mal.html">U_TM_QA_mal.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>학생 탈퇴승인요청</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_SM_MP_mal01.html">U_SM_MP_mal01.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>학생 탈퇴완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_SM_MP_mal02.html">U_SM_MP_mal02.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>학생 탈퇴반려</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_SM_MP_mal03.html">U_SM_MP_mal03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사 탈퇴승인요청</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_MP_mal01.html">U_TM_MP_mal01.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사 탈퇴완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_MP_mal02.html">U_TM_MP_mal02.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사 탈퇴반려</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_MP_mal03.html">U_TM_MP_mal03.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>교사 학교정보변경 반려</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_MP_mal04.html">U_TM_MP_mal04.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>비밀번호 찾기</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_FP_mal.html">U_CM_FP_mal.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_SU_mail01.html">U_CM_SU_mail01.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 승인대기</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_SU_mail02.html">U_CM_SU_mail02.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 승인완료</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_SU_mail03.html">U_CM_SU_mail03.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 반려</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_SU_mail04.html">U_CM_SU_mail04.html</a></td>
+						<td class="stat">2018-03-21</td>
+						<td class="date"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>2주년재동의</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_EU_mail.html">U_CM_EU_mail.html</a></td>
+						<td class="stat">2018-01-26</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>장기 미이용 계정 복귀</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_CM_EU_mal.html">U_CM_EU_mal.html</a></td>
+						<td class="stat">2018-01-30</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>알림발송</td>
+						<td></td>
+						<td></td>
+						<td><a target="_blank" href="html/etc/email/U_TM_AL_SE_mail01.html">U_TM_AL_SE_mail01.html</a></td>
+						<td class="stat">2018-02-01</td>
+						<td class="date">2018-03-12</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

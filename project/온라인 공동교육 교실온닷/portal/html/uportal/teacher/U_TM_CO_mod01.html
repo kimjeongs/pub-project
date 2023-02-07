@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no"/><!-- 2018-03-06 -->
+	<title>교실온닷</title>
+    <link rel="shortcut icon" href="../../../images/common/favicon.ico">
+	<link rel="stylesheet" href="../../../css/swiper.min.css">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/common.css">
+	<link rel="stylesheet" href="../../../css/uportal.css">
+	<link rel="stylesheet" href="../../../css/etc.css">
+	<link rel="stylesheet" href="../../../css/main.css">
+	<link rel="stylesheet" href="../../../css/popup.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts.js"></script>
+	<script type="text/javascript" src="../../../js/highcharts-more.js"></script>
+	<script type="text/javascript" src="../../../js/solid-gauge.js"></script>
+	<script type="text/javascript" src="../../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../../js/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/common.js"></script>
+	<script>
+		$(document).ready(function() {
+			var dateFormat = "yy-mm-dd",
+			from = $( "#calendarFrom1" ).datepicker().on( "change", function() {
+				to.datepicker( "option", "minDate", getDate( this ) );
+				dayTripper();//2018-01-17
+			}),
+			to = $( "#calendarTo1" ).datepicker().on( "change", function() {
+				from.datepicker( "option", "maxDate", getDate( this ) );
+				dayTripper();//2018-01-17
+			}),
+			from2 = $("#calendarFrom2").datepicker().on("change", function() {
+				to2.datepicker("option", "minDate", getDate(this));
+				dayTripper();//2018-01-17
+			}),
+			to2 = $("#calendarTo2").datepicker().on("change", function() {
+				from2.datepicker("option", "maxDate", getDate(this));
+				dayTripper();//2018-01-17
+			});
+
+			function getDate(element) {
+				var date;
+				try {
+					date = $.datepicker.parseDate(dateFormat, element.value);
+				} catch (error) {
+					date = null;
+				}
+
+				return date;
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<dl id="skiptoMenu">
+		<dt class="hidden"><strong>바로가기 메뉴</strong></dt>
+		<dd>
+			<a href="#container" class="accessibility01">본문 바로가기</a>
+		</dd>
+	</dl>
+	<div id="wrap">
+		<header id="header">
+			<div class="header_cont">
+				<h1><a href="#">교실온닷</a></h1>
+				<div class="my_info">
+					<a href="#" class="login"><span>로그인</span></a>
+					<a href="#" class="join"><span>회원가입</span></a>
+					<a href="#" class="troon">교무실 바로가기</a>
+					<div class="alarm_cont"><a href="#" class="alarm"><span>알림</span></a></div>
+				</div> <!-- 로그인 전 -->
+				<!-- <div class="my_info">
+					<span class="name"><em>홍길동</em>님, 안녕하세요.</span>
+					<a href="#" class="logout"><span>로그아웃</span></a>
+					<a href="#" class="troon">교무실 바로가기</a> 
+					<div class="alarm_cont"><a href="#" class="alarm"><span>알림</span><em>88</em></a></div>
+				</div> -->  <!-- 로그인 후 -->
+			</div>
+			<nav id="gnb">
+                <div class="gnb">
+                    <div class="gnb_cont">
+                        <ul class="gnb_link">
+                            <li class="menu1">
+                                <span tabindex="0">교실온닷소개</span><!-- 2018-03-06 -->
+                                <div class="gnb_sub_menu">
+                                    <ul>
+                                        <li><a href="#">사업소개</a></li>
+                                        <li><a href="#">교육운영방식</a></li><!-- 2018-03-06 -->
+                                        <li><a href="#">참여 시&middot;도교육청</a></li><!-- 2018-03-06 -->
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu2">
+                                <span tabindex="0">수강안내</span>
+                                <div class="gnb_sub_menu">
+                                    <ul>
+                                        <li><a href="#">수강방법안내</a></li>
+                                        <!-- 2018-03-06 <li><a href="#">수업스케줄</a></li> -->
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu3">
+                                <span tabindex="0">수업신청</span>
+                                <div class="gnb_sub_menu">
+                                    <ul>
+                                        <li><a href="#">수업전체</a></li>
+                                        <!-- <li><a href="#">수업일정</a></li> -->
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu4">
+                                <span tabindex="0">이용안내</span>
+                                <div class="gnb_sub_menu">
+                                    <ul>
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">자주하는질문</a></li>
+                                        <!-- <li><a href="#">원격지원</a></li> -->
+                                        <li><a href="#">사이트맵</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu5">
+                                <span tabindex="0">마이페이지</span>
+                                <!-- <div class="gnb_sub_menu" style="display: none;">
+                                    <ul>
+                                        <li><a href="#">마이홈</a></li>
+                                        <li><a href="#">나의수업</a></li>
+                                        <li><a href="#">수업신청내역</a></li>
+                                        <li><a href="#">문의</a></li>
+                                        <li>
+                                            <a href="#">쪽지</a>
+                                            <ul class="smenu">
+                                                <li><a href="#">받은쪽지</a></li>
+                                                <li><a href="#">보낸쪽지</a></li>
+                                                <li><a href="#">쪽지쓰기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">회원정보</a></li>
+                                    </ul>
+                                </div> -->
+                                <div class="gnb_sub_menu">
+                                    <ul>
+                                        <li><a href="#">마이홈</a></li>
+                                        <li><a href="#">수업관리</a></li>
+                                        <li><a href="#">수업개설신청</a></li>
+                                        <li>
+                                            <a href="#">자료관리</a>
+                                            <ul class="smenu">
+                                                <li><a href="#">문제은행</a></li>
+                                                <li><a href="#">설문</a></li>
+                                                <li><a href="#">퀴즈</a></li>
+                                                <li><a href="#">마인드맵</a></li>
+                                                <li><a href="#">기타자료</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">문의</a></li>
+                                        <li class="on">
+                                            <a href="#">알림</a>
+                                            <ul class="smenu">
+                                                <li><a href="#">받은알림</a></li>
+                                                <li><a href="#">보낸알림</a></li>
+                                                <li><a href="#">알림쓰기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">회원정보</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="view_all_menu_cont" id="allMenuOpen">
+                            <div class="all_menu_open"><a href="#allMenuView"><span>전체메뉴 보기</span></a></div>
+                            <div class="all_menu_wrap" id="allMenuView" tabindex="0">
+                                <div class="all_menu">
+                                    <ul>
+                                        <li>
+                                            <div class="all_smenu">
+                                                <ul>
+                                                    <li><a href="#">사업소개</a></li>
+                                                    <li><a href="#">교육운영방식</a></li><!-- 2018-03-06 -->
+                                                    <li><a href="#">참여 시&middot;도교육청</a></li><!-- 2018-03-06 -->
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="all_smenu">
+                                                <ul>
+                                                    <li><a href="#">수강방법안내</a></li>
+                                                    <!-- 2018-03-06 <li><a href="#">수업스케줄</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="all_smenu">
+                                                <ul>
+                                                    <li><a href="#">수업전체</a></li>
+                                                    <!-- <li><a href="#">수업일정</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="all_smenu">
+                                                <ul>
+                                                    <li><a href="#">공지사항</a></li>
+                                                    <li><a href="#">자주하는질문</a></li>
+                                                    <!-- <li><a href="#">1:1 원격지원</a></li> -->
+                                                    <li><a href="#">사이트맵</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="all_smenu"  style="display: none;">
+                                                <ul>
+                                                    <li><a href="#">마이홈</a></li>
+                                                    <li><a href="#">나의수업</a></li>
+                                                    <li><a href="#">수업신청내역</a></li>
+                                                    <li><a href="#">문의</a></li>
+                                                    <li>
+                                                        <a href="#">쪽지</a>
+                                                        <ul class="smenu">
+                                                            <li><a href="#">받은쪽지</a></li>
+                                                            <li><a href="#">보낸쪽지</a></li>
+                                                            <li><a href="#">쪽지쓰기</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">회원정보</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="all_smenu">
+                                                <ul>
+                                                    <li><a href="#">마이홈</a></li>
+                                                    <li><a href="#">수업관리</a></li>
+                                                    <li><a href="#">수업개설신청</a></li>
+                                                    <li>
+                                                        <a href="#">자료관리</a>
+                                                        <ul class="smenu">
+                                                            <li><a href="#">문제은행</a></li>
+                                                            <li><a href="#">설문</a></li>
+                                                            <li><a href="#">퀴즈</a></li>
+                                                            <li><a href="#">마인드맵</a></li>
+                                                            <li><a href="#">기타자료</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">문의</a></li>
+                                                    <li>
+                                                        <a href="#">알림</a>
+                                                        <ul class="smenu">
+                                                            <li><a href="#">받은알림</a></li>
+                                                            <li><a href="#">보낸알림</a></li>
+                                                            <li><a href="#">알림쓰기</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">회원정보</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class=" all_menu_close"><a href="#allMenuView" ><span>전체메뉴 닫기</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- 2018-02-19 -->
+            <nav id="gnbMo">
+                <div class="all_menu_open_mo">
+                    <a href="#viewAllMenuContMo">전체메뉴 열기</a>
+                </div>
+                <div class="view_all_menu_cont_mo" id="viewAllMenuContMo" tabindex="0">
+                    <div class="all_menu_wrap_mo">
+                        <div class="my_info_login_mo">
+                            <a href="#" class="login_mo">로그인</a>
+                            <a href="#" class="join_mo">회원가입</a>
+                        </div>
+                        <!-- <div class="my_info_logout_mo">
+                            <p>홍길동님, 안녕하세요.</p>
+                            <a href="#" class="logout_mo">로그아웃</a>
+                        </div> -->
+                        <div class="my_info_link">
+                            <!-- <a href="#">수업 찾기</a> -->
+                            <a href="#">교무실 바로가기</a>
+                        </div>
+                        <div class="all_menu" id="allMenu">
+                            <ul class="depth01">
+                                <li>
+                                    <a href="#" class="depth01">메인으로 가기</a>
+                                </li>
+                                <li>
+                                    <span class="depth01">교실온닷소개</span><!-- 2018-03-06 -->
+                                    <ul class="depth02">
+                                        <li><a href="#">사업소개</a></li>
+                                        <li><a href="#">교육운영방식</a></li><!-- 2018-03-06 -->
+                                        <li><a href="#">참여 시&middot;도교육청</a></li><!-- 2018-03-06 -->
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth01">수강안내</span>
+                                    <ul class="depth02">
+                                        <li><a href="#">수강방법안내</a></li>
+                                        <!-- 2018-03-06 <li><a href="#">수업스케줄</a></li> -->
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth01">수업신청</span>
+                                    <ul class="depth02">
+                                        <li><a href="#">수업전체</a></li>
+                                        <!-- <li><a href="#">수업일정</a></li> -->
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth01">이용안내</span>
+                                    <ul class="depth02">
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">자주하는질문</a></li>
+                                        <!-- <li><a href="#">원격지원</a></li> -->
+                                        <li><a href="#">사이트맵</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth01">마이페이지</span>
+                                    <!-- <ul class="depth02">
+                                        <li><a href="#">마이홈</a></li>
+                                        <li><a href="#">나의수업</a></li>
+                                        <li><a href="#">수업신청내역</a></li>
+                                        <li><a href="#">문의</a></li>
+                                        <li>
+                                            <a href="#">쪽지</a>
+                                            <ul>
+                                                <li><a href="#">받은쪽지</a></li>
+                                                <li><a href="#">보낸쪽지</a></li>
+                                                <li><a href="#">쪽지쓰기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">회원정보</a></li>
+                                    </ul> -->
+                                    <ul class="depth02">
+                                        <li><a href="#">마이홈</a></li>
+                                        <li><a href="#">수업관리</a></li>
+                                        <li><a href="#">수업개설신청</a></li>
+                                        <li>
+                                            <a href="#">자료관리</a>
+                                            <ul class="depth03">
+                                                <li><a href="#">문제은행</a></li>
+                                                <li><a href="#">설문</a></li>
+                                                <li><a href="#">퀴즈</a></li>
+                                                <li><a href="#">마인드맵</a></li>
+                                                <li><a href="#">기타자료</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">문의</a></li>
+                                        <li>
+                                            <a href="#">알림</a>
+                                            <ul class="depth03">
+                                                <li><a href="#">받은알림</a></li>
+                                                <li><a href="#">보낸알림</a></li>
+                                                <li><a href="#">알림쓰기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">회원정보</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="all_menu_close_mo"><a href="#viewAllMenuContMo">전체메뉴 닫기</a></div>
+                </div>
+            </nav>
+            <!-- //2018-02-19 -->
+		</header>
+		<section id="container">
+			<div class="content_visual sub_title5">
+				<div class="location">
+					<div class="location_cont">
+						<div class="location_in">
+							<a href="#">메인페이지가기 </a>
+							<div class="menu">
+								<a href="#">마이페이지</a>
+								<ul>
+									<li><a href="#">교실온닷소개</a></li><!-- 2018-03-06 -->
+									<li><a href="#">수강안내</a></li>
+									<li><a href="#">수업신청</a></li>
+									<li><a href="#">이용안내</a></li>
+								</ul>
+							</div>
+							<div class="menu">
+								<a href="#">수업개설신청</a>
+								<ul>
+									<li><a href="#">마이홈</a></li>
+									<li><a href="#">수업관리</a></li>
+									<li><a href="#">자료관리</a></li>
+									<li><a href="#">문의내역</a></li>
+									<li><a href="#">알림</a></li>
+									<li><a href="#">회원정보</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content_title_wrap">
+					<div class="content_title"><h2>수업개설신청</h2></div>
+				</div>
+			</div>
+			<section class="contents">
+				<div class="pc-cont02"><!-- 2018-02-22 -->
+					<ol class="step_type1 col2 mgt_none"><!--2018-02-12-modify-->
+						<li>
+							<span class="on">
+								<em>STEP 01</em><strong>수업 기본정보 및 부가정보 작성</strong>
+							</span>
+						</li>
+						<li>
+							<span>
+								<em>STEP 02</em><strong>수업 목차 정보 작성</strong>
+							</span>
+						</li>
+					</ol>
+					<h3 class="s_title">수업 기본정보</h3>
+					<p class="right_text_area">* 필수항목</p><!-- 2018-01-19 -->
+					<div class="board_type1">
+						<table>
+							<caption>수업개설 수정</caption>
+							<colgroup>
+								<col style="width:13%">
+								<col style="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<label for="eduTitle">수업명</label><span>*</span>
+										<!-- 2018-01-19 -->
+									</th>
+									<td>
+										<span class="form_30">
+											<input type="text" id="eduTitle" class="text" title="수업명 입력">
+										</span>
+									</td>
+								</tr>
+								<tr><!-- 2018-01-19 -->
+									<th scope="row">담당교사</th>
+									<td>김나라</td>
+								</tr>
+								<tr><!-- 2018-01-19 -->
+									<th scope="row">
+										<label for="eduS">교육과정</label>
+									</th>
+									<td>2009 개정교육과정 &gt;  수학2</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnUn">수업 단위수</label><span>*</span>
+										<!-- 2018-01-19 -->
+									</th>
+									<td>
+										<span class="form_15">
+											<input type="text" id="lesnUn" class="text" title="수업단위수 입력">
+										</span> (이수시간 :
+										<span class="form_10">
+											<input type="text" id="" class="text" title="이수시간">
+										</span> 시간)
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnType">수업종류</label>
+									</th>
+									<td>
+										<span class="form_15">
+											<select id="lesnType" class="select" title="수업종류 선택">
+												<option value="">온라인</option>
+											</select>
+										</span><!-- 2018-01-19 -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="calendarFrom2">모집기간</label>
+									</th>
+									<td>
+										<span class="form_15"><input type="text" id="calendarFrom2" class="text calendar" title="날짜직접입력" placeholder="yy-mm-dd"></span><!-- 2018-01-17 --> ~
+										<span class="form_15"><input type="text" id="calendarTo2" class="text calendar" title="날짜직접입력" placeholder="yy-mm-dd"></span><!-- 2018-01-17 -->
+										<span class="note_board_org">* 모집기간 최소단위는 3일입니다.</span><!-- 2018-01-19 -->
+									</td>
+								</tr>
+								<!-- 수업일정을 매주로 선택했을 경우 -->
+								<tr>
+									<th scope="row">
+										<label for="lesnSch">수업일정</label>
+									</th>
+									<td>
+										<span class="form_radio_cont">
+											<input type="radio" name="term" id="week1" checked="checked"><label for="week1">매주</label>
+											<input type="radio" name="term" id="week2"><label for="week2">격주</label>
+											<input type="radio" name="term" id="week3"><label for="week3">매월</label>
+											<input type="radio" name="term" id="week4"><label for="week4">비정기</label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnTime">수업시간</label><span>*</span>
+										<!-- 2018-01-19 -->
+									</th>
+									<td>
+										<div class="class_time_cont">
+											<em class="tit">요일선택</em>
+											<span class="form_radio_cont">
+												<input type="checkbox" name="day" id="day1"><label for="day1">일</label>
+												<input type="checkbox" name="day" id="day2"><label for="day2">월</label>
+												<input type="checkbox" name="day" id="day3"><label for="day3">화</label>
+												<input type="checkbox" name="day" id="day4"><label for="day4">수</label>
+												<input type="checkbox" name="day" id="day5"><label for="day5">목</label>
+												<input type="checkbox" name="day" id="day6"><label for="day6">금</label>
+												<input type="checkbox" name="day" id="day7"><label for="day7">토</label>
+											</span>
+										</div>
+										<div class="class_time_cont">
+											<label class="tit" for="lesnTime1">시작시간</label>
+											<span class="form_10">
+												<select class="select" title="시간" id="lesnTime1">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+											<label class="tit" for="lesnTime2">종료시간</label>
+											<span class="form_10">
+												<select class="select" title="시간" id="lesnTime2">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+										</div>
+									</td>
+								</tr>
+								<!-- 수업일정을 격주로 선택했을 경우 -->
+								<!-- <tr>
+									<th scope="row">
+										<label for="lesnSch">수업일정</label>
+									</th>
+									<td>
+										<span class="form_radio_cont">
+											<input type="radio" name="term" id="week1"><label for="week1">매주</label>
+											<input type="radio" name="term" id="week2" checked="checked"><label for="week2">격주</label>
+											<input type="radio" name="term" id="week3"><label for="week3">매월</label>
+											<input type="radio" name="term" id="week4"><label for="week4">비정기</label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnTime">수업시간</label><span>*</span>
+									</th>
+									<td>
+										<div class="class_time_cont">
+											<em class="tit">요일선택</em>
+											<span class="form_radio_cont">
+												<input type="checkbox" name="day" id="day1"><label for="day1">일</label>
+												<input type="checkbox" name="day" id="day2"><label for="day2">월</label>
+												<input type="checkbox" name="day" id="day3"><label for="day3">화</label>
+												<input type="checkbox" name="day" id="day4"><label for="day4">수</label>
+												<input type="checkbox" name="day" id="day5"><label for="day5">목</label>
+												<input type="checkbox" name="day" id="day6"><label for="day6">금</label>
+												<input type="checkbox" name="day" id="day7"><label for="day7">토</label>
+											</span>
+										</div>
+										<div class="class_time_cont">
+											<em class="tit">시작시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+											<em class="tit">종료시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+										</div>
+									</td>
+								</tr> -->
+								<!-- 수업일정을 매월로 선택했을 경우 -->
+								<!-- <tr>
+									<th scope="row">
+										<label for="lesnSch">수업일정</label>
+									</th>
+									<td>
+										<span class="form_radio_cont">
+											<input type="radio" name="term" id="week1"><label for="week1">매주</label>
+											<input type="radio" name="term" id="week2"><label for="week2">격주</label>
+											<input type="radio" name="term" id="week3" checked="checked"><label for="week3">매월</label>
+											<input type="radio" name="term" id="week4"><label for="week4">비정기</label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnTime">수업시간</label><span>*</span>
+									</th>
+									<td>
+										<div class="class_time_cont">
+											<em class="tit">주선택</em>
+											<span class="form_radio_cont">
+												<input type="radio" name="rweek" id="rweek1" checked="checked"><label for="rweek1">첫째주</label>
+												<input type="radio" name="rweek" id="rweek2"><label for="rweek2">둘째주</label>
+												<input type="radio" name="rweek" id="rweek3"><label for="rweek3">셋째주</label>
+												<input type="radio" name="rweek" id="rweek4"><label for="rweek4">네째주</label>
+												<input type="radio" name="rweek" id="rweek5"><label for="rweek5">다섯째주</label>
+											</span>
+										</div>
+										<div class="class_time_cont">
+											<em class="tit">요일선택</em>
+											<span class="form_radio_cont">
+												<input type="checkbox" name="day" id="day1"><label for="day1">일</label>
+												<input type="checkbox" name="day" id="day2"><label for="day2">월</label>
+												<input type="checkbox" name="day" id="day3"><label for="day3">화</label>
+												<input type="checkbox" name="day" id="day4"><label for="day4">수</label>
+												<input type="checkbox" name="day" id="day5"><label for="day5">목</label>
+												<input type="checkbox" name="day" id="day6"><label for="day6">금</label>
+												<input type="checkbox" name="day" id="day7"><label for="day7">토</label>
+											</span>
+										</div>
+										<div class="class_time_cont">
+											<em class="tit">시작시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+											<em class="tit">종료시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+										</div>
+									</td>
+								</tr> -->
+								<!-- 수업일정을 비정기로 선택했을 경우 -->
+								<!-- <tr>
+									<th scope="row">
+										<label for="lesnSch">수업일정</label>
+									</th>
+									<td>
+										<span class="form_radio_cont">
+											<input type="radio" name="term" id="week1"><label for="week1">매주</label>
+											<input type="radio" name="term" id="week2"><label for="week2">격주</label>
+											<input type="radio" name="term" id="week3"><label for="week3">매월</label>
+											<input type="radio" name="term" id="week4" checked="checked"><label for="week4">비정기</label>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="lesnTime">수업시간</label><span>*</span>
+									</th>
+									<td>
+										<div class="class_time_cont">
+											<em class="tit">주선택</em>
+											<span class="form_radio_cont">
+												<input type="radio" name="rweek" id="rweek1" checked="checked"><label for="rweek1">3일마다</label>
+												<input type="radio" name="rweek" id="rweek2"><label for="rweek2">5일마다</label>
+												<input type="radio" name="rweek" id="rweek3"><label for="rweek3">10일마다</label>
+												<input type="radio" name="rweek" id="rweek4"><label for="rweek4">15일마다</label>
+											</span>
+										</div>
+										<div class="class_time_cont">
+											<em class="tit">시작시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+											<em class="tit">종료시간</em>
+											<span class="form_10">
+												<select class="select" title="시간">
+													<option value="">00</option>
+												</select>
+											</span>시
+											<span class="form_10">
+												<select class="select" title="분">
+													<option value="">00</option>
+												</select>
+											</span>분
+										</div>
+									</td>
+								</tr> -->
+								<tr>
+									<th scope="row">
+										<label for="grd">모집대상</label><span>*</span>
+										<!-- 2018-01-19 -->
+									</th>
+									<td>
+										<span class="form_radio_cont"><!-- 2018-01-19 -->
+											<input type="checkbox" name="grd" id="grd2" checked="checked"><label for="grd2">1학년</label>
+											<input type="checkbox" name="grd" id="grd3"><label for="grd3">2학년</label>
+											<input type="checkbox" name="grd" id="grd4"><label for="grd4">3학년</label>
+										</span>
+									</td>
+								</tr>
+								<tr><!-- 2018-02-05 -->
+									<th scope="row">
+										<label for="grdnum1">모집인원</label><span>*</span>
+										<!-- 2018-01-19 -->
+									</th>
+									<td>
+										<span class="form_10"><!-- 2018-02-05 -->
+											<input type="text" id="grdnum1" class="text" title="모집인원 입력">
+										</span>
+										<span class="note_board_org">* 최대 40명까지 설정이 가능합니다. </span><!-- 2018-01-19 -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<label for="req">필수선수과목</label>
+									</th>
+									<td>
+										<input type="radio" name="req" id="req2" checked="checked"><label for="req2"class="label">없음</label><!-- 2018-01-19 -->
+										<input type="radio" name="req" id="req1"><label for="req1"class="label">있음</label>
+										<span class="form_20"><!-- 2018-02-08 -->
+											<input type="text" id="req" class="text" placeholder="과목명 입력">
+										</span>
+										
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="schoolArea">운영학교</label><span>*</span>
+										<!-- 2018-01-19 --></th>
+									<td>
+										<span class="form_20">
+											<select id="schoolArea" class="select">
+												<option value="">지역</option>
+											</select>
+										</span>
+										<span class="form_30"><input type="text" class="text"  title="지역" disabled="disabled"></span>
+										<span class="form_20">
+											<select  title="학교선택"  class="select">
+												<option value="">선택</option>
+											</select>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="schootj">대상학교</label><span>*</span>
+										<!-- 2018-01-19 --></th>
+									<td>
+										<span class="form_20">
+											<select id="schootj" class="select">
+												<option value="">지역</option>
+											</select>
+										</span>
+										<span class="form_30"><input type="text" class="text"  title="지역" disabled="disabled"></span>
+										<span class="form_20">
+											<select  title="학교선택"  class="select">
+												<option value="">선택</option>
+											</select>
+										</span>
+										<button type="button" class="btn_board_wh">추가</button>
+										<ul class="shcool_list"><!-- 2018-01-19 -->
+											<li>
+												<span>(서울)양재고등학교</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>($교육청두자리$) $학교명$</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>(서울)양재고등학교</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>(서울)양재고등학교</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+											<li>
+												<span>(서울)양재고등학교</span>
+												<button type="button" class="btn_list_del">삭제</button>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="teamT">팀티칭여부</label></th>
+									<td>
+										<input type="radio" name="req" id="teamN" checked="checked"><label for="teamN" class="label">없음</label><!-- 2018-01-19 -->
+										<input type="radio" name="teamT" id="teamY"><label for="teamY" class="label">Yes</label>
+										<span class="form_20">
+											<input type="text" class="text" title="팀티칭 입력">
+										</span>
+										<a href="#" class="btn_view">불러오기</a><!-- 2018-01-19 -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">수업계획서<span>*</span>
+										<!-- 2018-01-19 --></th>
+									<td>
+										<div class="file_view">
+											<div class="btn_file_cont"> <!-- 2018-02-05 -->
+												<label for="exfile1">파일찾기</label> <input type="file" id="exfile1"> 
+											</div>
+											<span class="note">(개별 파일 용량 최대 2MB, doc, hwp, pdf 유형의 한 개의 파일만 등록이 가능합니다. )</span><!-- 2018-01-19 -->
+										</div>
+										<!-- <a href="#" class="attach_file hwp">교과서 본문자료.hwp</a>
+										<button type="button" class="btn_list_del">삭제</button> -->
+										<!-- 2018-02-22 -->
+										<ul class="add_file_list add_file_list_type02">
+											<li class="jpg">
+												<div>
+													<span class="add_file_txt">기능변경안내.ppt</span>
+													<button type="button" class="btn_del">삭제</button>
+												</div>
+												<span class="vol">000MB</span>
+											</li>
+										</ul>
+										<!-- //2018-02-22 -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="cInfo">수업 소개</label><span>*</span>
+										<!-- 2018-01-19 --></th>
+									<td>
+										<span class="form_20">
+											<select id="cInfo" class="select">
+												<option value="">소개예시1</option>
+											</select>
+										</span>
+										<textarea class="textarea form_tspace" cols="10" rows="10" title="수업소개입력" style="height:68px;"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><label for="tInfo">선생님 소개</label><span>*</span>
+										<!-- 2018-01-19 --></th>
+									<td>
+										<textarea class="textarea" id="tInfo" cols="10" rows="10" title="선생님 소개 입력" style="height:68px;"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">수업이미지</th>
+									<td><!-- 2018-01-19 -->
+										<div class="file_view">
+											<div class="btn_file_cont"> <!-- 2018-02-05 -->
+												<label for="exfile2">파일찾기</label> <input type="file" id="exfile2"> 
+											</div>
+											<span class="note">(개별 파일 용량 최대 2MB, jpg, png, 파일만 등록이 가능합니다.  (최적화 가로 : OOO px , 세로 : OOO px))</span>
+										</div>
+										<!-- <span><a href="#" class="attach_file jpg">교과서 본문자료.jpg</a>
+										<button type="button" class="btn_list_del">삭제</button></span>
+										<span><a href="#" class="attach_file png">교과서 본문자료.gif</a>
+										<button type="button" class="btn_list_del">삭제</button></span> -->
+										<!-- 2018-02-22 -->
+										<ul class="add_file_list add_file_list_type02">
+											<li class="jpg">
+												<div>
+													<span class="add_file_txt">기능변경안내.ppt</span>
+													<button type="button" class="btn_del">삭제</button>
+												</div>
+												<span class="vol">000MB</span>
+											</li>
+										</ul>
+										<!-- //2018-02-22 -->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_area_center">
+						<a href="#" class="btn_sbl">저장후 다음</a>
+						<a href="#" class="btn_swh">중간저장</a>
+						<a href="#" class="btn_swh">취소</a>
+					</div>
+				</div><!-- 2018-02-22 -->
+				<!-- 2018-02-22 -->
+				<div class="tb-cont mo-cont">
+					<div class="mobile_none_cont">
+						<p><em>현재 해상도</em>에서는<br> 이용하실 수 없습니다.</p>
+					</div> 
+				</div>
+				<!-- //2018-02-22 -->
+			</section>
+		</section>
+		<footer id="footer">
+			<div class="footer_cont_menu">
+				<div class="footer_cont">
+					<!-- 2018-03-06 -->
+					<nav class="menu">
+						<a href="#">개인정보처리방침</a>
+						<a href="#">이용약관</a>
+						<a href="#">이메일주소무단수집거부</a>
+						<a href="#">사이트맵</a>
+					</nav>
+					<!-- //2018-03-06 -->
+					<div class="site">
+						<a href="#" class="title">관련사이트</a>
+						<ul>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</div>
+					<a href="#header" class="top_btn">TOP</a>
+				</div>
+			</div>
+			<div class="footer_cont_info">
+				<div class="footer_cont">
+					<div class="icon">
+						<a href="#">교육부</a>
+						<a href="#">한국교욱개발원</a>
+						<a href="#">웹접근성품질마크</a>
+					</div>
+					<div class="info">
+						<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원) | 이메일 admin@classon.kr</address><!-- 2018-03-09 -->
+						<small class="copyright">COPYRIGHT © 2018 KEDI All right reserverd.</small>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- //wrap -->
+</body>
+
+</html>

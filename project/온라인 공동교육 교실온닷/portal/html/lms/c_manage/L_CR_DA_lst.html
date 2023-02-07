@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>수업운영현황</title>
+	<link rel="shortcut icon" href="../../../images/lms/favicon.ico">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/lms.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/lms.js"></script>
+	<script>
+		$(document).ready(function() {
+			var dateFormat = "yy-mm-dd",
+				from = $("#calendarFrom").datepicker().on("change", function() {
+					to.datepicker("option", "minDate", getDate(this));
+				}),
+				to = $("#calendarTo").datepicker().on("change", function() {
+					from.datepicker("option", "maxDate", getDate(this));
+				});
+
+			function getDate(element) {
+				var date;
+				try {
+					date = $.datepicker.parseDate(dateFormat, element.value);
+				} catch (error) {
+					date = null;
+				}
+
+				return date;
+			}
+		});
+
+	</script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../../images/lms/logo01.png" alt="교실온닷"></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<!-- 2018-02-03 <p class="login_datetime">2017-12-01 16:30</p> -->
+					<p class="portal_go"><a href="#">학교포털 바로가기</a></p><!-- 2018-02-03 -->
+				</div>
+			</div>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청승인</a></li>
+										<li><a href="#">수업참여승인</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth03.png" alt="수업운영현황" title="수업운영현황"></span>
+								<a href="#" class="depth1_03">수업운영현황</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<li><a href="#">출결관리</a></li>
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자전송</a></li>
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">수업운영관리</a> >
+				<strong>출결현황</strong>
+			</div>
+			<h2 class="sub_title">출결현황</h2>
+			<div class="data_table">
+				<table>
+					<caption>수업명 과목 담당교사 출석률 수업기간 있는 리스트</caption>
+					<colgroup>
+						<col style="width:11.3%;">
+						<col>
+						<col style="width:11.3%;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><label for="listTitle01">수업명</label></th>
+							<td>
+								<input type="text" id="listTitle01" class="input_txt">
+							</td>
+							<th scope="row"><label for="listTitle02">과목</label></th>
+							<td>
+								<input type="text" id="listTitle02" class="input_txt"><!-- 2018-02-03 -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="listTitle03">담당교사</label></th>
+							<td>
+								<input type="text" id="listTitle03" class="input_txt">
+							</td>
+							<th scope="row"><label for="listTitle04">출석률</label></th>
+							<td>
+								<select id="listTitle04" class="select01" style="width: 100%;">
+									<option>전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="calendarFrom">수업기간</label></th>
+							<td colspan="3">
+								<span class="radio01">
+									<input type="text" id="calendarFrom" class="calendar" title="날짜선택"> 
+									<span class="txt_color02">~</span>
+									<input type="text" id="calendarTo" class="calendar last" title="날짜선택">
+									<input type="radio" name="term2" id="radioCheck07">
+									<label for="radioCheck07">오늘</label>
+									<input type="radio" name="term2" id="radioCheck08">
+									<label for="radioCheck08">7일</label>
+									<input type="radio" name="term2" id="radioCheck09">
+									<label for="radioCheck09">1개월</label>
+									<input type="radio" name="term2" id="radioCheck10">
+									<label for="radioCheck10">6개월</label>
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn_area btn_center">
+				<button class="btn01 btn01_01">검색</button>
+				<button class="btn01 btn01_02">초기화</button>
+			</div>
+			<strong class="sub_list_title">수업상세현황</strong>
+			<div class="data_table data_table_col">
+				<table>
+					<caption>전체 진행예정 진행확정 진행대기 진행중 진행완료</caption>
+					<colgroup>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">전체</th>
+							<th scope="col">진행예정</th>
+							<th scope="col">진행확정</th>
+							<th scope="col">진행대기</th>
+							<th scope="col">진행중</th>
+							<th scope="col">진행완료</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="#">20</a></td>
+							<td><a href="#">1</a></td>
+							<td><a href="#">1</a></td>
+							<td><a href="#">10</a></td>
+							<td><a href="#">5</a></td>
+							<td><a href="#">3</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="data_table data_table_col">
+				<table>
+					<caption>번호 과목 수업명 담당교사 차시 수업일 시간 상태 출석률</caption>
+					<colgroup>
+						<col style="width: 10%;">
+						<col style="width: 10%;">
+						<col>
+						<col style="width: 10%;">
+						<col style="width: 10%;">
+						<col style="width: 10%;">
+						<col>
+						<col style="width: 10%;">
+						<col style="width: 10%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col">과목</th>
+							<th scope="col">수업명</th>
+							<th scope="col">담당교사</th>
+							<th scope="col">차시</th>
+							<th scope="col">수업일</th>
+							<th scope="col">시간</th>
+							<th scope="col">상태</th>
+							<th scope="col">출석률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>15</td>
+							<td>수학</td>
+							<td><a href="#">수업명이 출력됩니다</a></td>
+							<td>홍길동</td>
+							<td>1-1</td>
+							<td>2017-01-04</td>
+							<td>09:00~09:50 (40분)</td>
+							<td>진행완료</td>
+							<td>100.0</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td>수학</td>
+							<td><a href="#">수업명이 출력됩니다</a></td>
+							<td>홍길동</td>
+							<td>1-1</td>
+							<td>2017-01-04</td>
+							<td>09:00~09:50 (40분)</td>
+							<td>진행완료</td>
+							<td>100.0</td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>수학</td>
+							<td><a href="#">수업명이 출력됩니다</a></td>
+							<td>홍길동</td>
+							<td>1-1</td>
+							<td>2017-01-04</td>
+							<td>09:00~09:50 (40분)</td>
+							<td>진행완료</td>
+							<td>100.0</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>수학</td>
+							<td><a href="#">수업명이 출력됩니다</a></td>
+							<td>홍길동</td>
+							<td>1-1</td>
+							<td>2017-01-04</td>
+							<td>09:00~09:50 (40분)</td>
+							<td>진행완료</td>
+							<td>100.0</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>수학</td>
+							<td><a href="#">수업명이 출력됩니다</a></td>
+							<td>홍길동</td>
+							<td>1-1</td>
+							<td>2017-01-04</td>
+							<td>09:00~09:50 (40분)</td>
+							<td>진행완료</td>
+							<td>100.0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="paging">
+				<a href="#" class="prev"><img src="../../../images/lms/icon_first.png" alt="처음"></a>
+				<a href="#" class="first"><img src="../../../images/lms/icon_prev.png" alt="이전"></a>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<span class="current" title="현재페이지">3</span>
+				<a href="#">4</a>
+				<a href="#" class="next"><img src="../../../images/lms/icon_next.png" alt="다음"></a>
+				<a href="#" class="last"><img src="../../../images/lms/icon_last.png" alt="마지막"></a>
+			</div>
+		</div>
+		<footer>
+			<div class="inner">
+				<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원) | 이메일 admin@classon.kr</address><!-- 2018-03-09 -->
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+
+</body>
+
+</html>

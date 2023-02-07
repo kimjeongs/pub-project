@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>수업운영현황</title>
+	<link rel="shortcut icon" href="../../../images/lms/favicon.ico">
+	<link rel="stylesheet" href="../../../css/base.css">
+	<link rel="stylesheet" href="../../../css/lms.css">
+	<script type="text/javascript" src="../../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../js/lms.js"></script>
+</head>
+
+<body>
+	<section id="wrap">
+		<header>
+			<div class="top">
+				<h1>
+					<a href="#"><img src="../../../images/lms/logo01.png" alt="교실온닷"></a>
+				</h1>
+				<div class="login_check">
+					<p class="name">홍길동 반갑습니다.</p>
+					<button class="logout_btn">로그아웃</button>
+					<!-- 2018-02-03 <p class="login_datetime">2017-12-01 16:30</p> -->
+					<p class="portal_go"><a href="#">학교포털 바로가기</a></p><!-- 2018-02-03 -->
+				</div>
+			</div>
+			<nav class="depth01">
+				<div class="depth01_inner">
+					<ul>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth01.png" alt="회원관리" title="회원관리"></span>
+								<a href="#" class="depth1_01">회원관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학생조회</a></li>
+										<li><a href="#">교사조회</a></li>
+										<li class="depth03">
+											<a href="#">승인관리</a>
+											<ul>
+												<li><a href="#">가입승인</a></li>
+												<li><a href="#">탈퇴승인</a></li>
+												<li><a href="#">학교변경승인</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth02.png" alt="수업개설관리" title="수업개설관리"></span>
+								<a href="#" class="depth1_02">수업개설관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">수업개설현황</a></li>
+										<li><a href="#">수업신청승인</a></li>
+										<li><a href="#">수업참여승인</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth03.png" alt="수업운영현황" title="수업운영현황"></span>
+								<a href="#" class="depth1_03">수업운영현황</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">학교수업현황</a></li>
+										<li><a href="#">출결관리</a></li>
+										<li><a href="#">수업과제</a></li>
+										<li><a href="#">퀴즈/설문/평가</a></li>
+										<li><a href="#">수업문의관리</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="depth01_link">
+								<span><img src="../../../images/lms/icon_depth04.png" alt="알림관리" title="알림관리"></span>
+								<a href="#" class="depth1_04">알림관리</a>
+							</div>
+							<div class="depth02">
+								<div class="depth02_inner">
+									<ul>
+										<li><a href="#">문자전송</a></li>
+										<li><a href="#">이메일발송</a></li>
+										<li><a href="#">쪽지발송</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="contents">
+			<div class="location">
+				<a href="#" class="home">Home</a> >
+				<a href="#">수업운영관리</a> >
+				<strong>수업문의관리</strong>
+			</div>
+			<h2 class="sub_title">수업문의관리</h2>
+			<strong class="sub_list_title">문의</strong>
+			<div class="data_table">
+				<table>
+					<caption>카테고리 상태 수업명 담당교사 제목 작성자 작성일 내용 첨부파일이 있는 리스트</caption>
+					<colgroup>
+						<col style="width:11.3%;">
+						<col>
+						<col style="width:11.3%;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">카테고리</th>
+							<td>수업</td>
+							<th scope="row">상태</th>
+							<td>답변완료</td>
+						</tr>
+						<tr>
+							<th scope="row">수업명</th>
+							<td colspan="3">수업명이 출력되어집니다</td>
+						</tr>
+						<tr>
+							<th scope="row">담당교사</th>
+							<td>홍길동</td><!-- 2018-03-26 -->
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td colspan="3">첨부파일이 등록이 안되요</td>
+						</tr>
+						<tr>
+							<th scope="row">작성자</th>
+							<td><span class="icon_student">학생</span> 홍길동</td><!-- 2018-03-23 -->
+							<th scope="row">작성일</th>
+							<td>2018-01-02 12:41</td>
+						</tr>
+						<tr>
+							<th scope="row">내용</th>
+							<td colspan="3">
+								<div class="textarea_cont">첨부파일 등록이 안되요. 커뮤니티에서 문의하기 하는데 파일첨부하면 에러 페이지로 넘어가요 </div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="2">첨부파일</th>
+							<td colspan="3">
+								<div class="file_download2">
+									<span class="select_all"><input type="checkbox" class="checkbox" id="sAll"><label for="sAll">전체선택</label><span>(0/3)</span></span>
+									<button type="button" class="btn_bg_download"><span>다운로드</span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="add_file_cont">
+								<ul class="add_file_list add_file_list2">
+									<li class="pdf">
+										<input type="checkbox" class="checkbox" id="filePdf">
+										<label for="filePdf">기능변경안내.pdf</label>
+										<span class="vol">000MB</span>
+									</li>
+									<li class="doc">
+										<input type="checkbox" class="checkbox" id="fileDoc">
+										<label for="fileDoc">기능변경안내.pdf</label>
+										<span class="vol">000MB</span>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<strong class="sub_list_title">답변</strong>
+			<div class="data_table">
+				<table>
+					<caption>답변자 답변일 답변 첨부파일이 있는 리스트</caption>
+					<colgroup>
+						<col style="width:11.3%;">
+						<col>
+						<col style="width:11.3%;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">답변자</th>
+							<td><span class="icon_taecher">교사</span> 홍길동</td><!-- 2018-03-23 -->
+							<th scope="row">답변일</th>
+							<td>2018-01-02 12:41</td>
+						</tr>
+						<tr>
+							<th scope="row">답변</th>
+							<td colspan="3">
+								<div class="textarea_cont">안녕하세요. 온라인공동교육 운영관리자입니다. 서비스 이용에 불편 드린 점 사과 드립니다. 업로드를 시도하셨던 파일의 크기가 지원하는 최대 용량을 초과하여 오류가 발생하였습니다. <br> 첨부파일의 용량 확인 후 다시 시도해주시기 바랍니다. 더 노력하는 $서비스명$이 되겠습니다. 감사합니다.
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="2">첨부파일</th>
+							<td colspan="3">
+								<div class="file_download2">
+									<span class="select_all"><input type="checkbox" class="checkbox" id="sAll2"><label for="sAll2">전체선택</label><span>(0/3)</span></span>
+									<button type="button" class="btn_bg_download"><span>다운로드</span></button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="add_file_cont">
+								<ul class="add_file_list add_file_list2">
+									<li class="pdf">
+										<input type="checkbox" class="checkbox" id="filePdf2">
+										<label for="filePdf2">기능변경안내.pdf</label>
+										<span class="vol">000MB</span>
+									</li>
+									<li class="doc">
+										<input type="checkbox" class="checkbox" id="fileDoc2">
+										<label for="fileDoc2">기능변경안내.pdf</label>
+										<span class="vol">000MB</span>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn_area btn_center">
+				<button class="btn01 btn01_01">수정</button>
+				<button class="btn01 btn01_02">목록</button>
+			</div>
+		</div>
+		<footer>
+			<div class="inner">
+				<address>27873 충청북도 진천군 덕산면 교학로 7(한국교육개발원) | 이메일 admin@classon.kr</address><!-- 2018-03-09 -->
+				<p class="copy">Copyright 2018 KEDI right reseved.</p>
+			</div>
+		</footer>
+	</section>
+
+</body>
+
+</html>

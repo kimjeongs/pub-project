@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="url" property="og:url" content="?coNo="/>
+	<meta name="type" property="og:type" content="website"/>
+	<meta name="title" property="og:title" content="[YEEP 가상기업평가] "/>
+	<meta name="description" property="og:description"   content=" - "/>
+	<meta name="image" property="og:image" content="/img"/>
+	<title>YEEP</title>
+	<link rel="shortcut icon" href="https://yeep.kr/images/common/favicon.ico"><!-- 2018-04-09 파비콘 추가 -->
+	<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/common.css?ver=2020101515">
+	<script type="text/javascript" src="https://yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/pagenation.js" ></script>
+	<script type="text/javascript" src="https://yeep.kr/script/common.js?ver=2020101515" ></script>
+	<script src="js/lib/jquery-ui.min.js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-117856487-1');
+	</script>
+	<script>
+		function roleChange(){
+			var role = $("#role option:selected").val();
+			var roleNm = $("#role option:selected").text();
+			$("#mberRoleSeCode").val(role);
+			$("#mberRoleSeCodeNm").val(roleNm);
+			$("#referer").val(document.location.pathname+ (document.location.href.split("?")[1] != null ? "?"+document.location.href.split("?")[1] : "" ));
+			if($("#fundNo").val() != null){
+				$("#roleFundNo").val($("#fundNo").val());
+			}
+			if($("#itemNo").val() != null){
+				$("#roleItemNo").val($("#itemNo").val());
+			}
+			if($("#kldgNo").val() != null){
+				$("#roleKldgNo").val($("#kldgNo").val());
+			}
+			if($("#qstnrNo").val() != null){
+				$("#roleQstnrNo").val($("#qstnrNo").val());
+			}
+			if($("#coNo").val() != null){
+				$("#roleCoNo").val($("#coNo").val());
+			}
+			if($("#bltnNo").val() != null){
+				$("#roleBltnNo").val($("#bltnNo").val());
+			}
+			document.getElementById('frmRoleChange').submit();
+		}
+
+		function questBannerClose(){
+			if($("#top-notice").css("display") == "none"){
+				jQuery("#top-notice").show();
+			} else {
+				jQuery("#top-notice").hide();
+				$("#header").removeAttr('class');
+			}
+		}
+
+		function goMyPage(){
+			document.getElementById('frmMypage').submit();
+		}
+	</script>
+	<script>
+		$(function() {
+				var thisDate = new Date();
+				var thisYear = thisDate.getFullYear();
+				var thisMonth = thisDate.getMonth() + 1;
+ 
+				$.datepicker.setDefaults({
+						dateFormat: 'yy-mm-dd'
+						,showOtherMonths: true
+						,showMonthAfterYear:true
+						// ,changeYear: true
+						// ,changeMonth: true   
+						,yearSuffix: "년"
+						,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12']
+						,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+						,dayNamesMin: ['일','월','화','수','목','금','토']
+						,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+						,minDate: 0
+				});                    
+				$('#sDatepicker').datepicker({
+						onClose: function( selectedDate ) {    
+								$("#eDatepicker").datepicker( "option", "minDate", selectedDate );
+						}                
+				});
+				$('#sDatepicker').datepicker('setDate', 'today');
+				$('#eDatepicker').datepicker({
+						onClose: function( selectedDate ) {
+								$("#sDatepicker").datepicker( "option", "maxDate", selectedDate );
+						}
+				});
+				$('#eDatepicker').datepicker('setDate', '+6D');
+		});
+	</script>
+</head>
+<body>
+	<div id="top">
+		<script>
+			var $loading = $('<div style="position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:#000; opacity:0.6; filter:alpha(opacity="60")"><img src ="/images/common/load.gif" style="position: absolute; top: 50%; left: 49%;" alt="로딩중입니다"></div>').appendTo(document.body).hide();
+			$(document).ready(function() {
+				// noti swiper
+				var swiperNotiBanner = new Swiper('.noti-swiper', { //2018-07-18 수정
+					height:52,
+					autoHeight:true,
+					spaceBetween: 0,
+					slidesPerView: 1,
+					loop: true,
+					direction: 'vertical',
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+					}
+				});
+				//웹접근성 시작,정지 버튼 추가 2019-08-09
+				$(".swiper-button-pause").click(function(){
+					swiperNotiBanner.autoplay.stop();
+					$(".swiper-button-play").show();
+					$(this).hide();
+				});
+				$(".swiper-button-play").click(function(){
+					swiperNotiBanner.autoplay.start();
+					$(".swiper-button-pause").show();
+					$(this).hide();
+				});
+
+				if($("#headerImgProfile").attr("src") == "" || $("#headerImgProfile").attr("src") == "/images/main/@profile.jpg"){
+					$("#headerImgProfile").attr("alt",$("#headerImgProfile").attr("alt")+" (사진없음)");
+				}
+			});
+
+			function aprtJoinPop(aprtNo){
+				var popUrl = "/aprt/aprtJoinPop.do?aprtNo="+aprtNo;
+				var width = "971";
+				var height = "550";
+				var popOption = "width="+width+", height="+height+", resizable=yes, scrollbars=no, status=1;";
+
+				popupObject = window.open(popUrl,aprtNo,popOption);
+				popupObject.window.focus();
+			}
+
+			function startUp(){
+				var openYn = "Y";
+
+				if(openYn == 'Y'){
+					location.href="/evl/corpEvlHomeList.do";
+				}else{
+					location.href="/main/startupSample.do";
+				}
+			}
+			function goMyPage(){
+				document.getElementById('frmMypage').submit();
+			}
+		</script>
+		<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+			<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode">
+			<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm">
+			<input type="hidden" name="referer" id="referer"/>
+			<input type="hidden" name="fundNo" id="roleFundNo"/>
+			<input type="hidden" name="itemNo" id="roleItemNo"/>
+			<input type="hidden" name="kldgNo" id="roleKldgNo"/>
+			<input type="hidden" name="qstnrNo" id="roleQstnrNo"/>
+			<input type="hidden" name="coNo" id="roleCoNo"/>
+			<input type="hidden" name="bltnNo" id="roleBltnNo"/>
+		</form>
+		<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+			<input type="hidden" name="modifyYn" id="modifyYn" value="N">
+		</form>
+		<div id="skipNavi">
+			<a href="#container">본문 영역으로 바로가기</a>
+			<a href="#gnb02">메뉴바로가기</a>
+		</div>
+		<div id="wrap" class="main-renew">
+			<!-- header -->
+			<div id="header02"> <!-- 서브메뉴 활성화 상태일때 class="gnbOpen" 추가 -->
+			<!-- notice -->
+			<!-- //notice -->
+			<div class="header-inner">
+				<h1 class="logo-header"><a href="/main/main.do"><img src="https://yeep.kr/images/common/logo_header.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고"></a></h1>
+				<!-- login -->
+				<div class="header-member">
+					<ul>
+						<li><a href="/cmmn/sso/api/user.agent.3.do?referer=/mypage/myPageMainList.do">로그인</a></li>
+						<li><a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a></li>
+						<li><a href="/mypage/askingList.do">이용문의</a></li>
+					</ul>
+				</div>
+				<!-- //login -->
+				<!-- gnb -->
+				<div id="gnb02">
+					<ul>
+						<li>
+							<strong class="depth1"><a href="javascript:;">YEEP</a></strong>
+							<ul class="depth2">
+								<li><strong>YEEP</strong>
+									<ul class="depth3">
+										<li><a href="/intro/yeepIntro.do">YEEP 소개</a></li>
+										<li><a href="/intro/yeepKnow.do">YEEP 활용법</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">수업</a></strong>
+							<ul class="depth2">
+								<li><strong>수업</strong>
+									<ul class="depth3">
+										<li><a href="/intro/clasIntro.do">수업 소개</a></li>
+										<li><a href="/intro/clasProcess.do">수업 과정</a></li>
+										<li><a href="/clas/classMain.do">수업 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">동아리</a></strong>
+							<ul class="depth2">
+								<li><strong>동아리</strong>
+									<ul class="depth3">
+										<li><a href="/intro/aprtIntro.do">동아리 소개</a></li>
+										<li><a href="/aprt/aprtMisson.do" onclick="">동아리 미션</a></li>
+										<li><a href="/aprt/aprtMain.do">동아리 목록</a></li>
+									</ul>
+								</li>
+								<li><strong>멘토링</strong>
+									<ul class="depth3">
+										<li><a href="/mentor/mentorMainList.do">멘토링</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/cpthb/applyContestList.do">
+										<strong>동아리 대회</strong>
+									</a>
+									<ul class="depth3">
+										<li><a href="/cpthb/applyContestList.do">대회 목록</a></li>
+										<li><a href="/cpthb/contestCaseList.do">우수 동아리 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">가상창업체험</a></strong>
+							<ul class="depth2">
+								<li><strong>GO스타트업</strong>
+									<ul class="depth3">
+										<li><a href="/intro/startupIntro.do">GO스타트업 소개</a></li>
+										<li><a href="/evl/corpEvlHomeList.do">GO스타트업 목록</a></li>
+									</ul>
+								</li>
+								<li><strong>시장분석</strong>
+									<ul class="depth3">
+										<li><a href="/intro/surveyIntro.do" onclick="">시장분석 소개</a></li>
+										<li><a href="/evl/corpEvlSurveyList.do">시장분석 목록</a></li>
+									</ul>
+								</li>
+								<li><strong>온라인 사업설명회</strong>
+									<ul class="depth3">
+										<li><a href="/intro/onlnPtIntro.do">온라인 사업설명회 소개</a></li>
+										<li><a href="/onln/onlnPtHomeList.do">온라인 사업설명회 목록</a></li>
+									</ul>
+								</li>
+								<li><strong>가상크라우드펀딩</strong>
+									<ul class="depth3">
+										<li><a href="/intro/crowdFundingIntro.do">가상크라우드펀딩 소개</a></li>
+										<li><a href="/fund/fundHomeList.do">가상크라우드펀딩 목록</a></li>
+									</ul>
+								</li>
+								<li><strong>가상마켓</strong>
+									<ul class="depth3">
+										<li><a href="/intro/marketIntro.do">가상마켓 소개</a></li>
+										<li><a href="/market/marketHomeList.do">가상마켓 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">핵심역량 진단</a></strong>
+							<ul class="depth2">
+								<li><strong>핵심역량 진단</strong>
+									<ul class="depth3">
+										<li><a href="/intro/coreCmptyIntro.do">핵심역량 진단 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">자료실</a></strong>
+							<ul class="depth2">
+								<li><strong>자료실</strong>
+									<ul class="depth3">
+										<li><a href="/noti/eduExlntCaseList.do">창업체험교육 콘텐츠</a></li>
+										<li><a href="/noti/rschLeadSchList.do">수업·연구자료</a></li>
+										<li><a href="/noti/kldgChaEList.do">동영상 자료</a></li>
+										<li><a href="/noti/rfrcDataList.do">기타자료</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- //gnb -->
+			</div>
+			<span class="slogan">청소년의 창업가정신 함양을 위한 창업체험 프로그램</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				document.title="시장분석 소개 < 시장분석 < 가상창업체험 | 온라인 창업체험교육 플랫폼YEEP";
+			});
+			//파일 다운로드
+			$(document).on("click", "a[name=attFile]", function() {
+				var fileDownUrl = "/file/getFileDownloadAllUser.do";
+				var params = "?sysFileName=" + $(this).attr("fileNm")
+					+ "&uploadFileName=" + encodeURIComponent($(this).attr("upldFileNm"))
+					+ "&filePath=" + $(this).attr("filePathText") + "&disp=attachment";
+				$(location).attr("target", "hiddenFrame");
+				$(location).attr("href", fileDownUrl + params);
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/in.css?ver=2020101515">
+		<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/su.css?ver=2020101515">
+		<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/gr.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/market.css">
+		<div id="container" tabindex="0">
+			<div class="page-location">
+				<ul>
+					<li class="home"><a href="/main/main.do"><img src="https://yeep.kr/images/common/icon_home.png" alt="홈"></a></li>
+					<li><a href="javascript:;">가상창업체험</a></li>
+					<li>
+						<a href="javascript:;">시장분석</a>
+						<ul class="location-menu">
+							<li><a href="/intro/startupIntro.do">GO스타트업</a></li>
+							<li><a href="/evl/corpEvlSurveyList.do">시장분석</a></li>
+							<li><a href="/intro/onlnPtIntro.do">온라인 사업설명회</a></li>
+							<li><a href="/intro/crowdFundingIntro.do">가상크라우드펀딩</a></li>
+							<li><a href="/intro/marketIntro.do">가상마켓</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">시장분석 소개</a>
+						<ul class="location-menu">
+							<li><a href="/intro/surveyIntro.do">시장분석 소개</a></li>
+							<li><a href="/evl/corpEvlSurveyList.do">시장분석 목록</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content-width">
+				<h2 class="page-title">마이페이지</h2>
+				<div class="page-sub-title-style">
+					<h3 class="sub-title">내 시장분석 관리</h3>
+				</div>
+        <strong class="use-step-tit">설문 정보 상세</strong>
+				<div class="data-board">
+					<table>
+						<caption>설문 정보 상세 - 상태, 설문조사 제목, 설문조사 설명, 설문조사 기간, 설문조사 대상, 대표 이미지, 설문내용으로 구성된 표입니다.</caption>
+						<colgroup>
+								<col style="width: 240px">
+								<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">상태</th>
+								<td class="input-td"><span class="state-mark type02">진행중</span></td>
+							</tr>
+							<tr>
+									<th scope="row"><span class="compulsory">필수입력</span>설문조사 제목</th>
+									<td class="input-td">
+										<div class="check-num" style="width:100%;">
+											<input type="text" class="txt" title="설문조사 제목이 노출됩니다." placeholder="설문조사 제목이 노출됩니다." maxlength="50" style="width:100%;" disabled>
+											<span class="word-num"><em id="titTxtCnt">0</em>/50</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><span class="compulsory">필수입력</span>설문조사 설명</th>
+								<td class="input-td"> 
+									<div class="entry-form disabled"><!-- disabled인 경우 클래스 disabled 추가 -->
+										<span class="txt"><em id="descTxtCnt">0</em>/300</span>
+										<textarea disabled style="width:100%;height:55px;" class="textarea" rows="5" cols="5" title="설문조사 설명이 노출됩니다." placeholder="설문조사 내용이 노출됩니다.설문조사 내용이 노출됩니다." maxlength="300"></textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><span class="compulsory">필수입력</span>설문조사 기간</th>
+								<td class="input-td">
+									<div class="calendar disabled"><!-- disabled인 경우 클래스 disabled 추가 -->
+										<label for="sDatepicker">시작일</label>
+										<input type="text" id="sDatepicker" disabled>
+									</div>
+									<span>~</span>
+									<div class="calendar">
+										<label for="eDatepicker">종료일</label>
+										<input type="text" id="eDatepicker">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><span class="compulsory">필수입력</span>설문조사 대상</th>
+								<td>
+									<ul class="check-list">
+										<li>
+											<span class="checkbox01">
+											<input type="checkbox" id="all" class="allCheck" disabled>
+												<label for="all">전체</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+											<input type="checkbox" id="c1" disabled>
+												<label for="c1">초등학생</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+											<input type="checkbox" id="c2" disabled>
+												<label for="c2">중학생</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+											<input type="checkbox" id="c3" disabled>
+												<label for="c3">고등학생</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+											<input type="checkbox" id="c4" disabled>
+												<label for="c4">대학생</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+												<input type="checkbox" id="c5" disabled>
+												<label for="c5">일반</label>
+											</span>
+										</li>
+										<li>
+											<span class="checkbox01">
+												<input type="checkbox" id="c6" disabled>
+												<label for="c6">교사</label>
+											</span>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">대표 이미지</th>
+								<td>
+									<div class="group-representative-img">
+										<span id="imgBlock" class="img"><img id="imgThumb" alt="대표 이미지" src="images/common/img_thum_default.png"></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">설문내용</th>
+								<td>
+									<button type="button" class="btn-white small">설문내용 보기</button>
+									<span class="txt-row">설문내용은 수정할 수 없습니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<strong class="use-step-tit">응답결과</strong>
+				<div class="survey-result-box">
+					<p>※ 응답결과는 설문기간 종료 후 확인할 수 있습니다.</p>
+				</div>
+				<div class="btn-center">
+					<a href="javascript:;" class="btn-big-white">목록</a>
+					<a href="javascript:;" class="btn-big-orange">수정</a>
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+		<script>
+			//input count 체크
+			$(document).on('keyup', '#titTxt', function() {
+					$('#titTxtCnt').text( $(this).val().length);
+			});
+			$(document).on('keyup', '#descTxt', function() {
+					$('#descTxtCnt').text( $(this).val().length);
+			});
+			
+			// 이미지 업로드
+			$(document).on("change","#repImgFileUp",function() {
+					if( $(this).val() == '' ) {
+							return;
+					}
+					if( !imgFileValidataion(this) ) {
+							$(this).replaceWith($(this).val('').clone(true));
+							$('#imgRepresentative').attr('src', $("#originRepImgSrc").val());
+							$('#repImgDelYn').val('N');
+							return;
+					}
+					if ($(this).get(0).files) {
+							var reader = new FileReader();
+							reader.onload = function (e) {
+									$('#imgRepresentative').attr('src', e.target.result);
+							}
+							reader.readAsDataURL($(this).get(0).files[0]);
+							$('#repImgDelYn').val('N');
+					}
+			});
+			$(document).on("click","#btnRepDelImg",function() {
+					$('#repImgDelYn').val('Y');
+					$("#repImgFileUp").replaceWith($("#repImgFileUp").val('').clone(true));
+
+					var randomStr = Math.floor((Math.random() * 5) + 1);
+					$('#imgRepresentative').attr('src', "images/common/img_thum_default.png");
+
+			});
+			$(document).on("change","#imgFileUp",function() {
+					if( $(this).val() == '' ) {
+							return;
+					}
+					if( !imgFileValidataion(this) ) {
+							$(this).replaceWith($(this).val('').clone(true));
+							$('#imgThumb').attr('src', $("#originImgSrc").val());
+							$('#imgDelYn').val('N');
+							return;
+					}
+					if ($(this).get(0).files) {
+							var reader = new FileReader();
+							reader.onload = function (e) {
+									$('#imgThumb').attr('src', e.target.result);
+							}
+							reader.readAsDataURL($(this).get(0).files[0]);
+							$('#imgDelYn').val('N');
+					}
+			});
+			$(document).on("click","#btnDelImg",function() {
+					$('#imgDelYn').val('Y');
+					$("#imgFileUp").replaceWith($("#imgFileUp").val('').clone(true));
+					$('#imgThumb').attr('src', "images/common/img_thum_default.png");
+			});
+			function imgFileValidataion (obj) {
+					var fileExt = $(obj).val().split('.').pop().toUpperCase();
+					if ( fileExt != "PNG" && fileExt !=  "JPG" && fileExt !=  "JPEG" && fileExt != "GIF" ) {
+							alert("jpg, gif, png 형식의 파일만 첨부하실 수 있습니다.");
+							return false;
+					}
+					if ($(obj).get(0).files[0].size > (2000 * 1024)) {
+							alert("2MB 이하의 jpg, gif, png 파일만 첨부하실 수 있습니다.");
+							return false;
+					}
+					return true;
+			}
+		</script>
+	</div>
+	<div id="footer">
+		<!-- footer -->
+		<div id="footer02">
+		<div class="footer-utill-area">
+			<ul class="footer-utill">
+				<li><a href="/mypage/askingList.do">1:1 문의</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01" target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02" target="_blank" title="개인정보처리방침 새창 열림">개인정보처리방침</a></li>
+				<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&amp;bltnNo=392">이메일주소 무단수집거부</a></li>
+				<li class="use-email">yeep@koef.or.kr</li>
+			</ul>
+		</div>
+		<div class="footer-cont">
+			<address>서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)<br />운영: 한국청년기업가정신재단 | 지원: 교육부</address>
+			<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+			<ul class="site_link">
+				<li><a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="교육부 새창 열림"><img src="https://yeep.kr/images/common/img_footer_link01.png" alt="교육부 로고"></a></li>
+				<li><a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="KOEF 한국청년기업가정신재단 새창 열림"><img src="https://yeep.kr/images/common/img_footer_link02.png" alt="KOEF 한국청년기업가정신재단 로고"></a></li>
+				<li><a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창"><img src="https://yeep.kr/images/common/img_footer_link03.png" alt="국가공인 웹 접근성 품질인증마크"></a></li>
+			</ul>
+		</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

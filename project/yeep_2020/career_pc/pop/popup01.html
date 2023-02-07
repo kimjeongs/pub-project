@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="title" property="og:title" content="" />
+    <meta name="url" property="og:url" content="http://www.career.go.kr/cnet/WEB-INF/jsp/front/card/careerCardList.jsp?" />
+    <title>재미있게 놀이하는 진로카드 | 진로정보망 커리어넷</title>
+    <link rel="stylesheet" href="http://www.career.go.kr/webres/css/realize.css" />
+    <link rel="image_src" href="//www.career.go.kr/cnet/images/front/common/logo.png" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/front/style.css?ver=1.2" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/ui/redmond/jquery-ui-1.8.16.custom.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/jquery.ui/jquery-ui-1.9.2.custom.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/js/jqplot/jquery.jqplot.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/common.css?ver=1.2.1" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/main.css" />
+    <!--2017.02.27 신규 main_new.css-->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/main_new.css?ver=1.3.7" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/submain.css?ver=1.3.8" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/front/movie.css?ver=1.3" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/res_style.css?ver=1.1.1" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/contents.css?ver=1.1.5" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/owl.theme.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/popup.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/mycareer.css?ver=1.1.2" />
+    <!-- css 추가2015-10-01 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/mycareer_new.css" />
+    <!-- css 추가2015-10-01 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/noti.css" />
+    <!-- 새로추가 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/Nwagon.css" />
+    <!-- area chart css -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/common_renew.css" />
+    <!-- css 추가 2020-01-20 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/font.css" />
+    <!-- css 추가 2020-01-20 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/main_renew.css" />
+    <!-- css 추가 2020-01-20 -->
+    <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/service.css" />
+    <link rel="stylesheet" type="text/css" href="css/remote.css" />
+    <!-- css 추가 2020-01-20 -->
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="http://www.career.go.kr/webres/css/front/ie8.css" type="text/css" />
+    <![endif]-->
+    <!--[if IE 9]>
+      <link rel="stylesheet" href="http://www.career.go.kr/webres/css/front/ie9.css" type="text/css" />
+    <![endif]-->
+  
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/html5shiv.min.js"></script>
+      <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.datepicker_f.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/i18n/jquery.ui.datepicker-ko_f.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/commonNew.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/common.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/js.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/makePCookie.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/ajax.call.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/design.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/owl.carousel.js?ver=1.0"></script>
+    <!--2017.02.27 수정 common.js -->
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/common.js?ver=1.1"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/jrolling.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/mypage/jquery.knob.js"></script>
+    <!-- donut chart js -->
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/mypage/Nwagon.js"></script>
+    <!-- area chart js -->
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery.bxslider.min.js"></script>
+    <!-- js 추가 2020-01-20 -->
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/common_renew.js"></script>
+    <!-- js 추가 2020-01-20 -->
+    <link rel="stylesheet" href="http://www.career.go.kr/webres/css/rew/jplayer.blue.monday.css?ver=1.0" type="text/css" />
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/jquery.jplayer.min.js?ver=1.0"></script>
+  </head>
+<body>
+<div class="wrap">
+  <button type="button" class="btn-pop" data-num="1">수업 동영상 목록보기</button>
+</div>
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- s: 수업 동영상 목록보기 -->
+<div class="rm-popup" data-num="1"> 
+  <div class="popup-header">
+    <h2 class="popup-tit">수업 동영상 목록보기</h2>
+  </div>
+  <div class="popup-cont">
+    <div class="board-list02">
+        <table>
+        <caption>동영상제목, 연도로 구성된 표입니다.</caption>
+        <colgroup>
+          <col>
+          <col style="width:96px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">동영상제목</th>
+            <th scope="col">연도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024116">[고등학교] 학습 궁금증 함께 풀어봐요</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024115">[고등부] 감정코칭을 통한 또래관계 능력 향상</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024114">[중학교]직업정보 탐색</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024113">[고등학교] 대학에 진학하려면, 고등학교 생활 어떻게 할까?</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024112">[중학교] 나만의 자기소개서 작성법</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024111">[고등학교] 나의 진로를 고려한 과목선택을 해볼까?</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024110">[중학교] 고등학교유형 및 입학전형 (후기)</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024106">[고등학교] 가치, 나의 비전을 세우는 가치!</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024105">[고등학교] 학생부종합전형 이해와 준비</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024098">[중학교] 고등학교유형 및 입학전형 (전기)</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024097">[중학교] 진로독서의 중요성</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024092">[고등학교] 괜찮아 너의 선택이잖아~(진로의사결정능력개발)</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024088">[고등학교] 내꺼인듯, 내꺼아닌 내꺼같은 미래 직업</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024087">[고등학교] 내신관리 찐 공부법</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024086">[중학교] 진로와 학습</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024085">[고등학교] 바람직한 직업생활(NCS직업기초능력 직업윤리)</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024084">[중학교] 4차 산업혁명과 미래 핵심기술2</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024083">[고등학교] 창직, 나도 할 수 있다.</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024082">[중학교] 4차 산업혁명과 미래 핵심기술</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024081">[고등학교] 효과적인 ‘나’ 전달, 말센스 키우기</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024080">[중학교] 직업에 대한 편견과 고정관념</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024079">[고등학교] 효율적인 시간관리를 통한 자아존중감 향상</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024077">[중학교] 직업윤리와 직업인의 권리</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024076">[고등학교] 대학으로 가는 길</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024075">[고등학교] 어쩌다 발견한 완벽한 전공학과</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024074">[중학교] 직업가치관</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024073">[고등학교] 역경아~ 니가 왜 거기서 나와</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024072">[중학교] 미래직업과 역량</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024071">[고등학교] 직업인과의 잡(Job) 수다</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024070">[중학교] 창업과 창직</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024069">[중학교] 변화하는 직업을 이해하고 미래 나의 직업 만들기</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024068">[고등학교] 슬기로운 직업선택</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024067">[중학교] 직업의 의미와 분류</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024066">[고등학교] 변화하는 직업세계, 미래유망직업으로</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024065">[중학교] 효과적인 의사소통 방안</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024064">[고등학교] 의사소통, 강점으로 승부하라</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024056">[중학교] 상황에 맞는 대인관계 능력 기르기</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024055">[고등학교] 나를 알면 미래가 보인다</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024054">[중학교] 디지털 앱을 활용한 자기이해활동</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024053">[중학교] 자아탐색을 통한 특성이해</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="txt-left"><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappView.do?ARCL_SER=1024052">[중학교] 자아존중감과 자기효능감</a></td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="popup-footer">
+    <div class="inner">
+      <button type="button" class="btn-gray btn-close">닫기</button>
+    </div>
+  </div>
+</div>
+<!-- e: 수업 동영상 목록보기 -->  
+
+<script src="js/lib/jquery-3.5.1.min.js"></script>
+<script src="js/remote.js"></script>
+</body>
+</html>

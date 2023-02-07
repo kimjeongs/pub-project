@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="title" property="og:title" content="" />
+  <meta name="url" property="og:url" content="http://www.career.go.kr/cnet/WEB-INF/jsp/front/card/careerCardList.jsp?" />
+  <title>재미있게 놀이하는 진로카드 | 진로정보망 커리어넷</title>
+  <link rel="stylesheet" href="http://www.career.go.kr/webres/css/realize.css" />
+  <link rel="image_src" href="//www.career.go.kr/cnet/images/front/common/logo.png" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/front/style.css?ver=1.2" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/ui/redmond/jquery-ui-1.8.16.custom.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/jquery.ui/jquery-ui-1.9.2.custom.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/js/jqplot/jquery.jqplot.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/common.css?ver=1.2.1" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/main.css" />
+  <!--2017.02.27 신규 main_new.css-->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/main_new.css?ver=1.3.7" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/submain.css?ver=1.3.8" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/front/movie.css?ver=1.3" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/res_style.css?ver=1.1.1" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/contents.css?ver=1.1.5" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/owl.carousel.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/owl.theme.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/popup.css" />
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/mycareer.css?ver=1.1.2" />
+  <!-- css 추가2015-10-01 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/mycareer_new.css" />
+  <!-- css 추가2015-10-01 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/noti.css" />
+  <!-- 새로추가 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/rew/Nwagon.css" />
+  <!-- area chart css -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/common_renew.css" />
+  <!-- css 추가 2020-01-20 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/font.css" />
+  <!-- css 추가 2020-01-20 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/main_renew.css" />
+  <!-- css 추가 2020-01-20 -->
+  <link rel="stylesheet" type="text/css" href="http://www.career.go.kr/webres/css/service.css" />
+  <link rel="stylesheet" type="text/css" href="css/remote.css" />
+  <!-- css 추가 2020-01-20 -->
+  <!--[if IE 8]>
+    <link rel="stylesheet" href="http://www.career.go.kr/webres/css/front/ie8.css" type="text/css" />
+  <![endif]-->
+  <!--[if IE 9]>
+    <link rel="stylesheet" href="http://www.career.go.kr/webres/css/front/ie9.css" type="text/css" />
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/html5shiv.min.js"></script>
+    <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.core.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.widget.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/jquery.ui.datepicker_f.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/ui/i18n/jquery.ui.datepicker-ko_f.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery/jquery.form.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/commonNew.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/common.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/js.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/makePCookie.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common/ajax.call.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/design.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/owl.carousel.js?ver=1.0"></script>
+  <!--2017.02.27 수정 common.js -->
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/common.js?ver=1.1"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/jrolling.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery.popupWindow.js"></script>
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/mypage/jquery.knob.js"></script>
+  <!-- donut chart js -->
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/mypage/Nwagon.js"></script>
+  <!-- area chart js -->
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/jquery.bxslider.min.js"></script>
+  <!-- js 추가 2020-01-20 -->
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/common_renew.js"></script>
+  <!-- js 추가 2020-01-20 -->
+  <link rel="stylesheet" href="http://www.career.go.kr/webres/css/rew/jplayer.blue.monday.css?ver=1.0" type="text/css" />
+  <script type="text/javascript" src="http://www.career.go.kr/webres/js/rew/jquery.jplayer.min.js?ver=1.0"></script>
+</head>
+
+<body id="careernet">
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //  	$(".jQueryButton").button();
+      /*
+      $('.login_user').click(function () {
+        $('.user_info').toggle();
+        $('.login_user').toggleClass('on');
+      });
+      //$('#snb ul li:has("div")').find('div').hide();	
+      $('#snb li:has("div")').find('a:first').click (function (){ 
+        $(this).parent('li').find('a:first').toggleClass('opened');
+        $(this).parent('li').find('div:first').slideToggle();
+      
+      });
+      */
+
+      $(".topMenu .alrimMn a").on("click", function (e) {
+        //알림마당 메뉴 열고닫기
+        e.preventDefault();
+        var _this = $(this);
+
+        if (!_this.is(".on")) {
+          _this.addClass("on").attr("title", "메뉴닫기");
+        } else {
+          _this.removeClass("on").attr("title", "메뉴보기");
+        }
+      });
+    });
+  </script>
+  <!-- Skip -->
+  <div id="skip">
+    <p class="skipNavi">바로가기</p>
+    <a href="#ct" class="skipNavi">본문바로가기</a>
+    <a href="#gnb-skip" class="skipNavi">메뉴바로가기</a>
+  </div>
+  <!-- //Skip -->
+  <!-- HEADER -->
+  <div id="hd">
+    <script type="text/javascript">
+      function autoAjaxSubSearch(term, callback) {
+        $.ajax({
+          url: "http://211.253.133.38:27614/ksf/api/suggest?target=complete&domain_no=0&mode=s&max_count=10&term=" + encodeURIComponent(term),
+          type: "GET",
+          success: function (data) {
+            var result = data.suggestions[0];
+            var count = data.suggestions[0].length;
+            var autoArray = new Array();
+            if (count > 0)
+              for (var i = 0; i < count; i++) {
+                autoArray.push(result[i][0]);
+              }
+
+            if (autoArray == "") {
+              return;
+            }
+
+            callback(autoArray);
+          },
+          error: function (jqXHR, textStatus) {
+            alert("서버에서 에러가 발생하였습니다.\n잠시 후 다시 시도하여 주십시오.\n계속 에러가 발생할 경우 관리자에게 문의하십시오.");
+          },
+        });
+      }
+
+      //조회
+      function fn_topSearch(event) {
+        event.preventDefault();
+        location.href = "/cnet/front/search/searchResultListNew.do" + "?text=" + encodeURIComponent($("#topKwd").val());
+      }
+
+      // 아이디/비밀번호 찾기
+      function fn_idPassFind() {
+        location.href = "/cnet/front/member/mberIdPassFind.do";
+      }
+
+      function fn_alrim(num) {
+        if (num == 1) {
+          location.href = "/cnet/front/commbbs/notice/commBbsList.do";
+        } else if (num == 2) {
+          location.href = "/cnet/front/web/event/eventList.do";
+        } else if (num == 3) {
+          location.href = "/cnet/front/base/base/mailSubscribe/mailSubscribeList.do";
+        } else if (num == 4) {
+          location.href = "/cnet/front/commbbs/news/commBbsList.do";
+        } else if (num == 5) {
+          location.href = "/cnet/front/centerIntro/careerAppIntro_design.do";
+        } else if (num == 6) {
+          location.href = "/cnet/front/useInfo/faqUseInfo.do";
+        } else if (num == 7) {
+          location.href = "/cnet/front/commbbs/help/FcommBbsInsert.do";
+        }
+      }
+    </script>
+    <!-- Top Menu -->
+    <div id="headerR">
+      <div class="hdTop-warp">
+        <h1 class="hd-logo">
+          <a href="/cnet/"><img src="http://www.career.go.kr/webres/images/common/logo.png" alt="진로정보망 커리어넷 로고" /></a>
+          <!-- <a href="http://www.moe.go.kr/agenda/egov30/page.jsp" target="_blank" title="새창열기"><img src="http://www.career.go.kr/cnet/images/common/logo_3.0.png" alt="꿈과 끼를 키우는 행복교육 정부3.0" /></a>-->
+        </h1>
+        <div class="topMenu">
+          <ul class="hd-util">
+            <li><a href="/cnet/egovframework/cloud/saml2/sso/api/user.agent.3.do">로그인</a></li>
+            <li><a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a></li>
+            <li><a href="/cnet/egovframework/cloud/saml2/sso/api/user.agent.3.do?requestURL=/front/mycareer/orbit.do">나의 진로활동</a></li>
+            <li><a href="https://api.career.go.kr/cloud/api/mber/id/search.do">통합회원 아이디/비밀번호 찾기</a></li>
+            <li><a href="/cnet/front/useInfo/sitemap.do">사이트맵</a></li>
+            <li class="alrimMn">
+              <a href="#" title="메뉴보기">알림마당</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)" onclick="fn_alrim(1)">공지사항</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(2)">행사&middot;이벤트</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(3)">드림레터 구독</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(4)">뉴스레터</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(5)">커리어넷앱 소개</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(6)">이용안내</a></li>
+                <li><a href="javascript:void(0)" onclick="fn_alrim(7)">이용문의 및 오류제보</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="hd-search" style="display: block;">
+            <form name="topfrm" id="topfrm" action="/cnet/front/search/searchResultListNew.do" method="get" onsubmit="return ;">
+              <input type="text" name="topKwd" id="topKwd" class="input-hdsrch" title="검색어 입력" onkeypress="if(event.keyCode==13) {fn_topSearch(event);}" />
+              <input type="image" src="http://www.career.go.kr/webres/images/main_new/btn_search.png" name="btnSearch" id="btnSearch" class="btn-hdsrch" onclick="fn_topSearch(event);return false;" alt="검색" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Golbal Navigation Bar -->
+      <div id="gnb-skip" class="gnb">
+        <ul>
+          <li>
+            <a href="/cnet/front/examen/examenMain.do" target="_self"><span class="depth1">진로심리검사</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>진로심리검사</strong>자신을 이해하는데 도움이 되는 심리검사는 <br />
+                진로 의사결정에 유용한 정보를 제공합니다.
+              </p>
+              <ul class="submenu-list">
+                <li><a href="/cnet/front/examen/inspctStd.do" target="_self">중·고등학생용</a></li>
+                <li><a href="/cnet/front/examen/inspctNor.do" target="_self">대학생·일반용</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/cnet/front/counsel/counselMain.do" target="_self"><span class="depth1">진로상담</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>진로상담</strong>진로문제로 고민하는 학생&middot;학부모를 위해 <br />
+                진로상담 서비스를 제공합니다.
+              </p>
+              <ul class="submenu-list">
+                <li><a href="/cnet/front/counsel/counselInfo.do?frontMenu=Y" target="_self">상담신청 </a></li>
+                <li><a href="/cnet/front/counsel/counselList.do" target="_self">상담보기 </a></li>
+                <li><a href="/cnet/front/counsel/bomulsumHome.do" target="_self">진로탐험대 </a></li>
+                <li><a href="/cnet/front/commbbs/jSolutionBest/FcommBbsList.do" target="_self">진로솔루션</a></li>
+                <li><a href="/cnet/front/counsel/lastBestCaseView.do" target="_self">이주의공감상담 </a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/cnet/front/base/base/newJobMain.do" target="_self"><span class="depth1">직업정보</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>직업정보</strong>관심 있는 직업에 대한 다양한 정보를 <br />
+                확인하세요.
+              </p>
+              <ul class="submenu-list">
+                <li><a href="/cnet/front/base/job/jobList.do" target="_self">직업정보</a></li>
+                <li><a href="/cnet/front/base/guidebook/guideBookList.do" target="_self">미래직업</a></li>
+                <li><a href="/cnet/front/base/base/newJob/newJobList.do" target="_self">해외직업</a></li>
+                <li><a href="/cnet/front/commbbs/newsJob/commBbsList.do" target="_self">직업카드뉴스</a></li>
+                <li><a href="/cnet/front/base/job/jobInterview_new/jobSpecialList_new.do?INTV_KND=101849" target="_self">직업인인터뷰</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/cnet/front/base/base/newMajorMain.do" target="_self"><span class="depth1">학과정보</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>학과정보</strong>관심 있는 학과에 대한 다양한 정보를 <br />
+                확인하세요.
+              </p>
+              <ul class="submenu-list">
+                <li><a href="/cnet/front/base/major/FunivMajorList.do" target="_self">학과정보</a></li>
+                <li><a href="/cnet/front/base/school/schoolUniversityList.do" target="_self">학교정보</a></li>
+                <li><a href="/cnet/front/commbbs/dongahot100/commBbsList.do" target="_self">학과탐방</a></li>
+                <li><a href="/cnet/front/base/job/jobInterview_new/jobSpecialList_new.do?INTV_KND=101851" target="_self">학과인터뷰</a></li>
+                <li><a href="/cnet/front/commbbs/newsMajor/commBbsList.do" target="_self">학과카드뉴스</a></li>
+                <li><a href="/cnet/front/base/job/jobMajor/jobMajorMatrix.do" target="_self">학과+직업 매트릭스</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/cnet/front/web/webMain.do" target="_self"><span class="depth1">진로동영상</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>진로동영상</strong>직업, 학과등의 다양한 동영상 자료를 통한 <br />
+                진로탐색
+              </p>
+              <ul class="submenu-list">
+                <li><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappProgramList.do" target="_self">프로그램별</a></li>
+                <li><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappList.do?SUP_CAT_ID=MCAT0028" target="_self">연도별</a></li>
+                <li><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappList.do?SUP_CAT_ID=MCAT0037" target="_self">대상별</a></li>
+                <li><a href="http://www.career.go.kr/cnet/front/web/movie/catMapp/catMappList.do?SUP_CAT_ID=MCAT0042" target="_self">진로교육영역별</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="http://www.career.go.kr/cnet/front/web/courseLeading/courseMain.do" target="_self"><span class="depth1">진로교육자료</span></a>
+            <div class="submenu">
+              <p class="submenu-title">
+                <strong>진로교육자료</strong>진로교육에 대한 이해를 높이고 진로지도 <br />
+                활동에 활용할 수 있는 다양한 자료
+              </p>
+              <ul class="submenu-list">
+                <li><a href="/cnet/front/commbbs/courseMenu/commBbsList.do" target="_self">자료게시판</a></li>
+                <li><a href="/cnet/front/web/courseEdu/dreamLetter/dreamLetterList.do" target="_self">드림레터</a></li>
+                <li><a href="/cnet/front/web/courseEdu/courseEduAwardList.do" target="_self">진로교육 연구대회</a></li>
+                <li><a href="http://www.career.go.kr/cnet/front/commbbs/recipe/commBbsList.do" target="_self">진로레시피</a></li>
+                <li><a href="/cnet/front/research/info1.do" target="_self">연구선도학교 및 연구회</a></li>
+                <li><a href="/cnet/front/web/courseEdu/courseEduIndicatorDefine.do" target="_self">진로교육 현황조사</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="mbtype-menu">
+          <strong>회원 유형별 맞춤 서비스</strong>
+          <ul>
+            <li><a href="/cnet/front/type/typeService.do?seq=100205" title="초등학생 맞춤추천 보기">초등학생</a></li>
+            <li><a href="/cnet/front/type/typeService.do?seq=100206" title="중학생 맞춤추천 보기">중학생</a></li>
+            <li><a href="/cnet/front/type/typeService.do?seq=100207" title="고등학생 맞춤추천 보기">고등학생</a></li>
+            <li><a href="/cnet/front/type/typeService.do?seq=100208" title="대학생,일반 맞춤추천 보기">대학생&middot;일반</a></li>
+            <li><a href="/cnet/front/type/typeService.do?seq=100210" title="학부모 맞춤추천 보기">학부모</a></li>
+            <li><a href="/cnet/front/type/typeService.do?seq=100214" title="교사 맞춤추천 보기">교사</a></li>
+          </ul>
+          <p class="sns-link">
+            <a href="https://www.facebook.com/mycareernet" target="_blank" title="새창 열림"><img src="http://www.career.go.kr/webres/images/btn_hd_facebook.png" alt="페이스북" /></a>
+            <a href="http://www.classting.com/careernet" target="_blank" title="새창 열림"><img src="http://www.career.go.kr/webres/images/btn_hd_classting.png" alt="클래스팅" /></a>
+            <a href="https://instagram.com/careerfuture" target="_blank" title="새창 열림"><img src="http://www.career.go.kr/webres/images/btn_hd_instagram.png" alt="인스타그램" /></a>
+          </p>
+        </div>
+      </div>
+      <!-- //Golbal Navigation Bar -->
+    </div>
+    <!-- //Top Menu -->
+  </div>
+  <!-- //HEADER -->
+
+  <!-- CONTENT -->
+  <div id="ct">
+    <div class="dim" style="display: none;">
+      <div class="dim_null">
+        <img src="http://www.career.go.kr/webres/images/loading.gif" alt="로딩중" />
+      </div>
+    </div>
+    <div class="inner wide-inner">
+      <div class="remote-top">
+        <div class="inner">
+          <h2 class="s-tit">원격 수업 등에 활용 가능한 온라인 진로교육 활동 안내</h2>
+          <p class="s-tit-txt">원격 수업 등에 활용 가능한 온라인 진로교육 활동에 대해 소개해드립니다.</p>
+          <ul class="remote-tab">
+            <li>
+              <a href="#">
+                <strong>진로 수업 및<br>창의적 체험활동</strong>
+              </a>
+            </li>
+            <li class="on">
+              <a href="#">
+                <strong>진로심리검사 및<br>진로상담</strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>진로직업<br>체험</strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>직업 및 학과<br>정보 탐색</strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>창업가정신<br>함양 교육</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="remote-cont">
+        <div class="inner">
+          <h3 class="cont-tit type02">진로심리검사</h3>
+          <p class="cont-tit-txt"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" class="go-link" target="_blank" title="새창 열림">커리어넷 [진로심리검사]</a>에서 양질의 진로심리검사를 다양한 검사 방식(지필, PC, 모바일)으로 무료로 지원</p>
+          <div class="board-list">
+            <em>진로정보망 <span>‘커리어넷’</span> 진로심리검사</em>
+            <table>
+              <caption>대상,심리검사명,예상시간,총문항으로 구성된 표입니다.</caption>
+              <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">대상</th>
+                  <th scope="col" colspan="2">심리검사명</th>
+                  <th scope="col">예상시간</th>
+                  <th scope="col">총문항</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">초등학생용</td>
+                  <td rowspan="2">주니어 커리어넷<br>진로흥미탐색</td>
+                  <td><a href="http://www.career.go.kr/jr/navigation/arojunior" target="_blank" title="새창 열림">저학년용(3,4학년)</a></td>
+                  <td>15분</td>
+                  <td>18개</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.career.go.kr/jr/navigation/elementary" target="_blank" title="새창 열림">고학년용(5,6학년)</a></td>
+                  <td>20분</td>
+                  <td>48개</td>
+                </tr>
+                <tr>
+                  <td rowspan="5" class="line-btm">중·고생용</td>
+                  <td colspan="2"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" target="_blank" title="새창 열림">직업적성검사</a></td>
+                  <td>20분(중)/30분(고)</td>
+                  <td>66개(중)/88개(고)</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" target="_blank" title="새창 열림">직업흥미검사(K)</a></td>
+                  <td>15분</td>
+                  <td>96개</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" target="_blank" title="새창 열림">직업흥미검사(H)</a></td>
+                  <td>20분</td>
+                  <td>141개(중)/130개(고)</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" target="_blank" title="새창 열림">직업가치관검사</a></td>
+                  <td>10분</td>
+                  <td>28개</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><a href="http://www.career.go.kr/cnet/front/examen/examenMain.do" target="_blank" title="새창 열림">진로성숙도검사</a></td>
+                  <td>20분</td>
+                  <td>64개</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="info-txt">※ 중고교의 경우, 교육행정정보망(NEIS)에 학생의 커리어넷 ID와 나이스 식별번호를 입력하면 검사 결과표 조회 가능</p>
+          <button type="button" class="btn-down" title="다운로드"><span>커리어넷 진로심리검사- 교육행정정보망(NEIS) 연동 방식 안내 자료 보기</span></button>
+          <button type="button" class="btn-down" title="다운로드"><span>커리어넷 진로심리검사 자세히 보기</span></button>
+          <h3 class="cont-tit type02">진로상담</h3>
+          <p class="cont-tit-txt"><a href="http://www.career.go.kr/cnet/front/counsel/counselInfo.do" class="go-link" target="_blank" title="새창 열림">커리어넷 [진로상담]-[상담신청]</a>을 통해 진로문제로 고민하는 학생들은 1:1 진로 상담을 신청할 수 있으며, <a href="http://www.career.go.kr/cnet/front/counsel/counselList.do" class="go-link" target="_blank" title="새창 열림">[상담보기]</a>에서 또래의 상담사례 제공</p>
+          <p class="cont-tit-txt"><a href="http://www.career.go.kr/cnet/front/commbbs/recipe/commBbsList.do" class="go-link" target="_blank" title="새창 열림">커리어넷 [진로교육자료]-[진로레시피]</a>에서는 학부모를 대상으로 자녀 진로지도에 필요한 정보를 제공하는 방송 콘텐츠 제공</p>
+          <button type="button" class="btn-down" title="다운로드"><span>커리어넷 진로상담 자세히 보기
+          </span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //CONTENT -->
+
+  <!-- FOOTER -->
+  <!-- 구글어날리틱스 20170117 -->
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+
+    ga("create", "UA-90429556-1", "auto");
+    ga("send", "pageview");
+  </script>
+  <div id="footerR">
+    <div class="footer-menu">
+      <ul class="footer-menu-list">
+        <li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02" target="_blank" title="새창 열림">개인정보처리방침</a></li>
+        <li><a href="#this" title="새창 열림" onclick="window.open('/cnet/front/main/emailRejectPopup.do','','width=715, height=450, menubar=no, status=no, left=300');">이메일주소무단수집거부</a></li>
+        <li><a href="/cnet/front/useInfo/faqUseInfo.do">이용안내</a></li>
+        <li><a href="/cnet/front/commbbs/help/FcommBbsInsert.do">이용문의</a></li>
+        <li><a href="/cnet/front/eng/eng_home_new.do" target="_blank" title="새창 열림">English</a></li>
+        <li><a href="/cnet/front/openapi/openApiMainCenter.do">오픈API</a></li>
+      </ul>
+      <div class="family-site">
+        <h5 class="family-site-title"><a href="#none" title="관련사이트 보기">FAMILY SITE</a></h5>
+        <ul class="family-site-layer">
+          <li><a href="https://www.career.go.kr/jr" target="_blank" title="새창">주니어커리어넷</a></li>
+          <li><a href="https://mentoring.career.go.kr/school/index.do" target="_blank" title="새창">원격영상진로멘토링</a></li>
+          <li><a href="https://yeep.kr/main/main.do" target="_blank" title="새창">창업체험플랫폼(YEEP)</a></li>
+          <li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창">꿈길</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".family-site .family-site-title").on("click", function (e) {
+          //FAMILY SITE 메뉴 열고닫기
+          e.preventDefault();
+          var _this = $(this);
+          if (!_this.is(".on")) {
+            _this.addClass("on").attr("title", "관련사이트 닫기");
+          } else {
+            _this.removeClass("on").attr("title", "관련사이트 보기");
+          }
+        });
+      });
+    </script>
+    <div class="address">
+      <div class="copyright">
+        주소 : 세종특별자치시 시청대로 370 세종국책연구단지 사회정책동 한국직업능력개발원 커리어넷<br />
+        운영 : 한국직업능력개발원 국가진로교육연구본부 진로교육센터 | 지원 : 교육부<br />
+        COPYRIGHTS ⓒ KRIVET ALL RIGHTS RESERVED.
+      </div>
+      <div class="logo-site">
+        <a href="http://www.moe.go.kr/main.do" target="_blank" title="교육부 바로가기(새창)"><img src="http://www.career.go.kr/webres/images/img_logo_footer_link1.jpg" alt="교육부" /></a>
+        <a href="http://www.krivet.re.kr/" target="_blank" title="한국직업능력개발원 바로가기(새창)"><img src="http://www.career.go.kr/webres/images/img_logo_footer_link2.jpg" alt="한국직업능력개발원" /></a>
+        <a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기(새창)">
+          <img src="http://www.career.go.kr/webres/images/img_logo_footer_link3.jpg" alt="국가공인 웹 접근성 품질인증마크" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- //FOOTER -->
+</body>
+</html>

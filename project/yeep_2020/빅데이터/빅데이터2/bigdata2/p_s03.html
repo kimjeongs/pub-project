@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="url" property="og:url" content="?coNo=" />
+	<meta name="type" property="og:type" content="website" />
+	<meta name="title" property="og:title" content="[YEEP 가상기업평가] " />
+	<meta name="description" property="og:description" content=" - " />
+	<meta name="image" property="og:image" content="/img" />
+	<title>YEEP</title>
+	<link rel="shortcut icon" href="https://yeep.kr/images/common/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/common.css?ver=2020112016" />
+	<link rel="stylesheet" href="css/bigdata2.css" />
+	<script type="text/javascript" src="https://yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/pagenation.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/common.js?ver=2020112016"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "UA-117856487-1");
+	</script>
+	<script>
+		function roleChange() {
+			var role = $("#role option:selected").val();
+			var roleNm = $("#role option:selected").text();
+			$("#mberRoleSeCode").val(role);
+			$("#mberRoleSeCodeNm").val(roleNm);
+			$("#referer").val(document.location.pathname + (document.location.href.split("?")[1] != null ? "?" + document.location.href.split("?")[1] : ""));
+			if ($("#fundNo").val() != null) {
+				$("#roleFundNo").val($("#fundNo").val());
+			}
+			if ($("#itemNo").val() != null) {
+				$("#roleItemNo").val($("#itemNo").val());
+			}
+			if ($("#kldgNo").val() != null) {
+				$("#roleKldgNo").val($("#kldgNo").val());
+			}
+			if ($("#qstnrNo").val() != null) {
+				$("#roleQstnrNo").val($("#qstnrNo").val());
+			}
+			if ($("#coNo").val() != null) {
+				$("#roleCoNo").val($("#coNo").val());
+			}
+			if ($("#bltnNo").val() != null) {
+				$("#roleBltnNo").val($("#bltnNo").val());
+			}
+			document.getElementById("frmRoleChange").submit();
+		}
+
+		function questBannerClose() {
+			if ($("#top-notice").css("display") == "none") {
+				jQuery("#top-notice").show();
+			} else {
+				jQuery("#top-notice").hide();
+				$("#header").removeAttr("class");
+			}
+		}
+
+		function goMyPage() {
+			document.getElementById("frmMypage").submit();
+		}
+	</script>
+</head>
+<body>
+<div id="top">
+	<script>
+		var $loading = $(
+			'<div style="position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:#000; opacity:0.6; filter:alpha(opacity="60")"><img src ="/images/common/load.gif" style="position: absolute; top: 50%; left: 49%;" alt="로딩중입니다"></div>'
+		)
+			.appendTo(document.body)
+			.hide();
+		$(document).ready(function () {
+			// noti swiper
+			var swiperNotiBanner = new Swiper(".noti-swiper", {
+				//2018-07-18 수정
+				height: 52,
+				autoHeight: true,
+				spaceBetween: 0,
+				slidesPerView: 1,
+				loop: true,
+				direction: "vertical",
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+				},
+			});
+			//웹접근성 시작,정지 버튼 추가 2019-08-09
+			$(".swiper-button-pause").click(function () {
+				swiperNotiBanner.autoplay.stop();
+				$(".swiper-button-play").show();
+				$(this).hide();
+			});
+			$(".swiper-button-play").click(function () {
+				swiperNotiBanner.autoplay.start();
+				$(".swiper-button-pause").show();
+				$(this).hide();
+			});
+
+			if ($("#headerImgProfile").attr("src") == "" || $("#headerImgProfile").attr("src") == "/images/main/@profile.jpg") {
+				$("#headerImgProfile").attr("alt", $("#headerImgProfile").attr("alt") + " (사진없음)");
+			}
+		});
+
+		function aprtJoinPop(aprtNo) {
+			var popUrl = "/aprt/aprtJoinPop.do?aprtNo=" + aprtNo;
+			var width = "971";
+			var height = "550";
+			var popOption = "width=" + width + ", height=" + height + ", resizable=yes, scrollbars=no, status=1;";
+
+			popupObject = window.open(popUrl, aprtNo, popOption);
+			popupObject.window.focus();
+		}
+
+		function startUp() {
+			var openYn = "Y";
+
+			if (openYn == "Y") {
+				location.href = "/evl/corpEvlHomeList.do";
+			} else {
+				location.href = "/main/startupSample.do";
+			}
+		}
+		function goMyPage() {
+			document.getElementById("frmMypage").submit();
+		}
+	</script>
+	<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+		<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode" />
+		<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm" />
+		<input type="hidden" name="referer" id="referer" />
+		<input type="hidden" name="fundNo" id="roleFundNo" />
+		<input type="hidden" name="itemNo" id="roleItemNo" />
+		<input type="hidden" name="kldgNo" id="roleKldgNo" />
+		<input type="hidden" name="qstnrNo" id="roleQstnrNo" />
+		<input type="hidden" name="coNo" id="roleCoNo" />
+		<input type="hidden" name="bltnNo" id="roleBltnNo" />
+	</form>
+	<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+		<input type="hidden" name="modifyYn" id="modifyYn" value="N" />
+	</form>
+	<div id="skipNavi">
+		<a href="#container">본문 영역으로 바로가기</a>
+		<a href="#gnb02">메뉴바로가기</a>
+	</div>
+	<div id="wrap" class="main-renew">
+		<!-- header -->
+		<div id="header02">
+			<!-- 서브메뉴 활성화 상태일때 class="gnbOpen" 추가 -->
+			<!-- notice -->
+			<!-- //notice -->
+			<div class="header-inner">
+				<h1 class="logo-header">
+					<a href="https://yeep.kr/main/main.do"><img src="https://yeep.kr/images/common/logo_header.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고" /></a>
+				</h1>
+				<!-- login -->
+				<div class="header-member">
+					<ul>
+						<li><a href="https://yeep.kr/cmmn/sso/api/user.agent.3.do?referer=/mypage/myPageMainList.do">로그인</a></li>
+						<li><a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a></li>
+						<li><a href="https://yeep.kr/mypage/askingList.do">이용문의</a></li>
+						<li class="topentre">
+							<a href="https://yeep.kr/clas/classMainPgCmps.do"><img src="https://yeep.kr/images/topentre.png" alt="창업체험센터" /></a>
+						</li>
+					</ul>
+				</div>
+				<!-- //login -->
+				<!-- gnb -->
+				<div id="gnb02">
+					<ul>
+						<li>
+							<strong class="depth1"><a href="javascript:;">YEEP</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>YEEP</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/yeepIntro.do">YEEP 소개</a></li>
+										<li><a href="https://yeep.kr/intro/yeepKnow.do">YEEP 활용법</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">수업</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>수업</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/clasIntro.do">수업 소개</a></li>
+										<li><a href="https://yeep.kr/intro/clasProcess.do">수업 과정</a></li>
+										<li><a href="https://yeep.kr/clas/classMain.do">수업 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">동아리</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>동아리</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/aprtIntro.do">동아리 소개</a></li>
+										<li><a href="https://yeep.kr/aprt/aprtMisson.do" onclick="">동아리 미션</a></li>
+										<li><a href="https://yeep.kr/aprt/aprtMain.do">동아리 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>멘토링</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/mentor/mentorMainList.do">멘토링</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="https://yeep.kr/cpthb/applyContestList.do">
+										<strong>동아리 대회</strong>
+									</a>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/cpthb/applyContestList.do">대회 목록</a></li>
+										<li><a href="https://yeep.kr/cpthb/contestCaseList.do">우수 동아리 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">가상창업체험</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>GO스타트업</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/startupIntro.do">GO스타트업 소개</a></li>
+										<li><a href="https://yeep.kr/evl/corpEvlHomeList.do">GO스타트업 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>시장분석</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/surveyIntro.do" onclick="">시장분석 소개</a></li>
+										<li><a href="https://yeep.kr/evl/corpEvlSurveyList.do">시장분석 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>온라인 사업설명회</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/onlnPtIntro.do">온라인 사업설명회 소개</a></li>
+										<li><a href="https://yeep.kr/onln/onlnPtHomeList.do">온라인 사업설명회 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>가상크라우드펀딩</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/crowdFundingIntro.do">가상크라우드펀딩 소개</a></li>
+										<li><a href="https://yeep.kr/fund/fundHomeList.do">가상크라우드펀딩 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>가상마켓</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/marketIntro.do">가상마켓 소개</a></li>
+										<li><a href="https://yeep.kr/market/marketHomeList.do">가상마켓 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">핵심역량 진단</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>핵심역량 진단</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/intro/coreCmptyIntro.do">핵심역량 진단 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">자료실</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>자료실</strong>
+									<ul class="depth3">
+										<li><a href="https://yeep.kr/noti/eduExlntCaseList.do">창업체험교육 콘텐츠</a></li>
+										<li><a href="https://yeep.kr/noti/rschLeadSchList.do">수업·연구자료</a></li>
+										<li><a href="https://yeep.kr/noti/kldgChaEList.do">동영상 자료</a></li>
+										<li><a href="https://yeep.kr/noti/rfrcDataList.do">기타자료</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- //gnb -->
+			</div>
+			<span class="slogan">청소년의 창업가정신 함양을 위한 창업체험 프로그램</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			document.title = "빅데이터 활용 시장탐색 프로그램 < 빅데이터 활용 시장탐색 < 가상창업체험 | 온라인 창업체험교육 플랫폼YEEP";
+		});
+	</script>
+
+	<!-- container -->
+	<div id="container" class="bigdata" tabindex="0">
+		<div class="page-location">
+			<ul>
+				<li class="home">
+					<a href="https://yeep.kr/main/main.do"><img src="https://yeep.kr/images/common/icon_home.png" alt="홈" /></a>
+				</li>
+				<li><a href="javascript:;">가상창업체험</a></li>
+				<li>
+					<a href="javascript:;">빅데이터 활용 시장탐색</a>
+					<ul class="location-menu">
+						<li><a href="https://yeep.kr/intro/startupIntro.do">GO스타트업</a></li>
+						<li><a href="https://yeep.kr/evl/corpEvlSurveyList.do">시장분석</a></li>
+						<li><a href="https://yeep.kr/intro/onlnPtIntro.do">온라인 사업설명회</a></li>
+						<li><a href="https://yeep.kr/intro/crowdFundingIntro.do">가상크라우드펀딩</a></li>
+						<li><a href="https://yeep.kr/intro/marketIntro.do">가상마켓</a></li>
+						<li><a href="https://yeep.kr/intro/marketIntro.do">빅데이터 활용 시장탐색</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">빅데이터 활용 시장탐색 프로그램</a>
+					<ul class="location-menu">
+						<li><a href="https://yeep.kr/bdata/bdataStart.do">빅데이터 활용 시장탐색 프로그램</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="top-cont">
+			<h2 class="page-title">빅데이터 활용 시장탐색 프로그램</h2>
+			<div class="right">
+				<a href="javascript:;" class="btn btn-white">난이도 재선택</a>
+				<ul class="step">
+					<li class="active">데이터 탐색</li>
+					<li>데이터 선정</li>
+				</ul>
+			</div>
+		</div>
+		<div class="data2">
+			<div class="cont-tit-box">
+				<div class="inner">
+					<h3 class="sub-title">지속가능한 소비와 생산을 위한 가치 창출</h3>
+					<p class="tit-txt">지역 중 하나를 선택하여 어떤 스타트업을 만들지 정해보세요.</p>
+					<button type="button" class="btn-pop" data-num="1">사업별 업종 예시</button>
+				</div>
+			</div>
+			<div class="content">
+				<div class="parent-tab">
+					<div class="inner">
+						<ul class="tab-menu">
+							<li data-area="1">빨강동</li>
+							<li data-area="2">주황동</li>
+							<li data-area="3">노랑동</li>
+							<li data-area="4">초록동</li>
+							<li data-area="5">하늘동</li>
+							<li data-area="6">파랑동</li>
+							<li data-area="7">보라동</li>
+							<li data-area="8">자주동</li>
+							<li data-area="9" class="checked">검정동</li><!-- 확인된 지역 -->
+							<li data-area="10">하얀동</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont-wrap">
+					<div class="inner">
+						<div class="default-cont">
+							<p class="txt">탐색할 지역을 선택해주세요.</p>
+							<!-- 초급 -->
+							<!-- <div class="map-wrap level1">
+								<div class="imgbox-wrap">
+									<div class="imgbox">
+										<img src="images/bigdata2/img_map1.png" usemap="#image-map">
+									</div>
+									<map name="image-map" class="image-map">
+										<area target="" data-area="2" alt="" title="주황동" href="" coords="84,8,86,35,72,53,48,69,46,99,59,110,69,132,84,132,101,119,123,124,129,117,130,101,144,90,144,80,138,74,142,66,148,62,145,53,129,56,118,43,142,12,93,2" shape="poly">
+										<area target="" data-area="3" alt="" title="노랑동" href="" coords="141,13,118,43,128,55,145,54,148,63,143,65,138,74,145,81,143,91,130,100,129,118,123,124,142,155,155,157,177,147,181,143,221,158,242,145,252,135,261,132,254,97,264,93,267,86,257,79,267,58,273,56,269,36,251,23,230,20,199,16,180,23,168,8" shape="poly">
+										<area target="" data-area="4" alt="" title="초록동" href="" coords="270,36,282,29,294,31,303,30,332,7,349,43,402,52,430,80,400,111,380,108,353,119,348,115,315,116,311,137,316,147,299,159,288,159,259,157,243,144,252,135,262,132,254,96,265,92,266,85,257,79,267,59,273,56" shape="poly">
+									</map>
+								</div>
+								<ul class="area-cont">
+									<li class="checked" data-area="2">
+										<div class="name">
+											<strong>주황동</strong>
+										</div>
+									</li>
+									<li data-area="3">
+										<div class="name">
+											<strong>노랑동</strong>
+										</div>
+									</li>
+									<li data-area="4">
+										<div class="name">
+											<strong>초록동</strong>
+										</div>
+									</li>
+								</ul>
+							</div> -->
+							<!-- //초급 -->
+
+							<!-- 중급 -->
+							<!-- <div class="map-wrap level2">
+								<div class="imgbox-wrap">
+									<div class="imgbox">
+										<img src="images/bigdata2/img_map2.png" usemap="#image-map">
+									</div>
+									<map name="image-map" class="image-map">
+										<area target="" data-area="2" alt="" title="주황동" href="" coords="84,8,86,35,72,53,48,69,46,99,59,110,69,132,84,132,101,119,123,124,129,117,130,101,144,90,144,80,138,74,142,66,148,62,145,53,129,56,118,43,142,12,93,2" shape="poly">
+										<area target="" data-area="3" alt="" title="노랑동" href="" coords="141,13,118,43,128,55,145,54,148,63,143,65,138,74,145,81,143,91,130,100,129,118,123,124,142,155,155,157,177,147,181,143,221,158,242,145,252,135,261,132,254,97,264,93,267,86,257,79,267,58,273,56,269,36,251,23,230,20,199,16,180,23,168,8" shape="poly">
+										<area target="" data-area="4" alt="" title="초록동" href="" coords="270,36,282,29,294,31,303,30,332,7,349,43,402,52,430,80,400,111,380,108,353,119,348,115,315,116,311,137,316,147,299,159,288,159,259,157,243,144,252,135,262,132,254,96,265,92,266,85,257,79,267,59,273,56" shape="poly">
+										<area target="" data-area="7" alt="" title="보라동" href="" coords="141,154,152,174,209,195,204,216,218,223,217,228,204,238,223,248,225,292,236,304,232,313,243,314,273,299,288,306,300,278,309,277,325,245,306,231,310,222,288,180,289,160,259,157,243,144,221,159,181,142,177,147,154,157" shape="poly">
+										<area target="" data-area="9" alt="" title="검정동" href="" coords="431,79,465,113,485,125,471,172,502,172,505,180,486,182,480,189,449,188,445,179,425,181,409,177,399,195,411,208,406,219,366,218,358,209,366,196,323,169,326,158,316,147,311,139,316,116,348,114,353,119,378,108,399,111" shape="poly">
+									</map>
+								</div>
+								<ul class="area-cont">
+									<li class="checked" data-area="2">
+										<div class="name">
+											<strong>주황동</strong>
+										</div>
+									</li>
+									<li data-area="3">
+										<div class="name">
+											<strong>노랑동</strong>
+										</div>
+									</li>
+									<li data-area="4">
+										<div class="name">
+											<strong>초록동</strong>
+										</div>
+									</li>
+									<li data-area="7">
+										<div class="name">
+											<strong>보라동</strong>
+										</div>
+									</li>
+									<li data-area="9">
+										<div class="name">
+											<strong>검정동</strong>
+										</div>
+									</li>
+								</ul>
+							</div> -->
+							<!-- //중급 -->
+
+							<!-- 고급 -->
+							<div class="map-wrap level3">
+								<div class="imgbox-wrap">
+									<div class="imgbox">
+										<img src="images/bigdata2/img_map3.png" usemap="#image-map">
+									</div>
+									<map name="image-map" class="image-map">
+										<area target="" data-area="1" alt="" title="빨강동" href="" coords="83,8,86,36,71,53,47,70,46,98,59,109,69,132,69,152,82,162,71,178,86,197,102,201,102,214,84,218,39,193,12,165,2,68,26,28" shape="poly">
+										<area target="" data-area="2" alt="" title="주황동" href="" coords="84,8,86,35,72,53,48,69,46,99,59,110,69,132,84,132,101,119,123,124,129,117,130,101,144,90,144,80,138,74,142,66,148,62,145,53,129,56,118,43,142,12,93,2" shape="poly">
+										<area target="" data-area="3" alt="" title="노랑동" href="" coords="141,13,118,43,128,55,145,54,148,63,143,65,138,74,145,81,143,91,130,100,129,118,123,124,142,155,155,157,177,147,181,143,221,158,242,145,252,135,261,132,254,97,264,93,267,86,257,79,267,58,273,56,269,36,251,23,230,20,199,16,180,23,168,8" shape="poly">
+										<area target="" data-area="4" alt="" title="초록동" href="" coords="270,36,282,29,294,31,303,30,332,7,349,43,402,52,430,80,400,111,380,108,353,119,348,115,315,116,311,137,316,147,299,159,288,159,259,157,243,144,252,135,262,132,254,96,265,92,266,85,257,79,267,59,273,56" shape="poly">
+										<area target="" data-area="5" alt="" title="하늘동" href="" coords="68,132,69,152,83,162,71,177,85,197,102,201,101,214,127,218,156,212,174,213,204,217,209,196,151,174,141,154,123,124,101,119,84,133" shape="poly">
+										<area target="" data-area="6" alt="" title="파랑동" href="" coords="126,218,157,256,141,272,135,302,143,326,152,321,171,335,193,345,199,327,222,306,232,313,236,305,225,292,223,249,204,238,216,229,219,222,205,217,174,213,155,212" shape="poly">
+										<area target="" data-area="7" alt="" title="보라동" href="" coords="141,154,152,174,209,195,204,216,218,223,217,228,204,238,223,248,225,292,236,304,232,313,243,314,273,299,288,306,300,278,309,277,325,245,306,231,310,222,288,180,289,160,259,157,243,144,221,159,181,142,177,147,154,157" shape="poly">
+										<area target="" data-area="8" alt="" title="자주동" href="" coords="290,160,288,179,311,222,307,231,325,245,310,276,301,277,288,307,297,321,312,312,318,321,345,316,323,354,351,360,390,334,411,295,409,254,426,232,451,226,455,208,467,202,493,199,497,181,486,182,481,189,449,188,445,178,425,181,410,177,398,195,412,208,406,219,366,218,359,209,366,196,323,168,326,158,316,146,300,159" shape="poly">
+										<area target="" data-area="9" alt="" title="검정동" href="" coords="431,79,465,113,485,125,471,172,502,172,505,180,486,182,480,189,449,188,445,179,425,181,409,177,399,195,411,208,406,219,366,218,358,209,366,196,323,169,326,158,316,147,311,139,316,116,348,114,353,119,378,108,399,111" shape="poly">
+										<area target="" data-area="10" alt="" title="하얀동" href="" coords="193,346,210,375,205,391,232,399,252,394,270,392,287,401,316,387,327,378,322,354,345,315,318,321,313,312,296,321,287,306,273,299,242,314,231,313,222,306,198,328" shape="poly">
+									</map>
+								</div>
+								<ul class="area-cont">
+									<li data-area="1" class="on">
+										<div class="name">
+											<strong>빨강동</strong>
+										</div>
+									</li>
+									<li class="checked" data-area="2">
+										<div class="name">
+											<strong>주황동</strong>
+										</div>
+									</li>
+									<li data-area="3">
+										<div class="name">
+											<strong>노랑동</strong>
+										</div>
+									</li>
+									<li data-area="4">
+										<div class="name">
+											<strong>초록동</strong>
+										</div>
+									</li>
+									<li data-area="5">
+										<div class="name">
+											<strong>하늘동</strong>
+										</div>
+									</li>
+									<li data-area="6">
+										<div class="name">
+											<strong>파랑동</strong>
+										</div>
+									</li>
+									<li data-area="7">
+										<div class="name">
+											<strong>보라동</strong>
+										</div>
+									</li>
+									<li data-area="8">
+										<div class="name">
+											<strong>자주동</strong>
+										</div>
+									</li>
+									<li data-area="9">
+										<div class="name">
+											<strong>검정동</strong>
+										</div>
+									</li>
+									<li data-area="10">
+										<div class="name">
+											<strong>하얀동</strong>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- //고급 -->
+						</div>
+						<div class="city-cont">
+							<div class="left-menu">
+								<div class="current">
+									<p class="txt">
+										<span>현재 탐색중인 지역은</span><br>
+										<strong>빨강동</strong>입니다.
+									</p>
+									<button type="button" class="btn-map">지역변경</button>
+								</div>
+								<div class="menu-tit-wrap">
+									<strong class="menu-tit">선택지역 상세정보</strong>
+									<p class="info-txt">선택한 지역의 상세정보를 확인해보세요.</p><!-- 선택 지역 상세정보가 활성화 되기 전 노출  -->
+								</div>
+								<ul class="tab-menu">
+									<li><a href="#">유동인구</a></li>
+									<li><a href="#">경제수준</a></li>
+									<li><a href="#">주변산업</a></li>
+									<li><a href="#">교통</a></li>
+									<li><a href="#">공공교육시설</a></li>
+								</ul>
+								<div class="btn-wrap">
+									<div class="info-txt">1개 이상의 상세정보를 탐색한 뒤, 예상 결과를 확인할 수 있습니다.</div><!-- 상세정보 비활성화시 노출 -->
+									<!-- 비활성화인 경우  <button type="button" class="btn-green" disabled>예상 결과 확인</button> -->
+									<button type="button" class="btn-pop btn-green" data-num="2">예상 결과 확인</button>
+								</div>
+							</div>
+							<div class="sub-tab-wrap">
+								<ul class="tab-cont">
+									<li>
+										<h4 class="cont-tit">유동인구 정보</h4>
+										<div class="chart-cont">
+											<strong class="tit">연령별</strong>
+											<div class="chart-box" style="height:270px;">
+												<canvas id="chartOld"></canvas>
+											</div>
+											<div id="chartLegendOld" class="chart-legend"></div>
+											<!--  -->
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+											<!--  -->
+										</div>
+										<div class="chart-cont">
+											<strong class="tit">시간대별</strong>
+											<div class="chart-box" style="height:270px;">
+												<canvas id="chartTime"></canvas>
+											</div>
+											<!--  -->
+											<p class="unit-m">(단위: %)</p>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+											<!--  -->
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">경제수준 정보</h4>
+										<div class="chart-wrap">
+											<div class="chart-cont">
+												<strong class="tit">연령별 자기계발비</strong>
+												<div class="chart-box" style="height: 210px;">
+													<canvas id="chartEco1"></canvas>
+												</div>
+												<p class="unit-m">(단위: %)</p>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+											<div class="chart-cont">
+												<strong class="tit">가구 소득수준</strong>
+												<div class="chart-box" style="height: 210px;">
+													<canvas id="chartEco2"></canvas>
+												</div>
+												<p class="unit-m">(단위: %)</p>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+											<div class="chart-cont">
+												<strong class="tit">월별 생활비 지출액</strong>
+												<p class="unit-m">(단위: %)</p>
+												<div class="chart-box" style="height: 210px;">
+													<canvas id="chartEco3"></canvas>
+												</div>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+											<div class="chart-cont">
+												<strong class="tit">주거유형</strong>
+												<div class="chart-box" style="height: 175px;">
+													<canvas id="chartEco4"></canvas>
+												</div>
+												<div id="chartLegendEco4" class="chart-legend"></div>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">주변산업 정보</h4>
+										<div class="chart-cont legend-right">
+											<strong class="tit">해당 지역에 존재하는 사업 분포</strong>
+											<div class="chart-box" style="height:350px;">
+												<canvas id="chartInd1"></canvas>
+											</div>
+											<div id="chartLegendInd1" class="chart-legend"></div>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+										</div>
+										<div class="chart-wrap">
+											<div class="chart-cont">
+												<strong class="tit">창업율</strong>
+												<div class="chart-box" style="height: 210px;">
+													<canvas id="chartInd2"></canvas>
+												</div>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+											<div class="chart-cont">
+												<strong class="tit">폐업율</strong>
+												<div class="chart-box" style="height: 210px;">
+													<canvas id="chartInd3"></canvas>
+												</div>
+												<div class="btm-info-txt">
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+													<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">교통 정보</h4>
+										<div class="local-info">
+											<strong class="tit">대중교통</strong>
+											<p class="txt">빨강동에는 <span class="subway">지하철역 3개,</span><span class="busstop">버스정류장 25개</span>가 있습니다.</p>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+										</div>
+										<div class="chart-cont">
+											<strong class="tit">월별 사고율</strong>
+											<div class="chart-box" style="height: 270px;">
+												<canvas id="chartAcci"></canvas>
+											</div>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">공공교육시설 정보</h4>
+										<div class="chart-cont">
+											<strong class="tit">학교 수</strong>
+											<div class="chart-box" style="height: 270px;">
+												<canvas id="chartSchool"></canvas>
+											</div>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+										</div>
+										<div class="local-info">
+											<strong class="tit">대학교 및 연구소</strong>
+											<p class="txt">빨강동에는 <span class="univers">대학교 3개,</span><span class="lab">연구소 5개</span>가 있습니다.</p>
+											<div class="btm-info-txt">
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+												<p class="txt01">그래프에 대한 설명텍스트입니다.</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="formPop" name="formPop" action="" method="post"></form>
+	<script type="text/javascript">
+		$(document).on("click", "a[name=btnCreateMarket]", function () {
+			if ($("#mberUniqueSn").val() == "") {
+				if (confirm("  로그인이 필요합니다.  \n  로그인 페이지로 이동하시겠습니까?  ")) {
+					window.location = "/cmmn/sso/api/user.agent.3.do";
+				}
+				return false;
+			}
+
+			if ("0" == "1") {
+				if (confirm("제품 등록을 위해  \n스타트업 관리로 이동합니다.")) {
+					var url = "/comng/market/product/ProductMngReg.do?openNavMarket=Y&coNo=" + "";
+					window.open(url, "ProductMngReg");
+					window.open("", "_self").close();
+				}
+			} else {
+				var url = "";
+				var winWidth = "600";
+				var winHeight = "430";
+				var x = screen.availWidth / 2 - winWidth / 2;
+				var y = screen.availHeight / 2 - winHeight / 2;
+				var status = "width=" + winWidth + ",height=" + winHeight + ",left=" + x + ",top=" + y + "toolbar=no,directories=no,scrollbars=yes,resizable=no,status=no,menubar=no";
+				var marketCreatePop = window.open(url, "marketCreatePop", status);
+
+				document.getElementById("formPop").target = "marketCreatePop";
+				document.getElementById("formPop").action = "/market/marketCreatePop.do";
+				document.getElementById("formPop").submit();
+				marketCreatePop.focus();
+			}
+		});
+	</script>
+</div>
+<div id="footer">
+	<!-- footer -->
+	<div id="footer02">
+		<div class="footer-utill-area">
+			<ul class="footer-utill">
+				<li><a href="https://yeep.kr/mypage/askingList.do">1:1 문의</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01" target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02" target="_blank" title="개인정보처리방침 새창 열림">개인정보처리방침</a></li>
+				<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&amp;bltnNo=392">이메일주소 무단수집거부</a></li>
+				<li class="use-email">yeep@koef.or.kr</li>
+			</ul>
+		</div>
+		<div class="footer-cont">
+			<address>
+				서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)<br />
+				운영: 한국청년기업가정신재단 | 지원: 교육부
+			</address>
+			<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+			<ul class="site_link">
+				<li>
+					<a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="교육부 새창 열림"><img src="https://yeep.kr/images/common/img_footer_link01.png" alt="교육부 로고" /></a>
+				</li>
+				<li>
+					<a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="KOEF 한국청년기업가정신재단 새창 열림">
+						<img src="https://yeep.kr/images/common/img_footer_link02.png" alt="KOEF 한국청년기업가정신재단 로고" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창">
+						<img src="https://yeep.kr/images/common/img_footer_link03.png" alt="국가공인 웹 접근성 품질인증마크" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //footer -->
+</div>
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- 지속 가능한 소비·생산사업 관련 예시 -->
+<div class="popup" data-num="1" style="width:1100px;"> 
+	<div class="popup-header">
+		<h2 class="popup-tit">지속 가능한 소비·생산사업 관련 예시</h2>
+		<button type="button" class="btn-close">닫기</button>
+	</div>
+	<div class="popup-cont">
+		<div class="example-pop">
+			<div class="top-wrap">
+				<strong class="tit">지속 가능한 소비·생산 증진이란,</strong>
+				<p class="txt">
+					생산자는 친환경 생산 기술을 개발하고, 제품 사용 후에 재활용이 가능하도록 설계하는 등 상품 생산 과정에서 환경에 미치는 영향을 최소화하는 것을 의미합니다. 또한 소비자는 친환경 제품 사용, 일회용품 사용 자제, 쓰레기 배출 최소화, 자원 절약 등을 생활화 하는 것을 의미합니다.<br>생산자와 소비자가 함께 노력하여야 만이 지속 가능한 발전을 이룰 수 있습니다.<br>우리 도시의 지속 가능한 발전을 위해 어떤 창업을 시작해볼지 선택해 봅시다.
+				</p>
+			</div>
+			<ul class="list">
+				<li><em>음식 관련 창업</em>(예시)  친환경 용기 활용<br>음식 스타트업</li>
+				<li><em>편의시설 관련 창업</em>(예시) 빗물 활용 세차<br>관련 스타트업</li>
+				<li><em>의류 관련 창업</em>(예시) 의류 교환 플랫폼<br>관련 스타트업</li>
+				<li><em>4차 산업혁명 관련 창업</em>(예시) 스마트팜<br>관련 스타트업</li>
+				<li><em>교육 관련 창업</em>(예시) 문제집 공유 플랫폼<br>관련 스타트업</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //지속 가능한 소비·생산사업 관련 예시 -->
+
+<!-- 스타트업 창업 계획 -->
+<div class="popup" data-num="2"> 
+	<div class="popup-header">
+		<h2 class="popup-tit">스타트업 창업 계획</h2>
+		<button type="button" class="btn-close">닫기</button>
+	</div>
+	<div class="popup-cont">
+		<div class="startup-plan">
+			<p class="cont-txt"><strong>빨강동</strong>에 만들 스타트업의 <strong>창업분야</strong>를 선택해주세요.</p>
+			<div class="list-wrap">
+				<ul class="list">
+					<li>음식 관련 창업</li>
+					<li>편의시설 관련 창업</li>
+					<li>의류관련 창업</li>
+					<li>4차 산업혁명 관련 창업</li>
+					<li>교육 관련 창업</li>
+				</ul>
+				<div class="list-cont">
+					<div class="default-img">
+						<img src="images/bigdata2/img_startupplan.png" alt="스타트업 창업분야를 선택해주세요.">
+					</div>
+					<ul>
+						<li>
+							<strong class="top-tit">음식 관련 창업 예시</strong>
+							<div class="cont">
+								<em class="tit">친환경 용기 활용 음식 스타트업</em>
+								<ul class="dot-list">
+									<!-- 분야별 설명 텍스트 -->
+									<li>음식 관련업종의 주요 고객 연령층은 ’20~40대‘입니다.
+									</li>
+									<li>주거유형 중 아파트의 비중이 높은 지역에서 창업하는 것이 유리합니다.</li>
+									<!-- 지역별 설명 텍스트 -->
+									<li>빨강동은 타 지역 대비 20대 인구 비중이 가장 낮습니다.</li>
+									<li>전 지역 중 초등학교, 중학교, 고등학교를 합한 개수가 가장 적습니다.</li>
+									<li>사회경제적 지위에 관해 자신을 상위층 또는 최상위층이라고 답한 비율이 낮은 편입니다.</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<strong class="top-tit">편의시설 관련 창업 예시</strong>
+							<div class="cont">
+								<em class="tit">빗물 활용 세차 관련 스타트업</em>
+								<ul class="dot-list">
+									<!-- 분야별 설명 텍스트 -->
+									<li>편의시설 관련 창업을 위해서는 해당 지역에 대중교통으로 쉽게 접근할 수 있는지 살펴보아야 합니다.</li>
+									<li>누적 유동인구와 지역 내 대학교 수가 많은 지역, 주거유형 중 ‘아파트’ 의 비중이 높은 지역에서 창업하는 것이 유리합니다.</li>
+									<!-- 지역별 설명 텍스트 -->
+									<li>빨강동은 타 지역 대비 20대 인구 비중이 가장 낮습니다.</li>
+									<li>전 지역 중 초등학교, 중학교, 고등학교를 합한 개수가 가장 적습니다.</li>
+									<li>사회경제적 지위에 관해 자신을 상위층 또는 최상위층이라고 답한 비율이 낮은 편입니다.</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<strong class="top-tit">의류관련 창업 예시</strong>
+							<div class="cont">
+								<em class="tit">의류 교환 플랫폼 관련 스타트업</em>
+								<ul class="dot-list">
+									<!-- 분야별 설명 텍스트 -->
+									<li>의류 관련업종의 주요 고객 연령층은 ’20~30대’입니다.</li>
+									<li>의류 관련 창업을 위해서는 해당 지역에 대중교통으로 쉽게 접근할 수 있는지, 누적 유동인구가 많은지 살펴보아야 합니다.</li>
+									<!-- 지역별 설명 텍스트 -->
+									<li>빨강동은 타 지역 대비 20대 인구 비중이 가장 낮습니다.</li>
+									<li>전 지역 중 초등학교, 중학교, 고등학교를 합한 개수가 가장 적습니다.</li>
+									<li>사회경제적 지위에 관해 자신을 상위층 또는 최상위층이라고 답한 비율이 낮은 편입니다.</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<strong class="top-tit">4차 산업혁명 관련 창업 예시</strong>
+							<div class="cont">
+								<em class="tit">스마트팜 관련 스타트업</em>
+								<ul class="dot-list">
+									<!-- 분야별 설명 텍스트 -->
+									<li>교육 관련 창업을 위해서는 ‘0~10대’ 인구 수가 많은지 살펴보아야 합니다.</li>
+									<li>가구 소득수준이 높고, 주민들이 중산층 이상의 사회경제적 지위를 가지고 있으며, 초·중·고교 수가 많은 지역에서의 창업이 유리합니다.</li>
+									<!-- 지역별 설명 텍스트 -->
+									<li>빨강동은 타 지역 대비 20대 인구 비중이 가장 낮습니다.</li>
+									<li>전 지역 중 초등학교, 중학교, 고등학교를 합한 개수가 가장 적습니다.</li>
+									<li>사회경제적 지위에 관해 자신을 상위층 또는 최상위층이라고 답한 비율이 낮은 편입니다.</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<strong class="top-tit">교육 관련 창업 예시</strong>
+							<div class="cont">
+								<em class="tit">문제집 공유 플랫폼 관련 스타트업</em>
+								<ul class="dot-list">
+									<!-- 분야별 설명 텍스트 -->
+									<li>스마트팜 관련 업종은 ‘40~50대’ 비중이 높은 지역에서 창업하는 것이 유리합니다.</li>
+									<li>주민들이 중산층 이상의 사회경제적 지위를 가지고 있는지, 지역 내 연구개발 사업체 수가 많은지 살펴보아야 합니다.</li>
+									<!-- 지역별 설명 텍스트 -->
+									<li>빨강동은 타 지역 대비 20대 인구 비중이 가장 낮습니다.</li>
+									<li>전 지역 중 초등학교, 중학교, 고등학교를 합한 개수가 가장 적습니다.</li>
+									<li>사회경제적 지위에 관해 자신을 상위층 또는 최상위층이라고 답한 비율이 낮은 편입니다.</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup-footer">
+		<div class="btn-wrap">
+			<button type="button" class="btn-pop-gray">취소</button>
+			<a href="javascript:;" class="btn-pop-green disabled">예상 결과 확인</a>
+		</div>
+	</div>
+</div>
+<!-- //스타트업 창업 계획 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://rawgit.com/beaver71/Chart.PieceLabel.js/master/build/Chart.PieceLabel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="js/bigdata2.js"></script>
+
+<script>
+	// ************* 유동인구 정보 *************
+	//연령별
+	var ctx = document.getElementById('chartOld').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'horizontalBar',
+		data: {
+			labels: ['100세이상','90세','80세','70세','60세','50세','40세','30세','20세','0세~10세'],
+			datasets: [	{
+				data: [100000,1000000,1500000,2000000,2500000,2688420,2500000,2000000,1500000,1000000],
+				label: "남자(명)",
+				backgroundColor: '#339ff3',
+			},
+			{
+				data: [-100000,-1000000,-1500000,-2000000,-2500000,-2688420,-2500000,-2000000,-1500000,-1000000],
+				label: "여자(명)",
+				backgroundColor: '#fe718f',
+			}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					left: 10,
+					right: 10
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					stacked: false,
+					gridLines: {
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+						// labelString: '명',
+						fontSize:12,
+						fontColor:'#999'
+					},
+				}],
+				yAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					stacked: true,
+					gridLines: {
+						zeroLineColor:'#ddd'
+					},					
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+	document.getElementById('chartLegendOld').innerHTML = myChart.generateLegend();
+	
+	// 시간대별
+	var ctx = document.getElementById('chartTime').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+			datasets: [
+			{
+				label: '경로1',
+				pointRadius: 3,
+				data: [7,6.9,9.5,14.5,18.4,21.5,25.2,26.5,23.3,18.3,13.9,9.6],
+				borderColor: "#4166e8",
+				backgroundColor: "#4166e8",
+				borderWidth: 2,
+				fill: false,
+				lineTension: 0
+			},
+			{
+				label: '경로2',
+				pointRadius: 3,
+				data: [3.9,4.2,5.7,8.5,11.9,15.2,17,16.6,14.2,10.3,6.6,4.8],
+				borderColor: "#ff6163",
+				backgroundColor: "#ff6163",
+				borderWidth: 2,
+				fill: false,
+				lineTension: 0
+			}]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					left: 10,
+					right: 30
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 5,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							font: {
+								size: 12
+							},
+							align:'end'
+						}
+					}
+				}
+			}
+		}
+	});
+
+
+	// ************* 경제수준 정보 *************
+	// 연령별 자기계발비
+	var ctx = document.getElementById('chartEco1').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['10대','20대','30대','40대','50대','60대 이상'],
+			datasets: [
+				{	
+					backgroundColor: ['#3892e7','#3892e7','#3892e7','#3892e7','#3892e7','#3892e7'],
+					data: [35,48,64,50,78,75]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 50,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	
+	// 가구 소득수준
+	var ctx = document.getElementById('chartEco2').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['100만원 미만','200~300만원 미만','400~500만원 미만','600만원 이상'],
+			datasets: [
+				{	
+					backgroundColor: ['#fdca57','#fdca57','#fdca57','#fdca57'],
+					data: [35,48,64,50]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 50,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	
+	// 월별 생활비 지출액
+	var ctx = document.getElementById('chartEco3').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+			datasets: [
+			{
+				pointBackgroundColor:'#fff',
+				pointRadius: 3,
+				data: [35,55,65,50,45,70,80,65,70,80,90,120],
+				borderColor: "#f36060",
+				backgroundColor: "rgba(254,162,88,0.4)",
+				borderWidth: 2,
+				fill: false,
+				lineTension: 0
+			},
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					left: 10,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+
+	// 주거유형
+	var ctx = document.getElementById('chartEco4').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'pie',
+		data: {
+			labels: ['주거1','주거2','주거3','주거4','주거5'],
+			datasets: [
+				{
+					backgroundColor: ['#6bbdc0','#339ff3','#fe718f','#fea258','#fec86a'],
+					data: [35,48,64,50,78],
+					borderWidth: 1
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display:false
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color: '#000',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	document.getElementById('chartLegendEco4').innerHTML = myChart.generateLegend();
+
+
+	// ************* 주변산업 정보 *************
+	// 해당 지역에 존재하는 사업 분포
+	var ctx = document.getElementById('chartInd1').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'pie',
+		data: {
+			labels: ['음식','편의시설','의류','교육','4차 산업혁명'],
+			datasets: [
+				{
+					backgroundColor: ['#6bbdc0','#339ff3','#fe718f','#fea258','#fec86a'],
+					data: [30,25,27,10,8],
+					borderWidth: 1
+				}
+			]
+		},
+		options: {
+			pieceLabel: {
+				render : 'label',
+				render: function(d) { return d.percentage + "%" },
+				fontSize: 14,
+				fontStyle: 'bold',
+				fontColor: '#000',
+				position: 'outside',
+				outsidePadding : 4 ,
+				segment: true,
+			},
+			maintainAspectRatio :false,
+			legend: {
+				display:false
+			},
+			plugins: {
+				datalabels: {
+					display: false,
+					labels: {
+						title: {
+							color: '#fff',
+							font: {
+								size: 15,
+							},
+							align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	document.getElementById('chartLegendInd1').innerHTML = myChart.generateLegend();
+
+	// 창업율
+	var ctx = document.getElementById('chartInd2').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['제조업','소매업','음식점','교육서비스업','연구개발업'],
+			datasets: [
+				{	
+					backgroundColor: ['#3892e7','#3892e7','#3892e7','#3892e7','#3892e7'],
+					data: [35,48,64,50,78]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 50,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+
+	// 폐업율
+	var ctx = document.getElementById('chartInd3').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['제조업','소매업','음식점','교육서비스업','연구개발업'],
+			datasets: [
+				{	
+					backgroundColor: ['#fea258','#fea258','#fea258','#fea258','#fea258'],
+					data: [35,48,64,50,78]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 50,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	
+
+	// ************* 교통 정보 *************
+	// 월별 사고율
+	var ctx = document.getElementById('chartAcci').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+			datasets: [
+			{
+				pointBackgroundColor:'#fff',
+				pointRadius: 3,
+				data: [35,55,65,50,45,70,80,65,70,80,90,120],
+				borderColor: "#00b5c6",
+				backgroundColor: "rgba(0,181,198,0.3)",
+				borderWidth: 2,
+				fill: true,
+				lineTension: 0
+			},
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					left: 10,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+	
+
+	// ************* 공공교육시설 정보 *************
+	// 학교 수
+	var ctx = document.getElementById('chartSchool').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['유치원','초등학교','중학교','고등학교'],
+			datasets: [
+				{	
+					backgroundColor: ['#4166e8','#42baef','#ff6163','#ff8111'],
+					data: [36,25,12,20]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 5,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							// align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+</script>
+</body>
+</html>

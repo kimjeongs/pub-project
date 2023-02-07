@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<title>온라인창업체험교육 플랫폼 YEEP</title>
+	<link rel="stylesheet" href="../../assets/css/contents.css">
+</head>
+<body>
+<!-- s: wrap -->
+<div class="wrap">
+	<!-- s: container -->
+	<div class="container">
+		<!-- s: content -->
+		<div class="content">
+			<button type="button" class="btn-pop btn-white" data-num="1">문의글 작성하기
+			</button>
+		</div>
+		<!-- e: content -->
+	</div>
+	<!-- e: container -->
+</div>
+<!-- e: wrap -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- s: 문의글 작성하기 -->
+<div class="popup" data-num="1"> 
+	<div class="popup-header">
+		<h2 class="popup-tit">문의글 작성하기
+		</h2>
+		<button type="button" class="btn-close">닫기</button>
+	</div>
+	<div class="popup-cont">
+		<div class="qna-write-pop">
+			<div class="top">
+				<div class="writer">
+					<em>작성자</em>
+					<span>박새로이</span>
+				</div>
+				<span class="check-set">
+					<input type="checkbox" id="ck2" name="svc1" checked=""> 
+					<label for="ck2">비밀글</label>
+				</span>
+			</div>
+			<div class="write-cont">
+				<strong class="tit">제목</strong>
+				<div class="inp-max-wrap txt">
+					<input type="text" class="inp-tit inp-max" maxlength="30" placeholder="제목을 입력해주세요.">
+					<div class="maxlen"><span class="current">0</span>/30</div>
+				</div>
+				<strong class="tit">내용</strong>
+				<div class="inp-max-wrap txtarea-box">
+					<textarea class="inp-max" maxlength="500" placeholder="내용을 입력해주세요."></textarea>
+					<div class="btm">
+						<div class="maxlen"><span class="current">0</span>/500</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn-wrap">
+			<button type="button" class="btn btn-gray-round btn-close">취소</button>
+			<a href="#" class="btn btn-orange-round">등록</a>
+		</div>
+		<!-- 수정 시 -->
+		<!-- <div class="btn-wrap">
+			<button type="button" class="btn btn-gray-round btn-close">취소</button>
+			<a href="#" class="btn btn-orange-round">수정</a>
+		</div> -->
+		<!-- //수정 시 -->
+	</div>
+</div>
+<!-- e: 문의글 작성하기 -->  
+
+<script src="../../assets/js/lib/jquery-3.5.1.min.js"></script>
+<script src="../../assets/js/common.js"></script>
+
+</body>
+</html>

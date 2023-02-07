@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap { position:relative; }
+    .btn-gray { display:inline-block;width:103px;height:42px;background:#777;color:#fff;border:none;border-radius:3px;font-size:16px;font-weight:700;line-height:40px; }
+
+    /* popup */
+    .popup { position:fixed;top:50%;left:50%;width:560px;height:656px;display:none;background:#fff;z-index:1000;transform:translate(-50%,-50%); }
+    .popup.on { display:block;}
+    .popup .popup-header { width:100%;height:59px;padding:0 30px;background:#4764c0;box-sizing:border-box; }
+    .popup .popup-header .popup-tit { margin:0;color:#fff;font-size:20px;font-weight:500;line-height:59px;letter-spacing:-0.3px; }
+    .popup .popup-cont { width:100%;height:490px;padding:32px;overflow-y:auto;box-sizing:border-box; }
+    .popup .popup-footer { position:absolute;left:0;bottom:0;width:100%;padding:32px 0;background:#fff;text-align:center; }
+    .dim { position:fixed;top:0;left:0;display:none;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:500; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <button type="button" class="btn-pop btn-gray" data-num="1">팝업</button>
+</div>
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- s: popup -->
+<div class="popup" data-num="1"> 
+  <div class="popup-header">
+    <h2 class="popup-tit">창업가정신 함양교육 콘텐츠</h2>
+  </div>
+  <div class="popup-cont">
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+    팝업 내용<br>
+  </div>
+  <div class="popup-footer">
+    <button type="button" class="btn-gray btn-close">닫기</button>
+  </div>
+</div>
+<!-- e: popup -->  
+
+<script src="js/lib/jquery-3.5.1.min.js"></script>
+<script>
+  $(function(){
+    var openpopup = $('.btn-pop'),
+        closepopup = $('.popup .btn-close'),
+        popup = $('.popup'),
+        dim = $('.dim');
+    
+    openpopup.on('click',function() {
+      var num = $(this).attr('data-num');
+      
+      $('.popup'+'[data-num='+num+']').addClass('on');
+      $('body, html').css('overflow','hidden');
+      dim.css('display','block');
+      $('body, html').css('overflow','hidden')
+    });
+    
+    closepopup.on('click',function() {
+      if ($(this).parents(popup).hasClass('on')) {
+        $(this).parents(popup).removeClass('on');
+        dim.css('display','none');
+        $('body, html').css('overflow','visible')
+      }
+    });
+
+    dim.on('click',function(){
+      dim.css('display','none');
+      $('body, html').css('overflow','visible');
+      $('.popup').removeClass('on');
+    });
+  })
+</script>
+</body>
+</html>

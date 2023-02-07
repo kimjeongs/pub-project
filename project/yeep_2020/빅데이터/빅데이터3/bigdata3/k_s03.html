@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="url" property="og:url" content="?coNo=" />
+	<meta name="type" property="og:type" content="website" />
+	<meta name="title" property="og:title" content="[YEEP 가상기업평가] " />
+	<meta name="description" property="og:description" content=" - " />
+	<meta name="image" property="og:image" content="/img" />
+	<title>YEEP</title>
+	<link rel="shortcut icon" href="https://yeep.kr/images/common/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="https://yeep.kr/css/common.css?ver=2020112016" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" href="css/culture.css" />
+	<script type="text/javascript" src="https://yeep.kr/script/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/swiper.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/design.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/pagenation.js"></script>
+	<script type="text/javascript" src="https://yeep.kr/script/common.js?ver=2020112016"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117856487-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "UA-117856487-1");
+	</script>
+	<script>
+		function roleChange() {
+			var role = $("#role option:selected").val();
+			var roleNm = $("#role option:selected").text();
+			$("#mberRoleSeCode").val(role);
+			$("#mberRoleSeCodeNm").val(roleNm);
+			$("#referer").val(document.location.pathname + (document.location.href.split("?")[1] != null ? "?" + document.location.href.split("?")[1] : ""));
+			if ($("#fundNo").val() != null) {
+				$("#roleFundNo").val($("#fundNo").val());
+			}
+			if ($("#itemNo").val() != null) {
+				$("#roleItemNo").val($("#itemNo").val());
+			}
+			if ($("#kldgNo").val() != null) {
+				$("#roleKldgNo").val($("#kldgNo").val());
+			}
+			if ($("#qstnrNo").val() != null) {
+				$("#roleQstnrNo").val($("#qstnrNo").val());
+			}
+			if ($("#coNo").val() != null) {
+				$("#roleCoNo").val($("#coNo").val());
+			}
+			if ($("#bltnNo").val() != null) {
+				$("#roleBltnNo").val($("#bltnNo").val());
+			}
+			document.getElementById("frmRoleChange").submit();
+		}
+
+		function questBannerClose() {
+			if ($("#top-notice").css("display") == "none") {
+				jQuery("#top-notice").show();
+			} else {
+				jQuery("#top-notice").hide();
+				$("#header").removeAttr("class");
+			}
+		}
+
+		function goMyPage() {
+			document.getElementById("frmMypage").submit();
+		}
+	</script>
+</head>
+<body>
+<div id="top">
+	<script>
+		var $loading = $(
+			'<div style="position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:#000; opacity:0.6; filter:alpha(opacity="60")"><img src ="/images/common/load.gif" style="position: absolute; top: 50%; left: 49%;" alt="로딩중입니다"></div>'
+		)
+			.appendTo(document.body)
+			.hide();
+		$(document).ready(function () {
+			// noti swiper
+			var swiperNotiBanner = new Swiper(".noti-swiper", {
+				//2018-07-18 수정
+				height: 52,
+				autoHeight: true,
+				spaceBetween: 0,
+				slidesPerView: 1,
+				loop: true,
+				direction: "vertical",
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+				},
+			});
+			//웹접근성 시작,정지 버튼 추가 2019-08-09
+			$(".swiper-button-pause").click(function () {
+				swiperNotiBanner.autoplay.stop();
+				$(".swiper-button-play").show();
+				$(this).hide();
+			});
+			$(".swiper-button-play").click(function () {
+				swiperNotiBanner.autoplay.start();
+				$(".swiper-button-pause").show();
+				$(this).hide();
+			});
+
+			if ($("#headerImgProfile").attr("src") == "" || $("#headerImgProfile").attr("src") == "/images/main/@profile.jpg") {
+				$("#headerImgProfile").attr("alt", $("#headerImgProfile").attr("alt") + " (사진없음)");
+			}
+		});
+
+		function aprtJoinPop(aprtNo) {
+			var popUrl = "/aprt/aprtJoinPop.do?aprtNo=" + aprtNo;
+			var width = "971";
+			var height = "550";
+			var popOption = "width=" + width + ", height=" + height + ", resizable=yes, scrollbars=no, status=1;";
+
+			popupObject = window.open(popUrl, aprtNo, popOption);
+			popupObject.window.focus();
+		}
+
+		function startUp() {
+			var openYn = "Y";
+
+			if (openYn == "Y") {
+				location.href = "/evl/corpEvlHomeList.do";
+			} else {
+				location.href = "/main/startupSample.do";
+			}
+		}
+		function goMyPage() {
+			document.getElementById("frmMypage").submit();
+		}
+	</script>
+	<form action="/common/mberRoleChange.do" method="post" id="frmRoleChange">
+		<input type="hidden" name="mberRoleSeCode" id="mberRoleSeCode" />
+		<input type="hidden" name="mberRoleSeCodeNm" id="mberRoleSeCodeNm" />
+		<input type="hidden" name="referer" id="referer" />
+		<input type="hidden" name="fundNo" id="roleFundNo" />
+		<input type="hidden" name="itemNo" id="roleItemNo" />
+		<input type="hidden" name="kldgNo" id="roleKldgNo" />
+		<input type="hidden" name="qstnrNo" id="roleQstnrNo" />
+		<input type="hidden" name="coNo" id="roleCoNo" />
+		<input type="hidden" name="bltnNo" id="roleBltnNo" />
+	</form>
+	<form action="/mypage/myPageMainList.do" method="post" id="frmMypage">
+		<input type="hidden" name="modifyYn" id="modifyYn" value="N" />
+	</form>
+	<div id="skipNavi">
+		<a href="#container">본문 영역으로 바로가기</a>
+		<a href="#gnb02">메뉴바로가기</a>
+	</div>
+	<div id="wrap" class="main-renew">
+		<!-- header -->
+		<div id="header02">
+			<!-- 서브메뉴 활성화 상태일때 class="gnbOpen" 추가 -->
+			<!-- notice -->
+			<!-- //notice -->
+			<div class="header-inner">
+				<h1 class="logo-header">
+					<a href="https://yeep.kr/main/main.do"><img src="https://yeep.kr/images/common/logo_header.png" alt="YEEP(Youth Entrepreneurship Experience Program) 로고" /></a>
+				</h1>
+				<!-- login -->
+				<div class="header-member">
+					<ul>
+						<li><a href="https://yeep.kr/cmmn/sso/api/user.agent.3.do?referer=/mypage/myPageMainList.do">로그인</a></li>
+						<li><a href="https://api.career.go.kr/cloud/api/mber/type.do">회원가입</a></li>
+						<li><a href="https://yeep.kr/mypage/askingList.do">이용문의</a></li>
+						<li class="topentre">
+							<a href="https://yeep.kr/clas/classMainPgCmps.do"><img src="https://yeep.kr/images/topentre.png" alt="창업체험센터" /></a>
+						</li>
+					</ul>
+				</div>
+				<!-- //login -->
+				<!-- gnb -->
+				<div id="gnb02">
+					<ul>
+						<li>
+							<strong class="depth1"><a href="javascript:;">YEEP</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>YEEP</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/yeepIntro.do">YEEP 소개</a></li>
+										<li><a href="https://yeep.kr/intro/yeepKnow.do">YEEP 활용법</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">수업</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>수업</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/clasIntro.do">수업 소개</a></li>
+										<li><a href="https://yeep.kr/intro/clasProcess.do">수업 과정</a></li>
+										<li><a href="https://yeep.kr/clas/classMain.do">수업 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">동아리</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>동아리</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/aprtIntro.do">동아리 소개</a></li>
+										<li><a href="https://yeep.kr/aprt/aprtMisson.do" onclick="">동아리 미션</a></li>
+										<li><a href="https://yeep.kr/aprt/aprtMain.do">동아리 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>멘토링</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/mentor/mentorMainList.do">멘토링</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="https://yeep.kr/cpthb/applyContestList.do">
+										<strong>동아리 대회</strong>
+									</a>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/cpthb/applyContestList.do">대회 목록</a></li>
+										<li><a href="https://yeep.kr/cpthb/contestCaseList.do">우수 동아리 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">가상창업체험</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>GO스타트업</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/startupIntro.do">GO스타트업 소개</a></li>
+										<li><a href="https://yeep.kr/evl/corpEvlHomeList.do">GO스타트업 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>시장분석</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/surveyIntro.do" onclick="">시장분석 소개</a></li>
+										<li><a href="https://yeep.kr/evl/corpEvlSurveyList.do">시장분석 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>온라인 사업설명회</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/onlnPtIntro.do">온라인 사업설명회 소개</a></li>
+										<li><a href="https://yeep.kr/onln/onlnPtHomeList.do">온라인 사업설명회 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>가상크라우드펀딩</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/crowdFundingIntro.do">가상크라우드펀딩 소개</a></li>
+										<li><a href="https://yeep.kr/fund/fundHomeList.do">가상크라우드펀딩 목록</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>가상마켓</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/marketIntro.do">가상마켓 소개</a></li>
+										<li><a href="https://yeep.kr/market/marketHomeList.do">가상마켓 목록</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="#">핵심역량 진단</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>핵심역량 진단</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/intro/coreCmptyIntro.do">핵심역량 진단 소개</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong class="depth1"><a href="javascript:;">자료실</a></strong>
+							<ul class="depth2">
+								<li>
+									<strong>자료실</strong>
+									<ul class="depth4">
+										<li><a href="https://yeep.kr/noti/eduExlntCaseList.do">창업체험교육 콘텐츠</a></li>
+										<li><a href="https://yeep.kr/noti/rschLeadSchList.do">수업·연구자료</a></li>
+										<li><a href="https://yeep.kr/noti/kldgChaEList.do">동영상 자료</a></li>
+										<li><a href="https://yeep.kr/noti/rfrcDataList.do">기타자료</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- //gnb -->
+			</div>
+			<span class="slogan">청소년의 창업가정신 함양을 위한 창업체험 프로그램</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			document.title = "빅데이터 활용 시장탐색 프로그램 < 빅데이터 활용 시장탐색 < 가상창업체험 | 온라인 창업체험교육 플랫폼YEEP";
+		});
+	</script>
+
+	<!-- container -->
+	<div id="container" class="bigdata" tabindex="0">
+		<div class="page-location">
+			<ul>
+				<li class="home">
+					<a href="https://yeep.kr/main/main.do"><img src="https://yeep.kr/images/common/icon_home.png" alt="홈" /></a>
+				</li>
+				<li><a href="javascript:;">가상창업체험</a></li>
+				<li>
+					<a href="javascript:;">빅데이터 활용 시장탐색</a>
+					<ul class="location-menu">
+						<li><a href="https://yeep.kr/intro/startupIntro.do">GO스타트업</a></li>
+						<li><a href="https://yeep.kr/evl/corpEvlSurveyList.do">시장분석</a></li>
+						<li><a href="https://yeep.kr/intro/onlnPtIntro.do">온라인 사업설명회</a></li>
+						<li><a href="https://yeep.kr/intro/crowdFundingIntro.do">가상크라우드펀딩</a></li>
+						<li><a href="https://yeep.kr/intro/marketIntro.do">가상마켓</a></li>
+						<li><a href="https://yeep.kr/intro/marketIntro.do">빅데이터 활용 시장탐색</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">빅데이터 활용 시장탐색 프로그램</a>
+					<ul class="location-menu">
+						<li><a href="https://yeep.kr/market/marketHomeList.do">빅데이터 활용 시장탐색 프로그램</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="top-cont">
+			<h2 class="page-title">빅데이터 활용 시장탐색 프로그램</h2>
+			<div class="right">
+				<a href="javascript:;" class="btn btn-white">도전단계 재선택</a>
+				<ul class="step">
+					<li class="active">데이터 탐색</li>
+					<li>데이터 선정</li>
+				</ul>
+			</div>
+		</div>
+		<div class="data-culture">
+			<div class="cont-tit-box">
+				<div class="inner">
+					<h3 class="sub-title">문화 가치 창출</h3>
+					<p class="tit-txt">K-컬쳐  콘텐츠를 구성하여 새로운 가치 창출의 기회를 탐색해 보세요</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="parent-tab">
+					<div class="inner">
+						<ul class="tab-menu">
+							<li class="active"><span>미국</span></li>
+							<li><span>인도네시아</span></li>
+							<li><span>프랑스</span></li>
+							<li><span>중국</span></li>
+						</ul>
+						<div class="btn-wrap">
+							<div class="info-txt">1개 이상의 상세정보를 탐색한 뒤, 예상 결과를 확인할 수 있습니다.</div>
+							<button type="button" class="btn-pop btn-purple" data-num="1">K컬쳐 콘텐츠 선택</button>
+							<!-- disabled 인 경우 <button type="button" class="btn-pop btn-purple" disabled>K컬쳐 콘텐츠 선택</button> -->
+						</div>
+					</div>
+				</div>
+				<ul class="city-cont">
+					<li class="active">
+						<div class="left-menu">
+							<ul class="tab-menu">
+								<li><a href="#">인구 분포</a></li>
+								<li><a href="#">문화산업별 매출규모</a></li>
+								<li><a href="#">한국 선호도</a></li>
+								<li><a href="#">IT 발전도</a></li>
+								<li><a href="#">문화발전점수</a></li>
+								<li><a href="#">문화수용성</a></li>
+								<li><a href="#">경제수준</a></li>
+								<li><a href="#">핫 키워드</a></li>
+							</ul>
+						</div>
+						<div class="sub-tab-wrap">
+							<div class="sub-inner">
+								<div class="current">
+									<p>현재 탐색중인 국가는 <strong>미국</strong> 입니다.</p>
+								</div>
+								<div class="default-txt">
+									<p>데이터 탐색을 위해 상세 정보를 선택해주세요.</p>
+								</div>
+								<ul class="tab-cont">
+									<li>
+										<h4 class="cont-tit">인구 분포</h4>
+										<div class="chart-cont">
+											<strong class="tit">2007 연령별, 성별 인구분포</strong>
+											<div class="chart-box" style="height:270px;">
+												<canvas id="chartOld"></canvas>
+											</div>
+											<div id="chartLegendOld" class="chart-legend"></div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화산업별 매출규모</h4>
+										<div class="chart-wrap">
+											<div class="chart-cont">
+												<strong class="tit">문화산업별 매출액</strong>
+												<div class="chart-box">
+													<canvas id="chartSales"></canvas>
+												</div>
+											</div>
+											<div class="chart-cont">
+												<strong class="tit">문화산업별 매출액 비중</strong>
+												<div class="chart-box" style="height: 255px;">
+													<canvas id="chartSales2"></canvas>
+												</div>
+												<div id="chartLegendSales2" class="chart-legend"></div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">국민들의 한국 선호도</h4>
+										<div class="chart-cont">
+											<div class="chart-box">
+												<canvas id="chartPrefer"></canvas>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">IT 발전도</h4>
+										<div class="chart-cont">
+											<div class="chart-box">
+												<canvas id="chartIt"></canvas>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화발전점수</h4>
+										<ul class="score-list">
+											<li>
+												<em class="tit">TV 시청률</em>
+												미국 국민들은 연 평균<br><span>1,205</span>시간 TV를 시청합니다.
+											</li>
+											<li>
+												<em class="tit">라디오 청취율</em>
+												미국 국민들은 연 평균<br><span>31</span>시간 라디오를 청취합니다.
+											</li>
+											<li>
+												<em class="tit">독서량</em>
+												미국 국민들은 연 평균<br><span>9.4</span>권의 책을 읽습니다.
+											</li>
+											<li>
+												<em class="tit">인터넷 사용량</em>
+												미국 국민들은 인터넷을 연 평균<br><span>1,930</span>시간 사용합니다.
+											</li>
+											<li>
+												<em class="tit">미술관 방문률</em>
+												미국 국민들은 미술관에 연 평균<br><span>1.4</span>회 방문합니다.
+											</li>
+										</ul>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화수용성</h4>
+										<div class="chart-cont">
+											<div class="chart-box">
+												<canvas id="chartAccept"></canvas>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">경제수준</h4>
+										<div class="chart-cont">
+											<div class="chart-box">
+												<canvas id="chartEconomy"></canvas>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h4 class="cont-tit">핫키워드</h4>
+										<div class="keyword">
+											<img src="images/culture/img_keyword01.png" alt="미국 핫키워드">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="left-menu">
+							<ul class="tab-menu">
+								<li><a href="#">인구 분포</a></li>
+								<li><a href="#">문화산업별 매출규모</a></li>
+								<li><a href="#">한국 선호도</a></li>
+								<li><a href="#">IT 발전도</a></li>
+								<li><a href="#">문화발전점수</a></li>
+								<li><a href="#">문화수용성</a></li>
+								<li><a href="#">경제수준</a></li>
+								<li><a href="#">핫 키워드</a></li>
+							</ul>
+							<div class="btn-wrap">
+								<div class="info-txt">1개 이상의 상세정보를 탐색한 뒤, 예상 결과를 확인할 수 있습니다.</div>
+								<button type="button" class="btn-pop">K컬쳐 콘텐츠 선택</button>
+								<!-- disabled 인 경우  <button type="button" disabled>K컬쳐 콘텐츠 선택</button> -->
+							</div>
+						</div>
+						<div class="sub-tab-wrap">
+							<div class="sub-inner">
+								<div class="current">
+									<p>현재 탐색중인 국가는 <strong>인도네시아</strong> 입니다.</p>
+								</div>
+								<div class="default-txt">
+									<p>데이터 탐색을 위해 상세 정보를 선택해주세요.</p>
+								</div>
+								<ul class="tab-cont">
+									<li>
+										<h4 class="cont-tit">인구 분포</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화산업별 매출규모</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">국민들의 한국 선호도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">IT 발전도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화발전점수</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화수용성</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">경제수준</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">핫키워드</h4>
+										<div class="keyword">
+											<img src="images/culture/img_keyword02.png" alt="인도네시아 핫키워드">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="left-menu">
+							<ul class="tab-menu">
+								<li><a href="#">인구 분포</a></li>
+								<li><a href="#">문화산업별 매출규모</a></li>
+								<li><a href="#">한국 선호도</a></li>
+								<li><a href="#">IT 발전도</a></li>
+								<li><a href="#">문화발전점수</a></li>
+								<li><a href="#">문화수용성</a></li>
+								<li><a href="#">경제수준</a></li>
+								<li><a href="#">핫 키워드</a></li>
+							</ul>
+							<div class="btn-wrap">
+								<div class="info-txt">1개 이상의 상세정보를 탐색한 뒤, 예상 결과를 확인할 수 있습니다.</div>
+								<button type="button" class="btn-pop">K컬쳐 콘텐츠 선택</button>
+								<!-- disabled 인 경우  <button type="button" disabled>K컬쳐 콘텐츠 선택</button> -->
+							</div>
+						</div>
+						<div class="sub-tab-wrap">
+							<div class="sub-inner">
+								<div class="current">
+									<p>현재 탐색중인 국가는 <strong>프랑스</strong> 입니다.</p>
+								</div>
+								<div class="default-txt">
+									<p>데이터 탐색을 위해 상세 정보를 선택해주세요.</p>
+								</div>
+								<ul class="tab-cont">
+									<li>
+										<h4 class="cont-tit">인구 분포</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화산업별 매출규모</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">국민들의 한국 선호도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">IT 발전도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화발전점수</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화수용성</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">경제수준</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">핫키워드</h4>
+										<div class="keyword">
+											<img src="images/culture/img_keyword03.png" alt="프랑스 핫키워드">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="left-menu">
+							<ul class="tab-menu">
+								<li><a href="#">인구 분포</a></li>
+								<li><a href="#">문화산업별 매출규모</a></li>
+								<li><a href="#">한국 선호도</a></li>
+								<li><a href="#">IT 발전도</a></li>
+								<li><a href="#">문화발전점수</a></li>
+								<li><a href="#">문화수용성</a></li>
+								<li><a href="#">경제수준</a></li>
+								<li><a href="#">핫 키워드</a></li>
+							</ul>
+							<div class="btn-wrap">
+								<div class="info-txt">1개 이상의 상세정보를 탐색한 뒤, 예상 결과를 확인할 수 있습니다.</div>
+								<button type="button" class="btn-pop">K컬쳐 콘텐츠 선택</button>
+								<!-- disabled 인 경우  <button type="button" disabled>K컬쳐 콘텐츠 선택</button> -->
+							</div>
+						</div>
+						<div class="sub-tab-wrap">
+							<div class="sub-inner">
+								<div class="current">
+									<p>현재 탐색중인 국가는 <strong>중국</strong> 입니다.</p>
+								</div>
+								<div class="default-txt">
+									<p>데이터 탐색을 위해 상세 정보를 선택해주세요.</p>
+								</div>
+								<ul class="tab-cont">
+									<li>
+										<h4 class="cont-tit">인구 분포</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화산업별 매출규모</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">국민들의 한국 선호도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">IT 발전도</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화발전점수</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">문화수용성</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">경제수준</h4>
+									</li>
+									<li>
+										<h4 class="cont-tit">핫키워드</h4>
+										<div class="keyword">
+											<img src="images/culture/img_keyword04.png" alt="중국 핫키워드">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<form id="formPop" name="formPop" action="" method="post"></form>
+	<script type="text/javascript">
+		$(document).on("click", "a[name=btnCreateMarket]", function () {
+			if ($("#mberUniqueSn").val() == "") {
+				if (confirm("  로그인이 필요합니다.  \n  로그인 페이지로 이동하시겠습니까?  ")) {
+					window.location = "/cmmn/sso/api/user.agent.3.do";
+				}
+				return false;
+			}
+
+			if ("0" == "1") {
+				if (confirm("제품 등록을 위해  \n스타트업 관리로 이동합니다.")) {
+					var url = "/comng/market/product/ProductMngReg.do?openNavMarket=Y&coNo=" + "";
+					window.open(url, "ProductMngReg");
+					window.open("", "_self").close();
+				}
+			} else {
+				var url = "";
+				var winWidth = "600";
+				var winHeight = "430";
+				var x = screen.availWidth / 2 - winWidth / 2;
+				var y = screen.availHeight / 2 - winHeight / 2;
+				var status = "width=" + winWidth + ",height=" + winHeight + ",left=" + x + ",top=" + y + "toolbar=no,directories=no,scrollbars=yes,resizable=no,status=no,menubar=no";
+				var marketCreatePop = window.open(url, "marketCreatePop", status);
+
+				document.getElementById("formPop").target = "marketCreatePop";
+				document.getElementById("formPop").action = "/market/marketCreatePop.do";
+				document.getElementById("formPop").submit();
+				marketCreatePop.focus();
+			}
+		});
+	</script>
+</div>
+<div id="footer">
+	<!-- footer -->
+	<div id="footer02">
+		<div class="footer-utill-area">
+			<ul class="footer-utill">
+				<li><a href="https://yeep.kr/mypage/askingList.do">1:1 문의</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=01" target="_blank" title="이용약관 새창 열림">이용약관</a></li>
+				<li><a href="https://api.career.go.kr/cloud/api/bbs/list.stplat.indvdlinfo.do?estnField01=02" target="_blank" title="개인정보처리방침 새창 열림">개인정보처리방침</a></li>
+				<li><a href="https://yeep.kr/noti/notiBbsDetail.do?bbsId=B000000004&amp;bltnNo=392">이메일주소 무단수집거부</a></li>
+				<li class="use-email">yeep@koef.or.kr</li>
+			</ul>
+		</div>
+		<div class="footer-cont">
+			<address>
+				서울특별시 서초구 서초대로 45길 16, 202(서초동, 브이알빌딩)<br />
+				운영: 한국청년기업가정신재단 | 지원: 교육부
+			</address>
+			<p class="copyright">COPYRIGHT © BY KOREA ENTREPRENEURSHIP FOUNDATION. ALL RIGHTS RESERVED.</p>
+			<ul class="site_link">
+				<li>
+					<a href="http://www.moe.go.kr/main.do?s=moe" target="_blank" title="교육부 새창 열림"><img src="https://yeep.kr/images/common/img_footer_link01.png" alt="교육부 로고" /></a>
+				</li>
+				<li>
+					<a href="http://www.koef.or.kr/koef/kef/main/main.do" target="_blank" title="KOEF 한국청년기업가정신재단 새창 열림">
+						<img src="https://yeep.kr/images/common/img_footer_link02.png" alt="KOEF 한국청년기업가정신재단 로고" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.kwacc.or.kr/CertificationSite/WA/List" target="_blank" title="한국웹접근성평가센터 인증현황 바로가기_새창">
+						<img src="https://yeep.kr/images/common/img_footer_link03.png" alt="국가공인 웹 접근성 품질인증마크" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //footer -->
+</div>
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- K-컬쳐 콘텐츠 최종 선정 -->
+<div class="popup" data-num="1"> 
+	<div class="popup-header">
+		<h2 class="popup-tit">K-컬쳐 콘텐츠 최종 선정</h2>
+		<button type="button" class="btn-close">닫기</button>
+	</div>
+	<div class="popup-cont">
+		<div class="k-list-wrap">
+			<p class="cont-txt"><strong>미국</strong>에서 새로운 가치를 창출할 K컬쳐 콘텐츠 <strong>5개</strong>를 좌측 목록에서 선택해 주세요.</p>
+			<div class="list-cont">
+				<div class="list">
+					<strong class="list-tit">K컬쳐 콘텐츠 목록</strong>
+					<div class="cont">
+						<div class="mCustomScrollbar" data-mcs-theme="dark">
+							<ul>
+								<li class="music active">
+									<div class="btn-acco"><strong>대중 예술</strong></div>
+									<ul class="sub-list">
+										<li>웹툰</li>
+										<li class="selected">패션</li><!-- 선택 됨 -->
+										<li>영화</li>
+										<li>비보잉</li>
+									</ul>
+								</li>
+								<li class="sports">
+									<div class="btn-acco"><strong>스포츠</strong></div>
+									<ul class="sub-list">
+										<li>축구</li>
+										<li>야구</li>
+										<li>농구</li>
+										<li>수영</li>
+									</ul>
+								</li>
+								<li class="art">
+									<div class="btn-acco"><strong>순수 예술</strong></div>
+									<ul class="sub-list">
+										<li>기악 (예) 연주가)</li>
+										<li>작곡</li>
+										<li>회화</li>
+										<li>무용</li>
+									</ul>
+								</li>
+								<li class="media">
+									<div class="btn-acco"><strong>방송·미디어</strong></div>
+									<ul class="sub-list">
+										<li>K-pop</li>
+										<li>게임</li>
+										<li>드라마</li>
+										<li>유튜브 콘텐츠</li>
+									</ul>
+								</li>
+								<li class="etc">
+									<div class="btn-acco"><strong>기타</strong></div>
+									<ul class="sub-list">
+										<li>마술</li>
+										<li>건축</li>
+										<li>곡예</li>
+										<li>불교</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="select-list">
+					<strong class="list-tit">최종 구성 콘텐츠</strong>
+					<div class="cont">
+						<ul>
+							<!-- 선택된 컨텐츠-->
+							<li class="select-cont">
+								<div class="li_01_02"><!-- 선택된 컨텐츠 클래스 붙이기(이미지 변경), 클래스명은 리스트 순서대로 li_01_01 ~ li_05_04 -->
+									패션
+									<button class="btn-delete">삭제</button>
+								</div>
+							</li>
+							<!-- //선택된 컨텐츠-->
+							<li class="info-txt">콘텐츠를 선택해 주세요.</li>
+							<li class="info-txt">콘텐츠를 선택해 주세요.</li>
+							<li class="info-txt">콘텐츠를 선택해 주세요.</li>
+							<li class="info-txt">콘텐츠를 선택해 주세요.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup-footer">
+		<div class="btn-wrap">
+			<button type="button" class="btn-pop-gray">취소</button>
+			<a href="#" class="btn-pop-purple">예상 결과 확인</a>
+			<!-- disabled 일때 <a href="#" class="btn-pop-purple disabled">예상 결과 확인</a> -->
+		</div>
+	</div>
+</div>
+<!-- //K-컬쳐 콘텐츠 최종 선정 -->
+
+<script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="js/culture.js"></script>
+
+<script>
+	//커스텀 스크롤
+	(function($){
+        $(window).on("load",function(){
+            $(".mCustomScrollbar").mCustomScrollbar();
+        });
+    })(jQuery);
+</script>
+
+<script>
+	// ************* 인구 분포 *************
+	var ctx = document.getElementById('chartOld').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'horizontalBar',
+		data: {
+			labels: ['100세이상','90세','80세','70세','60세','50세','40세','30세','20세','0세~10세'],
+			datasets: [	{
+				data: [100000,1000000,1500000,2000000,2500000,2688420,2500000,2000000,1500000,1000000],
+				label: "남자(명)",
+				backgroundColor: '#339ff3',
+			},
+			{
+				data: [-100000,-1000000,-1500000,-2000000,-2500000,-2688420,-2500000,-2000000,-1500000,-1000000],
+				label: "여자(명)",
+				backgroundColor: '#fe718f',
+			}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					left: 10,
+					right: 10
+				}
+			},
+			scales: {
+				xAxes: [{
+					stacked: false,
+					gridLines: {
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+						labelString: '명',
+						fontSize:12,
+						fontColor:'#555'
+					},
+				}],
+				yAxes: [{
+					stacked: true,
+					gridLines: {
+						zeroLineColor:'#ddd'
+					},					
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+	document.getElementById('chartLegendOld').innerHTML = myChart.generateLegend();
+
+	// ************* 문화산업별 매출규모 *************
+	// 문화산업별 매출액
+	var ctx = document.getElementById('chartSales').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['음악','스포츠','미디어','미술','기타'],
+			datasets: [
+				{	
+					backgroundColor: ['#ba8acb','#ba8acb','#ba8acb','#ba8acb','#ba8acb','#ba8acb'],
+					data: [40,60,75,62,99]
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 50,
+						fontColor : "#666",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	
+	// 문화산업별 매출액 비중
+	var ctx = document.getElementById('chartSales2').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'pie',
+		data: {
+			labels: ['음악','스포츠','미디어','미술','기타'],
+			datasets: [
+				{
+					backgroundColor: ['#6bbdc0','#339ff3','#fe718f','#fea258','#fec86a'],
+					data: [35,48,64,50,78],
+					borderWidth: 1
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display:false
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color: '#000',
+							font: {
+								size: 12,
+							},
+							align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	document.getElementById('chartLegendSales2').innerHTML = myChart.generateLegend();
+
+	// ************* 한국 선호도 *************
+	var ctx = document.getElementById('chartPrefer').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+			datasets: [
+			{
+				pointBackgroundColor:'#fff',
+				pointRadius: 3,
+				data: [35,55,65,50,45,70,80,65,70,80,90,120],
+				borderColor: "#fea258",
+				backgroundColor: "rgba(254,162,88,0.4)",
+				borderWidth: 2,
+				fill: true,
+				lineTension: 0
+			},
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					left: 10,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#666",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+
+	// ************* IT 발전도 *************
+	var ctx = document.getElementById('chartIt').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+			datasets: [
+			{
+				pointBackgroundColor:'#fff',
+				pointRadius: 3,
+				data: [35,55,65,50,45,70,80,65,70,80,90,120],
+				borderColor: "#6bbdc0",
+				backgroundColor: "rgba(107,189,192,0.4)",
+				borderWidth: 2,
+				fill: true,
+				lineTension: 0
+			},
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:20,
+					left: 10,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#666",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+
+	// ************* 문화수용성 *************
+	var ctx = document.getElementById('chartAccept').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['음악','스포츠','미술','방송, 미디어','기타'],
+			datasets: [
+				{	
+					backgroundColor: ['#fe718f','#fe718f','#fe718f','#fe718f','#fe718f','#fe718f'],
+					data: ['35','48','64','50','78']
+				}
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			layout: {
+				padding: {
+					top:45,
+					left: 10,
+					right: 20
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#666',
+						fontSize : 12
+					},
+					gridLines:{
+						display: false,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#666",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					},
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						title: {
+							color:'#fff',
+							font: {
+								size: 12,
+							},
+							align:'end'
+						}
+					}
+				}
+			}
+		},
+	});
+	
+	// ************* 경제수준 *************
+	var ctx = document.getElementById('chartEconomy').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: [2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+			datasets: [
+			{
+				pointRadius: 3,
+				data: [35,55,65,50,45,70,80,65,70,80,90,101],
+				borderColor: "#4166e8",
+				backgroundColor: "#4166e8",
+				borderWidth: 2,
+				fill: false,
+				lineTension: 0
+			},
+			]
+		},
+		options: {
+			maintainAspectRatio :false,
+			legend: {
+				display: false,
+			},
+			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : '#999',
+						fontSize : 12
+					},	
+					gridLines:{
+						display: false,
+					}					
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						stepSize : 20,
+						fontColor : "#999",
+						fontSize : 12,
+					},
+					gridLines:{
+						zeroLineColor:'#000'
+					}
+				}]
+			},
+			plugins: {
+				datalabels: {
+					labels: {
+						display:false
+					}
+				}
+			}
+		}
+	});
+
+</script>
+</body>
+</html>

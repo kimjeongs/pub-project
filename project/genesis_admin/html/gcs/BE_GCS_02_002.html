@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalDis">노출순서 설정</button>
+</div>
+
+<!-- 노출순서 설정 -->
+<div class="modal fade" id="ModalDis" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">노출순서 설정</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-top">
+                    <div class="right">
+                        <em>카테고리 선택</em>
+                        <div class="sel-wrap">
+                            <select class="selectpicker" data-style="form-control">
+                                <option>커넥티드 서비스</option>
+                            </select>
+                            <select class="selectpicker" data-style="form-control">
+                                <option>오류 · A/S</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrap" data-check-parent  data-table-draggle="number">
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col style="width:45px;">
+                            <col style="width:17%;">
+                            <col style="width:17%;">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr class="ui-state-default">
+                                <th scope="col">번호</th>
+                                <th scope="col">카테고리</th>
+                                <th scope="col">서브 카테고리</th>
+                                <th scope="col">제목</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="num">1</td>
+                                <td>커넥티드 서비스</td>
+                                <td>오류 · A/S</td>
+                                <td class="align-left">주행 중에 내비게이션 조작이 안됩니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="num">2</td>
+                                <td>커넥티드 서비스</td>
+                                <td>오류 · A/S</td>
+                                <td class="align-left">GPS 수신이 안됩니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="num">3</td>
+                                <td>커넥티드 서비스</td>
+                                <td>오류 · A/S</td>
+                                <td class="align-left">원격 공조 제어 서비스를 사용 시동/공조을 실행했는데 계속 비상등이 커져 깜박입니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="num">4</td>
+                                <td>커넥티드 서비스</td>
+                                <td>오류 · A/S</td>
+                                <td class="align-left">Genesis Connected Services에 오류가 있을 때에는 어떻게 하나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="num">5</td>
+                                <td>커넥티드 서비스</td>
+                                <td>오류 · A/S</td>
+                                <td class="align-left">보증 수리 기간이 어떻게 되나요?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="info-txt-box">노출순서 변경은 드래그로 위치 변경이 가능합니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //노출순서 설정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 노출순서 설정
+        $("#openModalDis").click(function () {
+            $("#ModalDis").modal();
+        });
+    });
+</script>
+</body>
+</html>

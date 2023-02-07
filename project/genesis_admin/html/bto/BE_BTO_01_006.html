@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li class="active">
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li class="active"><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>모델</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">BTO 관리</a></li>
+                    <li class="active">모델</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <div class="model-info-box">
+                <span>GV80</span> /
+                <span>2020</span>
+            </div>
+
+            <div class="tab-wrap">
+                <ul class="tab-menu">
+                    <li><a href="#">기본정보 설정</a></li>
+                    <li class="active"><a href="#">데이터 설정</a></li>
+                    <li><a href="#">스텝 설정</a></li>
+                </ul>
+    
+                <div class="tab-cont">
+                    <div class="table-top">
+                        <h3 class="sub-title">설정</h3>
+                    </div>
+        
+                    <div class="table-wrap">
+                        <table class="table detail">
+                            <colgroup>
+                                <col style="width:170px;">
+                                <col>
+                                <col style="width:170px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">사양구분</th>
+                                    <td>엔진</td>
+                                    <th scope="row">페이지 명<span class="aster">*</span></th>
+                                    <td>
+                                        <input type="text" class="inp-txt" value="1.엔진 타입">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">템플릿</th>
+                                    <td>엔진타입</td>
+                                    <th scope="row">페이지 순서 설정<a href="#" class="info-tooltip" data-toggle="tooltip" data-placement="right" title="" data-original-title="선택하시는 페이지의 앞으로 생성 됩니다">?</a></th>
+                                    <td>
+                                        <div class="sel-wrap">
+                                            <div class="sel-w">
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">노출여부</th>
+                                    <td colspan="3">
+                                        <ul class="radio-wrap">
+                                            <li><label class="radio"><input type="radio" name="display0"><span></span>노출</label></li>
+                                            <li><label class="radio"><input type="radio" name="display0" checked=""><span></span>비노출</label></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="control-wrap" data-draggle>
+                        <div class="btn-wrap">
+                            <button type="button" class="btn s2 c1 remove">삭제</button>
+                            <button type="button" class="btn s2 c1 add">추가</button>
+                        </div>
+                        <div class="control-wrap-inner" data-draggle-container>
+                            <div class="new-cont-wrap accordion" data-toggle="parent">
+                                <div class="new-cont-top header type-inp">
+                                    <div class="inp-cont">
+                                        <div class="check-wrap">
+                                            <label class="checkbox"><input type="checkbox" name="check1"><span></span></label>
+                                        </div>
+                                        <input type="text" class="inp-txt" style="width:95%;" placeholder="사양명을 입력 하세요. 필수 입력 항목 입니다.">
+                                    </div>
+                                    <div class="right">
+                                        <button type="button" class="btn-collapse" data-toggle="button"><i class="feather icon-chevron-down"></i></button>
+                                    </div>
+                                </div>
+                                <div class="table-wrap accordion-cont">
+                                    <table class="table detail">
+                                        <colgroup>
+                                            <col style="width:170px;">
+                                            <col>
+                                            <col style="width:170px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">코드<span class="aster">*</span></th>
+                                                <td>
+                                                    <input type="text" class="inp-txt w1">
+                                                    <button type="button" class="btn s2 c1">중복체크</button>
+                                                </td>
+                                                <th scope="row">가격(원)<span class="aster">*</span></th>
+                                                <td>
+                                                    <input type="text" data-id="onlyNumber" class="inp-txt">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    Popular
+                                                    <a href="#" class="info-tooltip" data-toggle="tooltip" data-placement="right" title="" data-original-title="Y 설정시 Front 화면에 Popular 라벨 UI 노출됩니다.">?</a>
+                                                </th>
+                                                <td>
+                                                    <div class="sel-wrap">
+                                                        <div class="sel-w">
+                                                            <select class="selectpicker" data-style="form-control">
+                                                                <option>N</option>
+                                                                <option>Y</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <th scope="row">노출여부<span class="aster">*</span></th>
+                                                <td>
+                                                    <ul class="radio-wrap">
+                                                        <li><label class="radio"><input type="radio" name="display1"><span></span>노출</label></li>
+                                                        <li><label class="radio"><input type="radio" name="display1" checked><span></span>비노출</label></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">PC 이미지<span class="aster">*</span></th>
+                                                <td colspan="3">
+                                                    <div class="push-img" data-fileupload="imgType">
+                                                        <div class="img-area pc">
+                                                            <div class="img-box"></div>
+                                                        </div>
+                                                        <div class="img-cont">
+                                                            <div class="inline-group">
+                                                                <em>이미지</em>
+                                                                <div class="btn-file">
+                                                                    <input type="file" class="custom-file-input" id="inputGroupFile04" data-file-target="img">
+                                                                    <label for="inputGroupFile04" class="btn s2 c1">이미지선택</label>
+                                                                </div>
+                                                                <div class="sub inline">이미지사이즈:110x110 / 파일타입:JPG,GIF,PNG / 용량:20MB 미만
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline-group">
+                                                                <em>대체텍스트</em>
+                                                                <input type="text" class="inp-txt" maxlength="100" name="maxlength-positions" data-id="maxlength-positions" style="width:77%;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">스몰 이미지<span class="aster">*</span></th>
+                                                <td colspan="3">
+                                                    <div class="push-img" data-fileupload="imgType">
+                                                        <div class="img-area mb">
+                                                            <div class="img-box"></div>
+                                                        </div>
+                                                        <div class="img-cont">
+                                                            <div class="inline-group">
+                                                                <em>이미지</em>
+                                                                <div class="btn-file">
+                                                                    <input type="file" class="custom-file-input" id="inputGroupFile05"
+                                                                        data-file-target="img">
+                                                                    <label for="inputGroupFile05" class="btn s2 c1">이미지선택</label>
+                                                                </div>
+                                                                <div class="sub inline">이미지사이즈:110x110 / 파일타입:JPG,GIF,PNG / 용량:20MB 미만
+                                                                </div>
+                                                            </div>
+                                                            <div class="inline-group">
+                                                                <em>대체텍스트</em>
+                                                                <input type="text" class="inp-txt" maxlength="100" name="maxlength-positions" data-id="maxlength-positions" style="width:77%;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">배기량<span class="aster">*</span></th>
+                                                <td colspan="3">
+                                                    <ul class="inp-group">
+                                                        <li>
+                                                            <em>타이틀</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                        <li>
+                                                            <em>데이터</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">최고출력<span class="aster">*</span></th>
+                                                <td colspan="3">
+                                                    <ul class="inp-group">
+                                                        <li>
+                                                            <em>타이틀</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                        <li>
+                                                            <em>데이터</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">최대토크<span class="aster">*</span></th>
+                                                <td colspan="3">
+                                                    <ul class="inp-group">
+                                                        <li>
+                                                            <em>타이틀</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                        <li>
+                                                            <em>데이터</em>
+                                                            <input type="text" class="inp-txt">
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">디스클라이머</th>
+                                                <td colspan="3">
+                                                    <ul class="add-new-cont full-inp" data-form-cell="wrap">
+                                                        <li>
+                                                            <div class="inp">
+                                                                <input type="text" class="inp-txt">
+                                                            </div>
+                                                            <div class="btn-wrap">
+                                                                <button type="button" class="add" data-form-cell="add"><i class="feather icon-plus"></i>추가</button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="btn-wrap">
+                        <a href="#a" class="btn s2 c1">목록</a>
+                        <button type="button" class="btn s2 c3">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+$(function () {
+    //3자리 단위마다 콤마 생성
+    function addCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    //numberOnly
+    $('[data-id="onlyNumber"]').on("keyup", function() {
+        $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+    });
+})
+</script>
+</body>
+
+</html>

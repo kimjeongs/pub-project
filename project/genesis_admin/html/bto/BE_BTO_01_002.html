@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalCode">등록</button>
+</div>
+
+<!-- 모델등록 -->
+<div class="modal fade" id="ModalCode" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">모델등록</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">모델 코드<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt w1">
+                                    <button type="button" class="btn s2 c1">조회</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">모델</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연식</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">가격(원)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" data-id="onlyNumber" class="inp-txt">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="info-txt-box">
+                    <li>- BTO에 등록하실 모델 코드를 입력 후 조회 하세요.</li>
+                    <li>- 조회 결과가 없을 시, 차량정보 관리 &gt; 모델 메뉴에서 모델 등록 후 조회 하세요.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <a href="#" class="btn s2 c3">등록</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //모델등록 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 모델등록
+        $("#openModalCode").click(function () {
+            $("#ModalCode").modal();
+        });
+
+        //3자리 단위마다 콤마 생성
+        function addCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        //numberOnly
+        $('[data-id="onlyNumber"]').on("keyup", function() {
+            $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
+        });
+    });
+</script>
+</body>
+</html>

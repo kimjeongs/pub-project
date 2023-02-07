@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+	<button type="button" class="btn s2 c1" data-filedown-select>파일등록</button>
+</div>
+
+<!-- 파일등록 -->
+<div class="modal fade" id="ModalFile" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">파일 등록</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">WORD</th>
+                                <td>
+                                    <div class="custom-file-cont" data-fileupload>
+                                        <div class="custom-file w100p">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile022" data-file-target>
+                                            <label class="custom-file-label" for="inputGroupFile022" aria-describedby="inputGroupFileAddon02"></label>
+                                        </div>
+                                        <!-- 2020-07-06 공통파일UI 개선: 파일명 text 추가 -->
+                                        <span class="custom-file-name"></span>
+                                        <!-- //2021-07-06 공통파일UI 개선: 파일명 text 추가 -->
+                                        <div class="sub">* Word (docx) 파일만 등록이 가능합니다.</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c2" id="openModalUpload">업로드</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //파일등록 -->
+
+<!-- 업로드 -->
+<div class="modal fade" id="ModalUpload" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">파일 등록</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">WORD</th>
+                                <td>news02.docx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">변환 파일</th>
+                                <td>
+                                    <ul class="down-list check-wrap">
+                                        <li>
+                                            <strong class="tit">
+                                                <label class="checkbox"><input type="checkbox" name="check1" checked><span></span>PDF</label>
+                                            </strong>
+                                        </li>
+                                        <li>
+                                            <strong class="tit">
+                                                <label class="checkbox"><input type="checkbox" name="check1" checked><span></span>TEXT</label>
+                                            </strong>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c2" id="openModalConvert">변환</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //업로드 -->
+
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+
+    /** 
+     * GUIDE: 가이드용으로 작성하였습니다. 개발상황에 맞게 활용해주세요.
+     */
+     var filedownload = {
+        el: '[data-download-file]',
+        init: function() {
+            this.eventBind();
+        },
+        eventBind: function() {
+            var self = this;
+            var $el = $(this.el),
+                $fileBtn = $('[data-filedown-select]');
+            var $currentElement;
+            $fileBtn.on('click', function(){
+                $currentElement = $(this).closest(self.el);
+                // 모달내 파일선택명 초기화
+                $('#ModalFile .custom-file .custom-file-input').val('');
+                $('#ModalFile .custom-file .custom-file-label').text('');
+                self.open('#ModalFile');
+            });
+            
+            //modal 파일 재선택
+            $("#openModalFileRe").click(function () {
+                self.close('#ModalUpload');
+                self.open('#ModalFile');
+            });
+
+            //modal 업로드
+            $("#openModalUpload").click(function () {
+                self.close('#ModalFile');
+                self.open('#ModalUpload');
+            });
+
+            //modal 변환
+            $("#openModalConvert").click(function () {
+                self.close('#ModalUpload');
+                self.open('#ModalConvert');
+            });
+        },
+        open: function(modalElement) {
+            $(modalElement).modal();
+        },
+        close: function(modalElement) {
+            $(modalElement).modal('hide');
+        },
+    }
+    filedownload.init();
+
+    });
+</script>
+</body>
+
+</html>

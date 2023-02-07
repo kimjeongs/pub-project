@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1 add" id="openModalModel">추가</button>
+</div>
+
+<!-- 사양추가 -->
+<div class="modal fade" id="ModalModel" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">사양추가</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">사양<span class="aster">*</span></th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                        <div class="direct-sel">
+                                            <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                <option>선택</option>
+                                            <option>파노라마썬루프</option>
+                                            <option>컨비니언스 패키지</option>
+                                            <option>하이테크 패지키</option>
+                                            <option>해드업 디스플레이</option>
+                                                <option value="direct">직접입력</option>
+                                            </select>
+                                            <input type="text" data-direct-target="input" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //사양추가 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 사양추가
+        $("#openModalModel").click(function () {
+            $("#ModalModel").modal();
+        });
+    });
+</script>
+</body>
+</html>

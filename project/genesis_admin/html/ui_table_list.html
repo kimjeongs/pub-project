@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Admin</title>
+<link rel="stylesheet" href="../resources/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../resources/assets/css/datepicker.min.css">
+<link rel="stylesheet" href="../resources/assets/css/style.css">
+<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>Model Code</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">연동차량 정보관리</a></li>
+                    <li class="active">Model Code</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <div class="table-top">
+                <div class="count">총 <span>456</span> 개</div>
+            </div>
+            <div class="table-wrap" data-check-parent>
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width:45px;">
+                        <col style="width:70px;">
+                        <col style="width:10%;">
+                        <col>
+                        <col style="width:8%;">
+                        <col style="width:8%;">
+                        <col style="width:10%;">
+                        <col style="width:12%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col"><label class="checkbox"><input type="checkbox" name="checkAll" class="checkAll"><span></span></label></th>
+                            <th scope="col">번호</th>
+                            <th scope="col">카테고리</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">노출</th>
+                            <th scope="col">퍼블리시</th>
+                            <th scope="col">수정자</th>
+                            <th scope="col">수정일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-list">
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow" disabled><span></span></label></td>
+                            <td><span class="top-tag">TOP</span></td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">제네시스, 美내구품질조사 1위</a>
+                            </td>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>gp-jino</td>
+                            <td>2020-02-12</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>9</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">제네시스 브랜드, 2019 뉴욕 모터쇼 참가'민트 콘셉트 세계최초 공개</a>
+                            </td>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>gp-gywon</td>
+                            <td>2020-02-13</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>8</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">美 PGA투어 '2020 제네시스인비테이셔널' 개막</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2020-02-13</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>7</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">제네시스 G80 출시</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2020-01-15</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>6</td>
+                            <td>G70</td>
+                            <td class="align-left">
+                                <a href="#">제네시스, 플래그십 SUV 'GV80' 디자인 최초 공개</a>
+                            </td>
+                            <td>N</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2020-01-01</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>5</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">제네시스 브랜드 럭셔리 플래그십 세단 G90리무진 19일 판매 개시</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2019-12-18</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>4</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">국토교통부 주관 신차안전도평가서 G70 중형 세단 부문 최우수 수상</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2019-12-17</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>3</td>
+                            <td>GV80</td>
+                            <td class="align-left">
+                                <a href="#">호주에 상륙한 제네시스 열기! 제네시스, 2019 프레지던츠컵 공식 차..</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2019-12-16</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>2</td>
+                            <td>G70</td>
+                            <td class="align-left">
+                                <a href="#">제네시스, 한국 테니스 간판스타 ‘정현 선수와의 만남 2019’ 행사 개최</a>
+                            </td>
+                            <td>N</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2019-11-19</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>1</td>
+                            <td>G70</td>
+                            <td class="align-left">
+                                <a href="#">제네시스, 신임 제네시스사업부장에 이용우 부사장 임명</a>
+                            </td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>gp-hiyun</td>
+                            <td>2019-10-30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-bottom">
+                <div class="center">
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li class="first disabled"><a href="#a"><span class="blind">First</span></a></li>
+                            <li class="previous disabled"><a href="#a"><span class="blind">Previous</span></a></li>
+                            <li class="active"><a href="#a">1</a></li>
+                            <li><a href="#a">2</a></li>
+                            <li><a href="#a">3</a></li>
+                            <li><a href="#a">4</a></li>
+                            <li><a href="#a">5</a></li>
+                            <li><a href="#a">6</a></li>
+                            <li><a href="#a">7</a></li>
+                            <li><a href="#a">8</a></li>
+                            <li><a href="#a">9</a></li>
+                            <li><a href="#a">10</a></li>
+                            <li class="next"><a href="#a"><span class="blind">Next</span></a></li>
+                            <li class="last"><a href="#a"><span class="blind">Last</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="sel-wrap sel-group">
+                        <select class="selectpicker" data-style="form-control">
+	                        <option>10건씩 보기</option>
+	                        <option>20건씩 보기</option>
+	                        <option>30건씩 보기</option>
+	                        <option>50건씩 보기</option>
+	                        <option>100건씩 보기</option>
+	                    </select>
+                    	<select class="selectpicker" data-style="form-control">
+	                        <option>등록순</option>
+	                        <option>노출순</option>
+	                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c3">퍼블리시</button>
+                <button type="button" class="btn s2 c1">노출</button>
+                <button type="button" class="btn s2 c1">비노출</button>
+                <button type="button" class="btn s2 c1" id="openModalCate">카테고리 관리</button>
+                <a href="#a" class="btn s2 c3">등록</a>
+            </div>
+
+            <!-- 검색 결과 없음 -->
+            <div class="no-result">
+                <p>검색 결과가 없습니다.</p>
+            </div>
+            <!-- //검색 결과 없음 -->
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+<script src="../resources/assets/js/jquery.min.js"></script>
+<script src="../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../resources/assets/js/popper.min.js"></script>
+<script src="../resources/assets/js/bootstrap.min.js"></script>
+<script src="../resources/assets/js/datepicker.min.js"></script>
+<script src="../resources/assets/js/datepicker.en.js"></script>
+<script src="../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

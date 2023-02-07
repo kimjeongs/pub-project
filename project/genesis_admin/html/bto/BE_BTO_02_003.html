@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalColor2">카본 메탈</button>
+</div>
+
+<!-- 3D 컬러 관리 상세/수정 -->
+<div class="modal fade" id="ModalColor2" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">3D 컬러 관리</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">컬러명(영문)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="CarbonMetal">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러명(한글)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="카본 메탈">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러코드<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="N5M">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Red<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="46">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Green<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="46">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Blue<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="50">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Roughness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.03">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Metallic<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.25">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Flakyness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.3">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c2" data-dismiss="modal">삭제</button>
+                <button type="button" class="btn s2 c2">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //3D 컬러 관리 상세/수정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 3D 컬러 관리 상세/수정
+        $("#openModalColor2").click(function () {
+            $("#ModalColor2").modal();
+        });
+    });
+</script>
+</body>
+</html>

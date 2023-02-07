@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Admin</title>
+<link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/style.css">
+<link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li class="active">
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li class="active"><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>상세차종(BYO용)</h2><!-- 2020-06-24 수정 -->
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">차량정보 관리</a></li>
+                    <li class="active">상세차종(BYO용)</li><!-- 2020-06-24 수정 -->
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <!-- search-wrap -->
+            <div class="search-wrap">
+                <form action="actionName" method="get" autocomplete="off">
+                    <div class="form-group">
+                        <label class="control-label">모델</label>
+                        <div class="search-con">
+                            <div class="sel-wrap">
+                                <div class="w2">
+                                    <select class="selectpicker" data-style="form-control">
+                                        <option>전체</option>
+                                        <option>G90</option>
+                                        <option>GV80</option>
+                                        <option>G80</option>
+                                        <option>G70</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">모델 연식</label>
+                        <div class="search-con">
+                            <div class="sel-wrap">
+                                <div class="w2">
+                                    <select class="selectpicker" data-style="form-control">
+                                        <option>전체</option>
+                                        <option>2020</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">상세차종</label>
+                        <div class="search-con">
+                            <div class="input-group">
+                                <input type="text" name="text" class="inp-txt w5"> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="search-btn">
+                        <button type="button" class="btn reset"><span class="blind">초기화</span></button>
+                        <button type="button" class="btn">검색</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //search-wrap -->
+
+            <div class="table-top">
+                <div class="count">총 <span>12</span> 개</div>
+                <p class="time">(마지막 배치시간 : <sapn>2020-05-27 08:10</sapn>)</p><!-- 2020-06-24 추가 -->
+            </div>
+            <!-- 2020-06-24 수정 -->
+            <div class="table-wrap" data-check-parent>
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width:70px;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;">
+                        <col style="width:10%;"><!-- 2020-08-05 추가 -->
+                        <col>
+                        <col style="width:15%;">
+                        <col style="width:15%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th scope="col">모델</th>
+                            <th scope="col">모델 연식</th>
+                            <th scope="col">모델 코드</th>
+                            <th scope="col">인승/도어</th>
+                            <th scope="col">상세차종</th>
+                            <th scope="col">상세차종 코드</th>
+                            <th scope="col">데이터 수신일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">디젤 2.2 Elite</td>
+                            <td>GKJS4DAA2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">디젤 2.2 Elite</td>
+                            <td>GKJS4DAT2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">가솔린 3.3T Elite</td>
+                            <td>GKJS4TAA2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">가솔린 3.3T Elite</td>
+                            <td>GKJS4TAT2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">가솔린 2.0T Elite</td>
+                            <td>GKJS4UAA2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td>4도어</td>
+                            <td class="align-left">가솔린 2.0T Elite</td>
+                            <td>GKJS4UAT2</td>
+                            <td>2020-06-13</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GI1B</td>
+                            <td>4인승</td>
+                            <td class="align-left">3.3T 리무진 Luxury</td>
+                            <td>GIJL4CAT1</td>
+                            <td>2020-02-13</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GI1B</td>
+                            <td>4인승</td>
+                            <td class="align-left">5.0 리무진 Luxury</td>
+                            <td>GIJL4LAT1</td>
+                            <td>2020-02-13</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GI1B</td>
+                            <td>4인승</td>
+                            <td class="align-left">3.8 리무진 Luxury</td>
+                            <td>GIJL4MAT1</td>
+                            <td>2020-01-13</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GI1B</td>
+                            <td>5인승</td>
+                            <td class="align-left">3.3T 리무진 Luxury</td>
+                            <td>GIJL5CAT1</td>
+                            <td>2020-01-13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //2020-06-24 수정 -->
+            <div class="table-bottom">
+                <div class="center">
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li class="first disabled"><a href="#a"><span class="blind">First</span></a></li>
+                            <li class="previous disabled"><a href="#a"><span class="blind">Previous</span></a></li>
+                            <li class="active"><a href="#a">1</a></li>
+                            <li><a href="#a">2</a></li>
+                            <li><a href="#a">3</a></li>
+                            <li><a href="#a">4</a></li>
+                            <li><a href="#a">5</a></li>
+                            <li><a href="#a">6</a></li>
+                            <li><a href="#a">7</a></li>
+                            <li><a href="#a">8</a></li>
+                            <li><a href="#a">9</a></li>
+                            <li><a href="#a">10</a></li>
+                            <li class="next"><a href="#a"><span class="blind">Next</span></a></li>
+                            <li class="last"><a href="#a"><span class="blind">Last</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="sel-wrap">
+                    	<select class="selectpicker" data-style="form-control">
+	                        <option>10건씩 보기</option>
+	                        <option>20건씩 보기</option>
+	                        <option>30건씩 보기</option>
+	                        <option>50건씩 보기</option>
+	                        <option>100건씩 보기</option>
+	                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../js/common.js"></script>
+</body>
+</html>

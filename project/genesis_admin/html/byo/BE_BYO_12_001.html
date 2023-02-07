@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Admin</title>
+<link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/style.css">
+<link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li class="active">
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li class="active"><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>파츠</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">BYO 관리</a></li>
+                    <li class="active">파츠</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <!-- search-wrap -->
+            <div class="search-wrap">
+                <form action="actionName" method="get" autocomplete="off">
+                    <div class="form-group">
+                        <label class="control-label">모델</label>
+                        <div class="search-con">
+                            <div class="sel-wrap">
+                                <div class="w2">
+                                    <select class="selectpicker" data-style="form-control">
+                                        <option>전체</option>
+                                        <option>G90</option>
+                                        <option>G70</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">모델 연식</label>
+                        <div class="search-con">
+                            <div class="sel-wrap">
+                                <div class="w2">
+                                    <select class="selectpicker" data-style="form-control">
+                                        <option>전체</option>
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">수정일</label>
+                        <div class="search-con">
+                            <div class="datepicker-wrap">
+                                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+                                <div class="mid">~</div>
+                                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">파츠</label>
+                        <div class="search-con">
+                            <div class="input-group">
+                                <input type="text" name="text" class="inp-txt w5"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">노출</label>
+                        <div class="search-con">
+                            <div class="sel-wrap">
+                                <div class="w2">
+                                    <select class="selectpicker" data-style="form-control">
+                                        <option>전체</option>
+                                        <option>Y</option>
+                                        <option>N</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-btn">
+                        <button type="button" class="btn reset"><span class="blind">초기화</span></button>
+                        <button type="button" class="btn">검색</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //search-wrap -->
+
+            <div class="table-top">
+                <div class="count">총 <span>12</span> 개</div>
+            </div>
+            <div class="table-wrap" data-check-parent>
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width:45px;">
+                        <col style="width:70px;">
+                        <col style="width:7%;">
+                        <col style="width:7%;">
+                        <col style="width:7%;">
+                        <col>
+                        <col style="width:7%;">
+                        <col style="width:10%;">
+                        <col style="width:7%;">
+                        <col style="width:7%;">
+                        <col style="width:8%;">
+                        <col style="width:8%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col"><label class="checkbox"><input type="checkbox" name="checkAll" class="checkAll"><span></span></label></th>
+                            <th scope="col">번호</th>
+                            <th scope="col">모델</th>
+                            <th scope="col">모델 연식</th>
+                            <th scope="col">모델 코드</th>
+                            <th scope="col">파츠</th>
+                            <th scope="col">파츠 코드</th>
+                            <th scope="col">가격(원)</th>
+                            <th scope="col">사용여부</th>
+                            <th scope="col">노출</th>
+                            <th scope="col">등록일</th>
+                            <th scope="col">수정일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>2</td>
+                            <td>G90</td>
+                            <td>2020</td>
+                            <td>GI2U</td>
+                            <td class="align-left"><a href="#">차량보호필름</a></td>
+                            <td>GI0005</td>
+                            <td class="align-right">3,000,000</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>2019-02-12</td>
+                            <td>2019-02-13</td>
+                        </tr>
+                        <tr>
+                            <td><label class="checkbox"><input type="checkbox" name="checkRow"><span></span></label></td>
+                            <td>1</td>
+                            <td>G70</td>
+                            <td>2019</td>
+                            <td>GK2B</td>
+                            <td class="align-left"><a href="#">차량보호필름</a></td>
+                            <td>GK0005</td>
+                            <td class="align-right">3,500,000</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>2019-02-12</td>
+                            <td>2019-02-13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-bottom">
+                <div class="center">
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li class="first disabled"><a href="#a"><span class="blind">First</span></a></li>
+                            <li class="previous disabled"><a href="#a"><span class="blind">Previous</span></a></li>
+                            <li class="active"><a href="#a">1</a></li>
+                            <li><a href="#a">2</a></li>
+                            <li><a href="#a">3</a></li>
+                            <li><a href="#a">4</a></li>
+                            <li><a href="#a">5</a></li>
+                            <li><a href="#a">6</a></li>
+                            <li><a href="#a">7</a></li>
+                            <li><a href="#a">8</a></li>
+                            <li><a href="#a">9</a></li>
+                            <li><a href="#a">10</a></li>
+                            <li class="next"><a href="#a"><span class="blind">Next</span></a></li>
+                            <li class="last"><a href="#a"><span class="blind">Last</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="sel-wrap sel-group">
+                        <select class="selectpicker" data-style="form-control">
+                            <option>10건씩 보기</option>
+                            <option>20건씩 보기</option>
+                            <option>30건씩 보기</option>
+                            <option>50건씩 보기</option>
+                            <option>100건씩 보기</option>
+                        </select>
+                        <select class="selectpicker" data-style="form-control">
+                            <option>등록순</option>
+                            <option>노출순</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c1">노출</button>
+                <button type="button" class="btn s2 c1">비노출</button>
+                <button type="button" class="btn s2 c1" id="openModalDis">노출순서 설정</button>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+
+<!-- 노출순서 설정 -->
+<div class="modal fade" id="ModalDis" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">노출순서 설정</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap" data-check-parent>
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">모델</th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>G90</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row">모델 연식</th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>2020</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">모델 코드</th>
+                                <td colspan="3">
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>GI1B</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div data-table-draggle="number">
+                        <table class="table table-striped">
+                            <colgroup>
+                                <col style="width:10%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr class="ui-state-default">
+                                    <th scope="col">순서</th>
+                                    <th scope="col">파츠</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="align-left">차량보호필름</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">2</td>
+                                    <td class="align-left">차량보호필름</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-txt-box">노출순서 변경은 드래그로 위치 변경이 가능합니다.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //노출순서 설정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 노출순서 설정
+        $("#openModalDis").click(function () {
+            $("#ModalDis").modal();
+        });
+    });
+</script>
+</body>
+</html>

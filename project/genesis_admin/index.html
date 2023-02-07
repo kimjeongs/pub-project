@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>admin</title>
+	<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/assets/css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+    	h1 {padding:30px 0;}
+		caption {display: none;}
+		td:nth-child(7) { text-align: left !important; }
+		input[type="checkbox"]{width:20px;height:20px;}
+		.table-responsive {margin:0 0 50px;}
+		h2 {display:block;height:45px;margin-bottom:-1px;background:#f2f3f7; border:1px solid rgba(0, 0, 0, 0.03);font-size:16px;line-height:45px;text-align:center;cursor:pointer;}
+		h2 + .table-responsive {display:none;}
+		h2 + .table-responsive.open {display:block;}
+	</style>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- container -->
+    <div id="container" class="container">
+		<h1>Genesis Phases2 Admin 현황판</h1>
+
+		<h2>Guide</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col style="width:80px;">
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth</th>
+						<th>file</th>
+						<th>status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>Style Guide</td>
+						<td><a href="style_guide.html" target="_bank">style_guide.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>search</td>
+						<td><a href="html/ui_searcharea.html"  target="_bank">search.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>List</td>
+						<td><a href="html/ui_table_list.html"  target="_bank">list.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>Register</td>
+						<td><a href="html/ui_table_register.html" target="_bank">register.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>Detil/Modify</td>
+						<td><a href="html/ui_table_detail.html" target="_bank">detail.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>Drag and drop</td>
+						<td><a href="html/table_draggle.html" target="_bank">table_draggle.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>Loading</td>
+						<td><a href="html/loading.html" target="_bank">loading.html</a></td>
+						<td><input type="checkbox" checked></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>차량정보 관리 / CAR</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>모델(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_01_001.html" target="_bank">BE_CAR_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_01_002.html" target="_bank">BE_CAR_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_01_003.html" target="_bank">BE_CAR_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_01_004.html" target="_bank">BE_CAR_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>엔진(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_02_001.html" target="_bank">BE_CAR_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>구동(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_03_001.html" target="_bank">BE_CAR_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>인승/도어(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_04_001.html" target="_bank">BE_CAR_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>외장컬러(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_05_001.html" target="_bank">BE_CAR_05_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>휠 &amp; 타이어 &amp; 디자인(BTO용)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_06_001.html" target="_bank">BE_CAR_06_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>내장컬러 &amp; 인테리어 옵션(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_07_001.html" target="_bank">BE_CAR_07_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>옵션(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_08_001.html" target="_bank">BE_CAR_08_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>파츠(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_09_001.html" target="_bank">BE_CAR_09_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>상세차종(BYO용)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_10_001.html" target="_bank">BE_CAR_10_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>스펙 템플릿 관리(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_11_001.html" target="_bank">BE_CAR_11_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_11_002.html" target="_bank">BE_CAR_11_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_11_003.html" target="_bank">BE_CAR_11_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>스펙 상세 관리(공통)</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_12_001.html" target="_bank">BE_CAR_12_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_12_002.html" target="_bank">BE_CAR_12_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>불러오기 팝업 (pop)</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_12_003.html" target="_bank">BE_CAR_12_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/car/BE_CAR_12_004.html" target="_bank">BE_CAR_12_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>BTO 관리 / BTO</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody> 
+					<tr>
+						<td class="index"></td>
+						<td>모델</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_01_001.html" target="_bank">BE_BTO_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록 조회 (pop)</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_01_002.html" target="_bank">BE_BTO_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>기본정보 설정(tab)</td>
+						<td>상세/수정</td>
+						<td><a href="html/bto/BE_BTO_01_003.html" target="_bank">BE_BTO_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>데이터설정(tab)</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_01_004.html" target="_bank">BE_BTO_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>페이지 등록 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_005.html" target="_bank">BE_BTO_01_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>신규페이지 등록</td>
+						<td><a href="html/bto/BE_BTO_01_006.html" target="_bank">BE_BTO_01_006.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_007.html" target="_bank">BE_BTO_01_007.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>엔진 타입</td>
+						<td><a href="html/bto/BE_BTO_01_008.html" target="_bank">BE_BTO_01_008.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_009.html" target="_bank">BE_BTO_01_009.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>구동/인승</td>
+						<td><a href="html/bto/BE_BTO_01_010.html" target="_bank">BE_BTO_01_010.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_011.html" target="_bank">BE_BTO_01_011.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>외장 디자인</td>
+						<td><a href="html/bto/BE_BTO_01_012.html" target="_bank">BE_BTO_01_012.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_013.html" target="_bank">BE_BTO_01_013.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>휠&amp;타이어</td>
+						<td><a href="html/bto/BE_BTO_01_014.html" target="_bank">BE_BTO_01_014.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_015.html" target="_bank">BE_BTO_01_015.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>내장 디자인</td>
+						<td><a href="html/bto/BE_BTO_01_016.html" target="_bank">BE_BTO_01_016.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_017.html" target="_bank">BE_BTO_01_017.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>인테이어 디자인</td>
+						<td><a href="html/bto/BE_BTO_01_018.html" target="_bank">BE_BTO_01_018.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_019.html" target="_bank">BE_BTO_01_019.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>옵션 타입</td>
+						<td><a href="html/bto/BE_BTO_01_020.html" target="_bank">BE_BTO_01_020.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>사양추가 (pop)</td>
+						<td><a href="html/bto/BE_BTO_01_021.html" target="_bank">BE_BTO_01_021.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>미리보기</td>
+						<td><a href="html/bto/BE_BTO_01_022.html" target="_bank">BE_BTO_01_022.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>스텝그룹 설정(tab)</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_01_023.html" target="_bank">BE_BTO_01_023.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>3D컬러 관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_02_001.html" target="_bank">BE_BTO_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>3D컬러 (pop)</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_02_002.html" target="_bank">BE_BTO_02_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>3D컬러 상세/수정 (pop)</td>
+						<td></td>
+						<td><a href="html/bto/BE_BTO_02_003.html" target="_bank">BE_BTO_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>BYO 관리 / BYO</h2>
+		<!-- <div class="progress"><span class="per"></span></div> -->
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>모델</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_01_001.html" target="_bank">BE_BYO_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>모델 등록 조회 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_01_002.html" target="_bank">BE_BYO_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_01_003.html" target="_bank">BE_BYO_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_01_004.html" target="_bank">BE_BYO_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>상세차종</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_02_001.html" target="_bank">BE_BYO_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_02_003.html" target="_bank">BE_BYO_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_02_004.html" target="_bank">BE_BYO_02_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_02_005.html" target="_bank">BE_BYO_02_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>외장컬러</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_03_001.html" target="_bank">BE_BYO_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_03_003.html" target="_bank">BE_BYO_03_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_03_004.html" target="_bank">BE_BYO_03_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_03_005.html" target="_bank">BE_BYO_03_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>내장컬러</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_04_001.html" target="_bank">BE_BYO_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_04_003.html" target="_bank">BE_BYO_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_04_004.html" target="_bank">BE_BYO_04_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_04_005.html" target="_bank">BE_BYO_04_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>옵션</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_05_001.html" target="_bank">BE_BYO_05_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_05_003.html" target="_bank">BE_BYO_05_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_05_004.html" target="_bank">BE_BYO_05_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_05_005.html" target="_bank">BE_BYO_05_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>파츠</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_12_001.html" target="_bank">BE_BYO_12_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_12_002.html" target="_bank">BE_BYO_12_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_12_003.html" target="_bank">BE_BYO_12_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_12_004.html" target="_bank">BE_BYO_12_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>매핑관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_06_001.html" target="_bank">BE_BYO_06_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>Popular 설정 (pop)</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_06_002.html" target="_bank">BE_BYO_06_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>매핑Step1_외장컬러/내장컬러/옵션 매핑</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_06_003.html" target="_bank">BE_BYO_06_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>매핑Step2_외장컬러&내장컬러 매핑</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_06_004.html" target="_bank">BE_BYO_06_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>할인</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_07_001.html" target="_bank">BE_BYO_07_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_07_004.html" target="_bank">BE_BYO_07_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>포인트</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_08_001.html" target="_bank">BE_BYO_08_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_08_004.html" target="_bank">BE_BYO_08_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>과세</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_09_001.html" target="_bank">BE_BYO_09_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_09_004.html" target="_bank">BE_BYO_09_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>구매프로그램</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_10_001.html" target="_bank">BE_BYO_10_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_10_004.html" target="_bank">BE_BYO_10_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>탁송지관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_11_001.html" target="_bank">BE_BYO_11_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/byo/BE_BYO_11_004.html" target="_bank">BE_BYO_11_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>게시판 관리 / sup</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>공지사항</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_01_001.html" target="_bank">BE_SUP_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_01_002.html" target="_bank">BE_SUP_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_01_003.html" target="_bank">BE_SUP_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_01_004.html" target="_bank">BE_SUP_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>자주 묻는 질문</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_03_001.html" target="_bank">BE_SUP_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_03_002.html" target="_bank">BE_SUP_03_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서 설정 (pop)</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_03_003.html" target="_bank">BE_SUP_03_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_03_004.html" target="_bank">BE_SUP_03_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_03_005.html" target="_bank">BE_SUP_03_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>이벤트</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_02_001.html" target="_bank">BE_SUP_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_02_002.html" target="_bank">BE_SUP_02_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>스타일형</td>
+						<td>등록</td>
+						<td><a href="html/sup/BE_SUP_02_003.html" target="_bank">BE_SUP_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td><a href="html/sup/BE_SUP_02_004.html" target="_bank">BE_SUP_02_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>단순고지형</td>
+						<td>등록</td>
+						<td><a href="html/sup/BE_SUP_02_005.html" target="_bank">BE_SUP_02_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td><a href="html/sup/BE_SUP_02_006.html" target="_bank">BE_SUP_02_006.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>참여형</td>
+						<td>등록</td>
+						<td><a href="html/sup/BE_SUP_02_007.html" target="_bank">BE_SUP_02_007.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td><a href="html/sup/BE_SUP_02_008.html" target="_bank">BE_SUP_02_008.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td> 
+						<td>이벤트발표</td>
+						<td>등록</td>
+						<td><a href="html/sup/BE_SUP_02_009.html" target="_bank">BE_SUP_02_009.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td><a href="html/sup/BE_SUP_02_010.html" target="_bank">BE_SUP_02_010.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>PR센터</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_04_001.html" target="_bank">BE_SUP_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_04_002.html" target="_bank">BE_SUP_04_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_04_003.html" target="_bank">BE_SUP_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>파일 등록 (pop)</td>
+						<td></td>
+						<td></td>
+						<td><input type="checkbox" checked></td>
+						<td>기능 UI가이드 register 참고</td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/sup/BE_SUP_04_005.html" target="_bank">BE_SUP_04_005.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>약관관리  / ter</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>이용약관</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_01_001.html" target="_bank">BE_TER_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_01_002.html" target="_bank">BE_TER_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_01_003.html" target="_bank">BE_TER_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_01_004.html" target="_bank">BE_TER_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>개인정보 처리방침</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_02_001.html" target="_bank">BE_TER_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_02_002.html" target="_bank">BE_TER_02_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_02_003.html" target="_bank">BE_TER_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_02_004.html" target="_bank">BE_TER_02_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>저작권 안내</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_03_001.html" target="_bank">BE_TER_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_03_002.html" target="_bank">BE_TER_03_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_03_003.html" target="_bank">BE_TER_03_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>보증 안내</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_04_001.html" target="_bank">BE_TER_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_04_002.html" target="_bank">BE_TER_04_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_04_003.html" target="_bank">BE_TER_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/ter/BE_TER_04_004.html" target="_bank">BE_TER_04_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>다운로드 센터  / dow</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>모델 카테고리 관리</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_01_001.html" target="_bank">BE_DOW_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서 설정 (pop)</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_01_002.html" target="_bank">BE_DOW_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_01_003.html" target="_bank">BE_DOW_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_01_004.html" target="_bank">BE_DOW_01_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>카달로그/가격표</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_02_001.html" target="_bank">BE_DOW_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_02_002.html" target="_bank">BE_DOW_02_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_02_003.html" target="_bank">BE_DOW_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>취급설명서</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_03_001.html" target="_bank">BE_DOW_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_03_002.html" target="_bank">BE_DOW_03_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_03_003.html" target="_bank">BE_DOW_03_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>블루투스 호환 안내</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_04_001.html" target="_bank">BE_DOW_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>카테고리관리 (pop)</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_04_002.html" target="_bank">BE_DOW_04_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_04_003.html" target="_bank">BE_DOW_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/dow/BE_DOW_04_004.html" target="_bank">BE_DOW_04_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>거점 관리 / cen</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>전시장</td>
+						<td></td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_01_001.html" target="_bank">BE_CEN_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>전시장 카 마스터</td>
+						<td>검색결과 없음</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_03_001.html" target="_bank">BE_CEN_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>검색결과 있음</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_03_002.html" target="_bank">BE_CEN_03_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>서비스 센터</td>
+						<td></td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_02_001.html" target="_bank">BE_CEN_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>전시/시승 차량 이미지</td>
+						<td>검색결과 없음</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_04_001.html" target="_bank">BE_CEN_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>검색결과 있음</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_04_002.html" target="_bank">BE_CEN_04_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_04_004.html" target="_bank">BE_CEN_04_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/cen/BE_CEN_04_003.html" target="_bank">BE_CEN_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>GCS 관리 / GCS</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<colgroup>
+					<col style="width:80px">
+					<col>
+					<col>
+					<col>
+					<col>
+					<col style="width:80px">
+					<col>
+				</colgroup>
+				<thead class="thead-light">
+					<tr>
+						<th>number</th>
+						<th>depth1</th>
+						<th>depth2</th>
+						<th>depth3</th>
+						<th>file</th>
+						<th>status</th>
+						<th>memo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="index"></td>
+						<td>공지사항</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_01_001.html" target="_bank">BE_GCS_01_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_01_002.html" target="_bank">BE_GCS_01_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_01_003.html" target="_bank">BE_GCS_01_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>자주 묻는 질문</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_02_001.html" target="_bank">BE_GCS_02_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서 설정 (pop)</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_02_002.html" target="_bank">BE_GCS_02_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_02_003.html" target="_bank">BE_GCS_02_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_02_004.html" target="_bank">BE_GCS_02_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>다운로드 센터</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_03_001.html" target="_bank">BE_GCS_03_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>노출순서 설정 (pop)</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_03_002.html" target="_bank">BE_GCS_03_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_03_003.html" target="_bank">BE_GCS_03_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_03_004.html" target="_bank">BE_GCS_03_004.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>이용약관</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_04_001.html" target="_bank">BE_GCS_04_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_04_002.html" target="_bank">BE_GCS_04_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_04_003.html" target="_bank">BE_GCS_04_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td>개인정보 처리방침</td>
+						<td>목록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_05_001.html" target="_bank">BE_GCS_05_001.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>등록</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_05_002.html" target="_bank">BE_GCS_05_002.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="index"></td>
+						<td></td>
+						<td>상세/수정</td>
+						<td></td>
+						<td><a href="html/gcs/BE_GCS_05_003.html" target="_bank">BE_GCS_05_003.html</a></td>
+						<td><input type="checkbox" checked></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div> 
+    <!-- //container -->
+  </div>
+
+  <!-- js:: jquery -->
+  <script type="text/javascript" src="resources/assets/js/jquery.min.js"></script>
+
+	
+<script>
+	$(function() {
+		$('.index').each(function(idx) {
+			$(this).text(idx);
+		})
+
+		$('h2').next('.table-responsive').addClass('open');
+		$('h2').on('click',function(){
+			var open = $(this).next().hasClass('open');
+			if(!open) {
+				$(this).next().addClass('open');
+			} else {
+				$(this).next().removeClass('open');
+			}
+		})
+		// $('.table-responsive .table tr').each(function(i, o) {
+		// 	console.log(i);
+		// });
+	});
+</script>
+</body>
+</html>

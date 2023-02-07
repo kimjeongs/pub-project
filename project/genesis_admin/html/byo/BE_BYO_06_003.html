@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Admin</title>
+<link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+<link rel="stylesheet" href="../../resources/assets/css/style.css">
+<link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li class="active">
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li class="active"><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>매핑관리</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">BYO 관리</a></li>
+                    <li class="active">매핑관리</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <div class="step-wrap">
+                <div class="model-info">
+                    <span class="info1">G90</span> /
+                    <span class="info2">2016</span> /
+                    <span class="info3">3.3T</span> /
+                    <span class="info4">프리미엄럭셔리(시그니쳐 디자인 셀렉션)</span>
+                </div>
+
+                <div class="step-cont">
+                    <ul class="step-menu">
+                        <li class="active"><a href="#">01. 상세차종의 외장컬러/내장컬러/옵션/파츠 선택</a></li>
+                        <li><a href="#">02. 외장컬러와 내장컬러 매핑</a></li>
+                    </ul>
+                    <!-- 외장컬러 매핑 -->
+                    <div class="mapping-box" data-check-parent="no-table">
+                        <div class="tit-cont">
+                            <div class="check-wrap"><label class="checkbox"><input type="checkbox" class="checkAll" name="checkAll"><span></span>외장컬러 매핑</label></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow"><span></span>우유니 화이트</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow"><span></span>세빌 실버</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow"><span></span>그레이스 풀 그레이</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow"><span></span>포르토 레드</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //외장컬러 매핑 -->
+
+                    <!-- 내장컬러 매핑 -->
+                    <div class="mapping-box" data-check-parent="no-table">
+                        <div class="tit-cont">
+                            <div class="check-wrap"><label class="checkbox"><input type="checkbox" class="checkAll" name="checkAll"><span></span>내장컬러 매핑</label></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow2"><span></span>울트라 마린 블루/하바나브라운 투톤(리진 전용/하바나 브라운 시트)/올리브 애쉬</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow2"><span></span>울트라 마린 블루/하바나브라운 투톤(리진 전용/하바나 브라운 시트)/월럿 벌</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow2"><span></span>옵시디언 블랙 모노톤(옵시디언 블랙시트)/올리브 애쉬</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow2"><span></span>옵시디언 블랙 모노톤(옵시디언 블랙시트)/올리브 애쉬</label></div>
+                                <div class="right">
+                                    <span class="price">0</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //내장컬러 매핑 -->
+
+                    <!-- 옵션 매핑 -->
+                    <div class="mapping-box" data-check-parent="no-table">
+                        <div class="tit-cont">
+                            <div class="check-wrap"><label class="checkbox"><input type="checkbox" class="checkAll" name="checkAll"><span></span>옵션 매핑</label></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <!-- 상세 차종에 기본 디자인 옵션은 Selected Disabled 로 노출 -->
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow3" disabled><span></span>시그니쳐 디자인 셀렉션
+                                </label></div>
+                                <div class="right">
+                                    <span class="price">3,500,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow3"><span></span>뒷좌석 컴포트 패키지ll</label></div>
+                                <div class="right">
+                                    <span class="price">2,000,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow3"><span></span>세이프티 썬루프</label></div>
+                                <div class="right">
+                                    <span class="price">800,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow3"><span></span>퍼스트 클래스 VIP 시트</label></div>
+                                <div class="right">
+                                    <span class="price">3,500,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //옵션 매핑 -->
+
+                    <!-- 파츠 매핑 -->
+                    <div class="mapping-box" data-check-parent="no-table">
+                        <div class="tit-cont">
+                            <div class="check-wrap"><label class="checkbox"><input type="checkbox" class="checkAll" name="checkAll"><span></span>파츠 매핑</label></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow4"><span></span>차량보호필름</label></div>
+                                <div class="right">
+                                    <span class="price">3,500,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-wrap"><label class="checkbox" data-check-target><input type="checkbox" name="checkRow4"><span></span>카본 사이드립</label></div>
+                                <div class="right">
+                                    <span class="price">2,000,000</span>
+                                    <span class="check-wrap"><label class="checkbox"><input type="checkbox" name="popular"><span></span>popular</label></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //파츠 매핑 -->
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <a href="#a" class="btn s2 c1">목록</a>
+                <a href="#a" class="btn s2 c3">다음</a>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../js/common.js"></script>
+</body>
+</html>

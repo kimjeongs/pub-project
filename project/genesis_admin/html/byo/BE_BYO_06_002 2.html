@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalPopular">Popular</button>
+</div>
+
+<!-- Popular 설정 -->
+<div class="modal fade" id="ModalPopular" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">Popular 설정</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap" data-check-parent>
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">모델</th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>G90</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row">모델 연식</th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>2020</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">모델 코드</th>
+                                <td colspan="3">
+                                    <div class="sel-wrap">
+                                        <div class="sel-w">
+                                            <select class="selectpicker" data-style="form-control">
+                                                <option>GI1B</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="table-wrap" data-check-parent>
+                        <table class="table table-striped">
+                            <colgroup>
+                                <col style="width:15%;">
+                                <col style="width:15%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr class="ui-state-default">
+                                    <th scope="col">Popular</th>
+                                    <th scope="col">엔진</th>
+                                    <th scope="col">상세차종</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.3T</td>
+                                    <td class="align-left">럭셔리</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.3T</td>
+                                    <td class="align-left">럭셔리(시그니쳐 디자인 셀렉션)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.3T</td>
+                                    <td class="align-left">프레스티지</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.3T</td>
+                                    <td class="align-left">프리미엄 럭셔리</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">럭셔리</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">럭셔리(시그니쳐 디자인 셀렉션)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">프레스티지</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">프리미엄 럭셔리</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">프리미엄 럭셔리(시그니쳐 디자인 셀렉션)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label>
+                                    </td>
+                                    <td>3.8</td>
+                                    <td class="align-left">프리미엄 럭셔리(시그니쳐 디자인 셀렉션ll)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Popular 설정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal Popular 설정
+        $("#openModalPopular").click(function () {
+            $("#ModalPopular").modal();
+        });
+    });
+</script>
+</body>
+</html>

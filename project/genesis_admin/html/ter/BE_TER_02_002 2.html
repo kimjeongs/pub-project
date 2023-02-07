@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalCate">카테고리 관리</button>
+</div>
+
+<!-- 카테고리 관리 -->
+<div class="modal fade" id="ModalCate" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">카테고리 관리</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-top">
+                    <div class="btn-wrap">
+                        <button type="button" class="btn s2 c1 remove">삭제</button>
+                        <button type="button" class="btn s2 c1 add">추가</button>
+                    </div>
+                </div>
+                <div class="table-wrap" data-check-parent>
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col style="width:45px;">
+                            <col style="width:45px;">
+                            <col>
+                            <col style="width:10%;">
+                            <col style="width:13%;">
+                            <col style="width:13%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col"><label class="checkbox"><input type="checkbox" name="checkAll" class="checkAll"><span></span></label></th>
+                                <th scope="col">번호</th>
+                                <th scope="col">카테고리명<span class="aster">*</span></th>
+                                <th scope="col">GCS 전용</th>
+                                <th scope="col">등록자</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">노출</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>1</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="홈페이지 회원">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td>gp-jino</td>
+                                <td>2020-02-12</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>2</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="차량구매 / 정비 고객">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td>gp-gywon</td>
+                                <td>2020-02-13</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>3</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="제네시스 카페이">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-02-13</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>4</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="제네시스 디지털키">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-01-15</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>5</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="제네시스 커넥티드 서비스">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-01-01</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td>6</td>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                                <td>
+                                    <label class="checkbox"><input type="checkbox" name="checkRow3"><span></span></label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //카테고리 관리 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 카테고리 관리
+        $("#openModalCate").click(function () {
+            $("#ModalCate").modal();
+        });
+    });
+</script>
+</body>
+</html>

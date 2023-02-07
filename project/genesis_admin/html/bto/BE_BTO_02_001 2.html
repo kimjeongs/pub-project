@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">FAQ</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">FAQ</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li class="active">
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li class="active"><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">옵션 &amp; 패키지</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">매핑</a></li>
+                    <li><a href="#a">스펙</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">과세설정</a></li>
+                    <li><a href="#a">탁송료설정</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">FAQ</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">FAQ</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>3D컬러 관리</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">BTO 관리</a></li>
+                    <li class="active">3D컬러 관리</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <!-- search-wrap -->
+            <div class="search-wrap">
+                <form action="actionName" method="get" autocomplete="off">
+                    <div class="form-group">
+                        <label class="control-label">컬러명</label>
+                        <div class="search-con">
+                            <div class="input-group">
+                                <input type="text" name="text" class="inp-txt w5"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">수정일</label>
+                        <div class="search-con">
+                            <div class="datepicker-wrap">
+                                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+                                <div class="mid">~</div>
+                                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-btn">
+                        <button type="button" class="btn reset"><span class="blind">초기화</span></button>
+                        <button type="button" class="btn">검색</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //search-wrap -->
+
+            <div class="table-top">
+                <div class="count">총 <span>1</span> 개</div>
+                <p class="time">(마지막 수정시간 : <sapn>2020-06-13 08:10</sapn>)</p>
+            </div>
+            <div class="table-wrap">
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width:100px;">
+                        <col>
+                        <col>
+                        <col style="width:15%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th scope="col">컬러명(영문)</th>
+                            <th scope="col">컬러명(한글)</th>
+                            <th scope="col">컬러 코드</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td class="align-left">Carbom Metal</td>
+                            <td class="align-left"><a href="#" id="openModalColor2">카본 메탈</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>NM5</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td class="align-left">Royal Blue</td>
+                            <td class="align-left"><a href="#">로얄 블루</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>RY5</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="align-left">Gold Coast Silver</td>
+                            <td class="align-left"><a href="#">골드코스트 실버</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>NA5</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="align-left">Vik Black</td>
+                            <td class="align-left"><a href="#">비크 블랙</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>NJ5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="align-left">Uyuni</td>
+                            <td class="align-left"><a href="#">우유니 화이트</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>FD6</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="align-left">Savile Silver</td>
+                            <td class="align-left"><a href="#">세실 실버</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>NN5</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="align-left">Lima Red</td>
+                            <td class="align-left"><a href="#">리마 레드</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>LM</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="align-left">Cardiff Green</td>
+                            <td class="align-left"><a href="#">카디프 그린</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>VG4</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="align-left">Matterhorn White</td>
+                            <td class="align-left"><a href="#">마테호른 화이트</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>MW5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="align-left">Brunswick Green</td>
+                            <td class="align-left"><a href="#">브런즈윅 그린</a></td><!-- 3D 컬러 관리 상세/수정 팝업 호출 id="openModalColor2" -->
+                            <td>BG5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="info-txt-box">
+                <li>- 3D 렌더링에서 사용되는 컬러의 출려 값을 관리 합니다.</li>
+                <li>- 같은 코드로 관리되는 색상은 전 모델 동일하게 적용 됩니다. (모델이 달라도 코드가 같으면 동일한 색상입니다.)</li>
+                <li>- 수동으로 업데이트 시,  ~/xxxx/xxxxx/paints.txt 파일을 업데이트 하시면 됩니다.</li>
+                <li>- 수동으로 업데이트 된 내역은 하기 업데이트 이력에 적용 되지 않습니다. 서버 로그를 확인하시기 바랍니다. </li>
+            </ul>
+            <div class="table-bottom">
+                <div class="right">
+                    <div class="sel-wrap sel-group">
+                        <select class="selectpicker" data-style="form-control">
+                            <option>10건씩 보기</option>
+                            <option>20건씩 보기</option>
+                            <option>30건씩 보기</option>
+                            <option>50건씩 보기</option>
+                            <option>100건씩 보기</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c3" id="openModalColor">등록</button>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+
+<!-- 3D 컬러 관리 -->
+<div class="modal fade" id="ModalColor" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">3D 컬러 관리</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">컬러명(영문)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러명(한글)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러코드<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Red<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Green<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Blue<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Roughness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Metallic<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Flakyness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //3D 컬러 관리 -->
+
+<!-- 3D 컬러 관리 상세/수정 -->
+<div class="modal fade" id="ModalColor2" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">3D 컬러 관리</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">컬러명(영문)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="CarbonMetal">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러명(한글)<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="카본 메탈">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">컬러코드<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="N5M">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Red<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="46">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Green<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="46">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Blue<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="50">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Roughness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.03">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Metallic<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.25">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Flakyness<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt" value="0.3">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c2" data-dismiss="modal">삭제</button>
+                <button type="button" class="btn s2 c2">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //3D 컬러 관리 상세/수정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 3D 컬러 관리
+        $("#openModalColor").click(function () {
+            $("#ModalColor").modal();
+        });
+
+        //modal 3D 컬러 관리 상세/수정
+        $("#openModalColor2").click(function () {
+            $("#ModalColor2").modal();
+        });
+    });
+</script>
+</body>
+</html>

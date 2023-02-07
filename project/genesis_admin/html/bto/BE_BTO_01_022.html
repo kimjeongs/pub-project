@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li class="active">
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li class="active"><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+            <div class="login-cont">
+                <div class="sel-wrap lang">
+                    <select class="selectpicker" data-style="form-control">
+                        <option>KR</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <p class="login-info">(<span>genesis777</span>)</p>
+                <a href="#a" class="btn s1 c1">로그아웃</a>
+            </div>
+        </div>
+        <div class="contents-top">
+            <h2>모델</h2>
+            <div class="breadcrumbbar">
+                <ol class="breadcrumb">
+                    <li><a href="#a">Home</a></li>
+                    <li><a href="#a">BTO 관리</a></li>
+                    <li class="active">모델</li>
+                </ol>
+            </div>
+        </div>
+        <!-- con-wrap -->
+        <div class="con-wrap">
+            <div class="model-info-box">
+                <span>GV80</span> /
+                <span>2020</span>
+            </div>
+
+            <div class="tab-wrap">
+                <ul class="tab-menu">
+                    <li><a href="#">기본정보 설정</a></li>
+                    <li class="active"><a href="#">데이터 설정</a></li>
+                    <li><a href="#">스텝 설정</a></li>
+                </ul>
+    
+                <div class="tab-cont">
+                    <div class="table-top">
+                        <h3 class="sub-title">3D View 옵션 설정</h3>
+                    </div>
+                    <div class="set-wrap">
+                        <div class="set-cont">
+                            <ul class="add-new-cont" data-form-cell="wrap">
+                                <li>
+                                    <div class="sel-inp">
+                                        <div class="sel-wrap">
+                                            <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                            <div class="direct-sel">
+                                                <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                    <option>헤드램프</option>
+                                                    <option>휠</option>
+                                                    <option>디스크</option>
+                                                    <option>루프</option>
+                                                    <option>프론트 범퍼</option>
+                                                    <option>리어 범퍼</option>
+                                                    <option>머플러</option>
+                                                    <option>엠블럼</option>
+                                                    <option>네임 플레이트</option>
+                                                    <option value="direct">직접입력</option>
+                                                </select>
+                                                <input type="text" data-direct-target="input" />
+                                            </div>
+                                        </div>
+                                        <div class="inp">
+                                            <input type="text" class="inp-txt" value="Headlamp_01">
+                                        </div>
+                                    </div>
+                                    <!-- 2020-07-13 수정 -->
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>패널미사용</option>
+                                            <option>패널사용</option>
+                                        </select>
+                                    </div>
+                                    <!-- //2020-07-13 수정 -->
+                                    <div class="btn-wrap"><!-- 2020-07-13 수정 -->
+                                        <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sel-inp">
+                                        <div class="sel-wrap">
+                                            <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                            <div class="direct-sel">
+                                                <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                    <option>휠</option>
+                                                    <option value="direct">직접입력</option>
+                                                </select>
+                                                <input type="text" data-direct-target="input" />
+                                            </div>
+                                        </div>
+                                        <div class="inp">
+                                            <input type="text" class="inp-txt" value="18_A">
+                                        </div>
+                                    </div>
+                                    <!-- 2020-07-13 수정 -->
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>패널미사용</option>
+                                            <option>패널사용</option>
+                                        </select>
+                                    </div>
+                                    <!-- //2020-07-13 수정 -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button> 
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sel-inp">
+                                        <div class="sel-wrap">
+                                            <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                            <div class="direct-sel">
+                                                <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                    <option>선택</option>
+                                                    <option value="direct">직접입력</option>
+                                                </select>
+                                                <input type="text" data-direct-target="input" />
+                                            </div>
+                                        </div>
+                                        <div class="inp">
+                                            <input type="text" class="inp-txt">
+                                        </div>
+                                    </div>
+                                    <!-- 2020-07-13 수정 -->
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>패널미사용</option>
+                                            <option>패널사용</option>
+                                        </select>
+                                    </div>
+                                    <!-- //2020-07-13 수정 -->
+                                    <div class="btn-wrap">
+                                        <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button> 
+                                        <button type="button" class="add" data-form-cell="add"><i class="feather icon-plus"></i>추가</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="table-top">
+                        <h3 class="sub-title">렌더링 옵션 설정</h3>
+                    </div>
+                    <div class="set-wrap">
+                        <div class="set-cont">
+                            <ul class="add-new-cont" data-form-cell="wrap">
+                                <li class="group type2">
+                                    <!-- 2020-07-13 수정 -->
+                                    <div class="sel-inp">
+                                        <div class="sel-wrap">
+                                            <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                            <div class="direct-sel">
+                                                <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                    <option>헤드램프</option>
+                                                    <option>휠</option>
+                                                    <option>루프</option>
+                                                    <option>프론트 범퍼</option>
+                                                    <option>리어 범퍼</option>
+                                                    <option>머플러</option>
+                                                    <option>엠블럼</option>
+                                                    <option>네임 플레이트</option>
+                                                    <option value="direct">직접입력</option>
+                                                </select>
+                                                <input type="text" data-direct-target="input" />
+                                            </div>
+                                        </div>
+                                        <div class="inp">
+                                            <input type="text" class="inp-txt" value="사양">
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap"> 
+                                        <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                    </div>
+                                    <!-- //2020-07-13 수정 -->
+                                    <ul data-form-cell="wrap">
+                                        <li>
+                                            <div class="sel-wrap sel-group">
+                                                <!-- 2020-07-13 수정 -->
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양구분</option>
+                                                    <option>엔진</option>
+                                                    <option>구동</option>
+                                                    <option>인승</option>
+                                                    <option>외장</option>
+                                                    <option>휠&amp;타이어</option>
+                                                    <option>등등의 Page Template 구분</option>
+                                                </select>
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양</option>
+                                                    <option>3.5T 가솔린</option>
+                                                    <option>2.0 디젤</option>
+                                                    <option>2.5T 가솔린</option>
+                                                </select>
+                                                <!-- //2020-07-13 수정 -->
+                                            </div>
+                                            <!-- 2020-07-13 수정 -->
+                                            <div class="sel-wrap">
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>패널미사용</option>
+                                                    <option>패널사용</option>
+                                                </select>
+                                            </div>
+                                            <!-- //2020-07-13 수정 -->
+                                            <div class="btn-wrap">
+                                                <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="sel-wrap sel-group">
+                                                <!-- 2020-07-13 수정 -->
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양구분</option>
+                                                    <option>엔진</option>
+                                                    <option>구동</option>
+                                                    <option>인승</option>
+                                                    <option>외장</option>
+                                                    <option>휠&amp;타이어</option>
+                                                    <option>등등의 Page Template 구분</option>
+                                                </select>
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양</option>
+                                                    <option>3.5T 가솔린</option>
+                                                    <option>2.0 디젤</option>
+                                                    <option>2.5T 가솔린</option>
+                                                </select>
+                                                <!-- //2020-07-13 수정 -->
+                                            </div>
+                                            <!-- 2020-07-13 수정 -->
+                                            <div class="sel-wrap">
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>패널미사용</option>
+                                                    <option>패널사용</option>
+                                                </select>
+                                            </div>
+                                            <!-- //2020-07-13 수정 -->
+                                            <div class="btn-wrap">
+                                                <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="sel-wrap sel-group">
+                                                <!-- 2020-07-13 수정 -->
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양구분</option>
+                                                    <option>엔진</option>
+                                                    <option>구동</option>
+                                                    <option>인승</option>
+                                                    <option>외장</option>
+                                                    <option>휠&amp;타이어</option>
+                                                    <option>등등의 Page Template 구분</option>
+                                                </select>
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양</option>
+                                                    <option>3.5T 가솔린</option>
+                                                    <option>2.0 디젤</option>
+                                                    <option>2.5T 가솔린</option>
+                                                </select>
+                                                <!-- //2020-07-13 수정 -->
+                                            </div>
+                                            <!-- 2020-07-13 수정 -->
+                                            <div class="sel-wrap">
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>패널미사용</option>
+                                                    <option>패널사용</option>
+                                                </select>
+                                            </div>
+                                            <!-- //2020-07-13 수정 -->
+                                            <div class="btn-wrap">
+                                                <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                                <button type="button" class="add" data-form-cell="add"><i class="feather icon-plus"></i>추가</button><!-- 2020-07-13 추가 -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="group type2">
+                                    <!-- 2020-07-13 수정 -->
+                                    <div class="sel-inp">
+                                        <div class="sel-wrap">
+                                            <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                            <div class="direct-sel">
+                                                <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                    <option>헤드램프</option>
+                                                    <option>휠</option>
+                                                    <option>루프</option>
+                                                    <option>프론트 범퍼</option>
+                                                    <option>리어 범퍼</option>
+                                                    <option>머플러</option>
+                                                    <option>엠블럼</option>
+                                                    <option>네임 플레이트</option>
+                                                    <option value="direct">직접입력</option>
+                                                </select>
+                                                <input type="text" data-direct-target="input" />
+                                            </div>
+                                        </div>
+                                        <div class="inp">
+                                            <input type="text" class="inp-txt" value="사양">
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap"> 
+                                        <button type="button" class="delete" data-form-cell="delete"><i class="feather icon-minus"></i>삭제</button>
+                                        <button type="button" class="add" data-form-cell="add"><i class="feather icon-plus"></i>추가</button>
+                                    </div>
+                                    <!-- //2020-07-13 수정 -->
+                                    <ul data-form-cell="wrap">
+                                        <li>
+                                            <div class="sel-wrap sel-group">
+                                                <!-- 2020-07-13 수정 -->
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양구분</option>
+                                                    <option>엔진</option>
+                                                    <option>구동</option>
+                                                    <option>인승</option>
+                                                    <option>외장</option>
+                                                    <option>휠&amp;타이어</option>
+                                                    <option>등등의 Page Template 구분</option>
+                                                </select>
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>사양</option>
+                                                    <option>3.5T 가솔린</option>
+                                                    <option>2.0 디젤</option>
+                                                    <option>2.5T 가솔린</option>
+                                                </select>
+                                                <!-- //2020-07-13 수정 -->
+                                            </div>
+                                            <!-- 2020-07-13 수정 -->
+                                            <div class="sel-wrap">
+                                                <select class="selectpicker" data-style="form-control">
+                                                    <option>패널미사용</option>
+                                                    <option>패널사용</option>
+                                                </select>
+                                            </div>
+                                            <!-- //2020-07-13 수정 -->
+                                            <div class="btn-wrap">
+                                                <button type="button" class="add" data-form-cell="add"><i class="feather icon-plus"></i>추가</button><!-- 2020-07-13 수정 -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <ul class="info-txt-box">
+                        <li>- 견적 사양 데이터와 3D 이미지의 정보를 설정 합니다.</li>
+                        <li>- 차량의 기본 사양을 입력 하신 후, 렌더링 옵션으로 견적 사양에 따라 변경 되어야 하는 3D 이미지를 지정하실 수 있습니다.</li>
+                        <li>- 3D View Option이 체크 되면 미리보기 화면에서 Light On/Off 등의 개별 컨트롤이 가능 합니다.</li>
+                    </ul>
+    
+                    <div class="table-top">
+                        <h3 class="sub-title">이력</h3>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="table detail">
+                            <colgroup>
+                                <col style="width:170px;">
+                                <col>
+                                <col style="width:170px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">등록자</th>
+                                    <td>Genesis</td>
+                                    <th scope="row">등록일</th>
+                                    <td>2020-03-25 15:25:13</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">수정자</th>
+                                    <td>Genesis</td>
+                                    <th scope="row">수정일</th>
+                                    <td>2020-03-25 15:25:13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                    <div class="btn-wrap">
+                        <a href="#a" class="btn s2 c1">목록</a>
+                        <button type="button" class="btn s2 c2">수정</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //con-wrap -->
+    </div>
+</div>
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+</body>
+
+</html>

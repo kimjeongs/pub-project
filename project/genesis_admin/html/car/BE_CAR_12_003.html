@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalCall">불러오기</button>
+</div>
+
+<!-- 불러오기 -->
+<div class="modal fade" id="ModalCall" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">불러오기</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-top">
+                    <div class="right">
+                        <em>모델</em>
+                        <div class="sel-wrap">
+                            <select class="selectpicker" data-style="form-control">
+                                <option>전체</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col style="width:45px;">
+                            <col style="width:70px;">
+                            <col style="width:20%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr class="ui-state-default">
+                                <th scope="col">
+
+                                </th>
+                                <th scope="col">번호</th>
+                                <th scope="col">템플릿</th>
+                                <th scope="col">모델</th>
+                                <th scope="col">연식</th>
+                                <th scope="col">상세 구분</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>10</td>
+                                <td>Spec-2020</td>
+                                <td>GV80</td>
+                                <td>2020</td>
+                                <td>2.5 가솔린 터보</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>9</td>
+                                <td>Spec-2020</td>
+                                <td>GV80</td>
+                                <td>2020</td>
+                                <td>2.5 가솔린 터보</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>8</td>
+                                <td>Spec-2020</td>
+                                <td>GV80</td>
+                                <td>2020</td>
+                                <td>3.0 디젤</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>7</td>
+                                <td>Spec-2020</td>
+                                <td>G80</td>
+                                <td>2020</td>
+                                <td>2.5 가솔린 터보</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>6</td>
+                                <td>Spec-2020</td>
+                                <td>G80</td>
+                                <td>2020</td>
+                                <td>3.5 가솔린 터보</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>5</td>
+                                <td>Spec-2020</td>
+                                <td>G80</td>
+                                <td>2020</td>
+                                <td>2.2 디젤</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>4</td>
+                                <td>Spec-2020</td>
+                                <td>G70</td>
+                                <td>2019</td>
+                                <td>2.0T 어드밴스드</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>3</td>
+                                <td>Spec-2020</td>
+                                <td>G70</td>
+                                <td>2019</td>
+                                <td>2.0T 엘리트</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>2</td>
+                                <td>Spec-2020</td>
+                                <td>G70</td>
+                                <td>2019</td>
+                                <td>2.0T 스포츠 패키지</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="radio"><input type="radio" name="radio1"><span></span></label>
+                                </td>
+                                <td>1</td>
+                                <td>Spec-2020</td>
+                                <td>G70</td>
+                                <td>2019</td>
+                                <td>2.2D 어드밴스드</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-bottom">
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li class="first disabled"><a href="#a"><span class="blind">First</span></a></li>
+                            <li class="previous disabled"><a href="#a"><span class="blind">Previous</span></a></li>
+                            <li class="active"><a href="#a">1</a></li>
+                            <li><a href="#a">2</a></li>
+                            <li><a href="#a">3</a></li>
+                            <li><a href="#a">4</a></li>
+                            <li><a href="#a">5</a></li>
+                            <li><a href="#a">6</a></li>
+                            <li><a href="#a">7</a></li>
+                            <li><a href="#a">8</a></li>
+                            <li><a href="#a">9</a></li>
+                            <li><a href="#a">10</a></li>
+                            <li class="next"><a href="#a"><span class="blind">Next</span></a></li>
+                            <li class="last"><a href="#a"><span class="blind">Last</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //불러오기 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 불러오기
+    $("#openModalCall").click(function () {
+        $("#ModalCall").modal();
+    });
+    });
+</script>
+</body>
+</html>

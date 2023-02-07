@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="../../resources/assets/css/summernote-icons.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalModel">등록</button>
+</div>
+
+<!-- 페이지 등록 -->
+<div class="modal fade" id="ModalModel" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">페이지 등록</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">사양구분<span class="aster">*</span></th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                                        <div class="direct-sel">
+                                            <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                                                <option>선택</option>
+                                                <option>엔진</option>
+                                                <option>구동</option>
+                                                <option>인승/도어</option>
+                                                <option>외장컬러</option>
+                                                <option>휠&amp;타이어&amp;디자인</option>
+                                                <option>내장컬러&amp;인테리어옵션</option>
+                                                <option>옵션</option>
+                                                <option>파츠</option>
+                                                <option value="direct">직접입력</option>
+                                            </select>
+                                            <input type="text" data-direct-target="input" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">페이지 명<span class="aster">*</span></th>
+                                <td><input type="text" class="inp-txt"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    템플릿<span class="aster">*</span>
+                                    <a href="#" class="info-tooltip" data-toggle="tooltip" data-placement="right" title="" data-original-title="템플릿 설정 후, 템플릿은 변경하실 수 없습니다.">?</a>
+                                </th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>선택</option>
+                                            <option>엔진 타입</option>
+                                            <option>구동/인승 타입</option>
+                                            <option>외장디자인 타입</option>
+                                            <option>휠&타이어 타입</option>
+                                            <option>내장디자인 타입</option>
+                                            <option>인테리어디자인 타입</option>
+                                            <option>옵션 타입</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    페이지 순서 설정<span class="aster">*</span>
+                                    <a href="#" class="info-tooltip" data-toggle="tooltip" data-placement="right" title="" data-original-title="선택하시는 페이지의 앞으로 생성 됩니다">?</a>
+                                </th>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>선택</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //페이지 등록 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../resources/assets/js/datepicker.min.js"></script>
+<script src="../../resources/assets/js/datepicker.en.js"></script>
+<script src="../../resources/assets/js/summernote-bs4.min.js"></script>
+<script src="../../resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="../../resources/assets/js/custom-form-maxlength.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 페이지 등록
+        $("#openModalModel").click(function () {
+            $("#ModalModel").modal();
+        });
+    });
+</script>
+</body>
+</html>

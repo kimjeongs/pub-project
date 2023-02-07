@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Admin</title>
+<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/assets/css/datepicker.min.css">
+<link rel="stylesheet" href="resources/assets/css/summernote-bs4.css">
+<link rel="stylesheet" href="resources/assets/css/summernote-icons.css">
+<link rel="stylesheet" href="resources/assets/css/style.css">
+<link rel="stylesheet" href="css/common.css">
+<style>
+	h3 {display:block; margin:100px 0 30px; font-size:22px;}
+	h3:first-child {margin-top:20px;}
+	h4 {display:block; margin:50px 0 10px; font-size: 17px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="sidebar">
+        <a href="#a" class="logo"><span>Admin Logo</span></a>
+        <a href="#a" class="btn-full" id="btnFull">+VIEW All</a>
+        <!-- fullmenu-layer -->
+        <div class="fullmenu-layer">
+            <ul>
+                <li>
+                    <a href="#a"><span>차량정보 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델(공통)</a></li>
+                        <li><a href="#a">엔진(공통)</a></li>
+                        <li><a href="#a">구동(공통)</a></li>
+                        <li><a href="#a">인승/도어(공통)</a></li>
+                        <li><a href="#a">외장컬러(공통)</a></li>
+                        <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                        <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                        <li><a href="#a">옵션(공통)</a></li>
+                        <li><a href="#a">파츠(공통)</a></li>
+                        <li><a href="#a">상세차종(BYO용)</a></li>
+                        <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                        <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>BTO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">3D컬러 관리</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#a"><span>BYO 관리</span></a>
+                    <ul>
+                        <li><a href="#a">모델</a></li>   
+                        <li><a href="#a">상세차종</a></li>
+                        <li><a href="#a">외장컬러</a></li>
+                        <li><a href="#a">내장컬러</a></li>
+                        <li><a href="#a">옵션</a></li>
+                        <li><a href="#a">파츠</a></li>
+                        <li><a href="#a">매핑관리</a></li>
+                        <li><a href="#a">할인</a></li>
+                        <li><a href="#a">포인트</a></li>
+                        <li><a href="#a">과세</a></li>
+                        <li><a href="#a">구매프로그램</a></li>
+                        <li><a href="#a">탁송지관리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>게시판 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">이벤트</a></li>
+                        <li><a href="#a">PR센터</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>약관 관리</span></a>
+                    <ul>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                        <li><a href="#a">저작권 안내</a></li>
+                        <li><a href="#a">보증 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>다운로드 센터</span></a>
+                    <ul>
+                        <li><a href="#a">모델 카테고리 관리</a></li>  
+                        <li><a href="#a">카달로그/가격표</a></li>
+                        <li><a href="#a">취급설명서</a></li>
+                        <li><a href="#a">블루투스 호환 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>거점 관리</span></a>
+                    <ul>
+                        <li><a href="#a">전시장</a></li>
+                        <li><a href="#a">전시장 카 마스터</a></li>
+                        <li><a href="#a">서비스 센터</a></li>
+                        <li><a href="#a">전시/시승 차량 이미지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#a"><span>GCS 관리</span></a>
+                    <ul>
+                        <li><a href="#a">공지사항</a></li>
+                        <li><a href="#a">자주 묻는 질문</a></li>
+                        <li><a href="#a">다운로드 센터</a></li>
+                        <li><a href="#a">이용약관</a></li>
+                        <li><a href="#a">개인정보 처리방침</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- //fullmenu-layer -->
+        <div class="fullmenu-layer-bg"></div>
+        <ul class="sidemenu">
+            <li>
+                <a href="#a"><span>차량정보 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델(공통)</a></li>
+                    <li><a href="#a">엔진(공통)</a></li>
+                    <li><a href="#a">구동(공통)</a></li>
+                    <li><a href="#a">인승/도어(공통)</a></li>
+                    <li><a href="#a">외장컬러(공통)</a></li>
+                    <li><a href="#a">휠 &amp; 타이어 &amp; 디자인(BTO용)</a></li>
+                    <li><a href="#a">내장컬러 &amp; 인테리어 옵션(공통)</a></li>
+                    <li><a href="#a">옵션(공통)</a></li>
+                    <li><a href="#a">파츠(공통)</a></li>
+                    <li><a href="#a">상세차종(BYO용)</a></li>
+                    <li><a href="#a">스펙 템플릿 관리(공통)</a></li>
+                    <li><a href="#a">스펙 상세 관리(공통)</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BTO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">3D컬러 관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>BYO 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델</a></li>   
+                    <li><a href="#a">상세차종</a></li>
+                    <li><a href="#a">외장컬러</a></li>
+                    <li><a href="#a">내장컬러</a></li>
+                    <li><a href="#a">옵션</a></li>
+                    <li><a href="#a">파츠</a></li>
+                    <li><a href="#a">매핑관리</a></li>
+                    <li><a href="#a">할인</a></li>
+                    <li><a href="#a">포인트</a></li>
+                    <li><a href="#a">과세</a></li>
+                    <li><a href="#a">구매프로그램</a></li>
+                    <li><a href="#a">탁송지관리</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#a"><span>게시판 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">이벤트</a></li>
+                    <li><a href="#a">PR센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>약관 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">이용약관</a></li>  
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                    <li><a href="#a">저작권 안내</a></li>
+                    <li><a href="#a">보증 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>다운로드 센터</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">모델 카테고리 관리</a></li>  
+                    <li><a href="#a">카달로그/가격표</a></li>
+                    <li><a href="#a">취급설명서</a></li>
+                    <li><a href="#a">블루투스 호환 안내</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>거점 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">전시장</a></li>  
+                    <li><a href="#a">전시장 카 마스터</a></li>  
+                    <li><a href="#a">서비스 센터</a></li>
+                    <li><a href="#a">전시/시승 차량 이미지</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#a"><span>GCS 관리</span><i class="feather icon-chevron-right"></i></a>
+                <ul>
+                    <li><a href="#a">공지사항</a></li>  
+                    <li><a href="#a">자주 묻는 질문</a></li>
+                    <li><a href="#a">다운로드 센터</a></li>
+                    <li><a href="#a">이용약관</a></li>
+                    <li><a href="#a">개인정보 처리방침</a></li>
+                </ul>
+            </li>
+        </ul>                                
+    </div>
+    <div class="rightbar">
+        <div class="topbar">
+            <a href="#a" class="menu-layout"><i class="ic"></i></a>
+        </div>
+        <div class="contents-top">
+            <h2>style guide</h2>
+        </div>
+        <div class="contentbar">
+
+            <!-- button -->
+            <h3>button</h3>
+            <!-- 검색영역에서 사용 -->
+            <div class="search-wrap">
+                <div class="search-btn">
+                    <button type="button" class="btn reset"><span class="blind">초기화</span></button>
+                    <button type="button" class="btn">검색</button>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <a href="#a" class="btn s2 c1">목록</a>
+                <button type="button" class="btn s2 c3">퍼블리시</button>
+                <button type="button" class="btn s2 c1">노출</button>
+                <button type="button" class="btn s2 c1">비노출</button>
+                <button type="button" class="btn s2 c1" id="openModalCate">카테고리 관리</button>
+                <a href="#a" class="btn s2 c3">등록</a>
+                <button type="button" class="btn s2 c2">삭제</button>
+                <button type="button" class="btn s2 c2">수정</button>
+                <button type="button" class="btn s2 c4">열림</button>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c1 remove">삭제</button>
+                <button type="button" class="btn s2 c1 add">추가</button>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c2 remove">구분 삭제</button>
+                <button type="button" class="btn s2 c2 add">구분 추가</button>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+                <a href="#a" class="btn s2 c3">확인</a>
+            </div>
+            <!-- //button -->
+
+            <!-- radio button -->
+            <h3>radio</h3>
+            <ul class="radio-wrap">
+                <li><label class="radio"><input type="radio" name="radio1" checked><span></span>라디오버튼1</label></li>
+                <li><label class="radio"><input type="radio" name="radio1"><span></span>라디오버튼2</label></li>
+                <li><label class="radio"><input type="radio" name="radio1"><span></span>라디오버튼3</label></li>
+                <li><label class="radio"><input type="radio" name="radio1" disabled><span></span>라디오버튼4</label></li>
+            </ul>
+            <!-- //radio button -->
+
+            <!-- checkbox -->
+            <h3>checkbox</h3>
+            <ul class="check-wrap">
+                <li><label class="checkbox"><input type="checkbox" name="check1" checked><span></span>체크박스1</label></li>
+                <li><label class="checkbox"><input type="checkbox" name="check1"><span></span>체크박스2</label></li>
+                <li><label class="checkbox"><input type="checkbox" name="check1"><span></span>체크박스3</label></li>
+                <li><label class="checkbox"><input type="checkbox" name="check1"><span></span>체크박스4</label></li>
+                <li><label class="checkbox"><input type="checkbox" name="check1" disabled><span></span>체크박스5</label></li>
+            </ul>
+            <!-- //checkbox -->
+
+            <!-- input box -->
+            <h3>input box</h3>
+            <h4>normal</h4>
+            <label>제목<span class="aster">*</span></label>
+            <input type="text" class="inp-txt">
+
+            <h4>maxlength</h4>
+            <input type="text" class="inp-txt" maxlength="1500" name="maxlength-positions" data-id="maxlength-positions" placeholder="">
+            
+            <h4>textarea</h4>
+            <textarea class="w100p"></textarea>
+
+            <h4>editor</h4>
+            <textarea name="content" data-editor-id="summernote" class="summernote"></textarea>
+            <!-- //input box -->
+
+            <!-- drop down -->
+            <h3>drop down</h3>
+            <div class="sel-wrap">
+                <!-- 선택시 직접입력input이 존재하면 data-direct-target추가 -->
+                <div class="direct-sel">
+                    <select class="selectpicker" data-style="form-control" data-direct-target="select">
+                        <option>선택</option>
+                        <option>카본매탈</option>
+                        <option>로얄블루</option>
+                        <option>골드코스트 실버</option>
+                        <option>비크블랙</option>
+                        <option>우유니화이트</option>
+                        <option>세빌실버</option>
+                        <option value="direct">직접입력</option>
+                    </select>
+                    <input type="text" data-direct-target="input" />
+                </div>
+            </div>
+            <!-- //drop down -->
+
+            <!-- datepicker -->
+            <h3>datepicker</h3>
+            <div class="datepicker-wrap">
+                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+                <div class="mid">~</div>
+                <input type="text" class="datepicker-here" placeholder="yyyy-mm-dd" data-datepicker-id="datePicker">
+            </div>
+            <!-- //datepicker -->
+
+            <!-- time -->
+            <h3>time</h3>
+            <div class="timepicker">
+                <span>
+                    <select class="selectpicker">
+                        <option>00</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                    </select>
+                    시
+                </span>
+                <span>
+                    <select class="selectpicker">
+                        <option>00</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>40</option>
+                        <option>50</option>
+                    </select>
+                    분
+                </span>
+            </div>
+            <!-- //time -->
+
+            <!-- pagination -->
+            <h3>pagination</h3>
+            <div class="pagination-wrap">
+                <ul>
+                    <li class="first disabled"><a href="#a"><span class="blind">First</span></a></li>
+                    <li class="previous disabled"><a href="#a"><span class="blind">Previous</span></a></li>
+                    <li class="active"><a href="#a">1</a></li>
+                    <li><a href="#a">2</a></li>
+                    <li><a href="#a">3</a></li>
+                    <li><a href="#a">4</a></li>
+                    <li><a href="#a">5</a></li>
+                    <li><a href="#a">6</a></li>
+                    <li><a href="#a">7</a></li>
+                    <li><a href="#a">8</a></li>
+                    <li><a href="#a">9</a></li>
+                    <li><a href="#a">10</a></li>
+                    <li class="next"><a href="#a"><span class="blind">Next</span></a></li>
+                    <li class="last"><a href="#a"><span class="blind">Last</span></a></li>
+                </ul>
+            </div>
+            <!-- //pagination -->
+
+            <!-- file -->
+            <h3>file</h3>
+            <div class="custom-file-cont" data-fileupload>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile02" data-file-target>
+                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
+                </div>
+                <!-- 2020-07-06 공통파일UI 개선: 파일명 text 추가 -->
+                <span class="custom-file-name"></span>
+                <!-- //2021-07-06 공통파일UI 개선: 파일명 text 추가 -->
+                <button type="button" class="btn s2 c2" data-file-delete>파일삭제</button>
+                <div class="sub">파일타입 : PDF,WORD, PPT / 용량 20MB 미만</div>
+            </div>
+            <!-- //file -->
+
+            <h3>info text</h3>
+            <ul class="info-txt-box">
+                <li>- BYO에 등록하실 모델 코드를 입력 후 조회 하세요.</li>
+                <li>- 조회 결과가 없을 시, 차량정보 관리 &gt; 모델 메뉴에서 모델 등록 후 조회 하세요.</li>
+            </ul>
+
+            <p class="info-txt-box">BYO에 등록하실 모델 코드를 입력 후 조회 하세요.</p>
+
+            <!-- img -->
+            <h3>img</h3>
+            <h4>pc</h4>
+            <div class="push-img" data-fileupload="imgType">
+                <div class="img-area pc">
+                    <div class="img-box">
+                        <img src="https://placeimg.com/90/150/tech" alt="" class="img-fluid">
+                    </div>
+                    <button type="button" data-file-delete><i class="feather feather icon-x"></i></button>
+                </div>
+                <div class="img-cont">
+                    <div class="inline-group">
+                        <em>이미지</em>
+                        <div class="btn-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile04" data-file-target="img">
+                            <label for="inputGroupFile04" class="btn s2 c1">이미지선택</label>
+                        </div>
+                        <div class="sub inline">이미지사이즈:110x110 / 파일타입:JPG,GIF,PNG / 용량:20MB 미만
+                        </div>
+                    </div>
+                    <div class="inline-group">
+                        <em>대체텍스트</em>
+                        <input type="text" class="inp-txt" maxlength="100" name="maxlength-positions" data-id="maxlength-positions" style="width:77%;" value="G80 신규 디자인 자동차 이미지">
+                    </div>
+                </div>
+            </div>
+            <h4>mobile</h4>
+            <div class="push-img" data-fileupload="imgType">
+                <div class="img-area mb">
+                    <div class="img-box">
+                        <img src="https://placeimg.com/90/150/tech" alt="" class="img-fluid">
+                    </div>
+                    <button type="button" data-file-delete><i class="feather feather icon-x"></i></button>
+                </div>
+                <div class="img-cont">
+                    <div class="inline-group">
+                        <em>이미지</em>
+                        <div class="btn-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile065" data-file-target="img">
+                            <label for="inputGroupFile065" class="btn s2 c1">이미지선택</label>
+                        </div>
+                        <div class="sub inline">이미지사이즈:110x110 / 파일타입:JPG,GIF,PNG / 용량:20MB 미만
+                        </div>
+                    </div>
+                    <div class="inline-group">
+                        <em>대체텍스트</em>
+                        <input type="text" class="inp-txt" maxlength="100" name="maxlength-positions" data-id="maxlength-positions" style="width:77%;" value="G80 신규 디자인 자동차 이미지">
+                    </div>
+                </div>
+            </div>
+            <!-- //img -->
+
+            <!-- tab -->
+            <h3>tab</h3>
+            <div class="tab-wrap">
+                <ul class="tab-menu">
+                    <li class="active"><a href="#">외장 디자인</a></li>
+                    <li><a href="#">휠</a></li>
+                    <li><a href="#">내장 디자인</a></li>
+                    <li><a href="#">인테리어 디자인</a></li>
+                </ul>
+                <div class="tab-cont">
+                    <div class="cont active">외장 디자인 내용</div>
+                    <div class="cont">휠 내용</div>
+                    <div class="cont">내장 디자인 내용</div>
+                    <div class="cont">인테리어 디자인 내용</div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <h3>modal</h3>
+            <button type="button" class="btn s2 c1" id="openModalLg">카테고리 관리</button>
+            <button type="button" class="btn s2 c2" id="openModalModel">모델 등록</button>
+            <!-- //modal -->
+        </div>
+    </div>
+</div>
+
+<!-- modal lg -->
+<div class="modal fade" id="ModalLg" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">카테고리 관리</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-top">
+                    <div class="btn-wrap">
+                        <button type="button" class="btn s2 c1 remove">삭제</button>
+                        <button type="button" class="btn s2 c1 add">추가</button>
+                    </div>
+                </div>
+                <div class="table-wrap" data-check-parent data-table-draggle="number">
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col style="width:45px;">
+                            <col style="width:45px;">
+                            <col>
+                            <col style="width:15%;">
+                            <col style="width:20%;">
+                            <col style="width:15%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col"><label class="checkbox"><input type="checkbox" name="checkAll" class="checkAll"><span></span></label></th>
+                                <th scope="col">번호</th>
+                                <th scope="col">카테고리명<span class="aster">*</span></th>
+                                <th scope="col">등록자</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">노출</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">1</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="ALL">
+                                </td>
+                                <td>gp-jino</td>
+                                <td>2020-02-12</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">2</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="GV80">
+                                </td>
+                                <td>gp-gywon</td>
+                                <td>2020-02-13</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">3</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="G80">
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-02-13</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">4</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="G70">
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-01-15</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">5</td>
+                                <td>
+                                    <input type="text" class="inp-txt" value="커넥티드 서비스">
+                                </td>
+                                <td>gp-hiyun</td>
+                                <td>2020-01-01</td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="checkbox"><input type="checkbox" name="checkRow2"><span></span></label></td>
+                                <td class="num">6</td>
+                                <td>
+                                    <input type="text" class="inp-txt">
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="sel-wrap">
+                                        <select class="selectpicker" data-style="form-control">
+                                            <option>Y</option>
+                                            <option>N</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="info-txt-box">노출순서 변경은 드래그로 위치 변경이 가능합니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal sm -->
+<div class="modal fade" id="ModalModel" role="dialog">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">모델등록</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table detail">
+                        <colgroup>
+                            <col style="width:170px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">모델 코드<span class="aster">*</span></th>
+                                <td>
+                                    <input type="text" class="inp-txt w1">
+                                    <button type="button" class="btn s2 c1">조회</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">모델</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연식</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="resources/assets/js/jquery.min.js"></script>
+<script src="resources/assets/js/jquery-ui.min.js"></script>
+<script src="resources/assets/js/popper.min.js"></script>
+<script src="resources/assets/js/bootstrap.min.js"></script>
+<script src="resources/assets/js/datepicker.min.js"></script>
+<script src="resources/assets/js/datepicker.en.js"></script>
+<script src="resources/assets/js/summernote-bs4.min.js"></script>
+<script src="resources/assets/js/bootstrap-maxlength.js"></script>
+<script src="resources/assets/js/custom-form-maxlength.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //lg modal
+        $("#openModalLg").click(function () {
+            $("#ModalLg").modal();
+        });
+
+        //sm modal
+        $("#openModalModel").click(function () {
+            $("#ModalModel").modal();
+        });
+
+      // 에디터
+        $('[data-editor-id=summernote]').summernote({
+            height: 300,
+            minHeight: null,
+            maxHeight: null,
+            lang : 'ko-KR',
+            dialogsInBody: true,
+            // onImageUpload: function(files, editor, welEditable) {
+            //   sendFile(files[0], editor, welEditable);
+            // }
+        });
+    });
+</script>
+</body>
+
+</html>

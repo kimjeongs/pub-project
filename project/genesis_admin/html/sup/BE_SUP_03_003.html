@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Admin</title>
+    <link rel="stylesheet" href="../../resources/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/assets/css/style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+
+<body>
+<div class="wrap">
+    <button type="button" class="btn s2 c1" id="openModalDis">노출순서 설정</button>
+</div>
+
+<!-- 노출순서 설정 -->
+<div class="modal fade" id="ModalDis" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title mt-0">노출순서 설정</h2><!-- 2020-06-24 수정 -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-top">
+                    <div class="right">
+                        <em>카테고리 선택</em>
+                        <div class="sel-wrap">
+                            <select class="selectpicker" data-style="form-control">
+                                <option>차량구매</option>
+                            </select>
+                            <select class="selectpicker" data-style="form-control">
+                                <option>일반</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrap" data-check-parent  data-table-draggle="number">
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col style="width:45px;">
+                            <col style="width:20%;">
+                            <col style="width:20%;">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr class="ui-state-default">
+                                <th scope="col">번호</th>
+                                <th scope="col">카테고리</th>
+                                <th scope="col">서브카테고리</th>
+                                <th scope="col">제목</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="num">1</td>
+                                <td>차량구매</td>
+                                <td>일반</td>
+                                <td class="align-left">제네시스 차량을 구입하려면 어떻게 해야하나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="num">2</td>
+                                <td>차량구매</td>
+                                <td>일반</td>
+                                <td class="align-left">차량에 부과되는 세금은 어떤 종류가 있나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="num">3</td>
+                                <td>차량구매</td>
+                                <td>일반</td>
+                                <td class="align-left">차량구입에 관련된 금액은 어떠한 결제방식이 있나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="num">4</td>
+                                <td>차량구매</td>
+                                <td>리스</td>
+                                <td class="align-left">일정기간 이상 지난 차량은 자동차세가 경감된다고 하는데 그 ..</td>
+                            </tr>
+                            <tr>
+                                <td class="num">5</td>
+                                <td>차량구매</td>
+                                <td>구입조건</td>
+                                <td class="align-left">장애인 조건으로 제네시스 차량 구입 시 혜택을 알고 싶습니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="num">6</td>
+                                <td>차량구매</td>
+                                <td>세이브오토</td>
+                                <td class="align-left">세이브오토 이용에 관해 알고 싶습니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="num">7</td>
+                                <td>차량구매</td>
+                                <td>카드결제</td>
+                                <td class="align-left">제네시스 차량을 구입시 신용카드는 얼마까지 이용할 수 있나요?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="info-txt-box">노출순서 변경은 드래그로 위치 변경이 가능합니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn s2 c1" data-dismiss="modal">취소</button>
+                <button type="button" class="btn s2 c3" data-dismiss="modal">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //노출순서 설정 -->
+
+<script src="../../resources/assets/js/jquery.min.js"></script>
+<script src="../../resources/assets/js/jquery-ui.min.js"></script>
+<script src="../../resources/assets/js/popper.min.js"></script>
+<script src="../../resources/assets/js/bootstrap.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(document).ready(function () {
+        //modal 노출순서 설정
+        $("#openModalDis").click(function () {
+            $("#ModalDis").modal();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {position:fixed;bottom:20px;left:auto;right:25px;width:auto;text-align:right;}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {margin:0 2px;}
+.portfolio-slide .swiper-pagination-bullet {opacity:.5;width:30px;height:2px;border-radius:0;background:#fff;}
+.portfolio-slide .swiper-pagination-bullet-active {opacity:1;background:#00c7ff;}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev,
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {background:none;}
+.swiper-button-prev,
+.swiper-button-next {position:fixed;z-index:20;width:30px;height:60px;margin-top:-30px;}
+.swiper-button-prev {left:25px;}
+.swiper-button-prev:before,
+.swiper-button-prev:after {content:'';position:absolute;left:15px;width:1px;height:40px;background:#fff;}
+.swiper-button-prev:before {top:-5px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.swiper-button-prev:after {top:23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.swiper-button-next {right:25px;}
+.swiper-button-next:before,
+.swiper-button-next:after {content:'';position:absolute;right:15px;width:1px;height:40px;background:#fff;}
+.swiper-button-next:before {top:-5px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+.swiper-button-next:after {top:23px;-webkit-transform:rotate(-135deg);transform:rotate(-135deg);}
+[class*="swiper-button"]:hover:before,
+[class*="swiper-button"]:hover:after,
+[class*="swiper-button"]:active:before,
+[class*="swiper-button"]:active:after,
+[class*="swiper-button"]:focus:before,
+[class*="swiper-button"]:focus:after {background:#ff0000;}
+
+@media (max-width: 1120px) {
+	.swiper-button-prev,
+	.swiper-button-next {width:2.678571vw;height:5.357143vw;margin-top:-2.678571vw;}
+	.swiper-button-prev {left:2.232143vw;}
+	.swiper-button-next {right:2.232143vw;}
+	.swiper-button-prev:before,
+	.swiper-button-prev:after {left:1.339286vw;height:3.571429vw;}
+	.swiper-button-prev:before,
+	.swiper-button-next:before {top:-0.446429vw;}
+	.swiper-button-prev:after,
+	.swiper-button-next:after {top:2.053571vw;}
+	.swiper-button-next:before,
+	.swiper-button-next:after {right:1.339286vw;height:3.571429vw;}
+}
+
+@media (max-width: 767px) {
+	.portfolio-slide .swiper-pagination-bullet {width:20px;}
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/operation.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li class="active"><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">영업활동관리</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div><a href="#"><span>공지사항</span></a></div>
+			<div><a href="#"><span>도움말</span></a></div>
+			<div><a href="#"><span>Release Note</span></a></div>
+			<div class="on"><a href="#"><span>SR</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="table-tit-cont request">
+					<strong class="table-tit samll">요청사항</strong>
+					<div class="btn-area right">
+						<button type="button" class="btn-add">목록가기</button>
+					</div>
+				</div>
+				<div class="request-cont">
+					<ul class="info-cont">
+						<li>
+							<strong class="info-tit"><span>요청자</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">SC이름</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>요청일시</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">2018-11-12</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>휴대폰</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">010-0000-000</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>연락처</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">02-000-0000</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>이메일</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">Scmail@email.com</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>화면명</span></strong>
+							<div class="input-width">
+								<select class="select-box" disabled="disabled">
+									<option>화면명</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<div class="part">
+						<strong class="sub-tit">요청내용</strong>
+						<div class="input-disabled" style="height:100px">요청한 내용이 보여짐</div>
+						<strong class="sub-tit">첨부파일</strong>
+						<a href="#" class="down-file">첫번째 첨부된 파일명.jpg</a>
+						<a href="#" class="down-file">첫번째 첨부된 파일명.jpg</a>
+					</div>
+				</div>
+				<div class="table-tit-cont request">
+					<strong class="table-tit samll">처리사항</strong>
+					<div class="request-state">
+						<strong>상태</strong>
+						<p>접수</p>
+					</div>
+				</div>
+				<div class="request-cont">
+					<ul class="info-cont">
+						<li>
+							<strong class="info-tit"><span>접수자</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">접수자 이름</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>접수일시</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">2018-11-12</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>처리자</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">처리자 이름</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>착수일시</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">2018-11-12</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>완료상태</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">-----</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>완료일시</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">2018-11-12</div>
+							</div>
+						</li>
+					</ul>
+					<div class="part">
+						<strong class="sub-tit">처리내용</strong>
+						<div class="input-disabled" style="height:100px">처리한내용 보여짐</div>
+					</div>
+				</div>
+				<div class="btn-area">
+					<div class="right">
+						<button type="button" class="btn-gray">목록가기</button>
+					</div>
+				</div>
+				
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

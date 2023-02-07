@@ -1,0 +1,67 @@
+.ctr-table-top{
+   margin-bottom:10px;
+}
+.ctr-table-top:after{
+   clear:both;
+   display:block;
+   content: '';
+}
+.ctr-table-top .toggle-cont{
+   margin-top:10px;
+   margin-bottom:10px;
+   display:none;
+}
+.filtering-drop{
+   display:block;
+   float:left;
+   margin-top:20px;
+}
+.filtering-drop select{
+   height:30px;
+}
+.filtering-drop+.btn-area{
+   display:block;
+   float:right;
+   width:auto;
+}
+.result-cont:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.result-cont .table-grid.contract .layout-left{
+   width:12%;
+}
+
+@media screen and (min-width:641px) {
+   .ctr-table-top .toggle-cont{
+      display:block;
+      clear:both;
+      float:none;
+   }
+   .filtering-drop{
+      display:none;
+      float:none;
+   }
+   .filtering-drop+.btn-area{
+      display:block;
+      float:none;
+   }
+   .filtering-drop+.btn-area:after{
+      display:block;
+      clear: both;
+      content: '';
+   }
+   .info-cont.estimate-box{
+      right:0;
+      top:35px;
+   }
+   .info-cont.estimate-box+.info-cont{
+      margin-top:5px;
+   }
+   .layer-popup.estimate-check .data-table{
+      max-height: 220px;
+      overflow-y: auto;
+   }
+}
+

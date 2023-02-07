@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div class="layer-popup" style="display:block;">
+		<div class="pop-tit">고객조회<button class="btn-close">close</button></div>
+		<div class="pop-cont">
+			<div class="search-cont">
+				<strong class="search-tit">고객정보</strong>
+				<ul class="info-cont">
+					<li>
+						<label for="txt01" class="info-tit"><span>고객명</span></label>
+						<div class="input-width">
+							<input type="text" id="txt01" class="input-txt" placeholder="고객명">
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>성별</span></strong>
+						<div class="input-width">
+							<div class="toggle-cont toggle-3">
+								<input type="radio" id="rad01" name="tog1" checked>
+								<label for="rad01" tabindex="0"><span>성별전체</span></label>
+								<input type="radio" id="rad02" name="tog1">
+								<label for="rad02" tabindex="0"><span>남</span></label>
+								<input type="radio" id="rad03" name="tog1">
+								<label for="rad03" tabindex="0"><span>여</span></label>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label for="sel03" class="info-tit"><span>생년월일</span></label>
+						<div class="input-width">
+							<div class="calendar-box">
+								<input type="text" id="cal01" class="input-txt" placeholder="2018-12-04">
+							</div>
+						</div>
+					</li>
+					<li>
+						<label for="txt02" class="info-tit"><span>휴대폰번호</span></label>
+						<div class="input-width">
+							<input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호 “-” 없이 번호만 입력">
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>고객상태</span></strong>
+						<div class="input-width">
+							<div class="toggle-cont toggle-3">
+								<input type="radio" id="rad04" name="tog2" checked>
+								<label for="rad04" tabindex="0"><span>고객전체</span></label>
+								<input type="radio" id="rad05" name="tog2">
+								<label for="rad05" tabindex="0"><span>잠재</span></label>
+								<input type="radio" id="rad06" name="tog2">
+								<label for="rad06" tabindex="0"><span>일반</span></label>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label for="sel03" class="info-tit"><span>고객구분</span></label>
+						<div class="input-width">
+							<select id="sel03" class="select-box">
+								<option>고객구분 전체</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+				<div class="btn-area">
+					<button type="button" class="btn-gray">초기화</button>
+					<button type="button" class="btn-black">조회</button><!-- 2018-12-19 클래스 수정 -->
+				</div>
+			</div>
+
+			<div class="result-cont">
+				<div class="table-top-cont">
+					<span class="list-count">조회결과 <strong>2837</strong> 건</span>
+					<div class="btn-area">
+						<div class="right">
+							<button type="button" class="btn-add">신규<em>고객</em> 등록</button>
+							<button type="button" class="btn-add">선택 적용</button>
+						</div>
+					</div>
+				</div>
+				<!-- Small까지 사용 -->
+				<div class="mb-only">
+					<ul class="data-table">
+						<li class="table-grid">
+							<div class="layout-left">
+								<div class="col-1">
+									<div class="radio-set none-label"><input type="radio" id="rdo03" name="select-user"><label for="rdo03">선택</label></div>
+								</div>
+							</div>
+							<div class="layout-right">
+								<div>
+									<div class="col-2 txt-left"><strong>홍길동</strong></div>
+									<div class="col-3">(잠재 - 법인)</div>
+									<div class="col-5 txt-right">010-1234-5678</div>
+								</div>
+								<div>
+									<div class="col-9 txt-left">식별번호: 111-33******</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="table-grid">
+							<div class="layout-left">
+								<div class="col-1">
+									<div class="radio-set none-label"><input type="radio" id="rdo04" name="select-user"><label for="rdo04">선택</label></div>
+								</div>
+							</div>
+							<div class="layout-right">
+								<div>
+									<div class="col-2 txt-left"><strong>홍길순</strong></div>
+									<div class="col-3">(일반 - 개인)</div>
+									<div class="col-5 txt-right">010-1234-5678</div>
+								</div>
+								<div>
+									<div class="col-9 txt-left">1982-01-01(남)</div>
+								</div>
+							</div>
+						</li>
+						<!-- 2019-03-12 추가 -->
+						<li class="table-grid no-data">
+							조회된 데이터가 없습니다
+						</li>
+						<!-- //2019-03-12 -->
+					</ul>
+				</div>
+
+				<!-- Small 이상 사용 -->
+				<div class="not-mb">
+					<div class="table-col">
+						<table>
+							<caption>조회결과</caption>
+							<colgroup class="colgroup-hidden">
+								<!-- small까지 사용 -->
+								<col>
+								<col>
+								<col style="width: 22%">
+								<col>
+								<col style="width: 18%;">
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<colgroup class="colgroup-view2">
+								<!-- medium이상 사용 -->
+								<col style="width: 8%"><!-- 2018-12-26 수정 -->
+								<col>
+								<col style="width: 21%">
+								<col style="width: 22%"><!-- 2018-12-26 수정 -->
+								<col style="width: 8%"><!-- 2018-12-26 수정 -->
+								<col style="width: 8%"><!-- 2018-12-26 수정 -->
+								<col><!-- 2018-12-26 수정 -->
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">선택</th>
+									<th scope="col">고객명</th>
+									<th scope="col">휴대폰번호</th>
+									<th scope="col">생년월일/사업자번호</th>
+									<th scope="col">상태</th>
+									<th scope="col">구분</th>
+									<th scope="col">관리유형</th>
+									<th scope="col">경과일자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="radio-set none-label"><input type="radio" id="rdo01" name="select-user"><label for="rdo01">선택</label></div>
+									</td>
+									<td>홍길동</td>
+									<td>010-1231-1234</td>
+									<td>1111-******</td>
+									<td>잠재</td>
+									<td>법인</td>
+									<td>-</td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="radio-set none-label"><input type="radio" id="rdo02" name="select-user"><label for="rdo02">선택</label></div>
+									</td>
+									<td>홍길순</td>
+									<td>010-1111-1111</td>
+									<td>1982-01-01(남)</td>
+									<td>일반</td>
+									<td>개인</td>
+									<td>가망</td>
+									<td>-</td>
+								</tr>
+								<!-- 2019-03-12 추가 -->
+								<tr class="no-data">
+									<td colspan="8">조회된 데이터가 없습니다.</td>
+								</tr>
+								<!-- //2019-03-12-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="pagination">
+					<a href="#" class="first">처음</a>
+					<a href="#" class="prev">이전</a>
+					<span class="page-num">
+						<strong title="현재">1</strong>
+						<!-- 2018-12-18 삭제 <a href="#">1</a> -->
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+					</span>
+					<a href="#" class="next">다음</a>
+					<a href="#" class="last">마지막</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/customer.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo hidden">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti hidden">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<a href="#" class="btn-back">뒤로가기</a>
+			<h2 class="page-title">일반고객정보</h2>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<ul class="step-cont">
+					<li><span>잠재고객정보</span></li>
+					<li class="on"><span>일반고객정보</span></li>
+					<li><span>견적서</span></li>
+					<li><span>계약서</span></li>
+				</ul>
+				<div class="customer-info separation">
+					<strong class="table-tit">고객 기본 정보</strong>
+					<div class="form-cont">
+						<ul class="info-cont">
+							<li>
+								<label for="txt01" class="info-tit"><span>고객구분</span></label>
+								<div class="input-width">
+									<input type="text" id="txt01" class="input-txt" placeholder="개인/등록외국인" disabled>
+								</div>
+							</li>
+							<li>
+								<label for="txt02" class="info-tit"><span>고객명</span></label>
+								<div class="input-width">
+									<input type="text" id="txt02" class="input-txt" placeholder="홍길동" disabled>
+								</div>
+							</li>
+
+							<li>
+								<label for="txt03" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+								<div class="input-width">
+									<input type="text" id="txt03" class="input-txt" placeholder="010-1234-5678">
+								</div>
+							</li>
+							<li>
+								<label for="sel01" class="info-tit"><span><span class="ess-mark">*</span>관계구분</span></label>
+								<div class="input-width">
+									<select id="sel01" class="select-box" disabled>
+										<option>본인</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<strong class="info-tit"><span><span class="ess-mark">*</span>성별</span></strong>
+								<div class="input-width">
+									<div class="toggle-cont">
+										<input type="radio" id="genM" checked="" name="toggle01">
+										<label for="genM" tabindex="0"><span>남</span></label>
+										<input type="radio" id="genW" name="toggle01">
+										<label for="genW" tabindex="0"><span>여</span></label>
+									</div>
+								</div>
+							</li>
+							<li>
+								<label for="txt04" class="info-tit"><span><span class="ess-mark">*</span>생년월일</span></label>
+								<div class="input-width">
+									<div class="calendar-box">
+										<input type="text" id="txt04" class="input-txt" placeholder="1989-12-104">
+									</div>
+								</div>
+							</li>
+							<li class="width-full add-cont">
+								<div class="division-box add-1">
+									<label for="txt05" class="info-tit"><span>주소</span></label>
+									<div class="input-width">
+										<button type="button" class="btn-white">우편번호 찾기</button>
+										<input type="text" id="txt05" class="input-txt" placeholder="기본주소">
+									</div>
+								</div>
+								<div class="division-box">
+									<div class="input-width">
+										<input type="text" class="input-txt" placeholder="상세주소">
+									</div>
+								</div>
+							</li>
+							<li>
+								<label for="txt06" class="info-tit"><span>추가연락처</span></label>
+								<div class="input-width">
+									<input type="text" id="txt06" class="input-txt" placeholder="추가연락처'-'없이 번호만 입력">
+								</div>
+							</li>
+							<li>
+								<label for="txt07" class="info-tit"><span>이메일주소</span></label>
+								<div class="input-width">
+									<input type="text" id="txt07" class="input-txt" placeholder="ex) mail@email.com">
+								</div>
+							</li>
+							<li>
+								<label for="txt08" class="info-tit"><span>검색어</span></label>
+								<div class="input-width">
+									<input type="text" id="txt08" class="input-txt" placeholder="검색어">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--공통 고객 관심 정보-->
+				<div class="customer-info separation">
+					<strong class="table-tit">고객 관심 정보</strong>
+					<div class="form-cont">
+						<ul class="info-cont">
+							<li>
+								<label for="att01" class="info-tit"><span><span class="ess-mark">*</span>브랜드</span></label>
+								<div class="input-width">
+									<select id="att01" class="select-box">
+										<option>브랜드</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<label for="att02" class="info-tit"><span><span class="ess-mark">*</span>관심모델</span></label>
+								<div class="input-width">
+									<select id="att02" class="select-box">
+										<option>관심모델</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<label for="att03" class="info-tit"><span><span class="ess-mark">*</span>유입경로</span></label>
+								<div class="input-width">
+									<select id="att03" class="select-box">
+										<option>유입경로</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<label for="att04" class="info-tit"><span><span class="ess-mark">*</span>유입유형</span></label>
+								<div class="input-width">
+									<select id="att04" class="select-box">
+										<option>유입유형</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<label for="att05" class="info-tit"><span><span class="ess-mark">*</span>예상 구매시기</span></label>
+								<div class="input-width">
+									<select id="att05" class="select-box">
+										<option>예상구매시기</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--공통 고객 관심 정보 끝-->
+
+				<div class="customer-info separation">
+					<strong class="table-tit">구매고객 추가정보</strong>
+					<div class="form-cont">
+						<ul class="info-cont">
+							<li>
+								<strong class="info-tit"><span>결혼유무</span></strong>
+								<div class="input-width">
+									<div class="toggle-cont">
+										<input type="radio" id="married" name="toggle02">
+										<label for="married" tabindex="0"><span>기혼</span></label>
+										<input type="radio" id="single" checked="" name="toggle02">
+										<label for="single" tabindex="0"><span>미혼</span></label>
+									</div>
+								</div>
+							</li>
+							<li>
+								<label for="txt09" class="info-tit"><span>결혼기념일<span class="ess-mark married" style="display:none;">*</span></span></label>
+								<div class="input-width">
+									<div class="calendar-box">
+										<input type="text" id="txt09" class="input-txt" placeholder="결혼기념일">
+									</div>
+								</div>
+							</li>
+							<li>
+								<label for="txt10" class="info-tit"><span>직장연락처</span></label>
+								<div class="input-width">
+									<input type="text" id="txt10" class="input-txt" placeholder="직장연락처'-'없이 번호만 입력">
+								</div>
+							</li>
+							<li class="width-full add-cont">
+								<div class="division-box add-1">
+									<label for="txt11" class="info-tit"><span>직장주소</span></label>
+									<div class="input-width">
+										<button type="button" class="btn-white">우편번호 찾기</button>
+										<input type="text" id="txt11" class="input-txt" placeholder="직장주소">
+									</div>
+								</div>
+								<div class="division-box">
+									<div class="input-width">
+										<input type="text" class="input-txt" placeholder="상세주소">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="customer-info separation">
+					<!-- 2018-12-19 수정 -->
+					<strong class="table-tit">약관동의</strong>
+					<p class="policy-info">고객님께서 입력해주신 상기의 정보는 개인정보보호법 제 15조, 제 16조, 제 17조,제 18조의 2항, 제 19조 규정에 따라 개인 정보 수집 및 이용 시
+						본인의 동의를 얻어야 하는 정보입니다.</p>
+					<!-- //2018-12-19 수정 -->
+					<div class="agree-box">
+						<div class="agree-cont">
+							<div class="term-cont">
+								<strong>개인정보 수집 이용에 대한 안내</strong>
+								<u>
+									회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+									다음의 목적을 위해 활용합니다.
+								</u>
+
+								<span>
+									★회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+									다음의 목적을 위해 활용합니다.
+								</span>
+
+								<span>
+									★회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+									다음의 목적을 위해 활용합니다.
+								</span>
+							</div>
+							<p>(필수) 약관 1명칭</p>
+							<div class="agree-btn-area">
+								<div class="radio-set">
+									<input type="radio" id="rd01" name="rdi01"><label for="rd01">동의</label>
+									<input type="radio" id="rd02" name="rdi01"><label for="rd02">미동의</label>
+								</div>
+							</div>
+						</div>
+						<div class="agree-cont">
+							<div class="term-cont">
+								<strong>개인정보 수집 이용에 대한 안내</strong>
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+							</div>
+							<p>(필수) 약관 2명칭</p>
+							<div class="agree-btn-area">
+								<div class="radio-set">
+									<input type="radio" id="rd03" name="rdi02"><label for="rd03">동의</label>
+									<input type="radio" id="rd04" name="rdi02"><label for="rd04">미동의</label>
+								</div>
+							</div>
+						</div>
+						<div class="agree-cont">
+							<div class="term-cont">
+								<strong>개인정보 수집 이용에 대한 안내</strong>
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+
+								회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+								다음의 목적을 위해 활용합니다.
+							</div>
+							<p>(선택) 약관 3명칭</p><!-- 2018-12-20 추가 -->
+							<!-- 2018-12-20 추가 -->
+							<div class="agree-btn-area">
+								<div class="radio-set">
+									<input type="radio" id="rd033" name="rdi022"><label for="rd033">동의</label>
+									<input type="radio" id="rd044" name="rdi022"><label for="rd044">미동의</label>
+								</div>
+							</div>
+							<!-- //2018-12-20 -->
+							<!-- 2018-12-20 위치수정 <p>(선택) 마케팅 수신여부</p>
+								<ul class="reception">
+								<li>
+									<div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+								</li>
+								<li>
+									<div class="checkbox-set"><input type="checkbox" id="chk02"><label for="chk02">SMS/MMS</label></div>
+								</li>
+								<li>
+									<div class="checkbox-set"><input type="checkbox" id="chk03"><label for="chk03">E-Mail</label></div>
+								</li>
+							</ul> -->
+						</div>
+						<!-- 2018-12-20 위치수정  -->
+						<p class="recep-tit">마케팅 수신여부</p><!-- 클래스 추가, 텍스트 수정 -->
+						<ul class="reception">
+							<li>
+								<div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+							</li>
+							<li>
+								<div class="checkbox-set"><input type="checkbox" id="chk02"><label for="chk02">SMS/MMS</label></div>
+							</li>
+							<li>
+								<div class="checkbox-set"><input type="checkbox" id="chk03"><label for="chk03">E-Mail</label></div>
+							</li>
+						</ul>
+						<!-- //2018-12-20-->
+					</div>
+				</div>
+				<div class="customer-info separation">
+					<div class="table-tit-cont">
+						<strong class="table-tit">고객정보활용동의</strong>
+						<!-- 2018-12-20 위치수정 <div class="btn-area">
+							<button type="button" class="table-btn red">고객서명</button>
+							<button type="button" class="table-btn red-line">온라인동의</button>
+						</div> -->
+					</div>
+					<div class="sign-cont">
+						<!-- 2018-12-20 위치수정, 추가 -->
+						<div class="btn-area">
+							<div class="left">
+								<button type="button" class="table-btn red">고객서명</button>
+								<button type="button" class="table-btn red-line">온라인동의</button>
+							</div>
+						</div>
+						<!-- //2018-12-20 위치수정 -->
+						<a href="#">다시 서명</a>
+						<div class="sign">온라인 서명하기</div>
+					</div>
+					<p class="sign-confirm"><span>2018-12-10 HH:MM:SS 전자서명 동의 (동의내용-Y, 동의내용2-N, 동의내용3-Y)</span></p>
+				</div>
+				<div class="btn-area">
+					<button type="button" class="btn-gray">목록</button>
+					<button type="button" class="btn-black">정보등록</button><!-- 2018-12-19 클래스 수정 -->
+					<button type="button" class="btn-black">견적서</button><!-- 2018-12-19 클래스 수정 -->
+					<!-- 재구매 견적 사용
+						<button type="button" class="btn-black">재구매 견적</button><!-- 2018-12-19 클래스 수정 -->
+					-->
+				</div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

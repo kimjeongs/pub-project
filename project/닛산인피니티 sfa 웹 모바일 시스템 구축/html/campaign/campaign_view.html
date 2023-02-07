@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/campaign.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap"><!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> --><!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> --><!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">캠페인</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div class="on"><a href="#"><span>캠페인</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">사업소정보</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel02" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel02" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">캠페인정보</strong>
+					<ul class="info-cont cam">
+						<li>
+							<label for="cal01" class="info-tit"><span>캠페인명</span></label>
+							<div class="input-width">
+								<input type="text" id="txt01" class="input-txt" placeholder="캠페인명">
+							</div>
+						</li>
+						<li>
+							<label for="cal01" class="info-tit"><span>캠페인기간</span></label>
+							<div class="input-width">
+								<div class="calendar-cont">
+									<div class="calendar-box">
+										<input type="text" id="cal01" class="input-txt" placeholder="년월일">
+									</div>
+									<span class="mark">~</span>
+									<div class="calendar-box">
+										<input type="text" class="input-txt" placeholder="년월일">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="division-box range prev-next">
+								<div class="prev_next">
+									<button type="button" class="prev">이전</button>
+									<button type="button" class="next">다음</button>
+								</div>
+								<div class="toggle-cont toggle-3">
+									<input type="radio" id="rad01" name="tog2" checked>
+									<label for="rad01" tabindex="0"><span>D<span class="hidden-txt">ay</span></span></label>
+									<input type="radio" id="rad02" name="tog2">
+									<label for="rad02" tabindex="0"><span>W<span class="hidden-txt">eek</span></span></label>
+									<input type="radio" id="rad03" name="tog2">
+									<label for="rad03" tabindex="0"><span>M<span class="hidden-txt">onth</span></span></label>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button>
+					</div>
+				</div>
+				<div class="result-cont cam">
+					<div class="table-top-cont">
+						<span class="list-count">조회결과 <strong>2837</strong> 건 - 계획 고객수 800명 / 실행 고객수 320명</span>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2837</div>
+								</div>
+								<div class="layout-right">
+									<div class="overflow-wrap">
+										<div class="col-10 txt-left"><a href="#">2018 송년행사 글줄임 안함, 모바일은 한줄 처리 줄임 처리 줄임 줄임</a></div>
+									</div>
+									<div>
+										<div class="col-8 txt-left">캠페인기간 : 2018-10.12-2018-10.31</div>
+										<div class="col-2 txt-right point-color-red">진행중</div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">출고고객</div>
+										<div class="col-5 txt-right">(계획)90 / (실행)</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2837</div>
+								</div>
+								<div class="layout-right">
+									<div class="overflow-wrap">
+										<div class="col-10 txt-left"><a href="#">고객감사이벤트</a></div>
+									</div>
+									<div>
+										<div class="col-8 txt-left">캠페인기간 : 2018-10.12-2018-10.31</div>
+										<div class="col-2 txt-right">종료</div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">잠재고객</div>
+										<div class="col-5 txt-right">(계획)90 / (실행) 34</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- Medium까지 사용 -->
+									<col style="width: 7%">
+									<col style="width: 13%">
+									<col>
+									<col style="width: 18%">
+									<col style="width: 10%">
+									<col style="width: 12%">
+									<col style="width: 12%">
+									<col style="width: 10%">
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- Large이상 사용 -->
+									<col style="width: 5%">
+									<col style="width: 10%">
+									<col>
+									<col>
+									<col style="width: 17%">
+									<col style="width: 17%">
+									<col style="width: 7%">
+									<col style="width: 9%">
+									<col style="width: 9%">
+									<col style="width: 9%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">사업소</th>
+										<th scope="col" class="data-hidden">등록자</th>
+										<th scope="col">등록일자</th>
+										<th scope="col">캠페인명</th>
+										<th scope="col">캠페인기간</th>
+										<th scope="col">고객구분</th>
+										<th scope="col">계획고객수</th>
+										<th scope="col">실행고객수</th>
+										<th scope="col">상태</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>10</td>
+										<td class="data-hidden">DDDDD</td>
+										<td class="data-hidden">김대장</td>
+										<td>208-12-10</td>
+										<td class="txt-left"><a href="#">2018 송년행사 글줄임 안함, 모바일은 한줄 처리 줄임 처리</a></td>
+										<td>2018-12-10~2018-12-31</td>
+										<td>전체</td>
+										<td>90</td>
+										<td>-</td>
+										<td>진행중</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td class="data-hidden">FFFFFF</td>
+										<td class="data-hidden">김대장</td>
+										<td>208-12-10</td>
+										<td class="txt-left"><a href="#">고객감사이벤트</a></td>
+										<td>2018-11-10~2018-11-30</td>
+										<td>출고</td>
+										<td>40</td>
+										<td>34</td>
+										<td>종료</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

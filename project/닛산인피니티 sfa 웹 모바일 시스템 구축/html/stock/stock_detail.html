@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 2019-03-22 추가 -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('.overall-status-btn').on('click', function (e) {
+				var statusLayer = $('.overall-status-layer'),
+					layerCose = statusLayer.find('.btn-close'),
+					dimmed = $('.dimmed-layer');
+
+				e.preventDefault();
+
+				statusLayer.add(dimmed).css('display', 'block');
+
+				layerCose.on('click', function () {
+					statusLayer.add(dimmed).removeAttr('style');
+				});
+			});
+
+		});
+	</script>
+	<!-- //2019-03-22 -->
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">재고현황</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div class="on"><a href="#"><span>재고현황</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">재고위치</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel01" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel01" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>지사/본사</span></strong>
+							<div class="input-width">
+								<!--2019-03-22 추가-->
+								<div class="toggle-cont toggle-3">
+									<input type="radio" id="tab00" checked="" name="toggle01">
+									<label for="tab00" tabindex="0"><span>전체</span></label>
+									<input type="radio" id="tab01" name="toggle01">
+									<label for="tab01" tabindex="0"><span>지사</span></label>
+									<input type="radio" id="tab02" name="toggle01">
+									<label for="tab02" tabindex="0"><span>본사</span></label>
+								</div>
+								<!--//2019-03-22-->
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">재고정보</strong>
+					<ul class="info-cont">
+						<li>
+							<strong class="info-tit"><span>브랜드</span></strong>
+							<div class="input-width">
+								<div class="toggle-cont">
+									<input type="radio" id="brand01" checked="" name="toggle02">
+									<label for="brand01" brandindex="0"><span>NISSAN</span></label>
+									<input type="radio" id="brand02" name="toggle02">
+									<label for="brand02" tabindex="0"><span>INFINITI</span></label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="sel02" class="info-tit"><span>모델그룹</span></label>
+							<div class="input-width">
+								<select id="sel02" class="select-box">
+									<option>모델그룹</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel03" class="info-tit"><span>모델명</span></label>
+							<div class="input-width">
+								<select id="sel03" class="select-box">
+									<option>모델명</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel04" class="info-tit"><span>연식</span></label>
+							<div class="input-width">
+								<select id="sel04" class="select-box">
+									<option>연식</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel05" class="info-tit"><span>팩</span></label>
+							<div class="input-width">
+								<select id="sel05" class="select-box">
+									<option>팩</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel06" class="info-tit"><span>카시리즈</span></label>
+							<div class="input-width">
+								<select id="sel06" class="select-box">
+									<option>카시리즈</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel07" class="info-tit"><span>색상</span></label>
+							<div class="input-width">
+								<select id="sel07" class="select-box">
+									<option>색상</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button>
+						<!-- 2018-03-11 클래스 추가 -->
+						<button type="button" class="btn-black only-pc">DETAIL</button>
+						<!-- //2018-03-11-->
+					</div>
+				</div>
+				<div class="result-cont stock">
+					<div class="table-top-cont">
+						<span class="list-count">조회결과 <strong>10</strong> 건</span>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2837</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-4 txt-left">MAXIMA</div>
+										<div class="col-3 txt-left">2.5</div>
+										<div class="col-3 col-right">2018년식</div>
+									</div>
+									<div>
+										<div class="col-4 txt-left">색상 : QAB-G</div>
+										<div class="col-6 txt-left">White-Black</div>
+									</div>
+									<div>
+										<div class="col-4 txt-left point-color-red">수량 : 999</div>
+										<div class="col-3 txt-left point-color-red">견적 : 0</div>
+										<div class="col-3 col-right point-color-red">계약 : 0</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2836</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-4 txt-left">MAXIMA</div>
+										<div class="col-3 txt-left">3.5</div>
+										<div class="col-3 col-right">2018년식</div>
+									</div>
+									<div>
+										<div class="col-4 txt-left">색상 : QAB-G</div>
+										<div class="col-6 txt-left">White-Black</div>
+									</div>
+									<div>
+										<div class="col-4 txt-left point-color-red">수량 : 999</div>
+										<div class="col-3 txt-left point-color-red">견적 : 0</div>
+										<div class="col-3 col-right point-color-red">계약 : 0</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col table-scroll">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- Medium까지 사용 -->
+									<col style="width: 7%">
+									<col style="width: 13%">
+									<col style="width: 7%">
+									<col style="width: 13%">
+									<col style="width: 15%">
+									<col>
+									<col style="width: 8%">
+									<col style="width: 8%">
+									<col style="width: 8%">
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- Large이상 사용 -->
+									<col style="width: 100px">
+									<col style="width: 100px">
+									<col style="width: 100px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 100px">
+									<col style="width: 100px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 100px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 150px">
+									<col style="width: 100px">
+									<col style="width: 100px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">사업소</th>
+										<th scope="col" class="data-hidden">브랜드</th>
+										<th scope="col" class="data-hidden">카시리즈</th>
+										<th scope="col" class="data-hidden">모델그룹</th>
+										<th scope="col">모델</th>
+										<th scope="col">팩</th>
+										<th scope="col">연식</th>
+										<th scope="col">색상</th>
+										<th scope="col">색상명</th>
+										<th scope="col">수량</th>
+										<th scope="col" class="data-hidden">진척상태</th>
+										<th scope="col" class="data-hidden">PDI입고 예정일자</th>
+										<th scope="col" class="data-hidden">PDI 입고일자</th>
+										<th scope="col" class="data-hidden">PDI 출고일자</th>
+										<th scope="col" class="data-hidden">딜러도착 예정일자</th>
+										<th scope="col" class="data-hidden">딜러 도착일자</th>
+										<th scope="col">견적</th>
+										<th scope="col">계약</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>10</td>
+										<td class="data-hidden">DDDDD</td>
+										<td class="data-hidden">N</td>
+										<td class="data-hidden">A367</td>
+										<td class="data-hidden">MAXIMA</td>
+										<td>MAXIMA</td>
+										<td>2.5</td>
+										<td>2018</td>
+										<td>QAB-G</td>
+										<td>White-Black</td>
+										<td><a href="#" class="overall-status-btn">00</a></td><!--2019-03-22 수정-->
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td class="data-hidden">PPPP</td>
+										<td class="data-hidden">N</td>
+										<td class="data-hidden">A367</td>
+										<td class="data-hidden">MAXIMA</td>
+										<td>MAXIMA</td>
+										<td>3.5</td>
+										<td>2018</td>
+										<td>QAB-G</td>
+										<td>White-Black</td>
+										<td><a href="#" class="overall-status-btn">00</a></td><!--2019-03-22 수정-->
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td class="data-hidden">PPPP</td>
+										<td class="data-hidden">N</td>
+										<td class="data-hidden">A367</td>
+										<td class="data-hidden">MAXIMA</td>
+										<td>MAXIMA</td>
+										<td>3.5</td>
+										<td>2018</td>
+										<td>QAB-G</td>
+										<td>White-Black</td>
+										<td><a href="#" class="overall-status-btn">00</a></td><!--2019-03-22 수정-->
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td class="data-hidden">PPPP</td>
+										<td class="data-hidden">N</td>
+										<td class="data-hidden">A367</td>
+										<td class="data-hidden">MAXIMA</td>
+										<td>MAXIMA</td>
+										<td>3.5</td>
+										<td>2018</td>
+										<td>QAB-G</td>
+										<td>White-Black</td>
+										<td><a href="#" class="overall-status-btn">00</a></td><!--2019-03-22 수정-->
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td class="data-hidden"></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	
+	<!-- 2019-03-22 추가-->
+	<div class="layer-popup overall-status-layer">
+		<div class="pop-tit">Overall Status – 사업소 code<button class="btn-close">close</button></div>
+		<div class="pop-cont">
+			<ul class="pop-carstate">
+				<li>
+					<div>
+						<span>차량번호</span>
+						<span>차대번호</span>
+						<span>상태</span>
+					</div>
+					<div>
+						<span>모델명</span>
+						<span>연식</span>
+						<span>색상</span>
+					</div>
+					<div>
+						<span>입항일자</span>
+						<span>W/S일자</span>
+						<span>출고일자</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>차량번호</span>
+						<span>차대번호</span>
+						<span>상태</span>
+					</div>
+					<div>
+						<span>모델명</span>
+						<span>연식</span>
+						<span>색상</span>
+					</div>
+					<div>
+						<span>입항일자</span>
+						<span>W/S일자</span>
+						<span>출고일자</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span>차량번호</span>
+						<span>차대번호</span>
+						<span>상태</span>
+					</div>
+					<div>
+						<span>모델명</span>
+						<span>연식</span>
+						<span>색상</span>
+					</div>
+					<div>
+						<span>입항일자</span>
+						<span>W/S일자</span>
+						<span>출고일자</span>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	
+	<!-- //2019-03-22 -->
+
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

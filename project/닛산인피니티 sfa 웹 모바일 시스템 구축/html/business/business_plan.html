@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISSAN</title>
+    <!-- 2019-03-11 삭제 <link rel="stylesheet" href="../css/jquery.timepicker.min.css"> -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/timepicki.css"><!-- 2019-03-14 추가 -->
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/timepicki.js"></script><!-- 2019-03-14 추가 -->
+    <!-- 2019-03-11 삭제 <script src="../js/jquery.timepicker.min.js"></script> -->
+    <script src="../js/common.js"></script>
+
+    <!-- 2019-03-14 수정 -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // 삭제
+            // $("#START_TIME,#END_TIME").timepicker({
+            // timeFormat: 'HH',
+            // interval: 60,
+            // minTime: '07',
+            // maxTime: '23:00',
+            // defaultTime: '07',
+            // startTime: '07:00',
+            // dynamic: false,
+            // dropdown: true,
+            // scrollbar: true
+            // })
+
+            
+            // 2019-03-15 수정
+            $('#startTimeBtn').timepicki({
+                start_time: ["07", "00"],//2019-03-29
+                show_meridian: false,
+                min_hour_value: 7,
+                max_hour_value: 23,
+                step_size_minutes: 10,
+                disable_keyboard_mobile: true
+            });
+
+            $('#endTimeBtn').timepicki({
+                start_time: ["07", "00"],//2019-03-29
+                show_meridian: false,
+                min_hour_value: 7,
+                max_hour_value: 23,
+                step_size_minutes: 10,
+                disable_keyboard_mobile: true,
+                increase_direction: 'up'
+            });
+
+            //2019-03-26 수정
+            $('#startTimeBtn, #endTimeBtn').on('click', function(event){
+            $(this).next().show();
+                if($(this).is('.open')){
+                    $(this).next().hide();
+                    $(this).removeClass('open')
+                }else{
+                    $(this).addClass('open');
+                    $(this).next().find('.mins .prev').click();
+                }
+            })
+            
+            $('.time-box').on('mouseup', '.timepicker_wrap', function (e) {
+                var me = $(this);
+                setTimeout(function () {
+                    var txt = me.find('input[type=text]').eq(0).val() + ":" + me.find(
+                        'input[type=text]').eq(1).val();
+                    me.parents('.time_pick').prev().val(txt);
+                }, 30)
+
+            })
+
+        });
+    </script>
+    <!-- //2019-03-14-->
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- infiniti 사용시 class="infiniti" 추가 -->
+        <div class="gnb-menu">
+            <div class="gnb-close">
+                <strong class="gnb-logo">NISSAN</strong>
+                <!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+                <!-- infiniti 로고 사용시  -->
+                <button type="button">메뉴 닫기</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">홈</a></li>
+                <li class="active"><a href="#">담당SC배정</a></li>
+                <li><a href="#">고객관리</a></li>
+                <li><a href="#">영업활동관리</a></li>
+                <li><a href="#">계약관리</a></li>
+                <li><a href="#">캠페인</a></li>
+                <li><a href="#">재고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ul>
+            <div class="gnb-btn">
+                <a href="#"><span>홍길동</span> 로그아웃</a>
+            </div>
+        </div>
+        <div id="header">
+            <button type="button" class="header-menu">gnb menu</button>
+            <h1 class="logo hidden">NISSAN</h1>
+            <!-- <h1 class="logo-infiniti hidden">infiniti</h1> -->
+            <!-- infiniti 로고 사용시  -->
+            <a href="#" class="btn-back">뒤로가기</a>
+            <h2 class="page-title">영업계획</h2>
+        </div>
+        <div id="container">
+            <div class="contents">
+                <div class="form-cont">
+                    <ul class="info-cont">
+                        <li>
+                            <label for="p1" class="info-tit"><span>고객명</span></label>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="p1" class="input-txt" placeholder="고객명">
+                                    <button type="button" class="input-search-btn">찾기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="p2" class="info-tit"><span>활동유형</span></label>
+                            <div class="input-width">
+                                <select id="p2" class="select-box">
+                                    <option>활동유형선택</option>
+                                    <option value="전화">전화</option>
+                                    <option value="SMS">SMS</option>
+                                    <option value="방문">방문</option>
+                                    <option value="내방">내방</option>
+                                    <option value="견적">견적</option>
+                                    <option value="상담">상담</option>
+                                    <option value="DM">DM</option>
+                                    <option value="E-Mail">E-Mail</option>
+                                    <option value="FAX">FAX</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="p3" class="info-tit"><span>활동내용</span></label>
+                            <div class="input-width"><input type="text" id="p3" class="input-txt" placeholder="활동내용"></div>
+                        </li>
+                        <li class="width-full date-time-cont">
+                            <div class="division-box">
+                                <label for="cal" class="info-tit"><span>활동일자</span></label>
+                                <div class="input-width">
+                                    <div class="calendar-box">
+                                        <input type="text" id="cal" class="input-txt" placeholder="1989-12-104"><!-- 2018-12-19 불필요한 class명 삭제 -->
+                                        <!-- <button type="button" class="calendar-btn">날짜선택</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="division-box">
+                                <div class="input-width">
+                                    <div class="time-cont">
+                                        <div class="time-box">
+                                            <input type="text" id="START_TIME" class="input-txt" placeholder="시작시간선택">
+                                            <!-- 2019-03-15 id 값 부여-->
+                                            <button id="startTimeBtn" type="button" class="time-btn">시작시간선택</button>
+                                        </div>
+                                        <span class="mark">~</span>
+                                        <div class="time-box finish-time">
+                                            <input type="text" id="END_TIME" class="input-txt" placeholder="종료시간선택">
+                                            <!-- 2019-03-15 id 값 부여-->
+                                            <button id="endTimeBtn" type="button" class="time-btn">종료시간선택</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="p4" class="info-tit"><span>활동상태</span></label>
+                            <div class="input-width">
+                                <select id="p4" class="select-box">
+                                    <option>활동상태</option>
+                                    <option value="등록">등록</option>
+                                    <option value="완료">완료</option>
+                                    <option value="취소">취소</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="width-full">
+                            <label for="p5" class="info-tit"><span>특이사항 및 피드백</span></label>
+                            <div class="input-width"><textarea id="p5" class="textarea"></textarea></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn-gray">취소</button>
+                    <button type="button" class="btn-black">등록</button><!-- 2018-12-19 클래스 수정 -->
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn-gray">취소</button>
+                    <button type="button" class="btn-black">삭제</button><!-- 2018-12-19 클래스 수정 -->
+                    <button type="button" class="btn-black">저장</button><!-- 2018-12-19 클래스 수정 -->
+                </div>
+            </div>
+            <div id="footer">
+                <span>Copyright, 2016 by <strong>Nissan.</strong></span>
+                All page Contents is property of Nissan
+            </div>
+        </div>
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

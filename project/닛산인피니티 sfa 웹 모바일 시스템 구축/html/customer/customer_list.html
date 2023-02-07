@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/customer.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">고객관리</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div class="on"><a href="#"><span>고객현황</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">담당 SC</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel01" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel01" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel02" class="info-tit"><span>담당 SC</span></label>
+							<div class="input-width">
+								<select id="sel02" class="select-box" disabled="disabled">
+									<option>담당 SC 선택</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">고객정보</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="name" class="info-tit"><span>고객명</span></label>
+							<div class="input-width">
+								<div class="input-search">
+									<input type="text" id="name" class="input-txt" placeholder="고객명">
+									<button type="button" class="input-search-btn">찾기</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="corp-txt02" class="info-tit"><span>휴대폰번호</span></label>
+							<div class="input-width">
+								<input type="text" id="corp-txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력">
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>고객상태</span></strong>
+							<div class="input-width">
+								<!-- 2018-12-14 클래스변경 -->
+								<div class="toggle-cont toggle-3">
+									<input type="radio" id="rad01" name="tog1" checked="">
+									<label for="rad01" tabindex="0"><span>고객전체</span></label>
+									<input type="radio" id="rad02" name="tog1">
+									<label for="rad02" tabindex="0"><span>잠재</span></label>
+									<input type="radio" id="rad03" name="tog1">
+									<label for="rad03" tabindex="0"><span>일반</span></label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="sel03" class="info-tit"><span>고객구분</span></label>
+							<div class="input-width">
+								<select id="sel03" class="select-box">
+									<option>전체/개인/법인/등록외국인/개인사업자</option>
+									<option>개인</option>
+									<option>법인</option>
+									<option>등록외국인</option>
+									<option>개인사업자</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button><!-- 2018-12-19 클래스 수정 -->
+					</div>
+				</div>
+				<div class="result-cont">
+					<div class="table-top-cont">
+						<span class="list-count">조회결과 <strong>2837</strong> 건</span>
+						<div class="btn-area">
+							<div class="right">
+								<button type="button" class="btn-add">등록</button>
+								<!-- 2019-03-11 추가 -->
+								<button type="button" class="btn-add">일괄등록</button>
+								<!-- //2019-03-11 -->
+							</div>
+						</div>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2837</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-2 txt-left name"><a href="#">홍길동홍길동홍길동</a></div><!-- 2019-03-21 클래스 추가 -->
+										<div class="col-3 txt-left">(잠재)</div>
+										<div class="col-5 col-right"><a href="#">010-1234-5678</a></div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">등록일자 : 2018-10.12</div>
+										<div class="col-3"><a href="#">계약(Y)</a></div>
+										<div class="col-2 col-right"><a href="#">출고(Y)</a></div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2836</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-2 txt-left name"><a href="#">홍길동</a></div><!-- 2019-03-21 클래스 추가 -->
+										<div class="col-3 txt-left">(잠재)</div>
+										<div class="col-5 col-right"><a href="#">010-1234-5678</a></div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">등록일자 : 2018-10.12</div>
+										<div class="col-3">계약(N)</div>
+										<div class="col-2 col-right">출고(N)</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- Medium까지 사용 -->
+									<col>
+									<col>
+									<col style="width: 22%">
+									<col>
+									<col style="width: 18%;">
+									<col>
+									<col>
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- Large이상 사용 -->
+									<col>
+									<col style="width: 10%">
+									<col>
+									<col>
+									<col style="width: 22%">
+									<col>
+									<col style="width: 18%;">
+									<col>
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">사업소</th>
+										<th scope="col" class="data-hidden">담당SC</th>
+										<th scope="col">고객명</th>
+										<th scope="col">휴대폰번호</th>
+										<th scope="col">상태</th>
+										<th scope="col">등록일자</th>
+										<th scope="col">계약</th>
+										<th scope="col">출고</th>
+										<th scope="col" class="data-hidden">경과일자</th>
+										<th scope="col" class="data-hidden">관리유형</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2837</td>
+										<td class="data-hidden">프리미어</td>
+										<td class="data-hidden">이프로</td>
+										<td><a href="#">홍길동</a></td>
+										<td><a href="#">010-1234-5678</a></td>
+										<td>잠재</td>
+										<td>2018-10-12</td>
+										<td>N</td>
+										<td>N</td>
+										<td class="data-hidden">3</td>
+										<td class="data-hidden">-</td>
+									</tr>
+									<tr>
+										<td>2836</td>
+										<td class="data-hidden">노블모터스</td>
+										<td class="data-hidden">김노모</td>
+										<td><a href="#">홍길순</a></td>
+										<td><a href="#">010-3456-9090</a></td>
+										<td>일반</td>
+										<td>2018-10-12</td>
+										<td><a href="#">Y(승인)</a></td>
+										<td><a href="#">Y</a></td>
+										<td class="data-hidden">-</td>
+										<td class="data-hidden">가망</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<!-- 2018-12-18 삭제 <a href="#">1</a> -->
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

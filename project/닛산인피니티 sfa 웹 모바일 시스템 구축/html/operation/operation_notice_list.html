@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/operation.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li class="active"><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">영업활동관리</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+            <div class="on"><a href="#"><span>공지사항</span></a></div>
+			<div><a href="#"><span>도움말</span></a></div>
+			<div><a href="#"><span>Release Note</span></a></div>
+			<div><a href="#"><span>SR</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<ul class="info-cont">
+						<li>
+							<label for="sel10" class="info-tit"><span>구분</span></label>
+							<div class="input-width">
+								<select id="sel10" class="select-box">
+									<option>제목 + 내용</option>
+								</select>
+							</div>
+						</li>
+                        <li>
+                            <label for="txt01" class="info-tit"><span>검색어</span></label>
+                            <div class="input-width">
+                                <input type="text" id="txt01" class="input-txt" placeholder="검색어">
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>브랜드</span></strong>
+                            <div class="input-width">
+                                <div class="toggle-cont toggle-3">
+                                    <input type="radio" id="rad01" name="tog1">
+                                    <label for="rad01" tabindex="0"><span>공통</span></label>
+                                    <input type="radio" id="rad02" name="tog1" checked="">
+                                    <label for="rad02" tabindex="0"><span>NISSAN</span></label>
+                                    <input type="radio" id="rad03" name="tog1">
+                                    <label for="rad03" tabindex="0"><span>INFINITI</span></label>
+                                </div>
+                            </div>
+                        </li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button>
+					</div>
+				</div>
+				<div class="result-cont">
+					<div class="table-top-cont">
+                        <span class="list-count"><span class="txt">제목 + 내용 "○○○○"</span> 조회결과 <strong>000</strong> 건</span>
+					</div>
+
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">필독</div>
+								</div>
+								<div class="layout-right">
+                                    <div class="overflow-wrap">
+                                        <div class="col-10 txt-left">
+											<div class="ellipsis">
+												<span>[공통]</span> <a href="#">IT팀에서 안내 드립니다.</a>
+											</div>
+										</div>
+                                    </div>
+									<div>
+                                        <div class="col-5 txt-left">2018-10-12 15:30</div>
+                                        <div class="col-5 txt-right"></div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2836</div>
+								</div>
+								<div class="layout-right">
+                                <div class="overflow-wrap">
+                                    <div class="col-10 txt-left">
+										<div class="ellipsis">
+											<span>[NISSAN]</span> <a href="#">금융 프로모션 안내입니다.</a>
+										</div>
+									</div>
+                                </div>
+									<div>
+                                        <div class="col-5 txt-left">2018-10-12 15:30</div>
+                                        <div class="col-5 txt-right"><button type="button" class="file-down">파일다운</button></div>
+									</div>
+								</div>
+							</li>
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">2835</div>
+								</div>
+								<div class="layout-right">
+                                    <div class="overflow-wrap">
+                                        <div class="col-10 txt-left">
+											<div class="ellipsis">
+												<sapn>[NISSAN]</sapn> <a href="#">2019년 모델 적용 안내입니다..</a>
+											</div>
+										</div>
+                                    </div>
+									<div>
+										<div class="col-5 txt-left">2018-10-12 15:30</div>
+										<div class="col-5 txt-right"><button type="button" class="file-down">파일다운</button></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Smaill 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup>
+									<col style="width:70px;">
+                                    <col style="width:100px;">
+									<col>
+									<col style="width:150px;">
+									<col style="width:60px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col">브랜드</th>
+										<th scope="col">제목</th>
+										<th scope="col">등록일</th>
+										<th scope="col">파일</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>필독</td>
+										<td>공통</td>
+                                        <td class="txt-left"><a href="#" class="ellipsis">IT팀에서 안내 드립니다.</a></td>
+										<td>2018-10-12 15:30</td>
+                                        <td></td>
+									</tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>NISSAN</td>
+                                        <td class="txt-left"><a href="#" class="ellipsis">금융 프로모션 안내입니다.</a></td>
+                                        <td>2018-10-12 15:30</td>
+                                        <td><button type="button" class="file-down">파일다운</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>INFINITI</td>
+                                        <td class="txt-left"><a href="#" class="ellipsis">2019년 모델 적용 안내입니다..</a></td>
+                                        <td>2018-10-12 15:30</td>
+                                        <td><button type="button" class="file-down">파일다운</button></td>
+                                    </tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

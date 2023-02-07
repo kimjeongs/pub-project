@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>board guide</title>
+
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	<style type="text/css">
+		h1 {
+			float: none;
+			width: auto;
+			font-size: 20px;
+			line-height: 100%;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		ul.s-tab {
+			width: 100%;
+			overflow: hidden;
+			margin-top: 10px;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		ul.s-tab li {
+			display: inline;
+			float: left;
+			margin-right: 5px;
+		}
+
+		ul.s-tab li a {
+			float: left;
+			padding: 5px;
+			border: 2px solid #a2cdde;
+			font-size: 15px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		ul.s-tab li.on a,
+		ul.s-tab li a:hover {
+			color: #f00;
+		}
+
+		h2.guide-title {
+			margin: 10px 0;
+			padding: 10px 0;
+			border-top: 2px solid #ddd;
+			border-bottom: 2px solid #ddd;
+			font-size: 15px;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		.xmp {
+			display: block;
+			height: 200px;
+			overflow: auto;
+			margin: 10px 0 0 0;
+			padding: 0;
+			border: 2px solid #666;
+			background: #eee;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<h1>STYLE GUIDE</h1>
+		<ul class="s-tab">
+			<li><a href="content.html">content</a></li>
+			<li class="on"><a href="board.html">board</a></li>
+			<li><a href="etc.html">etc</a></li>
+		</ul>
+
+		<h2 class="guide-title">DATA TABLE</h2>
+		<div class="table-top-cont">
+			<span class="list-count">조회결과 <strong>2837</strong> 건</span>
+			<div class="btn-area">
+				<div class="right">
+					<button type="button" class="btn-add">등록</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Smaill까지 사용 -->
+		<div class="mb-only">
+			<ul class="data-table">
+				<li class="table-grid">
+					<div>
+						<div class="col-1">2837</div>
+						<div class="col-2"><a href="#">홍길동</a></div>
+						<div class="col-7 txt-left"><a href="#">010-1234-5678</a></div>
+					</div>
+					<div>
+						<div class="col-3 pd-left10">잠재</div>
+						<div class="col-3 txt-left">2018-10-12</div>
+						<div class="col-2">계약(N)</div>
+						<div class="col-2">출고(N)</div>
+					</div>
+				</li>
+
+				<li class="table-grid">
+					<div>
+						<div class="col-1">2837</div>
+						<div class="col-2"><a href="#">홍길순</a></div>
+						<div class="col-7 txt-left"><a href="#">010-1234-5678</a></div>
+					</div>
+					<div>
+						<div class="col-3 pd-left10">일반</div>
+						<div class="col-3 txt-left">2018-10-12</div>
+						<div class="col-2"><a href="#">계약승인(Y)</a></div>
+						<div class="col-2"><a href="#">출고(Y)</a></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Smaill 이상 사용 -->
+		<div class="not-mb">
+			<div class="table-col">
+				<table>
+					<caption>조회결과</caption>
+					<colgroup class="colgroup-hidden">
+						<!-- Medium까지 사용 -->
+						<col>
+						<col>
+						<col style="width: 22%">
+						<col>
+						<col style="width: 18%;">
+						<col>
+						<col>
+					</colgroup>
+					<colgroup class="colgroup-view">
+						<!-- Large이상 사용 -->
+						<col>
+						<col style="width: 10%">
+						<col>
+						<col>
+						<col style="width: 22%">
+						<col>
+						<col style="width: 18%;">
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">순번</th>
+							<th scope="col" class="data-hidden">사업소</th>
+							<th scope="col" class="data-hidden">담당SC</th>
+							<th scope="col">고객명</th>
+							<th scope="col">휴대폰번호</th>
+							<th scope="col">상태</th>
+							<th scope="col">등록일자</th>
+							<th scope="col">계약</th>
+							<th scope="col">출고</th>
+							<th scope="col" class="data-hidden">경과일자</th>
+							<th scope="col" class="data-hidden">관리유형</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2837</td>
+							<td class="data-hidden">프리미어</td>
+							<td class="data-hidden">이프로</td>
+							<td><a href="#">홍길동</a></td>
+							<td><a href="#">010-1234-5678</a></td>
+							<td>잠재</td>
+							<td>2018-10-12</td>
+							<td>N</td>
+							<td>N</td>
+							<td class="data-hidden">3</td>
+							<td class="data-hidden">-</td>
+						</tr>
+						<tr>
+							<td>2836</td>
+							<td class="data-hidden">노블모터스</td>
+							<td class="data-hidden">김노모</td>
+							<td><a href="#">홍길순</a></td>
+							<td><a href="#">010-3456-9090</a></td>
+							<td>일반</td>
+							<td>2018-10-12</td>
+							<td><a href="#">Y(승인)</a></td>
+							<td><a href="#">Y</a></td>
+							<td class="data-hidden">-</td>
+							<td class="data-hidden">가망</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<xmp class="xmp">
+			<div class="table-top-cont">
+				<span class="list-count">조회결과 <strong>2837</strong> 건</span>
+				<div class="btn-area">
+					<div class="right">
+						<button type="button" class="btn-add">등록</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Smaill까지 사용 -->
+			<div class="mb-only">
+				<ul class="data-table">
+					<li class="table-grid">
+						<div>
+							<div class="col-1">2837</div>
+							<div class="col-2"><a href="#">홍길동</a></div>
+							<div class="col-7 txt-left"><a href="#">010-1234-5678</a></div>
+						</div>
+						<div>
+							<div class="col-3 pd-left10">잠재</div>
+							<div class="col-3 txt-left">2018-10-12</div>
+							<div class="col-2">계약(N)</div>
+							<div class="col-2">출고(N)</div>
+						</div>
+					</li>
+
+					<li class="table-grid">
+						<div>
+							<div class="col-1">2837</div>
+							<div class="col-2"><a href="#">홍길순</a></div>
+							<div class="col-7 txt-left"><a href="#">010-1234-5678</a></div>
+						</div>
+						<div>
+							<div class="col-3 pd-left10">일반</div>
+							<div class="col-3 txt-left">2018-10-12</div>
+							<div class="col-2"><a href="#">계약승인(Y)</a></div>
+							<div class="col-2"><a href="#">출고(Y)</a></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Smaill 이상 사용 -->
+			<div class="not-mb">
+				<div class="table-col">
+					<table>
+						<caption>조회결과</caption>
+						<colgroup class="colgroup-hidden">
+							<!-- Medium까지 사용 -->
+							<col>
+							<col>
+							<col style="width: 22%">
+							<col>
+							<col style="width: 18%;">
+							<col>
+							<col>
+						</colgroup>
+						<colgroup class="colgroup-view">
+							<!-- Large이상 사용 -->
+							<col>
+							<col style="width: 10%">
+							<col>
+							<col>
+							<col style="width: 22%">
+							<col>
+							<col style="width: 18%;">
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col" class="data-hidden">사업소</th>
+								<th scope="col" class="data-hidden">담당SC</th>
+								<th scope="col">고객명</th>
+								<th scope="col">휴대폰번호</th>
+								<th scope="col">상태</th>
+								<th scope="col">등록일자</th>
+								<th scope="col">계약</th>
+								<th scope="col">출고</th>
+								<th scope="col" class="data-hidden">경과일자</th>
+								<th scope="col" class="data-hidden">관리유형</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2837</td>
+								<td class="data-hidden">프리미어</td>
+								<td class="data-hidden">이프로</td>
+								<td><a href="#">홍길동</a></td>
+								<td><a href="#">010-1234-5678</a></td>
+								<td>잠재</td>
+								<td>2018-10-12</td>
+								<td>N</td>
+								<td>N</td>
+								<td class="data-hidden">3</td>
+								<td class="data-hidden">-</td>
+							</tr>
+							<tr>
+								<td>2836</td>
+								<td class="data-hidden">노블모터스</td>
+								<td class="data-hidden">김노모</td>
+								<td><a href="#">홍길순</a></td>
+								<td><a href="#">010-3456-9090</a></td>
+								<td>일반</td>
+								<td>2018-10-12</td>
+								<td><a href="#">Y(승인)</a></td>
+								<td><a href="#">Y</a></td>
+								<td class="data-hidden">-</td>
+								<td class="data-hidden">가망</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">TABLE SCROLL</h2>
+		<div class="table-scroll">
+			<div class="table-col">
+				<table>
+					<caption>조회결과</caption>
+					<colgroup>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">사업소</th>
+							<th scope="col">잠재고객<br>(A+B)</th>
+							<th scope="col">첫방문 (A)</th>
+							<th scope="col">재방문 (B)</th>
+							<th scope="col">시승</th>
+							<th scope="col">비관리</th>
+							<th scope="col">미배정</th>
+							<th scope="col">출고</th>
+							<th scope="col">Drop</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">강남</th>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+						</tr>
+						<tr>
+							<th scope="row">강서</th>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+						</tr>
+						<tr>
+							<th scope="row">일산</th>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<xmp class="xmp">
+			<div class="table-scroll">
+				<div class="table-col">
+					<table>
+						<caption>조회결과</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">사업소</th>
+								<th scope="col">잠재고객<br>(A+B)</th>
+								<th scope="col">첫방문 (A)</th>
+								<th scope="col">재방문 (B)</th>
+								<th scope="col">시승</th>
+								<th scope="col">비관리</th>
+								<th scope="col">미배정</th>
+								<th scope="col">출고</th>
+								<th scope="col">Drop</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">강남</th>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+							</tr>
+							<tr>
+								<th scope="row">강서</th>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+							</tr>
+							<tr>
+								<th scope="row">일산</th>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+								<td>00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">PAGING</h2>
+		<div class="pagination">
+			<a href="#" class="first">처음</a>
+			<a href="#" class="prev">이전</a>
+			<span class="page-num">
+				<strong title="현재">1</strong>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</span>
+			<a href="#" class="next">다음</a>
+			<a href="#" class="last">마지막</a>
+		</div>
+		<xmp class="xmp">
+			<div class="pagination">
+				<a href="#" class="first">처음</a>
+				<a href="#" class="prev">이전</a>
+				<span class="page-num">
+					<strong title="현재">1</strong>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+				</span>
+				<a href="#" class="next">다음</a>
+				<a href="#" class="last">마지막</a>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">INPUT TABLE</h2>
+		<div class="form-cont">
+			<ul class="info-cont">
+				<li>
+					<label for="member" class="info-tit"><span>고객구분</span></label>
+					<div class="input-width">
+						<select id="member" class="select-box">
+							<option>개인</option>
+						</select>
+					</div>
+				</li>
+				<li>
+					<label for="name" class="info-tit"><span>고객명</span></label>
+					<div class="input-width">
+						<div class="input-search">
+							<input type="text" id="name" class="input-txt" placeholder="홍길동">
+							<button type="button" class="input-search-btn">찾기</button>
+						</div>
+					</div>
+				</li>
+				<li>
+					<label for="birth" class="info-tit"><span>생년월일</span></label>
+					<div class="input-width">
+						<div class="calendar-box">
+							<input type="text" id="birth" class="input-txt" placeholder="1989-12-104">
+							<!-- <button type="button" class="calendar-btn">날짜선택</button> -->
+						</div>
+					</div>
+				</li>
+				<li class="width-full date-time-cont">
+					<div class="division-box">
+						<label for="cal" class="info-tit"><span>활동일자</span></label>
+						<div class="input-width">
+							<div class="calendar-box">
+								<input type="text" id="cal" class="input-txt" placeholder="1989-12-104">
+								<!-- <button type="button" class="calendar-btn">날짜선택</button> -->
+							</div>
+						</div>
+					</div>
+					<div class="division-box">
+						<div class="input-width">
+							<div class="time-cont">
+								<div class="time-box">
+									<input type="text" class="input-txt">
+									<button type="button" class="time-btn">시작시간선택</button>
+								</div>
+								<span class="mark">~</span>
+								<div class="time-box finish-time">
+									<input type="text" class="input-txt">
+									<button type="button" class="time-btn">종료시간선택</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<strong class="info-tit"><span>성별</span></strong>
+					<div class="input-width toggle-gender">
+						<div class="toggle-cont">
+							<input type="radio" id="genM" checked name="toggle01">
+							<label for="genM" tabindex="0"><span>남</span></label>
+							<input type="radio" id="genW" name="toggle01">
+							<label for="genW" tabindex="0"><span>여</span></label>
+						</div>
+						<button type="button" class="btn-gray">중복확인</button>
+					</div>
+				</li>
+				<li>
+					<label for="lice-txt02" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+					<div class="input-width overlap-check">
+						<input type="text" id="lice-txt02" class="input-txt" placeholder="010-4567-7897">
+						<button type="button" class="btn-gray">중복확인</button>
+					</div>
+				</li>
+				<li class="width-full">
+					<div class="division-box">
+						<label for="tel1" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+						<div class="input-width">
+							<input type="text" id="tel1" class="input-txt" disabled="disabled">
+						</div>
+					</div>
+
+					<div class="division-box">
+						<label for="tel2" class="info-tit"><span>추가연락처</span></label>
+						<div class="input-width">
+							<input type="text" id="tel2" class="input-txt" placeholder="추가연락처 '-'제외 입력">
+						</div>
+					</div>
+				</li>
+				<li class="width-full add-cont">
+					<div class="division-box add-1">
+						<label for="add" class="info-tit"><span>주소</span></label>
+						<div class="input-width">
+							<button type="button" class="btn-white">우편번호 찾기</button>
+							<input type="text" id="add" class="input-txt" placeholder="기본주소">
+						</div>
+					</div>
+					<div class="division-box">
+						<div class="input-width">
+							<input type="text" class="input-txt" placeholder="상세주소">
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<div class="division-box">
+						<label for="email" class="info-tit"><span>이메일주소</span></label>
+						<div class="input-width">
+							<input type="text" id="email" class="input-txt" placeholder="이메일 주소 ex)mail@email.com">
+						</div>
+					</div>
+					<div class="division-box">
+						<label for="src" class="info-tit"><span>검색어</span></label>
+						<div class="input-width">
+							<input type="text" id="src" class="input-txt" placeholder="검색어">
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<label for="a1" class="info-tit"><span>특이사항</span></label>
+					<div class="input-width">
+						<div class="input-search">
+							<input type="text" id="a1" class="input-txt">
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<strong class="info-tit"><span>금융상품정보</span></strong>
+					<div class="input-width">
+						<p class="info-cont-txt">[상품종료일자 : 2018-11-30, 상품등록일자 : 2018-11-06]</p>
+					</div>
+				</li>
+				<li>
+					<label for="disc1" class="info-tit"><span>할인금액</span></label>
+					<div class="input-width">
+						<div class="unit-cont">
+							<input type="text" id="disc1" class="input-txt">
+							<span class="unit">원</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="separation">
+			<strong class="table-tit">고객 관심 정보</strong>
+			<div class="form-cont">
+				<ul class="info-cont">
+					<li>
+						<label for="brand" class="info-tit"><span>브랜드</span></label>
+						<div class="input-width">
+							<select id="brand" class="select-box">
+								<option>브랜드</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label for="model" class="info-tit"><span>관심모델</span></label>
+						<div class="input-width">
+							<select id="model" class="select-box">
+								<option>관심모델</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label for="url" class="info-tit"><span>유입경로</span></label>
+						<div class="input-width">
+							<select id="url" class="select-box">
+								<option>유입경로</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label for="urlType" class="info-tit"><span>유입유형</span></label>
+						<div class="input-width">
+							<select id="urlType" class="select-box">
+								<option>유입유형</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label for="buy" class="info-tit"><span>예상구매 시기</span></label>
+						<div class="input-width">
+							<select id="buy" class="select-box">
+								<option>예상구매시기</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<xmp class="xmp">
+			<div class="form-cont">
+				<ul class="info-cont">
+					<li>
+						<label for="member" class="info-tit"><span>고객구분</span></label>
+						<div class="input-width">
+							<select id="member" class="select-box">
+								<option>개인</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label for="name" class="info-tit"><span>고객명</span></label>
+						<div class="input-width">
+							<div class="input-search">
+								<input type="text" id="name" class="input-txt" placeholder="홍길동">
+								<button type="button" class="input-search-btn">찾기</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label for="birth" class="info-tit"><span>생년월일</span></label>
+						<div class="input-width">
+							<div class="calendar-box">
+								<input type="text" id="birth" class="input-txt" placeholder="1989-12-104">
+								<!-- <button type="button" class="calendar-btn">날짜선택</button> -->
+							</div>
+						</div>
+					</li>
+					<li class="width-full date-time-cont">
+						<div class="division-box">
+							<label for="cal" class="info-tit"><span>활동일자</span></label>
+							<div class="input-width">
+								<div class="calendar-box">
+									<input type="text" id="cal" class="input-txt" placeholder="1989-12-104">
+									<!-- <button type="button" class="calendar-btn">날짜선택</button> -->
+								</div>
+							</div>
+						</div>
+						<div class="division-box">
+							<div class="input-width">
+								<div class="time-cont">
+									<div class="time-box">
+										<input type="text" class="input-txt">
+										<button type="button" class="time-btn">시작시간선택</button>
+									</div>
+									<span class="mark">~</span>
+									<div class="time-box finish-time">
+										<input type="text" class="input-txt">
+										<button type="button" class="time-btn">종료시간선택</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>성별</span></strong>
+						<div class="input-width toggle-gender">
+							<div class="toggle-cont">
+								<input type="radio" id="genM" checked name="toggle01">
+								<label for="genM" tabindex="0"><span>남</span></label>
+								<input type="radio" id="genW" name="toggle01">
+								<label for="genW" tabindex="0"><span>여</span></label>
+							</div>
+							<button type="button" class="btn-gray">중복확인</button>
+						</div>
+					</li>
+					<li>
+						<label for="lice-txt02" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+						<div class="input-width overlap-check">
+							<input type="text" id="lice-txt02" class="input-txt" placeholder="010-4567-7897">
+							<button type="button" class="btn-gray">중복확인</button>
+						</div>
+					</li>
+					<li class="width-full">
+						<div class="division-box">
+							<label for="tel1" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+							<div class="input-width">
+								<input type="text" id="tel1" class="input-txt" placeholder="010-1234-5647" disabled="disabled">
+							</div>
+						</div>
+
+						<div class="division-box">
+							<label for="tel2" class="info-tit"><span>추가연락처</span></label>
+							<div class="input-width">
+								<input type="text" id="tel2" class="input-txt" placeholder="추가연락처 '-'제외 입력">
+							</div>
+						</div>
+					</li>
+					<li class="width-full add-cont">
+						<div class="division-box add-1">
+							<label for="add" class="info-tit"><span>주소</span></label>
+							<div class="input-width">
+								<button type="button" class="btn-white">우편번호 찾기</button>
+								<input type="text" id="add" class="input-txt" placeholder="기본주소">
+							</div>
+						</div>
+						<div class="division-box">
+							<div class="input-width">
+								<input type="text" class="input-txt" placeholder="상세주소">
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<div class="division-box">
+							<label for="email" class="info-tit"><span>이메일주소</span></label>
+							<div class="input-width">
+								<input type="text" id="email" class="input-txt" placeholder="이메일 주소 ex)mail@email.com">
+							</div>
+						</div>
+						<div class="division-box">
+							<label for="src" class="info-tit"><span>검색어</span></label>
+							<div class="input-width">
+								<input type="text" id="src" class="input-txt" placeholder="검색어">
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<label for="a1" class="info-tit"><span>특이사항</span></label>
+						<div class="input-width">
+							<div class="input-search">
+								<input type="text" id="a1" class="input-txt">
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<strong class="info-tit"><span>금융상품정보</span></strong>
+						<div class="input-width">
+							<p class="info-cont-txt">[상품종료일자 : 2018-11-30, 상품등록일자 : 2018-11-06]</p>
+						</div>
+					</li>
+					<li>
+						<label for="disc1" class="info-tit"><span>할인금액</span></label>
+						<div class="input-width">
+							<div class="unit-cont">
+								<input type="text" id="disc1" class="input-txt">
+								<span class="unit">원</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="separation">
+				<strong class="table-tit">고객 관심 정보</strong>
+				<div class="form-cont">
+					<ul class="info-cont">
+						<li>
+							<label for="brand" class="info-tit"><span>브랜드</span></label>
+							<div class="input-width">
+								<select id="brand" class="select-box">
+									<option>브랜드</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="model" class="info-tit"><span>관심모델</span></label>
+							<div class="input-width">
+								<select id="model" class="select-box">
+									<option>관심모델</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="url" class="info-tit"><span>유입경로</span></label>
+							<div class="input-width">
+								<select id="url" class="select-box">
+									<option>유입경로</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="urlType" class="info-tit"><span>유입유형</span></label>
+							<div class="input-width">
+								<select id="urlType" class="select-box">
+									<option>유입유형</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="buy" class="info-tit"><span>예상구매 시기</span></label>
+							<div class="input-width">
+								<select id="buy" class="select-box">
+									<option>예상구매시기</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">TABLE (disabled)</h2>
+		<div class="form-cont form-only">
+			<ul class="info-cont">
+				<li>
+					<label for="d01" class="info-tit"><span>딜러계약 번호</span></label>
+					<div class="input-width">
+						<select id="d01" class="select-box">
+							<option>브랜드</option>
+						</select>
+					</div>
+				</li>
+				<li>
+					<strong class="info-tit"><span>상태</span></strong>
+					<div class="input-width">
+						<div class="input-disabled">계약승인</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="table-tit-cont">
+			<div class="confirm-check">
+				<strong class="table-tit">계약자 정보</strong>
+				<div class="checkbox-set">
+					<input type="checkbox" id="check001">
+					<label for="check001">계약자와 동일</label>
+				</div>
+			</div>
+			<div class="btn-area right">
+				<button type="button" class="btn-add width-auto">고객정보수정</button>
+			</div>
+		</div>
+
+		<div class="form-cont">
+			<ul class="info-cont">
+				<li>
+					<label for="name10" class="info-tit"><span>고객명</span></label>
+					<div class="input-width">
+						<div class="input-search">
+							<input type="text" id="name10" class="input-txt" placeholder="홍길동">
+							<button type="button" class="input-search-btn">찾기</button>
+						</div>
+					</div>
+				</li>
+				<li>
+					<strong class="info-tit"><span>고객구분</span></strong>
+					<div class="input-width">
+						<div class="input-disabled">개인</div>
+					</div>
+				</li>
+				<li>
+					<strong class="info-tit"><span>생년월일</span></strong>
+					<div class="input-width">
+						<div class="input-disabled birth-confirm">1989-12-10</div>
+						<div class="input-disabled gender-confirm">남</div>
+					</div>
+				</li>
+				<li>
+					<strong class="info-tit"><span>휴대폰번호</span></strong>
+					<div class="input-width">
+						<div class="input-disabled">010-0000-0000</div>
+					</div>
+				</li>
+				<li class="width-full add-cont">
+					<div class="division-box add-1">
+						<strong class="info-tit"><span>자택주소</span></strong>
+						<div class="input-width">
+							<div class="input-disabled">(우편번호)자택주소1</div>
+						</div>
+					</div>
+					<div class="division-box">
+						<div class="input-width">
+							<div class="input-disabled">자택주소2</div>
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<div class="division-box">
+						<div class="input-confirm">
+							<div class="checkbox-set"><input type="checkbox" id="chk002"><label for="chk002">공동소유여부</label></div>
+							<button type="button" class="btn-white width-auto">공동명의 고객 조회</button>
+						</div>
+					</div>
+					<div class="division-box confirm-name">
+						<div class="input-width">
+							<div class="input-disabled">공동명의자:홍길순</div>
+						</div>
+					</div>
+				</li>
+				<li class="width-full car-spec-cont">
+					<div class="division-box car-spec1">
+						<strong class="info-tit"><span>차량사양</span></strong>
+						<div class="input-width">
+							<div class="input-disabled"></div>
+							<div class="input-disabled"></div>
+							<div class="input-disabled"></div>
+						</div>
+					</div>
+					<div class="division-box car-spec2">
+						<div class="input-width">
+							<div class="input-disabled"></div>
+							<div class="input-disabled"></div>
+							<div class="input-disabled"></div>
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<div class="division-box">
+						<strong class="info-tit"><span>차량색상</span></strong>
+						<div class="input-width car-color-cont">
+							<div class="input-disabled car-color1"></div>
+							<div class="input-disabled car-color2"></div>
+						</div>
+					</div>
+					<div class="division-box">
+						<strong class="info-tit"><span>판매유형</span></strong>
+						<div class="input-width">
+							<select id="member" class="select-box" disabled="disabled">
+								<option>개인</option>
+							</select>
+						</div>
+					</div>
+				</li>
+				<li class="width-full">
+					<div class="division-box">
+						<strong class="info-tit"><span>관심차종</span></strong>
+						<div class="input-width car-model-cont">
+							<div class="input-disabled car-model"></div>
+							<select id="member" class="select-box car-model-select" disabled="disabled">
+								<option>관심차종-전체</option>
+							</select>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<p class="txt-right point-color-red">※ SMS 수신동의 고객민 추출 됩니다.</p>
+		</div>
+		<xmp class="xmp">
+			<div class="form-cont form-only">
+				<ul class="info-cont">
+					<li>
+						<label for="brand" class="info-tit"><span>딜러계약 번호</span></label>
+						<div class="input-width">
+							<select id="brand" class="select-box">
+								<option>브랜드</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>상태</span></strong>
+						<div class="input-width">
+							<div class="input-disabled">계약승인</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="table-tit-cont">
+				<div class="confirm-check">
+					<strong class="table-tit">계약자 정보</strong>
+					<div class="checkbox-set">
+						<input type="checkbox" id="check001">
+						<label for="check001">계약자와 동일</label>
+					</div>
+				</div>
+				<div class="btn-area right">
+					<button type="button" class="btn-add width-auto">고객정보수정</button>
+				</div>
+			</div>
+
+			<div class="form-cont">
+				<ul class="info-cont">
+					<li>
+						<label for="name10" class="info-tit"><span>고객명</span></label>
+						<div class="input-width">
+							<div class="input-search">
+								<input type="text" id="name10" class="input-txt" placeholder="홍길동">
+								<button type="button" class="input-search-btn">찾기</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>고객구분</span></strong>
+						<div class="input-width">
+							<div class="input-disabled">개인</div>
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>생년월일</span></strong>
+						<div class="input-width">
+							<div class="input-disabled birth-confirm">1989-12-10</div>
+							<div class="input-disabled gender-confirm">남</div>
+						</div>
+					</li>
+					<li>
+						<strong class="info-tit"><span>휴대폰번호</span></strong>
+						<div class="input-width">
+							<div class="input-disabled">010-0000-0000</div>
+						</div>
+					</li>
+					<li class="width-full add-cont">
+						<div class="division-box add-1">
+							<strong class="info-tit"><span>자택주소</span></strong>
+							<div class="input-width">
+								<div class="input-disabled">(우편번호)자택주소1</div>
+							</div>
+						</div>
+						<div class="division-box">
+							<div class="input-width">
+								<div class="input-disabled">자택주소2</div>
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<div class="division-box">
+							<div class="input-confirm">
+								<div class="checkbox-set"><input type="checkbox" id="chk002"><label for="chk002">공동소유여부</label></div>
+								<button type="button" class="btn-white width-auto">공동명의 고객 조회</button>
+							</div>
+						</div>
+						<div class="division-box confirm-name">
+							<div class="input-width">
+								<div class="input-disabled">공동명의자:홍길순</div>
+							</div>
+						</div>
+					</li>
+					<li class="width-full car-spec-cont">
+						<div class="division-box car-spec1">
+							<strong class="info-tit"><span>차량사양</span></strong>
+							<div class="input-width">
+								<div class="input-disabled"></div>
+								<div class="input-disabled"></div>
+								<div class="input-disabled"></div>
+							</div>
+						</div>
+						<div class="division-box car-spec2">
+							<div class="input-width">
+								<div class="input-disabled"></div>
+								<div class="input-disabled"></div>
+								<div class="input-disabled"></div>
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<div class="division-box">
+							<strong class="info-tit"><span>차량색상</span></strong>
+							<div class="input-width car-color-cont">
+								<div class="input-disabled car-color1"></div>
+								<div class="input-disabled car-color2"></div>
+							</div>
+						</div>
+						<div class="division-box">
+							<strong class="info-tit"><span>판매유형</span></strong>
+							<div class="input-width">
+								<select id="member" class="select-box" disabled="disabled">
+									<option>개인</option>
+								</select>
+							</div>
+						</div>
+					</li>
+					<li class="width-full">
+						<div class="division-box">
+							<strong class="info-tit"><span>관심차종</span></strong>
+							<div class="input-width car-model-cont">
+								<div class="input-disabled car-model"></div>
+								<select id="member" class="select-box car-model-select" disabled="disabled">
+									<option>관심차종-전체</option>
+								</select>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<p class="txt-right point-color-red">※ SMS 수신동의 고객민 추출 됩니다.</p>
+			</div>
+		</xmp>
+
+
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

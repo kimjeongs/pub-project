@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/business.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">영업활동관리</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div><a href="#"><span>월간계획</span></a></div>
+			<div><a href="#"><span>일간계획</span></a></div>
+			<div><a href="#"><span>활동현황</span></a></div>
+			<div class="on"><a href="#"><span>카라이프</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">담당 SC</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel01" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel01" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel02" class="info-tit"><span>담당 SC</span></label>
+							<div class="input-width">
+								<select id="sel02" class="select-box" disabled="disabled">
+									<option>담당 SC 선택</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">활동조회조건</strong>
+					<ul class="info-cont">
+						<!-- 2018-12-19 달력 인풋 한줄로 붙임 -->
+						<li>
+							<label for="cal01" class="info-tit"><span>계약년월일</span></label>
+							<div class="input-width">
+								<div class="calendar-cont">
+									<div class="calendar-box">
+										<input type="text" id="cal01" class="input-txt" placeholder="시작 년월일">
+									</div>
+									<span class="mark">~</span>
+									<div class="calendar-box">
+										<input type="text" class="input-txt" placeholder="종료 년월일">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="division-box range prev-next">
+								<div class="prev_next">
+									<button type="button" class="prev">이전</button>
+									<button type="button" class="next">다음</button>
+								</div>
+									<div class="toggle-cont toggle-3 disabled"><!-- 2019-03-11  disabled 시 사용-->
+									<input type="radio" id="rad01" name="tog2" checked>
+									<label for="rad01" tabindex="0"><span>D<span class="hidden-txt">ay</span></span></label>
+									<input type="radio" id="rad02" name="tog2">
+									<label for="rad02" tabindex="0"><span>W<span class="hidden-txt">eek</span></span></label>
+									<input type="radio" id="rad03" name="tog2">
+									<label for="rad03" tabindex="0"><span>M<span class="hidden-txt">onth</span></span></label>
+								</div>
+							</div>
+						</li>
+						<!-- //2018-12-19 달력 인풋 한줄로 붙임 -->
+
+						<li>
+							<label for="sel03" class="info-tit"><span>활동구분</span></label>
+							<div class="input-width divide">
+								<select id="sel03" class="select-box">
+									<option>전체</option>
+								</select>
+								<select id="sel04" class="select-box">
+									<option>하위구분</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<!-- 2018-12-18 btn-area 추가 -->
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button><!-- 2018-12-19 클래스 수정 -->
+					</div>
+					<!-- //2018-12-18 btn-area 추가 -->
+				</div>
+				<div class="result-cont">
+					<div class="table-top-cont">
+						<span class="list-count">조회결과 <strong>2837</strong> 건</span>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1 txt-left">2837</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-3 txt-left"><a href="#">홍길동</a></div>
+										<div class="col-7 txt-right"><a href="#">010-1234-5678</a></div>
+									</div>
+									<div>
+										<div class="col-3 txt-left">ALTIMA 2.5</div>
+										<div class="col-7 txt-right">[활동] 생일자</div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">생성일자:2018-10.12</div>
+										<div class="col-5 txt-right">예정일자:2018-10-29</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1 txt-left">2836</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-3 txt-left"><a href="#">홍길순</a></div>
+										<div class="col-7 txt-right"><a href="#">010-1234-9090</a></div>
+									</div>
+									<div>
+										<div class="col-3 txt-left">ALTIMA 2.5</div>
+										<div class="col-7 txt-right">[활동] 100,000KM 점검</div>
+									</div>
+									<div>
+										<div class="col-5 txt-left">생성일자:2018-10.12</div>
+										<div class="col-5 txt-right">예정일자:2018-10-29</div>
+									</div>
+								</div>
+							</li>
+							<!-- 2019-03-12 추가 -->
+							<li class="table-grid no-data">
+								조회된 데이터가 없습니다
+							</li>
+							<!-- //2019-03-12 -->
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- Medium까지 사용 -->
+									<col style="width: 10%">
+									<col style="width: 15%">
+									<col style="width: 10%">
+									<col style="width: 20%">
+									<col>
+									<col>
+									<col style="width: 15%">
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- Large이상 사용 -->
+									<col style="width: 5%">
+									<col>
+									<col style="width: 10%">
+									<col>
+									<col style="width: 12%">
+									<col>
+									<col style="width: 13%">
+									<col style="width: 10%">
+									<col style="width: 10%">
+									<col style="width: 15%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">담당SC</th>
+										<th scope="col">생성일자</th>
+										<th scope="col">고객명</th>
+										<th scope="col">휴대폰번호</th>
+										<th scope="col">모델명</th>
+										<th scope="col">활동구분</th>
+										<th scope="col" class="data-hidden">차량등록일</th>
+										<th scope="col">예정일자</th>
+										<th scope="col" class="data-hidden">주소</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2837</td>
+										<td class="data-hidden">이프로</td>
+										<td>2018-10-12</td>
+										<td><a href="#">홍길순</a></td>
+										<td>010-1234-5678</td>
+										<td>ALTIMA 2.5</td>
+										<td>생일자</td>
+										<td class="data-hidden">2014-10-12</td>
+										<td>2018-10-12</td>
+										<td class="data-hidden ellipsis">대전광역시 유성구 유성구</td>
+									</tr>
+									<tr>
+										<td>2836</td>
+										<td class="data-hidden">김노모</td>
+										<td>2018-10-12</td>
+										<td><a href="#">홍길동</a></td>
+										<td>010-1234-9090</td>
+										<td>JUKE SV</td>
+										<td>출고일+4년</td>
+										<td class="data-hidden">2014-10-12</td>
+										<td>2018-10-12</td>
+										<td class="data-hidden ellipsis">경기도 김포시 고촌읍 땡땡면</td>
+									</tr>
+									<!-- 2019-03-12 추가 -->
+									<tr class="no-data">
+										<td colspan="10">조회된 데이터가 없습니다.</td>
+									</tr>
+									<!-- //2019-03-12-->
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<!-- 2018-12-18 삭제 <a href="#">1</a> -->
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

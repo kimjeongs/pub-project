@@ -1,0 +1,426 @@
+body{
+   overflow-y: auto;
+   overflow-x: hidden;
+   height: auto;
+}
+.print-wrap{
+   position: relative;
+   left: 50%;
+   width:800px;
+   padding:20px;
+   transform: translateX(-50%);
+}
+.print-tit{
+   padding:15px 0;
+   width:100%;
+   text-align: center;
+   font-weight: 500;
+   font-size:20px;
+}
+.print-area{
+   margin-top:30px;
+}
+.estimate-tit{
+   float:left;
+   padding-top:15px;
+   font-weight: 500;
+   vertical-align: bottom;
+}
+.print-logo{
+   float:right;
+}
+.reception-txt{
+   padding:5px 0;
+}
+.reception-txt em{
+   display:block;
+   float:right;
+   padding-right:55px;
+}
+.car-detail li{
+   float:left;
+   padding:5px 0;
+   width:50%;
+   border-top:1px solid #eee;
+}
+.car-detail li:nth-child(odd){
+   clear:both;
+}
+.car-detail .car-type{
+   display:inline-block;
+   width:50px;
+}
+.clear-both:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.pay-box{
+   float:left;
+   width:49%;
+   margin-top:20px;
+   margin-left:2%;
+   border:1px solid #eee;
+}
+.pay-box:nth-child(odd){
+   margin-left:0;
+}
+.pay-box .pay-tit{
+   padding:10px;
+   border-bottom:1px solid #eee;
+}
+.pay-box .pay-list{
+   padding:10px;
+}
+.pay-box .pay-list li{
+   position: relative;
+   min-height:25px;
+   line-height:25px;
+   border-top:1px solid #eee;
+}
+.pay-box .pay-list li:last-child{
+   margin-bottom:30px;
+}
+.pay-box .pay-list li span{
+   display:block;
+   float:right;
+}
+.pay-box .pay-list li span.opt{
+   position: absolute;
+   left:50%;
+   top:0;
+   width: 100%;
+   transform: translateX(-50%);
+   text-align: center;
+}
+.pay-box.full{
+   width:100%;
+   clear:both;
+}
+.pay-box .doc-cont{
+   padding:10px;
+}
+.pay-box .doc-wrap{
+   float:left;
+}
+.pay-box .traders{
+   padding:5px 0;
+   border-bottom:1px solid #eee;
+}
+.pay-box .trader{
+   float:left;
+   font-weight: 500;
+}
+.pay-box .type1{
+   width:45%;
+}
+.pay-box .type2{
+   width:26.5%;
+   margin-left:1%;
+}
+.document{
+   margin-top:10px;
+}
+.pay-box .doc-box{
+   width:100%;
+   padding:10px;
+   border:1px solid #eee;
+}
+.doc-info1{
+   border-top:1px solid #eee;
+   padding:5px 10px;
+   margin-top:10px;
+}
+.btn-wrap{
+   text-align: center;
+   margin-top:20px;
+}
+.btn-wrap button{
+   margin-left:20px;
+}
+.btn-wrap button:first-child{
+   margin-left:0;
+}
+
+/* 移대뱶 �룞�쓽�꽌 */
+.company-addr {
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 1.7;
+   text-align: center;
+}
+.company-addr strong {
+   display: block;
+   font-size: 12px;
+}
+.print-area .num {
+   text-align: right;
+   margin-top: 10px;
+   padding-bottom:3px;
+}
+.print-area .num > span {
+   display: inline-block;
+   width: 200px;
+   text-align: left;
+}
+.print-area .num > span >span{
+	font-weight:300;
+	display:inline-block;
+	margin-left:5px;	
+}
+.agreement_tit {
+   text-align: center;
+}
+.agreement_tit strong {
+   display: block;
+   padding: 15px 0;
+   font-size: 32px;
+   border-top: 1px solid #000;
+}
+.agreement_tit .tit_txt {
+   padding: 15px 0;
+   font-size: 18px;
+   border-top: 1px solid #000;
+   border-bottom: 1px solid #000;
+}
+.agreement_list {
+   padding: 30px 50px 0;
+   overflow: hidden;
+   letter-spacing: 0;
+}
+.agreement_list > strong {
+   font-size: 16px;
+   font-weight: bold;
+}
+.agreement_list >div {
+   margin-top: 10px;
+   padding-left: 19px;
+   font-size: 12px;
+   line-height: 1.7;
+}
+.agreement_list>div> strong {
+   font-size: 14px;
+   font-weight:bold;
+}
+.agreement_list .agree-check {
+   margin-top: 20px;
+}
+.agree-check {
+   float: right;
+}
+.agree-check span {
+   margin-left: 10px;
+   font-size: 12px;
+}
+.agree-check span label{
+   vertical-align: middle;
+}
+
+.receive-agree {
+   padding: 0 50px ;
+   margin-top: 30px;
+}
+.receive-agree+.receive-agree {
+   margin-top: 5px;
+}
+
+.sign-cont {
+   margin-top: 70px;
+   padding-right: 50px;
+   padding-bottom: 20px;
+   overflow: hidden;
+}
+.sign-cont .date {
+   float: left;
+}
+.sign-cont .date span {
+   margin-left: 40px;
+}
+.sign-cont .name {
+   float: right;
+   padding-right:50px;
+   border-bottom: 1px solid #000;
+}
+.sign-cont .name > p {
+   position: relative;
+   display: inline-block;
+   width: 160px;
+   height: 60px;
+   margin: 0 5px;
+   vertical-align: bottom;
+}
+.sign-cont .name .name-box {
+	text-align: center;
+    display: block;
+    margin-top: 40px;
+}
+.sign-cont .name .sign-box {
+   position: absolute;
+   top: 17px;
+   left: 69px;
+   display: block;
+   width: 250px;
+   height: 50px;
+   /* background: rgba(0,0,0,0.5); */
+}
+.sign-cont .name .sign-box img {
+   position: absolute;
+   left: 0px; 
+   top: 3px;  /* 싸인이미지에 밑줄 겹치게 처리 */
+   width: auto;
+   height: 100%;
+   /* transform: translateX(-50%); */
+}
+.confirmation-date {
+   text-align: right;
+   margin-top: 40px;
+}
+.bottom-logo {
+   border-top: 1px solid #000;
+   padding: 20px 0 30px;
+   text-align: center;
+}
+
+/* nissan */
+.print-area.nissan {
+   margin-top: 0;
+}
+.nissan .agreement_tit {
+   width: 100%;
+   height: 161px;
+   background: url('../img/common/img_print_agree_nissan.png') no-repeat right;
+}
+.nissan .agreement_tit strong {
+   padding: 114px 0 15px;
+   border-top: none;
+   border-bottom: 6px solid #ca062c;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: left;
+}
+.nissan .agreement_list {
+   padding-left: 0;
+   padding-right: 0;
+}
+.nissan .agreement_list>div {
+   padding-left: 0;
+   padding-right: 0;
+   line-height: 1.8;
+}
+.nissan .agreement_list .dealer {
+   font-size: 13px;
+   font-weight: bold;
+}
+.nissan .receive-agree {
+   padding: 0;
+   margin-top: 40px;
+   overflow: hidden;
+}
+.nissan .receive-agree strong {
+   font-weight: bold;
+}
+.nissan .receive-agree strong .dealer {
+   margin-right: 10px;
+}
+.nissan .receive-agree .agree-check {
+   margin-top: 25px;
+}
+.nissan .receive-agree + .receive-agree {
+   margin-top: 18px;
+}
+.nissan .sign-cont {
+   padding: 0;
+   text-align: right;
+   overflow: hidden;
+}
+.nissan .sign-cont .date {
+   float: none;
+}
+.nissan .sign-cont .date strong {
+   font-weight: bold;
+}
+.nissan .sign-cont .date span {
+   margin-left: 56px;
+}
+.nissan .sign-cont .date span:first-of-type {
+   margin-left: 110px;
+}
+.nissan .sign-cont .name {
+   position: relative;
+   width: 310px;
+   height: 80px;
+   padding-right:0;
+   border-bottom: none;
+   text-align: left;
+}
+.nissan .sign-cont .name strong {
+   display: inline-block;
+   height: 80px;
+   font-weight: bold;
+   line-height: 80px;
+}
+.nissan .sign-cont .name .name-box {
+   display: inline-block;
+   width: 265px;
+   margin-top: 0;
+   vertical-align: top;
+}
+.nissan .sign-cont .name .name-box > div {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   text-align: left;
+}
+.nissan .sign-cont .name .name-box > div:after {
+   position: absolute;
+   top: 49px;
+   right: 0;
+   width: 100%;
+   height: 2px;
+   background: #000;
+   content: '';
+}
+.nissan .sign-cont .name .name-box>div > span {
+   display: inline-block;
+   width: 200px;
+   height: 80px;
+   line-height: 80px;
+   text-align: center;
+}
+.nissan .sign-cont .name .sign-box{
+	position:absolute;
+   top: 19px;
+   left: 168px;;
+   width: 140px;
+}
+.nissan .sign-cont .name .sign-box img {
+	width:140px;
+	height:auto;
+}
+
+@media print{
+    .print-wrap {
+       position: relative;
+       width: 100%;
+       padding: 20px 0;
+    }
+
+    .print-tit,
+    .btn-wrap {
+       display: none;
+    }
+
+    .print-tit {
+       margin-top: 0;
+    }
+
+    .pay-box .type1 {
+       width: 40%;
+    }
+
+    .pay-box .type2 {
+       width: 29%;
+    }
+}
+
+

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function () {
+			// 영업활동 계획 달력
+			var eventdays = {
+				"1201": {
+					type: 0,
+					title: "1 | 2",
+					year: ""
+				},
+				"1225": {
+					type: 0,
+					title: "2 | 4",
+					year: "2018"
+				}
+			};
+			$('#datePic').datepicker({
+				
+				beforeShowDay: function (day, inst) {
+					var result;
+					// 포맷에 대해선 다음 참조(http://docs.jquery.com/UI/Datepicker/formatDate)
+					var eventday = eventdays[$.datepicker.formatDate("mmdd", day)];
+					var thisYear = $.datepicker.formatDate("yy", day);
+
+					// exist eventday?
+					if (eventday) {
+						if (thisYear == eventday.year || eventday.year == "") {
+							result = ['eventday', "date-eventday", eventday.title];
+						}
+					}
+
+					if (!result) {
+						switch (day.getDay()) {
+							case 0: // is sunday?
+								result = [true, "date-sunday"];
+								break;
+							case 6: // is saturday?
+								result = [true, "date-saturday"];
+								break;
+							default:
+								result = [true, ""];
+								break;
+						}
+					}
+					return result;
+				}
+			});
+
+			//시승현황 popup
+			$('.car-test-btn').on('click', function(e){
+				var carTestLayer = $('.car-test-date'),
+					layerCose = carTestLayer.find('.btn-close'),
+					dimmed = $('.dimmed-layer');
+
+				e.preventDefault();
+
+				carTestLayer.add(dimmed).css('display', 'block');
+				popupHeight();
+
+				layerCose.on('click', function () {
+					carTestLayer.add(dimmed).removeAttr('style');
+				});
+			});
+
+			// 시승현황 popup 달력
+			var testUser = {
+				"1201": {
+					type: 0,
+					title: "고객명 | 고객명",
+					year: ""
+				},
+				"1225": {
+					type: 0,
+					title: "고객명 | 고객명",
+					year: "2018"
+				}
+			}
+			$('#PopDatePic').datepicker({
+				
+				beforeShowDay: function (day, inst) {
+					var result;
+					// 포맷에 대해선 다음 참조(http://docs.jquery.com/UI/Datepicker/formatDate)
+					var eventday = testUser[$.datepicker.formatDate("mmdd", day)];
+					var thisYear = $.datepicker.formatDate("yy", day);
+
+					// exist eventday?
+					if (eventday) {
+						if (thisYear == eventday.year || eventday.year == "") {
+							result = ['eventday', "date-eventday", eventday.title];
+						}
+					}
+
+					if (!result) {
+						switch (day.getDay()) {
+							case 0: // is sunday?
+								result = [true, "date-sunday"];
+								break;
+							case 6: // is saturday?
+								result = [true, "date-saturday"];
+								break;
+							default:
+								result = [true, ""];
+								break;
+						}
+					}
+					return result;
+				},
+				//일자별 시승고객 popup
+				// 2018-12-19 2번째 팝업 open시 1번째 팝업 dimmed가 위로 오게 처리
+				onSelect: function(dateText, inst) {
+					var userTestLayer = $('.car-test-user'),
+						carTestLayer = $('.car-test-date'),
+						layerCose = userTestLayer.find('.btn-close');
+
+					userTestLayer.css('display', 'block');
+					carTestLayer.css('z-index', '100');
+
+					layerCose.on('click', function () {
+						userTestLayer.removeAttr('style');
+						carTestLayer.css('z-index', '');
+					});
+				}
+				// //2018-12-19 2번째 팝업 open시 1번째 팝업 dimmed가 위로 오게 처리
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap"><!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> --><!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> --><!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">SC-HOME</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="main-top-search sc-home"> <!-- 2018-12-28 클래스추가 -->
+					<div class="main-top-left">
+						<div class="calendar-box">
+							<label for="ds" class="hidden">날짜선택</label>
+							<input type="text" id="ds" class="input-txt" placeholder="날짜를 선택하세요.">
+						</div>
+						<button type="button" class="btn-white">조회</button><!-- 2018-12-19 클래스, 위치 수정 --> <!-- 2018-12-28 버튼 내용 변경-->
+					</div>
+					<div class="main-top-right">
+						<a href="#" class="table-btn red-line car-test-btn">시승현황</a>
+					</div>
+					<!--<button type="button" class="button btn-white">찾기</button> 2018-12-19 클래스, 위치 수정 -->
+				</div>
+
+				<div class="main-cont">
+					<strong class="cont-tit">누적계약률</strong>
+					<ul class="statistics">
+						<li class="statistics-check">
+							<strong><span>년간</span></strong>
+							<span>29%</span>
+						</li>
+						<li>
+							<strong><span>월간</span></strong>
+							<span>29%</span>
+						</li>
+
+						<li>
+							<strong><span>1개월</span></strong>
+							<span>25%</span>
+						</li>
+						<li>
+							<strong><span>3개월</span></strong>
+							<span>29%</span>
+						</li>
+						<li>
+							<strong><span>6개월</span></strong>
+							<span>34%</span>
+						</li>
+						<li>
+							<strong><span>12개월</span></strong>
+							<span>29%</span>
+						</li>
+					</ul>
+				</div>
+				<div class="main-cont">
+					<strong class="cont-tit">잠재고객현황</strong>
+
+					<div class="mb-only"><!-- 모바일만 사용 -->
+						<ul class="statistics">
+							<li class="statistics-check">
+								<strong><span>잠재고객</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>연락률</span></strong>
+								<span>80%</span>
+							</li>
+
+							<li>
+								<strong><span>진행건</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>가망고객</span></strong>
+								<span>0000</span>
+							</li>
+						</ul>
+						<ul class="statistics">
+							<li>
+								<strong><span>가망고객<br>HOT</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>Mtd 계약<br>계약취소</span></strong>
+								<span>80%</span>
+							</li>
+							<li>
+								<strong><span>No Mtd 계약<br>계약취소</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>Mtd 계약고객<br>계약취소</span></strong>
+								<span>0000</span>
+							</li>
+						</ul>
+						<ul class="statistics">
+							<li>
+								<strong><span>No Mtd 계약<br>고객 계약취소</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>출고</span></strong>
+								<span>00</span>
+							</li>
+							<li>
+								<strong><span>비관리</span></strong>
+								<span>000</span>
+							</li>
+							<li>
+								<strong><span>Drop</span></strong>
+								<span>0</span>
+							</li>
+						</ul>
+					</div>
+					<div class="not-mb"><!-- 모바일이상 사용 -->
+						<ul class="statistics">
+							<li class="statistics-check">
+								<strong><span>잠재고객</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>연락률</span></strong>
+								<span>80%</span>
+							</li>
+
+							<li>
+								<strong><span>진행건</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>가망고객</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>가망고객<br>HOT</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>Mtd 계약<br>계약취소</span></strong>
+								<span>80%</span>
+							</li>
+						</ul>
+						<ul class="statistics">
+							<li>
+								<strong><span>No Mtd 계약<br>계약취소</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>Mtd 계약고객<br>계약취소</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>No Mtd 계약<br>고객 계약취소</span></strong>
+								<span>0000</span>
+							</li>
+							<li>
+								<strong><span>출고</span></strong>
+								<span>00</span>
+							</li>
+							<li>
+								<strong><span>비관리</span></strong>
+								<span>000</span>
+							</li>
+							<li>
+								<strong><span>Drop</span></strong>
+								<span>0</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-cont-box">
+					<div class="low-cont-box">
+						<div class="main-cont">
+							<strong class="cont-tit">영업활동기회</strong>
+							<div class="check-list-box">
+								<!-- 2019-03-25 수정 -->
+								<dl class="check-list">
+									<dt><span>경과일수<br><strong>7</strong>일 이내</span></dt>
+									<dd><a href="#">홍길동 - JUKE S - 2달이내 - 6일</a></dd>
+									<dd><a href="#">이방원 - JUKE S - 2달 이내 - 6일</a></dd>
+									<dd><a href="#">강감찬 - ALTIMA 2.5 - 1달이내 - 7일</a></dd>
+								</dl>
+								<dl class="check-list">
+									<dt><span>경과일수<br><strong>14</strong>일 이내</span></dt>
+									<dd><a href="#">이순산 - JUKE S - 2달이내 - 8일</a></dd>
+									<dd><a href="#">선우용서 - JUKE S - 2달 이내 - 13일</a></dd>
+								</dl>
+								<dl class="check-list">
+									<dt><span>경과일수<br><strong>30</strong>일 이내</span></dt>
+									<dd><a href="#">조용필 - JUKE S - 2달이내 - 8일</a></dd>
+									<dd><a href="#">마동탁 - JUKE S - 2달 이내 - 13일</a></dd>
+								</dl>
+								<!-- //2019-03-25 -->
+							</div>
+						</div>
+						<div class="main-cont">
+							<strong class="cont-tit">출고고객기회</strong>
+							<dl class="check-list">
+								<dt><span>보험</span></dt>
+								<dd>홍길동 - JUKE S - 20181114 - 2일 전</dd>
+								<dd>이방원 - ALTIMA 2.5 - 20181115 - 3일 전</dd>
+								<dd>강감찬 - ALTIMA 2.5 - 20181120 - 10일 전</dd>
+								<dd>합동종합운수(주)-QAshaqai SL - 20181202 - 22일전</dd>
+								<dd>이영희 - JUKE SV - 20181205 - 23일 전</dd>
+							</dl>
+							<dl class="check-list">
+								<dt><span>점검예약</span></dt>
+								<dd>홍길동 - JUKE S - 20181114 - 2일 전</dd>
+								<dd>이방원 - ALTIMA 2.5 - 20181115 - 3일 전</dd>
+								<dd>홍난파 - JUKE S - 20181114 - 4일 전</dd>
+							</dl>
+							<dl class="check-list">
+								<dt><span>금융만기</span></dt>
+								<dd>홍길동 - JUKE S - 20181114 - 2일 전</dd>
+								<dd>이방원 - ALTIMA 2.5 - 20181115 - 3일 전</dd>
+							</dl>
+							<dl class="check-list">
+								<dt><span>구매후3년</span></dt>
+								<dd>홍길동 - JUKE S - 20181114 - 2일 전</dd>
+								<dd>이방원 - ALTIMA 2.5 - 20181115 - 3일 전</dd>
+								<dd>이태원 - ALTIMA 2.5 - 20181112 - 2일 전</dd>
+							</dl>
+							<dl class="check-list">
+								<dt><span>구매후4년</span></dt>
+								<dd>홍길동 - JUKE S - 20181114 - 2일 전</dd>
+								<dd>이방원 - ALTIMA 2.5 - 20181115 - 3일 전</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="low-cont-box">
+						<div class="main-cont">
+							<strong class="cont-tit">영업활동 계획</strong>
+							<div id="datePic" class="main-date-plan">
+
+							</div>
+						</div>
+						<div class="main-cont">
+							<strong class="cont-tit">오늘 영업 예약</strong>
+							<!-- 2019-03-25 수정 -->
+							<dl class="check-list">
+								<dt><span class="point-color-red">계획</span></dt>
+								<dd>19:30 ~ <a href="#" class="point-color-blue">홍길동 - 견적서 발송</a></dd>
+								<dd>11:30 ~ <a href="#" class="point-color-blue">이순신 - 내방 상담</a></dd>
+							</dl>
+							<dl class="check-list">
+								<dt><span class="point-color-blue">시승</span></dt>
+								<dd>11:30 ~ <a href="#" class="point-color-blue">고길동 - JUKE</a></dd>
+								<dd>11:30 ~ <a href="#" class="point-color-blue">강감찬 - Altima 2.5</a></dd>
+							</dl>
+							<!-- //2019-03-25 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+
+	<!-- pop 시승현황 -->
+	<div class="layer-popup car-test-date">
+		<div class="pop-tit">시승현황<button class="btn-close">close</button></div>
+		<div class="pop-cont pop-datepic-cont sc-date"><!-- 2019-03-20 클래스 추가-->
+			<!-- 2019-03-20 삭제 
+			<div class="pop-datepic-top">
+				<label for="sel01" class="hidden">사업소명</label>
+				<select id="sel01" class="select-box">
+					<option>사업소명</option>
+				</select>
+			</div>
+			-->
+			<div id="PopDatePic"></div>
+			<div class="pop-datepic-btn">
+				<!-- 2018-12-19 삭제 <button type="button" class="btn-white">찾기</button>-->
+				<button type="button" class="btn-white">시승추가</button>
+				<button type="button" class="btn-white btn-down">EXCEL</button><!-- 2018-12-19 클래스 수정 -->
+			</div>
+		</div>
+	</div>
+
+	<!-- pop 일자별 시승고객 -->
+	<div class="layer-popup car-test-user">
+		<div class="pop-tit">일자별 시승고객 : 2018-10-25<button class="btn-close">close</button></div>
+		<div class="pop-cont">
+			<ul class="pop-state-list">
+				<li>
+					<a href="#" class="state-link">고객명(SC명 – 사업소명) </a>
+					<p>차량번호: <span>27너6912(MAXIMA)>3.5>2018년 </span></p>
+					<p>시간: <span>2018-10-25 17:30~15:59</span></p>
+				</li>
+				<li>
+					<a href="#" class="state-link">고객명(SC명 – 사업소명) </a>
+					<p>차량번호: <span>27너6912(MAXIMA)>3.5>2018년 </span></p>
+					<p>시간: <span>2018-10-25 17:30~15:59</span></p>
+				</li>
+				<li>
+					<a href="#" class="state-link">고객명(SC명 – 사업소명) </a>
+					<p>차량번호: <span>27너6912(MAXIMA)>3.5>2018년 </span></p>
+					<p>시간: <span>2018-10-25 17:30~15:59</span></p>
+				</li>
+				<li>
+					<a href="#" class="state-link">고객명(SC명 – 사업소명) </a>
+					<p>차량번호: <span>27너6912(MAXIMA)>3.5>2018년 </span></p>
+					<p>시간: <span>2018-10-25 17:30~15:59</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

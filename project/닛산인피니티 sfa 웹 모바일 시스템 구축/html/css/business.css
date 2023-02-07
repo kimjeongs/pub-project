@@ -1,0 +1,770 @@
+/*list*/
+.info-cont-step li {
+	padding-bottom: 21px;
+	margin-bottom: 10px;
+	background: url('../img/common/icon_step_arrow.png') no-repeat center bottom;
+}
+
+.info-cont-step li:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	background: none;
+}
+.info-cont-step li .trial-time-wrap {
+	margin-top: 15px;
+}
+
+.info-cont-step .active-state>div {
+	position: relative;
+}
+
+.info-cont-step .active-state>div+div {
+	margin-top: 5px;
+}
+
+.info-cont-step .active-state>.info-txt {
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.info-cont-step .active-state>.info-txt span {
+	color: #3366cc;
+}
+.info-cont-step:nth-of-type(2) {
+   margin-top: 10px;
+   padding-top: 21px;
+   background: url(../img/common/icon_step_arrow.png) no-repeat center top;
+}
+
+.info-cont-step + div {
+   margin-top: 10px;
+}
+
+.search-cont .info-cont .width-full.half .division-box{
+   width:100%;
+   padding-left:85px;
+}
+.search-cont .info-cont .ac-type{
+   display:inline-block;
+   width:100%;
+}
+
+/*plan*/
+.info-cont.plan{
+   margin-top:15px;
+   width:100%;
+}
+.monthly-con-box,
+.daily-con-box{
+   position: relative;
+}
+.monthly .btn-area{
+   position: static;
+   margin:10px 0;
+}
+.monthly-con-box .date-plan {
+   margin-top: 0;
+}
+
+.date-plan .ui-datepicker-prev, 
+.date-plan .ui-datepicker-next{
+   display:inline-block;
+}
+.btn-area.monthly{
+   text-align: right;
+   margin-bottom:10px;
+}
+.monthly-con-box .plan-top + .btn-area.monthly{
+   margin-top: 10px;
+}
+.btn-area.monthly .btn-today{
+   display:inline-block;
+   float:none;
+   margin-left:0;
+   margin-right:6px;
+}
+.btn-area .btn-today button{
+   width: 110px;
+   height:30px;
+   line-height:30px;
+}
+.monthly .btn-area .btn-today + div{
+   display:inline-block;
+   float:none;
+}
+.btn-area .btn-today + div button{
+   width:109px;
+}
+.check-list {
+	position: relative;
+	border: 1px solid #e9eaed;
+}
+.check-list+.check-list {
+	margin-top: 5px;
+}
+.check-list dt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	bottom: 0;
+	background: #f6f7f9;
+	border-right: 1px solid #e9eaed;
+}
+.check-list dt>span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	text-align: center;
+}
+.check-list dd {
+	width: calc(100% - 80px);
+	padding: 13px;
+	margin-left: 80px;
+	border-top: 1px dashed #e9eaed;
+}
+.check-list dd:nth-of-type(1) {
+	border-top: none;
+}
+
+/* montly 달력 */
+.date-plan {
+   float:none;
+   width:100%;
+   margin-top: 15px;
+}
+.date-plan .ui-datepicker {
+	width: auto;
+	left: auto;
+	transform: none;
+	border: none;
+}
+.date-plan .ui-datepicker-header{
+   position: relative;
+   width:100%;
+}
+
+.date-plan .ui-datepicker th {
+	height: 40px;
+}
+
+.date-plan .ui-datepicker td {
+	height: 70px;
+}
+
+.date-plan .first-event,
+.date-plan .second-event {
+	position: relative;
+	display: block;
+	width: 30px;
+	padding-left: 10px;
+	margin: 0 auto;
+}
+
+.date-plan .first-event:before,
+.date-plan .second-event:before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	width: 8px;
+	height: 4px;
+	border-radius: 50px;
+	content: '';
+}
+
+.date-plan .first-event {
+	color: #c51733;
+}
+.date-plan .first-event:before {
+	background: #c51733;
+}
+.date-plan .second-event {
+	color: #3366cc;
+}
+.date-plan .second-event:before {
+	background: #3366cc;
+}
+
+.btn-area .btn-today button {
+   width: 75px;
+   }
+.btn-area .btn-today+div button {
+   width: 75px;
+}
+
+/*daily plan*/
+.dailyplan-cont{
+   padding:10px;
+}
+.dailyplan-cont .time-box-wrap{
+   position: relative;
+   min-height:60px;
+}
+.dailyplan-cont .time-box-wrap:first-child{
+   margin-top:0;
+}
+.dailyplan-cont .time-box-wrap:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.dailyplan-cont .time-box-wrap .plan-time{
+   float:left;
+   width:80px;
+   margin-top: 10px;
+   color:#8a8a8a;
+}
+.dailyplan-cont .time-box-wrap .plan-time.line:after{
+   position: absolute;
+   top:10px;
+   right:0;
+   display:block;
+   clear:both;
+   width:calc(100% - 80px);
+   height:1px;
+   background-color: #eee;
+   content: '';
+}
+.dailyplan-cont .time-box-wrap .plans{
+   float:right;
+   width:calc(100% - 80px);
+   margin-top:10px;
+}
+.dailyplan-cont .time-box-wrap .plans.hide{
+   display:none;
+}
+.dailyplan-cont .time-box-wrap .plans .plan-txt{
+   padding:0 5px;
+   line-height:25px;
+}
+.dailyplan-cont .time-box-wrap .plans .plan-txt:first-child{
+   margin-top:0;
+}
+.dailyplan-cont .time-box-wrap .plans .plan-txt.bg-red{
+   background-color: rgba(195, 0, 47, .3);
+}
+.dailyplan-cont .time-box-wrap .plans .plan-txt.bg-gray{
+   background-color: rgba(216, 225, 247, 0.7);
+}
+.ui-datepicker-title{
+   text-align: center;
+   font-weight: 500;
+   padding:10px 0;
+}
+.date-plan .daily-header{
+   position: relative;
+   width: calc(100% - 100px);
+   margin-top: 10px;
+   margin-left: 100px;
+}
+.date-plan .ui-datepicker-calendar {
+   margin-top: 10px;
+}
+.plan-top:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.plan-top .date-plan .btn-area{
+   display:block;
+   position: static;
+   width:100%;
+   text-align: right;
+}
+.plan-top .date-plan .btn-area .left,
+.plan-top .date-plan .btn-area .left + div{
+   float:none;
+   display:inline-block;
+}
+.plan-top .date-plan .btn-area .left{
+   margin-right:6px;
+}
+.plan-top .date-plan .btn-area .btn-today button{
+   height:30px;
+   line-height:30px;
+}
+
+/*trial time table*/
+.trial-time-wrap .time-table{
+   border:1px solid #ddd;
+   border-top:none;
+   background-color: rgba(238, 238, 238, .7);
+}
+.trial-time-wrap .time-table tr{
+   border-top:1px solid #ddd;
+}
+.trial-time-wrap .time-table th,
+.trial-time-wrap .time-table td{
+   height:30px;
+   padding:0;
+   border-right: 1px solid #ddd;
+   text-align: center;
+}
+.trial-time-wrap .time-table td{
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+.trial-time-wrap .time-table th:first-child,
+.trial-time-wrap .time-table td:first-child{
+   border-left: 1px solid #ddd;
+}
+.trial-time-wrap .time-table td.bg-red{
+   background-color: rgba(195, 0, 47, .3);
+   color:#fff;
+}
+.trial-time-wrap .time-table td.bg-gray{
+   background-color: rgba(0, 0, 0, 0.4);
+   color:#fff;
+}
+.trial-time-wrap .time-table td.bg-blue {
+   background-color: rgba(21, 112, 202, 0.4);
+   color: #fff;
+}
+.trial-time-wrap .time-table .m-hide{
+   display:none;
+}
+
+/*car life*/
+
+.btn-area + .carlife-info.separation {
+   margin-top: 0;
+   padding-top: 0;
+   border-top: none;
+}
+.tab-cont .table-scroll{
+   height:200px;
+}
+.tab-cont .table-scroll.yscroll-hidden {
+   height: auto;
+   overflow-y: hidden;
+}
+.contents .btn-area:first-child{
+   margin-top:0;
+}
+.contents .date-plan .btn-area:first-child {
+   margin-top: auto;
+}
+
+/* 견적서 */
+.estimate-list li {
+   padding-bottom: 20px;
+}
+.estimate-list li+li {
+   border-top: 1px solid #e9eaed;
+   padding-top: 20px;
+}
+.estimate-list li label {
+   display: inline-block;
+   height: 17px;
+}
+.estimate-list li span {
+   display: inline-block;
+   min-width: 80px;
+   margin-bottom: 20px;
+   text-align: center;
+}
+.estimate-list li span {
+   margin-right: 15px;
+}
+/* .info-cont-step li > div {
+   position: relative;
+} */
+
+.estimate-step .step-tit {
+   display: block;
+   width: 160px;
+   padding: 7px 0;
+   margin-bottom: 15px;
+   color: #fff;
+   background: #8a8a8a;
+   font-size: 14px;
+   text-align: center;
+}
+.estimate-step>li+li {
+   margin-top: 20px;
+}
+.estimate-step .table-col {
+   margin: 13px 0;
+}
+.estimate-step .table-col .model {
+   background: #ccc;
+}
+.estimate-step .input-width.input-confirm {
+   width: calc(100% - 100px);
+   margin-left: 100px;
+}
+.estimate-step .input-width.input-confirm .input-disabled {
+   width: 80px;
+}
+.estimate-step .input-confirm .input-disabled {
+   width: 30%;
+}
+.estimate-step .input-confirm .checkbox-set {
+   float: right;
+   padding-left: 0;
+}
+.estimate-step .car-info {
+   padding: 10px;
+   margin-top: 20px;
+   background: #eee;
+}
+.estimate-step .car-info li {
+   position:relative;
+   padding-left:10px;
+   font-size: 13px;
+}
+.estimate-step .car-info li + li {
+   margin-top: 5px;
+}
+.estimate-step .car-info li em {
+   visibility: hidden;
+   position: absolute;
+}
+.estimate-step .car-info li:before {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   display: inline-block;
+   content: '';
+   width: 5px;
+   height: 5px;
+   background: #000;
+   transform: translateY(-50%);
+   border-radius:25px;
+}
+
+.btn-search-cont select {
+   width: calc(100% - 35px);
+}
+.btn-search-cont select+.btn-search {
+   float: right;
+}
+
+/*시승신청 팝업*/
+.layer-popup.drive .pop-cont{
+   padding:77px 20px 20px 20px;
+}
+.layer-popup.drive .pop-cont li{
+   margin-top:10px;
+}
+.layer-popup.drive .pop-cont li:first-child{
+   margin-top:0;
+}
+
+
+@media screen and (min-width:641px) {
+   
+   /*list*/
+   .info-cont-step li {
+      margin-bottom: 7px;
+   }
+   .info-cont-step li .trial-time-wrap {
+      float: left;
+      clear: both;
+      margin-bottom: 10px;
+   }
+   .info-cont-step .active-state .info-tit {
+      width: 15%;
+   }
+   .info-cont-step .active-state>div>.input-width {
+      margin-left: 15%;
+   }
+
+   .search-cont .info-cont .tab-select5:after {
+      display: block;
+      clear: both;
+      content: '';
+   }
+   .result-cont .btn-area {
+      position: absolute;
+   }
+   .result-cont .btn-area>div {
+      float: right;
+   }
+   .result-cont .btn-area .right {
+      float: right;
+   }
+   /* check-list */
+   .check-list dt {
+      width: 100px;
+   }
+   .check-list dd {
+      width: calc(100% - 100px);
+      margin-left: 100px;
+   }
+   .btn-area.monthly{
+      position: absolute;
+	  top:5px;
+      right:0;
+      width:calc(100% - 300px);
+      text-align: left;
+      margin-bottom:0;
+   }
+   .monthly-con-box .plan-top + .btn-area.monthly{
+      top:70px;
+   }
+   .btn-area.monthly .btn-today{
+      display:block;
+      float:left;
+   }
+   .date-plan .ui-datepicker-header {
+      width: 300px;
+      margin-top: 15px;
+   }
+   .date-plan .daily-header {
+      position: relative;
+      width: 100%;
+      padding-left: 15%;
+      margin-left: 0;
+   }
+   .date-plan .daily-header .calendar-box {
+      width: 41.3%
+   }
+   .plan-top .date-plan .btn-area {
+      display: block;
+      position: absolute;
+	   left: 51%;
+      top: 5px;
+	   width:49%;
+   }
+   .plan-top .date-plan .btn-area .btn-today button {
+      height: 36px;
+      line-height: 36px;
+   }
+   .plan-top .info-cont.plan + .date-plan .btn-area{
+      top: 75px;
+      z-index: 1;
+   }
+   .plan-top .date-plan .btn-area .left {
+      float: left;
+      display: block;
+   }
+   .plan-top .date-plan .btn-area .left+div {
+      float: right;
+      display: block;
+   }
+   .plan-top .date-plan .btn-area .btn-today+div button {
+      height: 36px;
+      line-height: 36px;
+   }  
+   /*trial*/
+   .trial-time-wrap .time-table th {
+      text-align: center;
+      padding: 0 5px;
+   }
+   .trial-time-wrap .time-table td {
+      text-align: left;
+      padding: 0 5px;
+   }
+   .trial-time-wrap .time-table .m-hide {
+      display: inline;
+   }
+   /* 견적서 */
+   .estimate-list li+li {
+      border-top: none;
+   }
+   .estimate-list li span {
+      margin-right: 30px;
+   }
+   .estimate-step>li {
+      padding-bottom: 30px;
+      /* background: url(../img/common/icon_step_arrow.png) no-repeat center bottom; */
+   }
+   .estimate-step>li:last-child {
+      background: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+   }
+   .estimate-step .input-width.input-confirm {
+      padding-left: 0;
+      margin-left: 30%;
+   }
+   .estimate-step .input-width.input-confirm {
+      width: 70%;
+   }
+   .estimate-step .car-info li em {
+      visibility: visible;
+      position: relative;
+      color: #c3002f;
+   }
+
+   /*시승신청 팝업*/
+   .layer-popup.drive{
+      width:300px;
+   }
+
+}
+
+@media screen and (min-width:1025px) {
+   .info-cont-step li {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		background: none;
+	}
+	.info-cont-step li.width-full-none {
+		width: 50%;
+	}
+	.info-cont-step li.width-full-none .info-tit {
+		width: 20%;
+	}
+	.info-cont-step li.width-full-none .input-width {
+		margin-left: 20%;
+	}
+	.info-cont-step li.width-full-none .division-box .info-tit {
+		width: 40%;
+	}
+	.info-cont-step li.width-full-none .division-box .info-tit + .input-width {
+		margin-left: 40%;
+	}
+
+	.info-cont-step .active-state .info-tit {
+		width: 10%;
+	}
+	.info-cont-step .active-state > div > .input-width {
+		margin-left: 10%;
+   }
+   .info-cont-step:nth-of-type(2) {
+      background: none;
+      padding-top: 0;
+      margin-top: 15px;
+   }
+   .info-cont-step .one-third {
+      width: 33.33%;
+   }
+   .info-cont-step .one-third .info-tit {
+      width: 30%;
+   }
+   .info-cont-step .one-third .info-tit + .input-width {
+      margin-left: 30%;
+   }
+   .info-cont-step:nth-of-type(2) li .info-tit span:before {
+      display: none;
+   }
+   .info-cont>li .info-tit.fix1 {
+      width: 120px !important;
+   }
+   
+   .estimate-step .input-width.input-confirm {
+      width: calc(100% - 120px) !important;
+      margin-left: 120px !important;
+      padding: 0;
+   }
+.estimate-step .input-confirm .input-disabled {
+	width:115px;
+}
+	/* check-list */
+	.check-list dt {
+		width: 130px;
+	}
+
+	.check-list dd {
+		width: calc(100% - 130px);
+		margin-left: 130px;
+   }
+   .monthly-con-box:after{
+      display:block;
+      clear:both;
+      content: '';
+   }
+   .info-cont.plan{
+      margin-top:15px;
+      width:50%;
+   }
+   .date-plan {
+      float:left;
+      width:50%;
+      margin-right: 100px;
+   }
+   .date-plan .ui-datepicker-header{
+      width:264px;
+   }
+   .btn-area.monthly{
+      right:50%;
+      width:calc(50% - 264px);
+   }
+   .monthly-con-box .plan-top + .btn-area.monthly{
+      top: 66px;
+   }
+   .monthly-con-box .btn-area.monthly:first-child {
+	  margin-top: 20px;
+   }
+   .monthly-con-box .date-plan{
+      margin-top:5px;
+   }
+   .monthly-con-box .plan-top{
+      margin-bottom:-5px;
+   }
+   .btn-area.monthly:after{
+      display:block;
+      clear:both;
+      content: '';
+   }
+   .plan-top .info-cont.plan{
+      display:block;
+      float:left;
+      width:50%;
+   }
+   .plan-top .date-plan{
+      margin-top:20px;
+   }
+   .date-plan .daily-header .calendar-box {
+      width: 100%;
+   }
+   .plan-top .info-cont.plan + .date-plan{
+      float:left;
+      width:50%;
+      margin-right: 0;
+   }
+   .plan-top .date-plan .btn-area {
+      margin: 0 !important;
+   }
+	.date-plan .ui-datepicker th {
+		height: 50px;
+	}
+	.date-plan .ui-datepicker td {
+		height: 80px;
+   }
+   .main-cont.plan{
+      position: absolute;
+      right:0;
+      top:0;
+      padding:10px;
+      margin-top: 13px;
+      width:50%;
+   }
+   .date-plan .daily-header{
+      position: static;
+      float: right;
+      width:40%;
+   }
+   .plan-top .info-cont > li{
+      width:50%;
+   }
+   .plan-top .date-plan .btn-area{
+      position: static;
+      float: right;
+   }
+   .plan-top .info-cont.plan + .date-plan .btn-area{
+      top: 20px;
+      left:calc(50% + 240px);
+   }
+   .plan-top .date-plan .btn-area .left{
+      float:left;
+      display:block;
+   }
+   .plan-top .date-plan .btn-area .left + div{
+      float:right;
+      display:block;
+   }
+   .plan-top .date-plan .btn-area .btn-today button {
+      margin-left: 5px;
+   }
+   .date-plan .daily-header {
+      margin-top: 0;
+      padding-left: 0;
+   }
+}

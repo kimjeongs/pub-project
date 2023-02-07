@@ -1,0 +1,658 @@
+#container {
+    background: #f6f7f9;
+}
+
+/* �뙘�뾽�뿉�꽌 bg�솕�씠�듃 怨좎젙 : �쑀�쁽�긽 20190316 */
+#wrap2 #container ,#wrap3 #container  {
+    background: #fff;
+}
+/* �뙘�뾽�뿉�꽌 margin 20px 怨좎젙 : �쑀�쁽�긽 20190316 */
+#wrap2 .contents ,#wrap3 .contents {
+	 margin-top: 20px;"
+}
+
+.contents {
+    padding: 0;
+    margin-top: 0;
+}
+
+.main-top-search {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 16px;
+    background: #fff;
+    border-bottom: 1px solid #e9eaed;
+}
+.main-top-search.nkl-home{
+    padding-bottom:6px;
+}
+
+.main-top-search .main-top-left {
+    width:calc(100% - 82px);
+    float:left;
+}
+
+.main-top-search .calendar-box+button {
+    margin-left: 4px;
+    width: 78px;
+}
+
+.main-top-search .main-top-right {
+    display:inline-block;
+}
+.main-top-search.sc-home .main-top-right {
+    display:block;
+    text-align:right;
+}
+
+.main-top-search .main-top-right .table-btn {
+    width: 78px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.main-top-search .btn-down {
+    /* display: none; �뒪�겕由쏀듃濡� �젣�뼱 / �쑀�쁽�긽20190325 */
+}
+
+/* em-home */
+
+
+.main-top-search.em-home .search-select+.btn-white {
+    width: 78px;
+    margin: 5px 0 0 2px;
+}
+
+.main-top-search.em-home .table-btn {
+    float: right;
+    width: 80px;
+    height: 36px;
+    margin-top: 5px;
+    line-height: 36px;
+}
+
+.main-top-search.em-home .search-select {
+    display: inline-block;
+    width: 47%;
+    margin-top:5px;
+}
+
+.main-top-search.em-home .btn-search {
+    margin-top: 5px;
+}
+
+/* nkl-home */
+
+.main-top-search.nkl-home .main-top-left {
+    float: none;
+}
+
+.main-top-search.nkl-home .main-top-right {
+    width: 100%;
+}
+
+.main-top-search.nkl-home .table-btn {
+    float: right;
+    width: 80px;
+    height: 36px;
+    margin-top: 5px;
+    line-height: 36px;
+}
+
+.main-top-search.nkl-home .main-top-right .calendar-cont {
+    width: calc(100% - 84px);
+}
+
+.main-top-search.nkl-home .main-top-right button {
+    float: right;
+    width: 78px;
+}
+
+.main-top-search.nkl-home .table-btn {
+    float: right;
+    width: 80px;
+    height: 36px;
+    margin-top: 5px;
+    line-height: 36px;
+}
+
+.main-top-search.nkl-home .btn-search {
+    margin-left: -5px;
+}
+/*sc-home*/
+.main-top-search.sc-home .calendar-box{
+    width:calc(100% - 87px);
+}
+.sc-date .hasDatepicker {
+    padding-top: 10px;
+}
+
+
+/* main-cont */
+
+.main-cont {
+    padding: 16px;
+    margin-top: 15px;
+    background: #fff;
+    border-top: 1px solid #e9eaed;
+    border-bottom: 1px solid #e9eaed;
+}
+
+.main-cont .cont-tit {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* statistics  */
+
+.statistics {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid #e9eaed;
+    justify-content: space-around;
+}
+
+.statistics li {
+    flex: 1;
+    text-align: center;
+}
+
+.statistics li strong {
+    position: relative;
+    display: block;
+    height: 50px;
+    padding: 15px 0;
+    border-left: 1px solid #e9eaed;
+    letter-spacing: -1.5px;
+}
+
+.statistics li strong>span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translatey(-50%);
+}
+
+.statistics li>span {
+    display: block;
+    min-height: 50px;
+    padding: 15px 0;
+    border-top: 1px solid #e9eaed;
+    border-left: 1px solid #e9eaed;
+}
+
+.statistics+.statistics {
+    margin-top: 10px;
+}
+
+.statistics li:first-child span,
+.statistics li:first-child strong {
+    border-left: none;
+}
+
+.statistics li.statistics-check {
+    background: #f6f7f9;
+}
+
+.statistics li.statistics-check>span {
+    font-weight: 500;
+    color: #c51733;
+}
+
+/* check-list-box */
+
+.check-list-box .check-list+.check-list {
+    margin-top: -1px;
+}
+
+.check-list-box .check-list dd {
+    color: #3366cc;
+}
+
+.check-list {
+    position: relative;
+    border: 1px solid #e9eaed;
+}
+
+.check-list+.check-list {
+    margin-top: 5px;
+}
+
+.check-list dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    bottom: 0;
+    background: #f6f7f9;
+    border-right: 1px solid #e9eaed;
+}
+
+.check-list dt>span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translatey(-50%);
+    text-align: center;
+}
+
+.check-list dt>span>strong {
+    color: #c51733;
+}
+
+.check-list dd {
+    width: calc(100% - 80px);
+    padding: 13px;
+    margin-left: 80px;
+    border-top: 1px dashed #e9eaed;
+}
+
+.check-list dd:nth-of-type(1) {
+    border-top: none;
+}
+
+/* main-date-plan */
+
+.main-date-plan {
+    position: relative;
+}
+
+.main-date-plan .ui-datepicker {
+    width: auto;
+    left: auto;
+    transform: none;
+    border: none;
+}
+
+.main-date-plan .ui-datepicker-prev,
+.main-date-plan .ui-datepicker-next {
+    display: none;
+}
+
+.main-date-plan .ui-datepicker .ui-datepicker-title {
+    border-bottom: 1px solid #edeef0;
+}
+
+.main-date-plan .ui-datepicker th {
+    height: 40px;
+}
+
+.main-date-plan .ui-datepicker td {
+    height: 70px;
+}
+
+.main-date-plan .first-event,
+.main-date-plan .second-event {
+    position: relative;
+    display: block;
+    width: 30px;
+    padding-left: 10px;
+    margin: 0 auto;
+}
+
+.main-date-plan .first-event:before,
+.main-date-plan .second-event:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 8px;
+    height: 4px;
+    border-radius: 50px;
+    content: '';
+}
+
+.main-date-plan .first-event {
+    color: #c51733;
+}
+
+.main-date-plan .first-event:before {
+    background: #c51733;
+}
+
+.main-date-plan .second-event {
+    color: #3366cc;
+}
+
+.main-date-plan .second-event:before {
+    background: #3366cc;
+}
+
+/* pop */
+
+.pop-state-list {
+    padding: 0 30px;
+    background: #fff;
+}
+
+.pop-state-list li {
+    padding: 15px 0;
+    overflow: hidden;
+    color: #ccc;
+}
+
+.pop-state-list li+li {
+    border-top: 1px solid #e9eaed;
+}
+
+.pop-state-list li p+p {
+    margin-top: 7px;
+}
+
+.pop-state-list li .state-link {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.pop-state-list li .left {
+    float: left;
+}
+
+.pop-state-list li .right {
+    float: right;
+    text-align: right;
+}
+
+.pop-state-list li .right em {
+    display: block;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pop-state-list li a {
+    color: #3366cc;
+    /*text-decoration: underline;*/
+}
+
+/* pop-state-check */
+
+.pop-state-check li {
+    padding: 15px 0;
+}
+
+.pop-state-check li>div {
+    color: #333;
+}
+
+/* pop 占쎈뼎占쎌젾 */
+
+.pop-datepic-cont {
+    position: relative;
+}
+
+.pop-datepic-top {
+    padding: 10px;
+}
+
+.pop-datepic-btn {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+}
+.pop-datepic-top+.hasDatepicker+.pop-datepic-btn {
+    top: 113px;
+}
+
+.pop-datepic-btn button {
+    vertical-align: top;
+    width: 80px;
+}
+
+.pop-datepic-btn .btn-down {
+    /* display: none; �뒪�겕由쏀듃濡� �젣�뼱 / �쑀�쁽�긽20190325 */
+}
+
+/* .pop-datepic-btn .btn-white {
+    margin-left: -5px;
+} */
+
+#PopDatePic .ui-datepicker {
+    left: 0;
+    width: auto;
+    transform: none;
+    border: none;
+}
+
+#PopDatePic .ui-datepicker-header {
+    position: relative;
+    width: 200px;
+}
+
+#PopDatePic .ui-state-default {
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+#PopDatePic .first-event,
+#PopDatePic .second-event {
+	
+	position: relative;
+    display: block;
+    width: 30px;
+    padding-left: 10px;
+    margin: 0 auto;
+
+}
+
+#PopDatePic .first-event:before{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 8px;
+    height: 4px;
+    border-radius: 50px;
+    content: '';
+    background: #3366cc;
+}
+
+@media screen and (min-width:641px) {
+    .main-top-search .calendar-box+button {
+		width: 100px;
+	}
+    .statistics li strong {
+        letter-spacing: -1px;
+    }
+    /* check-list */
+    .check-list dt {
+        width: 100px;
+    }
+    .check-list dd {
+        width: calc(100% - 100px);
+        margin-left: 100px;
+    }
+    /* nkl-home */
+    .main-top-search.nkl-home .main-top-left {
+        float: left;
+    }
+    .main-top-search.nkl-home .main-top-right {
+        width: 100%;
+        margin-top: 0;
+    }
+    /*em-home*/
+    .main-top-search.em-home>div {
+        float: left;
+        width: 50%;
+    }
+    .main-top-search.em-home>div{
+        width:45%;
+    }
+    .main-top-search.em-home>div+div {
+        margin-left: 6px;
+    }
+    .main-top-search.em-home .search-select {
+        width: calc(25% - 10px);
+        padding: 0 !important;
+        margin-top: 0;
+    }
+    .main-top-search.em-home .search-select+.btn-white {
+        width: 78px;
+        margin-top: 0;
+        margin-left: 5px;
+    }
+    .main-top-search.nkl-home .main-top-right .calendar-cont {
+        width: calc(100% - 106px);
+    }
+    .main-top-search.nkl-home .main-top-right button {
+        width: 100px;
+    }
+    .main-top-search.em-home .btn-search,
+    .main-top-search.em-home .table-btn {
+        margin-top: 0;
+    }
+    /*sc-home*/
+    .main-top-search .main-top-left {
+        float: left;
+        width:50%;
+    }
+    .main-top-search.sc-home .calendar-box {
+        width: calc(100% - 107px);
+    }
+    .main-top-search.sc-home .calendar-box+button {
+		width: 78px;
+    }
+    .sc-date .hasDatepicker {
+        padding-top: 0;
+    }
+   
+    /* pop */
+    .pop-state-list {
+        max-height: 400px;
+    }
+    .pop-state-list li {
+        padding: 15px;
+    }
+    .pop-state-check li {
+        padding: 20px 80px;
+    }
+    /* pop 占쎈뼎占쎌젾 */
+    .pop-datepic-top {
+        position: absolute;
+        top: 67px;
+        left: 0;
+        width: 160px;
+        z-index: 1;
+    }
+    .pop-datepic-btn {
+        top: 77px;
+        z-index: 1;
+    }
+    .pop-datepic-top+.hasDatepicker+.pop-datepic-btn {
+        top: 77px;
+    }
+    #PopDatePic .ui-datepicker-header {
+        width: auto;
+    }
+    #PopDatePic .ui-datepicker .ui-datepicker-title {
+        padding: 30px 0;
+    }
+    #PopDatePic .ui-datepicker th,
+    #PopDatePic .ui-datepicker td {
+        height: 80px;
+    }
+    #PopDatePic .ui-datepicker-prev {
+        top: 29px;
+        left: 50%;
+        margin-left: -95px;
+    }
+    #PopDatePic .ui-datepicker-next {
+        top: 29px;
+        right: 50%;
+        margin-right: -95px;
+    }
+}
+
+@media screen and (min-width:1025px) {
+    .main-top-search .calendar-box {
+        width: calc(50% - 10px);
+    }
+    .main-top-search .calendar-box input {
+        padding: 0 20px;
+    }
+    .main-cont {
+        margin-top: 5px;
+    }
+    /* check-list */
+    .check-list dt {
+        width: 130px;
+    }
+    .check-list dd {
+        width: calc(100% - 130px);
+        margin-left: 130px;
+    }
+    /* main-cont-box */
+    .main-cont-box {
+        display: inline-block;
+        width: 100%;
+        background: #fff;
+    }
+    .main-cont-box .low-cont-box {
+        float: left;
+        width: 50%;
+    }
+    .main-cont-box .low-cont-box .main-cont {
+        margin-top: 0;
+        border: none;
+    }
+    /* main-date-plan */
+    .main-date-plan .ui-datepicker th {
+        height: 50px;
+    }
+    .main-date-plan .ui-datepicker td {
+        height: 80px;
+    }
+    /* em-home */
+    .main-top-search.em-home>div {
+        width: calc(50% - 106px);
+        padding: 0 !important;
+    }
+    .main-top-search.em-home .table-btn {
+        width: 94px;
+    }
+    .main-top-search.em-home .search-select+.btn-white {
+        width: 94px;
+    }
+    /* nkl-home */
+
+    .main-top-search.nkl-home .main-top-right {
+        width: 50%;
+    }
+
+    /*sc-home*/
+    .main-top-search.sc-home .calendar-box {
+        width: calc(50% - 63px);
+    }
+    .main-top-search.sc-home .calendar-box+button {
+		width: 100px;
+	}
+    .main-top-search .main-top-right .table-btn{
+        width:100px;
+    }
+    .pop-datepic-top {
+        width: 200px;
+    }
+    .pop-datepic-btn .btn-down {
+        display: inline-block;
+        /* margin-left: 0px; */
+    }
+}
+
+@media screen and (min-width:1441px) {
+    .main-top-search .btn-down {
+        display: inline-block;
+        /* padding: 0 27px 0 10px;
+        background: url('../img/common/icon_download.png') no-repeat 90% 55%;
+        background-size: 10px auto;
+        vertical-align: top;
+        text-align: left; */
+    }
+    /* nkl-home */
+    .main-top-search.nkl-home .main-top-right {
+        width: 50%;
+        margin-right: 6px;
+    }
+}

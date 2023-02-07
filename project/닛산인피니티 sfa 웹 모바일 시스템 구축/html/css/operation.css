@@ -1,0 +1,196 @@
+.table-tit-cont.request {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.request-cont {
+    padding: 20px 0;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+}
+.request-cont .sub-tit {
+    display: block;
+    margin:20px 0 5px;
+}
+.request-cont .part {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.request-cont + .table-tit-cont .request-state {
+    float: right;
+}
+.request-cont + .table-tit-cont .request-state strong {
+    display: inline-block;
+    width: 40px;
+}
+.request-cont + .table-tit-cont .request-state p {
+    display: inline-block;
+    width: 140px;
+    height: 36px;
+    background: #eee;
+    padding: 0 5px;
+    line-height: 36px;
+    text-align: center;
+    color: #c3002f;
+}
+
+.filebox {
+    display: inline-block;
+    width: 100%;
+}
+.filebox .input-txt {
+    display: inline-block;
+    width: calc(100% - 183px);
+}
+.filebox .file-search {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    margin-left: -5px;
+    vertical-align: top;
+}
+
+.filebox  .file-search .file-search-btn {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100px;
+    height: 36px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+
+}
+::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.filebox  .file-search button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+}
+.filebox > button {
+    float: right;
+}
+.down-file-cont{
+    margin-top: 10px;
+}
+.down-file-cont + .down-file-cont{
+    margin-top: 5px;
+}
+.down-file-cont .down-file {
+    display: inline-block;
+    padding-left: 0;
+    background: none;
+    margin-top: 0;
+}
+.down-file-cont .btn-delete {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.down-file{
+    display: block;
+    color:#3366cc;
+    text-decoration: underline;
+    padding-left: 15px;
+    margin-top: 10px;
+    background: url('../img/common/icon_download.png') no-repeat 0 3px;
+    background-size: 10px auto;
+    
+}
+.down-file:hover {
+    text-decoration: underline;
+}
+
+.down-file + .down-file {
+    margin-top: 5px;
+}
+div + .list-view {
+    margin-top: 5px;
+}
+
+.list-view {
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+}
+.list-view .list-view-top {
+    position: relative;
+    padding: 20px 10px;
+}
+.list-view .list-view-top strong {
+    display: inline-block;
+    width: calc(100% - 80px);
+}
+.list-view .list-view-top strong span {
+    margin-right: 5px;
+}
+.list-view .list-view-top span {
+    color: #c3002f;
+}
+.list-view .list-view-top .date {
+    position: absolute;
+    top:50%;
+    right: 10px;
+    width: 70px;
+    transform: translateY(-50%);
+}
+.list-view .list-view-file {
+    padding: 10px 10px;
+    border-top: 1px solid #ccc;
+    text-indent: -49px;
+    padding-left: 60px;
+}
+.list-view .list-view-file span {
+    text-indent: -30px;
+}
+.list-view .list-view-file  a {
+    display: inline-block;
+    margin: 0 7px;
+    color: #3366cc;
+    text-decoration: underline;
+    text-indent: 0;
+    line-height: 1.5;
+}
+.list-view .list-view-file  a:hover {
+    text-decoration: underline;
+}
+.list-view .list-view-cont {
+    padding: 20px 10px;
+    border-top: 1px solid #ccc;
+    color: #333;
+    
+}
+
+.overflow-wrap,
+.overflow-wrap .col-10 {
+    display: block !important;
+}
+
+.overflow-wrap .col-10 {
+    padding-top: 10px;
+}
+
+/* .mb-only .data-table .col-10  {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    vertical-align: top;
+} */
+
+@media screen and (min-width:1025px){
+    .filebox {
+        width: 547px;
+    }
+}
+
+/*2019-03-25 À°¼öÃ¢ Ãß°¡*/
+#useInfoSRListM .srTitle a{
+	color: blue;
+	display: inline-block;
+	width: 200px;
+}
+/* 2019-03-25 */

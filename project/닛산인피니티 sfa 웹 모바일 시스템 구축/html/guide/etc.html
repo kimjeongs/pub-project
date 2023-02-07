@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>etc guide</title>
+
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	<style type="text/css">
+		h1 {
+			float: none;
+			width: auto;
+			font-size: 20px;
+			line-height: 100%;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		ul.s-tab {
+			width: 100%;
+			overflow: hidden;
+			margin-top: 10px;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		ul.s-tab li {
+			display: inline;
+			float: left;
+			margin-right: 5px;
+		}
+
+		ul.s-tab li a {
+			float: left;
+			padding: 5px;
+			border: 2px solid #a2cdde;
+			font-size: 15px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		ul.s-tab li.on a,
+		ul.s-tab li a:hover {
+			color: #f00;
+		}
+
+		h2.guide-title {
+			margin: 10px 0;
+			padding: 10px 0;
+			border-top: 2px solid #ddd;
+			border-bottom: 2px solid #ddd;
+			font-size: 15px;
+			font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+		}
+
+		.xmp {
+			display: block;
+			height: 200px;
+			overflow: auto;
+			margin: 10px 0 0 0;
+			padding: 0;
+			border: 2px solid #666;
+			background: #eee;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<h1>STYLE GUIDE</h1>
+		<ul class="s-tab">
+			<li><a href="content.html">content</a></li>
+			<li><a href="board.html">board</a></li>
+			<li class="on"><a href="etc.html">etc</a></li>
+		</ul>
+
+		<h2 class="guide-title">BUTTON (컨텐츠 하단)</h2>
+		<button type="button" class="btn-gray">초기화</button>
+		<button type="button" class="btn-black">조회</button>
+		<button type="button" class="btn-red">등록</button>
+		<button type="button" class="btn-white btn-down">EXCEL</button><!-- 2018-12-19 클래스 수정 -->
+		<xmp class="xmp">
+			<button type="button" class="btn-gray">초기화</button>
+			<button type="button" class="btn-black">조회</button>
+			<button type="button" class="btn-red">등록</button>
+			<button type="button" class="btn-white btn-down">EXCEL</button><!-- 2018-12-19 클래스 수정 -->
+		</xmp>
+
+		<h2 class="guide-title">BUTTON (작은 버튼)</h2>
+		<button type="button" class="btn-add">등록</button>
+		<button type="button" class="table-btn">지정 SC배정</button>
+		<button type="button" class="table-btn gray">지정 SC배정</button>
+		<button type="button" class="table-btn red">고객서명</button>
+		<button type="button" class="table-btn red-line">온라인동의</button>
+		<button type="button" class="table-btn blue-line">온라인동의</button>
+		<xmp class="xmp">
+			<button type="button" class="btn-add">등록</button>
+			<button type="button" class="table-btn">지정 SC배정</button>
+			<button type="button" class="table-btn gray">지정 SC배정</button>
+			<button type="button" class="table-btn red">고객서명</button>
+			<button type="button" class="table-btn red-line">온라인동의</button>
+			<button type="button" class="table-btn blue-line">온라인동의</button>
+		</xmp>
+
+		<h2 class="guide-title">BUTTON (중앙 정렬)</h2>
+		<div class="btn-area">
+			<button type="button" class="btn-gray">초기화</button>
+			<button type="button" class="btn-black">조회</button>
+			<button type="button" class="btn-red">등록</button>
+		</div>
+		<xmp class="xmp">
+			<div class="btn-area">
+				<button type="button" class="btn-gray">초기화</button>
+				<button type="button" class="btn-black">조회</button>
+				<button type="button" class="btn-red">등록</button>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">BUTTON (사이드 정렬)</h2>
+		<div class="btn-area">
+			<div class="left">
+				<button type="button" class="btn-gray">초기화</button>
+				<button type="button" class="btn-black">조회</button>
+				<button type="button" class="btn-red">등록</button>
+			</div>
+			<div class="right">
+				<button type="button" class="btn-gray">초기화</button>
+				<button type="button" class="btn-black">조회</button>
+				<button type="button" class="btn-red">등록</button>
+			</div>
+		</div>
+		<xmp class="xmp">
+			<div class="btn-area">
+				<div class="left">
+					<button type="button" class="btn-gray">초기화</button>
+					<button type="button" class="btn-black">조회</button>
+					<button type="button" class="btn-red">등록</button>
+				</div>
+				<div class="right">
+					<button type="button" class="btn-gray">초기화</button>
+					<button type="button" class="btn-black">조회</button>
+					<button type="button" class="btn-red">등록</button>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">BUTTON (4SET 모바일용)</h2>
+		<div class="btn-area mb-4side">
+			<div class="left">
+				<select id="member" class="select-box">
+					<option>지정할 담당 SC선택</option>
+					<option>위 사업소 소속</option>
+					<option>현재근무 SC이름</option>
+				</select>
+				<button type="button" class="table-btn">지정 SC배정</button>
+			</div>
+			<div class="right">
+				<button type="button" class="table-btn">SC 자동배정</button>
+				<button type="button" class="table-btn">DROP</button>
+			</div>
+		</div>
+		<xmp class="xmp">
+			<div class="btn-area mb-4side">
+				<div class="left">
+					<select id="member" class="select-box">
+						<option>지정할 담당 SC선택</option>
+						<option>위 사업소 소속</option>
+						<option>현재근무 SC이름</option>
+					</select>
+					<button type="button" class="table-btn">지정 SC배정</button>
+				</div>
+				<div class="right">
+					<button type="button" class="table-btn">SC 자동배정</button>
+					<button type="button" class="table-btn">DROP</button>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">SELECT</h2>
+		<label for="sel01" class="info-tit hidden"><span>사업소</span></label>
+		<select id="sel01" class="select-box">
+			<option>사업소 선택</option>
+		</select>
+		<select id="member" class="select-box" disabled="disabled">
+			<option>개인</option>
+		</select>
+		<xmp class="xmp">
+			<label for="sel01" class="info-tit"><span>사업소</span></label>
+			<select id="sel01" class="select-box">
+				<option>사업소 선택</option>
+			</select>
+			<select id="member" class="select-box" disabled="disabled">
+				<option>개인</option>
+			</select>
+		</xmp>
+
+		<h2 class="guide-title">SEARCH BOX</h2>
+		<div class="input-search">
+			<input type="text" id="name" class="input-txt" placeholder="홍길동">
+			<button type="button" class="input-search-btn">찾기</button>
+		</div>
+		<xmp class="xmp">
+			<div class="input-search">
+				<input type="text" id="name" class="input-txt" placeholder="홍길동">
+				<button type="button" class="input-search-btn">찾기</button>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">TEXT BOX</h2>
+		<input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력">
+		<input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력" disabled="disabled">
+		<xmp class="xmp">
+			<input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력">
+			<input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력" disabled="disabled">
+		</xmp>
+
+		<h2 class="guide-title">TEXT AREA</h2>
+		<label for="p5" class="info-tit"><span>특이사항</span></label>
+		<div class="input-width"><textarea id="p5" class="textarea"></textarea></div>
+		<xmp class="xmp">
+			<label for="p5" class="info-tit"><span>특이사항 및 피드백</span></label>
+			<div class="input-width"><textarea id="p5" class="textarea"></textarea></div>
+		</xmp>
+
+		<h2 class="guide-title">CALENDAR</h2>
+		<div class="calendar-cont">
+			<div class="calendar-box">
+				<input type="text" id="cal01" class="input-txt" placeholder="2018-12-04">
+				<!-- <button type="button" class="calendar-btn">시작일선택</button> -->
+			</div>
+			<span class="mark">~</span>
+			<div class="calendar-box">
+				<input type="text" class="input-txt" placeholder="2018-12-04">
+				<!-- <button type="button" class="calendar-btn">마지막일선택</button> -->
+			</div>
+		</div>
+
+		<xmp class="xmp">
+			<div class="calendar-cont">
+				<div class="calendar-box">
+					<input type="text" id="cal01" class="input-txt" placeholder="2018-12-04">
+					<!-- <button type="button" class="calendar-btn">시작일선택</button> -->
+				</div>
+				<span class="mark">~</span>
+				<div class="calendar-box">
+					<input type="text" class="input-txt" placeholder="2018-12-04">
+					<!-- <button type="button" class="calendar-btn">마지막일선택</button> -->
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">TIME</h2>
+		<div class="time-cont">
+			<div class="time-box">
+				<input type="text" class="input-txt">
+				<button type="button" class="time-btn">시작시간선택</button>
+			</div>
+			<span class="mark">~</span>
+			<div class="time-box finish-time">
+				<input type="text" class="input-txt">
+				<button type="button" class="time-btn">종료시간선택</button>
+			</div>
+		</div>
+
+		<xmp class="xmp">
+			<div class="time-cont">
+				<div class="time-box">
+					<input type="text" class="input-txt">
+					<button type="button" class="time-btn">시작시간선택</button>
+				</div>
+				<span class="mark">~</span>
+				<div class="time-box finish-time">
+					<input type="text" class="input-txt">
+					<button type="button" class="time-btn">종료시간선택</button>
+				</div>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">RADIO</h2>
+		<div class="radio-set">
+			<input type="radio" id="rd01" name="rdi01"><label for="rd01">동의</label>
+			<input type="radio" id="rd02" name="rdi01"><label for="rd02">미동의</label>
+		</div>
+
+
+
+		<xmp class="xmp">
+			<div class="radio-set">
+				<input type="radio" id="rd01" name="rdi01"><label for="rd01">동의</label>
+				<input type="radio" id="rd02" name="rdi01"><label for="rd02">미동의</label>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">CHECK BOX</h2>
+		<div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+		<xmp class="xmp">
+			<div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+		</xmp>
+
+		<h2 class="guide-title">RADIO 셀렉트</h2>
+		<div class="toggle-cont toggle-3">
+			<input type="radio" id="rad01" name="tog1" checked="">
+			<label for="rad01" tabindex="0"><span>고객전체</span></label>
+			<input type="radio" id="rad02" name="tog1">
+			<label for="rad02" tabindex="0"><span>잠재</span></label>
+			<input type="radio" id="rad03" name="tog1">
+			<label for="rad03" tabindex="0"><span>일반</span></label>
+		</div>
+		<div class="toggle-cont">
+			<input type="radio" id="genM" checked="" name="toggle01">
+			<label for="genM" tabindex="0"><span>남</span></label>
+			<input type="radio" id="genW" name="toggle01">
+			<label for="genW" tabindex="0"><span>여</span></label>
+		</div>
+		<xmp class="xmp">
+			<div class="toggle-cont toggle-3">
+				<input type="radio" id="rad01" name="tog1" checked="">
+				<label for="rad01" tabindex="0"><span>고객전체</span></label>
+				<input type="radio" id="rad02" name="tog1">
+				<label for="rad02" tabindex="0"><span>잠재</span></label>
+				<input type="radio" id="rad03" name="tog1">
+				<label for="rad03" tabindex="0"><span>일반</span></label>
+			</div>
+
+			<div class="toggle-cont">
+				<input type="radio" id="genM" checked="" name="toggle01">
+				<label for="genM" tabindex="0"><span>남</span></label>
+				<input type="radio" id="genW" name="toggle01">
+				<label for="genW" tabindex="0"><span>여</span></label>
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">TAB</h2>
+		<ul class="tab-list">
+			<li class="on"><a href="#">정비이력</a></li>
+			<li><a href="#">예약정보</a></li>
+		</ul>
+		<div class="tab-cont">
+			내용
+		</div>
+		<xmp class="xmp">
+			<ul class="tab-list">
+				<li class="on"><a href="#">정비이력</a></li>
+				<li><a href="#">예약정보</a></li>
+			</ul>
+
+			<div class="tab-cont">
+				내용
+			</div>
+		</xmp>
+
+		<h2 class="guide-title">타이틀</h2>
+		<strong class="table-tit">고객정보활용동의</strong>
+		<xmp class="xmp">
+			<strong class="table-tit">고객정보활용동의</strong>
+		</xmp>
+
+		<h2 class="guide-title">타이틀 박스</h2>
+		<div class="table-tit-cont">
+			<strong class="table-tit">고객정보활용동의</strong>
+			<div class="btn-area">
+				<button type="button" class="table-btn red">고객서명</button>
+				<button type="button" class="table-btn red-line">온라인동의</button>
+			</div>
+		</div>
+
+		<div class="table-tit-cont">
+			<div class="confirm-check">
+				<strong class="table-tit">계약자 정보</strong>
+				<div class="checkbox-set">
+					<input type="checkbox" id="check001">
+					<label for="check001">계약자와 동일</label>
+				</div>
+			</div>
+			<div class="btn-area right">
+				<button type="button" class="btn-add width-auto">고객정보수정</button>
+			</div>
+		</div>
+		<xmp class="xmp">
+			<div class="table-tit-cont">
+				<strong class="table-tit">고객정보활용동의</strong>
+				<div class="btn-area">
+					<button type="button" class="table-btn red">고객서명</button>
+					<button type="button" class="table-btn red-line">온라인동의</button>
+				</div>
+			</div>
+
+			<div class="table-tit-cont">
+				<div class="confirm-check">
+					<strong class="table-tit">계약자 정보</strong>
+					<div class="checkbox-set">
+						<input type="checkbox" id="check001">
+						<label for="check001">계약자와 동일</label>
+					</div>
+				</div>
+				<div class="btn-area right">
+					<button type="button" class="btn-add width-auto">고객정보수정</button>
+				</div>
+			</div>
+		</xmp>
+
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

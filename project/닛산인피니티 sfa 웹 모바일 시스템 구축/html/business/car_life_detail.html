@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISSAN</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/business.css">
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- infiniti 사용시 class="infiniti" 추가 -->
+        <div class="gnb-menu">
+            <div class="gnb-close">
+                <strong class="gnb-logo">NISSAN</strong>
+                <!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+                <!-- infiniti 로고 사용시  -->
+                <button type="button">메뉴 닫기</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">홈</a></li>
+                <li class="active"><a href="#">담당SC배정</a></li>
+                <li><a href="#">고객관리</a></li>
+                <li><a href="#">영업활동관리</a></li>
+                <li><a href="#">계약관리</a></li>
+                <li><a href="#">캠페인</a></li>
+                <li><a href="#">재고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ul>
+            <div class="gnb-btn">
+                <a href="#"><span>홍길동</span> 로그아웃</a>
+            </div>
+        </div>
+        <div id="header">
+            <button type="button" class="header-menu">gnb menu</button>
+            <h1 class="logo hidden">NISSAN</h1>
+            <!-- <h1 class="logo-infiniti hidden">infiniti</h1> -->
+            <!-- infiniti 로고 사용시  -->
+            <a href="#" class="btn-back">뒤로가기</a>
+            <h2 class="page-title">출고고객정보</h2>
+        </div>
+        <div id="container">
+            <div class="contents">
+                <div class="btn-area">
+                    <div class="right">
+                        <button type="button" class="btn-add">계획</button>
+                        <button type="button" class="btn-add">SMS</button>
+                    </div>
+                </div>
+                <!--개인 시작-->
+                <div class="carlife-info separation indi">
+                    <strong class="table-tit">고객 정보</strong>
+					<div class="form-cont">
+						<ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">홍길동</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">개인</div>
+                                </div>
+							</li>
+							<li>
+                                <strong class="info-tit"><span>생년월일</span></strong>
+								<div class="input-width">
+                                    <div class="input-disabled">1989-12-10</div>
+								</div>
+							</li>
+							<li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+							<li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+						</ul>
+                    </div>
+                </div>
+                <!--개인 끝-->
+
+                <!--법인 시작-->
+                <div class="carlife-info separation corp">
+                    <strong class="table-tit">고객 정보</strong>
+                    <div class="form-cont">
+                        <ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">홍길동</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">법인</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>사업자등록번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>법인번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>대표자명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+                            <li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--법인 끝-->
+
+                <!--개인사업자 시작-->
+                <div class="carlife-info separation lice">
+                    <strong class="table-tit">고객 정보</strong>
+                    <div class="form-cont">
+                        <ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">홍길동</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">개인사업자</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>사업자등록번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>대표자명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+                            <li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--개인사업자 끝-->
+                <div class="carlife-info separation">
+                    <strong class="table-tit">차량 정보</strong>
+                    <div class="form-cont">
+                        <ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span>차량번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>차대번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>모델명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>차종</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>등록일자</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">2018-01-12</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>차량점검</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>신차구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>주행거리</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>판매SC</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>판매딜러</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carlife-info separation">
+                    <strong class="table-tit">정비이력</strong>
+                    <ul class="tab-list">
+                        <li class="on"><a href="#">정비이력</a></li>
+                        <li><a href="#">예약정보</a></li>
+                    </ul>
+                    <div class="tab-cont">
+                        <div class="table-col table-scroll"><!-- 2019-03-28 yscroll-hidden 클래스 삭제 -->
+                            <table>
+                                <caption>정비이력</caption>
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:100px">
+                                    <col style="width:100px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">사업소</th>
+                                        <th scope="col">RO일자</th>
+                                        <th scope="col">RO번호</th>
+                                        <th scope="col">주행거리</th>
+                                        <th scope="col">RO상태</th>
+                                        <th scope="col">작업번호</th>
+                                        <th scope="col">고객요구사항</th>
+                                        <th scope="col">SC의견</th>
+                                        <th scope="col">테크니션의견</th>
+                                        <th scope="col">RO유형</th>
+                                        <th scope="col">정산유형</th>
+                                        <th scope="col">테크니션</th>
+                                        <th scope="col">예약접수자</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NED0001</td>
+                                        <td>2016-11-16</td>
+                                        <td>01611-012</td>
+                                        <td class="txt-right">34,732</td>
+                                        <td>수납</td>
+                                        <td>0001</td>
+                                        <td class="txt-left">40,000KM 정기점검</td>
+                                        <td class="txt-left">브레이크액 교환원치 않음</td>
+                                        <td class="txt-left">체크리스트에 따라 점검<br> 하체 및 소음기 정상<br>냉각수 및 오일양 정상<br>타이어 공기압 36psi로<br>향후 브레이크액 및 밧데리</td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td></td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0002</td>
+                                        <td class="txt-left">엔진오일 및 필터 교환_4</td>
+                                        <td class="txt-left"></td>
+                                        <td class="txt-left">엔진오일 및 필터 교환</td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td></td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0003</td>
+                                        <td class="txt-left">에어컨 필터 교환</td>
+                                        <td class="txt-left">[추가작업]</td>
+                                        <td class="txt-left"></td>
+                                        <td>일반</td>
+                                        <td>일반</td>
+                                        <td></td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0003</td>
+                                        <td class="txt-left">에어컨 필터 교환</td>
+                                        <td class="txt-left">[추가작업]</td>
+                                        <td class="txt-left"></td>
+                                        <td>일반</td>
+                                        <td>일반</td>
+                                        <td></td>
+                                        <td>황현용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--예약정보 시작-->
+                    <ul class="tab-list">
+                        <li><a href="#">정비이력</a></li>
+                        <li class="on"><a href="#">예약정보</a></li>
+                    </ul>
+                    <div class="tab-cont">
+                        <div class="table-col table-scroll"><!-- 2019-03-28 yscroll-hidden 클래스 삭제 -->
+                            <table>
+                                <caption>정비이력</caption>
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:100px">
+                                    <col style="width:100px">
+                                    <col style="width:300px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:180px">
+                                    <col style="width:200px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                    <col style="width:80px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">사업소</th>
+                                        <th scope="col">예약일자</th>
+                                        <th scope="col">예약번호</th>
+                                        <th scope="col">실예약일자</th>
+                                        <th scope="col">예약상태</th>
+                                        <th scope="col">작업번호</th>
+                                        <th scope="col">고객요구사항</th>
+                                        <th scope="col">SC의견</th>
+                                        <th scope="col">RO유형</th>
+                                        <th scope="col">정산유형</th>
+                                        <th scope="col">예약접수자</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NED0001</td>
+                                        <td>2016-11-16</td>
+                                        <td>201611-0108</td>
+                                        <td>2016-11-16 09:00 - 2016-11-16 10:00</td>
+                                        <td>정시입고</td>
+                                        <td>0001</td>
+                                        <td class="txt-left">40,000KM 정기점검</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0002</td>
+                                        <td class="txt-left">엔진오일 및 필터 교환_4</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>2016-01-04</td>
+                                        <td>201601-0016</td>
+                                        <td>2016-01-07 11:00 - 2016-01-07 12:00</td>
+                                        <td>정시입고</td>
+                                        <td>0001</td>
+                                        <td class="txt-left">30,000KM 정기점검</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0002</td>
+                                        <td class="txt-left">엔진오일 및 필터 교환_3</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>타사</td>
+                                        <td>황현용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PMD0002</td>
+                                        <td>2014-10-23</td>
+                                        <td>201410-0447</td>
+                                        <td>2014-10-31 09:00 - 2014-10-31 10:00</td>
+                                        <td>정시입고</td>
+                                        <td>0001</td>
+                                        <td class="txt-left">10,000KM 정기점검</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>자사</td>
+                                        <td>오해수</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0002</td>
+                                        <td class="txt-left">엔진오일 및 필터 교환_1</td>
+                                        <td class="txt-left"></td>
+                                        <td>FMS</td>
+                                        <td>자사</td>
+                                        <td>오해수</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--예약정보 끝-->
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn-gray">목록</button><!-- 2018-12-20 버튼 클래스 변경 -->
+                </div>
+            </div>
+            <div id="footer">
+                <span>Copyright, 2016 by <strong>Nissan.</strong></span>
+                All page Contents is property of Nissan
+            </div>
+        </div>
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

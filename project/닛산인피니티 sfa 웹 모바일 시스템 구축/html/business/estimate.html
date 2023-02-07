@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISSAN</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/business.css">
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- infiniti 사용시 class="infiniti" 추가 -->
+        <div class="gnb-menu">
+            <div class="gnb-close">
+                <strong class="gnb-logo">NISSAN</strong>
+                <!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+                <!-- infiniti 로고 사용시  -->
+                <button type="button">메뉴 닫기</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">홈</a></li>
+                <li class="active"><a href="#">담당SC배정</a></li>
+                <li><a href="#">고객관리</a></li>
+                <li><a href="#">영업활동관리</a></li>
+                <li><a href="#">계약관리</a></li>
+                <li><a href="#">캠페인</a></li>
+                <li><a href="#">재고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ul>
+            <div class="gnb-btn">
+                <a href="#"><span>홍길동</span> 로그아웃</a>
+            </div>
+        </div>
+        <div id="header">
+            <button type="button" class="header-menu">gnb menu</button>
+            <h1 class="logo hidden">NISSAN</h1>
+            <!-- <h1 class="logo-infiniti hidden">infiniti</h1> -->
+            <!-- infiniti 로고 사용시  -->
+            <a href="#" class="btn-back">뒤로가기</a>
+            <h2 class="page-title">견적서</h2>
+        </div>
+        <div id="container">
+            <div class="contents">
+                <ul class="step-cont">
+                    <li class="on"><span>결제고객정보</span></li>
+                    <li><span>일반고객정보</span></li>
+                    <li><span>견적서</span></li>
+                    <li><span>계약서</span></li>
+                </ul>
+
+                <strong class="table-tit">고객 정보</strong>
+                <!-- 개인/등록외국인 -->
+                <div class="form-cont">
+                    <ul class="info-cont">
+                        <li>
+                            <label for="name10" class="info-tit"><span><span class="ess-mark">*</span>고객명</span></label>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="name10" class="input-txt" placeholder="홍길동">
+                                    <button type="button" class="input-search-btn">찾기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>고객구분</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">개인 / 등록외국인</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>생년월일</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">1989-12-10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>성별</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">남</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>휴대폰번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">010-0000-0000</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 법인 -->
+                <div class="form-cont" style="display:none;">
+                    <ul class="info-cont">
+                        <li>
+                            <label for="name10" class="info-tit"><span>고객명</span></label>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="name10" class="input-txt" placeholder="홍길동">
+                                    <button type="button" class="input-search-btn">찾기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>고객구분</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">법인</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>사업자등록번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>법인번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>대표자명</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>휴대폰번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">010-0000-0000</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 개인사업자 -->
+                <div class="form-cont" style="display:none;">
+                    <ul class="info-cont">
+                        <li>
+                            <label for="name10" class="info-tit"><span>고객명</span></label>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="name10" class="input-txt" placeholder="홍길동">
+                                    <button type="button" class="input-search-btn">찾기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>고객구분</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">개인사업자</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>사업자등록번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>법인번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>대표자명</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>휴대폰번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">010-0000-0000</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn-red">고객정보수정</button>
+                </div>
+
+                <div class="separation">
+                    <strong class="table-tit">최근 견적서</strong>
+                    <ul class="estimate-list">
+                        <li>
+                            <div class="radio-set">
+                                <input type="radio" id="rd01" name="rdi01">
+                                <label for="rd01"><span>2018-10-25</span><span>견적서제목</span><span>NISSAN ALTIMA</span><span>판매등록정보</span><span>지불정보</span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radio-set">
+                                <input type="radio" id="rd02" name="rdi01">
+                                <label for="rd02"><span>2018-10-25</span><span>견적서제목BB</span><span>NISSAN ALTIMA</span><span>판매등록정보</span><span>지불정보</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="separation">
+                    <div class="table-tit-cont">
+                        <div class="confirm-check">
+                            <strong class="table-tit">견적서 작성</strong>
+                        </div>
+                        <div class="btn-area right">
+                            <button type="button" class="btn-add width-auto">작성 초기화</button>
+                        </div>
+                    </div>
+
+                    <ul class="estimate-step">
+                        <li>
+                            <strong class="step-tit">Step 1. 견적서 제목</strong>
+                            <div class="form-cont">
+                                <ul class="info-cont">
+                                    <li class="width-full">
+                                        <label for="aa1" class="info-tit"><span><span class="ess-mark">*</span>제목</span></label>
+                                        <div class="input-width">
+                                            <div class="input-search">
+                                                <input type="text" id="aa1" class="input-txt">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="car-select">
+                            <strong class="step-tit">Step 2. 차량선택</strong>
+                            <ul class="info-cont">
+                                <li>
+                                    <strong class="info-tit"><span>브랜드</span></strong>
+                                    <div class="input-width">
+                                        <div class="toggle-cont">
+                                            <input type="radio" id="c1" checked="" name="toggle021">
+                                            <label for="c1" tabindex="0"><span>NISSAN</span></label>
+                                            <input type="radio" id="c2" name="toggle021">
+                                            <label for="c2" tabindex="0"><span>INFINITI</span></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="a22" class="info-tit"><span><span class="ess-mark">*</span>차종</span></label>
+                                    <div class="input-width divide">
+                                        <select id="a22" class="select-box">
+                                            <option>ALTIMA</option>
+                                        </select>
+                                        <select class="select-box">
+                                            <option>ALTIMA 2.5</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="bb1" class="info-tit"><span><span class="ess-mark">*</span>연식</span></label>
+                                    <div class="input-width btn-search-cont">
+                                        <select id="bb1" class="select-box">
+                                            <option>연식</option>
+                                        </select>
+                                        <button type="button" class="button btn-search">조회</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="table-col">
+                                <table>
+                                    <caption>조회결과</caption>
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">카시리즈</th>
+                                            <th scope="col" class="model">모델</th>
+                                            <th scope="col">PACK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radio-set none-label">
+                                                    <input type="radio" id="se1" name="rdi02">
+                                                    <label for="se1">선택</label>
+                                                </div>
+                                            </td>
+                                            <td>L338</td>
+                                            <td class="model">ALTIMA 2.5</td>
+                                            <td>25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio-set none-label">
+                                                    <input type="radio" id="se2" name="rdi02">
+                                                    <label for="se2">선택</label>
+                                                </div>
+                                            </td>
+                                            <td>L338</td>
+                                            <td class="model">ALTIMA 2.5</td>
+                                            <td>25(S)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio-set none-label">
+                                                    <input type="radio" id="se3" name="rdi02">
+                                                    <label for="se3">선택</label>
+                                                </div>
+                                            </td>
+                                            <td>L338</td>
+                                            <td class="model">ALTIMA 2.5(T)</td>
+                                            <td>25(T)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio-set none-label">
+                                                    <input type="radio" id="se4" name="rdi02">
+                                                    <label for="se4">선택</label>
+                                                </div>
+                                            </td>
+                                            <td>L338</td>
+                                            <td class="model">ALTIMA 3.5(T)</td>
+                                            <td>25(T)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <ul class="info-cont">
+                                <li>
+                                    <label for="slc1" class="info-tit"><span><span class="ess-mark">*</span>색상</span></label>
+                                    <div class="input-width">
+                                        <select id="slc1" class="select-box">
+                                            <option>K23-G Silver-Black</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="slc2" class="info-tit"><span><span class="ess-mark">*</span>판매유형</span></label>
+                                    <div class="input-width">
+                                        <select id="slc2" class="select-box">
+                                            <option>일반고객</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+<strong class="info-tit fix1"><span>재고</span></strong><!-- 2019-03-13 -->
+                                    <div class="input-width input-confirm">
+                                        <div class="input-disabled">2</div>
+                                        <div class="checkbox-set">
+                                            <input type="checkbox" id="chk002">
+                                            <label for="chk002"><span class="ess-mark">*</span>개별소비세인하</label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="car-info">
+                                <li><em>차종 : </em>NISSAN - ALTIMA2.5(S) – 2018년 – K23-G:Silver-Black</li>
+                                <li><em>가격정보 : </em><strong>29,900,000원</strong> (VAT 2,718,182원포함)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="step-tit">Step 3. 할인 및 등록비용</strong>
+                            <ul class="info-cont">
+                                <li>
+                                    <label for="disc1" class="info-tit"><span>할인금액</span></label>
+                                    <div class="input-width">
+                                        <div class="unit-cont">
+                                            <input type="text" id="disc1" class="input-txt">
+                                            <span class="unit">원</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="disc2" class="info-tit"><span>할인내용</span></label>
+                                    <div class="input-width">
+                                        <input type="text" id="disc2" class="input-txt">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="prom" class="info-tit"><span><span class="ess-mark">*</span>프로모션</span></label>
+                                    <div class="input-width">
+                                        <select id="prom" class="select-box">
+                                            <option> RCI무이자 처리</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="separation">
+                                <ul class="info-cont">
+                                    <li>
+                                        <label for="e1" class="info-tit"><span><span class="ess-mark">*</span>취득세</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e1" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e2" class="info-tit"><span>취득세감면</span></label>
+                                        <div class="input-width">
+                                            <input type="text" id="e2" class="input-txt">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e3" class="info-tit"><span><span class="ess-mark">*</span>공채</span></label>
+                                        <div class="input-width">
+                                            <select id="e3" class="select-box">
+                                                <option>서울</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>할인/매입</span></strong>
+                                        <div class="input-width">
+                                            <div class="toggle-cont">
+                                                <input type="radio" id="ee1" checked="" name="toggle03">
+                                                <label for="ee1" tabindex="0"><span>할인</span></label>
+                                                <input type="radio" id="ee2" name="toggle03">
+                                                <label for="ee2" tabindex="0"><span>매입</span></label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e4" class="info-tit"><span><span class="ess-mark">*</span>매입율(%)</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e4" class="input-txt">
+                                                <span class="unit">%</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e5" class="info-tit"><span><span class="ess-mark">*</span>할인율(%)</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e5" class="input-txt">
+                                                <span class="unit">%</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e6" class="info-tit"><span>등록대행수수료</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e6" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e7" class="info-tit"><span>탁송료</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e7" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e8" class="info-tit"><span>인지세</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e8" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e9" class="info-tit"><span>번호판대</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e9" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e10" class="info-tit"><span>부대비용</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e10" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="e11" class="info-tit"><span>기타부대비용</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="e11" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="step-tit">Step 4. 지불정보</strong>
+                            <!-- 지불방법 : 현금 -->
+                            <ul class="info-cont">
+                                <li>
+                                    <label for="d1" class="info-tit"><span>지불방법</span></label>
+                                    <div class="input-width">
+                                        <div class="toggle-cont toggle-3">
+                                            <input type="radio" id="ee11" checked="" name="toggle01">
+                                            <label for="ee11" tabindex="0"><span>현금</span></label>
+                                            <input type="radio" id="ee22" name="toggle01">
+                                            <label for="ee22" tabindex="0"><span>할부</span></label>
+                                            <input type="radio" id="ee33" name="toggle01">
+                                            <label for="ee33" tabindex="0"><span>리스</span></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="d2" class="info-tit"><span><span class="ess-mark">*</span>계약금</span></label>
+                                    <div class="input-width">
+                                        <div class="unit-cont">
+                                            <input type="text" id="d2" class="input-txt">
+                                            <span class="unit">원</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="d3" class="info-tit"><span><span class="ess-mark">*</span>인도잔금</span></label>
+                                    <div class="input-width">
+                                        <div class="unit-cont">
+                                            <input type="text" id="d3" class="input-txt">
+                                            <span class="unit">원</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- 지불방법 : 할부 -->
+                            <ul class="info-cont">
+                                <li>
+                                    <label for="d1" class="info-tit"><span>지불방법</span></label>
+                                    <div class="input-width">
+                                        <div class="toggle-cont toggle-3">
+                                            <input type="radio" id="ee11" name="disc-toggel">
+                                            <label for="ee11" tabindex="0"><span>현금</span></label>
+                                            <input type="radio" id="ee22" name="disc-toggel" checked="">
+                                            <label for="ee22" tabindex="0"><span>할부</span></label>
+                                            <input type="radio" id="ee33" name="disc-toggel">
+                                            <label for="ee33" tabindex="0"><span>리스</span></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn" class="info-tit"><span><span class="ess-mark">*</span>금융사</span></label>
+                                    <div class="input-width">
+                                        <select id="fn" class="select-box">
+                                            <option>알씨아이파이낸셜서비스코리아</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="width-full">
+                                    <strong class="info-tit"><span>금융상품정보</span></strong>
+                                    <div class="input-width">
+                                        <p class="info-cont-txt">[상품종료일자 : 2018-11-30, 상품등록일자 : 2018-11-06]</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn2" class="info-tit"><span><span class="ess-mark">*</span>할부상품</span></label>
+                                    <div class="input-width">
+                                        <select id="fn2" class="select-box">
+                                            <option>처리할부 II</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn2" class="info-tit"><span><span class="ess-mark">*</span>할부기간</span></label>
+                                    <div class="input-width">
+                                        <select id="fn2" class="select-box">
+                                            <option>36개월</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn3" class="info-tit"><span><span class="ess-mark">*</span>유예율</span></label>
+                                    <div class="input-width">
+                                        <select id="fn3" class="select-box">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong class="info-tit"><span>유예금</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled txt-right">0 원</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn4" class="info-tit"><span><span class="ess-mark">*</span>할부금리</span></label>
+                                    <div class="input-width">
+                                        <select id="fn4" class="select-box">
+                                            <option>4.9%</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="separation">
+                                <div class="table-tit-cont">
+                                    <div class="confirm-check">
+                                        <strong class="step-sub-tit">할부원금정보</strong>
+                                        <div class="checkbox-set">
+                                            <input type="checkbox" id="check001">
+                                            <label for="check001"><span class="ess-mark">*</span>선수금/선수율 입력 선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>최소선수금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>최대선수금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>선수금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="de5" class="info-tit"><span>선수율(%)</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="de5" class="input-txt">
+                                                <span class="unit">%</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="width-full">
+                                        <p class="info-cont-txt point-color-red">
+                                            무이자 및 처리할부는 최소선수금 이하로 입력할 경우 상품 진행이 불가할 수 있습니다. 선수금이
+                                            최대 선수금을 초과할 경우 진해이 불가할 수 있으므로 최대 선수금을 확인해
+                                            주시기 바랍니다
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>최소할부금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">15,000,000 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>최대할부금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">20,000,000 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="separation">
+                                <strong class="step-sub-tit">기본정보</strong>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>판매가격</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">62,000,000 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="dc5" class="info-tit"><span><span class="ess-mark">*</span>계약금</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="dc5" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>선수인도금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>할부원금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">62,000,000 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="separation">
+                                <strong class="step-sub-tit">할부정보</strong>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>유예금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>이자총계</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">4,966,400 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>월불입금(기간)</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">1,882,400 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>할부기간</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">36개월 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 지불방법 : 리스 -->
+                            <ul class="info-cont">
+                                <li>
+                                    <label for="d1" class="info-tit"><span>지불방법</span></label>
+                                    <div class="input-width">
+                                        <div class="toggle-cont toggle-3">
+                                            <input type="radio" id="ee11" name="disc-toggel2">
+                                            <label for="ee11" tabindex="0"><span>현금</span></label>
+                                            <input type="radio" id="ee22" name="disc-toggel2">
+                                            <label for="ee22" tabindex="0"><span>할부</span></label>
+                                            <input type="radio" id="ee33" name="disc-toggel2" checked="">
+                                            <label for="ee33" tabindex="0"><span>리스</span></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn" class="info-tit"><span><span class="ess-mark">*</span>금융사</span></label>
+                                    <div class="input-width">
+                                        <select id="fn" class="select-box">
+                                            <option>알씨아이파이낸셜서비스코리아</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="width-full">
+                                    <strong class="info-tit"><span>금융상품정보</span></strong>
+                                    <div class="input-width">
+                                        <p class="info-cont-txt">[상품종료일자 : 2018-11-30, 상품등록일자 : 2018-11-06]</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn2" class="info-tit"><span><span class="ess-mark">*</span>리스상품</span></label>
+                                    <div class="input-width">
+                                        <select id="fn2" class="select-box">
+                                            <option>운용리스</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn2" class="info-tit"><span><span class="ess-mark">*</span>리스기간</span></label>
+                                    <div class="input-width">
+                                        <select id="fn2" class="select-box">
+                                            <option>24개월</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn3" class="info-tit"><span><span class="ess-mark">*</span>보증금</span></label>
+                                    <div class="input-width">
+                                        <select id="fn3" class="select-box">
+                                            <option>10%</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn33" class="info-tit"><span><span class="ess-mark">*</span>리스선수율</span></label>
+                                    <div class="input-width">
+                                        <select id="fn33" class="select-box">
+                                            <option>해당없음</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong class="info-tit"><span>선수금(자유입력)</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled txt-right">0 원</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong class="info-tit"><span>전가율</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled txt-right">35 %</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="fn44" class="info-tit"><span><span class="ess-mark">*</span>SC 수수료</span></label>
+                                    <div class="input-width">
+                                        <select id="fn44" class="select-box">
+                                            <option>1%</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="bg44" class="info-tit"><span><span class="ess-mark">*</span>배기량</span></label>
+                                    <div class="input-width">
+                                        <input type="text" id="bg44" class="input-txt">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="bg45" class="info-tit"><span><span class="ess-mark">*</span>연간보험료</span></label>
+                                    <div class="input-width">
+                                        <input type="text" id="bg45" class="input-txt">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="separation">
+                                <strong class="step-sub-tit">리스원금정보</strong>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>취득원가</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">66,908,380 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>선수금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>잔존가치</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="separation">
+                                <strong class="step-sub-tit">기본정보</strong>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>판매가격</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">62,000,000 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="dc5" class="info-tit"><span><span class="ess-mark">*</span>계약금</span></label>
+                                        <div class="input-width">
+                                            <div class="unit-cont">
+                                                <input type="text" id="dc5" class="input-txt">
+                                                <span class="unit">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>보증금</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">6,700,000 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>선수슴</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>취득원가</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">66,908,380 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="separation">
+                                <strong class="step-sub-tit">리스정보</strong>
+                                <ul class="info-cont">
+                                    <li>
+                                        <strong class="info-tit"><span>잔존가치</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">23,420,000 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>월보험료</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>월자동차세</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">0 원</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong class="info-tit"><span>월리스료</span></strong>
+                                        <div class="input-width">
+                                            <div class="input-disabled txt-right">2,104,000 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                            <ul class="car-info">
+                                <li><em>차종 : </em>NISSAN - ALTIMA2.5(S) – 2018년 – K23-G:Silver-Black</li>
+                                <li><em>최종가격 : </em><strong>29,900,000원</strong>(VAT 2,718,182원포함)</li>
+                            </ul>
+                            <div class="btn-area">
+                                <div class="right">
+                                    <button type="button" class="btn-black">출력 및 전송</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn-area">
+                        <button type="button" class="btn-gray">취소</button>
+                        <button type="button" class="btn-black">등록</button>
+                        <button type="button" class="btn-black">계약서 작성</button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="footer">
+                <span>Copyright, 2016 by <strong>Nissan.</strong></span>
+                All page Contents is property of Nissan
+            </div>
+        </div>
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

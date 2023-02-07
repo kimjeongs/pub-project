@@ -1,0 +1,142 @@
+.input-disabled {
+	height: auto;
+	min-height: 36px;
+}
+
+.contract-info{
+   position: relative;
+}
+.info-cont.estimate-box{
+   position: absolute;
+   top:35px;
+}
+.info-cont.estimate-box+.info-cont{
+   margin-top:55px;
+}
+.info-cont.estimate-box .division-box:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.info-cont.estimate-box .division-box:first-child button{
+   float:right;
+}
+.info-cont.estimate-box .input-disabled{
+   border:1px solid #c3002f;
+}
+.form-cont.form-only+.contract-info.separation{
+   padding:0;
+   margin-top:20px;
+   border-top:none;
+}
+/*寃ъ쟻�꽌 議고쉶 �젅�씠�뼱 �뙘�뾽*/
+.layer-popup.estimate-check li:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.layer-popup.estimate-check .table-grid{
+   display:table;
+   width:100%;
+}
+.layer-popup.estimate-check .table-grid .layout-left {
+	display: table-cell;
+	width: 15%;
+	vertical-align: middle;
+}
+
+.layer-popup.estimate-check .table-grid .layout-right {
+	display: table-cell;
+	width: 85%;
+}
+
+.layer-popup.estimate-check .table-grid .layout-right>div {
+	display: table;
+	width: 100%;
+}
+.layer-popup.estimate-check .data-table{
+   border-bottom:none;
+}
+@media screen and (min-width:641px) {
+   .ctr-table-top .toggle-cont{
+      display:block;
+      clear:both;
+      float:none;
+   }
+   .filtering-drop{
+      display:none;
+      float:none;
+   }
+   .filtering-drop+.btn-area{
+      display:block;
+      float:none;
+   }
+   .filtering-drop+.btn-area:after{
+      display:block;
+      clear: both;
+      content: '';
+   }
+   .info-cont.estimate-box{
+      right:0;
+      top:35px;
+   }
+   .info-cont.estimate-box+.info-cont{
+      margin-top:5px;
+   }
+   .layer-popup.estimate-check .data-table{
+      max-height: 220px;
+      overflow-y: auto;
+   }
+}
+
+/* 20190321, hckim 추가 start */
+.file-area {
+	height: auto;
+	min-height: 36px;
+}
+.filebox  .file-search .file-search-btn {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100px;
+    height: 36px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+.filebox > button {
+    float: right;
+}
+.down-file-cont .btn-delete {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.down-file{
+    display: inline;
+    color:#3366cc;
+    text-decoration: underline;
+    padding-left: 15px;
+    margin-top: 10px;
+    background: url('/SSFA/assets/img/common/icon_download.png') no-repeat 0 3px;
+    background-size: 10px auto;
+    
+}
+.down-file-cont + .down-file-cont {
+    margin-left: 15px;
+}
+.old-file-area + .add-file-area {
+    margin-left: 15px;
+}
+.btn-rm-img {
+    width: 15px;
+    height: 15px;
+    background: url(/SSFA/assets/img/common/btn-delete.png) no-repeat 1px 1px;
+    background-size: 11px;
+    font-size: 0;
+    border: 1px solid #000;
+}
+.down-file-cont .btn-rm-img {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+/* 20190321, hckim 추가 end */

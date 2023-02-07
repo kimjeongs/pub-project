@@ -1,0 +1,90 @@
+.campaign-info.separation:first-child{
+   margin-top:0;
+   padding-top:0;
+   border-top:none;
+}
+.result-cont .table-grid{
+   table-layout: fixed;
+}
+.overflow-wrap,
+.overflow-wrap .col-10{
+   display:block !important;
+}
+.overflow-wrap .col-10{
+   padding-top:10px;
+}
+.mb-only .data-table .col-10 a{
+   display:block;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   width:100%;
+}
+.mb-only .data-table.campaign-ac .checkbox-set{
+   display:table-cell;
+}
+.input-width.half{
+   position: relative;
+}
+.input-width.half .input-disabled{
+   width:calc(50% - 10px);
+   float:right;
+}
+.input-width.half .input-disabled:first-child{
+   float:left;
+}
+.input-width.half:after{
+   display:block;
+   clear:both;
+   content: '';
+}
+.input-width.half .mark{
+   position: absolute;
+   top: 0;
+   left: 50%;
+   width: 20px;
+   font-size: 14px;
+   line-height: 35px;
+   text-align: center;
+   transform: translateX(-50%);
+}
+.input-width.model>.input-disabled{
+   width:30%;
+}
+.input-width.model>.input-disabled+select{
+   width:calc(70% - 5px);
+   margin-left:5px;
+}
+.campaign-info .form-cont+p.txt-right{
+   margin-top:10px;
+}
+
+/*캠페인실행 레이어 팝업*/
+.layer-popup.campaign-sms{
+   width:100%;
+}
+.layer-popup.campaign-sms .pop-cont{
+   padding:77px 10px 20px 10px;
+}
+.layer-popup.campaign-sms .sms-img-box img{
+   max-width:100%;
+}
+.layer-popup.campaign-sms .sms-img-box{
+   text-align: center;
+}
+.layer-popup.campaign-sms .sms-txt-box{
+   padding:20px;
+}
+@media screen and (min-width:641px) {
+   .info-cont.cam li:first-child{
+      float:none;
+   }
+   .layer-popup.campaign-sms{
+      width:400px;
+   }
+}
+@media screen and (min-width:1025px) {
+   .info-cont.cam li:first-child{
+      float:left;
+   }
+}

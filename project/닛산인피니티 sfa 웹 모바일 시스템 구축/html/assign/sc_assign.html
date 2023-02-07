@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/assign.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function () {
+			//DROP 사유입력 popup
+			$('.drop-btn').on('click', function(e){
+				var dropLayer = $('.assign-drop'),
+					layerCose = dropLayer.find('.btn-close'),
+					dimmed = $('.dimmed-layer');
+
+				e.preventDefault();
+
+				dropLayer.add(dimmed).css('display', 'block');
+
+				layerCose.on('click', function () {
+					dropLayer.add(dimmed).removeAttr('style');
+				});
+			});
+			//오프라인 캠페인 popup
+			$('.offline-btn').on('click', function(e){
+				var offlineLayer = $('.layer-popup.offline'),
+					layerCose = offlineLayer.find('.btn-close'),
+					dimmed = $('.dimmed-layer');
+
+				e.preventDefault();
+
+				offlineLayer.add(dimmed).css('display', 'block');
+
+				layerCose.on('click', function () {
+					offlineLayer.add(dimmed).removeAttr('style');
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap"><!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> --><!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> --><!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">담당SC배정</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div class="on"><a href="#"><span>담당SC배정</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">현재 고객 담당</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel01" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel01" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>고객구분</span></strong>
+							<div class="input-width">
+								<div class="toggle-cont">
+									<input type="radio" id="tab01" checked="" name="toggle01">
+									<label for="tab01" tabindex="0"><span>잠재</span></label>
+									<input type="radio" id="tab02" name="toggle01">
+									<label for="tab02" tabindex="0"><span>일반</span></label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span>배정구분</span></strong>
+							<div class="input-width">
+								<div class="toggle-cont toggle-3">
+									<input type="radio" id="rad01" name="toggle02">
+									<label for="rad01" tabindex="0"><span>미배정</span></label>
+									<input type="radio" id="rad02" name="toggle02" checked="">
+									<label for="rad02" tabindex="0"><span>퇴사SC</span></label>
+									<input type="radio" id="rad03" name="toggle02">
+									<label for="rad03" tabindex="0"><span>SC변경</span></label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="sel02" class="info-tit"><span><span class="ess-mark">*</span>배정전담당</span></label>
+							<div class="input-width">
+									<select id="sel02" class="select-box">
+										<option>퇴사 SC 선택</option>
+										<option>SC변경</option>
+									</select>
+							</div>
+						</li>
+						<li>
+							<label for="txt01" class="info-tit"><span>고객명</span></label>
+							<div class="input-width">
+									<input type="text" id="txt01" class="input-txt" placeholder="고객명">
+							</div>
+						</li>
+						<li>
+							<label for="txt02" class="info-tit"><span>연락처</span></label>
+							<div class="input-width">
+									<input type="text" id="txt02" class="input-txt" placeholder="연락처">
+							</div>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button>
+					</div>
+				</div>
+				<div class="result-cont stock">
+					<div class="table-top-cont">
+						<span class="list-count">조회결과 <strong>10</strong> 건</span>
+					</div>
+					<div class="btn-area mb-4side">
+						<div class="left">
+							<select id="member" class="select-box" title="지정할 담당 SC선택">
+								<option>지정할 담당 SC선택</option>
+								<option>위 사업소 소속</option>
+								<option>현재근무 SC이름</option>
+							</select>
+							<button type="button" class="table-btn">지정 SC배정</button>
+						</div>
+						<div class="right">
+							<button type="button" class="table-btn">SC 자동배정</button>
+							<button type="button" class="table-btn drop-btn">DROP</button>
+							<button type="button" class="table-btn long offline-btn">오프라인 일괄등록</button>
+						</div>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">
+										<div class="checkbox-set none-label"><input type="checkbox" id="chkset01-m" name="select-user"><label for="chkset01-m">선택</label></div>
+									</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-5 txt-left">SC : 담당SC명</div>
+										<div class="col-5 col-right">상태 : 미배정</div>
+									</div>
+									<div>
+										<div class="col-2 txt-left">고객명</div>
+										<div class="col-2 txt-left">(잠재)</div>
+										<div class="col-6 col-right">010-1234-5678</div>
+									</div>
+									<div>
+										<div class="col-10 txt-left">등록일시 : 2018-10.12 15:30</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">
+										<div class="checkbox-set none-label"><input type="checkbox" id="chkset02-m" name="select-user"><label for="chkset02-m">선택</label></div>
+									</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-5 txt-left">SC : 김닛산</div>
+										<div class="col-5 col-right">상태 : --</div>
+									</div>
+									<div>
+										<div class="col-2 txt-left">홍길동</div>
+										<div class="col-2 txt-left">(일반)</div>
+										<div class="col-6 col-right">010-1234-5678</div>
+									</div>
+									<div>
+										<div class="col-10 txt-left">등록일시 : 2018-10.12 15:30</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- Medium까지 사용 -->
+									<col style="width: 8%">
+									<col style="width: 8%">
+									<col style="width: 12%">
+									<col style="width: 12%">
+									<col>
+									<col>
+									<col style="width: 9%">
+									<col style="width: 9%">
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- Large이상 사용 -->
+									<col style="width: 5%">
+									<col style="width: 7%">
+									<col style="width: 8%">
+									<col>
+									<col style="width: 8%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col>
+									<col>
+									<col>
+									<col style="width: 11%">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col"><div class="checkbox-set none-label"><input type="checkbox" id="chkset01-p" name="select-user"><label for="chkset01-p">선택</label></div></th>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">사업소</th>
+										<th scope="col">담당SC</th>
+										<th scope="col">고객명</th>
+										<th scope="col">휴대폰번호</th>
+										<th scope="col">등록일시</th>
+										<th scope="col">구분</th>
+										<th scope="col">상태</th>
+										<th scope="col" class="data-hidden">경과일수</th>
+										<th scope="col" class="data-hidden">오프라인상세</th>
+										<th scope="col" class="data-hidden">구매계획</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><div class="checkbox-set none-label"><input type="checkbox" id="chkset02-p" name="select-user"><label for="chkset02-p">선택</label></div></td>
+										<td>2837</td>
+										<td class="data-hidden">프리미어</td>
+										<td>이프로</td>
+										<td>홍길순</td>
+										<td>010-1234-5678</td>
+										<td>2018-10-12 15:30</td>
+										<td>잠재</td>
+										<td>미배정</td>
+										<td class="data-hidden">0</td>
+										<td class="data-hidden">2018부산모터쇼</td>
+										<td class="data-hidden">1달이내</td>
+									</tr>
+									<tr>
+										<td><div class="checkbox-set none-label"><input type="checkbox" id="chkset03-p" name="select-user"><label for="chkset03-p">선택</label></div></td>
+										<td>2836</td>
+										<td class="data-hidden">노블모터스</td>
+										<td>김노모</td>
+										<td>홍길동</td>
+										<td>010-1234-5678</td>
+										<td>2018-10-12 15:30</td>
+										<td>잠재</td>
+										<td>미배정</td>
+										<td class="data-hidden">7</td>
+										<td class="data-hidden">-</td>
+										<td class="data-hidden">-</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+
+			<!--drop 레이어 팝업-->
+			<div class="layer-popup assign-drop">
+				<div class="pop-tit">Drop 사유입력<button class="btn-close">close</button></div>
+				<div class="pop-cont">
+					<div class="area-wrap">
+						<p class="list-txt">Drop 사유</p>
+						<select id="drop-select" class="select-box" title="Drop 사유">
+							<option>사유선택</option>
+							<option>정보누락</option>
+							<option>관심 없음</option>
+						</select>
+					</div>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">취소</button>
+						<button type="button" class="btn-black">Drop</button>
+					</div>
+				</div>
+			</div>
+
+			<!--오프라인 캠페인 레이어 팝업-->
+			<div class="layer-popup offline">
+				<div class="pop-tit">오프라인 캠페인 일괄등록<button class="btn-close">close</button></div>
+				<div class="pop-cont">
+					<div class="area-wrap sms-box">
+						<p class="list-txt">파일선택</p>
+						<div class="file-select-box">
+							<input type="text" readonly="readonly" class="input-txt">
+							<button class="btn-gray file-slt">파일 찾기</button>
+							<input type="file" class="input-txt upfile" id="sms04">
+						</div>
+					</div>
+					<div class="area-wrap">
+						<p class="list-txt">캠페인명</p>
+						<input type="text" id="cam-name" class="input-txt">
+					</div>
+					<div class="area-wrap">
+						<p class="down-info point-color-red">
+							다운로드 받은 양식 내에 붉은색 바탕의 항목은 필수 값입니다.
+							법인 고객은 일괄 업로드로 등록할 수 없습니다.
+						</p>
+					</div>
+					<div class="area-wrap">
+						<button type="button" class="btn-white btn-down">업로드 양식 다운로드</button>
+					</div>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">취소</button>
+						<button type="button" class="btn-black">업로드</button>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

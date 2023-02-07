@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+   <script src="../js/jquery-ui.js"></script>
+   <script src="../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup sms" style="display:block;">
+		<div class="pop-tit">SMS/MMS 전송<button class="btn-close">close</button></div>
+		<div class="pop-cont">
+			<div class="sms-box msg">
+				<label class="search-tit" for="sms01">메시지내용</label>
+				<textarea name="sms-msg" class="txtara" id="sms01"></textarea>
+				<p class="txtara-cnt"><em>0</em> / 90byte</p>
+			</div>
+			<div class="sms-box recp">
+				<label class="search-tit" for="sms02">받는 사람</label>
+				<input type="text" class="input-txt" id="sms02"><button class="btn-gray">나에게</button>
+				<!-- <input type="text" class="input-txt recp-full" id="sms02"> 2018-12-19 나에게 버튼 없을 경우 추가 -->
+			</div>
+			<div class="sms-box disp">
+				<label class="search-tit" for="sms03">보내는 사람</label>
+				<input type="text" class="input-txt" id="sms03">
+			</div>
+			<div class="sms-box upload">
+				<label class="search-tit" for="sms04">파일 업로드</label>
+				<div class="file-select-box">
+					<input type="text" readonly="readonly" class="input-txt">
+					<button class="btn-gray file-slt">파일 찾기</button>
+					<input type="file" class="input-txt upfile" id="sms04">
+				</div>
+				<div class="up-info">
+					<p class="up-txt">※ 최대 3개, 60KB, jpg, jpeg 이미지</p>
+					<button class="btn-gray">업로드</button>
+				</div>
+				<ul class="upload-list">
+					<li><img src="../img/temp/temp_test.jpg" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+					<li><img src="../img/temp/temp_test.png" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+					<li><img src="../img/temp/temp_test.png" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+				</ul>
+			</div>
+			<!-- 2018-12-19 첨부파일만 보일 경우 추가 -->
+			<div class="sms-box upload">
+				<p class="search-tit">첨부파일</p>
+				<ul class="upload-list">
+					<li><img src="../img/temp/temp_test.jpg" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+					<li><img src="../img/temp/temp_test.png" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+					<li><img src="../img/temp/temp_test.png" alt="업로드 이미지"><button class="btn-close img-del">삭제</button></li>
+				</ul>
+			</div>
+			<!-- //2018-12-19 첨부파일만 보일 경우 추가 -->
+			<div class="btn-center">
+				<button class="btn-gray">취소</button><!-- 2018-12-20 위치 수정 -->
+				<button class="btn-black">보내기</button><!-- 2018-12-20 클래스 수정 -->
+				<!-- 2018-12-20 위치 수정 <button class="btn-gray">취소</button> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

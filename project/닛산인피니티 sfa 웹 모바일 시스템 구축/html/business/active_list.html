@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NISSAN</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/business.css">
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function () {
+			$('.toggle-all-action input[type=checkbox]').on('click', function () {
+				var _this = $(this);
+				if (_this.hasClass('toggle-all-check')) {
+					$(this).siblings('input[type=checkbox]').prop('checked', false);
+				} else {
+					$(this).siblings('.toggle-all-check').prop('checked', false);
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- infiniti 사용시 class="infiniti" 추가 -->
+		<div class="gnb-menu">
+			<div class="gnb-close">
+				<strong class="gnb-logo">NISSAN</strong>
+				<!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+				<!-- infiniti 로고 사용시  -->
+				<button type="button">메뉴 닫기</button>
+			</div>
+			<ul class="menu-list">
+				<li><a href="#">홈</a></li>
+				<li class="active"><a href="#">담당SC배정</a></li>
+				<li><a href="#">고객관리</a></li>
+				<li><a href="#">영업활동관리</a></li>
+				<li><a href="#">계약관리</a></li>
+				<li><a href="#">캠페인</a></li>
+				<li><a href="#">재고현황</a></li>
+				<li><a href="#">이용안내</a></li>
+			</ul>
+			<div class="gnb-btn">
+				<a href="#"><span>홍길동</span> 로그아웃</a>
+			</div>
+		</div>
+		<div id="header">
+			<button type="button" class="header-menu">gnb menu</button>
+			<h1 class="logo">NISSAN</h1>
+			<!-- <h1 class="logo-infiniti">infiniti</h1> -->
+			<!-- infiniti 로고 사용시  -->
+			<h2 class="page-title">영업활동관리</h2>
+			<a href="#" class="header-btn">간편등록</a>
+		</div>
+		<div class="sub-tab-list">
+			<div><a href="#"><span>월간계획</span></a></div>
+			<div><a href="#"><span>일간계획</span></a></div>
+			<div class="on"><a href="#"><span>활동현황</span></a></div>
+			<div><a href="#"><span>카라이프</span></a></div>
+		</div>
+		<div id="container">
+			<div class="contents">
+				<div class="search-cont">
+					<strong class="search-tit">담당 SC</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="sel01" class="info-tit"><span>사업소</span></label>
+							<div class="input-width">
+								<select id="sel01" class="select-box" disabled="disabled">
+									<option>사업소 선택</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel02" class="info-tit"><span>담당 SC</span></label>
+							<div class="input-width">
+								<select id="sel02" class="select-box" disabled="disabled">
+									<option>담당 SC 선택</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">기회고객조건</strong>
+					<ul class="info-cont">
+						<li>
+							<label for="name" class="info-tit"><span>고객명</span></label>
+							<div class="input-width">
+								<div class="input-search">
+									<input type="text" id="name" class="input-txt" placeholder="고객명">
+									<button type="button" class="input-search-btn">찾기</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="sel03" class="info-tit"><span>고객분류</span></label>
+							<div class="input-width">
+								<select id="sel03" class="select-box">
+									<option>고객</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel04" class="info-tit"><span>활동구분</span></label>
+							<div class="input-width">
+								<select id="sel04" class="select-box">
+									<option>활동</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel05" class="info-tit"><span>마케팅채널</span></label>
+							<div class="input-width">
+								<select id="sel05" class="select-box">
+									<option>마케팅</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel06" class="info-tit"><span>SMS수신</span></label>
+							<div class="input-width">
+								<select id="sel06" class="select-box">
+									<option>여부</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="sel07" class="info-tit"><span>구매계획</span></label>
+							<div class="input-width">
+								<select id="sel07" class="select-box">
+									<option>구매계획</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label for="txt01" class="info-tit"><span>경과일수</span></label>
+							<div class="input-width">
+								<input type="text" id="txt01" class="input-txt" placeholder="숫자입력">
+							</div>
+						</li>
+					</ul>
+					<strong class="search-tit">활동 조건</strong>
+					<ul class="info-cont">
+						<li class="width-full registration">
+							<div class="division-box">
+								<label for="cal01" class="info-tit"><span>조회기간</span></label>
+								<div class="input-width">
+									<div class="calendar-cont">
+										<div class="calendar-box">
+											<input type="text" id="cal01" class="input-txt" placeholder="시작 년원일">
+										</div>
+										<span class="mark">~</span>
+										<div class="calendar-box">
+											<input type="text" class="input-txt" placeholder="종료 년원일">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="division-box range prev-next">
+								<div class="prev_next">
+									<button type="button" class="prev">이전</button>
+									<button type="button" class="next">다음</button>
+								</div>
+								<div class="toggle-cont toggle-3">
+									<input type="radio" id="rad04" name="tog2" checked="">
+									<label for="rad04" tabindex="0"><span>D<span class="hidden-txt">ay</span></span></label>
+									<input type="radio" id="rad05" name="tog2">
+									<label for="rad05" tabindex="0"><span>W<span class="hidden-txt">eek</span></span></label>
+									<input type="radio" id="rad06" name="tog2">
+									<label for="rad06" tabindex="0"><span>M<span class="hidden-txt">onth</span></span></label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<strong class="info-tit"><span><span class="ess-mark">*</span>활동종류</span></strong>
+							<div class="input-width">
+								<div class="ac-type">
+									<div class="toggle-cont toggle-5 toggle-all-action">
+										<input type="checkbox" id="chk01" class="toggle-all-check">
+										<label for="chk01" tabindex="0"><span>전체</span></label>
+										<input type="checkbox" id="chk02" checked="">
+										<label for="chk02" tabindex="0"><span>계획</span></label>
+										<input type="checkbox" id="chk03">
+										<label for="chk03" tabindex="0"><span>시승</span></label>
+										<input type="checkbox" id="chk04" checked="">
+										<label for="chk04" tabindex="0"><span>견적</span></label>
+										<input type="checkbox" id="chk05">
+										<label for="chk05" tabindex="0"><span>계약</span></label>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label for="sel08" class="info-tit"><span>활동결과</span></label>
+							<div class="input-width">
+								<select id="sel08" class="select-box">
+									<option>활동결과</option>
+								</select>
+							</div>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<button type="button" class="btn-gray">초기화</button>
+						<button type="button" class="btn-black">조회</button><!-- 2018-12-19 클래스 수정 -->
+					</div>
+				</div>
+				<div class="result-cont">
+					<div class="table-top-cont">
+						<span class="list-count">계획/견적 활동, 결과전체 조회결과 <strong>2837</strong> 건</span>
+						<div class="btn-area btn3">
+							<div class="right">
+								<button type="button" class="btn-add">계획</button>
+								<button type="button" class="btn-add">시승</button>
+								<button type="button" class="btn-add">견적</button>
+							</div>
+						</div>
+					</div>
+					<!-- Smaill까지 사용 -->
+					<div class="mb-only">
+						<ul class="data-table">
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">
+										<div class="radio-set none-label">
+											<input type="radio" id="rdo03" name="select-user"><label for="rdo03">선택</label>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-2 txt-left name"><a href="#">홍길동홍길동홍길동</a></div><!-- 2019-03-21 클래스 추가 -->
+										<div class="col-3 txt-left">(1일 경과)</div>
+										<div class="col-5 txt-right"><a href="#">010-1234-5678</a></div>
+									</div>
+									<div>
+										<div class="col-7 txt-left">활동일자 : 2018-10.12 15:30</div>
+										<div class="col-3 txt-right"><a href="#">계약서(완료)</a></div>
+									</div>
+								</div>
+							</li>
+
+							<li class="table-grid">
+								<div class="layout-left">
+									<div class="col-1">
+										<div class="radio-set none-label">
+											<input type="radio" id="rdo04" name="select-user"><label for="rdo04">선택</label>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right">
+									<div>
+										<div class="col-2 txt-left name"><a href="#">홍길동</a></div><!-- 2019-03-21 클래스 추가 -->
+										<div class="col-3 txt-left"></div>
+										<div class="col-5 txt-right">010-1234-5678</div>
+									</div>
+									<div>
+										<div class="col-7 txt-left">활동일자 : 2018-10.12 15:30</div>
+										<div class="col-3 txt-right"><a href="#">계약서(완료)</a></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- large 이상 사용 -->
+					<div class="not-mb">
+						<div class="table-col">
+							<table>
+								<caption>조회결과</caption>
+								<colgroup class="colgroup-hidden">
+									<!-- large 사용 -->
+									<col style="width: 6%">
+									<col>
+									<col>
+									<col style="width: 22%">
+									<col>
+									<col>
+									<col>
+									<col style="width: 20%">
+								</colgroup>
+								<colgroup class="colgroup-view">
+									<!-- large 이상 사용 -->
+									<col style="width: 4%">
+									<col>
+									<col>
+									<col>
+									<col>
+									<col style="width: 22%">
+									<col>
+									<col>
+									<col>
+									<col style="width: 14%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">선택</th>
+										<th scope="col">순번</th>
+										<th scope="col" class="data-hidden">사업소</th>
+										<th scope="col" class="data-hidden">담당SC</th>
+										<th scope="col">고객명</th>
+										<th scope="col">활동일시(계획일시)</th>
+										<th scope="col">활동구분</th>
+										<th scope="col">활동결과</th>
+										<th scope="col">경과일수</th>
+										<th scope="col">휴대폰번호</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="radio-set none-label"><input type="radio" id="rdo01" name="select-user"><label for="rdo01">선택</label></div>
+										</td>
+										<td>2837</td>
+										<td class="data-hidden">프리미어</td>
+										<td class="data-hidden">이프로</td>
+										<td><a href="#">홍길동</a></td>
+										<td>2018-10-12 15:30</td>
+										<td><a href="#">계약서</a></td>
+										<td>완료</td>
+										<td>-</td>
+										<td>010-1234-5678</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="radio-set none-label"><input type="radio" id="rdo02" name="select-user"><label for="rdo02">선택</label></div>
+										</td>
+										<td>2836</td>
+										<td class="data-hidden">노블모터스</td>
+										<td class="data-hidden">김노모</td>
+										<td><a href="#">홍길순</a></td>
+										<td>2018-10-12 15:30</td>
+										<td><a href="#">시승</a></td>
+										<td>취소</td>
+										<td>2</td>
+										<td><a href="#">010-1234-1444</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="pagination">
+						<a href="#" class="first">처음</a>
+						<a href="#" class="prev">이전</a>
+						<span class="page-num">
+							<strong title="현재">1</strong>
+							<!-- 2018-12-18 삭제 <a href="#">1</a> -->
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+						</span>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
+				</div>
+				<!-- dimmed -->
+				<div class="dimmed-layer"></div>
+			</div>
+			<div id="footer">
+				<span>Copyright, 2016 by <strong>Nissan.</strong></span>
+				All page Contents is property of Nissan
+			</div>
+		</div>
+	</div>
+	<!-- dimmed -->
+	<div class="dimmed-layer"></div>
+</body>
+
+</html>

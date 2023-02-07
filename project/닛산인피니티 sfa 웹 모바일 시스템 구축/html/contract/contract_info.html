@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISSAN</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/contract.css">
+	<link rel="stylesheet" href="../css/contract_info.css">
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function () {
+
+			//견적서 popup
+			$('.estimate-btn').on('click', function(e){
+				var estimateLayer = $('.estimate-check'),
+					layerCose = estimateLayer.find('.btn-close'),
+					dimmed = $('.dimmed-layer');
+
+				e.preventDefault();
+
+				estimateLayer.add(dimmed).css('display', 'block');
+
+				layerCose.on('click', function () {
+					estimateLayer.add(dimmed).removeAttr('style');
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- infiniti 사용시 class="infiniti" 추가 -->
+        <div class="gnb-menu">
+            <div class="gnb-close">
+                <strong class="gnb-logo">NISSAN</strong>
+                <!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+                <!-- infiniti 로고 사용시  -->
+                <button type="button">메뉴 닫기</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">홈</a></li>
+                <li class="active"><a href="#">담당SC배정</a></li>
+                <li><a href="#">고객관리</a></li>
+                <li><a href="#">영업활동관리</a></li>
+                <li><a href="#">계약관리</a></li>
+                <li><a href="#">캠페인</a></li>
+                <li><a href="#">재고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ul>
+            <div class="gnb-btn">
+                <a href="#"><span>홍길동</span> 로그아웃</a>
+            </div>
+        </div>
+        <div id="header">
+            <button type="button" class="header-menu">gnb menu</button>
+            <h1 class="logo hidden">NISSAN</h1>
+            <!-- <h1 class="logo-infiniti hidden">infiniti</h1> -->
+            <!-- infiniti 로고 사용시  -->
+            <a href="#" class="btn-back">뒤로가기</a>
+            <h2 class="page-title">계약정보</h2>
+        </div>
+        <div id="container">
+            <div class="contents">
+                <ul class="step-cont">
+                    <li><span>잠재고객정보</span></li>
+                    <li><span>일반고객정보</span></li>
+                    <li><span>견적서</span></li>
+                    <li class="on"><span>계약서</span></li>
+                </ul>
+
+                <div class="form-cont form-only">
+                    <ul class="info-cont">
+                        <li>
+                            <label for="txt01" class="info-tit"><span><span class="ess-mark">*</span>딜러계약번호</span></label>
+                            <div class="input-width">
+                                <input type="text" id="txt01" class="input-txt" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>상태</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">계약승인</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contract-info separation">
+                    <div class="table-tit-cont">
+                        <div class="confirm-check">
+                            <strong class="table-tit">계약자 정보</strong>
+                        </div>
+                        <div class="btn-area right">
+                            <button type="button" class="btn-add width-auto">고객정보수정</button>
+                        </div>
+                    </div>
+                    <!--개인 시작-->
+					<div class="form-cont indi">
+						<ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span><span class="ess-mark">*</span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-search">
+                                        <input type="text" id="name" class="input-txt" placeholder="고객명">
+                                        <button type="button" class="input-search-btn">찾기</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">개인/등록외국인</div>
+                                </div>
+							</li>
+							<li>
+                                <strong class="info-tit"><span>생년월일</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled birth-confirm">1989-12-10</div>
+                                    <div class="input-disabled gender-confirm">남</div>
+                                </div>
+                            </li>
+							<li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+							<li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>자택주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)자택주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">자택주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>전화번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">02-0000-0000</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+                            <li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>직장주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)직장주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">직장주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>직장전화</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">02-0000-0000</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>FAX</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">02-1234-1111</div>
+                                </div>
+                            </li>
+                            <li class="width-full">
+                                <div class="division-box">
+                                    <div class="input-confirm">
+                                        <div class="checkbox-set"><input type="checkbox" id="chk001"><label for="chk001">공동소유여부</label></div>
+                                        <button type="button" class="btn-white width-auto">공동명의 고객 조회</button>
+                                    </div>
+                                </div>
+                                <div class="division-box confirm-name">
+                                    <div class="input-width">
+                                        <div class="input-disabled">공동명의자:&nbsp;<span>홍길순</span></div>
+                                    </div>
+                                </div>
+                            </li>
+							<li class="width-full">
+								<div class="division-box">
+									<div class="input-confirm filebox">
+										<div class="checkbox-set"><input type="checkbox" id="chk_lemonyn" name="LEMONYN"><label for="chk_lemonyn">레몬법적용여부</label></div>
+										<span class="file-search">
+											<input type="file" name="fileInputMulti" class="file-search-btn" multiple="multiple">
+											<button type="button" class="btn-gray">파일찾기</button>
+										</span>
+									</div>
+								</div>
+								<div class="division-box">
+                                    <div class="input-width">
+                                        <div class="input-disabled file-area">
+                                        		첨부파일:&nbsp;
+                                        	<span class="old-file-area">
+												<span class='file-cnt-check'>
+													<a href="#none" class="down-file">첨부된_파일명.jpg</a>
+													<button type="button" class="btn-delete">삭제</button>
+												</span>
+											</span>
+                                        	<span class="add-file-area">
+												<span class="down-file-cont">첨부될_파일명.jpg<button type="button" class="btn-rm-img">삭제</button></span>
+											</span>
+                                        </div>
+                                    </div>
+                                </div>
+							</li>
+						</ul>
+                    </div>
+                    <!--개인 끝-->
+
+                    <!--법인 시작-->
+					<div class="form-cont corp">
+                        <ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span><span class="ess-mark">*</span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-search">
+                                        <input type="text" id="name" class="input-txt" placeholder="고객명">
+                                        <button type="button" class="input-search-btn">찾기</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">법인</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>사업자등록번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>법인번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">대표자명</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+                            <li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>전화번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">02-0000-0000</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+							<li class="width-full">
+								<div class="division-box">
+									<div class="input-confirm filebox">
+										<div class="checkbox-set"><input type="checkbox" id="chk_lemonyn" name="LEMONYN"><label for="chk_lemonyn">레몬법적용여부</label></div>
+										<span class="file-search">
+											<input type="file" name="fileInputMulti" class="file-search-btn" multiple="multiple">
+											<button type="button" class="btn-gray">파일찾기</button>
+										</span>
+									</div>
+								</div>
+								<div class="division-box">
+                                    <div class="input-width">
+                                        <div class="input-disabled file-area">
+                                        		첨부파일:&nbsp;
+                                        	<span class="old-file-area">
+												<span class='file-cnt-check'>
+													<a href="#none" class="down-file">첨부된_파일명.jpg</a>
+													<button type="button" class="btn-delete">삭제</button>
+												</span>
+											</span>
+                                        	<span class="add-file-area">
+												<span class="down-file-cont">첨부될_파일명.jpg<button type="button" class="btn-rm-img">삭제</button></span>
+											</span>
+                                        </div>
+                                    </div>
+                                </div>
+							</li>
+                        </ul>
+                    </div>
+                    <!--법인 끝-->
+
+                    <!--개인사업자 시작-->
+					<div class="form-cont lice">
+                        <ul class="info-cont">
+                            <li>
+                                <strong class="info-tit"><span><span class="ess-mark">*</span>고객명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-search">
+                                        <input type="text" id="name" class="input-txt" placeholder="고객명">
+                                        <button type="button" class="input-search-btn">찾기</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>고객구분</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">개인사업자</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>사업자등록번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>대표자명</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>휴대폰번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">010-1111-1234</div>
+                                </div>
+                            </li>
+                            <li class="width-full add-cont">
+                                <div class="division-box add-1">
+                                    <strong class="info-tit"><span>주소</span></strong>
+                                    <div class="input-width">
+                                        <div class="input-disabled">(우편번호)주소1</div>
+                                    </div>
+                                </div>
+                                <div class="division-box add-2">
+                                    <div class="input-width">
+                                        <div class="input-disabled">주소2</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>전화번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">02-0000-0000</div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong class="info-tit"><span>이메일주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">adsfs@abc.co.kr</div>
+                                </div>
+                            </li>
+							<li class="width-full">
+								<div class="division-box">
+									<div class="input-confirm filebox">
+										<div class="checkbox-set"><input type="checkbox" id="chk_lemonyn" name="LEMONYN"><label for="chk_lemonyn">레몬법적용여부</label></div>
+										<span class="file-search">
+											<input type="file" name="fileInputMulti" class="file-search-btn" multiple="multiple">
+											<button type="button" class="btn-gray">파일찾기</button>
+										</span>
+									</div>
+								</div>
+								<div class="division-box">
+                                    <div class="input-width">
+                                        <div class="input-disabled file-area">
+                                        		첨부파일:&nbsp;
+                                        	<span class="old-file-area">
+												<span class='file-cnt-check'>
+													<a href="#none" class="down-file">첨부된_파일명.jpg</a>
+													<button type="button" class="btn-delete">삭제</button>
+												</span>
+											</span>
+                                        	<span class="add-file-area">
+												<span class="down-file-cont">첨부될_파일명.jpg<button type="button" class="btn-rm-img">삭제</button></span>
+											</span>
+                                        </div>
+                                    </div>
+                                </div>
+							</li>
+                        </ul>
+                    </div>
+                    <!--개인사업자 끝-->
+                </div>
+
+                <div class="contract-info separation">
+                    <div class="table-tit-cont">
+                        <div class="confirm-check">
+                            <strong class="table-tit">소유자 정보</strong>
+                            <div class="checkbox-set">
+                                <input type="checkbox" id="check001">
+                                <label for="check001">계약자와 동일</label>
+                            </div>
+                        </div>
+                        <div class="btn-area right">
+                            <button type="button" class="btn-add width-auto">고객정보수정</button>
+                        </div>
+                    </div>
+                    <ul class="info-cont">
+                        <li>
+                            <strong class="info-tit"><span><span class="ess-mark">*</span>고객명</span></strong>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="name" class="input-txt" placeholder="고객명">
+                                    <button type="button" class="input-search-btn">찾기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>고객구분</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">개인/등록외국인</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>생년월일</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled birth-confirm">1989-12-10</div>
+                                <div class="input-disabled gender-confirm">남</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>휴대폰번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">010-1111-1234</div>
+                            </div>
+                        </li>
+                        <li class="width-full add-cont">
+                            <div class="division-box add-1">
+                                <strong class="info-tit"><span>자택주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">(우편번호)자택주소1</div>
+                                </div>
+                            </div>
+                            <div class="division-box add-2">
+                                <div class="input-width">
+                                    <div class="input-disabled">자택주소2</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>전화번호</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">02-0000-0000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>이메일주소</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">adsfs@abc.co.kr</div>
+                            </div>
+                        </li>
+                        <li class="width-full add-cont">
+                            <div class="division-box add-1">
+                                <strong class="info-tit"><span>직장주소</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">(우편번호)직장주소1</div>
+                                </div>
+                            </div>
+                            <div class="division-box add-2">
+                                <div class="input-width">
+                                    <div class="input-disabled">직장주소2</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>직장전화</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">02-0000-0000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>FAX</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">02-1234-1111</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contract-info separation">
+                    <strong class="table-tit">판매가격정보</strong>
+                    <ul class="info-cont estimate-box">
+                        <li class="width-full">
+                            <div class="division-box">
+                                <button type="button" class="btn-white estimate-btn">견적서 조회</button>
+                            </div>
+                            <div class="division-box">
+                                <strong class="info-tit"><span>견적서번호</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled">55801</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="info-cont">
+                        <li class="width-full car-spec-cont">
+                            <div class="division-box car-spec1">
+                                <strong class="info-tit"><span>차량사양</span></strong>
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                    <div class="input-disabled"></div>
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </div>
+                            <div class="division-box car-spec2">
+                                <div class="input-width">
+                                    <div class="input-disabled"></div>
+                                    <div class="input-disabled"></div>
+                                    <div class="input-disabled"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="width-full">
+                            <div class="division-box">
+                                <strong class="info-tit"><span>차량색상</span></strong>
+                                <div class="input-width car-color-cont">
+                                    <div class="input-disabled car-color1"></div>
+                                    <div class="input-disabled car-color2"></div>
+                                </div>
+                            </div>
+                            <div class="division-box">
+                                <strong class="info-tit"><span>판매유형</span></strong>
+                                <div class="input-width">
+                                    <select id="member" class="select-box" disabled="disabled">
+                                        <option>일반고객</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>딜러매출원가</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">26,909,090</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>차량부가세</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">2,690,910</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>판매가격</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">29,600,000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="sel01" class="info-tit"><span>과세구분</span></label>
+                            <div class="input-width">
+                                <select id="sel01" class="select-box">
+                                    <option>과세</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>할인가격</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">2,000,000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>최종판매가격</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">29,600,000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="sel02" class="info-tit"><span>지불정보</span></label>
+                            <div class="input-width">
+                                <select id="sel02" class="select-box" disabled="disabled">
+                                    <option>할부</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="sel03" class="info-tit"><span>할부/리스사</span></label>
+                            <div class="input-width">
+                                <select id="sel03" class="select-box" disabled="disabled">
+                                    <option>알씨아이파이낸셜서비스코리아</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>할부/리스원금</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">29,600,000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>할부/리스만기일</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled">2020-11-12</div>
+                            </div>
+                        </li>
+                        <li class="width-full">
+                            <div class="division-box">
+                                <div class="input-confirm">
+                                    <div class="checkbox-set"><input type="checkbox" id="chk002"><label for="chk002">개별소비세인하</label></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contract-info separation">
+                    <strong class="table-tit">계약정보</strong>
+                    <ul class="info-cont">
+                        <li>
+                            <label for="day01" class="info-tit"><span><span class="ess-mark">*</span>계약일자</span></label>
+                            <div class="input-width">
+                                <div class="calendar-box">
+                                    <input type="text" id="day01" class="input-txt" placeholder="2018-11-14">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="day02" class="info-tit"><span><span class="ess-mark">*</span>출고희망일자</span></label>
+                            <div class="input-width">
+                                <div class="calendar-box">
+                                    <input type="text" id="day02" class="input-txt" placeholder="2018-12-14">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="txt01" class="info-tit"><span><span class="ess-mark">*</span>입금자</span></label>
+                            <div class="input-width">
+                                <input type="text" id="txt01" class="input-txt" placeholder="">
+                            </div>
+                        </li>
+                        <li>
+                            <strong class="info-tit"><span>계약SC</span></strong>
+                            <div class="input-width">
+                                <div class="input-disabled txt-right">OOO</div>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="sel04" class="info-tit"><span><span class="ess-mark">*</span>계약금지불형태</span></label>
+                            <div class="input-width">
+                                <select id="sel04" class="select-box">
+                                    <option>현금</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="txt02" class="info-tit"><span><span class="ess-mark">*</span>계약금</span></label>
+                            <div class="input-width">
+                                <input type="text" id="txt02" class="input-txt txt-right" placeholder="600,000">
+                            </div>
+                        </li>
+                        <li class="width-full">
+                            <label for="txt03" class="info-tit"><span>특이사항</span></label>
+                            <div class="input-width">
+                                <div class="input-search">
+                                    <input type="text" id="txt03" class="input-txt">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-area">
+                    <button type="button" class="btn-gray">취소</button>
+                    <button type="button" class="btn-black">등록</button>
+                </div>
+
+                <!--레이어 팝업-->
+                <div class="layer-popup estimate-check">
+                    <div class="pop-tit">견적서 - 계약자명<button class="btn-close">close</button></div>
+                    <div class="pop-cont">
+                        <ul class="data-table">
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                    <div class="col-1">
+                                        <div class="radio-set none-label">
+                                            <input type="radio" id="rdo01" name="select-user"><label for="rdo01">선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목AA</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                    <div class="col-1">
+                                        <div class="radio-set none-label">
+                                            <input type="radio" id="rdo02" name="select-user"><label for="rdo02">선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목BB</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                    <div class="col-1">
+                                        <div class="radio-set none-label">
+                                            <input type="radio" id="rdo03" name="select-user"><label for="rdo03">선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목CC</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                    <div class="col-1">
+                                        <div class="radio-set none-label">
+                                            <input type="radio" id="rdo04" name="select-user"><label for="rdo04">선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목DD</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                    <div class="col-1">
+                                        <div class="radio-set none-label">
+                                            <input type="radio" id="rdo05" name="select-user"><label for="rdo05">선택</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목EE</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                <div class="col-1">
+                                    <div class="radio-set none-label">
+                                        <input type="radio" id="rdo06" name="select-user"><label for="rdo06">선택</label>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목FF</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="table-grid">
+                                <div class="layout-left">
+                                <div class="col-1">
+                                    <div class="radio-set none-label">
+                                        <input type="radio" id="rdo07" name="select-user"><label for="rdo07">선택</label>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="layout-right">
+                                    <div>
+                                        <div class="col-3 txt-left">2018-10-25</div>
+                                        <div class="col-3 txt-left">견적서제목GG</div>
+                                        <div class="col-4 col-center">NISSAN ALTIMA</div><!--2019-04-05-->
+                                    </div>
+                                    <div>
+                                        <div class="col-3 txt-left">판매등록정보</div>
+                                        <div class="col-7 txt-left">지불정보</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <span>Copyright, 2016 by <strong>Nissan.</strong></span>
+                All page Contents is property of Nissan
+            </div>
+        </div>
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

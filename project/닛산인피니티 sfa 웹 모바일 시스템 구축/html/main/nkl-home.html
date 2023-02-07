@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISSAN</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            // Overall Status popup
+            $('.overall-status-btn').on('click', function (e) {
+                var statusLayer = $('.overall-status-layer'),
+                    layerCose = statusLayer.find('.btn-close'),
+                    dimmed = $('.dimmed-layer');
+
+                e.preventDefault();
+
+                statusLayer.add(dimmed).css('display', 'block');
+
+                layerCose.on('click', function () {
+                    statusLayer.add(dimmed).removeAttr('style');
+                });
+            });
+
+            //Sales Activity popup
+            // 2018-12-19 2번째 팝업 open시 1번째 팝업 dimmed가 위로 오게 처리
+            $('.sales-activity-btn').on('click', function (e) {
+                var salesLayer = $('.sales-activity-layer'),
+                    statusLayer = $('.overall-status-layer'),
+                    layerCose = salesLayer.find('.btn-close');
+
+                e.preventDefault();
+
+                salesLayer.css('display', 'block');
+                statusLayer.css('z-index', '100');
+
+                layerCose.on('click', function () {
+                    salesLayer.removeAttr('style');
+                    statusLayer.css('z-index', '');
+                });
+            });
+            // //2018-12-19 2번째 팝업 open시 1번째 팝업 dimmed가 위로 오게 처리
+
+
+            
+            // 2019-03-12 추가
+            //테이블 높이 자동
+            tableHeight();
+
+
+            
+
+            
+        });
+            
+    </script>
+</head>
+
+<body>
+    <div id="wrap" class="nissan">
+        <!-- infiniti 사용시 class="infiniti" 추가 -->
+        <div class="gnb-menu">
+            <div class="gnb-close">
+                <strong class="gnb-logo-nissan">NISSAN</strong>
+                <!-- <strong class="gnb-logo-infiniti">infiniti</strong> -->
+                <!-- infiniti 로고 사용시  -->
+                <button type="button">메뉴 닫기</button>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">홈</a></li>
+                <li class="active"><a href="#">담당SC배정</a></li>
+                <li><a href="#">고객관리</a></li>
+                <li><a href="#">영업활동관리</a></li>
+                <li><a href="#">계약관리</a></li>
+                <li><a href="#">캠페인</a></li>
+                <li><a href="#">재고현황</a></li>
+                <li><a href="#">이용안내</a></li>
+            </ul>
+            <div class="gnb-btn">
+                <a href="#"><span>홍길동</span> 로그아웃</a>
+            </div>
+        </div>
+        <div id="header">
+            <button type="button" class="header-menu">gnb menu</button>
+            <h1 class="logo-nissan">NISSAN</h1>
+            <!-- <h1 class="logo-infiniti">infiniti</h1> -->
+            <!-- infiniti 로고 사용시  -->
+            <h2 class="page-title">NKL-HOME</h2>
+            <a href="#" class="header-btn">간편등록</a>
+        </div>
+        <div id="container">
+            <div class="contents">
+                <div class="main-top-search nkl-home">
+                    <!-- 2018-12-28 토글삭제 달력변경-->
+                    <div class="main-top-right">
+                        <div class="calendar-cont">
+                            <div class="calendar-box">
+                                <input type="text" id="cal01" class="input-txt" placeholder="시작날짜">
+                            </div>
+                            <span class="mark">~</span>
+                            <div class="calendar-box">
+                                <input type="text" class="input-txt" placeholder="종료날짜">
+                            </div>
+                        </div>
+                        <!-- //2018-12-28 토글삭제 달력변경-->
+                        <button type="button" class="button btn-white">조회</button><!-- 2018-12-19 클래스 수정 -->
+                        <!-- 2018-12-28 버튼 내용 변경-->
+                    </div>
+                    <button type="button" class="btn-white btn-down">TOTAL</button><!-- 2018-12-19 클래스,텍스트 수정 -->
+                    <button type="button" class="btn-white btn-down">ONLINE</button><!-- 2018-12-19 클래스,텍스트 수정 -->
+                </div>
+
+                <div class="main-cont">
+                    <strong class="cont-tit">DLR Report</strong>
+                    <div class="table-col table-scroll">
+                        <table>
+                            <caption>DLR Report 목록</caption>
+                            <colgroup class="colgroup-hidden">
+                                <!-- Medium까지 사용 -->
+                                <col style="width:90px">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <colgroup class="colgroup-view">
+                                <!-- Large이상 사용 -->
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:130px">
+                            </colgroup>
+                            <thead class="theadgroup-hidden">
+                                <!-- Medium까지 사용 -->
+                                <tr>
+                                    <th scope="col" rowspan="2">DLR</th>
+                                    <th scope="col"><span class="pc">Overall Status</span><span class="mb">Overall</span></th>
+                                    <th scope="col"><span class="pc">Lead<br>Management</span><span class="mb">LM</span></th>
+                                    <th scope="col"><span class="pc">Prospect<br>Management</span><span class="mb">PM</span></th>
+                                    <th scope="col"><span class="pc">Sales Opportunity<br>Management</span><span class="mb">SOM</span></th>
+                                    <th scope="col"><span class="pc">Contract</span><span class="mb">CON</span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Total </th>
+                                    <th scope="col"><span class="pc">Prospect(Hot)</span><span class="mb">HOT</span></th>
+                                    <th scope="col"><span class="pc">Test Drive</span><span class="mb">TD</span></th>
+                                    <th scope="col">Total </th>
+                                </tr>
+                            </thead>
+                            <thead class="theadgroup-view">
+                                <!-- Large이상 사용 -->
+                                <tr>
+                                    <th scope="col" rowspan="2">DLR</th>
+                                    <th scope="col" colspan="6">overall-status</th>
+                                    <th scope="col" colspan="6">Lead Management</th>
+                                    <th scope="col" colspan="2">Prospect Management</th>
+                                    <th scope="col" colspan="3">Sales opporunity Mangement</th>
+                                    <th scope="col" colspan="7">Contract</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">DLR Customer</th>
+                                    <th scope="col">Repurchase</th>
+                                    <th scope="col">Online</th>
+                                    <th scope="col">Offline</th>
+                                    <th scope="col">DLR pool</th>
+                                    <th scope="col">No allocation</th>
+                                    <th scope="col">Unmanaged</th>
+                                    <th scope="col">Drop</th>
+                                    <th scope="col">Allocation Dadys</th>
+                                    <th scope="col">Contact Ratio</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Prospect(Hot)</th>
+                                    <th scope="col">Conversion Ratio</th>
+                                    <th scope="col">Test Drive</th>
+                                    <th scope="col">Quotation</th>
+                                    <th scope="col">Average Sales Activity Score</th>
+                                    <th scope="col">Mtd Contract</th>
+                                    <th scope="col">Contract Ratio(Lead)</th>
+                                    <th scope="col">Contract Ratio(Prospect)</th>
+                                    <th scope="col">Average Spent Days to Contract</th>
+                                    <th scope="col">Remaining</th>
+                                    <th scope="col">None Mtd Contract</th>
+                                    <th scope="col">Total Contract</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">BH/CW</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">I/AY</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">JS/JJ</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TP/WJ </th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주식회사<br>위본오토모빌</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <!--  -->
+<tr>
+    <th scope="row">Total</th>
+    <td><a href="#" class="overall-status-btn">00</a></td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+</tr>
+<tr>
+                                    <th scope="row">Total</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td><a href="#" class="overall-status-btn">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                    <td class="data-hidden">00</td>
+                                </tr>
+<tr>
+    <th scope="row">Total</th>
+    <td><a href="#" class="overall-status-btn">00</a></td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+</tr>
+<tr>
+    <th scope="row">Total</th>
+    <td><a href="#" class="overall-status-btn">00</a></td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+    <td class="data-hidden">00</td>
+</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="main-cont">
+                    <strong class="cont-tit">Unmanaged</strong>
+                        <div class="table-col table-scroll"><!-- 2019-03-12 클래스추가 -->
+                        <table>
+                            <caption>DLR Report 목록</caption>
+                            <colgroup>
+                                <col style="width:90px">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">DLR</th>
+                                    <th scope="col"><span class="pc">Repurchase</span><span class="mb">REP</span></th>
+                                    <th scope="col"><span class="pc">Online</span><span class="mb">ON</span></th>
+                                    <th scope="col"><span class="pc">Offline</span><span class="mb">OFF</span></th>
+                                    <th scope="col"><span class="pc">사업소 Pool</span><span class="mb">POOL</span></th>
+                                    <th scope="col"><span class="pc">Sub TotalDLR</span><span class="mb">Total</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">BH/CW</th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">I/AY</th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">JS/JJ</th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TP/WJ </th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주식회사<br>위본오토모빌</th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td><a href="#">00</a></td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                    <td>00</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <span>Copyright, 2016 by <strong>Nissan.</strong></span>
+                All page Contents is property of Nissan
+            </div>
+        </div>
+    </div>
+
+    <!-- POP - Overall Status – 사업소 -->
+    <div class="layer-popup overall-status-layer">
+        <div class="pop-tit">Overall Status – 사업소 code<button class="btn-close">close</button></div>
+        <div class="pop-cont">
+            <ul class="pop-state-list">
+                <li>
+                    <div class="left">
+                        <a href="#" class="state-link sales-activity-btn">고객명 (상태)</a>
+                        <p>계약일자:<span>2018-10-12</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <em>인입경로</em>
+                        <p>출고일자:<span>2018-10-29</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        <a href="#" class="state-link sales-activity-btn">고객명 (상태)</a>
+                        <p>계약일자:<span>2018-10-12</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <em>인입경로</em>
+                        <p>출고일자:<span>2018-10-29</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        <a href="#" class="state-link sales-activity-btn">고객명 (상태)</a>
+                        <p>계약일자:<span>2018-10-12</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <em>인입경로</em>
+                        <p>출고일자:<span>2018-10-29</span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        <a href="#" class="state-link sales-activity-btn">고객명 (상태)</a>
+                        <p>계약일자:<span>2018-10-12</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <em>인입경로</em>
+                        <p>출고일자:<span>2018-10-29</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- POP - Sales Activity - 고객명 -->
+    <div class="layer-popup sales-activity-layer">
+        <div class="pop-tit">Sales Activity - 고객명<button class="btn-close">close</button></div>
+        <div class="pop-cont">
+            <ul class="pop-state-list pop-state-check">
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        계약서 (완료)
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        계획-전화 (취소)
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        시승 (예약)
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        계획-방문 (완료)
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        시승 (예약)
+                    </div>
+                </li>
+                <li>
+                    <div class="left">
+                        활동일자 : <span>2018.12 15:30</span>
+                    </div>
+                    <div class="right">
+                        계획-방문 (완료)
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

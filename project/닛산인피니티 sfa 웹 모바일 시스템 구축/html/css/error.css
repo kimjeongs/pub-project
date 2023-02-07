@@ -1,0 +1,107 @@
+body{
+   overflow-y: auto;
+}
+.container {
+   position: relative;
+   overflow: auto;
+   height: 100%;
+   min-height: 750px;
+   padding: 45px 0;
+}
+.container.system{
+   min-height:950px;
+}
+.container.system .error-cont{
+   width:100%;
+   max-width:520px;
+}
+.error-wrap {
+   position: relative;
+   height: 100%;
+   overflow: hidden;
+}
+.error-cont{
+   position: absolute;
+   top:50%;
+   left:50%;
+   width:360px;
+   min-height:530px;
+   margin-top:-48px;
+   transform: translate(-50%,-50%);
+   text-align: center;
+}
+.error-cont .logo{
+   display: inline-block;
+   width:300px;
+}
+.error-cont .error-msg{
+   text-align: center;
+   padding:0 20px;
+   margin-top:30px;
+}
+.error-msg .highlight-msg{
+   font-size:24px;
+   font-weight: 700;
+   line-height: 36px;
+   margin-top:25px;
+}
+.error-msg .sub-msg{
+   padding:30px;
+   margin-top:45px;
+   background-color: #edeef0;
+   line-height: 22px;
+}
+.error-msg .sub-msg p{
+   margin-top:10px;
+}
+.error-msg .sub-msg p:first-child{
+   margin-top:0;
+}
+.error-msg .sub-msg .time{
+   font-size:18px;
+}
+.error-msg .notice{
+   margin-top:20px;
+}
+.error-msg .info-txt{
+   margin-top:30px;
+}
+.error-msg .info-txt li{
+   position: relative;
+   text-align: left;
+   line-height:30px;
+   padding-left:10px;
+}
+.error-msg .info-txt li:after{
+   position: absolute;
+   top:14px;
+   left: 0;
+   display: inline-block;
+   content: '';
+   width: 5px;
+   height: 5px;
+   background: #000;
+   border-radius: 25px;
+}
+.error-msg .note-msg{
+   margin-top:50px;
+   line-height:22px;
+}
+
+/*copyright*/
+#footer{
+   display: table;
+   position: absolute;
+   bottom:0;
+   width:100%;
+}
+
+@media screen and (min-width:641px) {
+   .error-cont{
+      width:520px;
+   }
+   .container.system .error-cont{
+      width:520px;
+      max-width:none;
+   }
+}

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contents guide</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <style type="text/css">
+        h1 {
+            float: none;
+            width: auto;
+            font-size: 20px;
+            line-height: 100%;
+            font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+        }
+
+        ul.s-tab {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 10px;
+            font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+        }
+
+        ul.s-tab li {
+            float: left;
+            margin-right: 5px;
+        }
+
+        ul.s-tab li a {
+            float: left;
+            padding: 5px;
+            border: 2px solid #a2cdde;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        ul.s-tab li.on a,
+        ul.s-tab li a:hover {
+            color: #f00;
+        }
+
+        h2.guide-title {
+            margin: 10px 0;
+            padding: 10px 0;
+            border-top: 2px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            font-size: 15px;
+            font-family: Arial, sans-serif, "Helvetica Neue", Helvetica;
+        }
+
+        .xmp {
+            display: block;
+            height: 200px;
+            overflow: auto;
+            margin: 10px 0 0 0;
+            padding: 0;
+            border: 2px solid #666;
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>STYLE GUIDE</h1>
+        <ul class="s-tab">
+            <li class="on"><a href="content.html">content</a></li>
+            <li><a href="board.html">board</a></li>
+            <li><a href="etc.html">etc</a></li>
+        </ul>
+
+        <h2 class="guide-title">TABLE</h2>
+        <div class="sub-tab-list">
+            <div class="on"><a href="#"><span>공지사항</span></a></div>
+            <div><a href="#"><span>도움말</span></a></div>
+            <div><a href="#"><span>Release Note</span></a></div>
+            <div><a href="#"><span>SR</span></a></div>
+        </div>
+        <div class="search-cont">
+            <strong class="search-tit">담당 SC</strong>
+            <ul class="info-cont">
+                <li>
+                    <label for="sel01" class="info-tit"><span>사업소</span></label>
+                    <div class="input-width">
+                        <select id="sel01" class="select-box">
+                            <option>사업소 선택</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <label for="sel02" class="info-tit"><span>담당 SC</span></label>
+                    <div class="input-width">
+                        <select id="sel02" class="select-box" disabled="disabled">
+                            <option>담당 SC 선택</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            <strong class="search-tit">고객정보</strong>
+            <ul class="info-cont">
+                <li>
+                    <label for="txt01" class="info-tit"><span><span class="ess-mark">*</span>고객명</span></label>
+                    <div class="input-width">
+                        <input type="text" id="txt01" class="input-txt" placeholder="고객명">
+                    </div>
+                </li>
+                <li>
+                    <label for="txt02" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+                    <div class="input-width">
+                        <input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력">
+                    </div>
+                </li>
+                <li>
+                    <strong class="info-tit"><span>고객상태</span></strong>
+                    <div class="input-width">
+                        <div class="toggle-cont toggle-3">
+                            <input type="radio" id="rad01" name="tog1" checked>
+                            <label for="rad01" tabindex="0"><span>고객전체</span></label>
+                            <input type="radio" id="rad02" name="tog1">
+                            <label for="rad02" tabindex="0"><span>잠재</span></label>
+                            <input type="radio" id="rad03" name="tog1">
+                            <label for="rad03" tabindex="0"><span>일반</span></label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label for="sel03" class="info-tit"><span>고객구분</span></label>
+                    <div class="input-width">
+                        <select id="sel03" class="select-box">
+                            <option>전체/개인/법입/등록외국인/개인사업자</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="width-full registration">
+                    <div class="division-box">
+                        <label for="cal01" class="info-tit"><span>등록일</span></label>
+                        <div class="input-width">
+                            <div class="calendar-cont">
+                                <div class="calendar-box">
+                                    <input type="text" id="cal01" class="input-txt" placeholder="2018-12-04">
+                                    <!-- <button type="button" class="calendar-btn">시작일선택</button> -->
+                                </div>
+                                <span class="mark">~</span>
+                                <div class="calendar-box">
+                                    <input type="text" class="input-txt" placeholder="2018-12-04">
+                                    <!-- <button type="button" class="calendar-btn">마지막일선택</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="division-box range prev-next">
+                        <div class="prev_next">
+                            <button type="button" class="prev">이전</button>
+                            <button type="button" class="next">다음</button>
+                        </div>
+                        <div class="toggle-cont toggle-3">
+                            <input type="radio" id="rad04" name="tog2" checked>
+                            <label for="rad04" tabindex="0"><span>D<span class="hidden-txt">ay</span></span></label>
+                            <input type="radio" id="rad05" name="tog2">
+                            <label for="rad05" tabindex="0"><span>W<span class="hidden-txt">eek</span></span></label>
+                            <input type="radio" id="rad06" name="tog2">
+                            <label for="rad06" tabindex="0"><span>M<span class="hidden-txt">onth</span></span></label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label for="sel10" class="info-tit"><span>활동구분</span></label>
+                    <div class="input-width divide">
+                        <select id="sel10" class="select-box">
+                            <option>전체</option>
+                        </select>
+                        <select id="sel11" class="select-box">
+                            <option>하위구분</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <xmp class="xmp">
+            <div class="search-cont">
+                <strong class="search-tit">담당 SC</strong>
+                <ul class="info-cont">
+                    <li>
+                        <label for="sel01" class="info-tit"><span>사업소</span></label>
+                        <div class="input-width">
+                            <select id="sel01" class="select-box">
+                                <option>사업소 선택</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="sel02" class="info-tit"><span>담당 SC</span></label>
+                        <div class="input-width">
+                            <select id="sel02" class="select-box" disabled="disabled">
+                                <option>담당 SC 선택</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <strong class="search-tit">고객정보</strong>
+                <ul class="info-cont">
+                    <li>
+                        <label for="txt01" class="info-tit"><span><span class="ess-mark">*</span>고객명</span></label>
+                        <div class="input-width">
+                            <input type="text" id="txt01" class="input-txt" placeholder="고객명">
+                        </div>
+                    </li>
+                    <li>
+                        <label for="txt02" class="info-tit"><span><span class="ess-mark">*</span>휴대폰번호</span></label>
+                        <div class="input-width">
+                            <input type="text" id="txt02" class="input-txt" placeholder="휴대폰번호'-'없이 번호만 입력">
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="info-tit"><span>고객상태</span></strong>
+                        <div class="input-width">
+                            <div class="toggle-cont toggle-3">
+                                <input type="radio" id="rad01" name="tog1" checked>
+                                <label for="rad01" tabindex="0"><span>고객전체</span></label>
+                                <input type="radio" id="rad02" name="tog1">
+                                <label for="rad02" tabindex="0"><span>잠재</span></label>
+                                <input type="radio" id="rad03" name="tog1">
+                                <label for="rad03" tabindex="0"><span>일반</span></label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="sel03" class="info-tit"><span>고객구분</span></label>
+                        <div class="input-width">
+                            <select id="sel03" class="select-box">
+                                <option>전체/개인/법입/등록외국인/개인사업자</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="width-full registration">
+                        <div class="division-box">
+                            <label for="cal01" class="info-tit"><span>등록일</span></label>
+                            <div class="input-width">
+                                <div class="calendar-cont">
+                                    <div class="calendar-box">
+                                        <input type="text" id="cal01" class="input-txt" placeholder="2018-12-04">
+                                        <!-- <button type="button" class="calendar-btn">시작일선택</button> -->
+                                    </div>
+                                    <span class="mark">~</span>
+                                    <div class="calendar-box">
+                                        <input type="text" class="input-txt" placeholder="2018-12-04">
+                                        <!-- <button type="button" class="calendar-btn">마지막일선택</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="division-box range prev-next">
+                            <div class="prev_next">
+                                <button type="button" class="prev">이전</button>
+                                <button type="button" class="next">다음</button>
+                            </div>
+                            <div class="toggle-cont toggle-3">
+                                <input type="radio" id="rad04" name="tog2" checked>
+                                <label for="rad04" tabindex="0"><span>D<span class="hidden-txt">ay</span></span></label>
+                                <input type="radio" id="rad05" name="tog2">
+                                <label for="rad05" tabindex="0"><span>W<span class="hidden-txt">eek</span></span></label>
+                                <input type="radio" id="rad06" name="tog2">
+                                <label for="rad06" tabindex="0"><span>M<span class="hidden-txt">onth</span></span></label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </xmp>
+
+        <h2 class="guide-title">STEP</h2>
+        <ul class="step-cont">
+            <li class="on"><span>결제고객정보</span></li>
+            <li><span>일반고객정보</span></li>
+            <li><span>견적서</span></li>
+            <li><span>계약서</span></li>
+        </ul>
+
+        <xmp class="xmp">
+            <ul class="step-cont">
+                <li class="on"><span>결제고객정보</span></li>
+                <li><span>일반고객정보</span></li>
+                <li><span>견적서</span></li>
+                <li><span>계약서</span></li>
+            </ul>
+        </xmp>
+
+        <h2 class="guide-title">구분선</h2>
+        <div class="separation"></div>
+        <xmp class="xmp">
+            <div class="separation"></div>
+        </xmp>
+
+        <h2 class="guide-title">약관동의</h2>
+        <p>고객님께서 입력해주신 상기의 정보는 개인정보보호법 제 15조, 제 16조, 제 17조 제 18조의 2항, 제 19조 규정에 따라 개인 정보 수집 및 이용 시 본인의 동의를 얻어야 하는
+            정보입니다.</p>
+        <div class="agree-cont">
+            <div class="term-cont">
+                <strong>개인정보 수집 이용에 대한 안내</strong>
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+            </div>
+            <p>(필수) 약관 1명칭</p>
+            <div class="agree-btn-area">
+                <div class="radio-set">
+                    <input type="radio" id="rd01" name="rdi01"><label for="rd01">동의</label>
+                    <input type="radio" id="rd02" name="rdi01"><label for="rd02">미동의</label>
+                </div>
+            </div>
+        </div>
+        <div class="agree-cont">
+            <div class="term-cont">
+                <strong>개인정보 수집 이용에 대한 안내</strong>
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+            </div>
+            <p>(필수) 약관 2명칭</p>
+            <div class="agree-btn-area">
+                <div class="radio-set">
+                    <input type="radio" id="rd03" name="rdi02"><label for="rd03">동의</label>
+                    <input type="radio" id="rd04" name="rdi02"><label for="rd04">미동의</label>
+                </div>
+            </div>
+        </div>
+        <div class="agree-cont">
+            <div class="term-cont">
+                <strong>개인정보 수집 이용에 대한 안내</strong>
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+
+                회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한 개인정보는
+                다음의 목적을 위해 활용합니다.
+            </div>
+            <p>(선택) 마케팅 수신여부</p>
+            <ul class="reception">
+                <li>
+                    <div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+                </li>
+                <li>
+                    <div class="checkbox-set"><input type="checkbox" id="chk02"><label for="chk02">SMS/MMS</label></div>
+                </li>
+                <li>
+                    <div class="checkbox-set"><input type="checkbox" id="chk03"><label for="chk03">E-Mail</label></div>
+                </li>
+            </ul>
+        </div>
+        <xmp class="xmp">
+            <p>고객님께서 입력해주신 상기의 정보는 개인정보보호법 제 15조, 제 16조, 제 17조 제 18조의 2항, 제 19조 규정에 따라 개인 정보 수집 및 이용 시 본인의 동의를 얻어야 하는
+                정보입니다.</p>
+            <div class="agree-cont">
+                <div class="term-cont">
+                    <strong>개인정보 수집 이용에 대한 안내</strong>
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+                </div>
+                <p>(필수) 약관 1명칭</p>
+                <div class="agree-btn-area">
+                    <div class="radio-set">
+                        <input type="radio" id="rd01" name="rdi01"><label for="rd01">동의</label>
+                        <input type="radio" id="rd02" name="rdi01"><label for="rd02">미동의</label>
+                    </div>
+                </div>
+            </div>
+            <div class="agree-cont">
+                <div class="term-cont">
+                    <strong>개인정보 수집 이용에 대한 안내</strong>
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는 다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는 다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는 다음의 목적을 위해 활용합니다.
+                </div>
+                <p>(필수) 약관 2명칭</p>
+                <div class="agree-btn-area">
+                    <div class="radio-set">
+                        <input type="radio" id="rd03" name="rdi02"><label for="rd03">동의</label>
+                        <input type="radio" id="rd04" name="rdi02"><label for="rd04">미동의</label>
+                    </div>
+                </div>
+            </div>
+            <div class="agree-cont">
+                <div class="term-cont">
+                    <strong>개인정보 수집 이용에 대한 안내</strong>
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+
+                    회사는 고객님께 더 향상된 서비스를 제공하기 위하여 고객의 개인정보를 수집하고 있습니다. 회사는 고객님의 사전 동의 없이는 개인정보를 함부로 공개하지 않으며, 당사가 수집한
+                    개인정보는
+                    다음의 목적을 위해 활용합니다.
+                </div>
+                <p>(선택) 마케팅 수신여부</p>
+                <ul class="reception">
+                    <li>
+                        <div class="checkbox-set"><input type="checkbox" id="chk01"><label for="chk01">전화</label></div>
+                    </li>
+                    <li>
+                        <div class="checkbox-set"><input type="checkbox" id="chk02"><label for="chk02">SMS/MMS</label></div>
+                    </li>
+                    <li>
+                        <div class="checkbox-set"><input type="checkbox" id="chk03"><label for="chk03">E-Mail</label></div>
+                    </li>
+                </ul>
+            </div>
+        </xmp>
+
+        <h2 class="guide-title">고객 서명</h2>
+        <div class="table-tit-cont">
+            <strong class="table-tit">고객정보활용동의</strong>
+            <div class="btn-area">
+                <button type="button" class="table-btn red">고객서명</button>
+                <button type="button" class="table-btn red-line">온라인동의</button>
+            </div>
+        </div>
+        <div class="sign-cont">
+            <a href="#">다시 서명</a>
+            <div class="sign">온라인 서명하기</div>
+        </div>
+        <!-- 동의 후 -->
+        <p class="sign-confirm"><span>2018-12-10 HH:MM:SS 전자서명 동의 (동의내용-Y, 동의내용2-N, 동의내용3-Y)</span></p>
+
+        <xmp class="xmp">
+            <div class="table-tit-cont">
+                <strong class="table-tit">고객정보활용동의</strong>
+                <div class="btn-area">
+                    <button type="button" class="table-btn red">고객서명</button>
+                    <button type="button" class="table-btn red-line">온라인동의</button>
+                </div>
+            </div>
+            <div class="sign-cont">
+                <a href="#">다시 서명</a>
+                <div class="sign">온라인 서명하기</div>
+            </div>
+            <!-- 동의 후 -->
+            <p class="sign-confirm"><span>2018-12-10 HH:MM:SS 전자서명 동의 (동의내용-Y, 동의내용2-N, 동의내용3-Y)</span></p>
+        </xmp>
+
+
+    </div>
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+</body>
+
+</html>

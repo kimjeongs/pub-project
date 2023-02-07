@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+    <title>Namyangi Community</title>
+    <link rel="stylesheet" href="../assets/css/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+    <script src="../assets/js/lib/jquery.min.js"></script>
+    <script src="../assets/js/lib/jquery-ui.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</head>
+
+<body>
+	<!-- s : wrap -->
+	<div class="wrap">
+		<!-- s : header -->
+		<div class="header">
+			<div class="header-cont">
+				<a href="#" class="btn-gnb-prev"><img src="../assets/images/common/icon/img_gnb_prev.png" alt="이전"></a>
+				<button class="btn-gnb-select toggle"><span>임신준비</span></button>
+				<div class="gnb-select-cont">
+					<ul class="gnb-depth1">
+						<li>
+							<ul class="gnb-depth2">
+								<li><a href="#">임신준비</a></li>
+								<li><a href="#">함께하는 10개월</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="gnb-right-box">
+					<a href="#" class="btn-gnb-search"><img src="../assets/images/common/icon/img_gnb_search.png" alt="검색"></a>
+					<a href="#" class="btn-gnb-myroom"><img src="../assets/images/common/icon/img_gnb_myroom.png" alt="마이룸"></a>
+					<a href="#" class="btn-gnb-menu"><img src="../assets/images/common/icon/img_gnb_menu.png" alt="메뉴"></a>
+				</div>
+            </div>
+            <ul class="gnb-depth3">
+                <li><a href="#">계획임신</a></li>
+                <li class="on"><a href="#">아기맞이 계산기</a></li>
+            </ul>
+		</div>
+		<!-- e : header -->
+
+		<!-- s : container -->
+		<div class="container">
+			<div class="content">
+                <h2 class="c-title">아이맞이 계산기</h2>
+                <div class="sns-share-box">
+                    <button class="btn-share toggle"><span>공유</span></button>
+                    <div class="sns-share-cont">
+                        <ul class="sns-share-list focus-list">
+                            <li><a href="#none"><span><img src="../assets/images/content/icon/ico_sns_facebook.png"
+                                            alt="페이스북"></span>페이스북</a></li>
+                            <li><a href="#none"><span><img src="../assets/images/content/icon/ico_sns_twitter.png"
+                                            alt="트위터"></span>트위터</a></li>
+                            <li><a href="#none"><span><img src="../assets/images/content/icon/ico_url_copy.png"
+                                            alt="URL복사"></span>URL복사</a></li>
+                            <li><a href="#none"><span><img
+                                            src="../assets/images/content/icon/ico_sns_kakaostory.png"
+                                            alt="카카오스토리"></span>카카오스토리</a></li>
+                        </ul>
+                        <button class="btn-close"><span><img src="../assets/images/content/icon/ico_btn_close.png"
+                                    alt="닫기"></span></button>
+                    </div>
+                </div>
+                
+                <div class="hor-tab-box">
+                    <ul class="hor-tab">
+                        <li><a href="#none" class="on">배란일 계산기</a></li>
+                        <li><a href="#none">출산 예정일 계산기</a></li>
+                    </ul>
+                </div>
+                <div class="board-info2 bg-cal">
+                    <p class="s-title">배란일 계산기로 예정일을 알아보세요!</p>
+                    <p class="info-txt">마지막 생리 시작일과 평균 생리주기를 선택하시면<br>
+                        배란 예정일과 임신 가능일을 알아볼 수 있습니다.</p>
+                </div>
+
+                <div class="date-input-box">
+                    <div>
+                        <p class="date-tit">마지막 생리 시작일</p>
+                        <div class="ipt-txt-box">
+                            <input type="text" class="ipt-txt" placeholder="예) 2019.01.28">
+                        </div>
+                    </div>
+                    <div>
+                        <p class="date-tit">평균 생리주기</p>
+                        <div class="date">
+                            <select>
+                                <option>33일</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- s: -->
+                    <div class="result">  
+                        <span class="date-tit">배란 예정일</span>
+                        <span class="txt">2019.01.29</span>
+                    </div>
+                    <div class="result">
+                        <span class="date-tit">가임기</span>
+                        <span class="txt">2019.01.27~2019.01.29</span>
+                    </div>
+                    <!-- e: -->
+                </div>
+                <div class="info-txt-box">
+                    <ul class="list-dash">
+                        <li>본 테스트는 일반적인 계산 방법에 따릅니다.</li>
+                        <li>배란일 및 임신가능일은 여러가지 환경 요인에 따라 달라 질 수 있습니다.</li>
+                    </ul>
+                    <div class="btn-box">
+                        <button class="btn-type2"><span>계산하기</span></button>
+                    </div>
+                </div>
+
+            </div>
+		</div>
+		<!-- e : container -->
+
+		<!-- s : footer -->
+		<div class="footer">
+			<div class="footer-cont">
+
+			</div>
+		</div>
+		<!-- e : footer -->
+
+
+	</div>
+	<!-- e : wrap -->
+
+</body>
+
+</html>

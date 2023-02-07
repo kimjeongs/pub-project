@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+	<title>Namyangi Community</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script src="../assets/js/lib/jquery.min.js"></script>
+	<script src="../assets/js/lib/iscroll.js"></script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/content.js"></script>
+  <style>button.popup-open{margin-top:5px;}</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<button class="btn-s-squre btn-type3 popup-open" data-num="1"><span>출판미리보기</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="2"><span>스토리북신규개설</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="3"><span>스토리북관리</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="4"><span>개설스토리북관리</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="5"><span>마케팅 수신 동의 여부</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="6"><span>결과팝업(단일형)</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="7"><span>결과팝업(다중형)</span></button>
+		<button class="btn-s-squre btn-type3 popup-open" data-num="8"><span>메인 공통 팝업</span></button>
+	</div>
+	<!-- s : layerpop -->
+	<div class="layerpopup-wrap" data-num="1"  style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont preview">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">출판미리보기</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="sub-text">선택한 폰트 및 이미지에 따라 실제 인쇄와 다를 수 있습니다.</p>
+					<div class="preview-pop-wrap">
+						<div class="inp-select-box">
+							<select>
+								<option>앞표지</option>
+							</select>
+						</div>
+						<div class="cover-area">
+							<img src="../assets/images/content/img_cover_view.png" alt="출판미리보기">
+						</div>
+
+						<br><br><br><br><br><br><br><br>스크롤<br>자동 생성됨<br><br>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="2"  style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">스토리북 신규 개설</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="info-txt ess">는 필수 입력 사항입니다.</p>
+					<div class="new-book-wrap">
+						<ul class="form-list">
+							<li>
+								<p class="form-title"><span>프로필 정보</span></p>
+								<div class="form-cont">
+									<div class="photo-area">
+										<button class="img-edit"><span class="img"><img src="../assets/images/content/img_default_profile.png" width="119" height="119" alt="프로필 사진"></span></button>
+										<button class="btn-edit">프로필 관리</button>
+									</div>
+									<p class="photo-size-info">용량 5MB이하 JPG, PNG 500*500PX 권장</p>
+									<div class="count-input ta">
+										<textarea id="title1" title="프로필 정보" placeholder="프로필 소개를 입력해주세요."></textarea>
+										<p class="num-count"><span>0</span>/30</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span>스토리북 공개 설정</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 공개 설정</p>
+											<span class="tooltip-inner-text">
+												전체 : 비회원포함공개<br>
+												이웃 : 내 이웃에게만 공개<br>
+												가족 : 내 가족에게만 공개<br>
+												이웃+가족 : 이웃과 가족에게만 공개<br>
+												비공개  : 나외에 모든회원 볼 수 없음
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>전체공개</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<p class="form-title"><span>가족 스토리북 설정</span></p>
+								<div class="form-cont">
+									<p class="sub-info-text">가족 스토리북은  ID 당 1개씩 자동 개설됩니다.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">우리 가족</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk42" class="inp-chk" checked="">
+												<label for="PopChk42">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk52" class="inp-chk" checked="">
+												<label for="PopChk52">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk62" class="inp-chk">
+												<label for="PopChk62">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="line">
+								<div class="form-title"><span class="ess">자녀정보</span></div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>첫째 기쁨이 (남) 육아24개월</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 소개</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 소개</p>
+											<span class="tooltip-inner-text">
+												다른 사람들에게 공개되는 <br>나의 스토리북 소개글입니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input ta">
+										<textarea id="title2" title="스토리북 소개" placeholder="스토리북 소개를 입력해주세요."></textarea>
+										<p class="num-count"><span>0</span>/15</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 주제 선택</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 주제 선택</p>
+											<span class="tooltip-inner-text">
+												주제사용 : 선택 시 공개되며 해제 시 비노출됩니다. <br>
+												댓글,공감사용 : 내 스토리 하단에 공감과 댓글기능이 노출됩니다. <br>
+												가족 쓰기 : 가족 권한인 아이디도 내 스토리북에 글을 쓸 수 있습니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<p class="sub-info-text">스토리북을 최소 1개 이상 선택해주세요.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">임신출산</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk1" class="inp-chk" checked="">
+												<label for="PopChk1">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk2" class="inp-chk" checked="">
+												<label for="PopChk2">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk3" class="inp-chk">
+												<label for="PopChk3">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+									<div class="subject-circle-box">
+										<div class="subject-circle-top">아이성장</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk4" class="inp-chk">
+												<label for="PopChk4">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk5" class="inp-chk">
+												<label for="PopChk5">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk6" class="inp-chk">
+												<label for="PopChk6">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type4"><span>확인</span></button>
+						</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="3" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">스토리북 관리</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="info-txt ess">는 필수 입력 사항입니다.</p>
+					<div class="new-book-wrap">
+						<ul class="form-list">
+							<li>
+								<p class="form-title"><span>프로필 정보</span></p>
+								<div class="form-cont">
+									<div class="photo-area">
+										<button class="img-edit"><span class="img"><img src="../assets/images/content/temp/img_test.png" alt="프로필 사진"></span></button>
+										<button class="btn-edit"><span>프로필 관리</span></button>
+									</div>
+									<p class="photo-size-info">용량 5MB이하 JPG, PNG 500*500PX 권장</p>
+									<div class="count-input ta">
+										<textarea id="title01" title="프로필 정보" placeholder="프로필 소개를 입력해주세요.">스토리북소개 내용이 노출됩니다. 사랑으로 성장하는 이야기를 소중하게 기록하고있습니다.</textarea>
+										<p class="num-count"><span>29</span>/30</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span>스토리북 공개 설정</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 공개 설정</p>
+											<span class="tooltip-inner-text">
+												전체 : 비회원포함공개<br>
+												이웃 : 내 이웃에게만 공개<br>
+												가족 : 내 가족에게만 공개<br>
+												이웃+가족 : 이웃과 가족에게만 공개<br>
+												비공개  : 나외에 모든회원 볼 수 없음
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>전체공개</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<p class="form-title"><span>가족 스토리북 설정</span></p>
+								<div class="form-cont">
+									<p class="sub-info-text">가족 스토리북은  ID 당 1개씩 자동 개설됩니다.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">우리 가족</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk421" class="inp-chk" checked="">
+												<label for="PopChk421">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk521" class="inp-chk" checked="">
+												<label for="PopChk521">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk621" class="inp-chk">
+												<label for="PopChk621">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type4"><span>확인</span></button>
+						</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="4" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">개설 스토리북 관리</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="info-txt ess">는 필수 입력 사항입니다.</p>
+					<div class="new-book-wrap">
+						<ul class="form-list">
+							<li>
+								<div class="form-title"><span class="ess">자녀정보</span></div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>첫째 기쁨이 (남) 육아24개월</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 소개</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 소개</p>
+											<span class="tooltip-inner-text">
+												다른 사람들에게 공개되는 <br>나의 스토리북 소개글입니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input ta">
+										<textarea id="title20" title="스토리북 소개" placeholder="스토리북 소개를 입력해주세요.">스토리북 소개입니다.</textarea>
+										<p class="num-count"><span>9</span>/15</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 주제 선택</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 주제 선택</p>
+											<span class="tooltip-inner-text">
+												주제사용 : 선택 시 공개되며 해제 시 비노출됩니다. <br>
+												댓글,공감사용 : 내 스토리 하단에 공감과 댓글기능이 노출됩니다. <br>
+												가족 쓰기 : 가족 권한인 아이디도 내 스토리북에 글을 쓸 수 있습니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<p class="sub-info-text">스토리북을 최소 1개 이상 선택해주세요.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">임신출산</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk10" class="inp-chk" checked="">
+												<label for="PopChk10">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk20" class="inp-chk" checked="">
+												<label for="PopChk20">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk30" class="inp-chk">
+												<label for="PopChk30">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+									<div class="subject-circle-box">
+										<div class="subject-circle-top">아이성장</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk40" class="inp-chk">
+												<label for="PopChk40">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk50" class="inp-chk">
+												<label for="PopChk50">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk60" class="inp-chk">
+												<label for="PopChk60">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type4"><span>확인</span></button>
+						</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="5" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">마케팅 수신 동의 여부</h1>
+				</div>
+				<div class="layerpopup-body">
+					<div class="marketing-agree">
+						<!-- s:내역 있음 -->
+						<div class="comparison-box">
+							<div class="comparison-table">
+								<table>
+									<caption>최근 성장 비교하기</caption>
+									<colgroup>
+										<col style="width:120px;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row"><span>동의 여부</span></th>
+											<td class="txt-left"><span>수신동의</span></td>
+										</tr>
+										<tr>
+											<th scope="row"><span>동의(거부) 날짜</span></th>
+											<td class="txt-left"><span>2019.05.20</span></td>
+										</tr>
+										<tr>
+											<th scope="row"><span>동의 항목</span></th>
+											<td class="txt-left"><span>이메일, 전화, 문자, 야간문자</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- e:내역 있음 -->
+	
+						<!-- s:내역 없음 -->
+						<div class="empty-cont">
+							<p class="inner-text">동의 내역이 없습니다.</p>
+						</div>
+						<!-- e:내역 없음 -->
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="6" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">알록달록 내가 사랑하는 컬러는?</h1>
+				</div>
+				<div class="layerpopup-body">
+					<div class="pop-scroll-box">
+						<div class="pop-scroll-area">
+							<ul class="pop-scroll-list">
+								<li>
+									<div class="survey-cont active">
+										<div class="survey-title">빨간 장미가 생각나는 붉은색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:85%;">85%</div>
+											</div>
+											<div class="progress-info">85%</div>
+											<div class="survey-num">(1,234명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">시원한 바다가 생각나는 파란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:50%;">50%</div>
+											</div>
+											<div class="progress-info">50%</div>
+											<div class="survey-num">(800명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">귀여운 개나리가 생각나는 노란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">맛있는 오렌지와 탱글탱글 감귤이 떠오르는 맛있는 오렌지와 탱글탱글 감귤이 떠오르는</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="7" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">알록달록 내가 사랑하는 컬러는?</h1>
+				</div>
+				<div class="layerpopup-body">
+					<div class="pop-scroll-box">
+						<div class="pop-scroll-area">
+							<strong class="vote-result-tit">우리아이 첫 유모차 가성비 vs 가심비?</strong>
+							<ul class="pop-scroll-list">
+								<li>
+									<div class="survey-cont active">
+										<div class="survey-title">빨간 장미가 생각나는 붉은색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:85%;">85%</div>
+											</div>
+											<div class="progress-info">85%</div>
+											<div class="survey-num">(1,234명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">시원한 바다가 생각나는 파란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:50%;">50%</div>
+											</div>
+											<div class="progress-info">50%</div>
+											<div class="survey-num">(800명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">귀여운 개나리가 생각나는 노란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">맛있는 오렌지와 탱글탱글 감귤이 떠오르는 맛있는 오렌지와 탱글탱글 감귤이 떠오르는</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<strong class="vote-result-tit">우리아이 첫 유모차 가성비 vs 가심비?</strong>
+							<ul class="pop-scroll-list">
+								<li>
+									<div class="survey-cont active">
+										<div class="survey-title">빨간 장미가 생각나는 붉은색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:85%;">85%</div>
+											</div>
+											<div class="progress-info">85%</div>
+											<div class="survey-num">(1,234명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">시원한 바다가 생각나는 파란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:50%;">50%</div>
+											</div>
+											<div class="progress-info">50%</div>
+											<div class="survey-num">(800명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">귀여운 개나리가 생각나는 노란색</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="survey-cont">
+										<div class="survey-title">맛있는 오렌지와 탱글탱글 감귤이 떠오르는 맛있는 오렌지와 탱글탱글 감귤이 떠오르는</div>
+										<div class="survey-info">
+											<div class="survey-bar">
+												<div class="progress-bar" style="width:30%;">30%</div>
+											</div>
+											<div class="progress-info">30%</div>
+											<div class="survey-num">(500명)</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap main-pop" data-num="8">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<div class="mainpop-swiper-wrap">
+						<div class="mainpop-swiper swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop01.jpg" alt="이미지 영역 540*360">
+											</div>
+											<div class="mainpop-btm-area">
+												<p class="main-admin-text">
+													어드민에서 입력한 텍스트 내용이 노출됩니다.
+													어드민에서 입력한 텍스트 내용이 노출됩니다.
+													어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.어드민에서 입력한 텍스트 내용이 노출됩니다.
+												</p>
+											</div>
+										</div>
+										<div class="btn-box">
+											<button class="btn-type4"><span>버튼영역</span></button>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?<br>제목 영역입니다. 두 줄까지 나옵니다.</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop01.jpg" alt="이미지 영역 540*360">
+											</div>
+											<div class="mainpop-btm-area">
+												<p class="main-admin-text">
+													어드민에서 입력한 텍스트 내용이 노출됩니다. 내용이 보여집니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?<br>제목 영역입니다. 두 줄까지 나옵니다.</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop02.jpg" alt="이미지 영역 540*488">
+											</div>
+										</div>
+										<div class="btn-box">
+											<button class="btn-type4"><span>버튼영역</span></button>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?<br>제목 영역입니다. 두 줄까지 나옵니다.</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop03.jpg" alt="이미지 영역 540*488">
+											</div>
+										</div>
+										<div class="btn-box">
+											<button class="btn-type4"><span>버튼영역</span></button>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?<br>제목 영역입니다. 두 줄까지 나옵니다.</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop02.jpg" alt="이미지 영역 540*603">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?<br>제목 영역입니다. 두 줄까지 나옵니다.</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="img">
+												<img src="../assets/images/popup/temp/@img_temp_mainpop04.jpg" alt="이미지 영역 540*488">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="mainpop-btm-area">
+												<p class="main-admin-text">
+													어드민에서 입력한 텍스트 내용이 노출됩니다. 내용이 보여집니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.
+												</p>
+											</div>
+										</div>
+										<div class="btn-box">
+											<button class="btn-type4"><span>버튼영역</span></button>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="mainpop-swiper-cont">
+										<h1 class="mainpop-title"><span>알록달록 내가 사랑하는 컬러는?</span></h1>
+										<div class="mainpop-scroll-area">
+											<div class="mainpop-btm-area">
+												<p class="main-admin-text">
+													어드민에서 입력한 텍스트 내용이 노출됩니다. 내용이 보여집니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.<br>
+													어드민에서 입력한 텍스트 내용이 노출됩니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<button class="btn-today-view"><span>오늘 그만 보기</span></button>
+				</div>
+				<button class="btn-popup-close"><span>닫기</span></button>
+			</div>
+		</div>
+	</div>
+	<!-- e : layerpop -->
+
+	<!-- Swiper JS -->
+	<script src="../assets/js/lib/swiper.min.js"></script>
+	
+	<script>
+		$(function () {
+			// s : main-common-popup
+			var options = {};
+			var mainpopSlideLength = $('.mainpop-swiper-wrap .swiper-slide').length;
+			if (mainpopSlideLength == 1) {
+				options = {
+					loop: false,
+					simulateTouch: false
+				}
+				$('.mainpop-swiper-wrap .swiper-button-prev, .mainpop-swiper-wrap .swiper-button-next').hide();
+			} else {
+				options = {
+					navigation: {
+						nextEl: '.mainpop-swiper-wrap .swiper-button-next',
+						prevEl: '.mainpop-swiper-wrap .swiper-button-prev',
+					},
+					pagination: {
+						el: '.mainpop-swiper-wrap .swiper-pagination',
+						clickable: true,
+					},
+					slidesPerView: 'auto',
+					simulateTouch: false,
+					spaceBetween: 15,
+					speed: 500,
+					loop: true,
+				}
+			}
+			var mainPopSwiper = new Swiper('.mainpop-swiper-wrap .mainpop-swiper', options);
+
+			$('.mainpop-swiper-wrap .swiper-slide').each(function (index) {
+				if ($(this).find('.btn-box').length == 0) {
+					$(this).addClass('none-btn');
+				}
+				if ($(this).find('.mainpop-btm-area').length == 0) {
+					$(this).addClass('none-txt');
+				}
+				if ($(this).find('.img').length == 0) {
+					$(this).addClass('none-img');
+				}
+			});
+			// e : main-common-popup
+		});
+	</script>
+</body>
+
+</html>

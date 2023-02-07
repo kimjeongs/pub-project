@@ -1,0 +1,1008 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+	<title>Namyangi Community</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="../assets/css/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script src="../assets/js/lib/jquery.min.js"></script>
+	<script src="../assets/js/lib/jquery.nicescroll.min.js"></script>
+	<script src="../assets/js/lib/jquery-ui.min.js"></script>
+	<script src="../assets/js/common.js"></script>
+	<script src="../assets/js/content.js"></script>
+	<script>
+		$(function () {
+			//모든 datepicker에 대한 공통 옵션 설정
+			$.datepicker.setDefaults({
+				dateFormat: 'yy.mm.dd'
+				, changeYear: true
+				, changeMonth: true
+				, showMonthAfterYear: true
+				, monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+				, dayNamesMin: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
+				, dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+			});
+
+			$('.date-picker').datepicker();
+			$(".pop-scroll-list").niceScroll({ cursorborder: "", cursorcolor: "#ddd"}); // First scrollable DIV
+		});
+	</script>
+</head>
+
+<body>
+	<!-- s : wrap -->
+	<div class="wrap">
+		<!-- s : header -->
+		<div class="header">
+			<div class="inner-cont">
+				<div class="header-cont">
+					<div class="top-nav">
+						<a href="#none">로그인</a>
+						<a href="#none">회원가입</a>
+						<a href="#none">고객센터</a>
+						<a href="#none" class="ny-mall">남양몰</a>
+					</div>
+					<div class="top-gnb">
+						<button class="gnb-detail-menu"><img src="../assets/images/header/img_gnb_menu.png" alt="메뉴보기"></button>
+						<div class="gnb-detail-sub active">
+							<div class="sub-list">
+								<ul>
+									<li class="hover">임신&middot;출산&middot;건강</li>
+									<li>성장&middot;놀이&middot;교육</li>
+									<li>공감&middot;혜택</li>
+									<li>남양케어</li>
+									<li>스토리북</li>
+								</ul>
+								<dl class="btm-info-box">
+									<dt>좋은부모되기</dt>
+									<dd>요즘 저 우리 아이와<br>욕실에서 놀아요!</dd>
+								</dl>
+							</div>
+							<div class="sub-detail-list">
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">임신&middot;출산&middot;건강</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">임신준비</a></dt>
+												<dd><a href="#none">계획임신</a></dd>
+												<dd><a href="#none">임신확인</a></dd>
+												<dd><a href="#none">난임</a></dd>
+												<dd><a href="#none">피임</a></dd>
+												<dd><a href="#none">병원이용 및 검사</a></dd>
+												<dd><a href="#none">건강&amp;생활</a></dd>
+												<dd><a href="#none">아기맞이 계산기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">임신중</a></dt>
+												<dd><a href="#none">임신초기</a></dd>
+												<dd><a href="#none">임신중기</a></dd>
+												<dd><a href="#none">임신후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">출산</a></dt>
+												<dd><a href="#none">출산준비</a></dd>
+												<dd><a href="#none">분만과정</a></dd>
+												<dd><a href="#none">분만법</a></dd>
+												<dd><a href="#none">산후조리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께하는 10개월</a></dt>
+												<dd><a href="#none">임산부 생활건강</a></dd>
+												<dd><a href="#none">아빠의 출산준비</a></dd>
+												<dd><a href="#none">태아 성장이야기</a></dd>
+												<dd><a href="#none">사진으로보는 태아 280일</a></dd>
+												<dd><a href="#none">태교음악</a></dd>
+												<dd><a href="#none">행복한태담</a></dd>
+												<dd><a href="#none">우리아기 태명</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">성장&middot;놀이&middot;교육</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">성장</a></dt>
+												<dd><a href="#none">신생아</a></dd>
+												<dd><a href="#none">1~2개월</a></dd>
+												<dd><a href="#none">3~4개월</a></dd>
+												<dd><a href="#none">5~6개월</a></dd>
+												<dd><a href="#none">7~8개월</a></dd>
+												<dd><a href="#none">9~10개월</a></dd>
+												<dd><a href="#none">11~12개월</a></dd>
+												<dd><a href="#none">13~18개월</a></dd>
+												<dd><a href="#none">19~24개월</a></dd>
+											</dl>
+											<dl>
+												<dd><a href="#none">25~30개월</a></dd>
+												<dd><a href="#none">31~36개월</a></dd>
+												<dd><a href="#none">만3~5세</a></dd>
+												<dd><a href="#none">만5~7세</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">놀이/교육</a></dt>
+												<dd><a href="#none">교육방법</a></dd>
+												<dd><a href="#none">교육시설</a></dd>
+												<dd><a href="#none">교재교구</a></dd>
+												<dd><a href="#none">시기별</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께 키우는 아이</a></dt>
+												<dd><a href="#none">성장</a></dd>
+												<dd><a href="#none">발달</a></dd>
+												<dd><a href="#none">건강체크</a></dd>
+												<dd><a href="#none">돌보기</a></dd>
+												<dd><a href="#none">육아이야기</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">공감&middot;혜택</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">공감</a></dt>
+												<dd><a href="#none">테마커뮤니티</a></dd>
+												<dd><a href="#none">함께키우는 아이 캠페인</a></dd>
+												<dd><a href="#none">맛있는 레시피</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">혜택</a></dt>
+												<dd><a href="#none">임신육아교실</a></dd>
+												<dd><a href="#none">공장견학</a></dd>
+												<dd><a href="#none">해피박스</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">진행중인 이벤트</a></dt>
+												<dt><a href="#none">당첨자발표</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">남양케어</a></h2>
+									<ul class="col5 d-line"> <!-- 메뉴 라인이 2단 일 경우 d-line 클래스 추가 -->
+										<li>
+											<dl>
+												<dt><a href="#none">모유리서치센터</a></dt>
+												<dd><a href="#none">모유리서치센터 소개</a></dd>
+												<dd><a href="#none">안심원칙</a></dd>
+												<dd><a href="#none">연구활동</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기똥 분석 서비스</a></dt>
+												<dd><a href="#none">아기똥 셀프 진단</a></dd>
+												<dd><a href="#none">아기똥 1:1 상담</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">모유 영양분석 서비스</a></dt>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">성장발달 클리닉</a></dt>
+												<dd><a href="#none">아이 성장진단</a></dd>
+												<dd><a href="#none">아이 발달진단</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">1:1 전문상담</a></dt>
+												<dd><a href="#none">1:1 전문상담</a></dd>
+												<dd><a href="#none">1:1 전문상담 신청</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기 캠 서비스</a></dt>
+												<dt><a href="#none">의료기관 찾기</a></dt>
+												<dt><a href="#none">미아방지 알림솔루션</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">스토리북</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북</a></dt>
+												<dd><a href="#none">스토리북 소개</a></dd>
+												<dd><a href="#none">공개 스토리북</a></dd>
+												<dd><a href="#none">신규개설 스토리북</a></dd>
+												<dd><a href="#none">최신 스토리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">100일 연속스토리</a></dt>
+												<dd><a href="#none">100일 연속스토리 소개</a></dd>
+												<dd><a href="#none">100일 연속스토리 도전회원</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 출판</a></dt>
+												<dd><a href="#none">스토리북 출판 소개</a></dd>
+												<dd><a href="#none">스토리북 출판 가이드</a></dd>
+												<dd><a href="#none">스토리북 출판 후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 이웃 찾기</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<h1 class="h-title"><a href="#none"><img src="../assets/images/header/img_logo.png" alt="남양아이"></a></h1>
+						<ul class="gnb-list focus-list">
+							<li>
+								<a href="#none">임신&middot;출산&middot;건강</a>
+								<ul style="display:none;">
+									<li><a href="#none">임신준비</a></li>
+									<li><a href="#none">임신중</a></li>
+									<li><a href="#none">출산</a></li>
+									<li><a href="#none">함께하는 10개월</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">성장&middot;놀이&middot;교육</a>
+								<ul style="display:none;">
+									<li><a href="#none">성장</a></li>
+									<li><a href="#none">놀이/교육</a></li>
+									<li><a href="#none">함께키우는 아이</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">공감&middot;혜택</a>
+								<ul style="display:none;">
+									<li><a href="#none">공감</a></li>
+									<li><a href="#none">혜택</a></li>
+									<li><a href="#none">진행중인 이벤트</a></li>
+									<li><a href="#none">당첨자발표</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">남양케어</a>
+								<ul style="display:none;">
+									<li><a href="#none">모유리서치센터</a></li>
+									<li><a href="#none">아기똥 분석 서비스</a></li>
+									<li><a href="#none">모유 영양분석 서비스</a></li>
+									<li><a href="#none">성장발달 클리닉</a></li>
+									<li><a href="#none">1:1 전문상담</a></li>
+									<li><a href="#none">아기 캠 서비스</a></li>
+									<li><a href="#none">의료기관 찾기</a></li>
+									<li><a href="#none">미아방지 알림솔루션</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">스토리북</a>
+								<ul style="display:none;">
+									<li><a href="#none">스토리북</a></li>
+									<li><a href="#none">100일 연속스토리</a></li>
+									<li><a href="#none">스토리북 출판</a></li>
+									<li><a href="#none">스토리북 이웃 찾기</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="right-menu">
+							<div class="search-box">
+								<input type="text" class="inp-search" value="" placeholder="검색어를 입력해주세요">
+								<a href="#none" title="검색하기"><img src="../assets/images/header/icon/ico_search.png" alt="검색하기"></a>
+							</div>
+							<a href="#none" title="고객혜택"><img src="../assets/images/header/icon/ico_benefit.png" alt="고객혜택"></a>
+							<a href="#none" title="내정보"><img src="../assets/images/header/icon/ico_my_info.png" alt="내정보"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : header -->
+
+		<!-- s : body -->
+		<div class="container">
+
+			<!-- s : content -->
+			<div class="inner-cont">
+				<div class="content">
+					<!-- s : rnb -->
+					<!-- s: 20190515 modify -->
+					<div class="rnb-wrap">
+						<div class="rnb-top-box">
+							<span class="category-ico"><img src="../assets/images/common/icon/ico_care.png" alt="남양케어"></span>
+							<h2 class="rnb-title">남양케어</h2>
+							<p>남양이 제공하는<br>전문적인 서비스를 만나보세요.</p>
+						</div>
+						<ul class="rnb-list-box focus-list">
+							<li>
+								<a href="#none" class="accordion-box">모유리서치센터</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">모유리서치센터 소개</a></li>
+									<li><a href="#none">안심원칙</a></li>
+									<li><a href="#none">연구활동</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">아기똥 분석 서비스</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">아기똥 셀프 진단</a></li>
+									<li><a href="#none">아기똥 1:1 상담</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">모유 영양분석 서비스</a>
+							</li>
+							<li>
+								<a href="#none">유전자분석</a>
+							</li>
+							<li class="focus on">
+								<a href="#none" class="accordion-box">성장발달클리닉</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li class="focus"><a href="#none">아이 성장진단</a></li>
+									<li><a href="#none">아이 발달진단</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">1:1 전문상담</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">1:1 전문상담</a></li>
+									<li><a href="#none">1:1 전문상담 신청</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">아기 캠 서비스</a>
+							</li>
+							<li>
+								<a href="#none">의료기관 찾기</a>
+							</li>
+							<li>
+								<a href="#none">미아방지 알림솔루션</a>
+							</li>
+						</ul>
+					</div>
+					<!-- e: 20190515 modify -->
+					<!-- e : rnb -->
+	
+					<!-- s : left-content -->
+					<div class="left-content">
+						<ul class="cont-navi">
+							<li><a href="#none" class="nav-home">HOME</a></li>
+							<li><a href="#none" class="nav-sub">남양케어</a></li>
+							<li><a href="#none" class="nav-sub">성장발달 클리닉</a></li>
+							<li><span class="nav-sub">아이 성장 진단</span></li>
+						</ul>
+						<h2 class="c-title">아이 성장 진단</h2>
+						<p class="c-title-desc">우리 아이가 잘 성장하고 있는지, 또래와 비교했을 때는 어느 정도일지 궁금하시죠?<br>0~36개월 아이의 성별과 월령, 몸무게, 키를 입력하시면 또래와 비교하여 보여드립니다.</p>
+
+						<div class="diagnosis-check-step type2">
+							<div class="tab-circle-wrap">
+								<ul class="tab-circle-box tab">
+									<li class="active on">
+										<div class="circle-item">
+											<div class="item-step">
+												<strong>Step 1</strong>
+												<span>아이정보 입력</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="circle-item">
+											<div class="item-step">
+												<strong>Step 2</strong>
+												<span>키/몸무게 입력</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="circle-item">
+											<div class="item-step">
+												<strong>Step 3</strong>
+												<span>진단 결과 보기</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="diff-child-info">
+							<strong class="dc-title">성장 비교를 원하시는 아이 정보를 선택해주세요.</strong>
+							<p class="dc-desc">자녀 정보를 등록하셨다면 등록된 자녀가 표시됩니다.</p>
+							<div class="diff-child-cont">
+								<div class="diff-left-cont">
+									<!-- s : 비회원 일 경우 -->
+									<div class="diff-cont-logout">
+										<a href="#none" class="btn-child-add popup-open" data-num="1"><img src="../assets/images/content/img_child_add.png" alt="자녀 등록"></a>
+										<div class="diff-child-title">자녀 정보를 등록해주세요</div>
+										<p class="diff-child-desc">자녀정보 등록 후 아이 성장 진단를 이용하시면<br>마이룸 &gt; 아이 성장 진단 이력에 결과가 저장되어<br>성장 이력을 한번에 확인하실 수 있습니다.</p>
+									</div>
+									<!-- e : 비회원 일 경우 -->
+
+									<!-- s : 회원 일 경우 190430 modify -->
+									<!-- s : 회원 일 경우 -->
+									<div class="diff-cont-login" style="display:none;">
+										<div class="diff-child-title">등록된 자녀 중 선택</div>
+										<p class="diff-child-desc">0~36개월에 해당되는 아이를 선택하실 수 있습니다.</p>
+										<div class="diff-swiper-area">
+											<div class="diff-child-swiper swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<ul class="diff-child-select">
+															<li>
+																<div class="child-select-cont">
+																	<div class="inp-radio-box">
+																		<input type="radio" id="csRdo1" class="ipt-rdo" name="csRdo" disabled>
+																		<label for="csRdo1">
+																			<span class="cs-num">첫째</span>
+																			<strong class="cs-name">사랑이</strong>
+																			<p class="cs-month">(여)육아<br>37개월</p>
+																		</label>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="child-select-cont">
+																	<div class="inp-radio-box">
+																		<input type="radio" id="csRdo2" class="ipt-rdo" name="csRdo" checked>
+																		<label for="csRdo2">
+																			<span class="cs-num">둘째</span>
+																			<strong class="cs-name">남양이</strong>
+																			<p class="cs-month">(여)육아<br>20개월</p>
+																		</label>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="child-select-cont">
+																	<div class="inp-radio-box">
+																		<input type="radio" id="csRdo3" class="ipt-rdo" name="csRdo">
+																		<label for="csRdo3">
+																			<span class="cs-num">셋째</span>
+																			<strong class="cs-name">행복이</strong>
+																			<p class="cs-month">(여)육아<br>3개월</p>
+																		</label>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<div class="swiper-slide">
+														<ul class="diff-child-select">
+															<li>
+																<div class="child-select-cont">
+																	<div class="inp-radio-box">
+																		<input type="radio" id="csRdo4" class="ipt-rdo" name="csRdo">
+																		<label for="csRdo4">
+																			<span class="cs-num">넷째</span>
+																			<strong class="cs-name">남양이</strong>
+																			<p class="cs-month">(여)육아<br>20개월</p>
+																		</label>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="child-select-cont">
+																	<div class="inp-radio-box">
+																		<input type="radio" id="csRdos5" class="ipt-rdo" name="csRdo">
+																		<label for="csRdos5">
+																			<span class="cs-num">다섯째</span>
+																			<strong class="cs-name">행복이</strong>
+																			<p class="cs-month">(여)육아<br>3개월</p>
+																		</label>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<!-- Add Arrows -->
+											<div class="swiper-button-next"></div>
+											<div class="swiper-button-prev"></div>
+										</div>
+									</div>
+									<!-- e : 회원 일 경우 190430 modify -->
+								</div>
+								
+								<div class="diff-right-cont">
+									<div class="diff-child-title">직접 선택</div>
+									<p class="diff-child-desc">성별과 월령을 선택해주세요.</p>
+									<ul class="child-gender-select">
+										<li>
+											<div class="gender-cont">
+												<div class="gender-img"><img src="../assets/images/content/img_gender_male.png" alt="남자아이"></div>
+												<div class="inp-radio-box">
+													<input type="radio" id="gsRdo1" class="ipt-rdo" name="gsRdo" checked>
+													<label for="gsRdo1"><span>남자아이</span></label>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="gender-cont">
+												<div class="gender-img"><img src="../assets/images/content/img_gender_female.png" alt="여자아이"></div>
+												<div class="inp-radio-box">
+													<input type="radio" id="gsRdo2" class="ipt-rdo" name="gsRdo">
+													<label for="gsRdo2"><span>여자아이</span></label>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="form-cont">
+										<select>
+											<option value="월령을 선택해주세요" hidden>월령을 선택해주세요</option>
+											<option>1</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<!-- s : 회원 일 경우 -->
+							<div class="child-diagnosis-check" style="display:none;">
+								<div class="cd-title"><span>우리 아이의 생일</span>을 입력 또는 선택하여 진단을 시작해보세요.</div>
+								<div class="date-box">
+									<div class="date"><input type="text" title="우리 아이 월령" value="" class="ipt-txt date-picker" readonly=""></div>
+								</div>
+							</div>
+							<!-- e : 회원 일 경우 -->
+							
+							<div class="btn-box">
+								<button class="btn-type2"><span>다음</span></button>
+							</div>
+						</div>
+
+						<div class="circle-gray-box">
+							<div class="left-cont-box">
+								<p class="circle-gray-desc">월령별 표준 키와 몸무게, 머리둘레는 얼마나 될까요?<br>성장 표준치를 확인해보세요.</p>
+								<div class="btn-box">
+									<a href="#none" class="btn-type1 small popup-open" data-num="2">월령별 성장 표준치</a>
+								</div>
+							</div>
+							<div class="right-cont-box">
+								<p class="circle-gray-desc">하루에 분유를 얼마나 먹여야 할까요?<br>월령별 1일 분유 수유량을 확인해보세요.</p>
+								<div class="btn-box">
+									<a href="#none" class="btn-type1 small popup-open" data-num="3">월령별 1일 분유 수유량</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="sns-share-box">
+							<button class="btn-share toggle"><span>공유</span></button>
+							<div class="sns-share-cont">
+								<ul class="sns-share-list focus-list">
+									<li><a href="#none"><span><img src="../assets/images/content/icon/ico_sns_facebook.png" alt="페이스북"></span>페이스북</a>
+									</li>
+									<li><a href="#none"><span><img src="../assets/images/content/icon/ico_sns_twitter.png" alt="트위터"></span>트위터</a>
+									</li>
+									<li><a href="#none"><span><img src="../assets/images/content/icon/ico_sns_kakaostory.png"
+													alt="카카오스토리"></span>카카오스토리</a></li>
+									<li><a href="#none"><span><img src="../assets/images/content/icon/ico_url_copy.png" alt="URL복사"></span>URL복사</a>
+									</li>
+								</ul>
+								<button class="btn-close"><span><img src="../assets/images/content/icon/ico_btn_close.png" alt="닫기"></span></button>
+							</div>
+						</div> -->
+
+					</div>
+					<!-- e : left-content -->
+				</div>
+			</div>
+			<!-- e : content -->
+
+		</div>
+		<!-- e : body -->
+
+		<!-- s : footer -->
+		<div class="footer">
+			<div class="inner-cont">
+				<div class="footer-cont">
+					<div class="footer-top-line">
+						<ul class="footer-link-list focus-list">
+							<li><a href="#none">공지사항</a></li>
+							<li><a href="#none">이용약관</a></li>
+							<li class="point-text"><a href="#none">개인정보처리방침</a></li>
+							<li><a href="#none">청소년 보호정책</a></li>
+							<li><a href="#none">제휴/제안</a></li>
+						</ul>
+						<div class="footer-right-box">
+							<ul class="footer-sns-list">
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_youtube.png" alt="youtube"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_facebook.png" alt="facebook"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_instagram.png" alt="instagram"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_kakaostory.png" alt="kakaostory"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_plusfriend.png" alt="plusfriend"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_naver_post.png" alt="naverpost"></a></li>
+							</ul>
+							<div class="slt-box">
+								<select>
+									<option value="패밀리사이트" hidden>패밀리사이트</option>
+									<option value="남양유업">남양유업</option>
+									<option value="남양몰">남양몰</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<p class="footer-mid-txt">서울시 강남구 도산대로 240, 1964빌딩 남양유업 &#x321C;<span>TEL : 02-734-1305</span><span>대표자 :
+							이광범</span><span>개인정보보호책임자 : 김소현 실장</span><br>사업자등록번호 : 202-81-04367 <span>통신판매업신고 : 서울강남 00873호</span></p>
+					<div class="footer-btm-line">
+						<div class="left-cont">
+							<strong>NAMYANG CO,.LTD ALL RIGHTS RESERVED.</strong>
+							<p>남양아이의 모든 컨텐츠는 저작권법의 보호를 받는 바, 무단 전재&#x318D;복사&#x318D;배포 등을 금합니다.</p>
+						</div>
+						<div class="right-cont">
+							<span><img src="../assets/images/footer/img_btm_bar01.jpg" alt="공정거래위원회 표준약관 적용"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar02.jpg" alt="웹어워드코리아 2008 여성/육아 포탈분야 대상"></span> -->
+							<span><img src="../assets/images/footer/img_btm_bar03.jpg" alt="한국 전자인증"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar04.jpg" alt="우수 콘텐츠 서비스"></span> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : footer -->
+
+		<!-- s : screen top button -->
+		<button class="btn-screen-top"><span>TOP</span></button>
+		<!-- e : screen top button -->
+
+	</div>
+	<!-- e : wrap -->
+
+	<!-- s : layerpopup -->
+	<div class="layerpopup-wrap" data-num="1" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<h1 class="pop-title"><strong>남양아이</strong>에<br>오신것을 환영합니다.</h1>
+					<div class="login-box">
+						<div class="id-box"><input type="text" class="inp-box" value="" placeholder="아이디"></div>
+						<div class="pw-box">
+							<input type="password" id="pwLbl" class="inp-box" value="" placeholder="비밀번호">
+						</div>
+						<p class="error-msg">아이디가 맞지 않습니다.</p>
+					</div>
+					<div class="login-chk-box">
+						<div class="inp-chk-box">
+							<input type="checkbox" id="chkChr" class="inp-chk">
+							<label for="chkChr">아이디 저장</label>
+						</div>
+						<button class="btn-login">로그인</button>
+					</div>
+					<ul class="underline-text-box">
+						<li><a href="#none">아이디 및 비밀번호를 잊어버리셨나요?</a></li>
+						<li><a href="#none">회원가입을 하시겠어요?</a></li>
+					</ul>
+					<div class="sns-link-box">
+						<dl>
+							<dt>SNS 로그인</dt>
+							<dd><a href="#none"><img src="../assets/images/common/icon/ico_sns_kakao.png" alt="kakaotalk"></a></dd>
+							<dd><a href="#none"><img src="../assets/images/common/icon/ico_sns_naver.png" alt="naver"></a></dd>
+							<dd><a href="#none"><img src="../assets/images/common/icon/ico_sns_facebook.png" alt="facebook"></a></dd>
+							<dd><a href="#none"><img src="../assets/images/common/icon/ico_sns_twitter.png" alt="twitter"></a></dd>
+						</dl>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap type2" data-num="2" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont pro-search">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">월령별 성장 표준치</h1>
+					<div class="hor-tab-box">
+						<ul class="hor-tab tab">
+							<li><a href="#none" class="on">남자 아이</a></li>
+							<li><a href="#none">여자 아이</a></li>
+						</ul>
+					</div>
+					<div class="product-box-wrap">
+						<div class="product-box on tab-table-type">
+							<div class="pop-scroll-box dry-milk">
+								<div class="pop-scroll-list">
+									<table>
+									<caption>월령별 성장 표준치</caption>
+									<colgroup>
+										<col>
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">월령(개월)</th>
+											<th scope="col">체중(kg)</th>
+											<th scope="col">신장(cm)</th>
+											<th scope="col">머리둘레(cm)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>0</td>
+											<td>3.3</td>
+											<td>49.9</td>
+											<td>34.5</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>4.5</td>
+											<td>54.7</td>
+											<td>37.3</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>5.6</td>
+											<td>58.4</td>
+											<td>39.1</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>6.4</td>
+											<td>61.4</td>
+											<td>40.5</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>416.</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>416.</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>41.6</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>41.6</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>41.6</td>
+										</tr>
+									</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="product-box tab-table-type">
+							<div class="pop-scroll-box dry-milk">
+								<div class="pop-scroll-list">
+									<table>
+									<caption>월령별 성장 표준치</caption>
+									<colgroup>
+										<col>
+										<col>
+										<col>
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">월령(개월)</th>
+											<th scope="col">체중(kg)</th>
+											<th scope="col">신장(cm)</th>
+											<th scope="col">머리둘레(cm)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>011111111111</td>
+											<td>3.3 여자 아이</td>
+											<td>49.9</td>
+											<td>34.5</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>4.5</td>
+											<td>54.7</td>
+											<td>37.3</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>5.6</td>
+											<td>58.4</td>
+											<td>39.1</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>6.4</td>
+											<td>61.4</td>
+											<td>40.5</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>416.</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>416.</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>41.6</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>7.0</td>
+											<td>63.9</td>
+											<td>41.6</td>
+										</tr>
+									</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="inner-source-text">[출처] 질병관리본부 (2017 소아청소년 성장도표)</p> <!-- 190625 -->
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap type2" data-num="3" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">월령별 1일 분유 수유량</h1>
+						<div class="pop-scroll-box dry-milk">
+							<div class="pop-scroll-list">
+								<table>
+								<caption>월령별 1일 분유 수유량</caption>
+								<colgroup>
+									<col style="width:23%">
+									<col style="width:25%">
+									<col style="width:27%">
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">월령</th>
+										<th scope="col">1회 조유량(ml)</th>
+										<th scope="col">1일 섭취 횟수(회)</th>
+										<th scope="col">1일 섭취량(ml)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>0~0.5개월</td>
+										<td>80</td>
+										<td>7~8</td>
+										<td>540~640</td>
+									</tr>
+									<tr>
+										<td>0.5~1개월</td>
+										<td>120</td>
+										<td>7</td>
+										<td>840</td>
+									</tr>
+									<tr>
+										<td>1~2개월</td>
+										<td>160</td>
+										<td>6</td>
+										<td>960</td>
+									</tr>
+									<tr>
+										<td>2~3개월</td>
+										<td>160</td>
+										<td>6</td>
+										<td>960</td>
+									</tr>
+									<tr>
+										<td>3개월~100일</td>
+										<td>200</td>
+										<td>5</td>
+										<td>1000</td>
+									</tr>
+									<tr>
+										<td>100일~6개월</td>
+										<td>200</td>
+										<td>5</td>
+										<td>1000</td>
+									</tr>
+									<tr>
+										<td>6~12개월</td>
+										<td>240</td>
+										<td>4~5</td>
+										<td>960~1200</td>
+									</tr>
+									<tr>
+										<td>6~12개월</td>
+										<td>240</td>
+										<td>4~5</td>
+										<td>960~1200</td>
+									</tr>
+									<tr>
+										<td>6~12개월</td>
+										<td>240</td>
+										<td>4~5</td>
+										<td>960~1200</td>
+									</tr>
+								</tbody>
+								</table>
+							</div>
+							<p class="inner-source-text">* 분유 수유량은 아이마다 차이가 있습니다.</p> <!-- 190625 -->
+						</div>
+					</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- e : layerpopup -->
+
+	<!-- Swiper JS -->
+	<script src="../assets/js/lib/swiper.min.js"></script>
+	
+	<!-- Initialize Swiper -->
+	<script>
+		var options = {},
+			slideLength = $('.diff-child-swiper .swiper-slide').length;
+		if (slideLength == 1) {
+			options = {
+				simulateTouch: false
+			}
+			$('.diff-swiper-area .swiper-button-prev, .diff-swiper-area .swiper-button-next').hide();
+		} else {
+			options = {
+				navigation: {
+					nextEl: '.diff-swiper-area .swiper-button-next',
+					prevEl: '.diff-swiper-area .swiper-button-prev',
+				},
+				simulateTouch: false,
+				speed: 300,
+			}
+		}
+		var swiper1 = new Swiper('.diff-child-swiper', options);
+	</script>
+	
+</body>
+
+</html>

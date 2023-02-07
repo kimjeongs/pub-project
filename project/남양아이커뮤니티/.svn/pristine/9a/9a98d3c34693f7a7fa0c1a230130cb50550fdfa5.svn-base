@@ -1,0 +1,1131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+	<title>Namyangi Community</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script src="../assets/js/lib/jquery.min.js"></script>
+	<script src="../assets/js/lib/iscroll.js"></script>
+	<script src="../assets/js/common.js"></script>
+	<script src="../assets/js/content.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			myScrolls = new IScroll('.i-wrapper-sub', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false, click: true, tap: true });
+
+			$('.gnb-depth3 li').click(function () {
+				var depth3Idx = $(this).index()+1;
+				$(this).find('a').attr('href', 'javascript: myScrolls.scrollToElement(document.querySelector(".i-scroll li:nth-child(' + depth3Idx + ')"), null, -15, true)');
+				setTimeout(function () {
+					$('.i-scroll li:nth-child(' + depth3Idx + ')').find('a').attr('href', "#");
+				});
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<!-- s : wrap -->
+	<div class="wrap">
+		<!-- s : header -->
+		<div class="header">
+			<div class="header-cont">
+				<a href="#" class="btn-gnb-prev"><span class="ico"><img src="../assets/images/header/icon/img_gnb_prev.png" alt="이전"></span></a>
+				<button class="btn-gnb-select toggle"><span>스토리북</span></button>
+				<div class="gnb-select-cont toggle-cont">
+					<ul class="gnb-depth2">
+						<li>
+							<ul class="gnb-depth2-sub">
+								<li><a href="#">마이룸</a></li>
+								<li><a href="#">남양 스마트 캘린더</a></li>
+								<li><a href="#">스토리북</a></li>
+								<li><a href="#">스토리북 출판</a></li>
+								<li><a href="#">참여내역/결과보기</a></li>
+								<li><a href="#">나의 정보관리</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="gnb-right-box">
+					<a href="#" class="btn-gnb-search btn"><span class="ico"><img src="../assets/images/header/icon/img_gnb_search.png" alt="검색"></span></a>
+					<a href="#" class="btn-gnb-myroom btn"><span class="ico"><img src="../assets/images/header/icon/img_gnb_myroom.png" alt="마이룸"></span></a>
+					<a href="#" class="btn-gnb-menu btn"><span class="ico"><img src="../assets/images/header/icon/img_gnb_menu.png" alt="메뉴"></span></a>
+				</div>
+			</div>
+
+			<div class="header-sub">
+				<div class="i-wrapper-sub">
+					<div class="i-scroll">
+						<ul class="gnb-depth3 tab">
+							<li class="on"><a href="#">스토리북</a></li>
+							<li><a href="#">100일 연속스토리 현황</a></li>
+							<li><a href="#">스탬프/쿠폰</a></li>
+							<li><a href="#">이웃/가족현황</a></li>
+							<li><a href="#">이웃 새소식</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- e : header -->
+
+
+		<!-- s : container -->
+		<div class="container">
+			<div class="content">
+				<div class="top-my-book-wrap">
+					<div class="storybook-detail-box">
+						<div class="photo-area">
+							<button class="img-edit popup-open" data-num="1"><span class="img"><img src="../assets/images/content/temp/img_test.png" alt="프로필 사진"></span></button>
+							<button class="btn-edit popup-open" data-num="1">프로필 관리</button>
+						</div>
+						<div class="inner-detail">
+							<div class="story-title"><p class="text"><strong>ididididid12345</strong>님의<br>스토리북입니다.</p></div>
+							<div class="btn-box">
+								<a href="#none" class="btn-write btn-m-squre btn-type4"><span>스토리 쓰기</span></a>
+								<div class="add-list-cont">
+									<button class="btn-more-list btn-m-squre btn-type1 toggle"><span>더보기</span></button>
+									<span class="add-list-box toggle-cont">
+										<span class="list"><a href="#">기본 자녀 정보수정</a></span>
+										<span class="list"><button class="edit popup-open" data-num="1"><span>스토리북 관리</span></button></span>
+										<span class="list"><a href="#">이웃현황</a></span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="sub-info-text">스토리북소개 내용이 노출됩니다. 사랑으로 성장하는 이야기를 소중하게 기록하고있습니다. 스토리북소개 내용이 노출됩니다. </p>
+				</div>
+				<div class="count-days">
+					<div class="reset-clock">
+						<span class="img"><img src="../assets/images/content/img_clock.png" width="25" height="25" alt="시계"></span>
+						<div class="time-info">
+							<p class="time-text">남양타임 <strong>99:99</strong></p>
+							<button class="highlight toggle">남양타임이란?</button>
+
+							<div class="tooltip-box-cont toggle-cont">
+								<p class="tooltip-info">남양타임이란?</p>
+								<span class="tooltip-inner-text">접속이 지연되는 불편한 점을 
+									보완하기 위해 자정의	기준이 00시에서 새벽 4시가 되는 것을 말합니다.</span>
+								<button class="btn-close">닫기</button>
+							</div>
+						</div>
+					</div>
+					<div class="relay-count">
+						연속 <strong>9,999</strong> 일
+					</div>
+				</div>
+				<div class="storybook-all-wrap tab-box">
+					<ul class="my-book-list tab">
+						<li class="on"><button class="fam btn-book"><span>우리 가족</span></button></li>
+						<li><button class="btn-book"><span>첫째</span></button></li>
+						<li class="unbind"><a href="#" class="add btn-book"></a></li>
+						<li class="unbind"></li>
+					</ul>
+					<div class="tab-cont">
+						<div class="book-cont-inner tab-item active">
+							<div class="set-edit">
+								<div class="view-icon">가족공개</div>
+								<button class="edit-icon popup-open" data-num="2"><img src="../assets/images/content/img_edit_icon.png" width="19" height="19" alt="설정"></button>
+							</div>
+							<p class="mid-title">우리 가족 스토리북</p>
+							<div class="item-search">
+								<input type="text" placeholder="검색" id="search" class="ipt-search" title="검색">
+								<a href="#none" class="btn-search">검색</a>
+							</div>
+							<p class="count-sort-text">전체 <strong>1,311</strong>건</p>
+							<div class="post-list-box">
+								<ul class="post-list storybook">
+									<li>
+										<div class="item-list">
+											<div class="item-img">
+												<div class="img"><img src="../assets/images/content/img_post_item09.jpg" alt="양육의 시작 신생아 애착 형성"></div>
+											</div>
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">불면증 초기의<br>모든 것</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">임신에서 출산까지 신경 써야할 일이 이 것 저 것 너무 많지만, 그 어느것도 아이를 출산하는 것과는 비할 수그 어느것도 아이를임신에서 출산까지 신경 써야할 일이 이 것 저 것 너무 많지만, 그 어느것도 아이를 출산하는 것과는 비할 수그 어느것도 아이를</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list">
+											<div class="item-img">
+												<div class="img"><img src="../assets/images/content/img_post_item03.png" alt="양육의 시작 신생아 애착 형성"></div>
+											</div>
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">불면증 초기의<br>모든 것</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="book-cont-inner tab-item">
+							<div class="set-edit">
+								<div class="view-icon lock">비공개</div>
+								<button class="edit-icon popup-open" data-num="2"><img src="../assets/images/content/img_edit_icon.png" width="19" height="19" alt="설정"></button>
+							</div>
+							<p class="mid-title">기쁨이 <span class="baby-year">(남) 육아24개월</span></p>
+							<p class="sub-info-text">스토리북소개 내용이 노출됩니다. 사랑으로 성장하는 이야기를 소중하게 기록하고있습니다. 스토리북소개 내용이 노출됩니다.</p>
+
+							<!-- s : 탭이 2개인 경우 -->
+							<div class="hor-tab-box">
+								<ul class="hor-tab">
+									<li><a href="#none" class="on">임신출산</a></li>
+									<li><a href="#none">아이성장</a></li>
+								</ul>
+							</div>
+							<!-- e : 탭이 2개인 경우 -->
+
+							<!-- s : 탭이 1개인 경우 -->
+							<div class="hor-tab-box">
+								<ul class="hor-tab s-type">
+									<li><a href="#none" class="on">임신출산</a></li>
+								</ul>
+							</div>
+							<!-- e : 탭이 1개인 경우 -->
+
+							<div class="item-search">
+								<input type="text" placeholder="검색" id="search1" class="ipt-search" title="검색">
+								<a href="#none" class="btn-search">검색</a>
+							</div>
+							<p class="count-sort-text">전체 <strong>1,311</strong>건</p>
+							<div class="post-list-box">
+								<ul class="post-list storybook">
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none"> 출산하는 것과는 비할 수 출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">임신에서 출산까지 신경 써야할 일이 이 것 저 것 너무 많지만, 그 어느것도 아이를 출산하는 것과는 비할 수그 어느것도 아이를임신에서 출산까지 신경 써야할 일이 이 것 저 것 너무 많지만, 그 어느것도 아이를 출산하는 것과는 비할 수그 어느것도 아이를</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none"> 출산하는 것과는 비할 수 출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-list none-img">
+											<div class="item-text">
+												<p class="top-comment">2019. 05. 13</p>
+												<p class="item-title"><a href="#none">양육의시작<br>신생아 애착 형성</a></p>
+												<p class="item-detail"><a href="#none">													출산하는 것과는 비할 수													출산하는 것과는 비할 수</a></p>
+												<div class="btm-like-box">
+													<button class="btn-like toggle on"><span>1,234</span></button>
+													<button class="btn-reply"><span>1,234</span></button>
+												</div>
+											</div>
+											<div class="view-option">
+												<div class="inp-select-box">
+													<select>
+														<option value="전체공개">전체공개</option>
+														<option value="가족공개">가족공개</option>
+														<option value="이웃공개">이웃공개</option>
+														<option value="이웃+가족공개">이웃+가족공개</option>
+														<option value="비공개">비공개</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cont-list-pagination">
+					<div class="pagination-left-btn">
+						<span class="first"><img src="../assets/images/content/icon/ico_pagination_first.png" alt="맨처음으로"></span>
+						<a href="#none" class="prev"><img src="../assets/images/content/icon/ico_pagination_prev.png" alt="이전 페이지"></a>
+					</div>
+					<ul class="pagination-list">
+						<li><span>1</span></li>
+						<li><a href="#none">2</a></li>
+						<li><a href="#none">3</a></li>
+						<li><a href="#none">4</a></li>
+						<li><a href="#none">5</a></li>
+						<li><a href="#none">6</a></li>
+					</ul>
+					<div class="pagination-right-btn">
+						<a href="#none" class="next"><img src="../assets/images/content/icon/ico_pagination_next.png" alt="다음 페이지"></a>
+						<a href="#none" class="last"><img src="../assets/images/content/icon/ico_pagination_last.png" alt="맨마지막으로"></a>
+					</div>
+				</div>
+				
+				<!-- s:190708 -->
+				<div class="service-banner">
+					<ul>
+						<li>
+							<a href="#none">
+								<span class="img"><img src="../assets/images/content/img_press01.png" alt="스토리북 출판서비스"></span>
+								<span class="banner-txt">
+									<span class="title">스토리북 출판서비스</span>
+									<span class="detail">아에게 주는 최고의 선물<br>등록된 스토리를 실제 책으로 출판해보세요</span>
+								</span>
+							</a>
+						</li>
+						<li class="impression">
+							<a href="#none">
+								<span class="img"><img src="../assets/images/content/img_press02.png" alt="스토리북 출판소감 보러가기"></span>
+								<span class="banner-txt">
+									<span class="title">스토리북 출판소감 보러가기</span>
+									<span class="detail">이미 많은 분들이 경험한 스토리북 출판서비스!<br>실제 책으로 받아본 소감이 궁금하시죠?!</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- e:190708 -->
+				
+			</div>
+		</div>
+		<!-- e : container -->
+
+		<!-- s : footer -->
+		<div class="footer">
+			<div class="footer-cont">
+				<div class="footer-top-line">
+					<ul class="footer-link-list">
+						<li><a href="#none">공지사항</a></li>
+						<li><a href="#none">이용약관</a></li>
+						<li class="point-text"><a href="#none">개인정보처리방침</a></li>
+						<li><a href="#none">청소년 보호정책</a></li>
+						<li><a href="#none">제휴/제안</a></li>
+					</ul>
+					<ul class="footer-sns-list">
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_youtube.png" alt="youtube"></a></li>
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_facebook.png" alt="facebook"></a></li>
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_instagram.png" alt="instagram"></a></li>
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_kakaostory.png" alt="kakaostory"></a></li>
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_plusfriend.png" alt="plusfriend"></a></li>
+						<li><a href="#none"><img src="../assets/images/footer/icon/ico_naver_post.png" alt="naverpost"></a></li>
+					</ul>
+					<div class="footer-mid-text">
+						<p class="mid-text-top">고객상담실<strong>02-736-0872</strong></p>
+						<p class="mid-text-btm">평일 09:00 ~ 18:00 (주말/공휴일제외)</p>
+					</div>
+					<div class="footer-slt-box">
+						<select>
+							<option value="패밀리사이트" hidden="">패밀리사이트</option>
+							<option value="남양유업">남양유업</option>
+							<option value="남양몰">남양몰</option>
+						</select>
+					</div>
+					<div class="footer-btm-area">
+						<p class="btm-text-top">서울시 강남구 도산대로 240, 1964빌딩<br>TEL : 02-734-1305<span>Fax : 02-733-6389</span><span>대표자 : 이광범</span><br>개인정보보호책임자 : 김소현 실장<span>사업자등록번호 : 202-81-04367</span><br>통신판매업신고 : 서울강남 00873호</p>
+						<p class="btm-text-btm">남양아이의 모든 컨텐츠는 저작권법의 보호를 받는 바,<br>무단 전재&#x318D;복사&#x318D;배포 등을 금합니다.<span>COPYRIGHT (c) NAMYANG CO,.LTD/ ALL RIGHTS RESERVED.</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : footer -->
+
+		<!-- s : screen top button -->
+		<button class="btn-btm-sticky"><span>내 아이<br>맞춤정보</span></button>
+		<button class="btn-screen-top"><span>TOP</span></button>
+		<!-- e : screen top button -->
+
+	</div>
+	<!-- e : wrap -->
+
+	<div class="layerpopup-wrap" data-num="1" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">스토리북 관리</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="info-txt ess">는 필수 입력 사항입니다.</p>
+					<div class="new-book-wrap">
+						<ul class="form-list">
+							<li>
+								<p class="form-title"><span>프로필 정보</span></p>
+								<div class="form-cont">
+									<!-- s : 190709 modify -->
+									<div class="file-upload">
+										<div class="upload-img-box ipt-upload">
+											<span class="img"><img src="../assets/images/content/temp/img_test.png" alt="프로필 사진"></span>
+										</div>
+										<input type="file" id="popupFile1" class="ipt-file">
+										<label for="popupFile1" class="btn-file">파일선택</label>
+										<button class="file-delete on">삭제</button>
+									</div>
+									<!-- e : 190709 modify -->
+									<p class="photo-size-info">용량 5MB이하 JPG, PNG 500*500PX 권장</p>
+									<div class="count-input ta">
+										<textarea id="title1" title="프로필 정보" placeholder="프로필 소개를 입력해주세요.">스토리북소개 내용이 노출됩니다. 사랑으로 성장하는 이야기를 소중하게 기록하고있습니다.</textarea>
+										<p class="num-count"><span>29</span>/30</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span>스토리북 공개 설정</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 공개 설정</p>
+											<span class="tooltip-inner-text">
+												전체 : 비회원포함공개<br>
+												이웃 : 내 이웃에게만 공개<br>
+												가족 : 내 가족에게만 공개<br>
+												이웃+가족 : 이웃과 가족에게만 공개<br>
+												비공개  : 나외에 모든회원 볼 수 없음
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>전체공개</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<p class="form-title"><span>가족 스토리북 설정</span></p>
+								<div class="form-cont">
+									<p class="sub-info-text">가족 스토리북은  ID 당 1개씩 자동 개설됩니다.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">우리 가족</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk42" class="inp-chk" checked="">
+												<label for="PopChk42">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk52" class="inp-chk" checked="">
+												<label for="PopChk52">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk62" class="inp-chk">
+												<label for="PopChk62">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type4"><span>확인</span></button>
+						</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap" data-num="2" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-tit">
+					<h1 class="pop-title">개설 스토리북 관리</h1>
+				</div>
+				<div class="layerpopup-body">
+					<p class="info-txt ess">는 필수 입력 사항입니다.</p>
+					<div class="new-book-wrap">
+						<ul class="form-list">
+							<li>
+								<div class="form-title"><span class="ess">자녀정보</span></div>
+								<div class="form-cont">
+									<div class="count-input inp">
+										<div class="inp-select-box">
+											<select>
+												<option>첫째 기쁨이 (남) 육아24개월</option>
+												<option>1</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 소개</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 소개</p>
+											<span class="tooltip-inner-text">
+												다른 사람들에게 공개되는 <br>나의 스토리북 소개글입니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<div class="count-input ta">
+										<textarea id="title2" title="스토리북 소개" placeholder="스토리북 소개를 입력해주세요.">스토리북 소개입니다.</textarea>
+										<p class="num-count"><span>9</span>/15</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-title">
+									<span class="ess">스토리북 주제 선택</span>
+									<div class="tooltip-mark-box">
+										<button class="btn-mark toggle"></button>
+										<div class="tooltip-box-cont toggle-cont">
+											<p class="tooltip-info">스토리북 주제 선택</p>
+											<span class="tooltip-inner-text">
+												주제사용 : 선택 시 공개되며 해제 시 비노출됩니다. <br>
+												댓글,공감사용 : 내 스토리 하단에 공감과 댓글기능이 노출됩니다. <br>
+												가족 쓰기 : 가족 권한인 아이디도 내 스토리북에 글을 쓸 수 있습니다.
+											</span>
+											<button class="btn-close">닫기</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-cont">
+									<p class="sub-info-text">스토리북을 최소 1개 이상 선택해주세요.</p>
+									<div class="subject-circle-box focus">
+										<div class="subject-circle-top">임신출산</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk1" class="inp-chk" checked="">
+												<label for="PopChk1">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk2" class="inp-chk" checked="">
+												<label for="PopChk2">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk3" class="inp-chk">
+												<label for="PopChk3">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+									<div class="subject-circle-box">
+										<div class="subject-circle-top">아이성장</div>
+										<div class="form-cont">
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk4" class="inp-chk">
+												<label for="PopChk4">주제선택</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk5" class="inp-chk">
+												<label for="PopChk5">댓글/공감사용</label>
+											</div>
+											<div class="inp-chk-box">
+												<input type="checkbox" id="PopChk6" class="inp-chk">
+												<label for="PopChk6">가족쓰기</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type4"><span>확인</span></button>
+						</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- s : header-menu -->
+	<div class="header-menu-wrap" style="display:none;">
+		<div class="header-menu-cont">
+			<!-- s : case 1 -->
+			<div class="header-top-area" style="display:none;">
+				<p class="header-top-text">로그인하시면 <strong>시기별 정보</strong>를<br>맞춤 추천해드립니다.</p>
+				<div class="btn-menu-box col2">
+					<a href="#none" class="btn-menu"><strong>로그인</strong></a>
+					<a href="#none" class="btn-menu"><strong>회원가입</strong></a>
+				</div>
+			</div>
+			<!-- e : case 1 -->
+
+			<!-- s : case 2 -->
+			<div class="header-top-area" style="display:none;">
+				<p class="header-top-text"><strong>자녀 정보</strong>를 등록해주세요.</p>
+				<div class="btn-menu-box">
+					<a href="#none" class="btn-menu"><strong>자녀정보 등록</strong></a>
+				</div>
+				<ul class="header-top-sub">
+					<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_sub_myroom.png" alt="마이룸"></span>마이룸</a></li>
+					<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_sub_story_write.png" alt="스토리 쓰기"></span>스토리 쓰기</a></li>
+				</ul>
+			</div>
+			<!-- e : case 2 -->
+
+			<!-- s : case 3 -->
+			<div class="header-top-area" style="display:block;">
+				<p class="header-top-text"><strong>김남양</strong>님 안녕하세요.</p>
+				<div class="header-calendar-area">
+					<a href="#none" class="btn-smart-calendar">남양 스마트캘린더 일정<span>+2</span></a>
+				</div>
+				<ul class="header-top-sub">
+					<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_sub_myroom.png" alt="마이룸"></span>마이룸</a></li>
+					<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_sub_story_write.png" alt="스토리 쓰기"></span>스토리 쓰기</a></li>
+				</ul>
+			</div>
+			<!-- e : case 3 -->
+
+			<div class="header-gnb-menu tab-box">
+				<div class="gnb-menu-left">
+					<ul class="gnb-left-depth2 tab">
+						<li class="on"><button><span>임신&middot;출산&middot;건강</span></button></li>
+						<li><button><span>성장&middot;놀이&middot;교육</span></button></li>
+						<li><button><span>공감&middot;혜택</span></button></li>
+						<li><button><span>남양케어</span></button></li>
+						<li><button><span>스토리북</span></button></li>
+					</ul>
+					<ul class="gnb-btm-depth2">
+						<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_benefit.png" width="19" height="14" alt="고객혜택"></span>고객혜택</a></li>
+						<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_customer.png" width="19" height="14" alt="고객센터"></span>고객센터</a></li>
+						<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_namyang_mall.png" width="19" height="14" alt="남양몰"></span>남양몰</a></li>
+						<li><a href="#none"><span class="ico"><img src="../assets/images/header/icon/ico_logout.png" width="19" height="14" alt="로그아웃"></span>로그아웃</a></li>
+					</ul>
+				</div>
+				<div class="gnb-menu-right tab-cont">
+					<ul class="gnb-menu-depth3 tab-item active">
+						<li><a href="#none">임신&middot;출산&middot;건강</a></li>
+						<li class="on">
+							<button class="accordion-box"><span>임신준비</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">계획임신</a></li>
+								<li><a href="#none">임신확인</a></li>
+								<li><a href="#none">난임</a></li>
+								<li><a href="#none">피임</a></li>
+								<li><a href="#none">병원이용 및 검사</a></li>
+								<li><a href="#none">건강&amp;생활</a></li>
+								<li><a href="#none">아기맞이 계산기</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>임신중</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">임신초기</a></li>
+								<li><a href="#none">임신중기</a></li>
+								<li><a href="#none">임신후기</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>출산</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">출산준비</a></li>
+								<li><a href="#none">분만과정</a></li>
+								<li><a href="#none">분만법</a></li>
+								<li><a href="#none">산후조리</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>함께하는 10개월</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">임산부 생활건강</a></li>
+								<li><a href="#none">아빠의출산준비</a></li>
+								<li><a href="#none">태아 성장이야기</a></li>
+								<li><a href="#none">사진으로 보는 태아 280일</a></li>
+								<li><a href="#none">태교음악</a></li>
+								<li><a href="#none">행복한태담</a></li>
+								<li><a href="#none">우리아기 태명</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<ul class="gnb-menu-depth3 tab-item">
+						<li><a href="#none">성장&middot;놀이&middot;교육</a></li>
+						<li class="on">
+							<button class="accordion-box"><span>성장</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">신생아</a></li>
+								<li><a href="#none">1~2개월</a></li>
+								<li><a href="#none">3~4개월</a></li>
+								<li><a href="#none">5~6개월</a></li>
+								<li><a href="#none">7~8개월</a></li>
+								<li><a href="#none">9~10개월</a></li>
+								<li><a href="#none">11~12개월</a></li>
+								<li><a href="#none">13~18개월</a></li>
+								<li><a href="#none">19~24개월</a></li>
+								<li><a href="#none">25~30개월</a></li>
+								<li><a href="#none">31~36개월</a></li>
+								<li><a href="#none">만3~5세</a></li>
+								<li><a href="#none">만5~7세</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>놀이/교육</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">교육방법</a></li>
+								<li><a href="#none">교육시설</a></li>
+								<li><a href="#none">교재교구</a></li>
+								<li><a href="#none">시기별</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>함께키우는 아이</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">성장</a></li>
+								<li><a href="#none">발달</a></li>
+								<li><a href="#none">건강체크</a></li>
+								<li><a href="#none">돌보기</a></li>
+								<li><a href="#none">육아이야기</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<ul class="gnb-menu-depth3 tab-item">
+						<li><a href="#none">공감&middot;혜택</a></li>
+						<li class="on">
+							<button class="accordion-box"><span>공감</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">테마커뮤니티</a></li>
+								<li><a href="#none">함께키우는 아이 캠페인</a></li>
+								<li><a href="#none">맛있는 레시피</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>혜택</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">임신육아교실</a></li>
+								<li><a href="#none">공장견학</a></li>
+								<li><a href="#none">해피박스</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">진행중인 이벤트</a>
+						</li>
+						<li>
+							<a href="#">당첨자발표</a>
+						</li>
+					</ul>
+
+					<ul class="gnb-menu-depth3 tab-item">
+						<li><a href="#none">남양케어</a></li>
+						<li class="on">
+							<button class="accordion-box"><span>모유리서치센터</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">모유리서치센터 소개</a></li>
+								<li><a href="#none">안심원칙</a></li>
+								<li><a href="#none">연구활동</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>아기똥 분석 서비스</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">아기똥 셀프 진단</a></li>
+								<li><a href="#none">아기똥 1:1 상담</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">모유 영양분석 서비스</a>
+						</li>
+						<li>
+							<a href="#">유전자분석</a>
+						</li>
+						<li>
+							<button class="accordion-box"><span>성장발달 클리닉</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">아이 성장진단</a></li>
+								<li><a href="#none">아이 발달진단</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>1:1 전문상담</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">1:1 전문상담</a></li>
+								<li><a href="#none">1:1 전문상담 신청</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">아기 캠 서비스</a>
+						</li>
+						<li>
+							<a href="#">의료기관 찾기</a>
+						</li>
+						<li>
+							<a href="#">미아방지 알림솔루션</a>
+						</li>
+					</ul>
+
+					<ul class="gnb-menu-depth3 tab-item">
+						<!-- <li><a href="#none">스토리북</a></li> -->
+						<li class="on">
+							<button class="accordion-box"><span>스토리북</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">스토리북 소개/개설</a></li>
+								<li><a href="#none">공개스토리북</a></li>
+								<li><a href="#none">신규개설 스토리북</a></li>
+								<li><a href="#none">최신 스토리</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>100일 연속스토리</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">100일 연속스토리 소개</a></li>
+								<li><a href="#none">100일 연속스토리 도전회원</a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="accordion-box"><span>스토리북 출판</span></button>
+							<ul class="gnb-menu-depth4 cont-accordion">
+								<li><a href="#none">스토리북 출판 소개</a></li>
+								<li><a href="#none">스토리북 출판 가이드</a></li>
+								<li><a href="#none">스토리북 출판 후기</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">스토리북 이웃 찾기</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-menu-btn">
+			<a href="#none" class="btn-home"><img src="../assets/images/header/icon/ico_home.png" width="20" height="20" alt="홈으로"></a>
+			<a href="#none" class="btn-setting"><img src="../assets/images/header/icon/ico_setting.png" width="20" height="20" alt="설정"></a>
+			<a href="#none" class="btn-close"><img src="../assets/images/header/icon/ico_close.png" width="15" height="15" alt="닫기"></a>
+		</div>
+	</div>
+	<!-- e : header-menu -->
+
+</body>
+
+</html>

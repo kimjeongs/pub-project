@@ -1,0 +1,997 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+	<title>Namyangi Community</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="../assets/css/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script src="../assets/js/lib/jquery.min.js"></script>
+	<script src="../assets/js/lib/jquery.nicescroll.min.js"></script>
+	<script src="../assets/js/lib/jquery-ui.min.js"></script>
+	<script src="../assets/js/common.js"></script>
+	<script src="../assets/js/content.js"></script>
+	<script>
+		$(function () {
+			//모든 datepicker에 대한 공통 옵션 설정
+			$.datepicker.setDefaults({
+				dateFormat: 'yy.mm.dd DD'
+				, changeYear: true
+				, changeMonth: true
+				, showMonthAfterYear: true
+				, monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+				, dayNamesMin: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
+				, dayNames: ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)']
+			});
+
+			$('.date-picker').datepicker();
+
+			$(".n-scroll").niceScroll({ cursorborder: "", cursorcolor: "#ddd" }); // First scrollable DIV
+
+			setTimeout(function(){
+				$('.btn-smart-schedule, .btn-my-schedule').trigger('click');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- s : wrap -->
+	<div class="wrap">
+		<!-- s : header -->
+		<div class="header">
+			<div class="inner-cont">
+				<div class="header-cont">
+					<div class="top-nav">
+						<a href="#none">로그아웃</a>
+						<a href="#none">회원가입</a>
+						<a href="#none">고객센터</a>
+						<a href="#none" class="ny-mall">남양몰</a>
+					</div>
+					<div class="top-gnb">
+						<button class="gnb-detail-menu"><img src="../assets/images/header/img_gnb_menu.png" alt="메뉴보기"></button>
+						<div class="gnb-detail-sub active">
+							<div class="sub-list">
+								<ul>
+									<li class="hover">임신&middot;출산&middot;건강</li>
+									<li>성장&middot;놀이&middot;교육</li>
+									<li>공감&middot;혜택</li>
+									<li>남양케어</li>
+									<li>스토리북</li>
+								</ul>
+								<dl class="btm-info-box">
+									<dt>좋은부모되기</dt>
+									<dd>요즘 저 우리 아이와<br>욕실에서 놀아요!</dd>
+								</dl>
+							</div>
+							<div class="sub-detail-list">
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">임신&middot;출산&middot;건강</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">임신준비</a></dt>
+												<dd><a href="#none">계획임신</a></dd>
+												<dd><a href="#none">임신확인</a></dd>
+												<dd><a href="#none">난임</a></dd>
+												<dd><a href="#none">피임</a></dd>
+												<dd><a href="#none">병원이용 및 검사</a></dd>
+												<dd><a href="#none">건강&amp;생활</a></dd>
+												<dd><a href="#none">아기맞이 계산기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">임신중</a></dt>
+												<dd><a href="#none">임신초기</a></dd>
+												<dd><a href="#none">임신중기</a></dd>
+												<dd><a href="#none">임신후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">출산</a></dt>
+												<dd><a href="#none">출산준비</a></dd>
+												<dd><a href="#none">분만과정</a></dd>
+												<dd><a href="#none">분만법</a></dd>
+												<dd><a href="#none">산후조리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께하는 10개월</a></dt>
+												<dd><a href="#none">임산부 생활건강</a></dd>
+												<dd><a href="#none">아빠의 출산준비</a></dd>
+												<dd><a href="#none">태아 성장이야기</a></dd>
+												<dd><a href="#none">사진으로보는 태아 280일</a></dd>
+												<dd><a href="#none">태교음악</a></dd>
+												<dd><a href="#none">행복한태담</a></dd>
+												<dd><a href="#none">우리아기 태명</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">성장&middot;놀이&middot;교육</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">성장</a></dt>
+												<dd><a href="#none">신생아</a></dd>
+												<dd><a href="#none">1~2개월</a></dd>
+												<dd><a href="#none">3~4개월</a></dd>
+												<dd><a href="#none">5~6개월</a></dd>
+												<dd><a href="#none">7~8개월</a></dd>
+												<dd><a href="#none">9~10개월</a></dd>
+												<dd><a href="#none">11~12개월</a></dd>
+												<dd><a href="#none">13~18개월</a></dd>
+												<dd><a href="#none">19~24개월</a></dd>
+											</dl>
+											<dl>
+												<dd><a href="#none">25~30개월</a></dd>
+												<dd><a href="#none">31~36개월</a></dd>
+												<dd><a href="#none">만3~5세</a></dd>
+												<dd><a href="#none">만5~7세</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">놀이/교육</a></dt>
+												<dd><a href="#none">교육방법</a></dd>
+												<dd><a href="#none">교육시설</a></dd>
+												<dd><a href="#none">교재교구</a></dd>
+												<dd><a href="#none">시기별</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께 키우는 아이</a></dt>
+												<dd><a href="#none">성장</a></dd>
+												<dd><a href="#none">발달</a></dd>
+												<dd><a href="#none">건강체크</a></dd>
+												<dd><a href="#none">돌보기</a></dd>
+												<dd><a href="#none">육아이야기</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">공감&middot;혜택</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">공감</a></dt>
+												<dd><a href="#none">테마커뮤니티</a></dd>
+												<dd><a href="#none">함께키우는 아이 캠페인</a></dd>
+												<dd><a href="#none">맛있는 레시피</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">혜택</a></dt>
+												<dd><a href="#none">임신육아교실</a></dd>
+												<dd><a href="#none">공장견학</a></dd>
+												<dd><a href="#none">해피박스</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">진행중인 이벤트</a></dt>
+												<dt><a href="#none">당첨자발표</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">남양케어</a></h2>
+									<ul class="col5 d-line"> <!-- 메뉴 라인이 2단 일 경우 d-line 클래스 추가 -->
+										<li>
+											<dl>
+												<dt><a href="#none">모유리서치센터</a></dt>
+												<dd><a href="#none">모유리서치센터 소개</a></dd>
+												<dd><a href="#none">안심원칙</a></dd>
+												<dd><a href="#none">연구활동</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기똥 분석 서비스</a></dt>
+												<dd><a href="#none">아기똥 셀프 진단</a></dd>
+												<dd><a href="#none">아기똥 1:1 상담</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">모유 영양분석 서비스</a></dt>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">성장발달 클리닉</a></dt>
+												<dd><a href="#none">아이 성장진단</a></dd>
+												<dd><a href="#none">아이 발달진단</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">1:1 전문상담</a></dt>
+												<dd><a href="#none">1:1 전문상담</a></dd>
+												<dd><a href="#none">1:1 전문상담 신청</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기 캠 서비스</a></dt>
+												<dt><a href="#none">의료기관 찾기</a></dt>
+												<dt><a href="#none">미아방지 알림솔루션</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">스토리북</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북</a></dt>
+												<dd><a href="#none">스토리북 소개</a></dd>
+												<dd><a href="#none">공개 스토리북</a></dd>
+												<dd><a href="#none">신규개설 스토리북</a></dd>
+												<dd><a href="#none">최신 스토리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">100일 연속스토리</a></dt>
+												<dd><a href="#none">100일 연속스토리 소개</a></dd>
+												<dd><a href="#none">100일 연속스토리 도전회원</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 출판</a></dt>
+												<dd><a href="#none">스토리북 출판 소개</a></dd>
+												<dd><a href="#none">스토리북 출판 가이드</a></dd>
+												<dd><a href="#none">스토리북 출판 후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 이웃 찾기</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<h1 class="h-title"><a href="#none"><img src="../assets/images/header/img_logo.png" alt="남양아이"></a></h1>
+						<ul class="gnb-list focus-list">
+							<li>
+								<a href="#none">임신&middot;출산&middot;건강</a>
+								<ul style="display:none;">
+									<li><a href="#none">임신준비</a></li>
+									<li><a href="#none">임신중</a></li>
+									<li><a href="#none">출산</a></li>
+									<li><a href="#none">함께하는 10개월</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">성장&middot;놀이&middot;교육</a>
+								<ul style="display:none;">
+									<li><a href="#none">성장</a></li>
+									<li><a href="#none">놀이/교육</a></li>
+									<li><a href="#none">함께키우는 아이</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">공감&middot;혜택</a>
+								<ul style="display:none;">
+									<li><a href="#none">공감</a></li>
+									<li><a href="#none">혜택</a></li>
+									<li><a href="#none">진행중인 이벤트</a></li>
+									<li><a href="#none">당첨자발표</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">남양케어</a>
+								<ul style="display:none;">
+									<li><a href="#none">모유리서치센터</a></li>
+									<li><a href="#none">아기똥 분석 서비스</a></li>
+									<li><a href="#none">모유 영양분석 서비스</a></li>
+									<li><a href="#none">성장발달 클리닉</a></li>
+									<li><a href="#none">1:1 전문상담</a></li>
+									<li><a href="#none">아기 캠 서비스</a></li>
+									<li><a href="#none">의료기관 찾기</a></li>
+									<li><a href="#none">미아방지 알림솔루션</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">스토리북</a>
+								<ul style="display:none;">
+									<li><a href="#none">스토리북</a></li>
+									<li><a href="#none">100일 연속스토리</a></li>
+									<li><a href="#none">스토리북 출판</a></li>
+									<li><a href="#none">스토리북 이웃 찾기</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="right-menu">
+							<div class="search-box">
+								<input type="text" class="inp-search" value="" placeholder="검색어를 입력해주세요">
+								<a href="#none" title="검색하기"><img src="../assets/images/header/icon/ico_search.png" alt="검색하기"></a>
+							</div>
+							<a href="#none" title="고객혜택"><img src="../assets/images/header/icon/ico_benefit.png" alt="고객혜택"></a>
+							<a href="#none" title="내정보"><img src="../assets/images/header/icon/ico_my_info.png" alt="내정보"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : header -->
+
+		<!-- s : body -->
+		<div class="container">
+
+			<!-- s : content -->
+			<div class="inner-cont">
+				<div class="content">
+					<!-- s : rnb -->
+					<div class="rnb-wrap">
+						<div class="rnb-top-box">
+							<span class="category-ico"><img src="../assets/images/common/icon/ico_myroom.png" alt="마이룸"></span>
+							<h2 class="rnb-title">마이룸</h2>
+							<p>마이룸에 오신 것을<br>환영합니다</p>
+						</div>
+						<!-- s: 20190515 modify -->
+						<ul class="rnb-list-box focus-list">
+							<li>
+								<a href="#none">마이룸</a>
+							</li>
+							<li class="focus on">
+								<a href="#none">남양 스마트캘린더</a>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">스토리북</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">스토리북</a></li>
+									<!--20190517 delete <li><a href="#none">스토리 쓰기</a></li> -->
+									<li><a href="#none">100일 연속스토리 현황</a></li>
+									<li><a href="#none">스탬프/쿠폰</a></li>
+									<li><a href="#none">이웃/가족현황</a></li>
+									<li><a href="#none">이웃 새소식</a></li>
+									<!-- <li><a href="#none">스토리북 관리</a></li>
+									<li><a href="#none">개설 스토리북 관리</a></li> -->
+								</ul>
+							</li>
+							<li>
+								<a href="#none">스토리북 출판</a>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">참여내역/결과보기</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">신청/참여내역</a></li>
+									<li><a href="#none">활동내역</a></li>
+									<li><a href="#none">1:1 상담내역</a></li>
+									<li><a href="#none">분석결과</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">나의 정보관리</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">자녀/배송지정보</a></li>
+									<li><a href="#none">기본정보</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- e: 20190515 modify -->
+					</div>
+					<!-- e : rnb -->
+	
+					<!-- s : left-content -->
+					<div class="left-content">
+						<ul class="cont-navi">
+							<li><a href="#none" class="nav-home">HOME</a></li>
+							<li><a href="#none" class="nav-sub">마이룸</a></li>
+							<li><span class="nav-sub">남양 스마트캘린더</span></li>
+						</ul>
+						<h2 class="c-title">남양 스마트캘린더</h2> <!-- 190627 -->
+
+						<div class="smart-calendar-top">
+							<div class="calendar-top-left">오늘은 <strong>2019년 03월 29일 (금)</strong> 입니다.</div>
+							<div class="calendar-top-right">
+								<div class="ico"><img src="../assets/images/content/icon/ico_schedule_calendar.png" alt="오늘 일정"></div>
+								<div class="schedule-num-info">오늘 일정 <span class="num">11</span>개</div>
+								<button class="btn-type2 small btn-schedule-add popup-open" data-num="2"><span>일정추가</span></button><!-- 20190514 modify -->
+							</div>
+						</div>
+
+						<div class="smart-calendar-area">
+							<div class="calendar-date-area">
+								<button class="calendar-date-prev"><span><img src="../assets/images/content/icon/ico_calendar_prev.png" alt="이전"></span></button>
+								<div class="calendar-date-info">2019년 04월</div>
+								<button class="calendar-date-next"><span><img src="../assets/images/content/icon/ico_calendar_next.png" alt="다음"></span></button>
+							</div>
+							<div class="calendar-cont-area">
+								<div class="calendar-cont-top">
+									<div class="all-schedule-box">
+										<button class="btn-all-schedule toggle"><span>전체일정</span></button>
+										<div class="option-schedule-item">
+											<ul>
+												<li class="selected">가족일정</li>
+												<li>첫째이름</li>
+												<li>둘째이름</li>
+												<li>셋째이름</li>
+												<li>넷째이름</li>
+												<li>다섯째 이름 아홉글자다섯째 이름 아홉글자</li>
+											</ul>
+										</div>
+									</div>
+									<div class="all-schedule-options">
+										<ul class="all-schedule-list">
+											<li>
+												<div class="all-schedule-cont">
+													<div class="all-schedule-title btn-switch-name"><span>스마트일정</span>
+														<button class="btn-tooltip toggle"><span>툴팁</span></button>
+														<div class="tooltip-box-position" style="display:none;">
+															<div class="tooltip-box-cont">
+																<strong class="tooltip-box-title">스마트 일정이란?</strong><br>
+																나와 자녀의 성장에 따른<br>스케줄을 자동으로 추천해<br>주는 남양아이의 서비스입니다.<br>알림은 행사 전일 오전 9시<br>1회 발송되며 공휴일인 경우<br>마지막 평일에 발송됩니다.
+															</div>
+															<button class="btn-close">닫기</button>
+														</div>
+													</div>
+													<button class="circle-switch-box btn-smart-schedule toggle"><span>on</span></button>
+												</div>
+											</li>
+											<li>
+												<div class="all-schedule-cont">
+													<div class="all-schedule-title btn-switch-name">나의 일정</div>
+													<button class="circle-switch-box btn-my-schedule toggle"><span>on</span></button>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="calendar-cont-main">
+									<table class="tbl-smart-calendar">
+										<caption>스마트캘린더 달력</caption>
+										<colgroup>
+											<col>
+											<col>
+											<col>
+											<col>
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">일</th>
+												<th scope="col">월</th>
+												<th scope="col">화</th>
+												<th scope="col">수</th>
+												<th scope="col">목</th>
+												<th scope="col">금</th>
+												<th scope="col">토</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><div class="prev-month"><button class="btn-schedule-add popup-open" data-num="2"><span>3/31</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>1</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>2</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>3</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>4</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>5</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>6</span></button></div></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="holiday">
+														<button class="btn-schedule-add popup-open" data-num="2"><span>7</span></button>
+														<ul class="smart-schedule">
+															<li><button class="popup-open" data-num="3"><span>[둘째이름]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+														</ul>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>8</span></button></div></td>
+												<td>
+													<div>
+														<button class="btn-schedule-add popup-open" data-num="2"><span>9</span></button>
+														<ul class="smart-my-schedule">
+															<li class="ico color1"><button class="popup-open" data-num="1"><span>나의 일정1</span></button></li>
+															<li class="ico color2"><button class="popup-open" data-num="1"><span>나의 일정2</span></button></li>
+														</ul>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>10</span></button></div></td>
+												<td><div class="holiday"><button class="btn-schedule-add popup-open" data-num="2"><span>11</span></button> <div class="date-text">임시정부 수립일</div></div></td>
+												<td>
+													<div>
+														<button class="btn-schedule-add popup-open" data-num="2"><span>12</span></button>
+														<ul class="smart-schedule">
+															<li><button class="popup-open" data-num="3"><span>[첫째이름]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+														</ul>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>13</span></button></div></td>
+											</tr>
+											<tr>
+												<td><div class="holiday"><button class="btn-schedule-add popup-open" data-num="2"><span>14</span></button></div></td>
+												<td><div class="today"><button class="btn-schedule-add popup-open" data-num="2"><span>15</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>16</span></button></div></td>
+												<td>
+													<div>
+														<button class="btn-schedule-add popup-open" data-num="2"><span>17</span></button>
+														<ul class="smart-schedule">
+															<li><button class="popup-open" data-num="3"><span>[가족]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+															<li><button class="popup-open" data-num="3"><span>[첫째이름]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+														</ul>
+														<ul class="smart-my-schedule">
+															<li class="ico color0"><button class="popup-open" data-num="1"><span>나의 일정0</span></button></li>
+															<li class="ico color1"><button class="popup-open" data-num="1"><span>나의 일정1</span></button></li>
+														</ul>
+														<div class="more-view-schedule">
+															<button class="btn-more-schedule toggle"><span>+5</span></button>
+															<div class="more-schedule-area">
+																<div class="more-schedule-box n-scroll">
+																	<ul class="smart-schedule">
+																		<li>[첫째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[둘째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[셋째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[넷째이름]스마트일정이 전체 노출됩니다.</li>
+																	</ul>
+																	<ul class="smart-my-schedule">
+																		<li class="ico color1">나의 일정이 전체 노출 됩니다.</li>
+																		<li class="ico color2">나의 일정이 전체 노출 됩니다.</li>
+																		<li class="ico color3">나의 일정이 전체 노출 됩니다.</li>
+																	</ul>
+																</div>
+																<button class="btn-close"><span><img src="../assets/images/content/img_more_schedule_close.png" alt="닫기"></span></button>
+															</div>
+														</div>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>18</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>19</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>20</span></button></div></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="holiday">
+														<button class="btn-schedule-add popup-open" data-num="2"><span>21</span></button>
+														<ul class="smart-schedule">
+															<li><button class="popup-open" data-num="3"><span>[첫째이름]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+															<li><button class="popup-open" data-num="3"><span>[둘째이름]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+														</ul>
+														<ul class="smart-my-schedule">
+															<li class="ico color1"><button class="popup-open" data-num="1"><span>나의 일정1</span></button></li>
+															<li class="ico color2"><button class="popup-open" data-num="1"><span>나의 일정2</span></button></li>
+															<li class="ico color3"><button class="popup-open" data-num="1"><span>나의 일정3</span></button></li>
+														</ul>
+														<div class="more-view-schedule">
+															<button class="btn-more-schedule toggle"><span>+5</span></button>
+															<div class="more-schedule-area">
+																<div class="more-schedule-box n-scroll">
+																	<ul class="smart-schedule">
+																		<li>[첫째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[둘째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[셋째이름]스마트일정이 전체 노출됩니다.</li>
+																		<li>[넷째이름]스마트일정이 전체 노출됩니다.</li>
+																	</ul>
+																	<ul class="smart-my-schedule">
+																		<li class="ico color1">나의 일정이 전체 노출 됩니다.</li>
+																		<li class="ico color2">나의 일정이 전체 노출 됩니다.</li>
+																		<li class="ico color3">나의 일정이 전체 노출 됩니다.</li>
+																	</ul>
+																</div>
+																<button class="btn-close"><span><img src="../assets/images/content/img_more_schedule_close.png" alt="닫기"></span></button>
+															</div>
+														</div>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>22</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>23</span></button></div></td>
+												<td>
+													<div>
+														<button class="btn-schedule-add popup-open" data-num="2"><span>24</span></button>
+														<ul class="smart-schedule">
+															<li><button class="popup-open" data-num="3"><span>[첫째아이]스마트일정 스마트일정</span></button></li> <!-- 190620 -->
+														</ul>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>25</span></button></div></td>
+												<td>
+													<div class="birth-day"><button class="btn-schedule-add popup-open" data-num="2"><span>26</span></button>
+														<button class="btn-birthday-tooltip toggle"><span>생일</span></button>
+														<div class="calendar-birthday-cont">
+															<div class="tooltip-box-cont">
+																<ul class="n-scroll">
+																	<li>
+																		<strong class="tooltip-box-title">사랑이</strong><br>
+																		생일을 축하합니다!
+																	</li>
+																	<li>
+																		<strong class="tooltip-box-title">행복이</strong><br>
+																		생일을 축하합니다!
+																	</li>
+																	<li>
+																		<strong class="tooltip-box-title">사랑이</strong><br>
+																		생일을 축하합니다!
+																	</li>
+																</ul>
+															</div>
+															<button class="btn-close">닫기</button>
+														</div>
+													</div>
+												</td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>27</span></button></div></td>
+											</tr>
+											<tr>
+												<td><div class="holiday"><button class="btn-schedule-add popup-open" data-num="2"><span>28</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>29</span></button></div></td>
+												<td><div><button class="btn-schedule-add popup-open" data-num="2"><span>30</span></button></div></td>
+												<td><div class="next-month"><button class="btn-schedule-add popup-open" data-num="2"><span>5/1</span></button></div></td>
+												<td><div class="next-month"><button class="btn-schedule-add popup-open" data-num="2"><span>5/2</span></button></div></td>
+												<td><div class="next-month"><button class="btn-schedule-add popup-open" data-num="2"><span>5/3</span></button></div></td>
+												<td><div class="next-month"><button class="btn-schedule-add popup-open" data-num="2"><span>5/4</span></button></div></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="benefit-box">
+									<div class="app-box">
+										<p class="app-info">
+											<strong>남양아이 APP</strong>
+											<span>남양아이 APP을 설치하고<br>남양 스마트캘린더 알림을 받아보세요.</span>
+										</p>
+										<div class="app-install-box">
+											<div class="app-store-wrap">
+												<div class="app-store-sub">
+													<strong>스토어에서 설치하기</strong>
+													<p>남양아이 검색!</p>
+												</div>
+												<div class="app-store">
+													<a href="#none" class="and">Google Play</a>
+													<a href="#none" class="ios">App Store</a>
+												</div>
+												<div class="qr-code">
+													<div class="app-store-sub">
+														<strong>QR코드 스캔하기</strong>
+														<p>남양아이 검색!</p>
+													</div>
+													<div class="img">
+														<img src="../assets/images/content/img_qrcode.png" alt="QR코드">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- <div class="calendar-btm-banner">
+									<img src="../assets/images/content/img_calendar_banner.png" alt="남양아이 남양아이 APP을 설치하고 남양 스마트캘린더 알림을 받아보세요. 스토어에서 설치하기. 남양아이 검색! Google Play, App Store. QR코드 스캔하기 - QR코드로 스캔하기" usemap="#appMap">
+									<map name="appMap" id="appMap">
+										<area shape="rect" coords="424, 35, 565, 73" alt="giraffe" href="#" target="_blank">
+										<area shape="rect" coords="424, 83, 565 , 121" alt="giraffe" href="#" target="_blank">
+									</map>
+								</div> -->
+							</div>
+						</div>
+
+					</div>
+					<!-- e : left-content -->
+				</div>
+			</div>
+			<!-- e : content -->
+
+		</div>
+		<!-- e : body -->
+
+		<!-- s : footer -->
+		<div class="footer">
+			<div class="inner-cont">
+				<div class="footer-cont">
+					<div class="footer-top-line">
+						<ul class="footer-link-list focus-list">
+							<li><a href="#none">공지사항</a></li>
+							<li><a href="#none">이용약관</a></li>
+							<li class="point-text"><a href="#none">개인정보처리방침</a></li>
+							<li><a href="#none">청소년 보호정책</a></li>
+							<li><a href="#none">제휴/제안</a></li>
+						</ul>
+						<div class="footer-right-box">
+							<ul class="footer-sns-list">
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_youtube.png" alt="youtube"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_facebook.png" alt="facebook"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_instagram.png" alt="instagram"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_kakaostory.png" alt="kakaostory"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_plusfriend.png" alt="plusfriend"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_naver_post.png" alt="naverpost"></a></li>
+							</ul>
+							<div class="slt-box">
+								<select>
+									<option value="패밀리사이트" hidden>패밀리사이트</option>
+									<option value="남양유업">남양유업</option>
+									<option value="남양몰">남양몰</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<p class="footer-mid-txt">서울시 강남구 도산대로 240, 1964빌딩 남양유업 &#x321C;<span>TEL : 02-734-1305</span><span>대표자 :
+							이광범</span><span>개인정보보호책임자 : 김소현 실장</span><br>사업자등록번호 : 202-81-04367 <span>통신판매업신고 : 서울강남 00873호</span></p>
+					<div class="footer-btm-line">
+						<div class="left-cont">
+							<strong>NAMYANG CO,.LTD ALL RIGHTS RESERVED.</strong>
+							<p>남양아이의 모든 컨텐츠는 저작권법의 보호를 받는 바, 무단 전재&#x318D;복사&#x318D;배포 등을 금합니다.</p>
+						</div>
+						<div class="right-cont">
+							<span><img src="../assets/images/footer/img_btm_bar01.jpg" alt="공정거래위원회 표준약관 적용"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar02.jpg" alt="웹어워드코리아 2008 여성/육아 포탈분야 대상"></span> -->
+							<span><img src="../assets/images/footer/img_btm_bar03.jpg" alt="한국 전자인증"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar04.jpg" alt="우수 콘텐츠 서비스"></span> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : footer -->
+
+		<!-- s : screen top button -->
+		<button class="btn-screen-top"><span>TOP</span></button>
+		<!-- e : screen top button -->
+
+	</div>
+	<!-- e : wrap -->
+
+	<!-- s : layerpopup -->
+	<div class="layerpopup-wrap type7" data-num="1" style="display:none;"> <!-- 190627 -->
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">상세보기</h1>
+					<div class="pop-detail-view">
+						<div class="pop-tbl-area">
+							<table>
+								<caption>나의 일정</caption> <!-- 190620 -->
+								<colgroup>
+									<col style="width:11%">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">제목</th>
+										<td>일정제목이 노출됩니다.</td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td>일정제목이 노출됩니다.</td>
+									</tr>
+									<tr>
+										<th scope="row">일정</th>
+										<td>가족일정</td>
+									</tr>
+									<tr>
+										<th scope="row">일자</th>
+										<td>2019. 03. 29 (월) ~ 2019. 03. 31 (월)</td>
+									</tr>
+									<tr>
+										<th scope="row">알림</th>
+										<td>받음<span class="push">앱 푸시</span></td> <!-- 190620 -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="pop-calendar-caution">
+							<div class="calendar-caution-title">남양스마트캘린더 유의사항</div>
+							<ul class="calendar-caution-list">
+								<li>- 알림 [받음] 설정 시, 일정 당일 오전 9시, 1회 발송됩니다.</li>
+								<li>- 스마트일정은 공휴일인 경우  알림이 발송되지 않습니다. (나의일정은 주말에도 발송됩니다)</li>
+								<li>- 전체알림 OFF시 설정한 알림도 받으실 수 없으니 주의해주세요.</li>
+								<li>- 앱 푸시의 경우 어플리케이션이 설치 되지 않으면 받으실 수 없습니다.</li>
+								<li>- 통신사 및 개인이 설정한 휴대폰 알림설정  및 어플리케이션 설정에 따라 수신 불가능 또는 지연될 수 있습니다.</li> <!-- 190620 -->
+							</ul>
+						</div>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type1"><span>삭제</span></button>
+						<button class="btn-type2"><span>수정</span></button>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerpopup-wrap type3" data-num="2" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">일정수정</h1>
+					<div class="pop-detail-view">
+						<div class="pop-tbl-area">
+							<table>
+								<caption>일정수정</caption> <!-- 190620 -->
+								<colgroup>
+									<col style="width:11%">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><label for="scheTit1">제목</label></th>
+										<td>
+											<div class="form-cont">
+												<div class="count-input inp">
+													<input type="text" class="ipt-txt" id="scheTit1" title="제목" value="일정제목이 노출됩니다." placeholder="제목을 입력해주세요">
+													<p class="num-count"><span>10</span>/15</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td>
+											<div class="form-cont">
+												<div class="count-input ta">
+													<textarea id="title1" title="내용" placeholder="내용을 입력해주세요">일정제목이 노출됩니다.</textarea>
+													<p class="num-count"><span>10</span>/30</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">일정</th>
+										<td>
+											<div class="form-cont">
+												<div class="all-schedule-box">
+													<button class="btn-all-schedule toggle"><span class="placeholder">일정을 선택해주세요</span></button>
+													<div class="option-schedule-item">
+														<ul>
+															<li>나의일정0</li>
+															<li>나의일정1</li>
+															<li>나의일정2</li>
+															<li>나의일정3</li>
+															<li>나의일정4</li>
+															<li>나의일정5 아홉글자 나의일정5 아홉글자 나의일정5 아홉글자 나의일정5 아홉글자 나의일정5 아홉글자 나의일정5 아홉글자</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">일자</th>
+										<td>
+											<div class="form-cont">
+												<div class="date-box">
+													<div class="date"><input type="text" title="일자" value="" class="ipt-txt date-picker" readonly=""></div>
+													<div class="date-text-center">~</div>
+													<div class="date"><input type="text" title="일자" value="" class="ipt-txt date-picker" readonly=""></div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">알림</th>
+										<td>
+											<div class="form-cont">
+												<div class="schedule-radio-area">
+													<div class="inp-radio-box">
+														<input type="radio" id="scheRdo1" class="ipt-rdo" name="scheRdo" checked>
+														<label for="scheRdo1"><span>기간내 매일</span></label>
+													</div>
+													<div class="inp-radio-box">
+														<input type="radio" id="scheRdo2" class="ipt-rdo" name="scheRdo">
+														<label for="scheRdo2"><span>시작일 1번만</span></label>
+													</div>
+												</div>
+												<div class="schedule-btm-area">
+													<div class="schedule-switch-area">
+														<button class="circle-switch-box btn-alarm-chk toggle on"><span>on</span></button>
+														<div class="schedule-switch-name btn-switch-name">받음</div>
+													</div>
+													<div class="schedule-check-area">
+														<div class="inp-chk-box">
+															<input type="checkbox" id="scheChk1" class="inp-chk" checked>
+															<label for="scheChk1">앱 푸시</label>
+														</div>
+														<!-- 190620 -->
+														<!-- <div class="inp-chk-box">
+															<input type="checkbox" id="scheChk2" class="inp-chk" checked>
+															<label for="scheChk2">알림톡</label>
+														</div> -->
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="pop-calendar-caution">
+							<div class="calendar-caution-title">남양스마트캘린더 유의사항</div>
+							<ul class="calendar-caution-list">
+								<li>- 알림 [받음] 설정 시, 일정 당일 오전 9시, 1회 발송됩니다.</li>
+								<li>- 스마트일정은 공휴일인 경우  알림이 발송되지 않습니다. (나의일정은 주말에도 발송됩니다)</li>
+								<li>- 전체알림 OFF시 설정한 알림도 받으실 수 없으니 주의해주세요.</li>
+								<li>- 앱 푸시의 경우 어플리케이션이 설치 되지 않으면 받으실 수 없습니다.</li>
+								<li>- 통신사 및 개인이 설정한 휴대폰 알림설정  및 어플리케이션 설정에 따라<br>수신 불가능 또는 지연될 수 있습니다.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn-box">
+						<!-- <button class="btn-type1"><span>취소</span></button> 190620 -->
+						<button class="btn-type2"><span>확인</span></button>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 190620 스마트 일정 팝업 추가 -->
+	<div class="layerpopup-wrap type7" data-num="3" style="display:none;"><!-- 190627 -->
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">상세보기</h1>
+					<div class="pop-detail-view">
+						<div class="pop-tbl-area">
+							<table>
+								<caption>스마트 일정</caption>
+								<colgroup>
+									<col style="width:11%">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">제목</th>
+										<td>[둘째이름] 영유아 건강검진 시기</td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td>일정제목이 노출됩니다.</td>
+									</tr>
+									<tr>
+										<th scope="row">일정</th>
+										<td>스마트일정</td>
+									</tr>
+									<tr>
+										<th scope="row">일자</th>
+										<td>2019. 03. 29 (월) ~ 2019. 03. 31 (월)</td>
+									</tr>
+									<tr>
+										<th scope="row">알림</th>
+										<td>받음<span class="push">앱 푸시</span></td> <!-- 190620 -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="pop-calendar-caution">
+							<div class="calendar-caution-title">남양스마트캘린더 유의사항</div>
+							<ul class="calendar-caution-list">
+								<li>- 알림 [받음] 설정 시, 일정 당일 오전 9시, 1회 발송됩니다.</li>
+								<li>- 스마트일정은 공휴일인 경우  알림이 발송되지 않습니다. (나의일정은 주말에도 발송됩니다)</li>
+								<li>- 전체알림 OFF시 설정한 알림도 받으실 수 없으니 주의해주세요.</li>
+								<li>- 앱 푸시의 경우 어플리케이션이 설치 되지 않으면 받으실 수 없습니다.</li>
+								<li>- 통신사 및 개인이 설정한 휴대폰 알림설정  및 어플리케이션 설정에 따라 수신 불가능 또는 지연될 수 있습니다.</li> <!-- 190620 -->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- e : layerpopup -->
+
+</body>
+
+</html>

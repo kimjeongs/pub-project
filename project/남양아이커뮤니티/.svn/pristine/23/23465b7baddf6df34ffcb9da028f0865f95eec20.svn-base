@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta content="noindex" name="robots">
+	<meta name="description" content="">
+	<title>Namyangi Community</title>
+	<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="../assets/css/lib/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<script src="../assets/js/lib/jquery.min.js"></script>
+	<script src="../assets/js/lib/jquery-ui.min.js"></script>
+	<script src="../assets/js/lib/jquery.nicescroll.min.js"></script>
+	<script src="../assets/js/common.js"></script>
+	<script src="../assets/js/content.js"></script>
+	<script>
+		$(function () {
+			//모든 datepicker에 대한 공통 옵션 설정
+			$.datepicker.setDefaults({
+				dateFormat: 'yy.mm.dd'
+				, changeYear: true
+				, changeMonth: true
+				, showMonthAfterYear: true
+				, monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+				, dayNamesMin: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
+				, dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+			});
+
+			$('.date-picker').datepicker();
+		});
+	</script>
+	<script>
+		$(function () {
+			$(".pop-scroll-box > .pop-scroll-list").niceScroll({ cursorborder: "", cursorcolor: "#ddd"}); // First scrollable DIV
+		});
+	</script>
+</head>
+
+<body>
+	<!-- s : wrap -->
+	<div class="wrap">
+		<!-- s : header -->
+		<div class="header">
+			<div class="inner-cont">
+				<div class="header-cont">
+					<div class="top-nav">
+						<a href="#none">로그아웃</a>
+						<a href="#none">회원가입</a>
+						<a href="#none">고객센터</a>
+						<a href="#none" class="ny-mall">남양몰</a>
+					</div>
+					<div class="top-gnb">
+						<button class="gnb-detail-menu"><img src="../assets/images/header/img_gnb_menu.png" alt="메뉴보기"></button>
+						<div class="gnb-detail-sub active">
+							<div class="sub-list">
+								<ul>
+									<li class="hover">임신&middot;출산&middot;건강</li>
+									<li>성장&middot;놀이&middot;교육</li>
+									<li>공감&middot;혜택</li>
+									<li>남양케어</li>
+									<li>스토리북</li>
+								</ul>
+								<dl class="btm-info-box">
+									<dt>좋은부모되기</dt>
+									<dd>요즘 저 우리 아이와<br>욕실에서 놀아요!</dd>
+								</dl>
+							</div>
+							<div class="sub-detail-list">
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">임신&middot;출산&middot;건강</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">임신준비</a></dt>
+												<dd><a href="#none">계획임신</a></dd>
+												<dd><a href="#none">임신확인</a></dd>
+												<dd><a href="#none">난임</a></dd>
+												<dd><a href="#none">피임</a></dd>
+												<dd><a href="#none">병원이용 및 검사</a></dd>
+												<dd><a href="#none">건강&amp;생활</a></dd>
+												<dd><a href="#none">아기맞이 계산기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">임신중</a></dt>
+												<dd><a href="#none">임신초기</a></dd>
+												<dd><a href="#none">임신중기</a></dd>
+												<dd><a href="#none">임신후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">출산</a></dt>
+												<dd><a href="#none">출산준비</a></dd>
+												<dd><a href="#none">분만과정</a></dd>
+												<dd><a href="#none">분만법</a></dd>
+												<dd><a href="#none">산후조리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께하는 10개월</a></dt>
+												<dd><a href="#none">임산부 생활건강</a></dd>
+												<dd><a href="#none">아빠의 출산준비</a></dd>
+												<dd><a href="#none">태아 성장이야기</a></dd>
+												<dd><a href="#none">사진으로보는 태아 280일</a></dd>
+												<dd><a href="#none">태교음악</a></dd>
+												<dd><a href="#none">행복한태담</a></dd>
+												<dd><a href="#none">우리아기 태명</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">성장&middot;놀이&middot;교육</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">성장</a></dt>
+												<dd><a href="#none">신생아</a></dd>
+												<dd><a href="#none">1~2개월</a></dd>
+												<dd><a href="#none">3~4개월</a></dd>
+												<dd><a href="#none">5~6개월</a></dd>
+												<dd><a href="#none">7~8개월</a></dd>
+												<dd><a href="#none">9~10개월</a></dd>
+												<dd><a href="#none">11~12개월</a></dd>
+												<dd><a href="#none">13~18개월</a></dd>
+												<dd><a href="#none">19~24개월</a></dd>
+											</dl>
+											<dl>
+												<dd><a href="#none">25~30개월</a></dd>
+												<dd><a href="#none">31~36개월</a></dd>
+												<dd><a href="#none">만3~5세</a></dd>
+												<dd><a href="#none">만5~7세</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">놀이/교육</a></dt>
+												<dd><a href="#none">교육방법</a></dd>
+												<dd><a href="#none">교육시설</a></dd>
+												<dd><a href="#none">교재교구</a></dd>
+												<dd><a href="#none">시기별</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">함께 키우는 아이</a></dt>
+												<dd><a href="#none">성장</a></dd>
+												<dd><a href="#none">발달</a></dd>
+												<dd><a href="#none">건강체크</a></dd>
+												<dd><a href="#none">돌보기</a></dd>
+												<dd><a href="#none">육아이야기</a></dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">공감&middot;혜택</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">공감</a></dt>
+												<dd><a href="#none">테마커뮤니티</a></dd>
+												<dd><a href="#none">함께키우는 아이 캠페인</a></dd>
+												<dd><a href="#none">맛있는 레시피</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">혜택</a></dt>
+												<dd><a href="#none">임신육아교실</a></dd>
+												<dd><a href="#none">공장견학</a></dd>
+												<dd><a href="#none">해피박스</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">진행중인 이벤트</a></dt>
+												<dt><a href="#none">당첨자발표</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">남양케어</a></h2>
+									<ul class="col5 d-line"> <!-- 메뉴 라인이 2단 일 경우 d-line 클래스 추가 -->
+										<li>
+											<dl>
+												<dt><a href="#none">모유리서치센터</a></dt>
+												<dd><a href="#none">모유리서치센터 소개</a></dd>
+												<dd><a href="#none">안심원칙</a></dd>
+												<dd><a href="#none">연구활동</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기똥 분석 서비스</a></dt>
+												<dd><a href="#none">아기똥 셀프 진단</a></dd>
+												<dd><a href="#none">아기똥 1:1 상담</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">모유 영양분석 서비스</a></dt>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">성장발달 클리닉</a></dt>
+												<dd><a href="#none">아이 성장진단</a></dd>
+												<dd><a href="#none">아이 발달진단</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">1:1 전문상담</a></dt>
+												<dd><a href="#none">1:1 전문상담</a></dd>
+												<dd><a href="#none">1:1 전문상담 신청</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">아기 캠 서비스</a></dt>
+												<dt><a href="#none">의료기관 찾기</a></dt>
+												<dt><a href="#none">미아방지 알림솔루션</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="detail-list-item">
+									<h2 class="item-title"><a href="#none">스토리북</a></h2>
+									<ul class="col4">
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북</a></dt>
+												<dd><a href="#none">스토리북 소개</a></dd>
+												<dd><a href="#none">공개 스토리북</a></dd>
+												<dd><a href="#none">신규개설 스토리북</a></dd>
+												<dd><a href="#none">최신 스토리</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">100일 연속스토리</a></dt>
+												<dd><a href="#none">100일 연속스토리 소개</a></dd>
+												<dd><a href="#none">100일 연속스토리 도전회원</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 출판</a></dt>
+												<dd><a href="#none">스토리북 출판 소개</a></dd>
+												<dd><a href="#none">스토리북 출판 가이드</a></dd>
+												<dd><a href="#none">스토리북 출판 후기</a></dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt><a href="#none">스토리북 이웃 찾기</a></dt>
+											</dl>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<h1 class="h-title"><a href="#none"><img src="../assets/images/header/img_logo.png" alt="남양아이"></a></h1>
+						<ul class="gnb-list focus-list">
+							<li>
+								<a href="#none">임신&middot;출산&middot;건강</a>
+								<ul style="display:none;">
+									<li><a href="#none">임신준비</a></li>
+									<li><a href="#none">임신중</a></li>
+									<li><a href="#none">출산</a></li>
+									<li><a href="#none">함께하는 10개월</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">성장&middot;놀이&middot;교육</a>
+								<ul style="display:none;">
+									<li><a href="#none">성장</a></li>
+									<li><a href="#none">놀이/교육</a></li>
+									<li><a href="#none">함께키우는 아이</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">공감&middot;혜택</a>
+								<ul style="display:none;">
+									<li><a href="#none">공감</a></li>
+									<li><a href="#none">혜택</a></li>
+									<li><a href="#none">진행중인 이벤트</a></li>
+									<li><a href="#none">당첨자발표</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">남양케어</a>
+								<ul style="display:none;">
+									<li><a href="#none">모유리서치센터</a></li>
+									<li><a href="#none">아기똥 분석 서비스</a></li>
+									<li><a href="#none">모유 영양분석 서비스</a></li>
+									<li><a href="#none">성장발달 클리닉</a></li>
+									<li><a href="#none">1:1 전문상담</a></li>
+									<li><a href="#none">아기 캠 서비스</a></li>
+									<li><a href="#none">의료기관 찾기</a></li>
+									<li><a href="#none">미아방지 알림솔루션</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">스토리북</a>
+								<ul style="display:none;">
+									<li><a href="#none">스토리북</a></li>
+									<li><a href="#none">100일 연속스토리</a></li>
+									<li><a href="#none">스토리북 출판</a></li>
+									<li><a href="#none">스토리북 이웃 찾기</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="right-menu">
+							<div class="search-box">
+								<input type="text" class="inp-search" value="" placeholder="검색어를 입력해주세요">
+								<a href="#none" title="검색하기"><img src="../assets/images/header/icon/ico_search.png" alt="검색하기"></a>
+							</div>
+							<a href="#none" title="고객혜택"><img src="../assets/images/header/icon/ico_benefit.png" alt="고객혜택"></a>
+							<a href="#none" title="내정보"><img src="../assets/images/header/icon/ico_my_info.png" alt="내정보"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : header -->
+
+		<!-- s : body -->
+		<div class="container">
+
+			<!-- s : content -->
+			<div class="inner-cont">
+				<div class="content">
+					<!-- s : rnb -->
+					<div class="rnb-wrap">
+						<div class="rnb-top-box">
+							<span class="category-ico"><img src="../assets/images/common/icon/ico_myroom.png" alt="마이룸"></span>
+							<h2 class="rnb-title">마이룸</h2>
+							<p>마이룸에 오신 것을<br>환영합니다</p>
+						</div>
+						<!-- s: 20190515 modify -->
+						<ul class="rnb-list-box focus-list">
+							<li>
+								<a href="#none">마이룸</a>
+							</li>
+							<li>
+								<a href="#none">남양 스마트캘린더</a>
+							</li>
+							<li class="focus on">
+								<a href="#none" class="accordion-box">스토리북</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">스토리북</a></li>
+									<!--20190517 delete <li><a href="#none">스토리 쓰기</a></li> -->
+									<li><a href="#none">100일 연속스토리 현황</a></li>
+									<li><a href="#none">스탬프/쿠폰</a></li>
+									<li class="focus"><a href="#none">이웃/가족현황</a></li>
+									<li><a href="#none">이웃 새소식</a></li>
+									<!-- <li><a href="#none">스토리북 관리</a></li>
+									<li><a href="#none">개설 스토리북 관리</a></li> -->
+								</ul>
+							</li>
+							<li>
+								<a href="#none">스토리북 출판</a>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">참여내역/결과보기</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">신청/참여내역</a></li>
+									<li><a href="#none">활동내역</a></li>
+									<li><a href="#none">1:1 상담내역</a></li>
+									<li><a href="#none">분석결과</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none" class="accordion-box">나의 정보관리</a>
+								<ul class="rnb-sub focus-list cont-accordion">
+									<li><a href="#none">자녀/배송지정보</a></li>
+									<li><a href="#none">기본정보</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- e: 20190515 modify -->
+					</div>
+					<!-- e : rnb -->
+	
+					<!-- s : left-content -->
+					<div class="left-content">
+						<ul class="cont-navi">
+							<li><a href="#none" class="nav-home">HOME</a></li>
+							<li><a href="#none" class="nav-sub">마이룸</a></li>
+							<li><a href="#none" class="nav-sub">스토리북</a></li>
+							<li><a href="#none" class="nav-sub">이웃/가족현황</a></li>
+							<li><span class="nav-sub">이웃현황</span></li>
+						</ul>
+						<div class="c-title-box">
+							<h2 class="c-title">이웃/가족현황</h2>
+							<div class="btn-box"><button href="#none" class="btn-type2 small add popup-open" data-num="1"><span>추가</span></button></div>
+						</div>
+						<div class="hor-tab-box">
+							<ul class="hor-tab">
+								<li><a href="#none" class="on">이웃현황</a></li>
+								<li><a href="#none">가족현황</a></li>
+							</ul>
+						</div>
+						<div class="neighbor-list-wrap">
+							
+							<div class="top-option">
+								<p class="item-sort-txt">
+									<!-- <span class="title">내가 추가한 이웃</span> 190620 -->
+									전체 <strong>13</strong>건
+								</p>
+								<div class="date-search-option">
+									<div class="date-inner">
+										<div class="date-box"><div class="date"><input type="text" title="조회 날짜" value="" class="ipt-txt date-picker" readonly=""></div></div>
+										<span class="range">~</span>
+										<div class="date-box"><div class="date"><input type="text" title="조회 날짜" value="" class="ipt-txt date-picker" readonly=""></div></div>
+										<div class="btn-box">
+											<button class="btn-type2 small"><span>조회</span></button>
+										</div>
+									</div>
+									<div class="item-search">
+										<input type="text" placeholder="검색" id="search" class="ipt-search" title="정보 검색">
+										<a href="#none" class="btn-search">검색</a>
+									</div>
+									<!-- 190620 시작-->
+									<div class="inp-select-box">
+										<select>
+											<option>전체</option>
+											<option>1</option>
+										</select>
+									</div>
+									<!-- 190620 끝-->
+								</div>
+							</div>
+							
+							<!-- 190620 시작 -->
+							<!-- <div class="member-option">
+								<ul class="item-sort-txt focus-list">
+									<li class="focus"><a href="#none">전체</a></li>
+									<li><a href="#none">신청</a></li>
+								</ul>
+								<div class="btn-box">
+									<button class="btn-type1 small"><span>비회원초대</span></button>
+									<button class="btn-type2 small"><span>이웃추가</span></button>
+								</div>
+							</div> -->
+							<!-- 190620 끝 -->
+
+							<div class="storybook-list-table">
+								<!-- 190620 시작 -->
+								<table>
+									<caption>이웃현황</caption>
+									<colgroup>
+										<col style="width:210px">
+										<col style="width:210px">
+										<col style="width:210px">
+										<col style="width:210px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">아이디</th>
+											<th scope="col"><button class="btn-sort"><span>등록(요청)일</span></button></th>
+											<th scope="col">상태</th>
+											<th scope="col">관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>받은신청</span></td>
+											<td class="ing"><div class="state btn-box"><button class="btn-type1 small"><span>신청취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>보낸신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type1 small"><span>이웃취소</span></button></div></td>
+										</tr>
+										<tr>
+											<td class="id2"><span>asdfsffdfdsfsfdsffsdfsfsd</span></td>
+											<td class="date"><span>2018.12.31</span></td>
+											<td><span>받은신청</span></td>
+											<td><div class="state btn-box"><button class="btn-type2 small"><span>수락</span></button><button class="btn-type1 small"><span>거부</span></button></div></td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- 190620 끝 -->
+							</div>
+							<div class="cont-list-pagination">
+								<span class="first"><img src="../assets/images/content/icon/ico_pagination_first.png" alt="맨처음으로"></span>
+								<a href="#none" class="prev"><img src="../assets/images/content/icon/ico_pagination_prev.png" alt="이전 페이지"></a>
+								<ul class="pagination-list">
+									<li><span>1</span></li>
+									<li><a href="#none">2</a></li>
+									<li><a href="#none">3</a></li>
+									<li><a href="#none">4</a></li>
+									<li><a href="#none">5</a></li>
+									<li><a href="#none">6</a></li>
+									<li><a href="#none">7</a></li>
+									<li><a href="#none">8</a></li>
+									<li><a href="#none">9</a></li>
+									<li><a href="#none">10</a></li>
+								</ul>
+								<a href="#none" class="next"><img src="../assets/images/content/icon/ico_pagination_next.png" alt="다음 페이지"></a>
+								<a href="#none" class="last"><img src="../assets/images/content/icon/ico_pagination_last.png" alt="맨마지막으로"></a>
+							</div>
+						</div>
+
+					</div>
+					<!-- e : left-content -->
+				</div>
+			</div>
+			<!-- e : content -->
+
+		</div>
+		<!-- e : body -->
+
+		<!-- s : footer -->
+		<div class="footer">
+			<div class="inner-cont">
+				<div class="footer-cont">
+					<div class="footer-top-line">
+						<ul class="footer-link-list focus-list">
+							<li><a href="#none">공지사항</a></li>
+							<li><a href="#none">이용약관</a></li>
+							<li class="point-text"><a href="#none">개인정보처리방침</a></li>
+							<li><a href="#none">청소년 보호정책</a></li>
+							<li><a href="#none">제휴/제안</a></li>
+						</ul>
+						<div class="footer-right-box">
+							<ul class="footer-sns-list">
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_youtube.png" alt="youtube"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_facebook.png" alt="facebook"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_instagram.png" alt="instagram"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_kakaostory.png" alt="kakaostory"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_plusfriend.png" alt="plusfriend"></a></li>
+								<li><a href="#none"><img src="../assets/images/footer/icon/ico_naver_post.png" alt="naverpost"></a></li>
+							</ul>
+							<div class="slt-box">
+								<select>
+									<option value="패밀리사이트" hidden>패밀리사이트</option>
+									<option value="남양유업">남양유업</option>
+									<option value="남양몰">남양몰</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<p class="footer-mid-txt">서울시 강남구 도산대로 240, 1964빌딩 남양유업 &#x321C;<span>TEL : 02-734-1305</span><span>대표자 :
+							이광범</span><span>개인정보보호책임자 : 김소현 실장</span><br>사업자등록번호 : 202-81-04367 <span>통신판매업신고 : 서울강남 00873호</span></p>
+					<div class="footer-btm-line">
+						<div class="left-cont">
+							<strong>NAMYANG CO,.LTD ALL RIGHTS RESERVED.</strong>
+							<p>남양아이의 모든 컨텐츠는 저작권법의 보호를 받는 바, 무단 전재&#x318D;복사&#x318D;배포 등을 금합니다.</p>
+						</div>
+						<div class="right-cont">
+							<span><img src="../assets/images/footer/img_btm_bar01.jpg" alt="공정거래위원회 표준약관 적용"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar02.jpg" alt="웹어워드코리아 2008 여성/육아 포탈분야 대상"></span> -->
+							<span><img src="../assets/images/footer/img_btm_bar03.jpg" alt="한국 전자인증"></span>
+							<!-- <span><img src="../assets/images/footer/img_btm_bar04.jpg" alt="우수 콘텐츠 서비스"></span> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e : footer -->
+
+		<!-- s : screen top button -->
+		<button class="btn-screen-top"><span>TOP</span></button>
+		<!-- e : screen top button -->
+
+	</div>
+	<!-- e : wrap -->
+
+	<!-- s : layerpop -->
+	<div class="layerpopup-wrap type2" data-num="1" style="display:none;">
+		<div class="layerpopup-align">
+			<div class="layerpopup-cont pro-search">
+				<div class="layerpopup-body">
+					<h1 class="pop-title">신규 등록</h1>
+					<div class="hor-tab-box">
+						<ul class="hor-tab tab">
+							<li><a href="#none" class="on">이웃</a></li>
+							<li><a href="#none">가족</a></li>
+						</ul>
+					</div>
+					<div class="product-box-wrap">
+						<div class="product-box on">
+							<div class="item-search">
+								<input type="text" class="ipt-search" value="honggildong" placeholder="남양아이 회원 ID 검색" title="회원 검색">
+								<a href="#none" class="btn-search">회원 검색</a>
+							</div>
+							<div class="pop-scroll-box">
+								<ul class="pop-scroll-list member-list">
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp1" class="inp-chk" checked>
+											<label for="smlInp1" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp2" class="inp-chk">
+											<label for="smlInp2" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp3" class="inp-chk">
+											<label for="smlInp3" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="product-box">
+							<div class="item-search">
+								<input type="text" class="ipt-search" value="honggildong1" placeholder="남양아이 회원 ID 검색" title="회원 검색">
+								<a href="#none" class="btn-search">회원 검색</a>
+							</div>
+							<div class="pop-scroll-box">
+								<ul class="pop-scroll-list member-list">
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp11" class="inp-chk" checked>
+											<label for="smlInp11" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong1</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp22" class="inp-chk">
+											<label for="smlInp22" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong1</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div class="search-member-list">
+											<input type="checkbox" id="smlInp33" class="inp-chk">
+											<label for="smlInp33" class="lbl-list-item">
+												<span class="img"><img src="../assets/images/popup/img_thumb_default.png" alt="thumb"></span>
+												<ul class="right-member-list">
+													<li><span>아이디</span> honggildong1</li>
+													<li><span>이름</span> 홍*동</li>
+													<li><span>신청일</span> 2019.03.19</li>
+												</ul>
+											</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="btn-box">
+						<button class="btn-type1"><span>취소</span></button>
+						<button class="btn-type2"><span>저장</span></button>
+					</div>
+				</div>
+				<button class="btn-popup-close">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- e : layerpop -->
+	
+</body>
+
+</html>

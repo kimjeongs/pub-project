@@ -1,0 +1,200 @@
+#header{
+  background: url(../images/main/bg_main.png) no-repeat;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+#header.open-menu {
+  border-bottom: none;
+}
+.wrap{
+  background: url(../images/main/bg_main.png) no-repeat 0 -120px;
+}
+#footer {
+  margin-top: 0;
+}
+#footer .footer-site-map{
+  position: relative;
+  background: url(../images/main/bg_main.png) no-repeat 0 bottom;
+}
+
+#footer .footer-site-map:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: rgba(0, 0, 0, 0.8);
+}
+#footer .footer-site-map .cont {
+  z-index: 1;
+}  
+.main-cont {
+  width: 970px;
+  padding: 100px 0 84px 0; 
+  margin: 0 auto;
+}
+.main-cont .top-txt {
+  margin-left: 15px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -1px;
+}
+.main-cont .top-txt strong{
+  font-weight: 700;
+}
+.main-menu {
+  padding: 0 5px 10px 5px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+.main-menu .banner-cont {
+  float: left;
+  width: 730px;
+}
+.main-menu .banner-cont .box-cont:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.main-menu .banner-cont .box-cont + .box-cont {
+  margin-top: 10px;
+}
+.main-menu .banner-cont .box-cont .box {
+  height: 140px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 4px rgba(0,0,0,0.5);
+}
+.main-menu .banner-cont .box-cont .box + .box {
+  margin-left: 10px;
+}
+.main-menu .banner-cont .box-cont .box > img {
+  width: 100%;
+}
+.main-menu .banner-cont .box-cont .box > a {
+  display: block;
+  height: 100%;
+  padding:38px  40px;
+  box-sizing: border-box;
+  
+}
+.main-menu .banner-cont .col1 {
+  width: 236px;
+}
+.main-menu .banner-cont .col1:first-child {
+  width: 236px;
+}
+.main-menu .banner-cont .col2 {
+  width: 484px;
+}
+.main-menu .banner-cont .col3 {
+  width: 100%;
+}
+.main-menu .banner-cont .box {
+  float: left;
+}
+.main-menu .banner-cont .box-cont .about:nth-child(1) {
+    background: #fff url(../images/main/ico_banner4_1.png) no-repeat 44px 72px;
+}
+.main-menu .banner-cont .box-cont .about:nth-child(2) {
+    background: #fff url(../images/main/ico_banner4_2.png) no-repeat 44px 70px;
+}
+.main-menu .banner-cont .box-cont .about:nth-child(3) {
+    background: #fff url(../images/main/ico_banner4_3.png) no-repeat 44px 75px;
+}
+
+.main-menu .banner-cont .box-cont .about strong{
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #000;
+}
+.main-menu .banner-cont .box-cont .about strong:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19px;
+  height: 2px;
+  background: #0099dc;
+  content: '';
+}
+
+.main-menu .banner-cont .box-cont .about strong span {
+  color: #0099dc;
+}
+
+.main-menu .banner-cont .more-cont a {
+  position: relative;
+  display: block;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: -1px;
+  color: #000;
+}
+.main-menu .banner-cont .more-cont a img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.main-menu .banner-cont .more-cont .more {
+  height: 25px;
+  padding: 0 10px;
+  margin-left: 5px;
+  border: 2px solid #0099dc;
+  border-radius: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #0099dc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.main-menu .banner-cont .box-cont .short-cut strong{
+  display: inline-block;
+  padding-right: 43px;
+  font-size: 23px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  background: url(../images/main/ico_shortcut.png) no-repeat right center;
+}
+
+.main-menu .banner-cont .box-cont .short-cut {
+  width: 360px;
+}
+.main-menu .banner-cont .box-cont .short-cut:nth-child(1){
+  background: url(../images/main/bg_shortcut1.png) no-repeat;
+}
+.main-menu .banner-cont .box-cont .short-cut:nth-child(2){
+  background: url(../images/main/bg_shortcut2.png) no-repeat;
+}
+.main-menu .banner-cont .box-cont .short-cut p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.main-menu .heritage {
+  float: right;
+  width: 200px;
+  padding-top: 217px;
+  margin-top: 235px;
+  background: url(../images/main/bg_heritage.png) no-repeat;
+}
+.main-menu .heritage > a {
+  display: block;
+  width: 200px;
+  height: 140px;
+  padding: 20px 35px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(244, 22, 37, 0.8) url(../images/main/ico_heritage.png) no-repeat 37px 66px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  box-shadow: 0 5px 4px rgba(0,0,0,0.5);
+}

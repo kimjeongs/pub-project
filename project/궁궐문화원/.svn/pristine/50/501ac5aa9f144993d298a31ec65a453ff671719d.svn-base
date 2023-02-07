@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>회원가입</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta name="format-detection" content="telephone=no"><!-- iOS 전화 자동연결 방지 메타태그 -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/member.css">
+</head>
+
+<body>
+
+    <!-- s : contents-wrap -->
+    <div class="wrap">
+        <div class="contents-wrap">
+            <div class="contents-inner">
+                <h2 class="ctit">회원가입</h2>
+                <div class="tbl-form-wrap">
+                    <table class="tbl-form">
+                        <caption>회원가입 정보 입력</caption>
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="formInput11">아이디</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input id="formInput11" type="text" style="width:230px;">
+                                    </div>
+                                    <button type="button" class="tbl-btn">중복체크</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInputpw">비밀번호</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input id="formInputpw" type="text" style="width:230px;">
+                                    </div>
+                                    <span class="tit">비밀번호 확인</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:230px;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput12">성명</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input id="formInput12" type="text" style="width:230px;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInputbirth">생년월일</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input id="formInputbirth" type="text" style="width:230px;">
+                                    </div>
+                                    <span class="txt-refer">예) 20020310</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput14">E-mail</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;" id="formInput14">
+                                    </div>
+                                    <span class="txt">@</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="select-box" style="width:200px;">
+                                        <select>
+                                            <option value="">직접입력</option>
+                                        </select>
+                                    </span>
+                                    <span class="check-cont">
+                                        <input type="checkbox" id="chk2">
+                                        <label for="chk2">정보 및 알림메일 수신 동의</label>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput15">휴대폰 번호</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;" id="formInput15">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="check-cont">
+                                        <input type="checkbox" id="chk22">
+                                        <label for="chk22">정보 및 알림메일 수신 동의</label>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput13">주소</label></th>
+                                <td class="input-row-cont">
+                                    <div class="input-row">
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:98px;" id="formInput13">
+                                        </div>
+                                        <span class="txt">-</span>
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:98px;">
+                                        </div>
+                                        <button type="button" class="tbl-btn">검색</button>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:140px;" placeholder="도로명 주소">
+                                            <input type="text" style="width:140px;" placeholder="지번 주소">
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:140px;" placeholder="상세 주소">
+                                            <input type="text" style="width:140px;" placeholder="참고항목">
+                                       </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput18">학교 / 학년</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                        <span class="separate">/</span>
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-wrap btn-c">
+                    <button type="button" class="btn btn-md btn-purple">회원가입</button>
+                    <button type="button" class="btn btn-md btn-gray">취소</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--// e: contents-wrap -->
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>회원가입</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta name="format-detection" content="telephone=no"><!-- iOS 전화 자동연결 방지 메타태그 -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/table.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/member.css">
+</head>
+
+<body>
+
+    <!-- s : contents-wrap -->
+    <div class="wrap">
+        <div class="contents-wrap">
+            <div class="contents-inner">
+                <h2 class="ctit">회원가입</h2>
+                <div class="tbl-form-wrap">
+                    <table class="tbl-form">
+                        <caption>회원가입 정보 입력</caption>
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="formInput11">이름</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input id="formInput11" type="text" style="width:230px;" value="이성수">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput12">주민등록번호</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:98px;" id="formInput12">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:98px;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput13">주소</label></th>
+                                <td class="input-row-cont">
+                                    <div class="input-row">
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:98px;" id="formInput13">
+                                        </div>
+                                        <span class="txt">-</span>
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:98px;">
+                                        </div>
+                                        <button type="button" class="tbl-btn">우편번호찾기</button>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-wrap w100">
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <span class="tit">상세주소</span>
+                                        <div class="input-wrap">
+                                            <input type="text" style="width:750px;">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput14">E-mail</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;" id="formInput14">
+                                    </div>
+                                    <span class="txt">@</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="select-box" style="width:200px;">
+                                        <select>
+                                            <option value="">직접입력</option>
+                                        </select>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput15">휴대폰 번호</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;" id="formInput15">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput16">현금영수증 발급번호</label></th>
+                                <td>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;" id="formInput16">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="txt">-</span>
+                                    <div class="input-wrap">
+                                        <input type="text" style="width:140px;">
+                                    </div>
+                                    <span class="txt-refer">(현금영수증 발급을 위해 꼭 기입해주세요.)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수령방법</th>
+                                <td>
+                                    <span class="check-cont">
+                                        <input type="checkbox" id="chk2">
+                                        <label for="chk2">우편수령</label>
+                                    </span>
+                                    <span class="check-cont">
+                                        <input type="checkbox" id="chk3">
+                                        <label for="chk3">온라인인쇄</label>
+                                    </span>
+                                    <p class="txt-info">*온라인 인쇄의 경우에는 발행일 직후 한달안에 수량과 관계없이 인쇄가 가능합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput17">발급자격증명</label></th>
+                                <td>
+                                    <span class="select-box" style="width:200px;">
+                                        <select id="formInput17">
+                                            <option value="">선택</option>
+                                        </select>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="formInput18">요청사항</label></th>
+                                <td>
+                                    <div class="input-wrap w100">
+                                        <textarea id="formInput18"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">결제계좌</th>
+                                <td>
+                                    <div class="txt-box">
+                                        <p class="txt-refer">무통장 입금 계좌는 다음과 같습니다.</p>
+                                        <p class="txt-info">국민은행:009901-04-148038 <span class="separate">/</span> 예금주:궁궐문화원</p>
+                                        <span class="txt-refer tel">전화:02-743-3319</span>
+                                        <span class="txt-refer mail">e-mail:gs@gungstory.com</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-wrap btn-c">
+                    <button type="button" class="btn btn-md btn-purple">확인</button>
+                    <button type="button" class="btn btn-md btn-gray">취소</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--// e: contents-wrap -->
+
+</body>
+
+</html>

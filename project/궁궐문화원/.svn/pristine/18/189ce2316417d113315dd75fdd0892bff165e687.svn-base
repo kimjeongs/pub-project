@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+.contents-wrap {
+	background:url('../images/common/bg_contents.png') repeat-x;
+}
+.contents-inner {
+	width:1200px;
+	margin:0 auto;
+}
+
+.ctit2 {
+    padding-top: 98px;
+    margin-bottom: 90px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+}
+
+.input-wrap2 {
+    display:inline-block;
+}
+.input-wrap2 input {
+    width: 100%;
+    height: 40px;
+    padding: 0 11px;
+    border: 1px solid #dcdcdc;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+}
+
+
+/*회원가입 인증 선택*/
+.certif-wrap {
+    overflow:hidden;
+}
+.certif-box {
+    float:left;
+    width:580px;
+    padding:60px;
+    border:1px solid #dcdcdc;
+    border-top:1px solid #8a84d7;
+    background:url('../images/common/ico_phone.png') no-repeat top 60px right 60px;
+}
+.certif-box.email {
+    background-image: url('../images/common/ico_email.png');
+}
+.certif-box:last-child {
+    float:right;
+}
+.certif-box .tit {
+    font-size:28px;
+    font-weight: bold;
+    color:#333;
+}
+.certif-box .form-box {
+    margin-top:65px;
+    border-top:1px solid #222;
+    border-bottom:1px solid #dcdcdc;
+    padding:30px 0;
+}
+.certif-box .form-box .input-certif {
+    padding-left:110px;
+    position: relative;
+    margin-top:20px;
+    font-size:0;
+    line-height:0;
+}
+.certif-box .form-box .input-certif:first-child {
+    margin-top:0;
+}
+.certif-box .form-box .input-certif:first-child .input-wrap2 {
+    width:100%;
+}
+.certif-box .form-box label {
+    position:absolute;
+    left:0;
+    top:0;
+    display:inline-block;
+    font-size:16px;
+    line-height:40px;
+    width:110px;
+    
+}
+.certif-box .form-box .txt {
+    display:inline-block;
+    padding:0 10px;
+    font-size:16px;
+    line-height:40px;
+    vertical-align: top;
+}
+.certif-box .btn-cert {
+    display:block;
+    height:70px;
+    width:100%;
+    margin-top:40px;
+    background-color:#665ec7;
+    font-size:24px;
+    line-height:70px;
+    color:#fff;
+    text-align: center;
+}
+
+/* 약관 동의 */
+.terms-box .terms-tit {
+    margin: 60px 0 30px;
+    font-size:28px;
+    font-weight: bold;
+    color:#333;
+}
+.terms-box:first-child .terms-tit {
+    margin-top:0;
+}
+.terms-box .terms-cont {
+    height:250px;
+    overflow-y: scroll;
+    background-color:#f3f3f3;
+    border:1px solid #e2e2e2;
+    padding:50px 70px;
+    font-size:18px;
+    line-height:32px;
+    color:#666;
+}
+.terms-box .terms-cont strong {
+    color:#333;
+    font-weight: bold;
+}
+.input-wrap +.check-cont {
+	margin-left: 18px;
+}
+.check-cont +.check-cont {
+	margin-left: 30px;
+}
+.check-box {
+    display: inline-block;
+    height:25px;
+    font-size:0;
+    line-height: 0;
+    vertical-align: top;
+}
+.check-box input[type="checkbox"] {
+	display: none;
+}
+.check-box input[type="checkbox"] + label {
+	display: inline-block;
+	height: 25px;
+	padding-left: 30px;
+	background: url(../images/common/ico_checkbox.png) no-repeat 0 0;
+	font-size: 18px;
+	font-weight: 500;
+	color: #666;
+	line-height: 25px;
+}
+.check-box input[type="checkbox"]:checked + label  {
+	background-position: 0 -25px;
+}
+.terms-box .agree {
+    margin-top:30px;
+    padding-bottom:30px;
+    border-bottom:1px solid #e3e3e3;
+    text-align: right;
+}
+.agree .check-box input[type="checkbox"] + label {
+    padding:0 40px 0 0;
+    background-position: right 1px top 0 ;
+}
+.agree .check-box input[type="checkbox"]:checked + label  {
+	background-position: right 1px top -25px;
+}
+.join-link {
+    margin-top:50px;
+    font-size:0;
+    line-height: 0;
+    text-align: center;
+}
+.join-link a {
+    display:inline-block;
+    margin-left:20px;
+    font-size:24px;
+    line-height:30px;
+    padding: 19px 30px;
+}
+.join-link a:first-child {
+    margin-left:0;
+}
+.join-link a.btn-color {
+    background-color:#665ec7;
+    color:#fff;
+}
+.join-link a.btn-white {
+    background-color:#fff;
+    border:1px solid #665ec7;
+    color:#665ec7;
+}

@@ -1,0 +1,1279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+		<title>궁궐문화원</title>
+		
+		<style type="text/css">
+			html, body {
+				margin:0;
+				padding:0;
+			}
+			html {
+				overflow-y:scroll;
+			}
+			body {
+				color:#666;
+				background-color:#fff;
+				font:12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+			}
+			a {
+				color:#27e;
+				text-decoration:none;
+			}
+			a:focus,
+			a:hover,
+			a:active {
+				text-decoration:underline;
+			}
+			.header {
+				padding:.5em;
+			}
+				.header h1 {
+					display:inline;
+					margin-right:1em;
+					color:#000;
+					font-size:2em;
+				}
+				.header ul {
+					display:inline;
+					font-size:1.5em;
+					list-style:none;
+				}
+				.header ul li {
+					display:inline;
+				}
+			.group-title {
+				margin-top:1em;
+				color:#000;
+				font-weight:bold;
+				font-size:1.5em;
+			}
+			table {
+				width:100%;
+				border-collapse:collapse;
+				border-spacing:0;
+			}
+				table caption {
+					display:none;
+				}
+				table th {
+					color:#333;
+					background-color:#eee;
+				}
+				table th,
+				table td {
+					padding:0 .5em;
+					border:1px solid #ddd;
+					text-align:left;
+				}
+				table th,
+				table td.stat,
+				table td.date {
+					text-align:center;
+				}
+				table tr.even,
+				table tr td.multi {
+					background-color:#fafafa;
+				}
+				table tr.add td {
+					background-color:#fd0;
+				}
+				table tr.modify td {
+					background-color:#fffeb4;
+				}
+				table tr.hover td {
+					background-color:#eee;
+				}
+			table tr.none td {
+				color:#000;
+				background-color:#fc8989;
+			}
+			table tr.up td {
+				background-color:#ffe9f5;
+			}
+				.section {
+					margin:3em 0;
+				}
+				body.js .section {
+					margin:0;
+				}
+					.section .title {
+						margin:0;
+						padding:0;
+						color:#000;
+						font-weight:bold;
+						font-size:100%;
+					}
+					body.js .section .title {
+						padding:.5em;
+						border:1px solid #ccc;
+						background-color:#ddd;
+						cursor:pointer;
+					}
+					body.js .section + .section .title {
+						border-top:0;
+					}
+						body.js .section .title .page-count {
+							color:#666;
+							font-weight:normal;
+						}
+					body.js .section .content {
+						display:none;
+					}
+				#sb-body{border:none !important;}
+				a img { width:160px;}
+				.word-list3 li { padding:0 !important; border-top:1px solid #f5f5f5;}
+				.word-list3 em { font-weight:bold; color:#287eea; letter-spacing:-1px;}
+				.word-list3 em .date-term,
+				.word-list3 em .comment{ color:#a1a1a1; font-weight:normal;}
+				.word-list3 a { position:relative; display:block; height:35px; text-decoration:none; padding:10px 15px;}
+				.word-list3 a:hover,
+				.word-list3 a:active { background:#ebebeb;}
+
+				.word-list3 a:hover em .comment,
+				.word-list3 a:hover .date-term { color:#000;}
+				/* .word-list3 a.finish:after { content:''; position:absolute; right:0; width:1px; height:1px; border-top:65px solid #000; border-left:65px solid transparent; } */
+				.word-list3 a.finish .text-num { position:absolute; top:10px; right:10px; color:#333; font-size:12px; display:inline-block; height:7px; padding:5px; border:5px solid #000; border-radius:10px 10px 0 0; border-bottom:0;}
+				.word-list3 a.disable { opacity:0.2}
+				.word-list3 a.none {opacity:0.2}
+				#iaText { display:block;}
+				#iaText textarea { display:block; width:80%; height:300px; margin:0 auto;}
+				#iaText button { display:block; width:80%; height:80px; font-size:24px; margin:0 auto;}
+			.guide {margin-bottom:10px; text-align:right; padding-right:10px; font-size:14px;}
+		</style>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+(function ($) {
+	$.fn.stat = function (options) {
+		var settings = $.extend({
+				title: 'h2.title',
+				content: 'div.content',
+				files: 'tbody tr',
+				stat: 'td.stat',
+				index: 0,
+				openAll: false,
+				speed: 'fast'
+			}, options),
+			all_sections = this,
+			header = $('div.header');
+		return this.each(function () {
+			var self = this,
+				$self = $(self),
+				title_text = [],
+				completed = 0;
+			self.section_title = $(settings.title, $self);
+			self.content = $(settings.content, $self);
+			self.files = $(settings.files, $self);
+			self.files.each(function () {
+				var stat = $(settings.stat, this);
+				stat.each(function () {
+					var text = $(this).text();
+					if (text == "●") {
+						completed++;
+					}
+				});
+			});
+			self.files
+				.bind('mouseenter', function () {
+					$(this).addClass('hover');
+				})
+				.bind('mouseleave', function () {
+					$(this).removeClass('hover');
+				});
+			title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+			self.section_title.html(title_text.join(''));
+			self.section_title.bind('click', function () {
+				self.content.slideToggle(settings.speed);
+			});
+			if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+				self.content.css('display', 'block');
+			}
+		});
+	};
+
+/* jQuery requirement */
+
+var series = false;
+var maxDp = 0;
+var seriesCreate;
+
+var MOCKUP = {};
+
+MOCKUP.Status = function(){
+	var _this = $(this);
+	var categoryNames = ['2depth','3depth','4depth', 'type', 'fileLink', 'stat', 'date','note' ]
+	var categoryWidths = [0, 0, 0, 0, 100, 60, 80, 0];
+	var fileType = 'html';
+	var autoScreenId = true;
+	
+
+	var createNode = function(returnArray){
+		var strJson = '';
+
+		maxDp = categoryNames.length - (maxDp-1)
+		for(var key in returnArray){
+			var depth = 0;
+			strJson += '\n<div class="section">\n\t<h2 class="title">' + returnArray[key].name + '</h2>\n\t<div class="content" style="display:block">\n\t\t<table>\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t<th scope="col">2depth</th>\n\t\t\t<th scope="col">3depth</th>\n\t\t\t<th scope="col">4depth</th>\n\t\t\t<th scope="col">content type</th>\n\t\t\t<th scope="col">file</th>\n\t\t\t<th scope="col">stat</th>\n\t\t\t<th scope="col">date</th>\n\t\t\t<th scope="col">note</th>\n\t\t\t</tr>\n\t\t</thead>\n\t\t<tbody>' 
+
+			for(var key2 in  returnArray[key].pages){
+				strJson += "\n\t\t\t<tr>\n";
+
+				returnArray[key].pages[key2].depthText.split('\t').map(function(str){
+					var _filter = str.indexOf('\t') != 0;
+					
+					if(_filter){
+						strJson += "\t\t\t\t<td>" + str.replace('\r','') + "</td>\n"
+					}
+				})
+				
+				console.log(maxDp)
+				for(var i=0; i< maxDp; i++){
+					if(maxDp - 2 == i){
+						strJson += '\t\t\t\t<td class="date"></td>\n';
+					}else if(maxDp - 3 == i){
+						strJson += '\t\t\t\t<td class="stat"></td>\n';
+					}else if(maxDp - 4 == i){
+						strJson += '\t\t\t\t<td><a href="#"></a></td>\n';
+					}else{
+						strJson += '\t\t\t\t<td></td>\n';
+					}
+					
+				}
+				strJson += '\t\t\t</tr>';
+			}
+			strJson += '\n\t\t</tbody>\n\t\t</table>\n\t</div>\n</div>';
+		}
+		_this.html(strJson);
+		maxDp = 0;
+	}
+
+	var remake = function(data){
+		var txt = data,
+		lines = txt.split('\n'),
+		returnArray = [],
+		category = -1;
+		
+		var arr3 = lines.map(function(str){
+			var _filter = str.indexOf('\t') != 0;
+
+			if(_filter){ //1depth
+				if(str.split('\t')[0]){
+					category++;
+					returnArray.push({
+						name :  str.split('\t')[0],
+						pages : []
+					});
+				}
+			}else{
+				if(!maxDp){
+					maxDp = str.split('\t').length
+				}
+			}
+			returnArray[category].pages.push({
+				depthText : str.split('\t').slice(1).join('\t')
+			})
+		})
+		createNode(returnArray)
+	}
+
+	$('#iaText').submit(function(){
+		remake($(this).find('textarea').val())
+		return false;
+	})
+
+	var initSetup = function(){
+		var viewJSON = {};
+		var dpNum = 0;
+		var dpLen = false;
+
+		$.ajax({
+			type : "GET",
+			url : "status.txt",
+			dataType : "text",
+			error : function(){
+				alert('통신실패!!');
+			},
+			success : function(data){
+				remake(data)
+			}
+		})
+	}
+
+	if(!series){
+		//initSetup();
+	}else{
+		createStrEl(series)
+	}
+
+};
+$.fn['Status'] = MOCKUP.Status;
+}(jQuery));
+
+
+$(document).ready(function () {
+	//$('#status').Status();
+	$('div.section').stat({ openAll: true });
+	$('#total').text($('tbody tr').length);
+	$('tbody tr:even').addClass('even');
+	$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+	$('#iaText').submit();
+});
+
+</script>
+</head>
+<body>
+
+<div class="header">
+	<h1>궁궐문화원 작업현황판</h1>
+</div>
+<div class="guide">
+	<a href="html_guide.html" target="_blank">퍼블가이드</a>
+</div>
+<script type="text/javascript">document.body.className += ' js';</script>
+<div id="status">
+	<div class="section">
+		<h2 class="title">해플(HEPLE)</h2>
+		<div class="content" style="display:block">
+			<table>
+			<thead>
+				<tr>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col">3depth</th>
+				<th scope="col">path</th>
+				<th scope="col">file</th>
+				<th scope="col">stat</th>
+				<th scope="col">date</th>
+				<th scope="col">note</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>메인화면</td>
+					<td>베스트셀러</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_main.html" target="_blank">heple_main.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>문화해설여행</td>
+					<td></td>
+					<td></td>
+					<td><a href="./heple/html/l" target="_blank"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>문화워크샵</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>여행문화클럽 'DEVA'</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>문화해설여행</td>
+					<td>목록</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_01_list.html" target="_blank">heple_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_01_view.html" target="_blank">heple_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>문화워크샵</td>
+					<td>목록</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_02_list.html" target="_blank">heple_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_02_view.html" target="_blank">heple_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>여행문화클럽 'DEVA'</td>
+					<td>멤버십신청</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_01_list.html" target="_blank">heple_03_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_01_view.html" target="_blank">heple_03_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>여행문화모임</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_02_list.html" target="_blank">heple_03_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_02_view.html" target="_blank">heple_03_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>이벤트</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_03_list.html" target="_blank">heple_03_03_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_03_view.html" target="_blank">heple_03_03_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>DEVA소개</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_04_list.html" target="_blank">heple_03_04_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_04_view.html" target="_blank">heple_03_04_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>클럽제안&amp;여행매니저지원</td>
+					<td></td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_03_05.html" target="_blank">heple_03_05.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>해플소개</td>
+					<td>해플소개</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_01_list.html" target="_blank">heple_04_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_01_view.html" target="_blank">heple_04_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>공지사항</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_02_list.html" target="_blank">heple_04_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_02_view.html" target="_blank">heple_04_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1:1문의하기</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_03_list.html" target="_blank">heple_04_03_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_03_view.html" target="_blank">heple_04_03_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>쓰기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_03_write.html" target="_blank">heple_04_03_write.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>이용방법</td>
+					<td>목록</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_04_list.html" target="_blank">heple_04_04_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heple/</td>
+					<td><a href="./heple/html/heple_04_04_view.html" target="_blank">heple_04_04_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section">
+		<h2 class="title">해카(HECA)</h2>
+		<div class="content" style="display:block">
+			<table>
+			<thead>
+				<tr>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col">3depth</th>
+				<th scope="col">path</th>
+				<th scope="col">file</th>
+				<th scope="col">stat</th>
+				<th scope="col">date</th>
+				<th scope="col">note</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>메인화면</td>
+					<td>인기강좌</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_main.html" target="_blank">heca_main.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>청소년해설학교</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>문화유산해설대학</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>자격시험</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>문화유산교육연구회</td>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>청소년해설학교</td>
+					<td>목록</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_01_list.html" target="_blank">heca_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_01_view.html" target="_blank">heca_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>문화유산해설대학</td>
+					<td>목록</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_02_list.html" target="_blank">heca_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_02_view.html" target="_blank">heca_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>자격시험안내</td>
+					<td>원서접수</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_01_list.html" target="_blank">heca_03_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_01_view.html" target="_blank">heca_03_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>접수확인&amp;수험표출력</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_02.html" target="_blank">heca_03_02.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>합격자조회&amp;자격증발급신청</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_03.html" target="_blank">heca_03_03.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>자격증발급신청(새페이지)</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_04_1.html" target="_blank">heca_03_04_1.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>자격증발급신청(기존)</td>
+					<td></td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_04_2.html" target="_blank">heca_03_04_2.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>자격정보</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_05_list.html" target="_blank">heca_03_05_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_03_05_view.html" target="_blank">heca_03_05_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>문화유산교육연구회</td>
+					<td>연구회신청</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_01_list.html" target="_blank">heca_04_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_01_view.html" target="_blank">heca_04_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>문화유산연구팀</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_02_list.html" target="_blank">heca_04_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_02_view.html" target="_blank">heca_04_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>세미나&amp;특강</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_03_list.html" target="_blank">heca_04_03_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_03_view.html" target="_blank">heca_04_03_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>연구회소개</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_04_list.html" target="_blank">heca_04_04_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_04_04_view.html" target="_blank">heca_04_04_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>해카소개</td>
+					<td>해카소개</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_01_list.html" target="_blank">heca_05_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_01_view.html" target="_blank">heca_05_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>공지사항</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_02_list.html" target="_blank">heca_05_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_02_view.html" target="_blank">heca_05_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1:1문의하기</td>
+					<td>목록</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_03_list.html" target="_blank">heca_05_03_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_03_view.html" target="_blank">heca_05_03_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>쓰기</td>
+					<td>/heca/</td>
+					<td><a href="./heca/html/heca_05_03_write.html" target="_blank">heca_05_03_write.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section">
+		<h2 class="title">유스코(USCO)</h2>
+		<div class="content" style="display:block">
+			<table>
+			<thead>
+				<tr>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col">3depth</th>
+				<th scope="col">path</th>
+				<th scope="col">file</th>
+				<th scope="col">stat</th>
+				<th scope="col">date</th>
+				<th scope="col">note</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>메인화면</td>
+					<td></td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_main.html" target="_blank">usco_main.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>유스코소개</td>
+					<td>유스코소개</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_01_list.html" target="_blank">usco_01_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_01_view.html" target="_blank">usco_01_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>유스코스토리</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_02_list.html" target="_blank">usco_01_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_02_view.html" target="_blank">usco_01_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>후원안내</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_03_list.html" target="_blank">usco_01_03_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_03_view.html" target="_blank">usco_01_03_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>후원하기</td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_04.html" target="_blank">usco_01_04.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1:1문의하기</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_05_list.html" target="_blank">usco_01_05_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_05_view.html" target="_blank">usco_01_05_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>쓰기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_01_05_write.html" target="_blank">usco_01_05_write.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>해설신청</td>
+					<td>목록</td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_02_list.html" target="_blank">usco_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_02_view.html" target="_blank">usco_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>입단 &amp; 자원봉사</td>
+					<td>입단안내</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_03_01_list.html" target="_blank">usco_03_01_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_03_01_view.html" target="_blank">usco_03_01_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>입단&amp;자원봉사 신청</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_03_02_list.html" target="_blank">usco_03_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_03_02_view.html" target="_blank">usco_03_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>유스코 단원전용</td>
+					<td>안내페이지</td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>공지사항</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_02_list.html" target="_blank">usco_04_02_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_02_view.html" target="_blank">usco_04_02_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>활동일신청&amp;변경</td>
+					<td></td>
+					<td>/usco/</td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>교육&amp;캠프</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_04_list.html" target="_blank">usco_04_04_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_04_view.html" target="_blank">usco_04_04_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>해설활동일지</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_05_list.html" target="_blank">usco_04_05_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_05_view.html" target="_blank">usco_04_05_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>활동지원센터</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_06_list.html" target="_blank">usco_04_06_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_06_view.html" target="_blank">usco_04_06_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>지도교사</td>
+					<td>목록</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_07_list.html" target="_blank">usco_04_07_list.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td>/usco/</td>
+					<td><a href="./usco/html/usco_04_07_view.html" target="_blank">usco_04_07_view.html</a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><a href="#"></a></td>
+					<td class="stat"></td>
+					<td class="date"></td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

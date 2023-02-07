@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HECA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta name="format-detection" content="telephone=no"><!-- iOS 전화 자동연결 방지 메타태그 -->
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+	<!-- Javascript -->
+	<script type="text/javascript" src="../resources/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../resources/js/plugins/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="../resources/js/common.js"></script>
+</head>
+<body>
+	<!-- 스킵 네비게이션(s) -->
+	<div id="skipNavigation">
+		<ul>
+			<li>
+				<a href="#content">본문 바로가기</a>
+			</li>
+			<li>
+				<a href="#header">주요메뉴 바로가기</a>
+			</li>
+			<li>
+				<a href="#footer">하단 바로가기</a>
+			</li>
+		</ul>
+	</div>
+	<!--// 스킵 네비게이션(e) -->
+	<header id="header">
+		<div class="header_wrap">
+			<h1>
+				<a href="#" title="HECA" class="logo">HECA</a>
+			</h1>
+			<div class="tnb">
+				<ul>
+					<li><a href="#"><span class="personal">로그인</span></a></li>
+					<li><a href="#"><span>회원가입</span></a></li>
+					<li><a href="#"><span>사이트맵</span></a></li>
+				</ul>
+			</div>
+			<div class="site-link">
+				<a href="#" class="btn-heca">HEPLE</a>
+				<a href="#" class="btn-usco">USCO</a>
+			</div>
+		</div>
+		<div id="gnb">
+			<div class="cont">
+				<ul class="gnb_menu">
+					<li class=""><!-- 오버,현재 1depth active 추가 -->
+						<strong class="gnb_title"><a href="#">청소년해설학교</a></strong>
+					</li>
+					<li>
+						<strong class="gnb_title"><a href="#">문화유산해설대학</a></strong>
+					</li>
+					<li class="active">
+						<strong class="gnb_title"><a href="#">자격시험안내</a></strong>
+						<ul>
+							<li><a href="#">원서접수</a></li><!-- 현재페이지 on 추가 -->
+							<li><a href="#">접수확인 &amp;<br>수험표출력</a></li>
+							<li class="on"><a href="#">합격자조회 &amp;<br>자격증발급신청</a></li>
+							<li><a href="#">자격정보</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="gnb_title"><a href="#">문화유산교육연구회</a></strong>
+						<ul>
+							<li><a href="#">연구회신청</a></li>
+							<li><a href="#">문화유산연구팀</a></li>
+							<li><a href="#">세미나 &amp; 특강</a></li>
+							<li><a href="#">연구회소개</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong class="gnb_title"><a href="#">해카소개</a></strong>
+						<ul>
+							<li><a href="#">해카소개</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">1:1문의하기</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- s : contents-wrap -->
+	<div class="wrap">
+		<div class="visual-text-wrap">
+			<div class="cont">
+				<div class="visual-title">자격시험안내</div>
+				<p class="visual-txt">‘아는 만큼 보인다. 전문 해설로 더욱 가치 있는 여행을 만들어보세요’</p>
+			</div>
+		</div>
+		<div class="tab-wrap">
+			<ul class="col4">
+				<li><a href="#">원서접수</a></li>
+				<li><a href="#">접수확인 &amp; 수험표출력</a></li>
+				<li class="active"><a href="#">합격자조회 &amp; 자격증발급신청</a></li>
+				<li><a href="#">자격정보</a></li>
+			</ul>
+		</div>
+		<div class="contents-wrap">
+			<div class="contents-inner">
+        <h2 class="ctit">자격증발급신청</h2>
+        <h3 class="stit">신청정보</h3>
+        <div class="tbl-form-wrap">
+          <table class="tbl-form">
+            <caption>자격검정 응시접수자 확인</caption>
+            <colgroup>
+              <col style="width:30%;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row"><label for="formInput11">이름</label></th>
+                <td>
+                  <div class="input-wrap">
+                    <input id="formInput11" type="text" style="width:230px;" value="이성수">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput12">주민등록번호</label></th>
+                <td>
+									<div class="input-wrap">
+										<input type="text" style="width:98px;" id="formInput12">
+									</div>
+									<span class="txt">-</span>
+									<div class="input-wrap">
+										<input type="text" style="width:98px;">
+									</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput13">주소</label></th>
+                <td class="input-row-cont">
+                  <div class="input-row">
+                    <div class="input-wrap">
+                      <input type="text" style="width:98px;" id="formInput13">
+                    </div>
+                    <span class="txt">-</span>
+                    <div class="input-wrap">
+                      <input type="text" style="width:98px;">
+                    </div>
+                    <button type="button" class="tbl-btn">우편번호찾기</button>
+                  </div>
+                  <div class="input-row">
+                    <div class="input-wrap w100">
+                      <input type="text">
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <span class="tit">상세주소</span>
+                    <div class="input-wrap">
+                      <input type="text" style="width:750px;">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput14">E-mail</label></th>
+                <td>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;" id="formInput14">
+                  </div>
+                  <span class="txt">@</span>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;">
+                  </div>
+                  <span class="select-box" style="width:200px;">
+                    <select>
+                      <option value="">직접입력</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput15">휴대폰 번호</label></th>
+                <td>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;" id="formInput15">
+                  </div>
+                  <span class="txt">-</span>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;">
+                  </div>
+                  <span class="txt">-</span>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput16">현금영수증 발급번호</label></th>
+                <td>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;" id="formInput16">
+                  </div>
+                  <span class="txt">-</span>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;">
+                  </div>
+                  <span class="txt">-</span>
+                  <div class="input-wrap">
+                    <input type="text" style="width:140px;">
+                  </div>
+                  <span class="txt-refer">(현금영수증 발급을 위해 꼭 기입해주세요.)</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">수령방법</th>
+                <td>
+                  <span class="check-cont">
+                    <input type="checkbox" id="chk2">
+                    <label for="chk2">우편수령</label>
+                  </span>
+                  <span class="check-cont">
+                    <input type="checkbox" id="chk3">
+                    <label for="chk3">온라인인쇄</label>
+                  </span>
+                  <p class="txt-info">*온라인 인쇄의 경우에는 발행일 직후 한달안에 수량과 관계없이 인쇄가 가능합니다.</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput17">발급자격증명</label></th>
+                <td>
+                  <span class="select-box" style="width:200px;">
+                    <select id="formInput17">
+                      <option value="">선택</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="formInput18">요청사항</label></th>
+                <td>
+                  <div class="input-wrap w100">
+                    <textarea id="formInput18"></textarea>
+                  </div>
+                </td>
+							</tr>
+							<tr>
+								<th scope="row">결제계좌</th>
+								<td>
+									<div class="txt-box">
+										<p class="txt-refer">무통장 입금 계좌는 다음과 같습니다.</p>
+										<p class="txt-info">국민은행:009901-04-148038 <span class="separate">/</span> 예금주:궁굴문화원</p>
+										<span class="txt-refer tel">전화:02-743-3319</span>
+										<span class="txt-refer mail">e-mail:gs@gungstory.com</span>
+									</div>
+								</td>
+							</tr>
+            </tbody>
+          </table>
+				</div>
+				<div class="btn-wrap btn-c">
+					<button type="button" class="btn btn-md btn-purple">확인</button>
+					<button type="button" class="btn btn-md btn-gray">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--// contents-wrap(e) -->
+	<footer id="footer">
+		<div class="footer-site-map">
+			<div class="cont">
+				<ul class="site-map-list">
+					<li>
+						<strong><a href="#">청소년해설학교</a></strong>
+					</li>
+					<li>
+						<strong><a href="#">문화유산해설대학</a></strong>
+					</li>
+					<li>
+						<strong><a href="#">자격시험안내</a></strong>
+						<ul>
+							<li><a href="#">원서접수</a></li>
+							<li><a href="#">접수확인 &amp; 수험표출력</a></li>
+							<li><a href="#">합격자조회 &amp; 자격증발급신청</a></li>
+							<li><a href="#">자격정보</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong><a href="#">문화유산교육연구회</a></strong>
+						<ul>
+							<li><a href="#">연구회신청</a></li>
+							<li><a href="#">문화유산연구팀</a></li>
+							<li><a href="#">세미나 &amp; 특강</a></li>
+							<li><a href="#">연구회소개</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong><a href="#">해카 소개</a></strong>
+						<ul>
+							<li><a href="#">해카소개</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">1:1문의</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="footer-sns-box">
+					<div class="link-site">
+						<a href="#">HEPLE</a>
+						<a href="#">USCO</a>
+					</div>
+					<strong class="tit">SNS CHANNEL</strong>
+					<ul class="sns-list">
+						<li><a href="#"><img src="../resources/images/common/btn_facebook.png" alt="FACEBOOK"></a></li>
+						<li><a href="#"><img src="../resources/images/common/btn_youtube.png" alt="YOUTUBE"></a></li>
+						<li><a href="#"><img src="../resources/images/common/btn_instagram.png" alt="INSTAGRAM"></a></li>
+						<li><a href="#"><img src="../resources/images/common/btn_naver.png" alt="NAVER"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-wrap">
+			<div class="cont">
+				<div class="footer-ci">궁궐문화원</div>
+				<div class="foot_nav2">
+					<ul>
+						<li>
+							<a href="#"><span>궁궐문화원 소개</span></a>
+						</li>
+						<li>
+							<a href="#"><span>이용약관</span></a>
+						</li>
+						<li>
+							<a href="#"><span>개인정보취급방침</span></a>
+						</li>
+						<li>
+							<a href="#"><span>이메일수집거부정책</span></a>
+						</li>
+						<li>
+							<a href="#"><span>찾아오시는 길</span></a>
+						</li>
+					</ul>
+				</div>
+				<div class="foot_info">
+					<p>주식회사 궁궐문화원 | 대표이사 : 김승민 | 개인정보책임자 : 홍길동 | 통신판매업번호 : 제2012-서울종로-1013호 | 사업자등록번호 : 280-88-01525</p>
+					<p>우) 03167 서울특별시 종로구 사직로 68, 4층 (사직동) 궁궐문화원 | 대표전화 : 02-743-3319</p>
+					<p>Copyright㈜궁궐문화원 All right reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

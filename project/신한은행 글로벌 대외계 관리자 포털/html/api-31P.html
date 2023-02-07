@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker(datepickerOption);
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">월별요금조회</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="search-cont">
+                    <div class="table-row">
+                        <table>
+                            <caption>검색 조회</caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="datepicker">조회월</label></th>
+                                    <td>
+                                        <div class="calender">
+                                            <input type="text" id="datepicker" class="input-txt">
+                                        </div>
+                                    </td>
+                                    <th scope="row"><label for="d1">Region</label></th>
+                                    <td>
+                                        <select id="d1" class="select-box">
+                                            <option>전체</option>
+                                            <option>일본</option>
+                                            <option>베트남</option>
+                                            <option>중국</option>
+                                            <option>한국</option>
+                                        </select>
+                                    </td>
+                                   <th scope="row">서비스</th>
+                                    <td><a href="#" class="input-txt pop"></a></td>
+                                    <th scope="row">Vendor 명</th>
+                                    <td><a href="#" class="input-txt pop"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+
+                <div class="data-top">
+                    <span>총 <strong>30</strong> 개 </span>
+                    <div class="right">
+                        <button type="button" class="btn-excel">엑셀 다운로드</button>
+                        <label for="numb" class="hidden">결과값 개수</label>
+                        <select id="numb" class="select-box">
+                            <option>20개 보기</option>
+                            <option>30개 보기</option>
+                            <option>50개 보기</option>
+                            <option>100개 보기</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <div class="table-col">
+                        <table>
+                            <caption>결과</caption>
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:8%;">
+                                <col style="width:8%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col style="width:6%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Vendor명</th>
+                                    <th scope="col">서비스</th>
+                                    <th scope="col">담당자</th>
+                                    <th scope="col">연락처</th>
+                                    <th scope="col">과금유형</th>
+                                    <th scope="col">과금액</th>
+                                    <th scope="col">실비용</th>
+                                    <th scope="col">건수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>DAOU</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>DAOU</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>DAOU</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>DAOU</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>DAOU</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="first">처음</a>
+                        <a href="#" class="prev">이전</a>
+                        <span class="page-num">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <strong title="현재">3</strong>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </span>
+                        <a href="#" class="next">다음</a>
+                        <a href="#" class="last">마지막</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+	<!-- ################### 월별요금 상세조회 ################# -->
+	<div id="customer031P" class="layer-popup return-txt">
+		<div class="pop-tit">월별요금 상세조회</div>
+		<table class="table-row">
+			<colgroup>
+				<col style="width:131px;">
+				<col>
+				<col style="width:131px;">
+				<col>
+				<col style="width:131px;">
+				<col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">건수</th>
+					<td>10</td>
+					<th scope="row">과금액</th>
+					<td>500,000</td>
+					<th scope="row">실비용</th>
+					<td>3,440,000</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="customer031Pdatepicker"></div>
+		<div class="pop-bottom">
+			<button type="button" class="btn-blue btn-close">닫기</button>
+		</div>
+	</div>
+
+    <script>
+	$(document).ready(function(){
+
+
+
+		function getSeriseData(){
+			//============================월별요금조회 샘플 데이터
+			var customer031P_data =  [{ //샘플2019년 2월 ~ 5월 데이터
+					'date' : '20190202',
+					'건수' : '5',
+					'실비용' : '100,200'
+				},{
+					'date' : '20190303',
+					'건수' : '6',
+					'실비용' : '100,200'
+				},{
+					'date' : '20190505',
+					'건수' : '7',
+					'실비용' : '100,200'
+				},{
+					'date' : '20190404',
+					'건수' : '10',
+					'실비용' : '100,200'
+				},{
+					'date' : '20190413',
+					'건수' : '10',
+					'실비용' : '100,200'
+				},{
+					'date' : '20190415',
+					'건수' : '10',
+					'실비용' : '100,200'
+				}
+			];
+			//============================월별요금조회 샘플 데이터 end
+
+			return customer031P_data;
+		}
+
+
+		//이벤트 바인딩
+		$('.result-cont').find('tr').click(function(){
+			$('#customer031P, .dimmed-layer').show();
+			
+			$('.dimmed-layer').click(function(){ //동시에 여러개의 팝업이 열릴경우 수정필요
+				$('.layer-popup, .dimmed-layer').hide();
+			})
+			$('#customer031P .btn-close').click(function(){
+				$('#customer031P, .dimmed-layer').hide();
+			})
+
+			function printTd(strDate, inst){
+				var data = getSeriseData(); //데이터 갱신
+				for(var key in data){
+					if(data[key].date.substr(0, 6) == strDate){ //선택 월과 데이터가 매칭되는경우 해당될경우
+						var day = unZerofill(data[key].date.substr(6, 8));
+
+						instEl.find('td > a').each(function(){
+							var anker = $(this);
+							
+							if(anker.text() == day){
+								anker.parent().addClass("ui-highlight");
+								for(var i in data[key]){
+									if(i != "date"){
+									
+										$('<p class="desc"><em>'+i+' :</em> '+data[key][i]+'</p>').appendTo(anker.parent())
+									}
+								}
+								
+							}
+						})
+					};
+				}
+			}
+			function zerofill(str){
+				str = str + "";
+				if(escape(str).length == 1){
+					str = "0"+ str;
+				}
+				return str;
+			}
+
+			function unZerofill(str){
+				if(str.substr(0,1) == "0"){
+					str = str.substr(1,2);
+				};
+				return str;
+			}
+
+			var stackEvTimerId;
+			var instEl = $("#customer031Pdatepicker").datepicker({
+				showOn: "button",
+				showMonthAfterYear:true,
+				dateFormat:'yy-mm-dd',
+				dayNamesMin:["일","월","화","수","목","금","토"],
+				monthNames:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+				yearSuffix:"년",
+				buttonImage: "../img/ico_calendar.png",
+				buttonImageOnly: true,
+				buttonText: "Select date",
+				afterShow : function(input, inst){
+					var carendarEl = $(this);
+					
+					clearTimeout(stackEvTimerId);
+					stackEvTimerId = setTimeout(function(){ //콜백함수 중복실행 방지
+						
+						var _year =  carendarEl.find('.ui-datepicker-year').text().split('월')[0];
+						var _month = carendarEl.find('.ui-datepicker-month').text().split('월')[0];
+						var matchDate = _year+ zerofill(_month);
+						printTd(matchDate, inst) // ex : 201904 yyyymm;
+						//월별요금 상세조회 캘린더 td클릭 이벤트 해제
+						carendarEl.find('.ui-datepicker td').unbind('click').bind('click',function(e){
+							e.preventDefault();
+						});
+					},10);
+				
+				}
+			}).datepicker('setDate', new Date());
+		})
+
+
+
+	})
+    </script>
+
+<!-- ################### 월별요금 상세조회 end -->
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+	
+</body>
+
+</html>

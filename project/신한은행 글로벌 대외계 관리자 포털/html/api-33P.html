@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(document).ready(function(){
+            //testCode
+            $('.layer-popup').show();
+        })
+    </script>
+</head>
+
+<body>
+
+    <!-- Vendor 선택-->
+    <div class="layer-popup" style="width: 750px;">
+        <div class="pop-tit">Vendor 선택</div>
+        <div class="pop-cont">
+            <div class="search-bar">
+                <label for="s1" class="hidden">선택</label>
+                <select id="s1" class="select-box">
+                    <option>Vendor명</option>
+                </select>
+                <div class="search-area">
+                    <label for="in1" class="hidden">검색어를 입력하세요</label>
+                    <input type="text" id="in1" class="input-txt" placeholder="검색어를 입력하세요">
+                    <button type="button">찾기</button>
+                </div>
+                
+            </div>
+
+            <div class="table-col">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:70px">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">Vendor명</th>
+                            <th scope="col">매니저명</th>
+                            <th scope="col">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일본</td>
+                            <td>Vendor code</td>
+                            <td>Hello</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <div class="pop-bottom">
+            <button type="button" class="btn-blue">선택</button>
+            <button type="button" class="btn-gray btn-close">취소</button>
+        </div>
+    </div>
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>신한은행 글로벌 뱅킹 대외계</title>
+		<style type="text/css">
+			html, body {
+				margin:0;
+				padding:0;
+			}
+			html {
+				overflow-y:scroll;
+			}
+			body {
+				color:#666;
+				background-color:#fff;
+				font:12px/1.5 Dotum, '돋움', Verdana, sans-serif;
+			}
+			a {
+				color:#27e;
+				text-decoration:none;
+			}
+			a:focus,
+			a:hover,
+			a:active {
+				text-decoration:underline;
+			}
+			.header {
+				padding:.5em;
+			}
+				.header h1 {
+					display:inline;
+					margin-right:1em;
+					color:#000;
+					font-size:2em;
+				}
+				.header ul {
+					display:inline;
+					font-size:1.5em;
+					list-style:none;
+				}
+				.header ul li {
+					display:inline;
+				}
+			.group-title {
+				margin-top:1em;
+				color:#000;
+				font-weight:bold;
+				font-size:1.5em;
+			}
+			table {
+				width:100%;
+				border-collapse:collapse;
+				border-spacing:0;
+			}
+				table caption {
+					display:none;
+				}
+				table th {
+					color:#333;
+					background-color:#eee;
+				}
+				table th,
+				table td {
+					padding:0 .5em;
+					border:1px solid #ddd;
+					text-align:left;
+				}
+				table th,
+				table td.stat,
+				table td.date {
+					text-align:center;
+				}
+				table tr.even,
+				table tr td.multi {
+					background-color:#fafafa;
+				}
+				table tr.add td {
+					background-color:#fd0;
+				}
+				table tr.modify td {
+					background-color:#fffeb4;
+				}
+				table tr.hover td {
+					background-color:#eee;
+				}
+			table tr.none td {
+				color:#000;
+				background-color:#fc8989;
+			}
+			table tr.up td {
+				background-color:#ffe9f5;
+			}
+				.section {
+					margin:3em 0;
+				}
+				body.js .section {
+					margin:0;
+				}
+					.section .title {
+						margin:0;
+						padding:0;
+						color:#000;
+						font-weight:bold;
+						font-size:100%;
+					}
+					body.js .section .title {
+						padding:.5em;
+						border:1px solid #ccc;
+						background-color:#ddd;
+						cursor:pointer;
+					}
+					body.js .section + .section .title {
+						border-top:0;
+					}
+						body.js .section .title .page-count {
+							color:#666;
+							font-weight:normal;
+						}
+					body.js .section .content {
+						display:none;
+					}
+				#sb-body{border:none !important;}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$.fn.stat = function (options) {
+					var settings = $.extend({
+							title: 'h2.title',
+							content: 'div.content',
+							files: 'tbody tr',
+							stat: 'td.stat',
+							index: 0,
+							openAll: false,
+							speed: 'fast'
+						}, options),
+						all_sections = this,
+						header = $('div.header');
+					return this.each(function () {
+						var self = this,
+							$self = $(self),
+							title_text = [],
+							completed = 0;
+						self.section_title = $(settings.title, $self);
+						self.content = $(settings.content, $self);
+						self.files = $(settings.files, $self);
+						self.files.each(function () {
+							var stat = $(settings.stat, this);
+							stat.each(function () {
+								var text = $(this).text();
+								if (text) {
+									completed++;
+								}
+							});
+						});
+						self.files
+							.bind('mouseenter', function () {
+								$(this).addClass('hover');
+							})
+							.bind('mouseleave', function () {
+								$(this).removeClass('hover');
+							});
+						title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+						self.section_title.html(title_text.join(''));
+						self.section_title.bind('click', function () {
+							self.content.slideToggle(settings.speed);
+						});
+						if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+							self.content.css('display', 'block');
+						}
+					});
+				};
+				$(document).ready(function () {
+					$('div.section').stat({ openAll: true });
+					$('#total').text($('tbody tr').length);
+					$('tbody tr:even').addClass('even');
+					$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+				});
+			}(jQuery));
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">document.body.className += ' js';</script>
+		<div class="header">
+			<h1>작업현황판</h1>
+		</div>
+		<div class="section">
+			<h2 class="title">API관리</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Vendor관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-1.html">api-1.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>서비스관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-2.html">api-2.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3Scale API Mapping</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-21P.html">api-21P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>alert</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-22P.html">api-22P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>월별요금조회</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-3.html">api-3.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>월별요금 상세조회</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-31P.html">api-31P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>서비스 선택</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-32P.html">api-32P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Vendor 선택</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-33P.html">api-33P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>트랜잭션 관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-4.html">api-4.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>트랜잭션 - 신규</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-41P.html">api-41P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>복호화 승인</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-5.html">api-5.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>승인</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-51P.html">api-51P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>반려</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/api-52P.html">api-52P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>복호화요청현황</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/api-6.html">api-6.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="section">
+			<h2 class="title">모니터링</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>로그조회</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/monit-1.html">monit-1.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>복호화요청</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/monit-1P.html">monit-1P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>서비스 응답시간</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/monit-2.html">monit-2.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="section">
+			<h2 class="title">사용자관리</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>사용자조회</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/customer-1.html">customer-1.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>사용자관리 - 신규</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/customer-11P.html">customer-11P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>팀선택</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/customer-12P.html">customer-12P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>삭제</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/customer-13P.html">customer-13P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>비밀번호 초기화</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/customer-14P.html">customer-14P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>팀 조회</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/customer-2.html">customer-2.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="section">
+			<h2 class="title">시스템 관리</h2>
+			<div class="content">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">path</th>
+							<th scope="col">file</th>
+							<th scope="col">stat</th>
+							<th scope="col">date</th>
+							<th scope="col">note</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>코드관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/system-1.html">system-1.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>코드 관리 - 신규</td>
+							<td></td>
+							<td>popup</td>
+							<td><a target="_blank" href="html/system-11P.html">system-11P.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>권한관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/system-2.html">system-2.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>메뉴관리</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a target="_blank" href="html/system-3.html">system-3.html</a></td>
+							<td class="stat">●</td>
+							<td class="date"></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

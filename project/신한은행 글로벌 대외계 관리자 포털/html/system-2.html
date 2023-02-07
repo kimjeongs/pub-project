@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                    <span class="num">20</span>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">권한관리</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="role-cont">
+                    <div class="search-box">
+                        <div class="search-txt">
+                            <label for="in1" class="hidden">검색어를 입력하세요</label>
+                            <input type="text" id="in1" class="input-txt" placeholder="검색어를 입력하세요">
+                        </div>
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                    
+                    <div class="table-col">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:57px;">
+                                <col style="width:246px;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">선택</th>
+                                    <th scope="col">권한</th>
+                                    <th scope="col">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c1">
+                                            <label for="c1">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_Anonymous</td>
+                                    <td>익명(게스트)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c2">
+                                            <label for="c2">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c3">
+                                            <label for="c3">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c4">
+                                            <label for="c4">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c5">
+                                            <label for="c5">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c6">
+                                            <label for="c6">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c7">
+                                            <label for="c7">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c8">
+                                            <label for="c8">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c9">
+                                            <label for="c9">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>Role_RG_APPROVER</td>
+                                    <td>리전승인자</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-gray">삭제</button>
+                        <button type="button" class="btn-blue">신규</button>
+                    </div>
+                </div>
+
+                <div class="role-cont right">
+                    <div class="table-row">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="r1">Role <span class="color-red">*</span></label></th>
+                                    <td><input type="text" id="r1" class="input-txt"></td>
+                                    <th scope="row"><label for="r2">설명</label></th>
+                                    <td><input type="text" id="r2" class="input-txt"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="data-list all-menu folder">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col>
+                                <col style="width:90px;">
+                                <col style="width:90px;">
+                                <col style="width:90px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">메뉴</th>
+                                    <th scope="col">검색</th>
+                                    <th scope="col">저장</th>
+                                    <th scope="col">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="dpth1">포탈관리</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="r12">
+                                            <label for="r12">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="r23">
+                                            <label for="r23">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="r3">
+                                            <label for="r3">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="4">
+                                        <ul>
+                                            <li>
+                                                <strong>사용자관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r70">
+                                                        <label for="r70">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r80">
+                                                        <label for="r80">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r90">
+                                                        <label for="r90">선택</label>
+                                                    </span>  
+                                                </div>
+                                                <ul class="dpth3">
+                                                    <li>
+                                                        <strong>사용자조회</strong>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r7">
+                                                                <label for="r7">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r8">
+                                                                <label for="r8">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r9">
+                                                                <label for="r9">선택</label>
+                                                            </span>  
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <strong>팀 관리</strong>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r10">
+                                                                <label for="r10">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r11">
+                                                                <label for="r11">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r22">
+                                                                <label for="r22">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <strong>월별요금조회</strong>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r33">
+                                                                <label for="r33">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r44">
+                                                                <label for="r44">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r55">
+                                                                <label for="r55">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </ul>  
+                                            </li>
+                                            <li>
+                                                <strong>시스템관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r66">
+                                                        <label for="r66">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r77">
+                                                        <label for="r77">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r88">
+                                                        <label for="r88">선택</label>
+                                                    </span>
+                                                </div>
+                                                <ul class="dpth3">
+                                                    <li>
+                                                        <strong>코드관리</strong>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r99">
+                                                                <label for="r99">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="r100">
+                                                                <label for="r100">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="e1">
+                                                                <label for="e1">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <strong>역할관리</strong>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="e2">
+                                                                <label for="e2">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="e3">
+                                                                <label for="e3">선택</label>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" id="e4">
+                                                                <label for="e4">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dpth1">모니터링</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="e5">
+                                            <label for="e5">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="6">
+                                            <label for="6">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="e7">
+                                            <label for="e7">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="4">                                        
+                                        <ul>
+                                            <li>
+                                                <strong>로그조회</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="e8">
+                                                        <label for="e8">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="e9">
+                                                        <label for="e9">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="e10">
+                                                        <label for="e10">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>서비스 응답시간</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f1">
+                                                        <label for="f1">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f2">
+                                                        <label for="f2">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f3">
+                                                        <label for="f3">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>   
+                                </tr>
+                                <tr>
+                                    <td class="dpth1">API 관리</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="f4">
+                                            <label for="f4">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="f5">
+                                            <label for="f5">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="f6">
+                                            <label for="f6">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="4">
+                                        <ul>
+                                            <li>
+                                                <strong>Vendeor 관리</strong>
+                                                 <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f7">
+                                                        <label for="f7">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f8">
+                                                        <label for="f8">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f9">
+                                                        <label for="f9">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                 <strong>서비스관리</strong>
+                                                 <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f10">
+                                                        <label for="f10">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y1">
+                                                        <label for="y1">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y2">
+                                                        <label for="y2">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>트랜잭션 관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y3">
+                                                        <label for="y3">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y4">
+                                                        <label for="y4">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y5">
+                                                        <label for="y5">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>복호화 승인</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y6">
+                                                        <label for="y6">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y7">
+                                                        <label for="y7">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y8">
+                                                        <label for="y8">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>복호화요청현황</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y9">
+                                                        <label for="y9">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y10">
+                                                        <label for="y10">선택</label>
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y11">
+                                                        <label for="y11">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-white">메모리 반영</button>
+                        <button type="button" class="btn-blue">선택 초기화</button>
+                        <button type="button" class="btn-gray">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                    <span class="num">20</span>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">메뉴관리</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="role-cont">
+                    <div class="search-box">
+                        <div class="search-txt">
+                            <label for="in1" class="hidden">검색어를 입력하세요</label>
+                            <input type="text" id="in1" class="input-txt" placeholder="검색어를 입력하세요">
+                        </div>
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                    
+                    <div class="data-list all-menu type2 folder">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col>
+                                <col style="width:90px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">메뉴</th>
+                                    <th scope="col">선택</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="dpth1">API 관리</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="r12">
+                                            <label for="r12">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="2">
+                                        <ul>
+                                            <li>
+                                                <strong>Vendeor 관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r70">
+                                                        <label for="r70">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>서비스관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r66">
+                                                        <label for="r66">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>월별요금조회</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r661">
+                                                        <label for="r661">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>트랜잭션관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r662">
+                                                        <label for="r662">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>복호화 승인</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r663">
+                                                        <label for="r663">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>복호화요청현황</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="r664">
+                                                        <label for="r664">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dpth1">모니터링</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="e5">
+                                            <label for="e5">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="2">                                        
+                                        <ul>
+                                            <li>
+                                                <strong>로그조회</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="e8">
+                                                        <label for="e8">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>서비스 응답시간</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f1">
+                                                        <label for="f1">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>   
+                                </tr>
+                                <tr>
+                                    <td class="dpth1">사용자관리</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="f4">
+                                            <label for="f4">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="2">
+                                        <ul>
+                                            <li>
+                                                <strong>사용자조회</strong>
+                                                 <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f7">
+                                                        <label for="f7">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                 <strong>팀조회</strong>
+                                                 <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="f10">
+                                                        <label for="f10">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dpth1">시스템관리</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="f40">
+                                            <label for="f40">선택</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="dpth2">
+                                    <td colspan="2">
+                                        <ul>
+                                            <li>
+                                                <strong>코드관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y9">
+                                                        <label for="y9">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>권한관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y10">
+                                                        <label for="y10">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>메뉴관리</strong>
+                                                <div>
+                                                    <span class="checkbox">
+                                                        <input type="checkbox" id="y11">
+                                                        <label for="y11">선택</label>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-gray">삭제</button>
+                        <button type="button" class="btn-blue">신규</button>
+                    </div>
+                </div>
+
+                <div class="role-cont right">
+                    <div class="table-row">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="r1">메뉴위치 <span class="color-red">*</span></label></th>
+                                    <td>
+                                        <div class="select-cont">
+                                            <select id="r1" class="select-box">
+                                                <option>1depth </option>
+                                                <option>API 관리</option>
+                                                <option>모니터링</option>
+                                                <option>사용자관리</option>
+                                                <option>시스템관리</option>
+                                                <option>새로 만들기</option>
+                                            </select>
+                                            <select class="select-box">
+                                                <option>2depth</option>
+                                                <option>서비스관리</option>
+                                                <option>월별요금조회</option>
+                                                <option>트랜잭션관리</option>
+                                                <option>복호화승인</option>
+                                                <option>복호화요청현황</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="r2">메뉴명 <span class="color-red">*</span></label></th>
+                                    <td><input type="text" id="r2" class="input-txt"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="r3">순서</label></th>
+                                    <td><input type="text" id="r3" class="input-txt"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사용여부</th>
+                                    <td>
+                                        <div class="radio">
+                                            <input type="radio" id="rd5" name="use" checked>
+                                            <label for="rd5">예</label>
+                                            <input type="radio" id="rd6" name="use">
+                                            <label for="rd6">아니오</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-blue">저장</button>
+                        <button type="button" class="btn-gray">초기화</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

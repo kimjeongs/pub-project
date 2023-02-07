@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            //testCode
+            $('.layer-popup').show();
+        })
+    </script>
+</head>
+
+<body>
+
+    <!-- 사용자 조회- 신규 -->
+    <div class="layer-popup">
+        <div class="pop-tit">사용자 조회- 신규</div>
+        <div class="pop-cont">
+            <div class="table-row">
+                <table>
+                    <caption>사용자 조회</caption>
+                    <colgroup>
+                        <col style="width:138px">
+                        <col>
+                        <col style="width:138px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="d1">Region <span class="color-red">*</span></label></th>
+                            <td>
+                                <select id="d1" class="select-box">
+                                    <option>전체</option>
+                                </select>
+                            </td>
+                            <th scope="row"><label for="d2">Log-in ID</label></th>
+                            <td><input type="text" id="d2" class="input-txt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="d3">User Name <span class="color-red">*</span></th>
+                            <td><input type="text" id="d3" class="input-txt"></td>
+                            <th scope="row"><label for="d4">E-mail</th>
+                            <td><input type="text" id="d4" class="input-txt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="d5">Role <span class="color-red">*</span></label></th>
+                            <td>
+                                <select id="d5" class="select-box">
+                                    <option>전체</option>
+                                </select>
+                            </td>
+                            <th scope="row"><label for="d6">직급</label></th>
+                            <td><input type="text" id="d6" class="input-txt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">팀 <span class="color-red">*</span></th>
+                            <td><a href="#" class="input-txt pop"></a></td>
+                            <th scope="row"><label for="d8">사용여부 <span class="color-red">*</span></label></th>
+                            <td>
+                                <select id="d8" class="select-box">
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="d9">마지막접속시간</label></th>
+                            <td colspan="3"><input type="text" id="d9" class="input-txt"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pop-bottom">
+            <button type="button" class="btn-blue">저장</button>
+            <button type="button" class="btn-gray btn-close">취소</button>
+        </div>
+    </div>
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+    
+</body>
+
+</html>

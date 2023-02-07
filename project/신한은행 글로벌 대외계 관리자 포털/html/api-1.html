@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                    <span class="num">20</span>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">Vendor 관리</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="search-cont">
+                    <div class="table-row">
+                        <table>
+                            <caption>검색 조회</caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="d1">Region</label></th>
+                                    <td>
+                                        <select id="d1" class="select-box">
+                                            <option>전체</option>
+                                            <option>일본</option>
+                                            <option>베트남</option>
+                                            <option>중국</option>
+                                            <option>한국</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">코드</th>
+                                    <td>
+                                        <a href="#" class="input-txt pop"></a>
+                                    </td>
+                                    <th scope="row"><label for="d3">명칭</label></th>
+                                    <td><input type="text" id="d3" class="input-txt"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+
+                <div class="data-top">
+                    <span>총 <strong>30</strong> 개 </span>
+                    <div class="right">
+                        <a href="#" class="btn-sm-blue bg-blue">개발자 포탈 ID 생성</a>
+                        <button type="button" class="btn-excel">엑셀 다운로드</button>
+                        <label for="numb" class="hidden">결과값 개수</label>
+                        <select id="numb" class="select-box">
+                            <option>20개 보기</option>
+                            <option>30개 보기</option>
+                            <option>50개 보기</option>
+                            <option>100개 보기</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <div class="table-col">
+                        <table>
+                            <caption>결과</caption>
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:8%;">
+                                <col style="width:8%;">
+                                <col style="width:10%;">
+                                <col style="width:10%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col style="width:8%;">
+                                <col style="width:13%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col"><a href="#" class="down">리전</a></th>
+                                    <th scope="col"><a href="#" class="down">코드</a></th>
+                                    <th scope="col"><a href="#" class="down">명칭</a></th>
+                                    <th scope="col"><a href="#" class="up">담당자</a></th>
+                                    <th scope="col"><a href="#" class="down">연락처</a></th>
+                                    <th scope="col">모바일</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col"><a href="#" class="down">설명</a></th>
+                                    <th scope="col">개발자포탈 <br>ID 생성여부</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>일본</td>
+                                    <td>00003</td>
+                                    <td>Wechat</td>
+                                    <td>홍길동</td>
+                                    <td>010-9999-8888</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Y</td>
+                                    <td>2019-03-32</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="first">처음</a>
+                        <a href="#" class="prev">이전</a>
+                        <span class="page-num">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <strong title="현재">3</strong>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </span>
+                        <a href="#" class="next">다음</a>
+                        <a href="#" class="last">마지막</a>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <strong class="table-tit">Service</strong>
+                    <div class="table-col">
+                        <table>
+                            <caption>결과</caption>
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:10%;">
+                                <col style="width:10%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col style="width:8%;">
+                                <col style="width:13%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col"><a href="#" class="down">서비스</a></th>
+                                    <th scope="col"><a href="#" class="down">서비스 설명</a></th>
+                                    <th scope="col"><a href="#" class="up">Endpoint</a></th>
+                                    <th scope="col"><a href="#" class="down">과금유형</a></th>
+                                    <th scope="col"><a href="#" class="down">과금액</a></th>
+                                    <th scope="col"><a href="#" class="down">삭제여부</a></th>
+                                    <th scope="col">3scale 적용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>일본</td>
+                                    <td>00003</td>
+                                    <td>Wechat</td>
+                                    <td>홍길동</td>
+                                    <td>010-9999-8888</td>
+                                    <td></td>
+                                    <td>Y</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

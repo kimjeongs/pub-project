@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                    <span class="num">20</span>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">팀 조회</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+               <div class="search-box-area">
+                    <div class="search-box">
+                        <label for="sch">Region</label>
+                        <div class="search-txt">
+                            <select id="sch" class="select-box">
+                                <option>전체</option>
+                                <option>일본</option>
+                                <option>베트남</option>
+                                <option>중국</option>
+                                <option>한국</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+               </div>
+
+               <div class="search-result-cont">
+                   <div class="team-cont">
+                        <div class="top-search">
+                            <span class="list-open-btn">
+                                <a href="#" class="open">펼치기</a>
+                                <a href="#" class="close">접기</a>
+                            </span>
+                            <div class="search-area">
+                                <label for="saa" class="hidden">부서명을 입력하세요</label>
+                                <input type="text" id="saa" class="input-txt" placeholder="부서명을 입력하세요">
+                                <button type="button">찾기</button>
+                            </div>
+                            <button type="button" class="btn-new">신규</button>
+                        </div>
+
+                        <div class="team-select-cont">
+                            <div class="team-tree">
+                                <ul class="depth1">
+                                    <li>
+                                        <a href="#" class="list-btn">개발부</a>
+                                        <ul class="depth2 open">
+                                            <li>
+                                                <a href="#">개발1팀</a>
+                                                <ul class="depth3">
+                                                    <li><a href="#">VM담당</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">포탈관리</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-btn">전략팀</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-btn">회계팀</a>
+                                        <ul class="depth2 open">
+                                            <li>
+                                                <a href="#" class="close">관리부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">재경부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">총무부</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-btn">회계팀</a>
+                                        <ul class="depth2 open">
+                                            <li>
+                                                <a href="#" class="close">관리부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">재경부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">총무부</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-btn">회계팀</a>
+                                        <ul class="depth2 open">
+                                            <li>
+                                                <a href="#" class="close">관리부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">재경부</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="close">총무부</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="select-view">
+                                <p class="txt">팀을 선택해주세요</p>
+                                <div class="select-tabel-cont">
+                                    <div class="table-row">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:138px">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row"><label for="r1">코드</label></th>
+                                                    <td>
+                                                        <select id="r1" class="select-box">
+                                                            <option>전체</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><label for="r2">팀명 <span class="color-red">*</span></label></th>
+                                                    <td><input type="text" id="r2" class="input-txt"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">상위팀</th>
+                                                    <td><a href="#" class="input-txt pop"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">사용여부</th>
+                                                    <td>
+                                                        <div class="radio">
+                                                            <input type="radio" id="rd5" name="use" checked="">
+                                                            <label for="rd5">예</label>
+                                                            <input type="radio" id="rd6" name="use">
+                                                            <label for="rd6">아니오</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-save">저장</button>
+                                        <button type="button" class="btn-delete">삭제</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

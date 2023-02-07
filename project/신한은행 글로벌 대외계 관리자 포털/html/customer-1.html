@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            //달력 시작날짜
+            $("#datepicker").datepicker(datepickerOption);
+            //종료날짜
+            $("#datepicker2").datepicker(datepickerOption);
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">사용자조회</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="search-cont">
+                    <div class="table-row">
+                        <table>
+                            <caption>검색 조회</caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="d1">Region</label></th>
+                                    <td>
+                                        <select id="d1" class="select-box">
+                                            <option>전체</option>
+                                            <option>일본</option>
+                                            <option>베트남</option>
+                                            <option>중국</option>
+                                            <option>한국</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">Team</th>
+                                    <td><a href="#" class="input-txt pop"></a></td>
+                                    <th scope="row"><label for="d3">Role</label></th>
+                                    <td>
+                                        <select id="d3" class="select-box">
+                                            <option>전체</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="d5">Log-in ID</label></th>
+                                    <td><input type="text" id="d5" class="input-txt"></td>
+                                    <th scope="row"><label for="d6">User Name</label></th>
+                                    <td><input type="text" id="d6" class="input-txt"></td>
+                                    <th scope="row"><label for="datepicker">마지막접속시간</label></th>
+                                    <td>
+                                        <div class="calendar-cont">
+                                            <div class="calender">
+                                                <input type="text" id="datepicker" class="input-txt">
+                                            </div>
+                                            <span>ㅡ</span>
+                                            <div class="calender">
+                                                <input type="text" id="datepicker2" class="input-txt">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+
+                <div class="data-top">
+                    <span>총 <strong>30</strong> 개 </span>
+                    <div class="right">
+                        <a href="#" class="btn-new">신규</a>
+                        <button type="button" class="btn-delete">삭제</button>
+                        <button type="button" class="btn-lightblue">비밀번호 초기화</button>
+                        <button type="button" class="btn-excel">엑셀 다운로드</button>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <div class="table-col">
+                        <table>
+                            <caption>결과</caption>
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:5%;">
+                                <col style="width:10%;">
+                                <col>
+                                <col>
+                                <col style="width:15%;">
+                                <col style="width:10%;">
+                                <col style="width:13%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="all">
+                                            <label for="all">선택</label>
+                                        </div>
+                                    </th>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Log-in ID</th>
+                                    <th scope="col">User Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">직급</th>
+                                    <th scope="col">마지막접속시간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c1">
+                                            <label for="c1">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>본점</td>
+                                    <td>개발부</td>
+                                    <td>GdsEW</td>
+                                    <td>홍길동</td>
+                                    <td>총괄관리자</td>
+                                    <td></td>
+                                    <td>2019/02/01 10:30:30</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c2">
+                                            <label for="c2">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>2</td>
+                                    <td>일본</td>
+                                    <td>개발부</td>
+                                    <td>GdsEW</td>
+                                    <td>홍길동</td>
+                                    <td>총괄관리자</td>
+                                    <td></td>
+                                    <td>2019/02/01 10:30:30</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c3">
+                                            <label for="c3">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>3</td>
+                                    <td>일본</td>
+                                    <td>개발부</td>
+                                    <td>GdsEW</td>
+                                    <td>홍길동</td>
+                                    <td>총괄관리자</td>
+                                    <td></td>
+                                    <td>2019/02/01 10:30:30</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c4">
+                                            <label for="c4">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="c5">
+                                            <label for="c5">선택</label>
+                                        </div>
+                                    </td>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="first">처음</a>
+                        <a href="#" class="prev">이전</a>
+                        <span class="page-num">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <strong title="현재">3</strong>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </span>
+                        <a href="#" class="next">다음</a>
+                        <a href="#" class="last">마지막</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="header">
+            <h1><a href="#">SHINHAN BANK</a></h1>
+            <h2>Global FEP Admin Portal</h2>
+            <div class="my-cont">
+                <div class="my-info">
+                    <a href="#">홍길동</a>
+                    <ul class="my-menu">
+                        <li><a href="#">내정보 변경</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </div>
+                <div class="decryption-btn-area">
+                    <button type="button" class="btn-decryption">복호화</button>
+                    <span class="num">20</span>
+                </div>
+                <button type="button" class="btn-logout">로그아웃</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn-gnb">메뉴보기</button>
+        <div id="gnb">
+            <ul class="gnb-menu">
+                <li>
+                    <a href="#" class="api">API 관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">Vendor관리</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 관리</a>
+                        </li>
+                        <li>
+                            <a href="#">월별요금조회</a>
+                        </li>
+                        <li>
+                            <a href="#">트랜잭션관리</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 승인</a>
+                        </li>
+                        <li>
+                            <a href="#">복호화 요청현황</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="monitoring">모니터링</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">로그조회</a>
+                        </li>
+                        <li>
+                            <a href="#">서비스 응답시간</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user">사용자관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">사용자 조회</a>
+                        </li>
+                        <li>
+                            <a href="#">팀 조회</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="system">시스템관리</a>
+                    <ul class="depth2">
+                        <li>
+                            <a href="#">코드관리</a>
+                        </li>
+                        <li>
+                            <a href="#">권한관리</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴관리</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="sub-tit-cont">
+                <h3 class="sub-tit">트랜잭션 관리</h3>
+                <a href="#" class="dashbord">Dashboard</a>
+            </div>
+            <div class="contents">
+                <div class="search-cont">
+                    <div class="table-row">
+                        <table>
+                            <caption>검색 조회</caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="d1">Region</label></th>
+                                    <td>
+                                        <select id="d1" class="select-box">
+                                            <option>전체</option>
+                                            <option>일본</option>
+                                            <option>베트남</option>
+                                            <option>중국</option>
+                                            <option>한국</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row"><label for="d3">코드</label></th>
+                                    <td><input type="text" id="d3" class="input-txt"></td>
+                                    <th scope="row"><label for="d4">명칭</label></th>
+                                    <td><input type="text" id="d4" class="input-txt"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">서비스</th>
+                                    <td><a href="#" class="input-txt pop"></a></td>
+                                    <th scope="row"><label for="d5">End Point URL</label></th>
+                                    <td colspan="3"><input type="text" id="d5" class="input-txt"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+
+                <div class="data-top">
+                    <span>총 <strong>30</strong> 개 </span>
+                    <div class="right">
+                        <a href="#" class="btn-new">신규트랜잭션</a>
+                        <button type="button" class="btn-delete">삭제</button>
+                        <button type="button" class="btn-excel">엑셀 다운로드</button>
+                        <label for="numb" class="hidden">결과값 개수</label>
+                        <select id="numb" class="select-box">
+                            <option>20개 보기</option>
+                            <option>30개 보기</option>
+                            <option>50개 보기</option>
+                            <option>100개 보기</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <div class="table-col">
+                        <table>
+                            <caption>결과</caption>
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col"><a href="#" class="down">리전</a></th>
+                                    <th scope="col"><a href="#" class="down">코드</a></th>
+                                    <th scope="col"><a href="#" class="up">명칭</a></th>
+                                    <th scope="col"><a href="#" class="down">서비스</a></th>
+                                    <th scope="col"><a href="#" class="down">통신 프로토콜</a></th>
+                                    <th scope="col"><a href="#" class="down">통신방향</a></th>
+                                    <th scope="col"><a href="#" class="down">동기/비동기</a></th>
+                                    <th scope="col"><a href="#" class="down">금액</a></th>
+                                    <th scope="col"><a href="#" class="down">End Point URL</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="first">처음</a>
+                        <a href="#" class="prev">이전</a>
+                        <span class="page-num">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <strong title="현재">3</strong>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                        </span>
+                        <a href="#" class="next">다음</a>
+                        <a href="#" class="last">마지막</a>
+                    </div>
+                </div>
+
+                <div class="result-cont">
+                    <ul class="tab-menu">
+                        <li><a href="#" class="on">기본정보</a></li>
+                        <li><a href="#">암호화 필드</a></li>
+                        <li><a href="#">커스텀 속성</a></li>
+                    </ul>
+                    <div class="tab-cont">
+                        <!-- 기본정보 -->
+                        <div class="tab-box info on">
+                            <div class="table-row">
+                                <table>
+                                    <caption>기본정보</caption>
+                                    <colgroup>
+                                        <col style="width:170px">
+                                        <col>
+                                        <col style="width:170px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Region</th>
+                                            <td>일본</td>
+                                            <th scope="row">트랜잭션코드</th>
+                                            <td>0009</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">서비스</th>
+                                            <td>Wechat payment gateway</td>
+                                            <th scope="row"><label for="d44">트랜잭션명 <span class="color-red">*</span></label></th>
+                                            <td><input type="text" id="d44" class="input-txt"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="d11">통신프로토콜 <span class="color-red">*</span></label>
+                                            </th>
+                                            <td>
+                                                <select id="d11" class="select-box">
+                                                    <option>https</option>
+                                                </select>
+                                            </td>
+                                            <th scope="row">
+                                                <label for="d22">통신방향 <span class="color-red">*</span></label>
+                                            </th>
+                                            <td>
+                                                <select id="d22" class="select-box">
+                                                    <option>Out</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="d33">동기/비동기 <span class="color-red">*</span></label>
+                                            </th>
+                                            <td>
+                                                <select id="d33" class="select-box">
+                                                    <option>동기</option>
+                                                </select>
+                                            </td>
+                                            <th scope="row"><label for="d444">금액</label></th>
+                                            <td><input type="text" id="d444" class="input-txt"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="d55">문서경로</label></th>
+                                            <td><input type="text" id="d55" class="input-txt"></td>
+                                            <th scope="row"><label for="d66">음답시간임계치(초)</label></th>
+                                            <td><input type="text" id="d66" class="input-txt"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="d77">EndPoint URL</label></th>
+                                            <td colspan="3">
+                                                <div class="select-input">
+                                                    <select id="d77" class="select-box">
+                                                        <option>전체</option>
+                                                    </select>
+                                                    <input type="text" class="input-txt">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="d88">트랜잭션 설명</label></th>
+                                            <td colspan="3"><input type="text" id="d88" class="input-txt"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="btn-area">
+                                <button type="button" class="btn-blue">저장</button>
+                                <button type="button" class="btn-gray">취소</button>
+                            </div>
+                        </div>
+
+                        <!-- 암호화 필드 -->
+                        <div class="tab-box in-out">
+                            <div class="message-box">
+                                <strong>Input Message</strong>
+                                <div class="table-row">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:190px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><label for="t0">Message Type</label></th>
+                                                <td>
+                                                    <select id="t0" class="select-box">
+                                                        <option>Xml,json,flat,line..선택</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="tt1">Message File</label></th>
+                                                <td><input id="tt1" type="text" class="input-txt"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="btn-area right">
+                                    <button type="button" class="btn-sm-blue dataListAddRow">행추가</button>
+                                    <button type="button" class="btn-sm-blue dataListRemoveRow">행삭제</button>
+                                </div>
+
+                                <div class="table-col data1 tableFixhead">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:70px">
+                                            <col style="width:230px">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">NO</th>
+                                                <th scope="col">필드명</th>
+                                                <th scope="col">암호화방식</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <label for="s1" class="hidden">암호화방식</label>
+                                                    <select id="s1" class="select-box">
+                                                        <option>AES-128-CBC</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="message-box">
+                                <strong>Output Message</strong>
+                                <div class="table-row">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:190px">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><label for="t00">Message Type</label></th>
+                                                <td>
+                                                    <select id="t00" class="select-box">
+                                                        <option>Xml,json,flat,line..선택</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><label for="tt3">Message File</label></th>
+                                                <td><input type="text" id="tt3" class="input-txt"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="btn-area right">
+                                    <button type="button" class="btn-sm-blue dataListAddRow">행추가</button>
+                                    <button type="button" class="btn-sm-blue dataListRemoveRow">행삭제</button>
+                                </div>
+
+                                <div class="table-col data1 tableFixhead">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:70px">
+                                            <col style="width:230px">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">NO</th>
+                                                <th scope="col">필드명</th>
+                                                <th scope="col">암호화방식</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <label for="s19" class="hidden">암호화방식</label>
+                                                    <select id="s19" class="select-box">
+                                                        <option>AES-128-CBC</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 커스텀 속성 -->
+                        <div class="tab-box custom">
+                            <div class="btn-area right">
+                                <button type="button" class="btn-sm-blue dataListAddRow">행추가</button>
+                                <button type="button" class="btn-sm-blue dataListRemoveRow">행삭제</button>
+                            </div>
+
+                            <div class="table-col data2 tableFixhead">
+                                <table>
+                                    <caption>커스텀 속성</caption>
+                                    <colgroup>
+                                        <col style="width:70px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">Vendor명</th>
+                                            <th scope="col">KEY</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <label for="ss1" class="hidden">암호화방식</label>
+                                                <select id="ss1" class="select-box">
+                                                    <option>12CM</option>
+                                                </select>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

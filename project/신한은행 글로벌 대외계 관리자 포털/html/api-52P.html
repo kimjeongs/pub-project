@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>SHINHAN BANK</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+
+
+        // pop 승인
+        $('.btn-approval').on('click', function (e) {
+            var approval = $('.pop-approval'),
+                layerCose = approval.find('.btn-close'),
+                dimmed = $('.dimmed-layer');
+
+            e.preventDefault();
+
+            approval.add(dimmed).css('display', 'block');
+            $('body').css('overflow', 'hidden');
+
+            layerCose.on('click', function () {
+                approval.add(dimmed).removeAttr('style');
+                $('body').css('overflow', 'none');
+            });
+        });
+
+        //pop 반려
+        $('.btn-return').on('click', function (e) {
+            var returnTxt = $('.return-txt'),
+                layerCose = returnTxt.find('.btn-close'),
+                dimmed = $('.dimmed-layer');
+
+            e.preventDefault();
+
+            returnTxt.add(dimmed).css('display', 'block');
+            $('body').css('overflow', 'hidden');
+
+            layerCose.on('click', function () {
+                returnTxt.add(dimmed).removeAttr('style');
+                $('body').css('overflow', 'none');
+            });
+        });
+
+        //팝업 안 팝업
+        $('.layer-popup .btn-return').on('click', function (e) {
+            var approvalLayer = $('.pop-approval'),
+                returnTxt = $('.return-txt'),
+                layerCose = approvalLayer.find('.btn-close');
+            dimmed = $('.dimmed-layer');
+
+            approvalLayer.css('display', 'block');
+            returnTxt.css('z-index', '100');
+
+            layerCose.on('click', function () {
+                approvalLayer.add(dimmed).removeAttr('style');
+                returnTxt.add(dimmed).removeAttr('style');
+                returnTxt.css('z-index', '');
+            });
+        })
+
+    });
+</script>
+
+<body>
+
+    <!-- pop 승인-->
+    <div class="layer-popup alert pop-approval">
+        <div class="pop-cont">
+            <p class="pop-txt">승인되었습니다</p>
+        </div>
+        <div class="pop-bottom">
+            <button type="button" class="btn-blue btn-close">확인</button>
+        </div>
+    </div>
+
+    <!-- pop 반려-->
+    <div class="layer-popup return-txt" style="display:block">
+        <div class="pop-tit">반려</div>
+        <div class="pop-cont">
+            <div class="return-txt-box">
+                <label for="txt">반려사유</label>
+                <textarea id="txt" class="textarea"></textarea>
+            </div>
+        </div>
+        <div class="pop-bottom">
+            <button type="button" class="btn-blue btn-return big">반려</button>
+            <button type="button" class="btn-gray btn-close">취소</button>
+        </div>
+    </div>
+
+    <!-- dimmed -->
+    <div class="dimmed-layer"></div>
+
+</body>
+
+</html>

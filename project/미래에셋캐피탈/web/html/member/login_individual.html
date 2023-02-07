@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>공인인증서 - 로그인 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/member.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+					
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">자동차금융</a></li>
+					<li>
+						<a href="#">오토론</a><!-- class="open" 추가시 하위메뉴 열림 -->
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">오토론</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">상품소개</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">상품소개</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="popup-login-certificate">
+				<div class="content-width">
+					<div class="page-title-style type02">
+						<h2 class="page-title">로그인</h2>
+					</div>
+					
+					<ul class="ctab">
+						<li><a href="#">아이디</a></li>
+						<li class="active"><a href="#">공인인증서</a></li>
+					</ul>
+
+					<div class="cont">
+						<strong class="invisible">공인인증서</strong>
+						<ul class="login-way-choice">
+							<li>
+								<input type="radio" id="pick01" name="pick" checked="checked">
+								<label for="pick01">개인/개인사업자</label>
+							</li>
+							<li>
+								<input type="radio" id="pick02" name="pick">
+								<label for="pick02">법인</label>
+							</li>
+						</ul>
+						<!-- 법인일때 노출 -->
+						<span class="pop-keypad mt30">
+							<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+							<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+							<input type="text" style="width:130px;" placeholder="3자리" id="number01" />
+							<span class="input-txt-line">-</span>
+							<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+							<input type="text" style="width:100px;" placeholder="2자리" id="number02" />
+							<span class="input-txt-line">-</span>
+							<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+							<input type="text" style="width:130px;" placeholder="3자리" id="number03" />
+						</span>
+						<p>사업자등록번호를 입력해주세요</p>
+						<!-- //법인일때 노출 -->
+						<p>미래에셋캐피탈에 등록하신 공인인증서로 로그인 해주세요.</p>
+						<div class="btn-center mt0">
+							<button type="button" class="btn-accept01">공인인증서 로그인</button>
+						</div>
+						<span class="reg-del">
+							<a href="#">공인인증서 등록/삭제</a>
+							<a href="#">회원가입</a>
+						</span>
+						<div class="notice-list">
+							<ul>
+								<!-- 개인/개인사업자일때 노출 -->
+								<li>공인인증서 로그인은 미래에셋캐피탈 웹에 최초 1회 등록 이후 사용 가능합니다.</li>
+								<!-- //개인/개인사업자일때 노출 -->
+								<li>고객님의 정보보호를 위하여 10분 이상 활동이 없을 경우 자동로그아웃 됩니다.</li>
+								<li>로그인에 문제가 있으시면 고객센터 0000-0000로 문의해 주십시오.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

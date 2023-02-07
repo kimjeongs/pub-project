@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>board guide</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<style type="text/css">
+	.content{padding:0 20px 30px;}
+	h1 {
+		float:none;
+		width:auto;
+		font-size:20px;
+		line-height:100%;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	ul.s-tab {
+		width:100%;
+		overflow:hidden;
+		margin-top:10px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+		ul.s-tab li {
+			display:inline;
+			float:left;
+			margin-right:5px;
+		}
+			ul.s-tab li a {
+				float:left;
+				padding:5px;
+				border:2px solid #a2cdde;
+				font-size:15px;
+				font-weight:bold;
+				text-decoration:none;
+			}
+			ul.s-tab li.on a,
+			ul.s-tab li a:hover {
+				color:#f00;
+			}
+	h2.guide-title {
+		margin:10px 0;
+		padding:10px 0;
+		border-top:2px solid #ddd;
+		border-bottom:2px solid #ddd;
+		font-size:15px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	.xmp {
+		display:block;
+		height:200px;
+		overflow:auto;
+		margin:10px 0 0 0;
+		padding:0;
+		border:2px solid #666;
+		background:#eee;
+	}
+	</style>
+</head>
+
+<body>
+<div class="content">
+	<h1>STYLE GUIDE</h1>
+	<ul class="s-tab">
+		<li><a href="content.html">content</a></li>
+		<li class="on"><a href="board.html">board</a></li>
+		<li><a href="etc.html">etc</a></li>
+		<li><a href="button.html">button</a></li>
+		<li><a href="input.html">input</a></li>
+	</ul>
+
+	<h2 class="guide-title">list type1</h2>
+	<div class="row-board01">
+		<table>
+			<caption>오토론 - 할부 이용조건 테이블입니다.</caption>
+			<colgroup>
+				<col style="width:18%;" />
+				<col style="width:82%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">차량소유자</th>
+					<td>고객 명의로 차량등록<br/>(단, 할부금 완납 시까지 처분 제한)</td>
+				</tr>
+				<tr>
+					<th scope="row">할부이자율</th>
+					<td>최저 4.1% ~ 최대 13.5%(신용도, 대출기간, 차종 등에 따라 차등)</td>
+				</tr>
+				<tr>
+					<th scope="row">연체이자율</th>
+					<td>연 24%</td>
+				</tr>
+				<tr>
+					<th scope="row">중도상환수수료</th>
+					<td>
+						<ul class="desh-list01">
+							<li>1년 이상 : 중도상환원금 X 1% + 중도상환원금 X (중도상환수수료율-1%) X 잔존기간 / (대출기간-30일)</li>
+							<li>1년 미만 : 중도상환원금 X 중도상환수수료율 X 잔존기간 / (대출기간-30일)</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+<xmp class="xmp">
+<div class="row-board01">
+	<table>
+		<caption>오토론 - 할부 이용조건 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:18%;" />
+			<col style="width:82%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">차량소유자</th>
+				<td>고객 명의로 차량등록<br/>(단, 할부금 완납 시까지 처분 제한)</td>
+			</tr>
+			<tr>
+				<th scope="row">할부이자율</th>
+				<td>최저 4.1% ~ 최대 13.5%(신용도, 대출기간, 차종 등에 따라 차등)</td>
+			</tr>
+			<tr>
+				<th scope="row">연체이자율</th>
+				<td>연 24%</td>
+			</tr>
+			<tr>
+				<th scope="row">중도상환수수료</th>
+				<td>
+					<ul class="desh-list01">
+						<li>1년 이상 : 중도상환원금 X 1% + 중도상환원금 X (중도상환수수료율-1%) X 잔존기간 / (대출기간-30일)</li>
+						<li>1년 미만 : 중도상환원금 X 중도상환수수료율 X 잔존기간 / (대출기간-30일)</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</xmp>
+
+<h2 class="guide-title">list type2</h2>
+<div class="row-board02">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:18%;" />
+			<col />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">옵션</th>
+				<td>불포함</td>
+			</tr>
+			<tr>
+				<th scope="row">차량인수 여부</th>
+				<td>만기 시 결정</td>
+			</tr>
+			<tr>
+				<th scope="row">보증금</th>
+				<td>0,000,000원 (30%)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<xmp class="xmp">
+<div class="row-board02">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:18%;" />
+			<col />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">옵션</th>
+				<td>불포함</td>
+			</tr>
+			<tr>
+				<th scope="row">차량인수 여부</th>
+				<td>만기 시 결정</td>
+			</tr>
+			<tr>
+				<th scope="row">보증금</th>
+				<td>0,000,000원 (30%)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</xmp>
+
+<h2 class="guide-title">list type2</h2>
+<div class="row-board03">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:18%;" />
+			<col />
+		</colgroup>
+		<tbody>
+			<tr class="total">
+				<th scope="row">총 월 납입금</th>
+				<td>100,000,000 원</td>
+			</tr>
+			<tr>
+				<th scope="row">리스 이용금액</th>
+				<td>100,000,000 원</td>
+			</tr>
+			<tr>
+				<th scope="row">리스기간</th>
+				<td>36 개월</td>
+			</tr>
+			<tr>
+				<th scope="row">보증금 (00%)</th>
+				<td>0,000,000원 (30%)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<xmp class="xmp">
+<div class="row-board03">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:18%;" />
+			<col />
+		</colgroup>
+		<tbody>
+			<tr class="total">
+				<th scope="row">총 월 납입금</th>
+				<td>100,000,000 원</td>
+			</tr>
+			<tr>
+				<th scope="row">리스 이용금액</th>
+				<td>100,000,000 원</td>
+			</tr>
+			<tr>
+				<th scope="row">리스기간</th>
+				<td>36 개월</td>
+			</tr>
+			<tr>
+				<th scope="row">보증금 (00%)</th>
+				<td>0,000,000원 (30%)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</xmp>
+
+<h2 class="guide-title">list type3</h2>
+<div class="col-board01">
+	<span class="unit">단위 : 원</span>
+	<table>
+		<caption>오토리스 - 할부 이용조건 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:30%;" />
+			<col />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">구분</th>
+				<th scope="col">서류</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">개인</th>
+				<td>인감증명서, 인감도장, 주민등록등본, 신분증, 재산세납세증명원, 소득금액증명원, 자동이체용 통장사본</td>
+			</tr>
+			<tr>
+				<th scope="row">개인사업자</th>
+				<td>사업자등록증, 인감증명서, 인감도장, 주민등록등본, 자격증 또는 면허증, 신분증, 재산세납세증명원 또는 소득세납입증명서, 자동이체용 통장사본</td>
+			</tr>
+			<tr>
+				<th scope="row">법인사업자</th>
+				<td>사업자등록증, 법인인감증명서, 법인명판 또는 인감도장, 법인등기부등본, 재무제표, 자동이체용 통장사본, 주주명부(원본 or 원본대조필)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<xmp class="xmp">
+<div class="col-board01">
+	<span class="unit">단위 : 원</span>
+	<table>
+		<caption>오토리스 - 할부 이용조건 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:30%;" />
+			<col />
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">구분</th>
+				<th scope="col">서류</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">개인</th>
+				<td>인감증명서, 인감도장, 주민등록등본, 신분증, 재산세납세증명원, 소득금액증명원, 자동이체용 통장사본</td>
+			</tr>
+			<tr>
+				<th scope="row">개인사업자</th>
+				<td>사업자등록증, 인감증명서, 인감도장, 주민등록등본, 자격증 또는 면허증, 신분증, 재산세납세증명원 또는 소득세납입증명서, 자동이체용 통장사본</td>
+			</tr>
+			<tr>
+				<th scope="row">법인사업자</th>
+				<td>사업자등록증, 법인인감증명서, 법인명판 또는 인감도장, 법인등기부등본, 재무제표, 자동이체용 통장사본, 주주명부(원본 or 원본대조필)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</xmp>
+
+<h2 class="guide-title">form table</h2>
+<div class="form-board01">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="col"><label for="numChoice01">결제계좌번호</label></th>
+			</tr>
+			<tr>
+				<td>
+					<select id="numChoice01">
+						<option>선택</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">발급일자</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="issue-number">
+						<span>
+							<label for="issueNum01" class="invisible">발급일자 앞자리 입력</label>
+							<input type="text" id="issueNum01" />
+						</span>
+						<span>
+							<label for="issueNum02" class="invisible">발급일자 가운데자리 입력</label>
+							<input type="text" id="issueNum02" />
+						</span>
+						<span>
+							<label for="issueNum03" class="invisible">발급일자 뒷자리 입력</label>
+							<input type="text" id="issueNum03" />
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="numChoice02">결제계좌번호</label></th>
+			</tr>
+			<tr>
+				<td>
+					<select id="numChoice02">
+						<option>선택</option>
+					</select>
+					<ul class="dot-list01">
+						<li>한도확인을 위한 신용조회는 신용등급에 영향을 주지 않습니다.</li>
+						<li>KCB 신용조회 차단 서비스 이용 시 한도 조회 진행이 어려우므로 차단 해제 후 조회하시기 바랍니다.<br/>( 해제 신청 및 문의 : 1588-2486 )</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">유효기간</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="expiry-date">
+						<span class="keypad-wrap">
+							<input type="text" placeholder="MM" name="" />
+						</span>
+						<span class="keypad-wrap">
+							<input type="text" placeholder="YY" name="" />
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">주민등록번호</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="resident-number">
+						<span>
+							<label for="residentNum01" class="invisible">주민등록번호 앞 6자리 입력</label>
+							<input type="text" id="residentNum01" placeholder="앞 6자리" />
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="number02" class="invisible">주민등록번호 뒤7자리</label>
+							<input type="text" placeholder="뒤 7자리" id="number02" />
+						</span>
+					</div>
+					<label for="number03" class="invisible">입력</label>
+					<input type="text" placeholder="뒤 7자리" class="mt5" id="number03" />
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">사업자등록번호</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="licensee-number">
+						<span>
+							<label for="licensee01" class="invisible">사업자등록번호 앞 3자리 입력</label>
+							<input type="text" id="licensee01" placeholder="3자리">
+						</span>
+						<span class="desh">-</span>
+						<span>
+							<label for="licensee02" class="invisible">사업자등록번호 중간 2자리 입력</label>
+							<input type="text" id="licensee02" placeholder="2자리">
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="licensee03" class="invisible">사업자등록번호 뒤5자리</label>
+							<input type="text" placeholder="5자리" id="licensee03">
+						</span>
+					</div>
+					<div class="licensee-number btn">
+						<span>
+							<label for="licensee01" class="invisible">사업자등록번호 앞 3자리 입력</label>
+							<input type="text" id="licensee01" placeholder="3자리">
+						</span>
+						<span class="desh">-</span>
+						<span>
+							<label for="licensee02" class="invisible">사업자등록번호 중간 2자리 입력</label>
+							<input type="text" id="licensee02" placeholder="2자리">
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="licensee03" class="invisible">사업자등록번호 뒤5자리</label>
+							<input type="text" placeholder="5자리" id="licensee03">
+						</span>
+						<button type="button" class="btn-tb02">공인인증서인증</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="phoneNum01">전화번호</label></th>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="‘-’ 없이 입력해 주세요." id="phoneNum01" /></td>
+			</tr>
+			<tr>
+				<th scope="col">공개여부</th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="board-input">
+						<li>
+							<input type="radio" id="radio01" name="pick" class="common-radio" />
+							<label for="radio01">SMS</label>
+						</li>
+						<li>
+							<input type="radio" id="radio02" name="pick" class="common-radio" />
+							<label for="radio02">e-mail</label>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">자택주소</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="address-form">
+						<span>
+							<input type="text" id="loanForm02" placeholder="주소를 입력해주세요." />
+							<button type="button" class="btn-tb01">주소검색</button>
+						</span>
+						<input type="text" id="loanForm02" placeholder="상세 주소를 입력해 주세요." />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="emailForm01">E-mail</label></th>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="이메일을 입력해 주세요." id="emailForm01" /></td>
+			</tr>
+			<tr>
+				<th scope="col">휴대전화번호(인증시 휴대전화번호 입력 공통 통일)</th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="pick-list type02">
+						<li>
+							<input type="radio" id="pick1" name="pick2" checked="checked">
+							<label for="pick1">SKT</label>
+						</li>
+						<li>
+							<input type="radio" id="pick2" name="pick2">
+							<label for="pick2">KT</label>
+						</li>
+						<li>
+							<input type="radio" id="pick3" name="pick2">
+							<label for="pick3">LG U+</label>
+						</li>
+						<li>
+							<select>
+								<option>알뜰폰</option>
+							</select>
+						</li>
+					</ul>
+					<div class="identity-num">
+						<label class="invisible" for="identity-num">인증번호입력</label>
+						<span class="wrap">
+							<input type="text" placeholder="‘-’ 없이 입력 (예 : 01012345678)" id="identity-num">
+						</span>
+						<button type="button" class="btn-tb03 type01">인증번호 발송</button>
+					</div>
+					<div class="identity-num">
+						<label class="invisible" for="identity-num01">휴대전화번호입력</label>
+						<span class="wrap">
+							<span class="time">02:59</span>
+							<input type="text" placeholder="인증번호 6자리 번호 입력" id="identity-num01">
+						</span>
+						<button type="button" class="btn-tb03">확인</button>
+					</div>
+					<ul class="dot-list01">
+						<li>회원님의 본인명의의 휴대폰만 인증이 가능합니다.</li>
+						<li>고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<xmp class="xmp">
+<div class="form-board01">
+	<table>
+		<caption>조회서비스 - 중도상환시뮬레이션- 계산내역 테이블입니다.</caption>
+		<colgroup>
+			<col style="width:100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="col"><label for="numChoice01">결제계좌번호</label></th>
+			</tr>
+			<tr>
+				<td>
+					<select id="numChoice01">
+						<option>선택</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">발급일자</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="issue-number">
+						<span>
+							<label for="issueNum01" class="invisible">발급일자 앞자리 입력</label>
+							<input type="text" id="issueNum01" />
+						</span>
+						<span>
+							<label for="issueNum02" class="invisible">발급일자 가운데자리 입력</label>
+							<input type="text" id="issueNum02" />
+						</span>
+						<span>
+							<label for="issueNum03" class="invisible">발급일자 뒷자리 입력</label>
+							<input type="text" id="issueNum03" />
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="numChoice02">결제계좌번호</label></th>
+			</tr>
+			<tr>
+				<td>
+					<select id="numChoice02">
+						<option>선택</option>
+					</select>
+					<ul class="dot-list01">
+						<li>한도확인을 위한 신용조회는 신용등급에 영향을 주지 않습니다.</li>
+						<li>KCB 신용조회 차단 서비스 이용 시 한도 조회 진행이 어려우므로 차단 해제 후 조회하시기 바랍니다.<br/>( 해제 신청 및 문의 : 1588-2486 )</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">유효기간</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="expiry-date">
+						<span class="keypad-wrap">
+							<input type="text" placeholder="MM" name="" />
+						</span>
+						<span class="keypad-wrap">
+							<input type="text" placeholder="YY" name="" />
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">주민등록번호</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="resident-number">
+						<span>
+							<label for="residentNum01" class="invisible">주민등록번호 앞 6자리 입력</label>
+							<input type="text" id="residentNum01" placeholder="앞 6자리" />
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="number02" class="invisible">주민등록번호 뒤7자리</label>
+							<input type="text" placeholder="뒤 7자리" id="number02" />
+						</span>
+					</div>
+					<label for="number03" class="invisible">입력</label>
+					<input type="text" placeholder="뒤 7자리" class="mt5" id="number03" />
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">사업자등록번호</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="licensee-number">
+						<span>
+							<label for="licensee01" class="invisible">사업자등록번호 앞 3자리 입력</label>
+							<input type="text" id="licensee01" placeholder="3자리">
+						</span>
+						<span class="desh">-</span>
+						<span>
+							<label for="licensee02" class="invisible">사업자등록번호 중간 2자리 입력</label>
+							<input type="text" id="licensee02" placeholder="2자리">
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="licensee03" class="invisible">사업자등록번호 뒤5자리</label>
+							<input type="text" placeholder="5자리" id="licensee03">
+						</span>
+					</div>
+					<div class="licensee-number btn">
+						<span>
+							<label for="licensee01" class="invisible">사업자등록번호 앞 3자리 입력</label>
+							<input type="text" id="licensee01" placeholder="3자리">
+						</span>
+						<span class="desh">-</span>
+						<span>
+							<label for="licensee02" class="invisible">사업자등록번호 중간 2자리 입력</label>
+							<input type="text" id="licensee02" placeholder="2자리">
+						</span>
+						<span class="desh">-</span>
+						<span class="keypad-wrap">
+							<label for="licensee03" class="invisible">사업자등록번호 뒤5자리</label>
+							<input type="text" placeholder="5자리" id="licensee03">
+						</span>
+						<button type="button" class="btn-tb02">공인인증서인증</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="phoneNum01">전화번호</label></th>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="‘-’ 없이 입력해 주세요." id="phoneNum01" /></td>
+			</tr>
+			<tr>
+				<th scope="col">공개여부</th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="board-input">
+						<li>
+							<input type="radio" id="radio01" name="pick" class="common-radio" />
+							<label for="radio01">SMS</label>
+						</li>
+						<li>
+							<input type="radio" id="radio02" name="pick" class="common-radio" />
+							<label for="radio02">e-mail</label>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">자택주소</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="address-form">
+						<span>
+							<input type="text" id="loanForm02" placeholder="주소를 입력해주세요." />
+							<button type="button" class="btn-tb01">주소검색</button>
+						</span>
+						<input type="text" id="loanForm02" placeholder="상세 주소를 입력해 주세요." />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="col"><label for="emailForm01">E-mail</label></th>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="이메일을 입력해 주세요." id="emailForm01" /></td>
+			</tr>
+			<tr>
+				<th scope="col">휴대전화번호(인증시 휴대전화번호 입력 공통 통일)</th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="pick-list type02">
+						<li>
+							<input type="radio" id="pick1" name="pick2" checked="checked">
+							<label for="pick1">SKT</label>
+						</li>
+						<li>
+							<input type="radio" id="pick2" name="pick2">
+							<label for="pick2">KT</label>
+						</li>
+						<li>
+							<input type="radio" id="pick3" name="pick2">
+							<label for="pick3">LG U+</label>
+						</li>
+						<li>
+							<select>
+								<option>알뜰폰</option>
+							</select>
+						</li>
+					</ul>
+					<div class="identity-num">
+						<label class="invisible" for="identity-num">인증번호입력</label>
+						<span class="wrap">
+							<input type="text" placeholder="‘-’ 없이 입력 (예 : 01012345678)" id="identity-num">
+						</span>
+						<button type="button" class="btn-tb03 type01">인증번호 발송</button>
+					</div>
+					<div class="identity-num">
+						<label class="invisible" for="identity-num01">휴대전화번호입력</label>
+						<span class="wrap">
+							<span class="time">02:59</span>
+							<input type="text" placeholder="인증번호 6자리 번호 입력" id="identity-num01">
+						</span>
+						<button type="button" class="btn-tb03">확인</button>
+					</div>
+					<ul class="dot-list01">
+						<li>회원님의 본인명의의 휴대폰만 인증이 가능합니다.</li>
+						<li>고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</xmp>
+
+</div>
+</body>
+</html>

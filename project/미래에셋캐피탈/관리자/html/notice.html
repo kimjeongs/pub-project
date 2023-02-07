@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>목록 | 공지사항 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<div class="gnb">
+				<h1><a href="#"><img src="../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<div class="access">
+					<span><em>admin</em>님이 접속하셨습니다.</span>
+					<a href="#">로그아웃</a>
+					<a href="#">비밀번호변경</a>
+				</div>
+				<ul>
+					<li><a href="#">팝업관리</a></li>
+					<li><a href="#" class="active">게시판 관리</a></li>
+					<li><a href="#">상담/민원 관리 </a></li>
+					<li><a href="#">자동차 상품 관리 </a></li>
+					<li><a href="#">주식상품 관리</a></li>
+					<li><a href="#">부동산 상품 관리</a></li>
+					<li><a href="#">관리자 관리</a></li>
+					<li><a href="#">APP 관리</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div id="lnb" class="lnb">
+				<div class="title">
+					<em>notice board</em>
+					<h2>게시판 관리</h2>
+				</div>
+				<ul>
+					<li>
+						<a href="#">자주하는질문관리</a>
+					</li>
+					<li><a href="#">온라인약관관리</a></li>
+					<li class="active"><a href="#">공지사항관리</a></li>
+					<li><a href="#">이벤트관리</a></li>
+				</ul>
+			</div>
+			<div id="content" class="content-width">
+				<h3>공지사항관리</h3>
+				<div class="search-box">
+					<select style="width:136px;">
+						<option>전체</option>
+					</select>
+					<input type="text" id="requestCheck01" style="width:475px;" placeholder="검색어 입력" />
+					<button type="button" class="btn-inner">입력</button>
+					<button type="button" class="btn-inner">검색초기화</button>
+				</div>
+				<div class="col-board01">
+					<p class="count">총 15개</p>
+					<table>
+						<caption>공지사항 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:10%;" />
+							<col style="width:10%;" />
+							<col />
+							<col style="width:10%;" />
+							<col style="width:10%;" />
+							<col style="width:10%;" />
+							<col style="width:10%;" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">번호</th>
+								<th scope="col">제목</th>
+								<th scope="col">첨부파일</th>
+								<th scope="col">작성자</th>
+								<th scope="col">작성일</th>
+								<th scope="col">조회수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" id="check01" class="common-check no-txt"><label for="check01">선택1</label></td>
+								<td>1</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td><span class="file">첨부파일</span></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr class="check"><!-- 2018-07-10 -->
+								<td><input type="checkbox" id="check02" class="common-check no-txt" checked="checked"><label for="check02">선택1</label></td>
+								<td>2</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check03" class="common-check no-txt"><label for="check03">선택1</label></td>
+								<td>3</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check04" class="common-check no-txt"><label for="check04">선택1</label></td>
+								<td>4</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check05" class="common-check no-txt"><label for="check05">선택1</label></td>
+								<td>5</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check06" class="common-check no-txt"><label for="check06">선택1</label></td>
+								<td>6</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check07" class="common-check no-txt"><label for="check07">선택1</label></td>
+								<td>7</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check08" class="common-check no-txt"><label for="check08">선택1</label></td>
+								<td>8</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check09" class="common-check no-txt"><label for="check09">선택1</label></td>
+								<td>9</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="check10" class="common-check no-txt"><label for="check10">선택1</label></td>
+								<td>10</td>
+								<td class="txt-left"><a href="#">공지사항 제목입니다.</a></td>
+								<td></td>
+								<td>admin</td>
+								<td>2018-05-12</td>
+								<td>2,146</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn-right">
+					<button type="button" class="btn-type01">삭제</button>
+					<button type="button" class="btn-type02">등록</button>
+				</div>
+				<div class="paginate">
+					<a href="#" class="start">처음</a>
+					<a href="#" class="prev">이전</a>
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">7</a>
+					<a href="#">8</a>
+					<a href="#">9</a>
+					<a href="#">10</a>
+					<a href="#" class="next">다음</a>
+					<a href="#" class="end">끝</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			COPYRIGHT 2018 MIRAE ASSET CAPITAL CO., LTD. ALL RIGHTS RESERVED
+		</div>
+		<!-- //footer -->
+
+	</div>
+</body>
+</html>

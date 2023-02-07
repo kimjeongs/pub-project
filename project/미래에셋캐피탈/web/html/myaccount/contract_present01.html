@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>자동차금융(승인대기) | 계약신청현황(오토론/할부) | My Account - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/myaccount.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 단계별 보기/닫기
+			$('.limit_check').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.limit_check'));
+				(!$(this).closest('.limit_check').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target) // 단계별 보기
+				: comJs.comToggle.sectionClose($target); // 단계별 닫기
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+					
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">자동차금융</a></li>
+					<li>
+						<a href="#">오토론</a><!-- class="open" 추가시 하위메뉴 열림 -->
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">오토론</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">상품소개</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">상품소개</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="loan-detail-list">
+				<div class="detail-box">
+					<div class="left">
+						<em class="name">안녕하세요<br/>김미래 고객님</em>
+						<div class="number">
+							<ul>
+								<li><span>대출현황</span><strong><em>1</em>건</strong></li>
+								<li><span>계약신청현황</span><strong><em>1</em>건</strong></li>
+								<li><span>견적함</span><strong><em>2</em>건</strong></li>
+							</ul>
+						</div>
+						<span class="mem-modify"><button class="btn-tb01" type="button">회원정보변경</button></span>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="menu1 bg-none">
+								<a href="#">계약현황</a>
+							</li>
+							<li class="menu2 bg-none">
+								<a href="#">대출현황</a>
+							</li>
+							<li class="menu3">
+								<a href="#">상품서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li>
+											<a href="#" class="smenu active">자동차</a><!-- active 추가시 3뎁스 노출 -->
+											<div class="sub-smenu">
+												<ul>
+													<li><a href="#">견적함</a></li>
+													<li><a href="#">만기연장신청</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#" class="smenu">주식</a>
+											<div class="sub-smenu">
+												<ul>
+													<li><a href="#">일부상환신청</a></li>
+													<li><a href="#">만기연장신청</a></li>
+													<li><a href="#">대출해지신청</a></li>
+													<li><a href="#">당일대출취소신청</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">상품서비스</a>
+								</div>
+							</li>
+							<li class="menu4">
+								<a href="#">조회서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">상환스케줄</a></li>
+										<li><a href="#">납부예정금액</a></li>
+										<li><a href="#">납부내역조회</a></li>
+										<li><a href="#">연체내역조회</a></li>
+										<li><a href="#">입금계좌조회</a></li>
+										<li><a href="#">범칙금내역조회</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">조회서비스</a>
+								</div>
+							</li>
+							<li class="menu5">
+								<a href="#">결제서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">결제일변경</a></li>
+										<li><a href="#">중도상환예약</a></li>
+										<li><a href="#">결제계좌변경</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">결제서비스</a>
+								</div>
+							</li>
+							<li class="menu6">
+								<a href="#">발급서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">종료확인서</a></li>
+										<li><a href="#">대출약정서</a></li>
+										<li><a href="#">금융거래확인서</a></li>
+										<li><a href="#">거래내역확인서</a></li>
+										<li><a href="#">소득세신고용조회</a></li>
+										<li><a href="#">연체대금완납증명서</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">발급서비스</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content-width">
+
+				<div class="page-title-style type02">
+					<h2 class="page-title">계약신청현황</h2>
+					<p class="title-txt">고객님이 계약신청한 금융상품이 계약실행 될 수 있도록 관리합니다.</p>
+				</div>
+				
+				<div class="limit_check_wrap">
+					<div class="limit_check"><!-- class open추가시 레이어열림 -->
+						<h3>
+							<button type="button" class="btn-toggle" title="닫기">
+								서류등록
+								<em>심사완료</em>
+							</button>
+						</h3>
+						<div class="cont">
+							<div class="certificate-btn">
+								<p>원활한 서류 등록을 위해서는 등록된 공인인증서 인증이 필요합니다.</p>
+								<div>
+									<button type="button" class="btn-tb03">공인인증서 인증</button>
+									<button type="button" class="btn-tb03">공인인증서 등록</button>
+								</div>
+							</div>
+							<div class="approval-standby">
+								<strong>고객님께서 신청한 내용을 담당자가 확인중입니다.</strong>
+								<p>신청한 내용을 확인한 후 고객님의 연락처로 알려 드리겠습니다.</p>
+							</div>
+						</div>
+						<div class="cont"><!-- 개인 -->
+							<div class="contract-present">
+								<h4>온라인 확인서류</h4>
+								<ul class="list-type1">
+									<li>
+										<em class="check">신분증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">주민등록등본</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">재산세납세증명원</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em>소득금액증명원</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+								</ul>
+
+								<h4>고객등록서류</h4>
+								<ul class="list-type1 file">
+									<li>
+										<em class="check">차량매매계약서</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp01" />
+												<label for="fileUp01">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em class="check">원천징수영수증</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp02" />
+												<label for="fileUp02">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em>자동이체 통장사본</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+								</ul>
+								<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+
+								<h4>구매정보</h4>
+								<div class="customer-info-form">
+									<table>
+										<caption>계약신청현황 - 자동차금융 - 서류등록(개인) 구매정보 작성 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="loanForm011">대리점 명</label></th>
+												<td><input type="text" id="loanForm011" style="width:100%;" placeholder="예) 도이치모터스 성수 서비스센터" /></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="loanForm021">대리점 연락처</label></th>
+												<td><input type="text" id="loanForm021" style="width:100%;" placeholder="‘-’ 없이 입력 (예 : 01012345678)" /></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">제출하기</button>
+								</div>
+								<div class="approval-standby">
+									<strong>서류가 성공적으로 등록되었습니다.</strong>
+									<p>서류 확인 후 계약 실행 여부에 대해 고객님의 연락처로 알려 드리겠습니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="cont"><!-- 개인사업자 -->
+							<div class="contract-present">
+								<h4>온라인 확인서류</h4>
+								<ul class="list-type1">
+									<li>
+										<em class="check">신분증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">주민등록등본</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">사업자등록증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em>재산세납세증명원</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+									<li>
+										<em>부가가치세과세표준증명</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+									<li>
+										<em>지방세세목별과세증명원</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+								</ul>
+
+								<h4>고객등록서류</h4>
+								<ul class="list-type1 file">
+									<li>
+										<em class="check">차량매매계약서</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp01" />
+												<label for="fileUp01">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em class="check">자격증</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp02" />
+												<label for="fileUp02">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em>자동이체 통장사본</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+								</ul>
+								<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+
+								<h4>구매정보</h4>
+								<div class="customer-info-form">
+									<table>
+										<caption>계약신청현황 - 자동차금융 - 서류등록(개인사업자) 구매정보 작성 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="loanForm012">대리점 명</label></th>
+												<td><input type="text" id="loanForm012" style="width:100%;" placeholder="예) 도이치모터스 성수 서비스센터" /></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="loanForm022">대리점 연락처</label></th>
+												<td><input type="text" id="loanForm022" style="width:100%;" placeholder="‘-’ 없이 입력 (예 : 01012345678)" /></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">제출하기</button>
+							</div>
+							<div class="approval-standby">
+								<strong>서류가 성공적으로 등록되었습니다.</strong>
+								<p>서류 확인 후 계약 실행 여부에 대해 고객님의 연락처로 알려 드리겠습니다.</p>
+							</div>
+						</div>
+						<div class="cont"><!-- 법인사업자 -->
+							<div class="contract-present">
+								<h4>온라인 확인서류</h4>
+								<ul class="list-type1">
+									<li>
+										<em class="check">신분증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">사업자등록증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em class="check">법인등기부등본</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb02">다시입력</button>
+										</span>
+									</li>
+									<li>
+										<em>재무제표</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+									<li>
+										<em>부가가치세과세표준증명</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+									<li>
+										<em>지방세세목별과세증명원</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">정보입력</button>
+										</span>
+									</li>
+								</ul>
+
+								<h4>고객등록서류</h4>
+								<ul class="list-type1 file">
+									<li>
+										<em class="check">차량매매계약서</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp01" />
+												<label for="fileUp01">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em class="check">주주명부</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp02" />
+												<label for="fileUp02">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em>자동이체 통장사본</em>
+										<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+										<span class="r-btn">
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+								</ul>
+								<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+
+								<h4>연대보증인 서류</h4>
+								<ul class="list-type1">
+									<li>
+										<em class="check">신분증</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em class="check">인감증명서</em>
+										<span class="r-btn">
+											<button type="button" class="btn-tb01">미리보기</button>
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em>주민등록등본</em>
+										<span class="r-btn">
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+									<li>
+										<em>재산세납세증명원</em>
+										<span class="r-btn">
+											<span class="file-btn-type">
+												<input type="file" id="fileUp03" />
+												<label for="fileUp03">파일선택</label>
+											</span>
+										</span>
+									</li>
+								</ul>
+								<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+
+								<h4>구매정보</h4>
+								<div class="customer-info-form">
+									<table>
+										<caption>계약신청현황 - 자동차금융 - 서류등록(법인사업자) 구매정보 작성 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="loanForm013">대리점 명</label></th>
+												<td><input type="text" id="loanForm013" style="width:100%;" placeholder="예) 도이치모터스 성수 서비스센터" /></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="loanForm023">대리점 연락처</label></th>
+												<td><input type="text" id="loanForm023" style="width:100%;" placeholder="‘-’ 없이 입력 (예 : 01012345678)" /></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">제출하기</button>
+							</div>
+							<div class="approval-standby">
+								<strong>서류가 성공적으로 등록되었습니다.</strong>
+								<p>서류 확인 후 계약 실행 여부에 대해 고객님의 연락처로 알려 드리겠습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="limit_check_wrap">
+					<div class="limit_check"><!-- class open추가시 레이어열림 -->
+						<h3>
+							<button type="button" class="btn-toggle" title="닫기">
+								전자약정
+								<em>약정완료</em>
+							</button>
+						</h3>
+						<div class="cont">
+							<div class="customer-info-form mt50">
+								<table>
+									<caption>계약신청현황 - 전자약정 약정동의 확인, 전자서명 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:173px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">약정동의 재확인</th>
+											<td>
+												<div class="clause-box-wrap">
+													<ul>
+														<li>
+															<em class="active">
+																<a href="#" class="toggle-btn">약관보기</a>
+																<input type="checkbox" class="common-check" id="ClauseChock03">
+																<label for="ClauseChock03">신청 시 제출한 약관항목에 대해 최종 동의합니다.</label>
+															</em>
+															<!-- 하단 약관 -->
+															<ul class="detail-clause">
+																<li>
+																	<p class="active">
+																		///
+																	</p>
+																</li>
+															</ul>
+															<!-- //하단 약관 -->
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">주요 안내사항</th>
+											<td>
+												<div class="clause-box-wrap">
+													<ul>
+														<li>
+															<em class="active">
+																<a href="#" class="toggle-btn">약관보기</a>
+																<input type="checkbox" class="common-check" id="ClauseChock03_1">
+																<label for="ClauseChock03_1">주요 안내사항을 모두 확인하였습니다.</label>
+															</em>
+															<!-- 하단 약관 -->
+															<ul class="detail-clause">
+																<li>
+																	<p class="active">
+																		1.본인은 본 약정 대출기간 만기 시, 기한연장 신청을 하는 경우에 연장 가능여부, 연장 금리, 연장 기한, 보증인 입보 조건 등의 연장 조건은 본인의 대출금 상환 내역(연체 이력 포함) 및 연장 시점의 금융환경 등의 변화에 따라 최초 대출 조건과 다를 수 있음을 동의합니다.
+																	</p>
+																</li>
+																<li>
+																	<p class="active">
+																		2.근저당 설정 비용은 미래에셋 캐피탈에서 부담하기로 합니다. <br>
+																		(단 대출 종료 후 설정해지비용은 계약자가 부담합니다.)
+																	</p>
+																</li>
+																<li>
+																	<p class="active">
+																		3.1회차 월 납입금은 대출금 지급일로부터 첫 회차 납부일 까지 결과된 일수에 따라 약정서에 기재된 월 납입금 대비 증감될 수 있습니다.
+																	</p>
+																</li>
+																<li>
+																	<p class="active">
+																		4.대출실행일로부터 14일 이내 철회의 의사표시를 하고 원리금 및 부대비용(근저당설정비용, 인지세 등)을 상환함으로써 계약으로부터 탈퇴 할 수 있는 ‘대출 계약  철회권’을 행사 할 수 있습니다.
+																	</p>
+																</li>
+															</ul>
+															<!-- //하단 약관 -->
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">대출금 지급 및 수령 위임</th>
+											<td>
+												<div class="clause-box-wrap">
+													<ul>
+														<li>
+															<em class="active">
+																<a href="#" class="toggle-btn">약관보기</a>
+																<input type="checkbox" class="common-check" id="ClauseChock03_2">
+																<label for="ClauseChock03_2">대출금 지급 및 수령 위임에 관하여 동의합니다.</label>
+															</em>
+															<!-- 하단 약관 -->
+															<ul class="detail-clause">
+																<li>
+																	<p class="active">
+																		본인은 ‘판매회사’로부터 대상 물건을 정히 인수하였음을 확인합니다.본 약정에 의거 본인이 수령할 대출금에 대해서 아래 매도인(판매회사)의 계좌로 지급할 것 을 귀사에 위탁하며, 귀사가 해당 대출금을 송금한 시점에 본인이 수령한 것으로 확약합니다.
+																	</p>
+																</li>
+															</ul>
+															<!-- //하단 약관 -->
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h4>지급 계좌</h4>
+							<div class="customer-info-form">
+								<table>
+									<caption>계약신청현황 - 지급 계좌 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:173px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">금액</th>
+											<td>100,000,000 원</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="number01_1">예금주</label></th>
+											<td><input type="text" id="number01_1" /></td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="number01_2">은행명</label></th>
+											<td><input type="text" id="number01_2" /></td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="number01_3">계좌번호</label></th>
+											<td><input type="text" placeholder="‘-’ 없이 숫자만 입력" id="number01_3" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<h4>전자서명</h4>
+							<div class="customer-info-form"><!-- 개인 -->
+								<table>
+									<caption>계약신청현황 - 전자서명 - 주민등록번호 입력 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:173px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">주민등록번호</th>
+											<td>
+												<label for="number01" class="invisible">주민등록번호 앞 6자리 입력</label>
+												<input type="text" style="width:254px;" placeholder="앞 6자리" id="number01">
+												<span class="input-txt-line">-</span>
+												<span class="pop-keypad">
+													<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+													<label for="number02" class="invisible">주민등록번호 뒤7자리 입력</label>
+													<input type="text" style="width:254px;" placeholder="뒤 7자리" id="number02">
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="customer-info-form"><!-- 개인/법인 사업자 -->
+								<table>
+									<caption>계약신청현황 - 전자서명 - 사업자등록번호 입력 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:173px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">사업자등록번호</th>
+											<td>
+												<span class="pop-keypad">
+													<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+													<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+													<input type="text" style="width:180px;" placeholder="3자리" id="number01">
+													<span class="input-txt-line">-</span>
+													<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+													<input type="text" style="width:127px;" placeholder="2자리" id="number02">
+													<span class="input-txt-line">-</span>
+													<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+													<input type="text" style="width:180px;" placeholder="3자리" id="number03">
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">공인인증</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="limit_check_wrap">
+					<div class="limit_check"><!-- class open추가시 레이어열림 -->
+						<h3>
+							<button type="button" class="btn-toggle" title="닫기">
+								인수확인
+								<em></em>
+							</button>
+						</h3>
+						<div class="cont">
+							<h4>고객등록서류</h4>
+							<ul class="list-type1 file">
+								<li>
+									<em class="check">자동차등록증</em>
+									<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+									<span class="r-btn">
+										<button type="button" class="btn-tb01">미리보기</button>
+										<span class="file-btn-type">
+											<input type="file" id="fileUp05_1">
+											<label for="fileUp05_1">파일선택</label>
+										</span>
+									</span>
+								</li>
+							</ul>
+							<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">인수확인</button>
+							</div>
+							<div class="approval-standby">
+								<strong>서류가 성공적으로 등록되었습니다.</strong>
+								<p>고객님의 계약에 대한 사항은 My Account &gt; <a href="#">대출현황</a>에서 확인하실 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="btn-center">
+					<button type="button" class="btn-accept01">목록</button>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

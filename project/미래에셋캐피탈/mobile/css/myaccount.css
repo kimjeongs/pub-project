@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+
+/* 견적서 */
+.estimate-detail{overflow:hidden;border-bottom:7px solid #f4f4f4;text-align:center;}
+.top-area{padding:25px 15px 0;}
+.estimate-detail .date{display:block;padding-bottom:10px;font-size:13px;color:#999;}
+.estimate-detail .img{position:relative;display:block;width:300px;height:150px;margin:0 auto;}
+.estimate-detail .img img{width:100%;height:100%;}
+.estimate-detail .img a{position:absolute;right:50px;bottom:6px;display:inline-block;width:56px;height:56px;background:#ee8022;border-radius:100%;color:#fff;line-height:15px;padding-top:12px;}
+.estimate-detail .stit{display:block;font-weight:500;font-size:23px;color:#2d2d2d;line-height:100%;}
+.estimate-detail .info{display:block;padding:3px 0 0 0;font-size:13px;color:#999;}
+.estimate-detail .info .option {display: block;margin-top:4px;}
+.estimate-detail .totle{display:block;padding:25px 35px 6px 0;text-align:right;}
+.estimate-detail .totle em{display:inline-block;font-weight:500;}
+.estimate-detail dl{padding:10px 0;margin:0 15px;background:#f4f4f4;border-radius:3px;overflow:hidden;}
+.estimate-detail dl dt{float:left;padding:7px 0 6px 20px;text-align:left;color:#999;}
+.estimate-detail dl dd{padding:7px 20px 6px 0;text-align:right;color:#232323;}
+.estimate-detail dl dd.type1{padding:7px 20px 26px 0;}
+.estimate-detail .possibility{display:block;padding:8px 0 0 0;font-size:13px;color:#999;}
+.estimate-detail .possibility:before{content:'';display:inline-block;width:16px;height:16px;margin-right:7px;background:url('../img/comm/icon_notice.png') no-repeat;background-size:100%;vertical-align:-3px}
+.estimate-detail .btn-center{padding:20px 20px 30px;}
+.estimate-detail-list .btn-center{padding-top:20px;text-align:center;}
+.estimate-detail-list .btn-center button + button{margin-left:5px;}
+.btm-box .sticky-btn{position:fixed;left:0;bottom:0;z-index:2;margin-top:40px;}
+.row-board03 + .row-board03{margin-top:20px;}
+.btm-box{padding:31px 15px 100px;background:#f4f4f4;}
+.btm-box .box{padding:22px 33px 0;border:1px solid #ccc;border-radius:3px;background:#fff;}
+.btm-box .box em{display:block;padding:0 0 4px 0;font-size:13px;color:#686868;}
+.btm-box .box .form{display:block;position:relative;}
+.btm-box .box .form input{height:40px;padding: 0 30px 0 10px;}
+.btm-box .box .check{position:absolute;right:9px;top:16px;display:inline-block;width:10px;height:9px;background:url('../img/comm/icon_check03.png') no-repeat;background-size:100%;font-size:0;text-indent:-9999px;}
+.btm-box .box .btn-center{padding:20px 0 30px;}
+.btm-box .box .btn-center button span{height:40px;line-height:40px;}
+
+/* 견적함 */
+.estimate-list ul li{position:relative;overflow:hidden;padding:23px 0 0 0;min-height:150px;border-top:1px solid #ddd;}
+.estimate-list ul li:first-child{padding:0 0 0 0;border-top:0;min-height:130px;}
+.estimate-list ul li a{display:block;padding:0 180px 0 0;overflow:hidden;}
+.estimate-list ul li .stit{display:block;padding:0 0 7px 0;font-size:15px;}
+.estimate-list ul li strong{display:block;padding:0 0 4px 0;font-weight:400;font-size:13px;}
+.estimate-list ul li strong span{display:block;}
+.estimate-list ul li .car-img{position:absolute;right:10px;bottom:25px;display:inline-block;width:176px;height:90px;}
+.estimate-list ul li .car-img img{width:100%;height:100%;}
+.estimate-list ul li .expiration{display:block;font-size:13px;color:#686868;}
+.estimate-list ul li .expiration span{display:block;}
+.estimate-list ul li.disabled:after{content:'';position:absolute;left:0;top:0;display:inline-block;width:100%;height:100%;background:rgba(255,255,255,0.5);}
+.estimate-list .btn-more{margin-top:0;}
+
+/* 전체대출내역 */
+.guide-detail-box > ul > li{position:relative;padding:12px 10px 10px 10px;border-bottom:1px solid #ddd;}
+.guide-detail-box > ul > li:first-child{padding:12px 10px 10px 10px;}
+.guide-detail-box .tit-wrap{padding:0 22px 0 0;}
+.guide-detail-box .tit-wrap strong{display:inline-block;padding:0 0 9px 0;font-size:15px;font-weight:500;}
+.guide-detail-box .tit-wrap strong em{font-weight:400;}
+.guide-detail-box .tit-wrap a{display:inline-block;margin:0 0 0 15px;text-decoration:underline;color:#2469b0;font-size:13px;}
+.guide-detail-box .basic-info{font-size:13px;}
+.guide-detail-box .basic-info ul{color:#232323;}
+.guide-detail-box .basic-info ul li{padding:0 0 3px 0;}
+.guide-detail-box .basic-info em{display:inline-block;width:85px;color:#686868;}
+.guide-detail-box .basic-info a.view{display:inline-block;width:22px;height:15px;font-size:0;position:absolute;right:0;top:20px;background:url('../img/myaccount/bg_list_arw01.png') no-repeat;background-size:100%;}
+.guide-detail-box .basic-infoa a.view{background-position:0 -15px;}
+.guide-detail-box .detail{display:none;padding:10px 0 5px;color:#757575;line-height:24px;margin:0 0 5px 0;}
+.guide-detail-box .active + .detail {display:block;}
+.all-loan-detail .btn-center{padding-top:20px;text-align:center;}
+.all-loan-detail .btn-center button{width:auto !important;}
+
+/* 계약신청내용 */
+.pop-cont.type2 .estimate-detail{padding-bottom:40px;}
+.pop-cont.type2 .estimate-detail .top-area{padding-top:0;}
+.pop-cont.type2 .estimate-detail-list{padding:30px 15px 0;}
+.paper-submit-txt strong{display:block;padding:13px 0 4px 0;text-align:center;font-size:15px;font-weight:500;}
+.paper-submit-txt p{padding:0 0 10px 0;text-align:center;font-size:13px;color:#686868;}
+.paper-submit-wrap .row-board01 table th{padding: 15px 10px;color: #232323;}
+.paper-submit-wrap .row-board01 table td{text-align:right;}
+.paper-submit-wrap .row-board01 table th:before{content: '';background: url('../img/login/icon_login_check.png') no-repeat left top;background-size: 10px;overflow: hidden;display: inline-block;width: 10px;height: 9px;margin-right: 10px;}
+.paper-submit-wrap .row-board01 table th.selected:before {background-position: left -9px;}
+.take-over strong{display:block;padding:13px 0 4px 0;font-weight:500;font-size:15px;text-align:center;}
+.take-over p{font-size:13px;color:#686868;text-align:center;}
+.take-over em{display:block;padding:7px 0 10px 0;font-size:13px;color:#d83d20;text-align:center;}
+
+/* 사업자 등록증명 확인 */
+.business-number {overflow: hidden;}
+.business-number span{float:left;}
+.business-number .num01{width:calc(30% - 12px);width:-webkit-calc(30% - 12px);width:-moz-calc(30% - 12px);}
+.business-number .num02{width:calc(25% - 12px);width:-webkit-calc(25% - 12px);width:-moz-calc(25% - 12px);}
+.business-number .num03{width:calc(45% - 4px);width:-webkit-calc(45% - 4px);width:-moz-calc(45% - 4px);}
+.business-number .desh{width:14px;height:30px;text-align:center;color:#232323;margin-top:6px;}
+
+/* 개인정보 이용제공내역 */
+.info-detail h3{display:block;padding:40px 0 8px 0; font-size:15px; font-weight:400;}
+.info-detail h3:first-child{padding:0 0 8px 0;}
+.info-detail .col-board01 th, .info-detail .col-board01 td{vertical-align:top; padding:12px 10px;}
+
+/* 회원정보관리 */
+.member-leave a{display:block;margin:40px 0 10px 0;text-align:center;color:#686868;text-decoration:underline;font-size:13px;}
+.member-guide{overflow:hidden;padding:30px 0 14px 0;text-align:center;}
+.member-guide a{display:inline-block;font-size:13px;color:#686868;}
+.member-guide a + a:before{content:'';display:inline-block;width:1px;height:12px;margin:0 10px;background:#ddd;vertical-align:-2px;}
+.title-txt { display: block; color: #043b73; font-size: 15px; font-weight: 400; line-height: 21px; word-break: keep-all; }
+
+/* 마케팅활동동의 조회/철회 */
+.list-type1 {border-top:1px solid #2d2d2d;overflow:hidden;}
+.list-type1 li{display:table;width:100%;height: 37px; padding: 8px 0;border-bottom:1px solid #e7e7e7;}
+.list-type1 li em{display:table-cell;width:76%;padding:0 0 0 10px;color: #686868; font-size: 13px; font-weight: 400; line-height: 17px;vertical-align:middle;}
+.list-type1 li .r-btn{display:table-cell;padding-right:10px;vertical-align:middle;text-align:right;}
+.list-type1 li .r-btn .agree{display:inline-block;padding-left: 18px; background:url('../img/myaccount/icon_agree.png') no-repeat 0 -12px; background-size: 10px 25px;font-size: 12px; font-weight: 400;}
+.list-type1 li .r-btn .agree.check{background-position: 0 5px; color: #d83d20;}
+.sticky-btn-cont .sticky-btn {position:fixed;left:0;bottom:0;z-index:2;}
+
+
+/* 완료 페이지 */
+.complete-box {text-align:center;}
+.complete-box:before {content:''; display:block; width:140px; height:140px; margin:30px auto; background:url('../img/myaccount/bg_complete.png') no-repeat; background-size:140px auto;}
+.complete-box strong {display:block; font-size:18px; font-weight:500; line-height:22px;}
+.complete-box p {margin-top:15px; padding:0 40px; color:#686868;}
+.complete-box strong {display:block; font-size:18px; font-weight:500; line-height:22px;}
+.complete-box p {margin-top:15px; padding:0 35px; color:#686868;}
+.complete-box strong {display:block; font-size:18px; font-weight:500; line-height:24px;}
+.complete-box p {margin-top:15px; color:#686868;}
+
+/* 주식대출관리서비스 */
+.rule-list {border-top:1px solid #2d2d2d;}
+.rule-list li {overflow:hidden; padding:0 10px; border-bottom:1px solid #e7e7e7; line-height:52px;}
+.rule-list li .t-switch {float:left;}
+.rule-list li .btn-pdf {float:right;}
+
+.t-switch {position:relative; display:inline-block; padding:0 0 0 19px; color:#232323; font-size:13px; font-weight:400; vertical-align:middle;}
+.t-switch:before {content:''; position:absolute; left:0; top:50%; overflow:hidden; width:10px; height:8px; margin-top:-4px; background:url('../img/comm/icon_check02.png') no-repeat; background-size:10px auto;}
+.t-switch.checked:before {background-position:left -8px;}
+
+.btn-pdf {position:relative; display:inline-block; padding-left:19px; color:#0b5aa4; font-size:13px; vertical-align:middle;}
+.btn-pdf:before {content:''; position:absolute; left:0; top:50%; width:12px; height:13px; margin-top:-7px; background:url('../img/comm/icon_download.png') no-repeat; background-size:12px auto;}
+.btn-init {display:inline-block; width:18px; height:18px; background:url('../img/comm/icon_init.png') no-repeat; background-size:18px auto; font-size:0; line-height:0; vertical-align:middle;}
+
+.sum-box .input-btn input {padding-right:38px; text-align:right;}
+.sum-box .full-value {display:inline-block; padding:11px 0 0; color:#999; font-size:13px;}
+.result-box {padding:30px 0; background:#f7f7f7; text-align:center;}
+.result-box strong {color:#d83d20; font-weight:400;}
+.input-cont p {padding-bottom: 4px; color: #686868; font-size: 13px;font-weight: 400;}
+
+/* 비밀번호변경 */
+.form-board01 .keypad-wrap.type02 {width: 100%;}
+.certificate-btn-cont{overflow: hidden;}
+.certificate-btn-cont .resident-number{width:calc(100% - 103px); float:left;}
+.certificate-btn-cont .btn-tb02{float:right; padding:0 9px; min-width:98px;}
+
+/* 회원정보 관련 완료페이지 */
+.myaccount-finish{overflow:hidden;text-align:center;background:url('../img/comm/icon_completion.png') no-repeat center top; background-size:63px; margin-top:30px;}
+.myaccount-finish strong{display:inline-block; padding-top:97px;color:#0f0f0f;font-size:18px;font-weight:500;line-height:25px;}
+.myaccount-finish p{font-weight:400;color:#686868;margin-top:20px;}
+
+/* 결제서비스 */
+.btn-center.pd0 {padding-top:0;}
+.notice-list.payment-change{padding:8px 0 0 0;}
+
+/* 팝업 상세정보 */
+.car-detail-info {padding:11px 0 0 0;overflow:hidden;}
+.car-detail-info em{float:left;padding:0 0 3px 25px;font-size:13px;color:#686868;}
+.car-detail-info span{display:block;padding:0 0 3px 112px;text-align:left;color:#232323;font-size:13px;}
+
+/* 조회서비스 */
+.row-board02.my-pop{padding:0 15px;}
+.tit-th-type{display:block;padding: 15px 0 4px 0;text-align: left;font-size: 13px;color: #686868;font-weight: 400;}
+#content > .btn-center.type01{padding-top:20px;}
+#content > .btn-center.type01:first-child{margin-top:-30px;}
+.btn-center.type01 .btn-cont07 span{margin-left: 5px !important;}
+.select-date input {width: calc(100% - 140px); width: -webkit-calc(100% - 140px); width: -moz-calc(100% - 140px);}
+
+.customer-cont .customer-check-title.type2{border:none; margin-bottom:0; padding:30px 0 10px 0;}
+.customer-cont .customer-check-title.type2:first-child{padding-top:0;}
+.customer-cont .form-board01 table tr:first-child th{padding-top:0;}

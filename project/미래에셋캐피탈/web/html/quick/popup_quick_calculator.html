@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>대출계산기 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">대출계산기</strong>
+		</div>
+		<div class="pop-cont">
+			<p class="pop-cont-txt">대출상품별 월 상환액을 계산해드립니다.</p>
+			<div class="pop-cont-box pop-cont-box2">
+				<div class="customer-info-form">
+					<table>
+						<caption>대출계산기 - 입력 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:173px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="calculatorForm01">상품선택</label></th>
+								<td>
+									<select id="calculatorForm01" style="width: 100%;">
+										<option>선택</option>
+									</select>	
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">대출금리</th>
+								<td>3.4%</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="priceInput01">대출금액</label></th>
+								<td>
+									<div class="input-sum">
+										<input type="text" id="priceInput01" class="txt-right" style="width:170px;" placeholder="2,039,816,430"><span class="won">원</span>
+										<label for="priceInput02" class="invisible">금액 한글 표기란</label>
+										<input type="text" id="priceInput02" class="txt-right ml20" style="width:309px;" value="이십억이천삼천구백팔십일만육천사백삽십 원" disabled="disabled">
+										<span class="sum-list">
+											<a href="#">전액</a>
+											<a href="#">1000만</a>
+											<a href="#">100만</a>
+											<a href="#">10만</a>
+											<a href="#">5만</a>
+											<a href="#">1만</a>
+											<a href="#">정정</a>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">대출기간</th>
+								<td>
+									<ul class="pick-list">
+										<li>
+											<input type="radio" id="pick1" name="pick1">
+											<label for="pick1">12개월</label>
+										</li>
+										<li>
+											<input type="radio" id="pick2" name="pick1">
+											<label for="pick2">24개월</label>
+										</li>
+										<li>
+											<input type="radio" id="pick3" name="pick1" checked="checked">
+											<label for="pick3">36개월</label>
+										</li>
+										<li>
+											<input type="radio" id="pick4" name="pick1">
+											<label for="pick4">48개월</label>
+										</li>
+										<li>
+											<input type="radio" id="pick5" name="pick1">
+											<label for="pick5">60개월</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn-center">
+					<button type="button" class="btn-popup02">계산하기</button>
+				</div>
+				<div class="result">
+					<em class="stit02">입력정보</em>
+					<div class="row-list01">
+						<table>
+							<caption>입력정보 테이블입니다.</caption>
+							<colgroup>
+								<col style="width:268px;">
+								<col style="width:82%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">대출금액</th>
+									<td>10,000,000 원</td>
+								</tr>
+								<tr>
+									<th scope="row">대출금리</th>
+									<td>3.4 %</td>
+								</tr>
+								<tr>
+									<th scope="row">대출기간</th>
+									<td>00 개월</td>
+								</tr>
+								<tr>
+									<th scope="row">월납입금</th>
+									<td>1,000,000 원</td>
+								</tr>
+								<tr>
+									<th scope="row">총납입이자</th>
+									<td>1,000,000 원</td>
+								</tr>
+								<tr>
+									<th scope="row">총상환금액</th>
+									<td>5,000,000 원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<em class="stit02">계산하기</em>
+					<div class="col-board01">
+						<table>
+							<caption>계산하기 테이블입니다.</caption>
+							<colgroup>
+								<col style="width:100px;" />
+								<col />
+								<col />
+								<col />
+								<col />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">회차</th>
+									<th scope="col">월납입금</th>
+									<th scope="col">원금</th>
+									<th scope="col">이자</th>
+									<th scope="col">잔금</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td class="txt-right">1,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="txt-right">1,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="txt-right">1,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td class="txt-right">1,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td class="txt-right">1,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+									<td class="txt-right">1,000,000,000</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p class="notice-list">실 계약 금리는 고객님의 조건에 따라 차이가 있을 수 있습니다.</p>
+					<div class="btn-center">
+						<button type="button" class="btn-popup01">스탁론 더 알아보기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

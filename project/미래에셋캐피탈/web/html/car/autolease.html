@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>견적요청하기 | 견적신청하기 | 오토리스 | 자동차금융 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/car.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.estimate-cont .brand-list, .estimate-cont .model-list').on('click', 'a', function(e){
+				e.preventDefault();
+				$(this).parent().addClass('selected').siblings().removeClass('selected');
+			});
+
+			// 단계별 보기/닫기
+			$('.box-estimate').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.estimate-section'));
+				(!$(this).closest('.estimate-section').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target)
+				: comJs.comToggle.sectionClose($target);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+					
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">자동차금융</a></li>
+					<li>
+						<a href="#">오토론</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">오토론</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">상품소개</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">상품소개</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="estimate-inner active">
+				<div class="estimate-group">
+					<div class="group-inner">
+						<div class="estimate-none">
+							<strong>나를 위한 맞춤 차!<br>어떤 차를 원하시나요?</strong>
+							<p>미래에셋캐피탈에서 고객님께 최적화된<br>구매방법을 찾아보세요.</p>
+						</div>
+					</div>
+				</div>
+				<div class="content-width">
+					<div class="box-estimate">
+						<!-- 브랜드 -->
+						<div class="estimate-section open"><!-- class open추가시 내용열림 -->
+							<h2><button type="button" class="btn-toggle" title="브랜드 닫기">브랜드 <em>BMW</em></button></h2>
+							<div class="estimate-cont">
+								<ul class="brand-list">
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="BMW"></span> BMW</a></li>
+									<li class="selected"><a href="#"><span><img src="../../img/car/bmw.png" alt="아우디"></span> 아우디</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="벤츠"></span> 벤츠</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="폭스바겐"></span> 폭스바겐</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="미니"></span> 미니</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="랜드로버"></span> 랜드로버</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="캐달락"></span> 캐달락</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="BMW"></span> BMW</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="아우디"></span> 아우디</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="벤츠"></span> 벤츠</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="폭스바겐"></span> 폭스바겐</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="미니"></span> 미니</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="랜드로버"></span> 랜드로버</a></li>
+									<li><a href="#"><span><img src="../../img/car/bmw.png" alt="캐달락"></span> 캐달락</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //브랜드 -->
+
+						<!-- 모델 -->
+						<div class="estimate-section open"><!-- class open추가시 내용열림 -->
+							<h2><button type="button" class="btn-toggle" title="모델 닫기">모델 <em>3-series</em></button></h2><!-- 단계별 보기 비활성화시 disabled="disabled" 추가 -->
+							<div class="estimate-cont">
+								<ul class="model-list">
+									<li>
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="3-series">
+											<strong>3-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 33만원</em>
+										</a>
+									</li>
+									<li class="selected">
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="5-series">
+											<strong>5-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 56만원</em>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="7-series">
+											<strong>7-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 57만원</em>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="3-series">
+											<strong>3-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 33만원</em>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="5-series">
+											<strong>5-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 56만원</em>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="../../img/car/s_car.png" alt="7-series">
+											<strong>7-series</strong>
+											<span>2,670만원~4,410만원</span><!-- 2018-06-28-수정 -->
+											<em>월 57만원</em>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //모델 -->
+
+						<!-- 등급 -->
+						<div class="estimate-section open"><!-- class open추가시 내용열림 -->
+							<h2><button type="button" class="btn-toggle" title="등급 닫기">등급 <em>320d Efficient Dynamics</em></button></h2><!-- 단계별 보기 비활성화시 disabled="disabled" 추가 -->
+							<div class="estimate-cont">
+								<ul class="grade-list type01">
+									<li>
+										<span>
+											<input type="radio" id="pick01" name="pick" class="common-radio">
+											<label for="pick01">320d Efficient Dynamics</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="radio" id="pick02" name="pick" class="common-radio">
+											<label for="pick02">320d (A/T)</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="radio" id="pick03" name="pick" class="common-radio">
+											<label for="pick03">320d Efficient Dynamics</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="radio" id="pick04" name="pick" class="common-radio">
+											<label for="pick04">320d (A/T)</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="radio" id="pick05" name="pick" class="common-radio">
+											<label for="pick05">320d Efficient Dynamics</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="radio" id="pick06" name="pick" class="common-radio">
+											<label for="pick06">320d (A/T)</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //등급 -->
+
+						<!-- 옵션 -->
+						<div class="estimate-section open"><!-- class open추가시 내용열림 -->
+							<h2><button type="button" class="btn-toggle" title="옵션 닫기">옵션 <em>인조가죽시트 / 15인치 알로이휠 & 타이어</em></button></h2><!-- 단계별 보기 비활성화시 disabled="disabled" 추가 -->
+							<div class="estimate-cont">
+								<ul class="grade-list type02">
+									<li>
+										<span>
+											<input type="checkbox" id="check01" class="common-check">
+											<label for="check01">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="checkbox" id="check03" class="common-check">
+											<label for="check03">열선 스티어링 휠(가죽 스티어링 휠 & 변속기 노브 포함)</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="checkbox" id="check04" class="common-check">
+											<label for="check04">15인치 알로이 휠 & 타이어</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+									<li>
+										<span>
+											<input type="checkbox" id="check05" class="common-check">
+											<label for="check05">하이패스 시스템</label>
+										</span>
+										<em>0,000,000원</em>
+									</li>
+								</ul>
+								<div class="btn-center mt30"><!-- 2018-06-28 -->
+									<button type="button" class="btn-accept04">선택완료</button>
+								</div>
+							</div>
+						</div>
+						<!-- //옵션 -->
+
+						<!-- 결제방식 -->
+						<!-- 2018-06-26-수정 -->
+						<div class="estimate-section open"><!-- class open추가시 내용열림 -->
+							<h2><button type="button" class="btn-toggle" title="결제방식 닫기">결제방식 <em>36개월 / 보증금 30% / 선납금 30% / 20,000km / 6개월 내</em></button></h2> <!-- 단계별 보기 비활성화시 disabled="disabled" 추가 -->
+							<div class="estimate-cont">
+               					 <div class="payment-plan">
+									<strong>리스기간</strong>
+									<div>
+										<ul class="pick-list">
+											<li>
+												<input type="radio" id="pick1" name="radio1">
+												<label for="pick1">12개월</label>
+											</li>
+											<li>
+												<input type="radio" id="pick2" name="radio1">
+												<label for="pick2">24개월</label>
+											</li>
+											<li>
+												<input type="radio" id="pick3" name="radio1" checked="checked">
+												<label for="pick3">36개월</label>
+											</li>
+											<li>
+												<input type="radio" id="pick4" name="radio1">
+												<label for="pick4">48개월</label>
+											</li>
+											<li>
+												<input type="radio" id="pick5" name="radio1">
+												<label for="pick5">60개월</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="payment-plan">
+									<strong>
+										보증금
+										<div class="tooltip pop">
+											<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+											<div class="box" style="width:440px;">
+												<strong>보증금 안내</strong>
+												<p class="ctext">차량 반납 시 보증금은 전액 환불됩니다.<br>(중도해지 또는 만기일을 경과하여 반납할 경우 중도해지수수료,<br>반환 지연금, 과태로 미수금 등을 차감한 후 환불 가능)</p>
+											</div>
+										</div>
+									</strong>
+									<ul class="pick-list">
+					                  	<li>
+					                  		<input type="radio" id="pick0001" name="radio7">
+					                  		<label for="pick0001">0%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0002" name="radio7">
+					                  		<label for="pick0002">10%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0003" name="radio7">
+					                  		<label for="pick0003">20%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0004" name="radio7" checked="checked">
+					                  		<label for="pick0004">30%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0005" name="radio7">
+					                  		<label for="pick0005">40%</label>
+					                  	</li>
+				                  	</ul>
+								</div>
+								<div class="payment-plan">
+									<strong>
+										선납금
+										<div class="tooltip pop">
+											<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+											<div class="box" style="width:440px;">
+												<strong>선납금 안내</strong>
+												<p class="ctext">만기 차량 반납 시 선납금은 환불되지 않습니다. 중도 해지할 경우<br>선납금은 중도해지수수료 및 인수비용으로 충당될 수 있으며,<br>중도 해지 시기에 따라 선납금 환불 여부가 달라질 수 있습니다.<br>(중도 해지 또는 만기일을 경과하여 반납할 경우 중도해지수수료,<br>반환 지연금, 과태료 미수금 등을 차감한 후 환불 여부 결정)</p>
+											</div>
+										</div>
+									</strong>
+									<ul class="pick-list">
+					                  	<li>
+					                  		<input type="radio" id="pick0001" name="radio8" checked="checked">
+					                  		<label for="pick0001">0%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0002" name="radio8">
+					                  		<label for="pick0002">10%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0003" name="radio8">
+					                  		<label for="pick0003">20%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0004" name="radio8">
+					                  		<label for="pick0004">30%</label>
+					                  	</li>
+					                  	<li>
+					                  		<input type="radio" id="pick0005" name="radio8">
+					                  		<label for="pick0005">40%</label>
+					                  	</li>
+				                  	</ul>
+				                  	 <p class="txt">초기납부 금액(보증금+선납금) <span>2,000,000원</span></p>
+								</div>
+								<div class="payment-plan">
+				                  <strong>잔존가치</strong>
+				                  <ul class="pick-list">
+				                  	<li>
+				                  		<input type="radio" id="pick0001" name="radio9">
+				                  		<label for="pick0001">0%</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0002" name="radio9">
+				                  		<label for="pick0002">10%</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0003" name="radio9">
+				                  		<label for="pick0003">20%</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0004" name="radio9" checked="checked">
+				                  		<label for="pick0004">30%</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0005" name="radio9">
+				                  		<label for="pick0005">40%</label>
+				                  	</li>
+				                  </ul>
+				                  <p class="txt">리스기간 종료 시 잔여 리스 원금  <span>0,000,000원</span></p>
+				                </div>
+				                
+                				<div class="payment-plan">
+									<strong>연간 운행거리</strong>
+									<div>
+					                    <ul class="customer-pick-list type03">
+					                      <li>
+					                        <span>
+					                          <input id="radio01" name="radio4" type="radio" class="common-radio">
+					                          <label for="radio01">20,000km</label>
+					                        </span>
+					                      </li>
+					                      <li>
+					                        <span>
+					                          <input id="radio02" name="radio4" type="radio" class="common-radio" checked="checked">
+					                          <label for="radio02">30,000km</label>
+					                        </span>
+					                      </li>
+					                      <li>
+					                        <span>
+					                          <input id="radio03" name="radio4" type="radio" class="common-radio">
+					                          <label for="radio03">40,000km</label>
+					                        </span>
+					                      </li>
+					                    </ul>
+									</div>
+								</div>
+				                <div class="payment-plan">
+				                  <strong>차량구입 예정일</strong>
+				                  <ul class="pick-list">
+				                  	<li>
+				                  		<input type="radio" id="pick0001" name="radio6">
+				                  		<label for="pick0001">1개월 내</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0002" name="radio6">
+				                  		<label for="pick0002">3개월 내</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0003" name="radio6" checked="checked">
+				                  		<label for="pick0003">6개월 내</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0004" name="radio6">
+				                  		<label for="pick0004">6개월 이후</label>
+				                  	</li>
+				                  	<li>
+				                  		<input type="radio" id="pick0005" name="radio6">
+				                  		<label for="pick0005">예정일 없음</label>
+				                  	</li>
+				                  </ul>
+				                </div>
+				                <div class="btn-center mt30"><!-- 2018-06-28 -->
+									<button type="button" class="btn-accept04">선택완료</button>
+								</div>
+							</div>
+						</div>
+						<!-- //2018-06-26-->
+						<!-- //결제방식 -->
+					</div>
+
+					<!-- 차량정보 영역 -->
+					<div class="estimate-group result">
+						<div class="group-inner">
+							<div class="estimate-result">
+								<div class="car-img"><img src="../../img/car/b_car.png" alt="BMW 3-Series"></div>
+								<div class="result-l">
+									<strong class="brand-model">BMW 3-Series</strong>
+									<p class="txt-grade">320i M Sport Package (A/T)<br>인조가죽시트 / 하이패스 시스템</p>
+								</div>
+								<div class="result-r">
+									<ul>
+										<li><strong>월 납입금</strong> <em class="t-point">562,120 원</em></li>
+										<li><strong>차량가</strong> <em>1,354,320,000 원</em></li>
+									</ul>
+									<p class="txt-loan">대출이자율  4.1%  /  예상혜택  1,760,000원</p>
+									<div class="btn-area"><a href="#">상세보기</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //차량정보 영역 -->
+
+					<div class="btn-center">
+						<button type="button" class="btn-accept01 dim">견적 요청하기</button><!-- 버튼비활성화시 class dim ,  tabindex="-1" 추가 -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 최근 견적 -->
+			<div id="quick-menu">
+				<a href="#" class="toggle-btn">최근 견적 보기</a>
+				<div>
+					<fieldset class="search">
+						<legend>최근 견적 검색</legend>
+						<label for="searchInput" class="invisible">검색어 입력</label>
+						<input type="text" id="searchInput">
+						<a href="#" class="search-btn" tabindex="-1">검색</a>
+					</fieldset>
+					<strong class="quick-tit">최근 견적</strong>
+					<ul class="model-list">
+						<li>
+							<a href="#" tabindex="-1">
+								<img src="../../img/car/s_car.png" alt="5-series">
+								<strong>BMW 5-series</strong>
+								<span>520i M Sport Package (A/T)<br>2,454,320,000원</span>
+								<em>월 452,312원</em>
+							</a>
+						</li>
+						<li>
+							<a href="#" tabindex="-1">
+								<img src="../../img/car/s_car.png" alt="5-series">
+								<strong>BMW 5-series</strong>
+								<span>520i M Sport Package (A/T)<br>2,454,320,000원</span>
+								<em>월 452,312원</em>
+							</a>
+						</li>
+						<li>
+							<a href="#" tabindex="-1">
+								<img src="../../img/car/s_car.png" alt="5-series">
+								<strong>BMW 5-series</strong>
+								<span>520i M Sport Package (A/T)<br>2,454,320,000원</span>
+								<em>월 452,312원</em>
+							</a>
+						</li>
+					</ul>
+					<a href="#" class="toggle-btn">최근 견적 닫기</a>
+				</div>
+			</div>
+			<!-- //최근 견적 -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

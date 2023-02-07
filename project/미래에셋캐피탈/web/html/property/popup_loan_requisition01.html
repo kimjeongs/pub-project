@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>인감증명진위여부 확인 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/property.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">인감증명 진위여부 확인</strong>
+		</div>
+		<div class="pop-cont type1">
+			<div class="customer-info-form">
+				<table>
+					<caption>인감증명진위여부 확인 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:194px;" />
+						<col />
+					</colgroup>
+					<tbody>
+						<!-- 2018-08-10-삭제
+						<tr>
+							<th scope="row">주민등록번호</th>
+							<td>
+								<label class="invisible" for="num01">주민등록번호 앞6자리 입력</label>
+								<input type="text" id="num01" style="width:226px;" placeholder="앞 6자리" />
+								<span class="input-txt-line">-</span>
+								<span class="pop-keypad">
+									<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" class="mCS_img_loaded"></a></span>
+									<label for="num02" class="invisible">주민등록번호 뒤7자리 입력</label>
+									<input type="text" style="width:227px;" placeholder="뒤 7자리" id="num02">
+								</span>
+							</td>
+						</tr>	
+						-->
+						<tr>
+							<th scope="row">발급일자</th>
+							<td>
+								<label class="invisible" for="day01">발급일자 연도 선택</label>
+								<select id="day01" style="width:140px;">
+									<option>2018</option>
+								</select>
+								<span class="input-day-area">년</span>
+								<label class="invisible" for="day02">발급일자 월 선택</label>
+								<select id="day02" style="width:127px;">
+									<option>4</option>
+								</select>
+								<span class="input-day-area">월</span>
+								<label class="invisible" for="day03">발급일자 일 선택</label>
+								<select id="day03" style="width:127px;">
+									<option>30</option>
+								</select>
+								<span class="input-day-area">일</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">문서번호</th>
+							<td>
+								<label class="invisible" for="formNum01">문서번호 앞번호 입력</label>
+								<input type="text" id="formNum01" style="width:158px;" />
+								<span class="input-txt-line">-</span>
+								<label class="invisible" for="formNum02">문서번호 중간번호 입력</label>
+								<input type="text" id="formNum02" style="width:158px;" />
+								<span class="input-txt-line">-</span>
+								<label class="invisible" for="formNum03">문서번호 끝번호 입력</label>
+								<input type="text" id="formNum03" style="width:158px;" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">발급기관</th>
+							<td>
+								<label class="invisible" for="formNum04">발급기관 시/도 선택</label>
+								<select id="formNum04" style="width:252px;">
+									<option>시/도</option>
+								</select>
+								<label class="invisible" for="formNum05">발급기관 구/군 선택</label>
+								<select id="formNum05" class="ml8" style="width:252px;">
+									<option>구/군</option>
+								</select>
+							</td>
+						</tr>
+						<!-- 2018-08-10-추가 -->
+						<tr>
+							<th scope="row">사업자등록번호</th>
+							<td>
+								<span class="pop-keypad">
+									<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드"></a></span>
+									<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+									<input type="text" style="width:144px;" placeholder="3자리" id="number01">
+									<span class="input-txt-line">-</span>
+									<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+									<input type="text" style="width:144px;" placeholder="2자리" id="number02">
+									<span class="input-txt-line">-</span>
+									<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+									<input type="text" style="width:144px;" placeholder="3자리" id="number03">
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">주민등록번호</th>
+							<td>
+								<label class="invisible" for="num01">주민등록번호 앞6자리 입력</label>
+								<input type="text" id="num01" style="width:226px;" placeholder="앞 6자리" />
+								<span class="input-txt-line">-</span>
+								<span class="pop-keypad">
+									<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" class="mCS_img_loaded"></a></span>
+									<label for="num02" class="invisible">주민등록번호 뒤7자리 입력</label>
+									<input type="text" style="width:227px;" placeholder="뒤 7자리" id="num02">
+								</span>
+							</td>
+						</tr>	
+						<tr>
+							<th scope="row"><label for="select01">인증서 목록</label></th>
+							<td>
+								<select id="select01" style="width: 100%;">
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="pw">인증서 비밀번호</label></th>
+							<td>
+								<input type="password" id="pw">
+							</td>
+						</tr>
+						<!-- 2018-08-10 -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">입력</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

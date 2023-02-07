@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>팝업관리 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<div class="gnb">
+				<h1><a href="#"><img src="../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<div class="access">
+					<span><em>admin</em>님이 접속하셨습니다.</span>
+					<a href="#">로그아웃</a>
+					<a href="#">비밀번호변경</a>
+				</div>
+				<ul>
+					<li><a href="#" class="active">팝업관리</a></li>
+					<li><a href="#">게시판 관리</a></li>
+					<li><a href="#">상담/민원 관리 </a></li>
+					<li><a href="#">자동차 상품 관리 </a></li>
+					<li><a href="#">주식상품 관리</a></li>
+					<li><a href="#">부동산 상품 관리</a></li>
+					<li><a href="#">관리자 관리</a></li>
+					<li><a href="#">APP 관리</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="lnb">
+				<div class="title">
+					<em>popup setting</em>
+					<h2>팝업 관리</h2>
+				</div>
+				<ul>
+					<li class="active"><a href="#">PC팝업관리</a></li>
+					<li><a href="#">Mobile팝업관리</a></li>
+				</ul>
+			</div>
+			<div class="content-width">
+				<h3>팝업관리</h3>
+				<div class="row-board01">
+					<table>
+						<caption>팝업관리 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:160px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="writeForm01">팝업명</label></th>
+								<td>
+									<input type="text" id="writeForm01"/>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">노출기간</th>
+								<td>
+									<div class="period">
+										<span class="calendar">
+											<a href="#">날짜선택</a>
+											<label for="p01" class="invisible">시작날짜</label>
+											<input type="text" id="p01" placeholder="2018.07.03" style="width:110px;" />
+										</span>
+										<label for="p02" class="invisible">시간 선택</label>
+										<select id="p02" class="time">
+											<option>00시</option>
+										</select>
+										<label for="p03" class="invisible">분 선택</label>
+										<select id="p03" class="time">
+											<option>00분</option>
+										</select>
+										<span class="mark">~</span>
+										<span class="calendar">
+											<a href="#">날짜선택</a>
+											<label for="p04" class="invisible">종료날짜</label>
+											<input type="text" id="p04" placeholder="2018.07.03" style="width:110px;" />
+										</span>
+										<label for="p05" class="invisible">시간 선택</label>
+										<select id="p05" class="time">
+											<option>00시</option>
+										</select>
+										<label for="p06" class="invisible">분 선택</label>
+										<select id="p06" class="time">
+											<option>00분</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">노출여부</th>
+								<td>
+									<ul class="board-input">
+										<li>
+											<input type="radio" id="radio01" name="pick" class="common-radio"  checked="checked" />
+											<label for="radio01">노출</label>
+										</li>
+										<li>
+											<input type="radio" id="radio02" name="pick" class="common-radio" />
+											<label for="radio02">비노출</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">팝업크기 </th>
+								<td>
+									<div class="input-cont">
+										<label for="p07">가로</label>
+										<input type="text" id="p07" style="width:90px;" placeholder="1920" />
+										<span>Pixel</span>
+										<span class="mark">*</span><!-- 2018-07-10 -->
+										<label for="p08">세로</label>
+										<input type="text" id="p08" style="width:90px;" placeholder="1080" />
+										<span>Pixel</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">팝업위치</th>
+								<td>
+									<div class="input-cont">
+										<label for="p09">가로</label>
+										<input type="text" id="p09" style="width:90px;" placeholder="1920" />
+										<span>Pixel</span>
+										<span class="mark">*</span><!-- 2018-07-10 -->
+										<label for="p10">세로</label>
+										<input type="text" id="p10" style="width:90px;" placeholder="1080" />
+										<span>Pixel</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">버전관리</th>
+								<td><button type="button" class="btn-inner">버전보기</button></td>
+							</tr>
+							<tr>
+								<th scope="row">팝업내용</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="3">팝업정보</th>
+								<td>
+									<em class="stit">이미지</em>
+									<div class="file-input" style="width:500px;">
+										<input type="file" id="fileUp02" />
+										<label for="fileUp02">C:\Users\plan\Documents\주민등록증.jpg<span>파일첨부</span></label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<em class="stit">대체텍스트</em>
+									<input type="text" style="width:450px;" name="" />
+									<button type="button" class="btn-tb01">추가</button>
+									<button type="button" class="btn-tb02">삭제</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<em class="stit">노출순위</em>
+									<input type="text" style="width:100px;" name="" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="btn-right">
+					<button type="button" class="btn-type03 left">미리보기</button>
+					<button type="button" class="btn-type01">취소</button>
+					<button type="button" class="btn-type02">등록</button>
+				</div>
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			COPYRIGHT 2018 MIRAE ASSET CAPITAL CO., LTD. ALL RIGHTS RESERVED
+		</div>
+		<!-- //footer -->
+
+	</div>
+</body>
+</html>

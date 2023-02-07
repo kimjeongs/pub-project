@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>공통코드관리 | 관리자관리 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<div class="gnb">
+				<h1><a href="#"><img src="../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<div class="access">
+					<span><em>admin</em>님이 접속하셨습니다.</span>
+					<a href="#">로그아웃</a>
+					<a href="#">비밀번호변경</a>
+				</div>
+				<ul>
+					<li><a href="#">팝업관리</a></li>
+					<li><a href="#">게시판 관리</a></li>
+					<li><a href="#">상담/민원 관리 </a></li>
+					<li><a href="#">자동차 상품 관리 </a></li>
+					<li><a href="#">주식상품 관리</a></li>
+					<li><a href="#">부동산 상품 관리</a></li>
+					<li><a href="#" class="active">관리자 관리</a></li>
+					<li><a href="#">APP 관리</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div id="lnb" class="lnb">
+				<div class="title">
+					<em>Admin</em>
+					<h2>관리자관리</h2>
+				</div>
+				<ul>
+					<li><a href="#">관리자관리</a></li>
+					<li class="active"><a href="#">공통코드관리</a></li>
+				</ul>
+			</div>
+			<div id="content" class="content-width">
+				<h3>공통코드관리</h3>
+				<div class="row-board01">
+					<table>
+						<caption>팝업관리 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:160px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="writeForm01">코드</label></th>
+								<td>
+									<input type="text" id="writeForm01" placeholder="FQ">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm02">코드이름</label></th>
+								<td>
+									<input type="text" id="writeForm02" placeholder="자주하는 질문">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">사용유무 </th>
+								<td>
+									<ul class="board-input">
+										<li>
+											<input type="radio" id="radio01" name="pick" class="common-radio" checked="checked">
+											<label for="radio01">사용</label>
+										</li>
+										<li>
+											<input type="radio" id="radio02" name="pick" class="common-radio">
+											<label for="radio02">미사용</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">하위코드</th>
+								<td><button type="button" class="btn-inner">하위코드 관리</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn-right">
+					<button type="button" class="btn-type01">삭제</button>
+					<button type="button" class="btn-type01">취소</button>
+					<button type="button" class="btn-type02">등록</button>
+				</div>
+				
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			COPYRIGHT 2018 MIRAE ASSET CAPITAL CO., LTD. ALL RIGHTS RESERVED
+		</div>
+		<!-- //footer -->
+
+	</div>
+</body>
+</html>

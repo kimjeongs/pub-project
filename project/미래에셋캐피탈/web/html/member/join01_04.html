@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>회원가입 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/member.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 단계별 보기/닫기
+			$('.limit_check').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.limit_check'));
+				(!$(this).closest('.limit_check').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target) // 단계별 보기
+				: comJs.comToggle.sectionClose($target); // 단계별 닫기
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+					
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">자동차금융</a></li>
+					<li>
+						<a href="#">오토론</a><!-- class="open" 추가시 하위메뉴 열림 -->
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">오토론</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">상품소개</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">상품소개</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+
+			<div class="content-width">
+
+				<div class="page-title-style type02">
+					<h2 class="page-title">회원가입</h2>
+				</div>
+
+				<div class="limit_check_wrap">
+					<div class="limit_check open"><!-- class open추가시 레이어열림 -->
+						<h3><button type="button" class="btn-toggle" title="닫기">본인인증 <em>김미래님 환영합니다.</em></button></h3>
+						<div class="cont">
+							<!-- 법인 -->
+							<div class="certificate">
+								<div class="customer-info-form">
+									<table>
+										<caption>회원가입 - 법인 - 공인인증서 인증 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col style="width:507px;" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="idpwSearch01_01">법인명</label></th>
+												<td><input type="text" id="idpwSearch01_01" placeholder="법인명을 입력하세요" /></td>
+											</tr>
+											<tr>
+												<th scope="row">사업자등록번호</th>
+												<td>
+													<span class="pop-keypad">
+														<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+														<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+														<input type="text" style="width:174px;" placeholder="3자리" id="number01">
+														<span class="input-txt-line">-</span>
+														<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+														<input type="text" style="width:120px;" placeholder="2자리" id="number02">
+														<span class="input-txt-line">-</span>
+														<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+														<input type="text" style="width:174px;" placeholder="3자리" id="number03">
+													</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- //법인 -->
+
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">공인인증서 인증</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="limit_check"><!-- class open추가시 레이어열림 -->
+						<h3><button type="button" class="btn-toggle" title="보기">정보입력</button></h3>
+						<div class="cont">
+							<h4>기본정보</h4>
+							<div class="customer-info-form">
+								<table>
+									<caption>회원가입 - 기본정보 입력 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:170px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">
+												<label for="inputId">아이디</label>
+											</th>
+											<td>
+												<input type="text" id="inputId" placeholder="영문/숫자 조합 6~12자리 입력"/>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="inputPw">비밀번호</label></th>
+											<td>
+												<input type="password" id="inputPw" placeholder="영문/숫자 조합 6~12자리 입력">
+												<ul class="pwd-checklist">
+													<li class="selected">영문포함</li>
+													<li>숫자포함</li>
+													<li>6자리 이상</li>
+												</ul>
+												<ul class="board-dot-list01">
+													<li>영문 대소문자를 구별하여 입력해 주세요.</li>
+													<li>특수문자는 !@#$%^&*()에 한해 이용 가능합니다.</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="inputPw02">비밀번호확인</label></th>
+											<td>
+												<input type="password" id="inputPw02" placeholder="영문/숫자 조합 6~12자리 입력">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">이메일</th>
+											<td>
+												<div class="form-check">
+													<div class="wrap type02">
+														<label for="email" class="invisible">기본주소 입력</label>
+														<input type="text" id="email" placeholder="aaa@bbb.ccc"><em class="check">형식 체크</em>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대전화번호</th>
+											<td>
+												<ul class="pick-list type04">
+													<li>
+														<input type="radio" id="pick01" name="phone01">
+														<label for="pick01">SKT</label>
+													</li>
+													<li>
+														<input type="radio" id="pick02" name="phone01">
+														<label for="pick02">KT</label>
+													</li>
+													<li>
+														<input type="radio" id="pick03" name="phone01" checked="checked">
+														<label for="pick03">LG U+</label>
+													</li>
+													<li>
+														<label class="invisible" for="phoneType">휴대전화 종류 선택</label>
+														<select id="phoneType" title="알뜰폰" style="width: 100%;">
+															<option>알뜰폰</option>
+														</select>
+													</li>
+												</ul>
+												<div class="phone-num">
+													<label class="invisible" for="phoneNum">휴대전화번호 입력</label>
+													<span class="form-check">
+														<span class="wrap">
+															<input type="text" id="phoneNum" placeholder="‘-’ 없이 입력입력해 주세요" style="width: 434px;"><em class="check">형식 체크</em>
+														</span>
+														<button type="button" class="btn-inner ml8">인증번호 받기</button>
+													</span>
+												</div>
+												<div class="code-num">
+													<label class="invisible" for="code-num">인증번호입력</label>
+													<span class="wrap">
+														<span class="time">02:59</span>
+														<input type="text" placeholder="인증번호 6자리 번호 입력" id="code-num" style="width: 462px;">
+													</span>
+													<button type="button" class="btn-inner ml8">인증하기</button>
+												</div>
+												<p class="notice-list">회원님의 본인명의의 휴대폰만 인증이 가능합니다.</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- 2018-07-25 수정 -->
+							<h4>부가정보(선택) <span class="float-r">고객님의 상품이용 이력에 있는 정보를 추가입력/수정 하시겠습니까? <a href="#">내정보 불러오기</a></span></h4>
+							<!-- //2018-07-25 수정 -->
+							<div class="customer-info-form">
+								<table>
+									<caption>회원가입 - 부가정보 입력 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:170px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">
+												<label for="phoneNum04">자택전화</label>
+											</th>
+											<td>
+												<select id="phoneNum04" style="width: 120px;">
+													<option value="">02</option>
+													<option value=""></option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+												<label class="invisible" for="phoneNum04_02">자택전화 입력</label>
+												<input type="text" id="phoneNum04_02" class="ml8" title="자택전화 입력" placeholder="'-' 없이 입력해 주세요." style="width: 457px;" />
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputAddress01">자택주소</label>
+											</th>
+											<td>
+												<input type="text" id="inputAddress01" placeholder="주소를 입력해주세요" style="width: 465px;" />
+												<button type="button" class="btn-inner ml8">주소검색</button>
+												<label class="invisible" for="inputAddress01_02">상세주소 입력</label>
+												<input type="text" id="inputAddress01_02" class="mt8" title="직장(사업장) 상세주소입력" placeholder="상세 주소를 입력해주세요."/>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputName01">직장(사업장)명</label>
+											</th>
+											<td>
+												<input id="inputName01" type="text" placeholder="직장명을 입력해주세요" />
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="phoneNum05">직장(사업장)전화</label>
+											</th>
+											<td>
+												<select id="phoneNum05" style="width: 120px;">
+													<option value="">02</option>
+													<option value=""></option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+												<label class="invisible" for="phoneNum05_02">직장(사업장) 전화번호 입력</label>
+												<input type="text" id="phoneNum05_02" class="ml8" title="직장(사업장) 전화번호 입력" placeholder="'-' 없이 입력해 주세요." style="width: 457px;" />
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputAddress02">직장(사업장)주소</label>
+											</th>
+											<td>
+												<input type="text" id="inputAddress02" placeholder="주소를 입력해주세요" style="width: 465px;" />
+												<button type="button" class="btn-inner ml8">주소검색</button>
+												<label class="invisible" for="inputAddress02_02">상세주소 입력</label>
+												<input type="text" id="inputAddress02_02" class="mt8" title="직장(사업장) 상세주소입력" placeholder="상세 주소를 입력해주세요."/>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="Partname">부서명</label>
+											</th>
+											<td>
+												<input id="Partname" type="text" placeholder="부서명을 입력해주세요" />
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputPosition">직위명</label>
+											</th>
+											<td>
+												<input id="inputPosition" type="text" placeholder="직위명을 입력해주세요" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h4>약관동의</h4>
+							<div class="customer-info-form">
+								<table>
+									<caption>회원가입 약관동의 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:170px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<!-- 2018-06-22 수정 -->
+										<tr>
+											<th scope="row">약관동의</th>
+											<td>
+												<div class="check-all">
+													<input type="checkbox" class="common-check" id="checkAll2" name="" />
+													<label for="checkAll2">약관에 모두 동의합니다.</label>
+												</div>
+												<div class="clause-box-wrap">
+													<ul>
+														<li>
+															<em class="active">
+																<a href="#" class="toggle-btn">약관닫기</a>
+																<input type="checkbox" class="common-check" id="ClauseChock02" name="" />
+																<label for="ClauseChock02">개인정보 이용 및 이용에 대한 안내 (필수)</label>
+															</em>
+															<!-- 하단 약관 -->
+															<div class="detail-clause">
+																//약관 내용
+															</div>
+															<!-- //하단 약관 -->
+														</li>
+														<li>
+															<em>
+																<a href="#" class="toggle-btn">약관보기</a>
+																<input type="checkbox" class="common-check" id="ClauseChock02_2" name="" />
+																<label for="ClauseChock02_2">미래에셋캐피탈 이용약관 동의 (필수)</label>
+															</em>
+															<!-- 하단 약관 -->
+															<div class="detail-clause">
+																//약관 내용
+															</div>
+															<!-- //하단 약관 -->
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<!-- //2018-06-22 수정 -->
+									</tbody>
+								</table>
+							</div>
+							<div class="btn-center">
+								<button type="button" class="btn-accept04">회원가입</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

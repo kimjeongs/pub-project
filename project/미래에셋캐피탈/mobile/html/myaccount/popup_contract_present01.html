@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>법인등기부등본 확인 | 계약신청현황 | My Account - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+  <link rel="stylesheet" type="text/css" href="../../css/myaccount.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="full-popup">
+		<div class="popup-title">
+			<strong class="stit">법인등기부등본 확인</strong>
+		</div>
+		<div class="pop-cont type01"><!-- 2018-08-10 -->
+			<div class="form-board01">
+				<table>
+					<caption>계약신청현황 - 법인등기부등본 확인 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:100%;" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="col">조회구분</th>
+						</tr>
+						<tr>
+							<td>
+								<ul class="board-input">
+									<li>
+										<input type="radio" id="radio01" name="pick" class="common-radio" />
+										<label for="radio01">상호</label>
+									</li>
+									<li>
+										<input type="radio" id="radio02" name="pick" class="common-radio" />
+										<label for="radio02">등기번호</label>
+									</li>
+									<li>
+										<input type="radio" id="radio03" name="pick" class="common-radio" />
+										<label for="radio03">등록번호</label>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><label for="contractlForm01">등기소</label></th>
+						</tr>
+						<tr>
+							<td><input type="text" id="contractlForm01" /></td>
+						</tr>
+						<tr>
+							<th scope="col"><label for="contractlForm02">법인구분</label></th>
+						</tr>
+						<tr>
+							<td>
+								<select id="contractlForm02">
+									<option>연도</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><label for="contractlForm03">상호</label></th>
+						</tr>
+						<tr>
+							<td><input type="text" id="contractlForm03" /></td>
+						</tr>
+						<tr>
+							<th scope="col">등기번호</label</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="resident-number">
+									<span>
+										<label for="contractlForm04" class="invisible">등기번호 앞자리 입력</label>
+										<input type="text" id="contractlForm04" />
+									</span>
+									<span class="desh">-</span>
+									<span class="keypad-wrap">
+										<label for="number02" class="invisible">등기번호 뒷자리</label>
+										<input type="text" id="number02" />
+									</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col">등록번호</label</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="resident-number">
+									<span>
+										<label for="contractlForm05" class="invisible">등록번호 앞자리 입력</label>
+										<input type="text" id="contractlForm05" />
+									</span>
+									<span class="desh">-</span>
+									<span class="keypad-wrap">
+										<label for="contractlForm06" class="invisible">등록번호 뒷자리</label>
+										<input type="text" id="contractlForm06" />
+									</span>
+								</div>
+							</td>
+						</tr>
+						<!-- 2018-08-10-추가 -->
+						<tr>
+							<th scope="col">사업자등록번호</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="business-number">
+									<span class="num01">
+										<label for="businessNum01" class="invisible">사업자등록번호 처음 3자리</label>
+										<input type="text" id="businessNum01" placeholder="3자리">
+									</span>
+									<span class="desh">-</span>
+									<span class="num02">
+										<label for="businessNum02" class="invisible">사업자등록번호 중간 2자리</label>
+										<input type="text" placeholder="2자리" id="businessNum02">
+									</span>
+				                    <span class="desh">-</span>
+				                    <span class="keypad-wrap num03">
+				                    	<label for="businessNum03" class="invisible">사업자등록번호 마지막 5자리</label>
+				                        <input type="text" placeholder="5자리" id="businessNum03">
+				                    </span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col">주민등록번호</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="resident-number">
+									<span>
+										<label for="residentNum01" class="invisible">주민등록번호 앞 6자리 입력</label>
+										<input type="text" id="residentNum01" placeholder="앞 6자리">
+									</span>
+									<span class="desh">-</span>
+									<span class="keypad-wrap">
+										<label for="number02" class="invisible">주민등록번호 뒤7자리</label>
+										<input type="text" placeholder="뒤 7자리" id="number02">
+									</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><label for="numChoice02">인증서 목록</label></th>
+						</tr>
+						<tr>
+							<td>
+								<select id="numChoice02">
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="col"><label for="input01">인증서 비밀번호</label></th>
+						</tr>
+						<tr>
+							<td>
+								<input type="password" id="input01">
+							</td>
+						</tr>   
+						<!-- //2018-08-10 -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="sticky-btn one">
+				<button type="button" class="btn-sticky">입력</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

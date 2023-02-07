@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/* 계약신청현황 */
+.property-cont .row-board01 table th{padding:15px 10px;}
+.property-cont .row-board01 table th:before{ content:''; background: url(../img/comm/icon_check02.png) no-repeat left top; background-size:10px; overflow:hidden; display:inline-block; width:10px; height:8px; margin-right:10px;}
+.property-cont .row-board01 table th{color:#232323;}
+.property-cont .row-board01 table th.selected:before {background-position:left -8px;}
+.property-cont .row-board01 table td{text-align: right;}
+.property-cont .row-board01 table td .btn-tb05{margin-left:3px;}
+
+/* 전자약정 */
+.property-cont .board-input li{width:25%; margin-right:0;}
+.clause-box-wrap.type01 > ul > li > em a.toggle-btn:after{content:'';display:inline-block;width:6px;height:12px;position:absolute;right:15px;top:22px;background:url('../img/comm/icon_check_arrow.png') no-repeat 0 0; background-size:100%;}
+
+.calender-wrap{overflow: hidden;}
+.calender-wrap .cal-info > span{float:left;width:calc((100% - 6px)/2);width:-webkit-calc((100% - 6px)/2);width:-moz-calc((100% - 6px)/2); margin-right:3px;}
+.calender-wrap .cal-info {display: inline-block; width:calc(100% - 73px);width:-webkit-calc(100% - 73px);width:-moz-calc(100% - 73px); }
+.calender-wrap .btn-tb03{min-width:70px; margin-left:0; padding:0;}
+.calender-wrap.type2 > span:first-child{margin-right:3px;}
+.calender-wrap.type2 > span{display:inline-block; width:calc((100% / 2) - 2px); width:-webkit-calc((100% / 2) - 2px); width:-moz-calc((100% / 2) - 2px); float:left;}
+.calender-wrap .txt_r{text-align:right;}
+
+/*조회결과*/
+.search-result{display: table;width: 100%; padding: 30px 0;background:#f7f7f7;text-align:center;}
+.search-result-cont { display: table-cell; }
+.search-result .price,
+.confirm-result .txt{display:block;font-size:14px;font-weight:400; line-height: 20px;}
+.search-result .price strong{color: #f7681a; font-weight:400;}
+.search-result em{font-size:18px; font-weight: 500; line-height: 25px; color:#0f0f0f; }
+.search-result p{font-size:13px; color:#686868; margin-top:10px;}
+.search-result .btn .btn-cont03{width:117px;padding:0;}
+.search-result .btn .btn-cont03:hover{background:#fff;color:#232323;border: 1px solid #ddd;}
+.search-result .btn{padding-top:20px;}
+.search-result.certify p{font-size:14px;}
+.confirm-result { display: table;width: 100%; padding: 40px 0; background:#f7f7f7;text-align:center;}
+
+/* 완료 페이지 */
+.complete-box {text-align:center;}
+.complete-box:before {content:''; display:block; width:140px; height:140px; margin:30px auto; background-image:url('../img/comm/bg_complete.png'); background-repeat:no-repeat; background-size:140px auto;}
+.complete-box.complete-type:before {background-image:url('../img/comm/bg_complete02.png');}
+.complete-box strong {display:block; font-size:18px; font-weight:500; line-height:22px;}
+.complete-box p {margin-top:15px; /*padding:0 40px;*/ color:#686868;}
+.complete-box p em{color:#f7681a;}
+
+/*리스트*/
+.list-num li { text-indent: -10px; margin-left: 10px; }
+.list-num li span { display: inline-block;margin-right: 9px; }
+table.paper-confirm td ul li{color:#232323;}
+
+/* 안내문 */
+.info-list .stit{display:block;padding:15px 0 3px 24px;background: url('../img/comm/icon_notice.png') no-repeat 0 16px; background-size:16px;}
+.guide-detail-box .detail{padding-left:10px; font-size:12px;}
+
+/* 팝업 */
+.pop-loan-check .box{margin-bottom:20px;padding:029px 0;text-align:center;background:#f7f7f7;}
+.pop-loan-check .box strong{display:block;font-size:18px;font-weight:500;line-height:25px;}
+.pop-loan-check .box span{display:block;padding-top:9px;color:#686868;}
+
+.btm-box{padding:25px 15px 100px;margin-top:10px;background:#f4f4f4;}
+.btm-box .box{padding:15px 33px 0;background:#f4f4f4;}
+.btm-box .box > span:first-child{padding-top:0;}
+.btm-box .box > span{margin-top:5px;}
+.btm-box .box em{display:block;padding:0 0 4px 0;font-size:13px;color:#686868;}
+.btm-box .box .form{display:block;position:relative;}
+.btm-box .box .form input{height:40px;padding: 0 30px 0 10px;}
+.btm-box .box .check{position:absolute;right:9px;top:16px;display:inline-block;width:10px;height:9px;background:url('../img/comm/icon_check03.png') no-repeat;background-size:100%;font-size:0;text-indent:-9999px;}
+.btm-box .box .btn-center{padding:20px 0 30px;}
+.btm-box .box .btn-center button span{height:40px;line-height:40px;}
+.btm-box.join .btm-box-tit{text-align: center;font-size:14px;background-size:50px;line-height:22px;color:#686868;}
+.btm-box.join .box > em{margin-top:20px;}
+.btm-box.join .box > em:first-child{margin-top:0;}
+.btm-box.join .keypad-wrap{width:100%;}
+.btm-box.join .box .btn-center{padding-top:20px;}
+.btm-box.join .box .btn-center button span{height:40px;line-height:40px;}
+.tit-th-type{display:block;padding: 15px 0 4px 0;text-align: left;font-size: 13px;color: #686868;font-weight: 400;}
+
+/*상품소개*/
+.product-top-area .pros .icon1:before{background:url('../img/property/icon_pdt01.gif') no-repeat center top !important;background-size:36px 36px !important;}
+.product-top-area .pros .icon2:before{background:url('../img/property/icon_pdt02.gif') no-repeat center top !important;background-size:36px 36px !important;}
+.product-top-area .pros .icon3:before{background:url('../img/property/icon_pdt03.gif') no-repeat center top !important;background-size:36px 36px !important;}
+.product-top-area .pros .icon4:before{background:url('../img/property/icon_pdt04.gif') no-repeat center top !important;background-size:36px 36px !important;}
+.product-top-area .pros .icon5:before{background:url('../img/property/icon_pdt05.gif') no-repeat center top !important;background-size:36px 36px !important;}
+.product-top-area .pros .icon6:before{background:url('../img/property/icon_pdt06.gif') no-repeat center top !important;background-size:36px 36px !important;}
+
+/* 신분증 인식정보 */
+.identity_img{width:100%; height:185px; background-color:#d6d6d6;}
+
+.pop-cont .driver-license{display:inline-block; width:100%;}
+.pop-cont .driver-license input:nth-child(1){float:left;}
+.pop-cont .driver-license input:nth-child(2){width: -webkit-calc((100% - 95px)); margin-left:10px; float:right}

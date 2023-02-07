@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+.footer-cont{width:100%;overflow:hidden;;position:fixed;left:0;bottom:0;}
+.footer-cont .dot-list01 { width:100%;padding: 20px 30px; background: #fafafa; border-top: 1px solid #e5e5e5 }
+
+.tit-wrap { text-align: center; }
+.login-cont .stit { color: #0f0f0f; font-size: 20px; font-weight:500; line-height: 26px; }
+.title-txt { margin-top: 13px; color: #999; font-size: 14px; line-height: 20px; }
+.logo { margin: 10px 0 40px; text-align: center; }
+.logo img{ width: 170px; height: auto; }
+.login-cont input { height: 40px; }
+.login-cont .btn-center { padding-top: 20px; }
+.login-cont .reg-del.type1{bottom:107px;}
+.login-cont .reg-del {position:fixed;left:0;bottom:40px;width:100%;text-align: center;color:#686868;font-size:13px;}
+.login-cont .reg-del a {position: relative; padding-left:7px; margin-left: 0;  }
+.login-cont .reg-del a:before { display: inline-block; width:1px; height: 12px; background: #ddd;margin-right:10px;vertical-align:-1px; content: ''; }
+.login-cont .reg-del a:first-child:before { padding: 0; margin: 0; background: none; }
+.login-cont .input-cont { margin-top: 20px; }
+.login-cont .input-tit { display: block; margin: 15px 0 4px 0; color: #686868; font-size: 13px; font-weight: 400; }
+.login-cont .input-tit:first-child { margin-top: 0; }
+.login-cont .keypad-wrap { display: inline-block; }
+.login-cont .keypad-wrap.type02 { width: 100%; }
+.login-cont .keypad-wrap.type03 { width: 48%; }
+.login-input input[type="text"], .login-input input[type="password"] { margin-top: 5px; }
+.login-input input[type="text"]:first-child { margin-top: 0; }
+.login-input .checkbox-cont { margin-top: 5px; }
+.login-input .keypad { top: 5px; }
+.login-cont .pw-change-txt{font-size:15px;display:block;padding:0 0 7px 0;color:#043b73;}
+.simple-login{padding-top:11px;font-size:15px;text-align:right;}
+.simple-login a{display:inline-block;padding:0 11px 0 0;font-size:14px;color:#686868;background:url('../img/login/bg_simple_login.png') no-repeat right 5px; background-size: 6px 10px;}
+
+/* 지문 로그인 */
+.fingerprint{padding:35px 20px; margin-top: 30px; border: 1px solid #e2e7ec;text-align:center;}
+.fingerprint span{display:inline-block;}
+.fingerprint span a{display:inline-block;width:40px;height:40px;}
+.fingerprint span a img{width:100%;}
+.fingerprint p{margin-top: 5px; color: #0f0f0f; font-size: 14px; font-weight: 400;}
+.fingerprint .btn-center { padding-top: 20px; }
+
+/* 공인 인증 */
+.login-way-choice{overflow:hidden;width:100%;}
+.login-way-choice li{float:left;width:50%;height:90px;}
+.login-way-choice li:first-child a{border-right: none; border-radius:2px 0 0 2px;}
+.login-way-choice a{display:block;height:90px;padding-top:57px;border:1px solid #ddd;border-radius:0 2px 2px 0;text-align:center;font-size: 13px; font-weight:400;color:#404040;}
+.login-way-choice li.active a{border:1px solid #2469b0;color:#2469b0;font-weight:400;}
+.login-way-choice li.individual{border-right: none; background:url('../img/login/bg_individual.png') no-repeat center 15px; background-size: 40px 150px;}
+.login-way-choice li.individual.active{background-position:center -97px;}
+.login-way-choice li.corporate{background:url('../img/login/bg_corporate.png') no-repeat center 15px;background-size: 40px 150px;}
+.login-way-choice li.corporate.active{background-position:center -97px;}
+.login-way-choice2 {margin-top: 37px;}
+.login-way-choice2 li{width: 100%;margin-top: 10px; }
+.login-way-choice2 li:first-child { margin-top: 0;}
+.login-way-choice2 a{display:block;height:115px;padding-top:75px;border:1px solid #ddd;border-radius: 4px;text-align:center;font-size: 13px; font-weight:400;color:#404040;}
+.login-way-choice2 li.active a{border:1px solid #2469b0;color:#2469b0;}
+.login-way-choice2 li.individual{background:url('../img/login/bg_individual.png') no-repeat center 23px; background-size: 40px 150px; }
+.login-way-choice2 li.individual.active{background-position:center -88px;}
+.login-way-choice2 li.corporate{background:url('../img/login/bg_corporate.png') no-repeat center 23px;background-size: 40px 150px;}
+.login-way-choice2 li.corporate.active{background-position:center -89px;}
+
+.certifi-info { padding:30px 0 30px 155px; background: url(../img/login/bg_certifi.png) no-repeat 30px 25px; background-size: 90px; border-bottom: 1px solid #ddd; }
+.certifi-info .name { margin-bottom: 5px; color: #0f0f0f; font-size: 16px;line-height: 18px; }
+.certifi-info p { color: #686868; font-size: 13px;line-height: 19px; }
+
+/* 아이핀 인증 */
+.login-ipin{text-align:center; margin-top:15px;}
+
+/* 회원가입 정보입력 */
+.modify-info{display: table;width: 100%; padding: 30px 0;background:#f7f7f7;text-align:center;}
+.modify-info .modify-info-cont .txt{display:block;font-size:14px;font-weight:400; line-height:20px; color:#0f0f0f;}
+.modify-info .modify-info-cont .txt a{text-decoration:underline; color:#686868; font-size:13px;}
+
+/* 회원가입 완료페이지 */
+.login-finish{overflow:hidden;text-align:center;background:url('../img/comm/icon_completion.png') no-repeat center top; background-size:63px; margin-top:30px;}
+.login-finish strong{display:inline-block; padding-top:97px;color:#0f0f0f;font-size:18px;font-weight:500;line-height:25px;}
+.login-finish p{font-weight:400;color:#686868;margin-top:20px; padding:0 40px;}
+.login-finish.fail{overflow:hidden;text-align:center;background:url('../img/comm/bg_no_result.png') no-repeat center top;background-size:68px 57px;  margin-top:30px;}
+.btn-center.align-left {width: 297px; margin: 0 auto; }
+.btn-center.align-left button { width: 146px !important; margin-top: 5px; float: left; }
+.btn-center.align-left button:nth-child(1),
+.btn-center.align-left button:nth-child(2) { margin-top: 0; }
+
+/* 아이디확인 및 비밀번호 변경 */
+/*.pw-search-wrap { background: #fff; }*/
+.pw-check-wrap{padding:56px 15px 35px; text-align:center;}
+.pw-check-wrap.type02{ background: #f2f5f8;border-bottom:1px solid #ddd; }
+.pw-check-wrap strong{display:block;font-size:20px;font-weight:500;line-height:26px;}
+.pw-check-txt{display:block;padding:0 0 8px 0;font-size:15px;color:#043b73;}
+
+
+
+.top-btn-cont { background: #f2f5f8; padding: 40px 15px 30px;}
+.top-btn-cont .txt { color: #404040; font-size: 14px; line-height: 20px; text-align: center;}
+.top-btn-cont .btn-center { padding-top: 15px;font-weight: 400;}
+.desc-cont strong { display: block; margin-top: 35px; color: #404040; font-size: 15px; font-weight: 400; }
+.desc-cont strong:first-child { margin-top: 0; }
+.desc-cont .notice-list { padding-top: 5px; }

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>전체화면 | 개인 | 전자약정 | 오토론/할부 | 계약현황 | My Account - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/myaccount.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 단계별 보기/닫기
+			$('.limit_check').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.limit_check'));
+				(!$(this).closest('.limit_check').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target) // 단계별 보기
+				: comJs.comToggle.sectionClose($target); // 단계별 닫기
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">개인금융</a></li>
+					<li>
+						<a href="#">주식매입자금대출(스탁론)</a><!-- class="open" 추가시 하위메뉴 열림 -->
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품안내</a></li>
+								<li><a href="#">신규대출신청</a></li>
+								<li><a href="#">추가대출신청</a></li>
+								<li><a href="#">대환대출신청</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">주식매입자금대출(스탁론)</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">신규대출신청</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">고객확인</a></li>
+								<li><a href="#">약관확인</a></li>
+								<li><a href="#">증권계좌정보입력</a></li>
+								<li><a href="#">신청정보 및 한도확인</a></li>
+								<li><a href="#">대출신청</a></li>
+								<li><a href="#">신청완료</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">신규대출신청</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="loan-detail-list">
+				<div class="detail-box">
+					<div class="left">
+						<em class="name">안녕하세요<br>김미래 고객님</em>
+						<div class="number">
+							<ul>
+								<li><span>대출현황</span><strong><em>1</em>건</strong></li>
+								<li><span>계약현황</span><strong><em>1</em>건</strong></li>
+								<li><span>견적함</span><strong><em>2</em>건</strong></li>
+							</ul>
+						</div>
+						<span class="mem-modify"><button class="btn-tb01" type="button">회원정보변경</button></span>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="menu1 bg-none">
+								<a href="#">계약현황</a>
+							</li>
+							<li class="menu2 bg-none">
+								<a href="#">대출현황</a>
+							</li>
+							<li class="menu3">
+								<a href="#">상품서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li>
+											<a href="#" class="smenu active">자동차</a><!-- active 추가시 3뎁스 노출 -->
+											<div class="sub-smenu">
+												<ul>
+													<li><a href="#">견적함</a></li>
+													<li><a href="#">만기연장신청</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#" class="smenu">주식</a>
+											<div class="sub-smenu">
+												<ul>
+													<li><a href="#">일부상환신청</a></li>
+													<li><a href="#">만기연장신청</a></li>
+													<li><a href="#">대출해지신청</a></li>
+													<li><a href="#">당일대출취소신청</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">상품서비스</a>
+								</div>
+							</li>
+							<li class="menu4">
+								<a href="#">조회서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">상환스케줄</a></li>
+										<li><a href="#">납부예정금액</a></li>
+										<li><a href="#">납부내역조회</a></li>
+										<li><a href="#">연체내역조회</a></li>
+										<li><a href="#">입금계좌조회</a></li>
+										<li><a href="#">범칙금내역조회</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">조회서비스</a>
+								</div>
+							</li>
+							<li class="menu5">
+								<a href="#">결제서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">결제일변경</a></li>
+										<li><a href="#">중도상환예약</a></li>
+										<li><a href="#">결제계좌변경</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">결제서비스</a>
+								</div>
+							</li>
+							<li class="menu6">
+								<a href="#">발급서비스</a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="#">종료확인서</a></li>
+										<li><a href="#">대출약정서</a></li>
+										<li><a href="#">금융거래확인서</a></li>
+										<li><a href="#">거래내역확인서</a></li>
+										<li><a href="#">소득세신고용조회</a></li>
+										<li><a href="#">연체대금완납증명서</a></li>
+									</ul>
+									<a href="#" class="navi_up" title="레이어닫기">발급서비스</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="estimate-inner white active">
+				<div class="content-width">
+					<div class="page-title-style type02">
+						<h2 class="page-title">계약신청현황</h2>
+						<p class="title-txt">고객님이 계약신청한 금융상품이 계약실행 될 수 있도록 관리합니다.</p>
+					</div>
+					<div class="limit_check_wrap">
+						<div class="limit_check mt50 open"><!-- class open추가시 레이어열림 -->
+							<h3>
+								<button type="button" class="btn-toggle" title="닫기">
+									계약체결
+									<em>전자 서명 완료</em>
+								</button>
+							</h3>
+							<div class="cont">
+
+								<!-- 약정동의 재확인 -->
+								<div class="customer-info-form">
+									<h4 class="invisible">약정동의 재확인</h4>
+									<table>
+										<caption>계약현황 - 전자약정 - 약정동의 재확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">약정동의 재확인</th>
+												<td>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em class="active">
+																	<a href="#" class="toggle-btn">약관열기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock01"/>
+																	<label for="ClauseChock01">신청 시 제출한 약관항목에 대해 최종 동의합니다.</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+																	오토리스 주요내용 설명서<br />
+                                  미래에셋캐피탈과 리스 이용자는 오토리스 계약에 따라 주요 약정내용에 대한 설명을 듣고<br />
+                                  약관내용을 이해하였음을 확인합니다. 본 설명서는 오토리스 계약의 주요 내용만을 선별하여<br />
+                                  요약한 것으로 주요 안내에게만 의존하지 마시고 계약서 등 세부 자료를 반드시 확인한 후<br />
+                                  계약하시기 바랍니다.
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- //약정동의 재확인 -->
+
+                <!-- 주요안내사항 -->
+								<div class="customer-info-form">
+									<h4 class="invisible">주요안내사항</h4>
+									<!-- 고객정보 입력 -->
+									<table>
+										<caption>계약현황 - 전자약정 - 주요안내사항 확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">주요안내사항</th>
+												<td>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em class="active">
+																	<a href="#" class="toggle-btn">약관열기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock02"/>
+																	<label for="ClauseChock02">주요 안내사항을 모두 확인하였습니다.</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+                                  <div class="notice-list pt0">
+                                  	<ul>
+                                  		<li>리스자동차에 대한 소유권은 리스 종류 및 등록 명의에 상관없이 리스 회사에 있습니다.</li>
+                                  		<li>리스계약 종료 후 자동차를 고객님의 명의로 이전하기 위해 필요한 취득세 등의<br />제세공과금이 발생할 수 있으며, 이는 고객이 부담하여야 합니다.</li>
+                                      <li>리스 계약 개시 시점에 자차 보험 가입 및 보험금에 대한 질권 설정은 필수 사항이며,<br />이때 질권자는 미래에셋 캐피탈㈜가 됩니다. 이는 리스기간 중 신규가입 및 갱신 가입<br />모두에 적용됩니다.</li>
+                                      <li>범칙금/과태료: 납부의무자를 고객 명의로 변경하여 고객이 직접 납부를 원칙으로 하며,<br />부득이한 경우 약관 제6조 3항에 따릅니다.</li>
+                                      <li>리스 약정 종료 시 잔존가치 금액을 기준으로 운용 리스는 매입, 반납, 재리스 중<br />택일 하실 수 있습니다.</li>
+                                      <li>리스계약 종료 시 리스 물건을 고객이 매입하는 경우 고객 명의 등록만 가능합니다.<br />(제3자 소유권 이전 불가)</li>
+                                      <li>리스계약 종료(중도 또는 만기 매입. 반납)에 따른 정산 후에도 추가 정산 금액<br />(지방세,과태료, 범칙금 등)이 발생 할 경우 청구됩니다.</li>
+                                      <li>
+                                        법인 고객의 경우 법인세법 제 27조의 2(업무용승용차 관련 비용의 손금불산입 등 특례)<br />및 법인세법 시행령 제 50조의 2(업무용 승용차 관련 비용 등의 손금불산입 특례)등의<br />
+                                        관련 법령에 따라 자동차 보험 가입 시 ‘임직원운전한정특약’에 가입하여야 세제 혜택을<br />받을 수 있습니다.
+                                      </li>
+                                      <li>리스계약 종료 후 자동차를 반환하는 경우 자동차의 상태·성능을 평가하여 감가 사유가<br />있을 때에는 감사 금액을 청구 할 수 있습니다.</li>
+                                      <li>인지세 50%(5,000원)는 고객 부담입니다.</li>
+                                      <li>리스료에 자동차세 불 포함인 경우 고지된 자동차세(연2회 6월, 12월)를 당사 대납 후<br /> 차월 리스료에 청구합니다.</li>
+                                    </ul>
+                                  </div>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- //주요안내사항 -->
+
+                <!-- 반환 자동차 가치 감가율표 -->
+								<div class="customer-info-form">
+									<h4 class="invisible">반환 자동차 가치 감가율표</h4>
+									<!-- 고객정보 입력 -->
+									<table>
+										<caption>계약현황 - 전자약정 - 반환자동차 가치 감가율표 확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">반환 자동차<br />가치 감가율표</th>
+												<td>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em class="active">
+																	<a href="#" class="toggle-btn">약관열기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03"/>
+																	<label for="ClauseChock03">반환 자동차의 감가율을 확인하였습니다.</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+                                  <div class="notice-list pt0">
+                                  	<ul>
+                                  		<li>반납 시 교체 또는 수리비는 고객의 부담이며, 원상복구 후 감가합니다.</li>
+                                  		<li>반납 이전 고객이 자비로 교체 또는 수리비를 고객이 직접 부담한 경우 감가율만 반영합니다.</li>
+                                      <li>도장불량이란 긁힌 것, 벗겨진 것, 휘어지거나 들어진 것, 색깔을 바꾼 것, 동전 크기 이상의<br />찍힘, 우그러짐, 부분 스프레이 칠, 부식 등 정상적인 차량 상태와 상이한 경우를 말합니다.</li>
+                                      <li>감가액=[출고 시점의 차량가격(VAT포함)X항목별 감가율 총합계] + 수리 실비 입니다.</li>
+                                      <li>상기 감가와는 별도로 차량의 내/외관상 원상복구가 필요한 부위에 대해서는 실비 감가하기로 합니다.<br />예) 유리, 사이드 미러, 타이어, 휠, 오디오, 시트 등의 내/외장 부품 훼손</li>
+                                    </ul>
+                                  </div>
+                                  <div class="board-box">
+                                    <em class="stit">항목별 감가 조건(사고유무 및 교체 이력, 도장 상태 기준)</em>
+                                    <div class="col-board02">
+                                    	<table class="mt16">
+                                    		<caption></caption>
+                                    		<colgroup>
+                                          <col style="width:50%;" />
+                                          <col />
+                                    		</colgroup>
+                                    		<thead>
+                                    			<tr>
+                                    				<th scope="col">항목</th>
+                                    				<th scope="col">감가율</th>
+                                    			</tr>
+                                    		</thead>
+                                    		<tbody>
+                                    			<tr>
+                                    				<td>휀더</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                    			<tr>
+                                    				<td>본넷</td>
+                                    				<td>5%</td>
+                                    			</tr>
+                                    			<tr>
+                                    				<td>트렁크</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>앞/뒤문</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>휠하우스</td>
+                                    				<td>5%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>사이드씰</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>도장불량</td>
+                                    				<td>1%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>쿼터패널</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>프론트패널</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>리어패널</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>루프패널</td>
+                                    				<td>6%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>트렁크 플로어패널</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>인사이드패널</td>
+                                    				<td>1%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>필러패널(A,B,C)</td>
+                                    				<td>4%</td>
+                                    			</tr>
+                                          <tr>
+                                    				<td>데쉬패널</td>
+                                    				<td>3%</td>
+                                    			</tr>
+                                    		</tbody>
+                                    	</table>
+                                    </div>
+                                  </div>
+                                  <div class="board-box">
+                                    <em class="stit">초과 운행 부담금 조건</em>
+                                    <div class="col-board02">
+                                    	<table class="mt16">
+                                    		<caption></caption>
+                                    		<colgroup>
+                                          <col style="width:50%;" />
+                                          <col />
+                                    		</colgroup>
+                                    		<thead>
+                                    			<tr>
+                                    				<th scope="col">구분항목</th>
+                                    				<th scope="col">감가금액</th>
+                                    			</tr>
+                                    		</thead>
+                                    		<tbody>
+                                    			<tr>
+                                    				<td>국산차</td>
+                                    				<td>200원/km</td>
+                                    			</tr>
+                                    			<tr>
+                                    				<td>수입차</td>
+                                    				<td>300원/km</td>
+                                    			</tr>
+                                    			<tr>
+                                    				<td>유예거리</td>
+                                    				<td>2,000/km</td>
+                                    			</tr>
+                                    		</tbody>
+                                    	</table>
+                                    </div>
+                                  </div>
+                                  <p class="notice-list">유예거리 : 약정 거리 초과 시 부담금 면제되는 거리</p>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- //반환 자동차 가치 감가율표 -->
+
+								<!-- 전자서명 -->
+								<div class="customer-info-form">
+									<h4 class="invisible">전자서명</h4>
+									<table>
+										<caption>계약현황 - 전자약정 - 전자서명 정보 입력 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:173px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="identity_num01">전자서명</label></th>
+												<td>
+													<input type="text" style="width:254px;" placeholder="앞 6자리" id="identity_num01" />
+													<span class="input-txt-line">-</span>
+													<span class="pop-keypad">
+														<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+														<label for="identity_num01_1" class="invisible">주민등록번호 뒤7자리 입력</label>
+														<input type="text" style="width:254px;" placeholder="7자리" id="identity_num01_1" />
+													</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="btn-center mt80">
+										<button type="button" class="btn-accept01">공인인증</button>
+									</div>
+
+									<!-- 계약체결 대기 -->
+									<div class="approval-standby">
+	  								<strong>고객님의 신청내용을 담당자가 확인 중 입니다.</strong>
+	  								<p>신청내용를 확인한 후 고객님의 연락처로 알려드리겠습니다.</p>
+	  							</div>
+									<!-- 계약체결 대기 -->
+								</div>
+								<!-- //전자서명 -->
+							</div>
+						</div>
+					</div>
+
+          <!-- 인수대기 -->
+					<div class="limit_check_wrap">
+            <div class="limit_check"><!-- class open추가시 레이어열림 -->
+  						<h3>
+  							<button type="button" class="btn-toggle" title="닫기">
+  								인수대기
+  							</button>
+  						</h3>
+  						<div class="cont">
+  							<div class="approval-standby">
+  								<strong>오토리스 계약 차량이 탁송 중입니다.</strong>
+  								<p>고객님이 요청하신 <span class="compulsory">BMW 3-Series 320i M Sport Package (A/T)</span> 차량을 탁송해 드리겠습니다.<br />미래에셋캐피탈 자동차금융상담센터 0000-0000</p>
+  							</div>
+  						</div>
+  					</div>
+					</div>
+          <!-- 인수대기 -->
+
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>

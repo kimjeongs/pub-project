@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>본인인증 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/member.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">회원가입</strong>
+		</div>
+		<div class="pop-cont type1">
+			<div class="popup-idpw-search">
+				<strong class="invisible">회원가입 단계</strong>
+				<ul class="step-list">
+					<li class="step01 selected">01 <em>현재단계</em>보인인증</li>
+					<li class="step02">02 정보입력</li>
+					<li class="step03">03 가입완료</li>
+				</ul>
+				<div class="tab-type1">
+					<ul>
+						<li class="active"><a href="#">휴대폰</a></li>
+						<li><a href="#">카드</a></li>
+						<li><a href="#">공인인증서</a></li>
+						<li><a href="#">아이핀</a></li>
+					</ul>
+				</div>
+				<div class="cont">
+					<!-- 휴대폰 -->
+					<div class="phone">
+						<strong class="invisible">휴대폰</strong>
+						<p class="guide-info">회원님의 본인명의의 휴대폰만 인증이 가능합니다.</p>
+						<div class="customer-info-form">
+							<table>
+								<caption>회원가입 - 본인인증 입력 테이블입니다.</caption>
+								<colgroup>
+									<col style="width:173px;" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><label for="idpwSearch01">이름</label></th>
+										<td><input type="text" id="idpwSearch01" /></td>
+									</tr>
+									<tr>
+										<th scope="row">성별</th>
+										<td>
+											<ul class="pick-list">
+												<li>
+													<input type="radio" id="pick1" name="pick1">
+													<label for="pick1">남자</label>
+												</li>
+												<li>
+													<input type="radio" id="pick2" name="pick1">
+													<label for="pick2">여자</label>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="idpwSearch02">생년월일</label></th>
+										<td><input type="text" id="idpwSearch02" placeholder="6자리로 입력(YYMMDD)" /></td>
+									</tr>
+									<tr>
+										<th scope="row">휴대전화번호</th>
+										<td>
+											<label class="invisible" for="idpwSearch03">통신사 선택</label>
+											<select id="idpwSearch03" style="width:113px;">
+												<option>SKT</option>
+											</select>
+											<label class="invisible" for="idpwSearch04">휴대전화번호 입력</label>
+											<input type="text" style="width:250px;" class="ml8" placeholder="‘-’ 없이 입력해주세요" id="idpwSearch04" />
+											<button type="button" class="btn-tb02 ml8">인증요청</button>
+											<div class="certification-num">
+												<label class="invisible" for="limitCheck05_1">인증번호입력</label>
+												<span class="wrap">
+													<span class="time">02:59</span>
+													<input type="text" style="width:400px;" placeholder="인증번호 6자리 번호 입력" id="limitCheck05_1" />
+												</span>
+												<a href="#" class="btn-tb02 ml8">확인</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">약관동의</th>
+										<td>
+											<div class="clause-box-wrap">
+												<!-- 2018-06-22 수정 -->
+												<ul>
+													<li>
+														<em class="active">
+															<a href="#" class="toggle-btn">약관닫기</a>
+															<input type="checkbox" class="common-check" id="ClauseChock01" name="" />
+															<label for="ClauseChock01">개인정보&middot;고유식별정보 필수 전체 동의</label>
+														</em>
+														<!-- 하단 약관 -->
+														<div class="detail-clause">
+															//약관내용
+														</div>
+														<!-- //하단 약관 -->
+													</li>
+													<li>
+														<em class="active">
+															<a href="#" class="toggle-btn">약관닫기</a>
+															<input type="checkbox" class="common-check" id="ClauseChock02" name="" />
+															<label for="ClauseChock02">개인정보&middot;고유식별정보 필수 전체 동의</label>
+														</em>
+														<!-- 하단 약관 -->
+														<div class="detail-clause">
+															미래에셋캐피탈㈜ 귀중<br />본 계약과 관련하여 귀사가 본인의 개인(신용)정보를 수집∙이용하고자 하는 경우에는 『개인정보보호법』제15조 및 제16조, 제22조, 제24조 『신용정보의 이용 및 보호에 관한 법률』제33조 및 제34조에 따라 동의를 얻어야 합니다. 이에 본인은 귀사가 아래의 내용과 같이 본인의 개인
+														</div>
+														<!-- //하단 약관 -->
+													</li>
+												</ul>
+												<!-- //2018-06-22 수정 -->
+											</div>
+											<p class="notice-list">고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- //휴대폰 -->
+				</div>
+			</div>
+		</div>
+		<div class="btn-center">
+			<button type="button" class="btn-popup01">다음</button>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

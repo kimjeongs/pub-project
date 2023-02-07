@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>본인인증 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/member.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">회원가입</strong>
+		</div>
+		<div class="pop-cont type1">
+			<div class="popup-idpw-search">
+				<strong class="invisible">회원가입 단계</strong>
+				<ul class="step-list">
+					<li class="step01 selected">01 <em>현재단계</em>보인인증</li>
+					<li class="step02">02 정보입력</li>
+					<li class="step03">03 가입완료</li>
+				</ul>
+				<div class="tab-type1">
+					<ul>
+						<li><a href="#">휴대폰</a></li>
+						<li class="active"><a href="#">카드</a></li>
+						<li><a href="#">공인인증서</a></li>
+						<li><a href="#">아이핀</a></li>
+					</ul>
+				</div>
+				<div class="cont">
+					<!-- 카드 -->
+					<div class="phone">
+						<strong class="invisible">카드</strong>
+						<p class="guide-info">회원님의 본인명의의 휴대폰만 인증이 가능합니다.</p>
+						<div class="customer-info-form">
+							<table>
+								<caption>아이디/비밀번호 찾기 - 개인/개인사업자 - 카드 테이블입니다.</caption>
+								<colgroup>
+									<col style="width:173px;" />
+									<col style="width:507px;" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row"><label for="idpwSearch01_01">이름</label></th>
+										<td><input type="text" id="idpwSearch01_01" /></td>
+									</tr>
+									<tr>
+										<th scope="row">주민등록번호</th>
+										<td>
+											<label for="limitCheck02" class="invisible">주민등록번호 앞6자리</label>
+											<input type="text" id="limitCheck02" style="width:217px;" />
+											<span class="input-txt-line">-</span>
+											<span class="pop-keypad">
+												<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" /></a></span>
+												<label for="number01" class="invisible">주민등록번호 뒤7자리</label>
+												<input type="text" style="width:217px;" placeholder="뒤 7자리" id="number01" />
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">카드번호</th>
+										<td>
+											<label for="idpwSearch02_01" class="invisible">카드번호 첫번째자리 입력</label>
+											<input type="text" id="idpwSearch02_01" style="width:98px;" />
+											<span class="input-txt-line">-</span>
+											<label for="idpwSearch02_02" class="invisible">카드번호 두번째자리 입력</label>
+											<input type="text" id="idpwSearch02_02" style="width:98px;" />
+											<span class="input-txt-line">-</span>
+											<label for="idpwSearch02_03" class="invisible">카드번호 세번째자리 입력</label>
+											<input type="text" id="idpwSearch02_03" style="width:98px;" />
+											<span class="input-txt-line">-</span>
+											<span class="pop-keypad">
+												<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" /></a></span>
+												<label for="number02" class="invisible">카드번호 마지막자리 입력</label>
+												<input type="text" style="width:98px;" id="number02" />
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">카드비밀번호</th>
+										<td>
+											<span class="pop-keypad">
+												<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" /></a></span>
+												<label for="number03" class="invisible">카드비밀번호 앞2자리</label>
+												<input type="text" style="width:100px;" placeholder="앞 2자리" id="number03" />
+											</span>
+											<span class="card-pw"><span>*</span><span>*</span></span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											CVC번호
+											<div class="tooltip pop">
+												<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+												<div class="box" style="width:440px;">
+													<strong>CVC 번호 안내</strong>
+													<ul class="board-dot-list01">
+														<li>VISA / MASTER / 아멕스 / UnionPay(은련) / 국내전용</li>
+														<li>CVC번호는 중요한 정보이므로, 유출되지 않도록 주의해 주세요.</li>
+													</ul>
+													<div class="license">
+														<img src="../../img/comm/img_license01.png" alt="카드 CVC 번호를 입력하세요.">
+													</div>
+												</div>
+											</div>
+										</th>
+										<td>
+											<span class="pop-keypad">
+												<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드" /></a></span>
+												<label for="number04" class="invisible">CVC번호 카드뒷면 3자리</label>
+												<input type="text" style="width:150px;" placeholder="카드뒷면 3자리" id="number04" />
+											</span>
+											<button type="button" class="btn-tb02 ml8">카드인증받기</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- //카드 -->
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">다음</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

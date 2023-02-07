@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>법인등기부등본 확인 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/myaccount.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">법인등기부등본 확인</strong>
+		</div>
+		<div class="pop-cont">
+			<div class="popup-contract-present01">
+				<div class="tab-type1">
+					<ul>
+						<li><a href="#">상호</a></li>
+						<li class="active"><a href="#">등기번호</a></li>
+						<li><a href="#">등록번호</a></li>
+					</ul>
+				</div>
+				<strong class="invisible">등기번호</strong>
+				<div class="customer-info-form">
+					<table class="loan02">
+						<caption>법인등기부등본 - 등기번호 입력 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:173px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="nameForm01">등기소</label></th>
+								<td><input type="text" id="nameForm01" /></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="nameForm02">법인구분</label></th>
+								<td>
+									<select id="nameForm02" style="width:250px;">
+										<option></option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">등기번호</th>
+								<td>
+									<label for="nameForm03" class="invisible">등기번호 앞자리 입력</label>
+									<input type="text" style="width:250px;" placeholder="주민등록번호 앞 6자리" id="nameForm03" />
+									<span class="input-txt-line">-</span>
+									<label for="nameForm04" class="invisible">등기번호 뒷자리 입력</label>
+									<input type="text" style="width:250px;" placeholder="주민등록번호 앞 6자리" id="nameForm04" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">입력</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

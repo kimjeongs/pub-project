@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>오토론/할부 | 자동차상품 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<div class="gnb">
+				<h1><a href="#"><img src="../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<div class="access">
+					<span><em>admin</em>님이 접속하셨습니다.</span>
+					<a href="#">로그아웃</a>
+					<a href="#">비밀번호변경</a>
+				</div>
+				<ul>
+					<li><a href="#">팝업관리</a></li>
+					<li><a href="#">게시판 관리</a></li>
+					<li><a href="#">상담/민원 관리 </a></li>
+					<li><a href="#" class="active">자동차 상품 관리 </a></li>
+					<li><a href="#">주식상품 관리</a></li>
+					<li><a href="#">부동산 상품 관리</a></li>
+					<li><a href="#">관리자 관리</a></li>
+					<li><a href="#">APP 관리</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="lnb">
+				<div class="title">
+					<em>Automotive Products</em>
+					<h2>자동차 상품관리</h2>
+				</div>
+				<ul class="smenu">
+					<li class="active">
+						<a href="#">오토론/할부</a>
+						<ul>
+							<li><a href="#">인기모델</a></li>
+							<li><a href="#">인기브랜드</a></li>
+							<li class="active"><a href="#">상품상세</a></li>
+						</ul>
+					</li>
+					<li><a href="#">오토리스</a></li>
+				</ul>
+			</div>
+			<div id="content" class="content-width">
+				<h3>상품상세</h3>
+				<div class="row-board01">
+					<table>
+						<caption>상품 특징(입력가능) 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:200px;" />
+							<col />
+							<col style="width:200px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="w1">취급 수수료</label></th>
+								<td><input type="text" id="w1" placeholder="없음"></td>
+								<th scope="row"><label for="w2">중도상환 수수료</label></th>
+								<td><input type="text" id="w2" placeholder="0~2.97%"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="w3">연체이자율</label></th>
+								<td><input type="text" id="w3" placeholder="연 24%"></td>
+								<th scope="row"><label for="w4">인지세</label></th>
+								<td><input type="text" id="w4" placeholder="당사 50% / 고객 50% 부담"></td>
+							</tr>
+						</tbody>
+					</table>
+					<table>
+						<caption>상품 특징 및  장점(입력가능) 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:200px;" />
+							<col style="width:150px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="4" class="r-line">상품 특징 및  장점</th>
+								<th scope="row"><label for="writeForm01">장점1</label></th>
+								<td><input type="text" id="writeForm01" placeholder="목돈 부담없이 내 명의로 차량 구매 가능"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm02">장점2</label></th>
+								<td><input type="text" id="writeForm02" placeholder="매월 금액 분할 상환으로 계획적, 안정적 자금운용"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm03">장점3</label></th>
+								<td><input type="text" id="writeForm03" placeholder="최대 60개월까지 이용 가능"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm04">장점4</label></th>
+								<td><input type="text" id="writeForm04" placeholder="이자 금액과 차량감가분에 대한 세금혜택(사업자의 경우)"></td>
+							</tr>
+						</tbody>
+					</table>
+					<table>
+						<caption>이용조건(입력가능) 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:200px;" />
+							<col style="width:150px;" />
+							<col />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="6" class="r-line">이용조건</th>
+								<th scope="row"><label for="writeForm04">차량소유자</label></th>
+								<td><input type="text" id="writeForm04" placeholder="고객 명의로 차량등록<br />(단, 할부금 완납 시까지 처분 제한)"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm05">할부이자율</label></th>
+								<td><input type="text" id="writeForm05" placeholder="최저 4.1% ~ 최대 13.5%<br />(신용도, 대출기간, 차종 등에 따라 차등)"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm06">연체이자율</label></th>
+								<td><input type="text" id="writeForm06" placeholder="연 24%"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm07">중도상환 수수료</label></th>
+								<td>
+									<textarea id="writeForm07" class="textarea">1년 이상 : 중도상환원금X1%+중도상환원금X(중도상환수수료율-1%)X잔존기간/(대출기간-30일) <br>1년 미만 : 중도상환원금X중도상환수수료율X잔존기간/(대출기간-30일) <br>잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주<br> 중도상환수수료율 : 1~3% 이내"
+									</textarea>
+								</td>
+							<tr>
+								<th scope="row"><label for="writeForm08">이용기간</label></th>
+								<td><input type="text" id="writeForm08" placeholder="12, 24, 36, 48, 60개월"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm09">차량대금 결제</label></th>
+								<td>
+									<textarea id="writeForm09" class="textarea">금융사가 차량 판매사로 송금 (단, 오토론/할부의 경우 고객 계좌로 송금 가능, 단, 차량 등록증 및 근저당설정 서류 제출 필요)
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table>
+						<caption>구비서류(입력가능) 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:200px;" />
+							<col style="width:150px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="4" class="r-line">구비서류</th>
+								<th scope="row"><label for="writeForm10">개인</label></th>
+								<td>
+									<textarea id="writeForm10" class="textarea">인감증명서, 인감도장, 주민등록등본, 신분증, 재산세납세증명원, 소득금액증명원, 자동이체용 통장사본
+									</textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm11">개인사업자</label></th>
+								<td>
+									<textarea id="writeForm11" class="textarea">사업자등록증, 인감증명서, 인감도장, 주민등록등본, 자격증 또는 면허증, 신분증, 재산세납세증명원 또는 소득세납입증명서, 자동이체용 통장사본
+									</textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm12">법인사업자</label></th>
+								<td>
+									<textarea id="writeForm12" class="textarea">사업자등록증, 법인인감증명서, 법인명판 또는 인감도장, 법인등기부등본, 재무제표, 자동이체용 통장사본, 주주명부(원본 or 원본대조필)
+									</textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="writeForm13">연대보증인 (대표이사)</label></th>
+								<td>
+									<textarea id="writeForm13" class="textarea">인감증명서, 인감도장, 주민등록등본, 신분증, 재산세납세증명원, 소득금액증명원
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table>
+						<caption>알려드립니다.(입력가능) 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:200px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="writeForm14">알려드립니다.</label></th>
+								<td>
+									<textarea id="writeForm14" class="textarea">계약을 체결하기 전 상품 설명서와 약관을 꼭 읽어보시기 바랍니다. <br />&#34;과도한 빚, 고통의 시작입니다.&#34;<br />준법심의필 : 제17-준001호(2017.11.01 ~ 2018.10.31) <br />여신금융협회심의필 : 제2017-C1h-12476호 <br />(2017.11.01 ~ 2018.10.31)
+									</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn-right">
+					<button type="button" class="btn-type03 left">미리보기</button>
+					<button type="button" class="btn-type01">취소</button>
+					<button type="button" class="btn-type02">등록</button>
+				</div>
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			COPYRIGHT 2018 MIRAE ASSET CAPITAL CO., LTD. ALL RIGHTS RESERVED
+		</div>
+		<!-- //footer -->
+
+	</div>
+</body>
+</html>

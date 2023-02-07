@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>상담예약 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">상담예약</strong>
+		</div>
+		<div class="pop-cont">
+			<p class="pop-cont-txt">전화상담은 고객님의 신용등급에 영향을 주지 않습니다.</p>
+			<div class="pop-cont-box pop-cont-box2">
+				<div class="customer-info-form">
+					<table>
+						<caption>상담예약 - 입력 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:173px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="calculatorForm01">상담분야</label></th>
+								<td>
+									<select id="calculatorForm01" style="width: 100%;">
+										<option>스탁론</option>
+									</select>	
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm02">성명</label></th>
+								<td>
+									<input type="text" id="calculatorForm02" placeholder="성명을 입력해주세요">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm03">연락처</label></th>
+								<td>
+									<input type="text" id="calculatorForm03" placeholder="‘-’ 없이 숫자만 입력해주세요">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm04">통화희망시간대</label></th>
+								<td>
+									<select id="calculatorForm04" style="width: 100%;">
+										<option>최대한 빨리</option>
+									</select>	
+									<p class="notice-list">상담가능 시간 : 평일 09:00 ~18:00</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">약관동의</th>
+								<td>
+									<div class="check-all">
+										<input type="checkbox" class="common-check" id="checkAll" name="">
+										<label for="checkAll">약관에 모두 동의합니다.</label>
+									</div>
+									<div class="clause-box-wrap">
+										<ul>
+											<li>
+												<em class="active">
+													<a href="#" class="toggle-btn">약관닫기</a>
+													<input type="checkbox" class="common-check" id="ClauseChock01" name="">
+													<label for="ClauseChock01">고유식별정보의 수집 및 이용 동의서 (필수)</label>
+												</em>
+												<!-- 하단 약관 -->
+												<div class="detail-clause">
+													//약관 내용
+												</div>
+												<!-- //하단 약관 -->
+											</li>
+											<li>
+												<em>
+													<a href="#" class="toggle-btn">약관보기</a>
+													<input type="checkbox" class="common-check" id="ClauseChock02" name="">
+													<label for="ClauseChock02">개인정보의 수집 및 이용 동의서 (필수)</label>
+												</em>
+												<!-- 하단 약관 -->
+												<div class="detail-clause">
+													//약관 내용
+												</div>
+												<!-- //하단 약관 -->
+											</li>
+											<li>
+												<em>
+													<a href="#" class="toggle-btn">약관보기</a>
+													<input type="checkbox" class="common-check" id="ClauseChock03" name="">
+													<label for="ClauseChock03">개인정보의 제공 동의서 (선택)</label>
+												</em>
+												<!-- 하단 약관 -->
+												<div class="detail-clause">
+													//약관 내용
+												</div>
+												<!-- //하단 약관 -->
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">상담예약</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

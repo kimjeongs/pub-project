@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>고객정보확인 | 계약신청하기 | 오토론/할부 | 자동차금융 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/car.css" />
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	 <script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 단계별 보기/닫기
+			$('.limit_check').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.limit_check'));
+				(!$(this).closest('.limit_check').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target) // 단계별 보기
+				: comJs.comToggle.sectionClose($target); // 단계별 닫기
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="skipNavi">
+			<ul>
+				<li><a href="#container">본문 바로가기</a></li>
+				<li><a href="#gnb">주 메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+		<div id="header">
+			<div class="header-wrap">
+				<h1><a href="#"><img src="../../img/comm/logo.gif" alt="미래에셋캐피탈" /></a></h1>
+				<ul class="h-menu">
+					<!-- 로그인 전 -->
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<!-- //로그인 전 -->
+
+					<!-- 로그인 후 -->
+					<li>
+						<!-- 피싱예방 영역 -->
+						<div class="prevention-box tooltip">
+							<a href="#" title="피싱예방 설정 안내 보기">
+								<img src="../../img/customer/img_hexagon.png" alt="피싱예방 아이콘">
+							</a>
+							<div class="box">
+								<strong>피싱예방 설정 안내</strong>
+								<p><strong>홍길동</strong>으로 설정되어있습니다.</p>
+								<span><a href="#">피싱예방 설정으로 이동</a></span>
+								<a href="#" class="close">닫기</a>
+							</div>
+						</div>
+						<!-- //피싱예방 영역 -->
+
+						<strong>김미래</strong> 님
+
+						<!-- 카운트다운 -->
+						<span class="countdown">
+							<span class="time-circle">
+								<span class="invisible">카운트다운</span>
+								<svg aria-hidden="true">
+									<circle r="5" cx="7.5" cy="8"></circle>
+								</svg>
+							</span>
+							<span class="time-min">10</span><span class="invisible">분</span> :
+							<span class="time-sec">00</span><span class="invisible">초</span>
+							<a href="#" onClick="loginTimeExtension(10)">연장</a>
+						</span>
+						<!-- //카운트다운 -->
+					</li>
+					<li class="logout"><a href="#">로그아웃</a></li>
+					<!-- //로그인 후 -->
+					
+					<li><a href="#">My Account</a></li>
+				</ul>
+				<div id="gnb">
+					<ul>
+						<li class="depth1">
+							<a href="#">개인금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>개인금융</strong>
+										<ul>
+											<li><a href="#">스탁론</a></li>
+											<li><a href="#">주식담보대출</a></li>
+											<li><a href="#">중도금대출</a></li>
+											<li><a href="#">임차보증금대출</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth2">
+							<a href="#">자동차금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>자동차금융</strong>
+										<ul>
+											<li><a href="#">오토론/할부</a></li>
+											<li><a href="#">오토리스</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth3">
+							<a href="#">투자금융</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>투자금융</strong>
+										<ul>
+											<li><a href="#">기업금융이란</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">투자분야</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth4">
+							<a href="#">신성장투자</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>신성장투자</strong>
+										<ul>
+											<li><a href="#">신성장투자조합이란?</a></li>
+											<li><a href="#">운용조직</a></li>
+											<li><a href="#">운용프로세스</a></li>
+											<li><a href="#">투자심의프로세스</a></li>
+											<li><a href="#">투자현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth5">
+							<a href="#">고객센터</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>고객상담/문의</strong>
+										<ul>
+											<li><a href="#">자주하는질문</a></li>
+											<li><a href="#">상담/문의</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>소비자보호</strong>
+										<ul>
+											<li><a href="#">전자민원접수</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>공인인증서</strong>
+										<ul>
+											<li><a href="#">공인인증서 등록/삭제</a></li>
+											<li><a href="#">공인인증서 복사</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>온라인약관 및 고객안내</strong>
+										<ul>
+											<li><a href="#">온라인약관 및 고객안내</a></li>
+										</ul>
+									</div>
+									<div>
+										<strong>이용안내</strong>
+										<ul>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">웹사이트 이용안내</a></li>
+											<li><a href="#">App다운로드</a></li>
+											<li><a href="#">보안프로그램 설치</a></li>
+											<li><a href="#">위탁제휴업체현황</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="depth6">
+							<a href="#">회사소개</a>
+							<div class="sub-menu-container">
+								<div class="sub_menu_contents">
+									<div>
+										<strong>회사소개</strong>
+										<ul>
+											<li><a href="#">인사말</a></li>
+											<li><a href="#">경영철학</a></li>
+											<li><a href="#">윤리경영</a></li>
+											<li><a href="#">연혁</a></li>
+											<li><a href="#">사회공헌</a></li>
+											<li><a href="#">Contact us</a></li>
+										</ul>
+									</div>
+									<div class="event-box">
+										<a href="#">
+											<span><img src="../../img/comm/event.jpg" alt="국립아시아문화전당 전시 특별 초대전"></span>
+											<strong><em>EVENT</em> 국립아시아문화전당 전시 특별 초대전</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="quick-navi-wrap">
+				<ul class="navi">
+					<li class="navihome"><a href="#">미래에셋캐피탈 메인</a></li>
+					<li><a href="#">자동차금융</a></li>
+					<li>
+						<a href="#">오토론</a><!-- class="open" 추가시 하위메뉴 열림 -->
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">오토론</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="레이어열림">상품소개</a>
+						<div class="sub-menu">
+							<ul>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">견적 신청하기</a></li>
+								<li><a href="#">한도 확인하기</a></li>
+								<li><a href="#">계약신청하기</a></li>
+							</ul>
+							<a href="#" class="navi_up" title="레이어닫힘">상품소개</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="smenu">
+					<li><a href="#" class="loan">대출계산기</a></li>
+					<li><a href="#" class="reservation">상담예약</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="estimate-inner white active s-item estimate-type"><!-- 계약신청하기 경우 estimate-type 추가 -->
+				<div class="content-width">
+					<div class="page-title-style type02">
+						<h2 class="page-title">계약신청하기</h2>
+						<p class="title-txt">오토론 신청을 위해 고객정보 및 본인인증을 해주세요.</p>
+					</div>
+					<div class="limit_check_wrap">
+						<!-- 2018-08-11-수정 -->
+
+						<!-- 본인확인 -->
+						<div class="limit_check"><!-- class open추가시 레이어열림 -->
+							<h3><button type="button" class="btn-toggle" title="닫기">본인확인 <em>확인완료</em></button></h3>
+							<div class="cont">
+								<div class="tab-type1 mt60">
+									<ul>
+										<li class="active"><a href="#">휴대폰</a></li>
+										<li><a href="#">카드</a></li>
+										<li><a href="#">공인인증서</a></li>
+									</ul>
+								</div>
+								<!-- //tab -->
+
+								<!-- 휴대폰 -->
+								<div class="phone">
+									<strong class="invisible">한도 확인하기 &gt;휴대폰 인증</strong>
+									<div class="customer-info-form mt40">
+										<table>
+											<caption>한도 확인하기 - 휴대폰 인증 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:170px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row"><label for="idpwSearch01">성명</label></th>
+													<td><input type="text" id="idpwSearch01" placeholder="성명을 입력하세요" /></td>
+												</tr>
+												<tr>
+													<th scope="row">주민등록번호</th>
+													<td>
+														<label for="idpwSearch02" class="invisible">주민등록번호 앞6자리</label>
+														<input type="text" id="idpwSearch02" style="width:255px;"  placeholder="앞 6자리"  />
+														<span class="input-txt-line">-</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch03" class="invisible">주민등록번호 뒤7자리</label>
+															<input type="text" style="width:256px;" placeholder="뒤 7자리" id="idpwSearch03" />
+														</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">휴대전화번호</th>
+													<td>
+														<ul class="pick-list type04">
+															<li>
+																<input type="radio" id="pick01" name="phone01">
+																<label for="pick01">SKT</label>
+															</li>
+															<li>
+																<input type="radio" id="pick02" name="phone01">
+																<label for="pick02">KT</label>
+															</li>
+															<li>
+																<input type="radio" id="pick03" name="phone01" checked="checked">
+																<label for="pick03">LG U+</label>
+															</li>
+															<li>
+																<label class="invisible" for="phoneType">휴대전화 종류 선택</label>
+																<select id="phoneType" title="알뜰폰" style="width: 100%;">
+																	<option>알뜰폰</option>
+																</select>
+															</li>
+														</ul>
+														<div class="phone-num">
+															<label class="invisible" for="phoneNum">휴대전화번호 입력</label>
+															<span class="form-check">
+																<span class="wrap">
+																	<input type="text" id="phoneNum" placeholder="‘-’ 없이 입력입력해 주세요" style="width: 434px;"><em class="check">형식 체크</em>
+																</span>
+																<button type="button" class="btn-inner ml8">인증번호 받기</button>
+															</span>
+														</div>
+														<div class="code-num">
+															<label class="invisible" for="code-num">인증번호입력</label>
+															<span class="wrap">
+																<span class="time">02:59</span>
+																<input type="text" placeholder="인증번호 6자리 번호 입력" id="code-num" style="width: 462px;">
+															</span>
+															<button type="button" class="btn-inner ml8">인증하기</button>
+														</div>
+														<div class="notice-list">
+															<ul>
+																<li>회원님의 본인명의의 휴대폰만 인증이 가능합니다.</li>
+																<li>고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">휴대폰 본인인증</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02" name="" />
+																		<label for="ClauseChock02">개인정보 이용 및 제공 동의 (필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2" name="" />
+																		<label for="ClauseChock02_2">고유식별정보처리 (필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_3" name="" />
+																		<label for="ClauseChock02_3">통신사별 이용 약관 (필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_4" name="" />
+																		<label for="ClauseChock02_4">본인인증 이용약관 (필수)</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+												<th scope="row">신용조회동의</th>
+												<td>
+													<div class="check-all">
+														<input type="checkbox" id="allcheck02" class="common-check">
+														<label for="allcheck02">약관에 모두 동의합니다.</label>
+													</div>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03" name="">
+																	<label for="ClauseChock03">개인(신용)정보 동의서 (필수)</label>
+																</em>
+															</li>
+															<li>
+																<em class="active">
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03_2" name="">
+																	<label for="ClauseChock03_2">개인(신용)정보 선택적 동의서 (선택)</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+																	<span class="collect">
+																		<input type="checkbox" class="common-check" id="all">
+																		<label for="all">전체</label>
+																		<input type="checkbox" class="common-check" id="tel">
+																		<label for="tel">전화</label>
+																		<input type="checkbox" class="common-check" id="sms">
+																		<label for="sms">SMS</label>
+																		<input type="checkbox" class="common-check" id="dm">
+																		<label for="dm">서면(DM)</label>
+																		<input type="checkbox" class="common-check" id="email">
+																		<label for="email">이메일</label>
+																	</span>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- //휴대폰 -->
+
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">본인인증</button>
+								</div>
+
+								<!-- 카드 -->
+								<div class="card">
+									<strong class="invisible">한도 확인하기 &gt; 카드 인증</strong>
+									<div class="customer-info-form mt40">
+										<table>
+											<caption>한도 확인하기 - 카드 인증 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:170px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row"><label for="idpwSearch01">성명</label></th>
+													<td><input type="text" id="idpwSearch01" placeholder="성명을 입력하세요" /></td>
+												</tr>
+												<tr>
+													<th scope="row">주민등록번호</th>
+													<td>
+														<label for="idpwSearch02" class="invisible">주민등록번호 앞6자리</label>
+														<input type="text" id="idpwSearch02" style="width:255px;"  placeholder="앞 6자리"  />
+														<span class="input-txt-line">-</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch02_02" class="invisible">주민등록번호 뒤7자리</label>
+															<input type="text" style="width:255px;" placeholder="뒤 7자리" id="idpwSearch02_02" />
+														</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">휴대전화번호</th>
+													<td>
+														<div class="phone-num mt0">
+															<label class="invisible" for="phoneNum">휴대전화번호 입력</label>
+															<span class="form-check">
+																<span class="wrap">
+																	<input type="text" id="phoneNum" placeholder="‘-’ 없이 입력입력해 주세요" style="width: 434px;"><em class="check">형식 체크</em>
+																</span>
+																<button type="button" class="btn-inner ml8">인증번호 받기</button>
+															</span>
+														</div>
+														<div class="code-num">
+															<label class="invisible" for="code-num">인증번호입력</label>
+															<span class="wrap">
+																<span class="time">02:59</span>
+																<input type="text" placeholder="인증번호 6자리 번호 입력" id="code-num" style="width: 462px;">
+															</span>
+															<button type="button" class="btn-inner ml8">인증하기</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">카드번호</th>
+													<td>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch03" class="invisible">카드번호 입력</label>
+															<input type="text" style="width:530px;" id="idpwSearch03" placeholder="카드 번호만 입력해 주세요" />
+														</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">유효기간</th>
+													<td>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+															<label for="idpwSearch04_01" class="invisible">유효기간 월 입력</label>
+															<input type="text" style="width:207px;" placeholder="MM" id="idpwSearch04_01">
+														</span>
+														<span class="input-day-area">월</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+															<label for="idpwSearch04_02" class="invisible">유효기간 일 입력</label>
+															<input type="text" style="width:207px;" placeholder="YY" id="idpwSearch04_02">
+														</span>
+														<span class="input-day-area">일</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">카드비밀번호</th>
+													<td>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch05" class="invisible">카드비밀번호 앞2자리</label>
+															<input type="text" style="width:207px;" placeholder="앞 2자리" id="idpwSearch05" />
+														</span>
+														<span class="pw-mark">
+															<span class="pw-encryption"><em class="invisible">카드 비밀번호 뒷자리</em></span>
+														</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">
+														CVC번호
+														<div class="tooltip pop">
+															<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+															<div class="box" style="width:440px;">
+																<strong>CVC 번호 안내</strong>
+																<ul class="board-dot-list01">
+																	<li>VISA / MASTER / 아멕스 / UnionPay(은련) / 국내전용</li>
+																	<li>CVC번호는 중요한 정보이므로, 유출되지 않도록 주의해 주세요.</li>
+																</ul>
+																<div class="license">
+																	<img src="../../img/comm/img_license01.png" alt="카드 CVC 번호를 입력하세요.">
+																</div>
+															</div>
+														</div>
+													</th>
+													<td>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch06" class="invisible">CVC번호 카드뒷면 3자리</label>
+															<input type="text" style="width:207px;" placeholder="카드뒷면 3자리" id="idpwSearch06" />
+														</span>
+														<div class="notice-list">
+															<ul>
+																<li>본인 명의의 신용카드만 인증이 가능합니다.</li>
+																<li>카드사 정책에 따라 일부 신용카드 및 체크카드는 인증이 불가능 할 수 있습니다.</li>
+																<li>고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">카드 본인인증</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02" name="" />
+																		<label for="ClauseChock02">개인정보 이용 및 제공 동의 (필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2" name="" />
+																		<label for="ClauseChock02_2">고유식별정보처리 (필수)</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+												<th scope="row">신용조회동의</th>
+												<td>
+													<div class="check-all">
+														<input type="checkbox" id="allcheck02" class="common-check">
+														<label for="allcheck02">약관에 모두 동의합니다.</label>
+													</div>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03" name="">
+																	<label for="ClauseChock03">개인(신용)정보 동의서 (필수)</label>
+																</em>
+															</li>
+															<li>
+																<em class="active">
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03_2" name="">
+																	<label for="ClauseChock03_2">개인(신용)정보 선택적 동의서 (선택)</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+																	<span class="collect">
+																		<input type="checkbox" class="common-check" id="all">
+																		<label for="all">전체</label>
+																		<input type="checkbox" class="common-check" id="tel">
+																		<label for="tel">전화</label>
+																		<input type="checkbox" class="common-check" id="sms">
+																		<label for="sms">SMS</label>
+																		<input type="checkbox" class="common-check" id="dm">
+																		<label for="dm">서면(DM)</label>
+																		<input type="checkbox" class="common-check" id="email">
+																		<label for="email">이메일</label>
+																	</span>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- //카드 -->
+
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">본인인증</button>
+								</div>
+
+								<!-- 공인인증서 -->
+								<div class="certificate">
+									<strong class="invisible">한도 확인하기 &gt;공인인증서</strong>
+									<div class="customer-info-form mt40">
+										<table>
+											<caption>한도 확인하기 공인인증서 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:170px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row"><label for="idpwSearch01">성명</label></th>
+													<td><input type="text" id="idpwSearch01" placeholder="성명을 입력하세요" /></td>
+												</tr>
+												<tr>
+													<th scope="row">주민등록번호</th>
+													<td>
+														<label for="idpwSearch02" class="invisible">주민등록번호 앞6자리</label>
+														<input type="text" id="idpwSearch02" style="width:255px;"  placeholder="앞 6자리"  />
+														<span class="input-txt-line">-</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드" /></a></span>
+															<label for="idpwSearch03" class="invisible">주민등록번호 뒤7자리</label>
+															<input type="text" style="width:255px;" placeholder="뒤 7자리" id="idpwSearch03" />
+														</span>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">휴대전화번호</th>
+													<td>
+														<div class="phone-num mt0">
+															<label class="invisible" for="phoneNum">휴대전화번호 입력</label>
+															<span class="form-check">
+																<span class="wrap">
+																	<input type="text" id="phoneNum" placeholder="‘-’ 없이 입력입력해 주세요" style="width: 434px;"><em class="check">형식 체크</em>
+																</span>
+																<button type="button" class="btn-inner ml8">인증번호 받기</button>
+															</span>
+														</div>
+														<div class="code-num">
+															<label class="invisible" for="code-num">인증번호입력</label>
+															<span class="wrap">
+																<span class="time">02:59</span>
+																<input type="text" placeholder="인증번호 6자리 번호 입력" id="code-num" style="width: 462px;">
+															</span>
+															<button type="button" class="btn-inner ml8">인증하기</button>
+														</div>
+														<div class="notice-list">
+															<ul>
+																<li>금융기관을 통해 발급된 고객님 명의의 공인인증서를 통해서만 인증 가능합니다.</li>
+																<li>고객님의 정보는 암호화 처리되어 본인인증으로만 사용하며 보관하지 않습니다.</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">공인인증서 본인인증</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02" name="" />
+																		<label for="ClauseChock02">개인정보 이용 및 제공 동의 (필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2" name="" />
+																		<label for="ClauseChock02_2">고유식별정보처리 (필수)</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+												<th scope="row">신용조회동의</th>
+												<td>
+													<div class="check-all">
+														<input type="checkbox" id="allcheck02" class="common-check">
+														<label for="allcheck02">약관에 모두 동의합니다.</label>
+													</div>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03" name="">
+																	<label for="ClauseChock03">개인(신용)정보 동의서 (필수)</label>
+																</em>
+															</li>
+															<li>
+																<em class="active">
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03_2" name="">
+																	<label for="ClauseChock03_2">개인(신용)정보 선택적 동의서 (선택)</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+																	<span class="collect">
+																		<input type="checkbox" class="common-check" id="all">
+																		<label for="all">전체</label>
+																		<input type="checkbox" class="common-check" id="tel">
+																		<label for="tel">전화</label>
+																		<input type="checkbox" class="common-check" id="sms">
+																		<label for="sms">SMS</label>
+																		<input type="checkbox" class="common-check" id="dm">
+																		<label for="dm">서면(DM)</label>
+																		<input type="checkbox" class="common-check" id="email">
+																		<label for="email">이메일</label>
+																	</span>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- //공인인증서 -->
+
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">본인인증</button>
+								</div>
+							</div>
+						</div>
+						<!-- //본인확인 -->
+
+						<!-- 소득확인 -->
+						<div class="limit_check"><!-- class open추가시 레이어열림 -->
+							<h3><button type="button" class="btn-toggle" title="닫기">소득확인<em>확인완료</em></button></h3>
+							<div class="cont">
+								<div class="customer-info-form">
+									<table>
+										<caption>오토론/할부 계약신청하기 - 소득확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:170px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="identity_num01">주민등록번호</label></th>
+												<td>
+													<input type="text" style="width:254px;" placeholder="앞 6자리" id="identity_num01" />
+													<span class="input-txt-line">-</span>
+													<span class="pop-keypad">
+														<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+														<label for="identity_num01_1" class="invisible">주민등록번호 뒤7자리 입력</label>
+														<input type="text" style="width:254px;" placeholder="7자리" id="identity_num01_1" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="select01">인증서 목록</label></th>
+												<td>
+													<select id="select01" style="width: 100%;">
+														<option>인증서 목록을 선택해 주세요.</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="pw">인증서 비밀번호</label></th>
+												<td>
+													<input type="password" id="pw" placeholder="인증서 비밀번호를 입력해 주세요.">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">약관동의</th>
+												<td>
+													<div class="check-all">
+														<input type="checkbox" id="allcheck" class="common-check">
+														<label for="allcheck">약관에 모두 동의합니다.</label>
+													</div>
+													<div class="clause-box-wrap">
+														<ul>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock02">
+																	<label for="ClauseChock02">개인정보 이용 및 제공 동의(필수)</label>
+																</em>
+															</li>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock02_2">
+																	<label for="ClauseChock02_2">고유식별정보처리(필수)</label>
+																</em>
+															</li>
+														</ul>
+													</div>
+													<!-- 2018-08-11-삭제
+													<ul class="board-dot-list01">
+														<li>한도확인을 위한 신용조회는 신용등급에 영향을 주지 않습니다.</li>
+														<li>NICE 신용조회 차단 서비스 이용 시 한도조회 진행이 어려우므로, 차단 해제 후 조회하시기 바랍니다.<br>(해제 신청 및 문의 : 1588-2486)</li>
+													</ul>
+													 -->
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">소득확인</button>
+								</div>
+							</div>
+						</div>
+						<!-- //소득확인 -->
+
+						<!-- 계약정보입력 -->
+						<div class="limit_check"><!-- open추가시 레이어열림 -->
+							<h3><button type="button" class="btn-toggle" title="보기">계약정보<em>입력완료</em></button></h3><!-- 2018-08-11 -->
+							<div class="cont">
+								<div class="customer-info-form">
+									<div class="tab-type2 mt50">
+										<ul>
+											<li><a href="#">개인</a></li>
+											<li><a href="#">개인사업자</a></li>
+											<li class="active"><a href="#">법인</a></li>
+										</ul>
+									</div>
+									<strong class="limit-check-title">고객정보</strong><!-- 2018-06-27 수정 -->
+									<!-- 고객정보 입력 -->
+									<table>
+										<caption>오토론/할부 계약신청하기 - 계약자(담당자) 기본정보 입력 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:170px;" />
+											<col />
+										</colgroup>
+										<tbody>
+                      						<tr>
+												<th scope="row">
+													<label for="ClauseChock07">법인명(한글)</label>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock07" placeholder="한글 법인명을 입력해 주세요."/><!-- 2018-06-27 수정 -->
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock07">법인명(영문)</label>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock07" placeholder="영문 법인명을 입력해 주세요. (예 : MiraeAsset Capital)"/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock07">대표자 성명(한글)</label>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock07" placeholder="대표자 성명을 입력해 주세요."/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock07">대표자 성명(영문)</label>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock07" placeholder="대표자 영문명을 입력해 주세요. (예 : KIM MIRAE)"/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">사업자등록번호</th>
+												<td>
+													<span class="pop-keypad">
+														<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+														<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+														<input type="text" style="width:174px;" placeholder="앞 3자리를 입력해 주세요." id="number01">
+														<span class="input-txt-line">-</span>
+														<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+														<input type="text" style="width:142px;" placeholder="가운데  2자리를 입력해 주세요." id="number02">
+														<span class="input-txt-line">-</span>
+														<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+														<input type="text" style="width:174px;" placeholder="뒤 5자리를 입력해 주세요." id="number03">
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">법인등록번호</th>
+												<td>
+													<label for="idpwSearch02" class="invisible">앞 6자리를 입력해 주세요.</label>
+													<input type="text" id="idpwSearch02" style="width:284px;" placeholder="앞 6자리">
+													<span class="input-txt-line">-</span>
+														<label for="idpwSearch03" class="invisible">뒤 7자리를 입력해 주세요.</label>
+														<input type="text" style="width:283px;" placeholder="뒤 7자리" id="idpwSearch03">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock11">사업장주소</label>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock11" placeholder="주소를 입력해주세요" style="width: 465px;"/>
+													<button type="button" class="btn-inner ml8">주소검색</button>
+													<input type="text" class="mt8"  placeholder="상세 주소를 입력해주세요."/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="num"></label>사업자등록연월일</th>
+												<td>
+													<input type="text" id="num" placeholder="숫자 8자리를 입력해 주세요.  예)20180901">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="name"></label>담당자 성명</th>
+												<td>
+													<input type="text" id="name" placeholder="성명을 입력해 주세요.">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock08">담당자 휴대전화번호</label>
+												</th>
+												<td>
+													<div class="phone-num">
+														<label class="invisible" for="phoneNum">휴대전화번호 입력</label>
+														<span class="form-check">
+															<span class="wrap">
+																<input type="text" id="phoneNum" placeholder="‘-’ 없이 입력입력해 주세요" style="width: 434px;"><em class="check">형식 체크</em>
+															</span>
+															<button type="button" class="btn-inner ml8">인증번호 받기</button>
+														</span>
+													</div>
+													<div class="code-num">
+														<label class="invisible" for="code-num">인증번호입력</label>
+														<span class="wrap">
+															<span class="time">02:59</span>
+															<input type="text" placeholder="인증번호 6자리 번호 입력" id="code-num" style="width: 462px;">
+														</span>
+														<button type="button" class="btn-inner ml8">인증하기</button>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									
+									<strong class="limit-check-title">
+										결제정보
+										<span class="tit-txt">본인 명의의 계좌로만 등록 가능합니다.</span>
+									</strong>
+									<table>
+										<caption>오토론/할부 계약 신청하기 - 결제정보 입력 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:170px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock17">계좌정보</label>
+												</th>
+												<td>
+													<select id="ClauseChock17" style="width: 160px;">
+														<option value="">국민은행</option>
+													</select>
+													<input type="text" class="ml8" placeholder="예금주를 입력해 주세요." style="width: 417px;"/>
+													<div class="mt10">
+														<input type="text" title="결제계좌번호 입력" placeholder="'-' 없이 입력해 주세요." style="width: 464px;"/>
+														<button type="button" class="btn-inner ml8">확인</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock18">납부일자</label>
+												</th>
+												<td>
+													<select id="ClauseChock18" style="width:100%;">
+														<option value="">납부일 선택</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock20">청구서 수령 이메일</label>
+												</th>
+												<td>
+													<div class="form-check">
+														<label for="email" class="invisible">이메일주소 입력</label>
+														<input type="text" id="ClauseChock20" placeholder="이메일 형식에 맞춰 입력해 주세요.  (예 : aaa@bbb.ccc)"><em class="check">형식 체크</em>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<strong class="limit-check-title">자동차 운전면허 확인</strong>
+									<table>
+										<caption>오토론/할부 계약신청하기 - 자동차 운전면허 확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:170px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">
+													<label for="ClauseChock06_1">운전면허번호</label>
+													<span class="tooltip">
+														<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁"></a>
+														<span class="box">
+															<span class="license">
+																<img src="../../img/comm/img_license03.png" alt="운전면허번호를 입력하세요">
+															</span>
+														</span>
+													</span>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock06_1" placeholder="운전면허번호를 입력해 주세요.  (예 : 서울 0123456789 또는 11 0123456789)">
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													면허일련번호
+													<span class="tooltip">
+														<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁"></a>
+														<span class="box">
+															<span class="license">
+																<img src="../../img/comm/img_license03.png" alt="면허일련번호를 입력하세요">
+															</span>
+														</span>
+													</span>
+												</th>
+												<td>
+													<input type="text" id="ClauseChock06_1" placeholder="면허일련번호를 입력해 주세요.  (예 : 1234EF)" style="width:425px; ">
+													<button type="button" class="btn-inner ml8">운전면허증 확인</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<strong class="limit-check-title">개인/개인사업자 실제 소유자 확인</strong>
+									<div class="check-question">
+										<div>										
+											<em>귀 법인/단체는 국가•지자체•공공단체•금융회사 및 사업보고서 제출 대상 법인입니까?</em>
+											<ul class="board-input">
+												<li>
+													<input type="radio" id="radio01" name="pick" class="common-radio">
+													<label for="radio01">예</label>
+												</li>
+												<li>
+													<input type="radio" id="radio02" name="pick" class="common-radio">
+													<label for="radio02">아니오</label>
+												</li>
+											</ul>
+											<ul class="notice-list">
+												<li>국가•지자체•공공단체•금융회사 : ‘특정 금융거래정보의 보고 및 이용 등에 관한 법률’제 4조의2 제1항 단서의 법인 및 단체에 한함</li>
+												<li>사업보고서 제출대상법인 : ‘자본시장과 금융투자업에 관한 법률‘ 제159조의 사업보고서 제출대상법인에 한함</li>
+											</ul>
+										</div>
+										<div>										
+											<em>귀 법인/단체의 25% 이상의 지분을 소유한 사람 중 최대 지분 소유자 1인입니까? </em>
+											<ul class="board-input">
+												<li>
+													<input type="radio" id="radio01" name="pick" class="common-radio">
+													<label for="radio01">예</label>
+												</li>
+												<li>
+													<input type="radio" id="radio02" name="pick" class="common-radio">
+													<label for="radio02">아니오</label>
+												</li>
+											</ul>
+										</div>
+										<div>										
+											<em>02항을 확인할 수 없는 경우</em>
+											<div>
+												<div>										
+													<em class="det-list">① 대표자•임원•업무집행사원의 과반수를 선암한 주주</em>
+													<ul class="board-input">
+														<li>
+															<input type="radio" id="radio01" name="pick" class="common-radio">
+															<label for="radio01">예</label>
+														</li>
+														<li>
+															<input type="radio" id="radio02" name="pick" class="common-radio">
+															<label for="radio02">아니오</label>
+														</li>
+													</ul>
+												</div>
+												<div>										
+													<em class="det-list">② 최대 지분 소유자 1인 </em>
+													<ul class="board-input">
+														<li>
+															<input type="radio" id="radio01" name="pick" class="common-radio">
+															<label for="radio01">예</label>
+														</li>
+														<li>
+															<input type="radio" id="radio02" name="pick" class="common-radio">
+															<label for="radio02">아니오</label>
+														</li>
+													</ul>
+												</div>
+												<div>										
+													<em class="det-list">③ ①, ② 외에 법인/단체를 사실상 지배하는 사람</em>
+													<ul class="board-input">
+														<li>
+															<input type="radio" id="radio01" name="pick" class="common-radio">
+															<label for="radio01">예</label>
+														</li>
+														<li>
+															<input type="radio" id="radio02" name="pick" class="common-radio">
+															<label for="radio02">아니오</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div>										
+											<em>03항을 확인할 수 없는 경우</em>
+											<ul class="board-input">
+												<li>
+													<input type="radio" id="radio01" name="pick" class="common-radio">
+													<label for="radio01">예</label>
+												</li>
+												<li>
+													<input type="radio" id="radio02" name="pick" class="common-radio">
+													<label for="radio02">아니오</label>
+												</li>
+											</ul>
+										</div>
+										<p class="notice-list mt10">특정금융거래정보의 보고 및 이용 등에 관한 법률 시행령’ 제 10조의 5(실제 소유자에 대한 확인)에 따라 실제 소유자 확인이 필요합니다.</p>
+									</div>
+
+									<table>
+										<caption>개인/개인사업자 실제 소유자 확인 테이블입니다.</caption>
+										<colgroup>
+											<col style="width:170px;" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="nameForm01">성명</label></th>
+												<td><input type="text" id="nameForm01" placeholder="성명을 입력하세요"></td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="limitCheck06">영문명</label></th>
+												<td>
+													<input type="text" placeholder="영문명을 입력해 주세요 (예 : KIM MIRAE)" id="limitCheck06" />
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">주민등록번호</th>
+												<td>
+													<input type="text" style="width:254px;" placeholder="앞 6자리" id="identity_num01">
+													<span class="input-txt-line">-</span>
+													<span class="pop-keypad">
+														<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+														<label for="identity_num01_1" class="invisible">주민등록번호 뒤7자리 입력</label>
+														<input type="text" style="width:254px;" placeholder="7자리" id="identity_num01_1">
+													</span>
+												</td>
+											</tr>	
+											<tr>
+												<th scope="row"><label for="limitCheck062">국적</label></th>
+												<td>
+													<input type="text" placeholder="국적을 입력해 주세요 (예 : KIM MIRAE)" id="limitCheck062" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<!-- //고객정보 입력 -->
+								</div>
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">정보저장</button>
+								</div>
+							</div>
+						</div>
+						<!-- //계약정보입력 -->
+
+						<!-- 필수서류 -->
+						<div class="limit_check"><!-- class open추가시 레이어열림 -->
+							<h3>
+								<button type="button" class="btn-toggle" title="닫기">
+									필수서류
+									<em>등록완료</em>
+								</button>
+							</h3>
+							<div class="cont">
+								<!-- 2018-07-17-추가 -->
+								<div class="certificate-btn">
+									<p>원활한 서류 등록을 위해서는 등록된 공인인증서 인증이 필요합니다.</p>
+									<div>
+										<button type="button" class="btn-tb03">공인인증서 인증</button>
+										<button type="button" class="btn-tb03">공인인증서 등록</button>
+									</div>
+								</div>
+								<!-- //2018-07-17 -->
+								<!--  
+								<div class="approval-standby">
+									<strong>고객님께서 신청한 내용을 담당자가 확인중입니다.</strong>
+									<p>신청한 내용을 확인한 후 고객님의 연락처로 알려 드리겠습니다.</p>
+								</div>
+								-->
+							</div>
+							<div class="cont">
+								<div class="contract-present">
+									<h4>온라인 확인서류</h4>
+									<ul class="list-type1">
+										<li>
+											<em>재무제표</em>
+											<span class="r-btn">
+												<button type="button" class="btn-tb02">다시입력</button>
+											</span>
+										</li>
+										<li>
+											<em>사업자등록증</em>
+											<span class="r-btn">
+												<button type="button" class="btn-tb02">다시입력</button>
+											</span>
+										</li>
+										<li>
+											<em class="check">법인등기부등본</em>
+											<span class="r-btn">
+												<button type="button" class="btn-tb01">정보입력</button>
+											</span>
+										</li>
+										<li>
+											<em class="check">부가가치세과세표준증명</em>
+											<span class="r-btn">
+												<button type="button" class="btn-tb01">정보입력</button>
+											</span>
+										</li>
+										<li>
+											<em class="check">자방세세목별과세증명원</em>
+											<span class="r-btn">
+												<button type="button" class="btn-tb01">정보입력</button>
+											</span>
+										</li>
+									</ul>
+
+									<h4>고객등록서류</h4>
+									<ul class="list-type1 file">
+										<li>
+											<em class="check">주주명부</em>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp02" />
+													<label for="fileUp02">다시입력</label>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em class="check">차량매매계약서</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp02" />
+													<label for="fileUp02">다시입력</label>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em>자동이체 통장사본</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<button type="button" class="btn-tb01">정보입력</button>
+											</span>
+										</li>
+									</ul>
+									<h4>연대보증인(대표이사) 첨부서류</h4>
+									<ul class="list-type1 file">
+										<li>
+											<em class="check">신분증</em>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp02" />
+													<label for="fileUp02">다시입력</label>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em class="check">인감증명서</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp02" />
+													<label for="fileUp02">다시입력</label>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em>주민등록등본</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp03" />
+													<button type="button" class="btn-tb01">정보입력</button>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em>소득금액증명원</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<span class="file-btn-type">
+													<input type="file" id="fileUp03" />
+													<button type="button" class="btn-tb01">정보입력</button>
+												</span>
+											</span>
+										</li>
+										<li>
+											<em>재산세납세증명원</em>
+											<span class="file">JPG, PNG, PDF, xlsx, PPT 파일로 등록</span>
+											<span class="r-btn">
+												<button type="button" class="btn-tb01">정보입력</button>
+											</span>
+										</li>
+									</ul>
+									<p class="notice-list">서류는 오프라인으로도 제출 가능하며 필요 시 추가 서류를 요청할 수 있습니다.</p>
+
+									<h4>구매정보</h4>
+									<div class="customer-info-form">
+										<table>
+											<caption>계약신청현황 - 자동차금융 - 구매정보 작성 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:173px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row"><label for="loanForm011">대리점 명</label></th>
+													<td><input type="text" id="loanForm011" style="width:100%;" placeholder="대리점명을 입력해 주세요." /></td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="loanForm021">대리점 연락처</label></th>
+													<td><input type="text" id="loanForm021" style="width:100%;" placeholder="‘-’ 없이 입력 (예 : 01012345678)" /></td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="loanForm031">영업사원</label></th>
+													<td><input type="text" id="loanForm031" style="width:100%;" placeholder="영업사원명을 입력해 주세요." /></td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="loanForm031">영업사원 연락처</label></th>
+													<td><input type="text" id="loanForm031" style="width:100%;" placeholder="‘-’ 없이 입력 (예 : 01012345678)" /></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--
+									<div class="approval-standby">
+										<strong>서류가 성공적으로 등록되었습니다.</strong>
+										<p>서류 확인 후 계약 실행 여부에 대해 고객님의 연락처로 알려 드리겠습니다.</p>
+									</div>
+									<div class="btn-center">
+										<button type="button" class="btn-accept04">제출하기</button>
+									</div>
+									 -->
+								</div>
+								<div class="btn-center">
+									<button type="button" class="btn-accept04">서류등록</button>
+									<button type="button" class="btn-accept05">다음에 등록</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- 계약신청 -->
+						<div class="limit_check_wrap">
+							<div class="limit_check">
+								<h3>
+									<button type="button" class="btn-toggle" title="닫기">
+										계약신청
+									</button>
+								</h3>
+								<div class="cont">
+									<div class="customer-info-form mt50">
+										<table>
+											<caption>계약신청현황 - 계약신청 약관동의 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:173px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">약관동의</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02">
+																		<label for="ClauseChock02">여신거래기본약관(필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2">
+																		<label for="ClauseChock02_2">자동차 할부/오토론 약관(필수)</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">신용조회동의</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+															<li>
+																<em>
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03" name="">
+																	<label for="ClauseChock03">개인(신용)정보 동의서 (필수)</label>
+																</em>
+															</li>
+															<li>
+																<em class="active">
+																	<a href="#">약관보기</a>
+																	<input type="checkbox" class="common-check" id="ClauseChock03_2" name="">
+																	<label for="ClauseChock03_2">개인(신용)정보 선택적 동의서 (선택)</label>
+																</em>
+																<!-- 하단 약관 -->
+																<div class="detail-clause">
+																	<span class="collect">
+																		<input type="checkbox" class="common-check" id="all">
+																		<label for="all">전체</label>
+																		<input type="checkbox" class="common-check" id="tel">
+																		<label for="tel">전화</label>
+																		<input type="checkbox" class="common-check" id="sms">
+																		<label for="sms">SMS</label>
+																		<input type="checkbox" class="common-check" id="dm">
+																		<label for="dm">서면(DM)</label>
+																		<input type="checkbox" class="common-check" id="email">
+																		<label for="email">이메일</label>
+																	</span>
+																</div>
+																<!-- //하단 약관 -->
+															</li>
+														</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">자동계좌이체약관동의</th>
+													<td>
+														<div class="check-all">
+															<input type="checkbox" id="allcheck" class="common-check">
+															<label for="allcheck">약관에 모두 동의합니다.</label>
+														</div>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02">
+																		<label for="ClauseChock02">개인정보 수집 및 이용 동의(필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2">
+																		<label for="ClauseChock02_2">개인정보 제3자 제공 동의(필수)</label>
+																	</em>
+																</li>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02_2">
+																		<label for="ClauseChock02_2">출금 이체 동의여부 및 해지 사실 통지 안내(필수)</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">안내문</th>
+													<td>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02">
+																		<label for="ClauseChock02">개인신용정보 제공 활용에 대한 고객 권리 안내문</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">주요 안내사항</th>
+													<td>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02">
+																		<label for="ClauseChock02">주요 안내사항을 모두 확인하였습니다.</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">대출금 지금 및 수령 위임</th>
+													<td>
+														<div class="clause-box-wrap">
+															<ul>
+																<li>
+																	<em>
+																		<a href="#">약관보기</a>
+																		<input type="checkbox" class="common-check" id="ClauseChock02">
+																		<label for="ClauseChock02">대출금 지금 및 수령 위임에 관하여 동의합니다.</label>
+																	</em>
+																</li>
+															</ul>
+														</div>
+														<p class="notice-list">
+															본인은 ‘판매회사’로부터 대상 물건을 정히 인수하였음을 확인합니다. 본 약정에 의거 본인이 수령할 대출금에 대해서 아래 매도인(판매회사)의 계좌로 지급할 것 을 귀사에 위탁하며, 귀사가 해당 대출금을 송금한 시점에 본인이 수령한 것으로 확약합니다.
+														</p>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">지급계좌</th>
+													<td>
+														<div>
+															<em class="tb-stit type02">
+																<label for="date">대출금액</label>
+															</em>
+															<span class="tb-stit-cont">
+																100,000,000 원
+															</span>
+														</div>
+														<div class="mt30">
+															<em class="tb-stit type02">
+																<label for="date">계좌정보</label>
+															</em>
+															<span class="tb-stit-cont">
+																<span>
+																	<label for="inp01" class="invisible">은행선택</label>
+																	<select id="inp01" style="width: 200px;">
+																		<option>KB국민은행</option>
+																	</select>
+																	<label for="inp02" class="invisible"></label>
+																	<input type="text" id="inp02" class="ml8" placeholder="예금주를 입력해 주세요." style="width: 209px;">
+																</span>
+																<label for="inp03" class="invisible"></label>
+																<input type="text" id="inp03" placeholder="계좌번호를 ‘-’ 없이 숫자만 입력해 주세요.">
+															</span>
+															
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">주민등록번호</th>
+													<td>
+														<label for="number01" class="invisible">주민등록번호 앞 6자리 입력</label>
+														<input type="text" style="width:254px;" placeholder="앞 6자리" id="number01">
+														<span class="input-txt-line">-</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+															<label for="number02" class="invisible">주민등록번호 뒤7자리 입력</label>
+															<input type="text" style="width:254px;" placeholder="뒤 7자리" id="number02">
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- 
+									<h4>지급 계좌</h4>
+									<div class="customer-info-form">
+										<table>
+											<caption>계약신청현황 - 지급 계좌 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:173px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">금액</th>
+													<td>100,000,000 원</td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="number01_1">예금주</label></th>
+													<td><input type="text" id="number01_1" /></td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="number01_2">은행명</label></th>
+													<td><input type="text" id="number01_2" /></td>
+												</tr>
+												<tr>
+													<th scope="row"><label for="number01_3">계좌번호</label></th>
+													<td><input type="text" placeholder="‘-’ 없이 숫자만 입력" id="number01_3" /></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<h4>전자서명</h4>
+									<div class="customer-info-form">
+										<table>
+											<caption>계약신청현황 - 전자서명 - 주민등록번호 입력 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:173px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">주민등록번호</th>
+													<td>
+														<label for="number01" class="invisible">주민등록번호 앞 6자리 입력</label>
+														<input type="text" style="width:254px;" placeholder="앞 6자리" id="number01">
+														<span class="input-txt-line">-</span>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+															<label for="number02" class="invisible">주민등록번호 뒤7자리 입력</label>
+															<input type="text" style="width:254px;" placeholder="뒤 7자리" id="number02">
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="customer-info-form">
+										<table>
+											<caption>계약신청현황 - 전자서명 - 사업자등록번호 입력 테이블입니다.</caption>
+											<colgroup>
+												<col style="width:173px;" />
+												<col />
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">사업자등록번호</th>
+													<td>
+														<span class="pop-keypad">
+															<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad02.png" alt="보안키패드"></a></span>
+															<label for="number01" class="invisible">사업자번호 앞 3자리 입력</label>
+															<input type="text" style="width:180px;" placeholder="3자리" id="number01">
+															<span class="input-txt-line">-</span>
+															<label for="number02" class="invisible">사업자번호 중간 2자리 입력</label>
+															<input type="text" style="width:127px;" placeholder="2자리" id="number02">
+															<span class="input-txt-line">-</span>
+															<label for="number03" class="invisible">사업자번호 마지막 3자리 입력</label>
+															<input type="text" style="width:180px;" placeholder="3자리" id="number03">
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									 -->
+									<div class="btn-center">
+										<button type="button" class="btn-accept04">계약신청</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--// 2018-08-11--->
+					</div>
+				</div>
+				<!-- 차량정보 영역 -->
+				<div class="estimate-group result">
+					<div class="group-inner">
+						<div class="estimate-result">
+							<div class="car-img"><img src="../../img/car/b_car.png" alt="BMW 3-Series"></div>
+							<div class="result-l">
+								<strong class="brand-model">BMW 3-Series</strong>
+								<p class="txt-grade">320i M Sport Package (A/T)<br>인조가죽시트 / 하이패스 시스템</p>
+								<div class="btn-area"><a href="#">상세보기</a></div>
+							</div>
+							<div class="result-r">
+								<ul>
+									<li><strong>계약 시 부담 비용<br><span>(보증금30%)</span></strong> <em>1,000,000 원</em></li>
+									<li><strong>월 납입금</strong> <em class="t-point">320,000 원</em></li>
+									<li><strong>리스기간</strong> <em>36개월</em></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //차량정보 영역 -->
+			</div>
+
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="footer-utill">
+				<ul class="footer-utill">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">여신거래기본약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">개인정보 취급방침</a></li>
+					<li> 고객센터  1588-5114(평일 9 ~ 18시) </li>
+				</ul>
+			</div>
+			<div class="footer-info">
+				<ul>
+					<li>서울특별시 중구 을지로5길 26 미래에셋센터원빌딩</li>
+					<li>대표이사 이구범&middot;윤자경</li>
+					<li>사업자등록번호 410-81-40265</li>
+				</ul>
+				<p>COPYRIGHT 2018 MIRAEASSETCAPITAL CO.LTD. ALL RIGHTS RESERVED.</p>
+			</div>
+			<div class="select-site">
+				<div class="affiliate">
+					<a href="#" title="계열사 보기">미래에셋자산운용</a>
+					<ul>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋자산운용</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋대우</a></li>
+						<li><a href="#" target="_blank" title="새창열림">미래에셋생명</a></li>
+					</ul>
+				</div>
+				<span class="smenu">
+					<a href="#"><img src="../../img/comm/icon_home.png" alt="home" /></a>
+					<a href="#"><img src="../../img/comm/icon_blog.png" alt="blog" /></a>
+					<a href="#"><img src="../../img/comm/icon_facebook.png" alt="facebook" /></a>
+					<a href="#"><img src="../../img/comm/icon_twitter.png" alt="twitter" /></a>
+				</span>
+			</div>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+</html>
+<button type="button"

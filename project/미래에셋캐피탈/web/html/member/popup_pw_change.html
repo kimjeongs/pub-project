@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>아이디확인 및 비밀번호 변경 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/member.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:600px;">
+		<div class="popup-title">
+			<strong class="stit">아이디확인 및 비밀번호 변경</strong>
+		</div>
+    <div class="pop-cont">
+      <div class="popup-pwd-change">
+			<div class="cont">
+				김미래 회원님의 아이디는<br/>test0101 입니다.
+			</div>
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">로그인</button>
+			</div>
+      	</div>
+		<div class="stit02">비밀번호 변경하기</div>
+		<p class="stit03 mt10">비밀번호를 잊어버리신 분은 새로운 비밀번호를 만들어 주세요.</p>
+		<table class="mt20">
+			<caption>아이디확인 및 비밀번호 변경 테이블입니다.</caption>
+			<colgroup>
+				<col style="width:140px;">
+				<col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row" style="text-align:left; vertical-align:top; padding-top:25px;"><label for="number01">새 비밀번호</label></th>
+					<td>
+						<div class="mt16">
+							<span class="pop-keypad">
+								<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드"></a></span>
+								<input type="text" style="width:310px;" placeholder="영문/숫자 조합 6~12자리 입력" id="number01">
+							</span>
+						</div>
+						<ul class="popup-pwd-checklist">
+							<li class="selected">영문포함</li>
+							<li>숫자포함</li>
+							<li>6자리 이상</li>
+						</ul>
+						<ul class="board-dot-list01">
+							<li>영문 대소문자를 구별하여 입력해 주세요.</li>
+							<li>특수문자는 !@#$%^&*()에 한해 이용 가능합니다.</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" style="text-align:left;"><label for="number02">새 비밀번호 확인</label></th>
+					<td>
+						<div class="mt16" style="padding-bottom:13px;">
+							<span class="pop-keypad">
+								<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드"></a></span>
+								<input type="text" style="width:310px;" placeholder="영문/숫자 조합 6~12자리 입력" id="number02">
+							</span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="btn-center">
+      		<button type="button" class="btn-popup01">비밀번호 변경</button>
+	    </div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

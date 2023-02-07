@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>정보입력 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/member.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">회원가입</strong>
+		</div>
+		<div class="pop-cont type1">
+			<div class="popup-idpw-search">
+				<strong class="invisible">회원가입 단계</strong>
+				<ul class="step-list">
+					<li class="step01">01 보인인증</li>
+					<li class="step02 selected">02 <em>현재단계</em>정보입력</li>
+					<li class="step03">03 가입완료</li>
+				</ul>
+				<div class="customer-info-form mt30">
+					<table>
+						<caption>회원가입 - 정보입력 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:173px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="emailId01">이메일아이디</label></th>
+								<td><input type="text" id="emailId01" placeholder="aaa@test.com"></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="password01">비밀번호</label></th>
+								<td>
+									<span class="pop-keypad">
+										<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드"></a></span>
+										<input type="text" style="width:475px;" placeholder="영문/숫자 조합 6~12자리 입력" id="password01">
+									</span>
+									<ul class="mt10 popup-pwd-checklist">
+										<li class="selected">영문포함</li>
+										<li class="ml20">숫자포함</li>
+										<li class="ml20">6자리 이상</li>
+									</ul>
+									<ul class="board-dot-list01">
+										<li>영문 대소문자를 구별하여 입력해 주세요.</li>
+										<li>특수문자는 !@#$%^&*()에 한해 이용 가능합니다.</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="password02">비밀번호 확인</label></th>
+								<td>
+									<span class="pop-keypad">
+										<span class="keypad"><a href="#"><img src="../../img/comm/security_keypad01.png" alt="보안키패드"></a></span>
+										<input type="text" style="width:475px;" placeholder="영문/숫자 조합 6~12자리 입력" id="password02">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">휴대전화번호</th>
+								<td>
+									<label class="invisible" for="idpwSearch03">통신사 선택</label>
+									<select id="idpwSearch03" style="width:113px;">
+										<option>SKT</option>
+									</select>
+									<label class="invisible" for="idpwSearch04">휴대전화번호 입력</label>
+									<input type="text" style="width:401px;" class="ml8" placeholder="‘-’ 없이 입력해주세요" id="idpwSearch04" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="btn-center">
+			<button type="button" class="btn-popup01">회원가입</button>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

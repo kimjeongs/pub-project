@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>etc guide</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../js/design.js"></script>
+	<style type="text/css">
+	.content{padding:0 20px 30px;}
+	h1 {
+		float:none;
+		width:auto;
+		font-size:20px;
+		line-height:100%;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	ul.s-tab {
+		width:100%;
+		overflow:hidden;
+		margin-top:10px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+		ul.s-tab li {
+			display:inline;
+			float:left;
+			margin-right:5px;
+		}
+			ul.s-tab li a {
+				float:left;
+				padding:5px;
+				border:2px solid #a2cdde;
+				font-size:15px;
+				font-weight:bold;
+				text-decoration:none;
+			}
+			ul.s-tab li.on a,
+			ul.s-tab li a:hover {
+				color:#f00;
+			}
+	h2.guide-title {
+		margin:10px 0;
+		padding:10px 0;
+		border-top:2px solid #ddd;
+		border-bottom:2px solid #ddd;
+		font-size:15px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	.xmp {
+		display:block;
+		height:200px;
+		overflow:auto;
+		margin:10px 0 0 0;
+		padding:0;
+		border:2px solid #666;
+		background:#eee;
+	}
+	</style>
+</head>
+
+<body>
+<div class="content">
+	<h1>STYLE GUIDE</h1>
+	<ul class="s-tab">
+		<li><a href="content.html">content</a></li>
+		<li><a href="board.html">board</a></li>
+		<li><a href="etc.html">etc</a></li>
+		<li class="on"><a href="button.html">button</a></li>
+		<li><a href="input.html">input</a></li>
+	</ul>
+	<h2 class="guide-title">하단 Sticky btn</h2>
+	<div class="sticky-btn">
+		<button type="button" class="btn-sticky01"><span>내 한도 알아보기</span></button>
+		<button type="button" class="btn-sticky02"><span>견적 신청하기</span></button>
+	</div>
+	<p>한개일때</p>
+	<div class="sticky-btn one">
+		<button type="button" class="btn-sticky">견적 요청하기</button>
+	</div>
+<xmp class="xmp">
+<div class="sticky-btn">
+	<button type="button" class="btn-sticky01"><span>내 한도 알아보기</span></button>
+	<button type="button" class="btn-sticky02"><span>견적 신청하기</span></button>
+</div>
+
+<div class="sticky-btn one">
+	<button type="button" class="btn-sticky">견적 요청하기</button>
+</div>
+</xmp>
+
+<h2 class="guide-title">contents btn</h2>
+<div class="btn-center one">
+	<button type="button" class="btn-cont04"><span>한도 확인하기</span></button>
+</div>
+<div class="btn-center">
+	<button type="button" class="btn-save"><span>견적함 저장</span></button>
+	<button type="button" class="btn-email"><span>이메일 전송</span></button>
+</div>
+
+<div class="btn-center">
+	<button type="button" class="btn-cont01"><span>다시 조회하기</span></button>
+	<button type="button" class="btn-cont02"><span>오토론/할부 신청하기</span></button>
+</div>
+<div class="btn-center">
+	<button type="button" class="btn-cont01"><span>다시 조회하기</span></button>
+</div>
+<div class="btn-center one">
+	<button type="button" class="btn-tb03">확인</button>
+</div>
+<p>한개일때</p>
+
+<button type="button" class="btn-more">더보기</button>
+<button type="button" class="btn-tb01">주소검색</button>
+<span class="cont-r-btn">
+	<button type="button" class="btn-cont03">내가 작성한 글 보기</button>
+	<button type="button" class="btn-cont03">글쓰기</button>
+</span>
+<button type="button" class="btn-tb01">입력</button>
+<button type="button" class="btn-tb02">다시입력</button>
+<button type="button" class="btn-tb03">확인</button>
+<button type="button" class="btn-tb04">선택</button>
+<button type="button" class="btn-tb05">선택</button>
+<xmp class="xmp">
+<button type="button" class="btn-tb01">입력</button>
+<button type="button" class="btn-tb02">다시입력</button>
+<xmp class="xmp">
+<div class="btn-center">
+	<button type="button" class="btn-save"><span>견적함 저장</span></button>
+	<button type="button" class="btn-email"><span>이메일 전송</span></button>
+</div>
+
+<div class="btn-center one">
+	<button type="button" class="btn-cont04"><span>한도 확인하기</span></button>
+</div>
+
+<div class="btn-center">
+	<button type="button" class="btn-cont01"><span>다시 조회하기</span></button>
+	<button type="button" class="btn-cont02"><span>오토론/할부 신청하기</span></button>
+</div>
+
+<div class="btn-center one">
+	<button type="button" class="btn-cont02"><span>견적 요청하기</span></button>
+</div>
+
+<button type="button" class="btn-more">더보기</button>
+<button type="button" class="btn-tb01">주소검색</button>
+
+<span class="cont-r-btn">
+	<button type="button" class="btn-cont03">내가 작성한 글 보기</button>
+	<button type="button" class="btn-cont03">글쓰기</button>
+</span>
+<button type="button" class="btn-tb01">입력</button>
+<button type="button" class="btn-tb02">다시입력</button>
+<button type="button" class="btn-tb03">확인</button>
+<button type="button" class="btn-tb04">선택</button>
+<button type="button" class="btn-tb05">선택</button>
+</xmp>
+
+</div>
+</body>
+</html>

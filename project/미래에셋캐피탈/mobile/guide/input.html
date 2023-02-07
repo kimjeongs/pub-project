@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>etc guide</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<style type="text/css">
+	.content{padding:0 20px 30px;}
+	h1 {
+		float:none;
+		width:auto;
+		font-size:20px;
+		line-height:100%;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	ul.s-tab {
+		width:100%;
+		overflow:hidden;
+		margin-top:10px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+		ul.s-tab li {
+			display:inline;
+			float:left;
+			margin-right:5px;
+		}
+			ul.s-tab li a {
+				float:left;
+				padding:5px;
+				border:2px solid #a2cdde;
+				font-size:15px;
+				font-weight:bold;
+				text-decoration:none;
+			}
+			ul.s-tab li.on a,
+			ul.s-tab li a:hover {
+				color:#f00;
+			}
+	h2.guide-title {
+		margin:10px 0;
+		padding:10px 0;
+		border-top:2px solid #ddd;
+		border-bottom:2px solid #ddd;
+		font-size:15px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	.xmp {
+		display:block;
+		height:200px;
+		overflow:auto;
+		margin:10px 0 0 0;
+		padding:0;
+		border:2px solid #666;
+		background:#eee;
+	}
+	</style>
+</head>
+
+<body>
+<div class="content">
+	<h1>STYLE GUIDE</h1>
+	<ul class="s-tab">
+		<li><a href="content.html">content</a></li>
+		<li><a href="board.html">board</a></li>
+		<li><a href="etc.html">etc</a></li>
+		<li><a href="button.html">button</a></li>
+		<li class="on"><a href="input.html">input</a></li>
+	</ul>
+
+	<h2 class="guide-title">입력 박스</h2>
+	<span class="form-check"><input type="text" id="email" placeholder="aaa@bbb.ccc"><em class="check">이메일 형식 체크</em></span>
+
+	<p>셀렉트박스</p>
+	<select>
+		<option>선택</option>
+	</select>
+
+	<p>입력박스 생성시 label부분이 없으면 'invisible' class명으로 입력(선택)박스와 연결된 label을 생성<br>입력(선택)박스의 넓이는 style로 직접 선언</p>
+	<input type="text" placeholder="검색어를 입력하세요" />
+	
+	<p>비활성</p>
+	<input type="text" disabled="disabled" />
+	<p>금액</p>
+	<span class="unit-wrap"><input type="text" class="txt-right" id="priceInput"><span class="unit">원</span></span>
+	
+	<p>첨부파일</p>
+	<div class="file-input" style="width:500px;">
+		<input type="file" id="fileUp02" />
+		<label for="fileUp02">C:\Users\plan\Documents\주민등록증.jpg<span>파일첨부</span></label>
+	</div>
+	<p>버튼만 있을때</p>
+	<span class="file-btn-type">
+		<input type="file" id="fileUp02" />
+		<label for="fileUp02">파일찾기</label>
+	</span>
+
+	<p>입력</p>
+	<textarea rows="10" cols="10" class="textarea">넓이는 기본으로 100%이고 높이는 선포함 220px 입니다. 그외는 sytle로 직접 지정 해주세요</textarea>
+	
+<xmp class="xmp">
+<span class="form-check"><input type="text" id="email" placeholder="aaa@bbb.ccc"><em class="check">이메일 형식 체크</em></span>
+<p>셀렉트박스</p>
+<select>
+	<option>선택</option>
+</select>
+
+<input type="text" placeholder="검색어를 입력하세요" />
+	
+<p>비활성</p>
+<input type="text" disabled="disabled" />
+
+<p>금액</p>
+<span class="unit-wrap"><input type="text" id="priceInput"><span class="unit">원</span></span>
+
+<p>첨부파일</p>
+<div class="file-input" style="width:500px;">
+	<input type="file" id="fileUp02" />
+	<label for="fileUp02">C:\Users\plan\Documents\주민등록증.jpg<span>파일첨부</span></label>
+</div>
+
+<p>버튼만 있을때</p>
+<span class="file-btn-type">
+	<input type="file" id="fileUp02" />
+	<label for="fileUp02">파일찾기</label>
+</span>
+
+<p>입력</p>
+<textarea rows="10" cols="10" class="textarea">넓이는 기본으로 100%이고 높이는 선포함 220px 입니다. 그외는 sytle로 직접 지정 해주세요</textarea>
+</xmp>
+
+
+<h2 class="guide-title">input icon</h2>
+<p>달력</p>
+<span class="calendar"><a href="#">날짜선택</a><input type="text" id="requestCheck02" style="width:258px;" /></span>
+<p>보안키패드</p>
+<span class="keypad-wrap">
+	<label for="number02" class="invisible">주민등록번호 뒤7자리</label>
+	<input type="text" style="width:220px;" placeholder="뒤 7자리" id="number02" />
+</span>
+
+<xmp class="xmp">
+<p>달력</p>
+<span class="calendar"><a href="#">날짜선택</a><input type="text" id="requestCheck02" style="width:258px;" /></span>
+<p>보안키패드</p>
+<span class="keypad-wrap">
+	<label for="number02" class="invisible">주민등록번호 뒤7자리</label>
+	<input type="text" style="width:220px;" placeholder="뒤 7자리" id="number02" />
+</span>
+</xmp>
+
+
+	<h2 class="guide-title">checkbox , radio</h2>
+
+	<input type="checkbox" id="check01" class="common-check">
+	<label for="check01">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+	<input type="checkbox" id="check02" class="common-check no-txt">
+	<label for="check02">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+	<input type="radio" id="radio01" name="pick" class="common-radio">
+	<label for="radio01">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+	<input type="radio" id="radio02" name="pick" class="common-radio no-txt">
+	<label for="radio02">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+	
+<xmp class="xmp">
+<input type="checkbox" id="check01" class="common-check">
+<label for="check01">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+<input type="checkbox" id="check02" class="common-check no-txt">
+<label for="check02">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+<input type="radio" id="radio01" name="pick" class="common-radio">
+<label for="radio01">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+
+<input type="radio" id="radio02" name="pick" class="common-radio no-txt">
+<label for="radio02">인조가죽 시트(인조가죽 도어 센터트림 포함)</label>
+</xmp>
+
+</div>
+</body>
+</html>

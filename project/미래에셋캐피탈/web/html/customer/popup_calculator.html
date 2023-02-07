@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>대출계산기 | 고객센터 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/customer.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width:920px;">
+		<div class="popup-title">
+			<strong class="stit">대출계산기</strong>
+		</div>
+		<div class="pop-cont type1">
+			<div class="popup-calculator">
+				<div class="customer-info-form">
+					<table>
+						<caption>대출계산기 - 입력 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:173px;" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="calculatorForm01">대출금액</label></th>
+								<td>
+									<!-- 2018-06-25-수정 -->
+									<div class="input-sum">
+										<input type="text" id="priceInput01" class="txt-right" style="width:260px;" placeholder="0"><span class="won">원</span>
+										<label for="priceInput02" class="invisible">금액 한글 표기란</label>
+										<input type="text" id="priceInput02" class="txt-right ml20" style="width:380px;" value="원" disabled="disabled">
+										<span class="sum-list">
+											<a href="#">전액</a>
+											<a href="#">1000만</a>
+											<a href="#">100만</a>
+											<a href="#">10만</a>
+											<a href="#">5만</a>
+											<a href="#">1만</a>
+											<a href="#">정정</a>
+										</span>
+									</div>
+									<!-- //2018-06-25 -->
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm02">대출기간</label></th>
+								<td>
+									<input type="text" id="calculatorForm02" style="width:260px;" /><span class="won">개월</span>
+									<span class="sum-list">
+										<a href="#">36개월</a>
+										<a href="#">24개월</a>
+										<a href="#">12개월</a>
+										<a href="#">6개월</a>
+										<a href="#">정정</a><!-- 2018-06-25 -->
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm03">대출금리</label></th>
+								<td>
+									<input type="text" id="calculatorForm03" style="width:260px;" /><span class="won">%</span>
+									<span class="sum-list">
+										<a href="#">36개월</a>
+										<a href="#">24개월</a>
+										<a href="#">12개월</a>
+										<a href="#">6개월</a>
+										<a href="#">정정</a><!-- 2018-06-25 -->
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm04">대출일자</label></th>
+								<td><span class="calendar"><a href="#">날짜선택</a><input type="text" id="calculatorForm04" placeholder="년월일 순 8자리 입력 예) 20180901" style="width:637px;" /></span></td>
+							</tr>
+							<tr>
+								<th scope="row">상환일</th>
+								<td>
+									<ul class="pick-list type03">
+										<li>
+											<input type="radio" id="pick1" name="pick1" />
+											<label for="pick1">매월 1일</label>
+										</li>
+										<li>
+											<input type="radio" id="pick2" name="pick1" />
+											<label for="pick2">매월 5일</label>
+										</li>
+										<li>
+											<input type="radio" id="pick3" name="pick1" />
+											<label for="pick3">매월 10일</label>
+										</li>
+										<li>
+											<input type="radio" id="pick4" name="pick1" />
+											<label for="pick4">매월 15일</label>
+										</li>
+										<li>
+											<input type="radio" id="pick5" name="pick1" />
+											<label for="pick5">매월 20일</label>
+										</li>
+										<li>
+											<input type="radio" id="pick6" name="pick1" />
+											<label for="pick6">매월 25일</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="calculatorForm04">대출일자</label></th>
+								<td>
+									<ul class="board-input">
+										<li>
+											<input type="radio" id="radio01" name="pick" class="common-radio" />
+											<label for="radio01">원리금균등상환</label>
+										</li>
+										<li>
+											<input type="radio" id="radio02" name="pick" class="common-radio" />
+											<label for="radio02">만기일시상환 (이자는 월단위 계산, 실제 대출이자와 차이 있음)</label>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">대출시뮬레이션 시작</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

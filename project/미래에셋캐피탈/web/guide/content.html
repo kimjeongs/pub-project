@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>content guide</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	 <script type="text/javascript" src="../js/plugins.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<style type="text/css">
+	.content{padding:0 20px 30px;}
+	h1 {
+		float:none;
+		width:auto;
+		font-size:20px;
+		line-height:100%;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	ul.s-tab {
+		width:100%;
+		overflow:hidden;
+		margin-top:10px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+		ul.s-tab li {
+			display:inline;
+			float:left;
+			margin-right:5px;
+		}
+			ul.s-tab li a {
+				float:left;
+				padding:5px;
+				border:2px solid #a2cdde;
+				font-size:15px;
+				font-weight:bold;
+				text-decoration:none;
+			}
+			ul.s-tab li.on a,
+			ul.s-tab li a:hover {
+				color:#f00;
+			}
+	h2.guide-title {
+		margin:10px 0;
+		padding:10px 0;
+		border-top:2px solid #ddd;
+		border-bottom:2px solid #ddd;
+		font-size:15px;
+		font-family:Arial,sans-serif,"Helvetica Neue",Helvetica;
+	}
+	.xmp {
+		display:block;
+		height:200px;
+		overflow:auto;
+		margin:10px 0 0 0;
+		padding:0;
+		border:2px solid #666;
+		background:#eee;
+	}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 단계별 보기/닫기
+			$('.limit_check').on('click', '.btn-toggle:not(:disabled)', function(){
+				var $target = $($(this).closest('.limit_check'));
+				(!$(this).closest('.limit_check').hasClass('open'))
+				? comJs.comToggle.sectionOpen($target) // 단계별 보기
+				: comJs.comToggle.sectionClose($target); // 단계별 닫기
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div class="content">
+	<h1>STYLE GUIDE</h1>
+	<ul class="s-tab">
+		<li class="on"><a href="content.html">content</a></li>
+		<li><a href="board.html">board</a></li>
+		<li><a href="etc.html">etc</a></li>
+		<li><a href="button.html">button</a></li>
+		<li><a href="input.html">input</a></li>
+	</ul>
+
+
+<h2 class="guide-title">faq</h2>
+<div class="guide-detail-box">
+	<strong class="stit">안내문을 확인해 주세요.</strong>
+	<ul>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">개인(신용)정보 위착(제공) 현황-오토론/할부</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">유지관리 서비스 상세 내용</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">미래에셋캐피탈 고객권리 안내문</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+	</ul>
+</div>
+<ul class="guide-detail-box02">
+	<li>
+		<strong>개인(신용)정보 필수 동의서</strong>
+		<span class="r-btn">
+			<a href="#" class="link">보기</a>
+		</span>
+	</li>
+	<li>
+		<strong>미래에셋캐피탈 고객권리 안내문</strong>
+		<span class="r-btn">
+			<a href="#" class="link">보기</a>
+		</span>
+	</li>
+</ul>
+<xmp class="xmp">
+<div class="guide-detail-box">
+	<strong class="stit">안내문을 확인해 주세요.</strong>
+	<ul>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">개인(신용)정보 위착(제공) 현황-오토론/할부</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">유지관리 서비스 상세 내용</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+		<li>
+			<a href="#" class="toggle-btn" title="보기">미래에셋캐피탈 고객권리 안내문</a>
+			<div class="detail">
+				내용
+			</div>
+		</li>
+	</ul>
+</div>
+<ul class="guide-detail-box02">
+	<li>
+		<em>개인(신용)정보 필수 동의서</em>
+		<span class="r-btn">
+			<a href="#" class="link">보기</a>
+		</span>
+	</li>
+	<li>
+		<em>미래에셋캐피탈 고객권리 안내문</em>
+		<span class="r-btn">
+			<a href="#" class="link">보기</a>
+		</span>
+	</li>
+</ul>
+</xmp>
+
+<h2 class="guide-title">약관</h2>
+<div class="check-all">
+	<input type="checkbox" id="allcheck3" class="common-check">
+	<label for="allcheck3">약관에 모두 동의합니다.</label>
+</div>
+<div class="clause-box-wrap">
+	<ul>
+		<li>
+			<em class="active">
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock01" />
+				<label for="ClauseChock01">개인정보 이용 및 제공 동의<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em>
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock02" />
+				<label for="ClauseChock02">고유 식별 정보 처리<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em>
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock03" />
+				<label for="ClauseChock03">통신사별 이용 약관<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em class="active">
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock04" />
+				<label for="ClauseChock04">본인인증이용약관<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				<span class="collect">
+					<input type="checkbox" class="common-check" id="all">
+					<label for="all">전체</label>
+					<input type="checkbox" class="common-check" id="tel">
+					<label for="tel">전화</label>
+					<input type="checkbox" class="common-check" id="sms">
+					<label for="sms">SMS</label>
+					<input type="checkbox" class="common-check" id="dm">
+					<label for="dm">서면(DM)</label>
+					<input type="checkbox" class="common-check" id="email">
+					<label for="email">이메일</label>
+				</span>
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+	</ul>
+</div>
+<div class="check-last">
+	<input type="checkbox" id="lastCheck" class="common-check">
+	<label for="lastCheck">본인은 위 약관을 제공받고 그 내용을 충분히 이해하였음을 확인합니다.</label>
+</div>
+<xmp class="xmp">
+<div class="allcheck">
+	<input type="checkbox" id="allcheck3" class="common-check">
+	<label for="allcheck3">약관에 모두 동의합니다.</label>
+</div>
+<div class="clause-box-wrap">
+	<ul>
+		<li>
+			<em class="active">
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock01" />
+				<label for="ClauseChock01">개인정보 이용 및 제공 동의<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em>
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock02" />
+				<label for="ClauseChock02">고유 식별 정보 처리<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em>
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock03" />
+				<label for="ClauseChock03">통신사별 이용 약관<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				본인은 SK텔레콤(주)(이하 ‘회사’라 합니다)가 제공하는 본인확인서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하고, 개인정보의 취급을 위탁하는 것에 동의합니다.
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+		<li>
+			<em class="active">
+				<a href="#" class="toggle-btn">약관열기</a>
+				<input type="checkbox" class="common-check" id="ClauseChock04" />
+				<label for="ClauseChock04">본인인증이용약관<span class="compulsory">(필수)</span></label>
+			</em>
+			<!-- 하단 약관 -->
+			<div class="detail-clause">
+				<span class="collect">
+					<input type="checkbox" class="common-check" id="all">
+					<label for="all">전체</label>
+					<input type="checkbox" class="common-check" id="tel">
+					<label for="tel">전화</label>
+					<input type="checkbox" class="common-check" id="sms">
+					<label for="sms">SMS</label>
+					<input type="checkbox" class="common-check" id="dm">
+					<label for="dm">서면(DM)</label>
+					<input type="checkbox" class="common-check" id="email">
+					<label for="email">이메일</label>
+				</span>
+			</div>
+			<!-- //하단 약관 -->
+		</li>
+	</ul>
+</div>
+</xmp>
+
+<h2 class="guide-title">상세</h2>
+
+<div class="list-view-cont type2">
+	<div class="list-title-cont">
+		<strong>[개인금융] 상품 신청시에 서류는 어떤것이 있나요?</strong>
+		<span class="date">2018.05.03</span>
+	</div>
+	<div class="list-view">
+		개인금융 서비스를 이용하려고 합니다. 어떤 서류가 필요한지 궁금합니다.<br />중도금대출을 받으려고 해요.
+	</div>
+	<div class="list-answer">
+		안녕하세요. 홍길동고객님,<br />
+		문의주신 경우는 상품에 따라 준비하실 서류가 다릅니다.<br />
+		현재 미래에셋캐피탈 사이트의 각 상품소개 하단의 안내에 보시면  확인하실수 있습니다.<br />
+		항상 좋은 모습으로  찾아뵙겠습니다.<br />
+		<span class="date">2018.05.03</span>
+	</div>
+</div>
+<xmp class="xmp">
+<div class="list-view-cont type2">
+	<div class="list-title-cont">
+		<strong>[개인금융] 상품 신청시에 서류는 어떤것이 있나요?</strong>
+		<span class="date">2018.05.03</span>
+	</div>
+	<div class="list-view">
+		개인금융 서비스를 이용하려고 합니다. 어떤 서류가 필요한지 궁금합니다.<br />중도금대출을 받으려고 해요.
+	</div>
+	<div class="list-answer">
+		안녕하세요. 홍길동고객님,<br />
+		문의주신 경우는 상품에 따라 준비하실 서류가 다릅니다.<br />
+		현재 미래에셋캐피탈 사이트의 각 상품소개 하단의 안내에 보시면  확인하실수 있습니다.<br />
+		항상 좋은 모습으로  찾아뵙겠습니다.<br />
+		<span class="date">2018.05.03</span>
+	</div>
+</div>
+</xmp>
+
+</div>
+</body>
+</html>

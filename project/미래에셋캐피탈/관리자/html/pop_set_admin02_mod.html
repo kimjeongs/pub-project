@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>하위코드관리 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+</head>
+<body>
+	<div class="layer-popup" style="width:800px;">
+		<div class="popup-title">
+			<strong class="stit">하위코드관리</strong>
+		</div>
+		<div class="pop-cont">
+			<div class="col-board01">
+				<table>
+					<caption>공통코드관리 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:10%;">
+						<col style="width:10%;">
+						<col style="width:10%;">
+						<col>
+						<col style="width:10%;">
+						<col style="width:10%;">
+						<col style="width:15%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col">상위코드</th>
+							<th scope="col">하위코드</th>
+							<th scope="col">코드이름</th>
+							<th scope="col">사용유무</th>
+							<th scope="col">작성자</th>
+							<th scope="col">노출순위</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>7</td>
+							<td>FQ</td>
+							<td>01</td>
+							<td><a href="#">결제/입금</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>FQ</td>
+							<td>02</td>
+							<td><a href="#">근저당설정해지</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>FQ</td>
+							<td>03</td>
+							<td><a href="#">서류발급</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>FQ</td>
+							<td>04</td>
+							<td><a href="#">승계/연장</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>FQ</td>
+							<td>05</td>
+							<td><a href="#">홈페이지/App이용</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>FQ</td>
+							<td>06</td>
+							<td><a href="#">상품문의</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>FQ</td>
+							<td>07</td>
+							<td><a href="#">금융거래상식</a></td>
+							<td>Y</td>
+							<td>admin</td>
+							<td>7</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row-board01">
+				<table>
+					<caption>하위코드관리 등록 및 수정 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:160px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><label for="writeForm01">하위코드</label></th>
+							<td>
+								<input type="text" id="writeForm01" placeholder="서류발급">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="writeForm02">코드이름</label></th>
+							<td>
+								<input type="text" id="writeForm02" placeholder="03">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">사용유무</th>
+							<td>
+								<ul class="board-input">
+									<li>
+										<input type="radio" id="radio01" name="pick" class="common-radio" checked="checked">
+										<label for="radio01">사용</label>
+									</li>
+									<li>
+										<input type="radio" id="radio02" name="pick" class="common-radio">
+										<label for="radio02">미사용</label>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="writeForm03">노출순위</label></th>
+							<td>
+								<input type="text" id="writeForm03" placeholder="3">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup02">삭제</button>
+				<button type="button" class="btn-popup02">취소</button>
+				<button type="button" class="btn-popup01">등록</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

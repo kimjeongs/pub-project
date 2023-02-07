@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<title>결제방식 | 차량 조건 변경 | 자동차금융 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/car.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+	<div class="layer-popup" style="width: 800px;">
+		<div class="popup-title">
+			<strong class="stit">결제방식 변경</strong><!-- 2018-06-26 -->
+		</div>
+		<div class="pop-cont">
+			<!-- 2018-06-26-삭제
+			<div class="tab-type1">
+				<ul>
+					<li><a href="#">차량옵션</a></li>
+					<li class="active"><a href="#">결제방식</a></li>
+				</ul>
+			</div>
+			-->
+			<!-- 2018-06-26-추가 -->
+			<div class="select-option">
+				<span>36개월</span>
+				<span>보증금 30%</span>
+				<span>선납금 10%</span>
+				<span>잔존가치 10%</span>
+				<span>연간 운행거리 30,000km</span>
+				<div>
+					<span>차량구입 예정일 6개월 내</span>
+				</div>
+			</div>
+			<!-- //2018-06-26 -->
+			<div class="popup-payment-way">
+				<em class="invisible">결제방식</em>
+				<div class="estimate-cont">
+					<div class="payment-plan">
+						<strong>리스기간</strong>
+						<div>
+							<ul class="pick-list">
+								<li>
+									<input type="radio" id="pick1" name="radio1">
+									<label for="pick1">12개월</label>
+								</li>
+								<li>
+									<input type="radio" id="pick2" name="radio1">
+									<label for="pick2">24개월</label>
+								</li>
+								<li>
+									<input type="radio" id="pick3" name="radio1" checked="checked">
+									<label for="pick3">36개월</label>
+								</li>
+								<li>
+									<input type="radio" id="pick4" name="radio1">
+									<label for="pick4">48개월</label>
+								</li>
+								<li>
+									<input type="radio" id="pick5" name="radio1">
+									<label for="pick5">60개월</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 2018-06-26-추가 -->
+					<div class="payment-plan">
+						<strong>
+							보증금
+							<div class="tooltip pop">
+								<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+								<div class="box" style="width:440px;">
+									<strong>보증금 안내</strong>
+									<p class="ctext">차량 반납 시 보증금은 전액 환불됩니다.<br>(중도해지 또는 만기일을 경과하여 반납할 경우 중도해지수수료,<br>반환 지연금, 과태로 미수금 등을 차감한 후 환불 가능)</p>
+								</div>
+							</div>
+						</strong>
+						<ul class="pick-list">
+		                  	<li>
+		                  		<input type="radio" id="pick0001" name="radio7">
+		                  		<label for="pick0001">0%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0002" name="radio7">
+		                  		<label for="pick0002">10%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0003" name="radio7">
+		                  		<label for="pick0003">20%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0004" name="radio7" checked="checked">
+		                  		<label for="pick0004">30%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0005" name="radio7">
+		                  		<label for="pick0005">40%</label>
+		                  	</li>
+	                  	</ul>
+					</div>
+					<div class="payment-plan">
+						<strong>
+							선납금
+							<div class="tooltip pop">
+								<a href="#" title="툴팁열기"><img src="../../img/comm/btn_tooltip.png" alt="툴팁" /></a>
+								<div class="box" style="width:440px;">
+									<strong>선납금 안내</strong>
+									<p class="ctext">만기 차량 반납 시 선납금은 환불되지 않습니다. 중도 해지할 경우<br>선납금은 중도해지수수료 및 인수비용으로 충당될 수 있으며,<br>중도 해지 시기에 따라 선납금 환불 여부가 달라질 수 있습니다.<br>(중도 해지 또는 만기일을 경과하여 반납할 경우 중도해지수수료,<br>반환 지연금, 과태료 미수금 등을 차감한 후 환불 여부 결정)</p>
+								</div>
+							</div>
+						</strong>
+						<ul class="pick-list">
+		                  	<li>
+		                  		<input type="radio" id="pick0001" name="radio8">
+		                  		<label for="pick0001">0%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0002" name="radio8" checked="checked">
+		                  		<label for="pick0002">10%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0003" name="radio8">
+		                  		<label for="pick0003">20%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0004" name="radio8">
+		                  		<label for="pick0004">30%</label>
+		                  	</li>
+		                  	<li>
+		                  		<input type="radio" id="pick0005" name="radio8">
+		                  		<label for="pick0005">40%</label>
+		                  	</li>
+	                  	</ul>
+	                  	 <p class="txt">초기납부 금액(보증금+선납금) <span>2,000,000원</span></p>
+					</div>
+					<div class="payment-plan">
+	                  <strong>잔존가치</strong>
+	                  <ul class="pick-list">
+	                  	<li>
+	                  		<input type="radio" id="pick0001" name="radio9">
+	                  		<label for="pick0001">0%</label>
+	                  	</li>
+	                  	<li>
+	                  		<input type="radio" id="pick0002" name="radio9" checked="checked">
+	                  		<label for="pick0002">10%</label>
+	                  	</li>
+	                  	<li>
+	                  		<input type="radio" id="pick0003" name="radio9">
+	                  		<label for="pick0003">20%</label>
+	                  	</li>
+	                  	<li>
+	                  		<input type="radio" id="pick0004" name="radio9">
+	                  		<label for="pick0004">30%</label>
+	                  	</li>
+	                  	<li>
+	                  		<input type="radio" id="pick0005" name="radio9">
+	                  		<label for="pick0005">40%</label>
+	                  	</li>
+	                  </ul>
+	                  <p class="txt">리스기간 종료 시 잔여 리스 원금  <span>0,000,000원</span></p>
+	                </div>
+					<!-- //2018-06-26 -->
+					<!-- 2018-06-26-삭제
+					<div class="payment-plan">
+						<strong>초기납부 형식</strong>
+						<div>
+							<ul class="pick-list type02">
+								<li>
+									<input type="radio" id="pick001" name="radio2" checked="checked">
+									<label for="pick001">보증금</label>
+								</li>
+								<li>
+									<input type="radio" id="pick002" name="radio2">
+									<label for="pick002">선납금</label>
+								</li>
+							</ul>
+							<div class="payment-plan">
+								<ul class="customer-pick-list type02">
+									<li>
+										<span>
+											<input id="radio1" name="radio3" type="radio" class="common-radio">
+											<label for="radio1">0%</label>
+										</span>
+									</li>
+									<li>
+										<span>
+											<input id="radio2" name="radio3" type="radio" class="common-radio">
+											<label for="radio2">10%</label>
+										</span>
+									</li>
+									<li>
+										<span>
+											<input id="radio3" name="radio3" type="radio" class="common-radio">
+											<label for="radio3">20%</label>
+										</span>
+									</li>
+									<li>
+										<span>
+											<input id="radio4" name="radio3" type="radio" class="common-radio" checked="checked">
+											<label for="radio4">30%</label>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<ul class="notice-list">
+								<li>
+									차량 반납 시 보증금은 전액 환불됩니다. (중도해지 또는 만기일을 경과하여 반납할 경우<br/>중도해지수수료, 반환지연금, 과태료 미수금 등을 차감한 수 환불 가능)
+								</li>
+							</ul>
+						</div>
+					</div>
+					 -->
+					<div class="payment-plan">
+						<strong>연간 운행거리</strong>
+						<div>
+							<ul class="customer-pick-list type03"><!-- 2018-06-26 -->
+								<li>
+									<span>
+										<input id="radio01" name="radio4" type="radio" class="common-radio"><!-- 2018-06-26 -->
+										<label for="radio01">20,000km</label>
+									</span>
+								</li>
+								<li>
+									<span>
+										<input id="radio02" name="radio4" type="radio" class="common-radio" checked="checked"><!-- 2018-06-26 -->
+										<label for="radio02">30,000km</label>
+									</span>
+								</li>
+								<li>
+									<span>
+										<input id="radio03" name="radio4" type="radio" class="common-radio">
+										<label for="radio03">40,000km</label><!-- 2018-06-26 -->
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 2018-06-26-삭제
+					<div class="payment-plan">
+						<strong>정비 서비스</strong>
+						<div>
+							<ul class="customer-pick-list type02">
+								<li>
+									<span>
+										<input id="radio001" name="radio5" type="radio" class="common-radio" checked="checked">
+										<label for="radio001">불포함</label>
+									</span>
+								</li>
+								<li>
+									<span>
+										<input id="radio002" name="radio5" type="radio" class="common-radio">
+										<label for="radio002">Prime</label>
+									</span>
+								</li>
+								<li>
+									<span>
+										<input id="radio003" name="radio5" type="radio" class="common-radio">
+										<label for="radio003">Smart</label>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					-->
+					<div class="payment-plan">
+						<strong>차량구입 예정일</strong>
+						<ul class="pick-list">
+							<li>
+								<input type="radio" id="pick0001" name="radio6">
+								<label for="pick0001">1개월 내</label>
+							</li>
+							<li>
+								<input type="radio" id="pick0002" name="radio6">
+								<label for="pick0002">3개월 내</label>
+							</li>
+							<li>
+								<input type="radio" id="pick0003" name="radio6" checked="checked">
+								<label for="pick0003">6개월 내</label>
+							</li>
+							<li>
+								<input type="radio" id="pick0004" name="radio6">
+								<label for="pick0004">6개월 이후</label>
+							</li>
+							<li>
+								<input type="radio" id="pick0005" name="radio6">
+								<label for="pick0005">예정일 없음</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="btn-center">
+				<button type="button" class="btn-popup01">다시 조회하기</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

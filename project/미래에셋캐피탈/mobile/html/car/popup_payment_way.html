@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="../../img/comm/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>결제방식 변경 | 자동차금융 - 미래에셋 캐피탈</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/car.css">
+	<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// 차량가격대비 퍼센트 클릭
+			// $('.percent-list').on('click', 'a', function(e){
+			// 	e.preventDefault();
+			// 	$('.percent-slider').slider({value:$(this).text().replace(/[^0-9]/g,'')});
+			// });
+
+			// 차량가격대비 퍼센트
+			// var percentValue = 50;
+			// $('.percent-slider').slider({
+			// 	animate: 'fast',
+			// 	range: 'min',
+			// 	step:10,
+			// 	value:percentValue,
+			// 	slide: function ( event, ui ) {
+			// 		console.log(ui.value)
+			// 	},
+			// });
+		});
+	</script>
+</head>
+<body>
+	<div class="full-popup">
+		<div class="popup-title">
+			<strong class="stit">결제방식 변경</strong>
+		</div>
+		<div class="pop-cont">
+			<div class="option-list">
+				<ul>
+					<li>10,000,000 원</li>
+					<li>12개월</li>
+					<li>6개월 내</li>
+				</ul>
+			</div>
+			<div class="estimate-cont">
+				<div class="payment-plan">
+					<strong><label for="priceInput">대출신청금액</label></strong>
+					<div class="sum-box">
+						<div class="input-btn">
+							<label for="input01" class="invisible">대출신청금액 입력</label>
+							<input type="text" value="1,000,000 원" id="input01">
+						</div>
+						<div class="sum-list">
+							<a href="#">+전액</a>
+							<a href="#">+1000만</a>
+							<a href="#">+100만</a>
+							<a href="#">+10만</a>
+							<a href="#">+5만</a>
+							<a href="#">+1만</a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="payment-plan mt0">
+					<strong>기간 선택</strong>
+					<div>
+						<ul class="pick-list">
+							<li>
+								<input type="radio" id="pick1" name="pick1">
+								<label for="pick1">12개월</label>
+							</li>
+							<li>
+								<input type="radio" id="pick2" name="pick1">
+								<label for="pick2">24개월</label>
+							</li>
+							<li>
+								<input type="radio" id="pick3" name="pick1" checked="checked">
+								<label for="pick3">36개월</label>
+							</li>
+							<li>
+								<input type="radio" id="pick4" name="pick1">
+								<label for="pick4">48개월</label>
+							</li>
+							<li>
+								<input type="radio" id="pick5" name="pick1">
+								<label for="pick5">60개월</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="payment-plan">
+					<strong>차량구입 예정일</strong>
+					<div>
+						<ul class="pick-list">
+							<li>
+								<input type="radio" id="pick001" name="pick2">
+								<label for="pick001">1개월내</label>
+							</li>
+							<li>
+								<input type="radio" id="pick002" name="pick2">
+								<label for="pick002">3개월내</label>
+							</li>
+							<li>
+								<input type="radio" id="pick003" name="pick2" checked="checked">
+								<label for="pick003">6개월내</label>
+								</li>
+							<li>
+								<input type="radio" id="pick004" name="pick2">
+								<label for="pick004">6개월<br/>이후</label>
+							</li>
+							<li>
+								<input type="radio" id="pick005" name="pick2">
+								<label for="pick005">예정일<br/>없음</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-btm">
+			<div class="sticky-btn one">
+				<button type="button" class="btn-sticky">다시조회하기</button>
+			</div>
+		</div>
+		<a href="#" class="pop-close">팝업닫기</a>
+	</div>
+</body>
+</html>

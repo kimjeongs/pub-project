@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family:'Noto Sans KR';
+    font-style:normal;
+    font-weight:300;
+    src: url('../fonts/notokr/notokr-light.eot');
+    src: url('../fonts/notokr-light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/notokr-light.woff2') format('woff2'),
+    url('../fonts/notokr-light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/notokr/notokr-regular.eot');
+    src: url('../fonts/notokr-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/notokr-regular.woff2') format('woff2'),
+    url('../fonts/notokr-regular.woff') format('woff');
+}
+@font-face {
+    font-family:'Noto Sans KR';
+    font-style:normal;
+    font-weight:500;
+    src: url('../fonts/notokr/notokr-medium.eot');
+    src: url('../fonts/notokr-medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/notokr-medium.woff2') format('woff2'),
+    url('../fonts/notokr-medium.woff') format('woff');
+}
+@font-face {
+    font-family:'Noto Sans KR';
+    font-style:normal;
+    font-weight:700;
+    src: url('../fonts/notokr/notokr-bold.eot');
+    src: url('../fonts/notokr-bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/notokr-bold.woff2') format('woff2'),
+    url('../fonts/notokr-bold.woff') format('woff');
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; box-sizing:border-box; -webkit-box-sizing:border-box; /*vertical-align:baseline;*/}
+
+body, th, td, input, select, textarea, button{font-size: 100%; line-height: 1.5; font-family:'Noto Sans KR',dotum,'돋움',vernade,arial,sans-serif; color:#111111;font-weight:400;letter-spacing: -.1px; box-sizing:border-box;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block}
+
+body{background:#ffffff; -webkit-text-size-adjust: none}
+h1, h2, h3, h4, h5, h6{font-size: 100%; font-weight:400;}
+ol, ul, li ,dl, dt, dd{list-style:none outside none; padding:0; margin:0}
+hr{display:none}
+span{margin:0; padding:0; outline:0}
+fieldset, img, table, caption, tbody, tfoot, thead, tr, th, td, button, hr{border:0}
+address, caption, cite, code, dfn, em, strong, th, var{font-style: normal}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content: ''; content: none}
+table{border-collapse:separate; border-spacing:0}
+img{vertical-align:middle}
+a{text-decoration:none; cursor:pointer; color: #222}
+a:focus {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:visited{text-decoration:none;}
+a:active {text-decoration:none;}
+input, select, label{-webkit-appearance: none;-webkit-border-radius: 0;vertical-align:middle}
+input, select, textarea, button{font-size: 100%; vertical-align: middle; padding: 0; margin: 0}
+input, textarea{/*border-radius: 0; appearance:none; -webkit-appearance:none;*/ font-family:'Noto Sans KR',dotum,'돋움',arial,vernade,sans-serif}
+button,input[type='text'],input[type='password'],input[type='tel'],input[type='num'],input[type='button'],input[type='submit'],input[type='reset'],input[type='file']{-webkit-appearance:button; border-radius:0}
+input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+textarea{resize:none}
+button{border: 0 none; background-color: transparent; cursor: pointer; vertical-align: middle}
+b, strong{font-weight:500}
+select{position:relative; display: block; border: 0 none; -webkit-appearance:none; -moz-appearance:none;-o-appearance:none; appearance:none; vertical-align: middle; box-sizing: border-box; padding-left: 3px; background: transparent; z-index:9999;}
+select::-ms-expand {display: none}
+select option{border: 0 none}
+fieldset{
+    min-width: 0;
+    text-overflow: ellipsis
+}
+@-moz-document url-prefix() {
+	fieldset{
+		display: table-cell;
+	}
+}
+ ::selection {
+    background:#00427f;
+    color: #FFF;
+    text-shadow: none;
+}
+::-moz-selection {
+    background:#00427f;
+    color: #FFF;
+    text-shadow: none;
+}
+::-webkit-selection {
+    background:#00427f;
+    color: #FFF;
+    text-shadow: none;
+}

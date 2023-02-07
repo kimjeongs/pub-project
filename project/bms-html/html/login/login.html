@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>BMS 2.0</title>
+
+  <link rel="stylesheet" href="../../assets/css/lib/swiper.min.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="stylesheet" href="../../assets/css/lib/customlib.css">
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <script type="text/javascript" src="../../assets/js/lib/swiper.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/common-lib.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/variable.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/customlib.js"></script>
+  <script type="text/javascript" src="../../assets/js/common.js"></script>
+</head>
+
+<body>
+
+<div class="gate-container">
+  
+</div>
+<div class="bms-wrap">
+  <div class="skip-nav">
+    <a href="#bmsContainer"><span>컨텐츠 바로가기</span></a>
+  </div>
+
+  <!-- container -->
+  <div id="bmsContainer" class="bms-container">
+    <div class="bms-content">
+      <!-- S: cont-outer -->
+      <div class="cont-outer none-gnb login">
+        <div class="login_cover_bg"></div>
+        <div class="login_cover_txt">
+          <p><img src="../../assets/images/common/ico_logo.svg"/></p>
+        </div>
+
+        <!-- S: [login-area] -->
+        <div class="login-area none-gnb-cont">
+          <div>
+            <p class="tit">Log in</p>
+            <div class="input-area">
+              <div class="input-outer-box row-type">
+                <div class="input-group-box mo-full">
+                  <div class="input-box val-error"> <!-- error message 노출시 val-error 클래스명 추가 -->
+                    <input type="text" id="user" name="user" class="input-item inp-type-box" placeholder="이메일을 입력해주세요.">
+                    <button class="btn-reset"></button>
+                  </div>
+                  <p class="error-msg">error text</p>
+                  <div class="input-box val-error last-input"> <!-- error message 노출시 val-error 클래스명 추가 -->
+                    <input type="password" id="password" name="password" class="input-item inp-type-box" placeholder="비밀번호를 입력해주세요.">
+                    <button class="btn-reset"></button>
+                  </div>
+                  <p class="error-msg msg2">error text</p>
+                  <a href="#" class="btn-login" target="_blank"></a>
+                </div>
+              </div>
+              <div class="cta-outer">
+                <button class="btn-txt">비밀번호 찾기</button>
+                <button class="btn-txt">계정 생성</button>
+                <a href="#" class="btn-txt">계정생성 가이드</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- E: [login-area] -->
+      </div>
+      <!-- E: cont-outer -->
+    </div>
+  </div>
+  <!--//container -->
+</div>
+<script> <!-- 220809 퍼블 산출물용 스크립트 (back단 적용 X) -->
+  $(function(){
+    function motionLogin () {
+      $('.login .login_cover_bg').delay(500).animate({'opacity':0}, 1000);
+      setTimeout(function(){
+        $('.login .login_cover_txt > p').animate({'opacity':1},
+            700, () => {
+              $('.login .login_cover_txt > p:first-child').delay(1000).fadeOut(700);
+              $('.login .login-area').delay(1800).animate({'opacity':1}, 700);
+            });
+      }, 1200);
+
+      $('.login .login-area .input-area input').on('keyup', (e) => {
+        if (!!$('input[name=user]').val() && $('input[name=password]').val()) {
+          $('.login .login-area .input-area .btn-login').addClass('active');
+        } else {
+          $('.login .login-area .input-area .btn-login').removeClass('active');
+        }
+      });
+      $('.login .login-area .input-area .btn-reset').on('click', (e) => {
+        $('.login .login-area .input-area .btn-login').removeClass('active');
+      });
+    }
+motionLogin();
+
+    function staticLogin () {
+      $('.login .login_cover_bg').css({"opacity":"0"});
+      $('.login-area').css({"opacity":"1"});
+
+      $('.login .login-area .input-area input').on('keyup', (e) => {
+        if (!!$('input[name=user]').val() && $('input[name=password]').val()) {
+          $('.login .login-area .input-area .btn-login').addClass('active');
+        } else {
+          $('.login .login-area .input-area .btn-login').removeClass('active');
+        }
+      });
+      $('.login .login-area .input-area .btn-reset').on('click', (e) => {
+        $('.login .login-area .input-area .btn-login').removeClass('active');
+      });
+    }
+// staticLogin();
+  });
+</script>
+</body>
+</html>

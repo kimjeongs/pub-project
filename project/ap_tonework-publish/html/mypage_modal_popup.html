@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+   <script>include.favicon();</script>
+	<script>include.styles();</script>
+   <script>include.scripts();</script>
+   <script>include.title();</script>
+</head>
+
+<body>
+   <!-- wrap -->
+   <div id="wrap" class="sub">
+      <!-- header -->
+      <header>
+         <script>include.header();</script>
+      </header>
+       <!-- // header -->
+      <!-- container -->
+      <main id="sub_container">
+
+         <section class="gap_80 board_view"> <!--페이지 클래스 -->
+            <!-- sub_top_about -->
+            <div class="sub_top_about">
+               <h2></h2>
+               <p class="about_text"></p>
+            </div>
+            <!-- // sub_top_about -->
+            <!-- grid_wrap -->
+            <div class="grid_wrap">
+               <button class="btn btn_xl btn_radius btn_secondary" onclick="openPopup('#modalPop01')">컬러히스토리 코드 입력 팝업</button>
+               <button class="btn btn_xl btn_radius btn_secondary" onclick="openPopup('#modalPop02')">프로필 사진 올리기(수정) 팝업</button>
+            </div>
+         <!-- // grid_wrap -->
+         </section>
+
+      </main>
+      <!-- // container -->
+
+      <!-- footer -->
+      <footer class="footer">
+         <script>include.footer();</script>
+      </footer>
+      <!-- // footer -->
+
+      <!-- quick_btn -->
+      <script>include.quickBtn();</script>
+      <!-- // quick_btn -->
+
+   </div>
+   <!-- // wrap -->
+   <!-- modalPop01 -->
+   <div id="modalPop01" class="modal_wrap mypage_modal">
+      <div class="modal">
+         <button type="button" class="btn btn_sm modal_close ico_48"><span class="blind">닫기</span></button>
+         <div class="cont">
+            <h3 class="tit">컬러 히스토리 코드 입력</h3>
+            <div class="input_group">
+               <input class="input_text" type="text" name="" id="" placeholder="지급된 코드를 입력하세요.">
+               <button class="btn btn_md btn_primary hov_right">
+                  <span class="hov_right_text">등록하기</span>
+               </button>
+            </div>
+            <p class="txt_info">
+               ※ 측정후 지급된 코드를 입력해 주세요.<br>
+               ※ 입력된 코드에 따라 컬러 히스토리에 측정결과를 확인해 볼 수 있습니다.
+            </p>
+         </div>
+      </div>
+   </div>
+   <!-- // modalPop01 -->
+
+
+   <!-- modalPop02 -->
+   <div id="modalPop02" class="modal_wrap mypage_modal">
+      <div class="modal">
+         <button type="button" class="btn btn_sm modal_close ico_48"><span class="blind">닫기</span></button>
+         <div class="cont">
+            <h3 class="tit">프로필 변경 <span>마음에 드는 캐릭터를 선택하세요.</span></h3>
+            <!-- profile_update_box -->
+            <div class="profile_update_box">
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_01">
+                  <label for="radio_01">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_02">
+                  <label for="radio_02">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_03">
+                  <label for="radio_03">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_04">
+                  <label for="radio_04">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_05">
+                  <label for="radio_05">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+               <div class="profile_type">
+                  <input class="input_radio" type="radio" name="radioItem" id="radio_06">
+                  <label for="radio_06">
+                     <div class="img_box"><img src="/resources/images/mypage/img_profile_default.svg" alt></div>
+                  </label>
+               </div>
+            </div>
+            <!-- // profile_update_box -->
+            <div class="btn_group">
+               <button class="btn btn_md btn_primary hov_right">
+                  <span class="hov_right_text">확인</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- // modalPop02 -->
+<script>
+   $(document).ready(function (){
+      $(window).resize(function(event){
+         ww = $(window).width();
+         quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      headerAction(); // 헤더 인터렉션
+   });
+</script>
+</html>

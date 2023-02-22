@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css">
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/swiper.min.css">
+  <link rel="stylesheet" href="../resources/css/tonework_pc.css">
+  <link rel="stylesheet" href="../resources/css/tonework_tablet.css">
+  <link rel="stylesheet" href="../resources/css/tonework_mobile.css">
+  <script src="../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../resources/js/swiper.min.js"></script>
+  <script src="../resources/js/scrollmagic/ScrollMagic.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/debug.addIndicators.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/TweenMax.min.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/animation.gsap.js"></script>
+  <script src="../resources/js/common.js"></script>
+  <title>TONEWORK</title>
+</head>
+<head>
+	<!-- <script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script> -->
+  <link rel="stylesheet" href="../resources/css/ex.css">
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="">
+    <!-- header -->
+    <!-- <header>
+      <script>include.header();</script>
+    </header> -->
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+      <div class="ex-container">
+        <div class="section-wrap">
+          <section class="section01">
+            <div class="cont-wrap ir-top"> 
+              <div class="visual-txt-wrap">
+                <div class="visual-txt">
+                  <div class="letter style01"><span class="motion-item">SOUND</span></div>
+                  <div class="letter style02"><span class="motion-item">미래를 향한 울림</span></div>
+                  <div class="letter style01"><span class="motion-item">OF</span></div>
+                  <div class="letter"><span class="motion-item">THE</span></div>
+                  <div class="letter style02"><span class="motion-item">더현대 서울</span></div>
+                  <div class="letter"><span class="motion-item">FUTURE</span></div>
+                </div>
+              </div>
+              <div class="visual-img-wrap">
+                <div class="visual-img"></div>
+              </div>
+            </div>
+          </section>
+          <section class="section02">
+            <div class="pin">
+              <div class="inner">
+                <div class="visual-txt-wrap">
+                  <div class="visual-txt visaul-txt-motion"><!-- .active 추가 -->
+                    <div class="letter"><span>global</span></div>
+                    <div class="letter"><span>human</span></div>
+                    <div class="letter"><span>iconic</span></div>
+                  </div>
+                </div>
+                <div class="section-tit-cont">
+                  <div class="cont-wrap ir-top"><!-- .motion-area 추가-->
+                    <h2 class="sction-tit motion-item">Creative</h2>
+                    <div class="tit-txt">
+                      <div class="letter"><span class="motion-item">플래그십 럭셔리, MZ전문관,</span></div>
+                      <div class="letter"><span class="motion-item">국내 최대 식품관 등 세계적 콘텐츠로</span></div>
+                      <div class="letter"><span class="motion-item">가득한 크리에이티브 스페이스</span></div>
+                    </div>
+                    <div class="btn-cont">
+                      <a href="#" class="btn-more motion-item">MORE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="popcorn-pics">
+              <li class="pic-list">
+                <figure>
+                  <img src="../resources/images/jeongs/img_main_connect_01.jpg" alt="img1">
+                  <figcaption>ⓒ BOTTEGA VENETA</figcaption>
+                </figure>
+              </li>
+              <li class="pic-list">
+                <figure>
+                  <img src="../resources/images/jeongs/img_main_connect_05.jpg" alt="img1">
+                </figure>
+              </li>
+            </ul>
+          </section>
+          <section class="section03">3</section>
+          <section class="section04">4</section>
+          <section class="section05">5</section>
+          <section class="section06">6</section>
+        </div>
+      </div>
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <script>include.quickBtn();</script>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      headerAction(); // 헤더 인터렉션
+    });
+  </script>
+  <!-- <script src="../resources/js/jeons.js"></script> -->
+  <script src="../resources/js/ex.js"></script>
+</body>
+
+</html>

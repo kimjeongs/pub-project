@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css"></link>
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <link rel="stylesheet" href="/resources/css/swiper.min.css">
+  <link rel="stylesheet" href="/resources/css/tonework_pc.css">
+  <link rel="stylesheet" href="/resources/css/tonework_tablet.css">
+  <link rel="stylesheet" href="/resources/css/tonework_mobile.css">
+  <script src="/resources/js/jquery-3.6.0.min.js"></script>
+  <script src="/resources/js/swiper.min.js"></script>
+  <script src="/resources/js/scrollmagic/ScrollMagic.js"></script>
+  <script src="/resources/js/scrollmagic/plugins/debug.addIndicators.js"></script>
+  <script src="/resources/js/scrollmagic/plugins/TweenMax.min.js"></script>
+  <script src="/resources/js/scrollmagic/plugins/animation.gsap.js"></script>
+  <script src="/resources/js/common.js"></script>
+  <title>TONEWORK</title>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="main"> <!--페이지 클래스 -->
+    <!-- header -->
+    <header>
+      <div class="header_wrap">
+        <div class="logo_wrap">
+          <h1 class="logo">
+            <svg id="logo_txt" xmlns="http://www.w3.org/2000/svg" width="1400" height="100%" viewBox="0 0 1400 175">
+              <rect id="base" width="1400" height="174.998" fill="none"/>
+              <g id="logo">
+                <path id="패스_1" data-name="패스 1" d="M142.967.526H20.072C12.265.526,9.814,3.2,7.807,9.667L0,31.748l3.123.225C9.591,16.806,15.836,3.2,33.234,3.2H54.646c5.351,0,15.611,1.119,15.611,7.14V163.121c0,6.022-11.375,6.468-16.728,7.135v2.677h55.984v-2.677c-5.576-.667-16.728-1.113-16.728-7.135V10.338c0-6.02,10.26-7.14,15.613-7.14h21.41c17.176,0,23.643,13.608,30.111,28.775l3.125-.225L155.234,9.667C153,3.2,150.773.526,142.967.526" transform="translate(0 0.592)" fill="#fff"/>
+                <path id="패스_2" data-name="패스 2" d="M170.594,0c-49.737,0-91,41.711-91,91,0,47.281,38.14,83.862,84.308,83.862,49.737,0,91-41.486,91-90.777C254.906,36.8,216.987,0,170.594,0m1.117,170.4c-46.168,0-67.8-46.393-67.8-87.206,0-35.91,16.726-78.732,59.1-78.732,46.168,0,67.582,45.276,67.582,86.314,0,35.908-16.284,79.624-58.884,79.624" transform="translate(89.484)" fill="#fff"/>
+                <path id="패스_3" data-name="패스 3" d="M294.442,3.791c5.576.892,15.834,1.338,15.834,7.36V151.443c0,8.7-1.784,12.716-6.022,12.716-5.8,0-11.6-13.162-15.834-21.86L234.887,32.786C221.506,5.354,211.026,0,201.21,0c-8.7,0-16.951,3.344-16.951,18.29v145.2c0,6.02-10.033,6.468-15.613,7.358v2.679h34.574v-2.679c-5.578-.89-15.838-1.338-15.838-7.358V23.2c0-8.253,1.563-12.713,6.022-12.713,5.8,0,11.6,13.162,15.838,21.856L262.77,141.852c13.382,27.434,23.866,32.785,33.677,32.785,8.7,0,16.951-3.344,16.951-18.285V10.93c.221-5.8,10.26-6.247,15.613-7.14V1.118h-34.57Z" transform="translate(189.595 0.002)" fill="#fff"/>
+                <path id="패스_4" data-name="패스 4" d="M336.474,170.256H305.253c-5.576,0-15.613-1.113-15.613-7.135v-76.5c1.572-5.349,7.966-9.461,14.2-9.045,6.976.467,12.24,2.715,18.863,4.482,13.974,3.726,23.184,4.408,31.45-6.615,1.13-1.5,1.82-3.324,1.306-3.709-1.056-.807-2.4.438-3.375,1.139-6.016,4.287-11.792,4.828-19.762,2.759-4.605-1.2-8.424-3.027-12.934-4.546-10.022-3.38-22.9-3.507-29.134,6.475-.1.17-.37.217-.616.253V10.338c0-6.02,10.037-7.137,15.613-7.137h26.984c17.179,0,28.1,13.606,34.572,28.773l2.455-.225L361.457,9.667C359.227,3.2,357,.526,349.19.526H251.5V3.2c5.576.671,15.613,1.117,15.613,7.137V163.121c0,6.022-10.037,6.468-15.613,7.135v2.677H353.426c7.806,0,10.039-2.677,12.269-9.145l7.807-22.081-2.454-.446c-6.466,15.392-17.4,29-34.574,29" transform="translate(282.741 0.592)" fill="#fff"/>
+                <path id="패스_5" data-name="패스 5" d="M515.695,3.041c3.562.446,15.831,1.559,14.942,7.135L500.749,150.915c-1.341,6.693-3.346,12.49-7.137,12.49-5.8,0-9.143-14.5-10.7-22.3L461.939,41.4c-4.682-21.856-11.821-30.78-22.3-30.78-7.8,0-13.608,5.134-17.174,21.189l-26.319,119.1c-1.339,6.693-3.344,12.49-7.134,12.49-5.8,0-9.147-14.5-10.712-22.3L350.868,10.4c-1.561-6.914,9.592-6.693,13.155-7.36V.59h-53.3V3.041c8.027.892,14.942,1.784,16.053,7.135l28.329,132.265c5.355,24.979,12.936,31.668,26.1,31.668,5.8,0,13.155-1.334,18.065-23.194L424.918,36.052c.89-4.24,2.9-9.37,6.466-9.37,3.122,0,5.13,4.238,7.362,14.721l21.408,101.039c5.355,25.2,12.715,31.668,25.652,31.668,6.02,0,13.6-1.334,18.287-23.194L533.978,10.4c1.565-6.022,10.264-6.468,16.061-7.36V.59H515.695Z" transform="translate(349.324 0.664)" fill="#fff"/>
+                <path id="패스_6" data-name="패스 6" d="M514.866.064c-49.739,0-91,41.711-91,91,0,47.281,38.137,83.862,84.309,83.862,49.737,0,91-41.486,91-90.777,0-47.285-37.915-84.087-84.308-84.087m1.118,170.4c-46.173,0-67.807-46.393-67.807-87.206,0-35.91,16.73-78.732,59.109-78.732,46.168,0,67.578,45.276,67.578,86.314,0,35.908-16.282,79.625-58.879,79.625" transform="translate(476.523 0.072)" fill="#fff"/>
+                <path id="패스_7" data-name="패스 7" d="M625.436,106.307c-13.162-20.072-41.784-17.172-37.994-24.758,4.684-8.474,47.138-15.388,47.138-44.83C634.58,9.283,614.286.589,572.349.589h-61.9V3.263c5.576.671,15.613,1.117,15.613,7.14V163.184c0,6.022-10.037,6.468-15.613,7.135V173H564.2v-2.679c-5.353-.667-15.612-1.113-15.612-7.135V10.4c0-5.8,18.635-7.14,23.988-7.14,22.749,0,39.479,8.478,39.479,38.587,0,20.741-19.7,26.763-26.617,35.241C577.63,86.682,598,95.378,602.683,103.185c6.468,10.708,5.338,31.9,5.338,47.956,0,13.6,1.339,21.856,18.736,21.856h27.375v-2.679c-26.765,0-14.646-42.822-28.7-64.011" transform="translate(573.855 0.662)" fill="#fff"/>
+                <path id="패스_8" data-name="패스 8" d="M621.387,163.185V10.4c0-6.02,10.262-7.14,15.613-7.14h2.009V.59H583.246V3.262c5.581.673,15.613,1.119,15.613,7.14V163.185c0,6.022-10.032,6.468-15.613,7.135V173h57.992V170.32h-.668c-5.8,0-19.184-1.559-19.184-7.135" transform="translate(655.7 0.664)" fill="#fff"/>
+                <path id="패스_9" data-name="패스 9" d="M691.145,161.846,642.214,92.48c-1.344-2.016-6.948-9.529-11.968-16.212a15.786,15.786,0,0,1,1.946-21.108l47.218-44.87c9.226-7.42,13.58-6.492,18.935-7.384V.59H659.477V2.905c3.993.637,10.385,1.406,13.695,3.8,1.867,1.349,1.6,3.781,1.209,4.1L614.573,67.216a17.92,17.92,0,0,0-2.26,23.889l49.836,69.624a9.712,9.712,0,0,1,1.785,4.461c0,3.571-5.353,4.238-10.929,4.909V173h62v-2.9c-5.8-.671-18.731-1.784-23.861-8.253" transform="translate(684.399 0.664)" fill="#fff"/>
+              </g>
+            </svg>
+            <a href="" class="logo_link">home으로 바로가기</a>
+          </h1>
+        </div>
+        <div class="gnb">
+          <ul class="gnb_list">
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">FIND YOUR COLOR</a></li>
+            <li><a href="">PRODUCT</a></li>
+            <li><a href="">EVENT</a></li>
+            <li><a href="">COMMUNITY</a></li>
+          </ul>
+          <div class="gnb_info">
+            <a href="" class="gnb_info_my">
+              <span class="ico_26">회원정보</span>
+            </a>
+            <a href="" class="gnb_info_lang">
+              <span class="ico_26">언어설정</span>
+              <span class="ico_16 arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="container">
+      <section class="main_top">
+        <div id="trigger1" class="spacer s0"></div>
+
+        <!-- 메인 슬라이드 -->
+        <div class="swiper main_swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/resources/images/main/bg_main01.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="/resources/images/main/bg_main02.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <div class="video_box">
+                <div class="video_thum active">
+                  <img src="/resources/images/@sample_thum_01.png" alt="샘플 썸네일">
+                  <a href="#" class="btn_play" data-video="" onclick="mainSwiperPlay(this);">재생버튼</a>
+                </div>
+                <video class="video_cnt" src="/resources/images/@sample_video.mp4"></video>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="video_box">
+                <div class="video_thum active">
+                  <img src="/resources/images/@sample_thum_02.png" alt="샘플 썸네일">
+                  <a href="#" class="btn_play" data-video="youtube" onclick="mainSwiperPlay(this);">재생버튼</a>
+                </div>
+                <div data-url="_ZAgIHmHLdc" class="video_cnt"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- // 메인 슬라이드 -->
+        <div class="main_top_about">
+          <dl class="text_box">
+            <dt>ONE’S AUTHENTIC COLOR</dt>
+            <dd>나를 있는 그대로 빛나게 하는<br>어센틱 컬러 맞춤 AI 솔루션 브랜드, TONEWORK</dd>
+          </dl>
+          <div class="btn_box">
+            <div class="btn_box_inner">
+              <a href="#"></a>
+              <span><i>About us</i></span>
+            </div>
+          </div>
+
+          <!-- circle_info -->
+          <div class="circle_info">
+            <div class="circle circle_main">
+              <svg class="circle_svg" xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42">
+                <g id="ico_arrow_scroll" transform="translate(32 -18) rotate(90)">
+                  <rect id="base" width="42" height="30" transform="translate(18 2)" fill="none"/>
+                  <path id="path" d="M3009.678,39.9h0L2996,26.227l2.121-2.121,10.036,10.036V-2h3V34.184l10.078-10.078,2.121,2.121-13.678,13.678Z" transform="translate(20 3026.356) rotate(-90)" fill="#1c1c1b"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <!-- // circle_info -->
+
+        </div>
+        
+      </section>
+      <!-- // main_top -->
+
+      <!-- main_cnt_01 -->
+      <section class="main_cnt_01">
+        <div id="trigger2" class="spacer s0"></div>
+        <!-- inner_cnt -->
+        <div class="inner_cnt">
+          <!-- basepicker_wrap -->
+          <div class="basepicker_wrap">
+
+            <div class="basepicker_list">
+              <h2 class="basepicker_tit serif">BASEPICKER <span class="text_br"></span>TO TONEWORK</h2>
+              <!-- basepicker_about -->
+              <div class="basepicker_about">
+                <img class="about_img" src="/resources/images/main/img_main_about.png" alt="">
+                <div class="about_cnt">
+                  <p>모든 고유의 색은 그 자체로 특별하기에, TONEWORK는 당신을 있는 그대로 바라봅니다.</p>
+                  <p>Your tone itself ― Is your authenticity.</p>
+                  <p>어센틱 컬러로 당신을 있는 그대로 빛나게 하는 우리는 TONEWORK입니다.</p>
+                  <!-- btn_box -->
+                  <div class="btn_box">
+                    <div class="btn_box_inner">
+                      <a href="#"></a>
+                      <span><i>View more</i></span>
+                    </div>
+                  </div>
+                  <!-- // btn_box -->
+                </div>
+              </div>
+              <!-- // basepicker_about -->
+            </div>
+
+            <div class="basepicker_list">
+              <img src="/resources/images/main/ico_200_star.svg" class="ico_star" alt="">
+              <img src="/resources/images/main/img_main_story.png" alt="">
+            </div>
+
+          </div>
+          <!-- // basepicker_wrap -->
+        </div>
+        <!-- // inner_cnt -->
+        <div class="flow_container">
+          <div class="flow_text">
+            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
+            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
+            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
+            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
+          </div>
+        </div>
+      </section>
+      <!-- // main_cnt_01 -->
+
+      
+      <!-- main_cnt_02 -->
+      <div id="trigger3" class="spacer s0"></div>
+      <section class="main_cnt_02">
+        <!-- inner_cnt -->
+        <div class="inner_cnt">
+          <!-- grid_wrap -->
+          <div class="grid_wrap skin_finder">
+            <!-- grid -->
+            <div class="grid">
+              <div class="grid_item pc_col_12 tbl_col_8 mo_col_4">
+                <h2 class="serif">
+                  <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
+                  <span class="text_action">
+                    <strong>SKINTONE FINDER</strong>
+                    <strong>SHADE PICKER</strong>
+                  </span>
+                </h2>
+              </div>
+              <div class="grid_item pc_col_6 tbl_col_8 mo_col_4">
+                <div class="about">
+                  <div class="text_action">
+                    <p>더 이상 만들어진 컬러에 당신을 맞추지 마세요<br>있는 그대로의 모습을 더 빛나게 하는 어센틱 컬러 찾기</p>
+                    <p>빠르고 간편한 나의 어센틱 컬러 찾기,<br>내 파우치에서 시작해보세요!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // grid -->
+            <!-- grid -->
+            <div class="grid img_cnt">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2 left_img">
+                <img src="/resources/images/main/img_skintone_small.png" alt="">
+                <span class="cover_img">
+                  <img src="/resources/images/main/img_shade_small.png" alt="">
+                </span>
+              </div>
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+                <img src="/resources/images/main/img_skintone_large.png" alt="">
+                <span class="cover_img">
+                  <img src="/resources/images/main/img_shade_large.png" alt="">
+                </span>
+                <!-- btn_box -->
+                <div class="btn_box">
+                  <div class="btn_box_inner">
+                    <a href="#" class="minute_link">3 minutes test 바로가기</a>
+                    <a href="#" class="start_link">START 바로가기</a>
+                    <div class="btn_box_text">
+                      <p>3 minutes test</p>
+                      <p>START!</p>
+                    </div>
+                    <div class="btn_box_bg"></div>
+                  </div>
+                </div>
+                <!-- // btn_box -->
+              </div>
+            </div>
+            <!-- // grid -->
+          </div>
+          <!-- // grid_wrap -->
+        </div>
+        <!-- // inner_cnt -->
+      </section>
+      <!-- // main_cnt_02 -->
+      
+      <!-- main_cnt_03 -->
+      <div id="trigger4" class="spacer s0"></div>
+      <section class="main_cnt_03">
+        <!-- inner_cnt -->
+        <div class="inner_cnt">
+          <!-- grid_wrap -->
+          <div class="grid_wrap main_product">
+            <!-- grid -->
+            <div class="grid">
+              <div class="grid_item pc_col_12 tbl_col_8 mo_col_4">
+                <h2 class="serif">PRODUCTS</h2>
+                <span>나를 위한 진짜 맞춤 파운데이션,<br>BASE PICKER</span>
+              </div>
+              <!-- // grid -->
+            </div>
+            <!-- grid -->
+            <div class="grid product_wrap">
+
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+                <!-- main_product_item -->
+                <div class="main_product_item">
+                  <dl class="about_info">
+                    <dt>BASE PICK WIDE FOUNDATION TO GO</dt>
+                    <dd>
+                      <p class="name">베이스피커 와이드 파운데이션 투고 15g</p>
+                      <p class="price">40,000</p>
+                    </dd>
+                  </dl>
+                  <div class="img_box">
+                    <img src="/resources/images/main/img_main_product01.png" alt="">
+                  </div>
+                  <a href="#" class="product_link">상품 바로가기</a>
+                </div>
+                <!-- // main_product_item -->
+              </div>
+
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+                <!-- main_product_item -->
+                <div class="main_product_item">
+                  <dl class="about_info">
+                    <dt>BASE PICK WIDE FOUNDATION</dt>
+                    <dd>
+                      <p class="name">베이스피커 와이드 파운데이션 20g</p>
+                      <p class="price">40,000</p>
+                    </dd>
+                  </dl>
+                  <div class="img_box">
+                    <img src="/resources/images/main/img_main_product02.png" alt="">
+                  </div>
+                  <a href="#" class="product_link">상품 바로가기</a>
+                </div>
+                <!-- // main_product_item -->
+              </div>
+
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+                <!-- main_product_item -->
+                <div class="main_product_item">
+                  <dl class="about_info">
+                    <dt>BASE PICK WIDE FOUNDATION TO GO</dt>
+                    <dd>
+                      <p class="name">베이스피커 와이드 파운데이션 투고 15g</p>
+                      <p class="price">40,000</p>
+                    </dd>
+                  </dl>
+                  <div class="img_box">
+                    <img src="/resources/images/main/img_main_product01.png" alt="">
+                  </div>
+                  <a href="#" class="product_link">상품 바로가기</a>
+                </div>
+                <!-- // main_product_item -->
+              </div>
+
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+                <!-- main_product_item -->
+                <div class="main_product_item">
+                  <dl class="about_info">
+                    <dt>BASE PICK WIDE FOUNDATION</dt>
+                    <dd>
+                      <p class="name">베이스피커 와이드 파운데이션 20g</p>
+                      <p class="price">40,000</p>
+                    </dd>
+                  </dl>
+                  <div class="img_box">
+                    <img src="/resources/images/main/img_main_product02.png" alt="">
+                  </div>
+                  <a href="#" class="product_link">상품 바로가기</a>
+                </div>
+                <!-- // main_product_item -->
+              </div>
+
+            </div>
+            <!-- // grid -->
+          </div>
+          <!-- // grid_wrap -->
+        </div>
+        <!-- // inner_cnt -->
+      </section>
+      <!-- // main_cnt_03 -->
+
+      <!-- main_cnt_04 -->
+      <div id="trigger5" class="spacer s0"></div>
+      <section class="main_cnt_04">
+        <!-- inner_cnt -->
+        <div class="inner_cnt">
+          <div class="grid_wrap with_tonework">
+            <h2 class="serif"><span>WITH</span> TONEWORK</h2>
+            <!-- swiper -->
+            <div class="swiper main_sns_swiper">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social01.png" alt="">
+                  <a href="sns링크주소" target="_blank" class="play">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social02.png" alt="">
+                  <a href="sns링크주소" target="_blank">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social03.png" alt="">
+                  <a href="sns링크주소" target="_blank">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social04.png" alt="">
+                  <a href="sns링크주소" target="_blank" class="play">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social01.png" alt="">
+                  <a href="sns링크주소" target="_blank" class="play">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social02.png" alt="">
+                  <a href="sns링크주소" target="_blank">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social03.png" alt="">
+                  <a href="sns링크주소" target="_blank">바로가기</a>
+                </li>
+                <li class="swiper-slide">
+                  <img src="/resources/images/main/img_social04.png" alt="">
+                  <a href="sns링크주소" target="_blank" class="play">바로가기</a>
+                </li>
+              </ul>
+            </div>
+            <!-- // swiper -->
+          </div>
+        </div>
+        <!-- // inner_cnt -->
+      </section>
+      <!-- // main_cnt_04 -->
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <!-- grid_wrap -->
+      <div class="grid_wrap">
+        <!-- footer_top -->
+        <div class="footer_top">
+          <!-- footer_logo -->
+          <div class="footer_logo">
+            <img src="/resources/images/common/logo_fotter.svg" alt="">
+            <img class="ico_star" src="/resources/images/icon/icon_34_star@2x.png" alt="">
+          </div>
+          <!-- // footer_logo -->
+          <!-- site_map -->
+          <ul class="site_map">
+            <li class="item_box">
+              <dl>
+                <dt>
+                  <a href="#">ABOUT US</a>
+                </dt>
+                <dd>
+                  <ul class="depth">
+                    <li><a href="#">브랜드 스토리</a></li>
+                    <li><a href="#">스토어</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </li>
+            <li class="item_box">
+              <dl>
+                <dt>
+                  <a href="#">FIND YOU COLOR</a>
+                </dt>
+                <dd>
+                  <ul class="depth">
+                    <li><a href="#">스킨톤파인더</a></li>
+                    <li><a href="#">쉐이드피커</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </li>
+            <li class="item_box">
+              <dl>
+                <dt>
+                  <a href="#">PRODUCTS</a>
+                </dt>
+                <dd>
+                  <ul class="depth">
+                    <li><a href="#">페이스</a></li>
+                    <li><a href="#">립</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </li>
+            <li class="item_box">
+              <dl>
+                <dt>
+                  <a href="#">EVENT</a>
+                </dt>
+                <dd>
+                  <ul class="depth">
+                    <li><a href="#">이벤트</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </li>
+            <li class="item_box">
+              <dl>
+                <dt>
+                  <a href="#">COMMUNITY</a>
+                </dt>
+                <dd>
+                  <ul class="depth">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주묻는 질문</a></li>
+                    <li><a href="#">고객 게시판</a></li>
+                    <li><a href="#">제품 리뷰</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <!-- // site_map -->          
+        </div>
+        <!-- // footer_top -->
+        <div class="footer_bottom">
+          <div class="footer_address">
+            <div class="company_info">
+              <p class="name">(주)아모레퍼시픽</p>
+              <div class="address">
+                <p>서울특별시 용산구 한강대로 100 (한강로2가 181)</p>
+                <p>고객상담팀(수신자요금부담) 080-023-5454 (상담시간 월~금 : AM 09:00 ~ PM 06:00)</p>
+              </div>
+            </div>
+            <div class="sns_link">
+              <a href="#" class="icon_facebook">페이스북 바로가기</a>
+              <a href="#" class="icon_youtube">유튜브 바로가기</a>
+              <a href="#" class="icon_instar">인스타그램 바로가기</a>
+            </div>
+          </div>
+          <div class="footer_util">
+            <ul class="util_m">
+              <li><a href="#">서비스이용약관</a></li>
+              <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+              <li><a href="#">영상정보처리방침</a></li>
+              <li><a href="#" target="_blank">뷰티포인트</a></li>
+            </ul>
+            <p class="copy_right">ⓒ AMOREPACIFIC CORPORATION. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // grid_wrap -->
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <div class="quick_btn">
+      <button type="button" class="quick_btn_top" onclick="go_top();">맨 위로 바로가기</button>
+    </div>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+  <script src="/resources/js/main_scroll_action.js"></script>
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      mySwiper = undefined;
+      mainSwiper(); // 스와이퍼 호출
+      mainSnsSwiper(); // SNS Swiper 호출
+      headerAction(); // 헤더 인터렉션
+    });
+  </script>
+</body>
+
+</html>

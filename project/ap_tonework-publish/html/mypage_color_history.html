@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <script src="/inc/pb_include.js"></script>
+   <script>include.meta();</script>
+   <script>include.favicon();</script>
+   <script>include.styles();</script>
+   <script>include.scripts();</script>
+   <script>include.title();</script>
+</head>
+
+<body>
+   <!-- wrap -->
+   <div id="wrap" class="sub">
+      <!-- header -->
+      <header>
+         <script>include.header();</script>
+      </header>
+      <!-- // header -->
+      <!-- container -->
+      <main id="sub_container">
+         <section class="mypage"><!--페이지 클래스 -->
+            <!-- mypage_top -->
+            <div class="mypage_top">
+               <!-- grid_wrap -->
+               <div class="grid_wrap">
+                  <!-- my_profile -->
+                  <div class="my_profile">
+                     <!-- profile_img -->
+                     <div class="profile_img">
+                        <!-- photo_box -->
+                        <div class="photo_box">
+                           <img src="/resources/images/mypage/img_profile_default.svg" alt>
+                           <!-- 
+                              컬러 없는 경우 : 클래스 no_color 추가
+                              <div class="face_color no_color"></div>
+                              컬러 있는 경우 : 스타일 background-color 추가 
+                           -->
+                           <div class="face_color" style="background-color:#EF8D2A;"></div>
+                        </div>
+                        <!-- // photo_box -->
+                        <!-- btn_box -->
+                        <div class="btn_box btn_sm_circle">
+                           <div class="btn_box_inner">
+                              <button class="btn_box_btn" onclick="openPopup('#modalPop01')"></button>
+                              <!-- mypage_modal_popup.html -->
+                              <div class="btn_box_icon"><i class="ico_26 ico_edit"></i></div>
+                              <div class="btn_box_bg"></div>
+                           </div>
+                        </div>
+                        <!-- // btn_box -->
+                     </div>
+                     <!-- // profile_img -->
+                     <!-- profile_info -->
+                     <div class="profile_info">
+                        <p class="user_name">이유빈님의 어센틱컬러</p>
+                        <a href="#" class="color_code">AS145E4W8</a>
+                     </div>
+                     <!-- // profile_info -->
+                  </div>
+                  <!-- // my_profile -->
+               </div>
+               <!-- //grid_wrap -->
+            </div>
+            <!-- // mypage_top -->
+            <!-- mypage_cont -->
+            <div class="mypage_cont my_color_history"> <!-- my_color_history : 어센틱컬러 콘텐츠 클래스 -->
+               <!-- grid_wrap -->
+               <div class="grid_wrap">
+                  <div class="mypage_tit_wrap btm_line">
+                     <div class="tbl_top">
+                        <p class="total_num">AUTHENTIC COLOR REPORT</p>
+                     </div>
+                  </div>
+                  <!-- color_history -->
+                  <div class="color_history">
+                     <div class="history_swiper">
+                        <ul class="swiper-wrapper">
+                           <!-- history_cnt -->
+                           <li class="swiper-slide history_cnt">
+                              <dl>
+                                 <dt class="tit">
+                                    <span class="date">2023.05.01</span>
+                                    <div class="info">
+                                       <span class="store">아모레성수</span>
+                                       <span class="product">톤워크 파운데이션 글로우</span>
+                                    </div>
+                                    <span class="color_id">ER12D4G8R</span>
+                                 </dt>
+                                 <dd class="flip_card">
+                                    <div class="card_inner">
+                                       <div class="card_front" style="background-color:#B96613"></div>
+                                       <div class="info_box card_back">
+                                          <button class="ico_32 ico_trash btn_delete"><span class="blind">삭제하기</span></button>
+                                          <!-- color_list -->
+                                          <ul class="color_list">
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>매칭 쉐이드</span>
+                                                   <em>21W2</em>
+                                                </div>
+                                             </li>
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>선택 쉐이드</span>
+                                                   <em>19W1</em>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                          <!-- // color_list -->
+                                          <!-- choice_product -->
+                                          <div class="choice_product">
+                                             <p>선택제품</p>
+                                             <div class="product_box">
+                                                <div class="img"><img
+                                                      src="/resources/images/@sample_product_thumb_01.png"
+                                                      alt></div>
+                                                <div class="info">
+                                                   <p class="name">파운데이션 세미매트 21.5N1 20G</p>
+                                                   <p class="price">40,000</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- // choice_product -->
+                                       </div>
+                                    </div>
+                                 </dd>
+                              </dl>
+                           </li>
+                           <!-- // history_cnt -->
+                           <!-- history_cnt -->
+                           <li class="swiper-slide history_cnt">
+                              <dl>
+                                 <dt class="tit">
+                                    <span class="date">2023.05.01</span>
+                                    <div class="info">
+                                       <span class="store">아모레성수</span>
+                                       <span class="product">톤워크 파운데이션 글로우</span>
+                                    </div>
+                                    <span class="color_id">ER12D4G8R</span>
+                                 </dt>
+                                 <dd class="flip_card">
+                                    <div class="card_inner">
+                                       <div class="card_front" style="background-color:#EF8D2A"></div>
+                                       <div class="info_box card_back">
+                                          <button class="ico_32 ico_trash btn_delete"><span
+                                                class="blind">삭제하기</span></button>
+                                          <!-- color_list -->
+                                          <ul class="color_list">
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>매칭 쉐이드</span>
+                                                   <em>21W2</em>
+                                                </div>
+                                             </li>
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>선택 쉐이드</span>
+                                                   <em>19W1</em>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                          <!-- // color_list -->
+                                          <!-- choice_product -->
+                                          <div class="choice_product">
+                                             <p>선택제품</p>
+                                             <div class="product_box">
+                                                <div class="img"><img src="/resources/images/@sample_product_thumb_01.png" alt></div>
+                                                <div class="info">
+                                                   <p class="name">파운데이션 세미매트 21.5N1 20G</p>
+                                                   <p class="price">40,000</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- // choice_product -->
+                                       </div>
+                                    </div>
+                                 </dd>
+                              </dl>
+                           </li>
+                           <!-- // history_cnt -->
+                           <!-- history_cnt -->
+                           <li class="swiper-slide history_cnt">
+                              <dl>
+                                 <dt class="tit">
+                                    <span class="date">2023.05.01</span>
+                                    <div class="info">
+                                       <span class="store">아모레성수</span>
+                                       <span class="product">톤워크 파운데이션 글로우</span>
+                                    </div>
+                                    <span class="color_id">ER12D4G8R</span>
+                                 </dt>
+                                 <dd class="flip_card">
+                                    <div class="card_inner">
+                                       <div class="card_front" style="background-color:#F0B98F"></div>
+                                       <div class="info_box card_back">
+                                          <button class="ico_32 ico_trash btn_delete"><span class="blind">삭제하기</span></button>
+                                          <!-- color_list -->
+                                          <ul class="color_list">
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>매칭 쉐이드</span>
+                                                   <em>21W2</em>
+                                                </div>
+                                             </li>
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>선택 쉐이드</span>
+                                                   <em>19W1</em>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                          <!-- // color_list -->
+                                          <!-- choice_product -->
+                                          <div class="choice_product">
+                                             <p>선택제품</p>
+                                             <div class="product_box">
+                                                <div class="img"><img src="/resources/images/@sample_product_thumb_01.png" alt></div>
+                                                <div class="info">
+                                                   <p class="name">파운데이션 세미매트 21.5N1 20G</p>
+                                                   <p class="price">40,000</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- // choice_product -->
+                                       </div>
+                                    </div>
+                                 </dd>
+                              </dl>
+                           </li>
+                           <!-- // history_cnt -->
+                           <!-- history_cnt -->
+                           <li class="swiper-slide history_cnt">
+                              <dl>
+                                 <dt class="tit">
+                                    <span class="date">2023.05.01</span>
+                                    <div class="info">
+                                       <span class="store">아모레성수</span>
+                                       <span class="product">톤워크 파운데이션 글로우</span>
+                                    </div>
+                                    <span class="color_id">ER12D4G8R</span>
+                                 </dt>
+                                 <dd class="flip_card">
+                                    <div class="card_inner">
+                                       <div class="card_front" style="background-color:#C6845D"></div>
+                                       <div class="info_box card_back">
+                                          <button class="ico_32 ico_trash btn_delete"><span class="blind">삭제하기</span></button>
+                                          <!-- color_list -->
+                                          <ul class="color_list">
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>매칭 쉐이드</span>
+                                                   <em>21W2</em>
+                                                </div>
+                                             </li>
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>선택 쉐이드</span>
+                                                   <em>19W1</em>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                          <!-- // color_list -->
+                                          <!-- choice_product -->
+                                          <div class="choice_product">
+                                             <p>선택제품</p>
+                                             <div class="product_box">
+                                                <div class="img"><img src="/resources/images/@sample_product_thumb_01.png" alt></div>
+                                                <div class="info">
+                                                   <p class="name">파운데이션 세미매트 21.5N1 20G</p>
+                                                   <p class="price">40,000</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- // choice_product -->
+                                       </div>
+                                    </div>
+                                 </dd>
+                              </dl>
+                           </li>
+                           <!-- // history_cnt -->
+                           <!-- history_cnt -->
+                           <li class="swiper-slide history_cnt">
+                              <dl>
+                                 <dt class="tit">
+                                    <span class="date">2023.05.01</span>
+                                    <div class="info">
+                                       <span class="store">아모레성수</span>
+                                       <span class="product">톤워크 파운데이션 글로우</span>
+                                    </div>
+                                    <span class="color_id">ER12D4G8R</span>
+                                 </dt>
+                                 <dd class="flip_card">
+                                    <div class="card_inner">
+                                       <div class="card_front" style="background-color:#B96613"></div>
+                                       <div class="info_box card_back">
+                                          <button class="ico_32 ico_trash btn_delete"><span class="blind">삭제하기</span></button>
+                                          <!-- color_list -->
+                                          <ul class="color_list">
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>매칭 쉐이드</span>
+                                                   <em>21W2</em>
+                                                </div>
+                                             </li>
+                                             <li class="color_box" style="background-color:#F0B98F;">
+                                                <div class="txt">
+                                                   <span>선택 쉐이드</span>
+                                                   <em>19W1</em>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                          <!-- // color_list -->
+                                          <!-- choice_product -->
+                                          <div class="choice_product">
+                                             <p>선택제품</p>
+                                             <div class="product_box">
+                                                <div class="img"><img src="/resources/images/@sample_product_thumb_01.png" alt></div>
+                                                <div class="info">
+                                                   <p class="name">파운데이션 세미매트 21.5N1 20G</p>
+                                                   <p class="price">40,000</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- // choice_product -->
+                                       </div>
+                                    </div>
+                                 </dd>
+                              </dl>
+                           </li>
+                           <!-- // history_cnt -->
+                        </ul>
+                     </div>
+                     <div class="slide_btn_group">
+                        <div class="slide_btn swiper-button-prev"><span class="blind">이전 어센틱컬러</span></div>
+                        <div class="slide_btn swiper-button-next"><span class="blind">다음 어센틱컬러</span></div>
+                     </div>
+                  </div>
+                  <!-- // color_history -->
+                  <!-- btn_wrap -->
+                  <div class="btn_wrap">
+                     <!-- btn_box -->
+                     <div class="btn_box btn_arrow">
+                        <div class="btn_box_inner">
+                           <a href="#"></a>
+                           <span><i>컬러히스토리 등록</i></span>
+                        </div>
+                     </div>
+                     <!-- // btn_box -->
+                  </div>
+                  <!-- // btn_wrap -->
+               </div>
+               <!-- grid_wrap -->
+            </div>
+            <!-- // mypage_cont -->
+         </section>
+      </main>
+      <!-- // container -->
+
+      <!-- footer -->
+      <footer class="footer">
+         <script>include.footer();</script>
+      </footer>
+      <!-- // footer -->
+
+      <!-- quick_btn -->
+      <script>include.quickBtn();</script>
+      <!-- // quick_btn -->
+
+   </div>
+   <!-- // wrap -->
+   <script>
+      $(document).ready(function () {
+         $(window).resize(function (event) {
+            ww = $(window).width();
+            quickBtn();
+         });
+         $(window).scroll(function (event) {
+            headerAction(); // 헤더 액션
+            quickBtn(); // 퀵버튼 위치
+         });
+         headerAction(); // 헤더 인터렉션
+         historySwiper()
+      });
+      //컬러 히스토리 슬라이드
+      function historySwiper() {
+         const historySwiperSwiper = new Swiper(".history_swiper", {
+            slidesPerView: 3.34,
+            preloadImages: true,
+            updateOnImagesReady: true,
+            spaceBetween: 16,
+            observer: true,
+            observeParents: true,
+            navigation: {
+               nextEl: ".color_history .swiper-button-next",
+               prevEl: ".color_history .swiper-button-prev"
+            },
+         });
+      };
+   </script>
+</body>
+
+</html>

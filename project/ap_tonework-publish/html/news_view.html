@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="sub">
+    <!-- header -->
+    <header>
+      <script>include.header();</script>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+
+      <section class="gap_80 board_view"> <!--페이지 클래스 -->
+        
+         <!-- sub_top_about -->
+         <div class="sub_top_about">
+            <h2>NEWS</h2>
+            <p class="about_text">새로운 소식과 공지를 확인해 보세요.</p>
+            <div class="view_info">
+               <div class="view_info_inner">
+                  <div class="top_line">
+                     <span class="top_line_ico"></span>
+                  </div>
+                  <h3>톤워크 브랜드 사이트 런칭</h3>
+                  <dl class="info_text">
+                     <dt class="tit">2023.03.20</dt>
+                     <dd class="date">안내</dd>
+                  </dl>
+                  <a href="#" class="go_back">LIST</a>
+               </div>
+            </div>
+         </div>
+         <!-- // sub_top_about -->
+         <!-- grid_wrap -->
+         <div class="grid_wrap">
+            <!-- view_cnt -->
+            <div class="view_cnt">
+               <div class="view_cnt_area">
+                  <p><strong>진화하는 컬러테크로<br>79억의 나를 있는 그대로 빛나게 합니다.</strong></p>
+                  <p>나를 있는 그대로 빛나게 하는 어센틱 컬러 맞춤 AI 솔루션 브랜드인 톤워크닷컴이 여러분께 선보입니다.<br>
+                     모든 고유의 색은 그 자체로 특별하기에, 톤워크는 당신을 있는 그대로 바라봅니다.<br>
+                     어센틱 컬러로 당신을 있는 그대로 빛나게 하는 우리 톤워크만의 브랜드 컨셉입니다.
+                  </p>
+                  <p><img src="/resources/images/@sample_view_img.png" alt></p>
+                  <!-- 영상 -->
+                  <div class="video_box">
+                     <video class="video_cnt" src="/resources/images/@sample_video.mp4" controls></video>
+                  </div>
+                   <!-- // 영상 -->
+
+                  <!-- 유튜브 영상 -->
+                  <div class="video_box">
+                     <div class="video_cnt">
+                        <iframe src="https://www.youtube.com/embed/_ZAgIHmHLdc" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     </div>
+                  </div>
+                   <!-- // 유튜브 영상 -->
+                  
+                  <p>많은 관심을 부탁드리겠습니다.<br>감사합니다.</p>
+               </div>
+               <div class="grid_item download_lst">
+                  <a href="" download="" class="download_file">톤워크 닷컴 리뉴얼 메뉴얼.PDF</a>
+                  <a href="" download="" class="download_file">톤워크 닷컴 리뉴얼 메뉴얼.PDF</a>
+               </div>
+            </div>
+            <!-- // view_cnt -->
+            <!-- page_ctrl -->
+            <div class="page_ctrl">
+               <div class="prev_page">
+                  <div class="icon_arrow"></div>
+                  <button class="btn_page" id="">
+                     <span>이전글</span>
+                     <p>무통장 입금 주문 입금기한 변경</p>
+                  </button>
+               </div>
+               <div class="next_page">
+                  <button class="btn_page" id="">
+                     <span>다음글</span>
+                     <p>주문 폭증에 따른 배송지연 안내</p>
+                  </button>
+                  <div class="icon_arrow"></div>
+               </div>
+            </div>
+            <!-- page_ctrl -->
+        </div>
+        <!-- // grid_wrap -->
+      </section>
+
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <script>include.quickBtn();</script>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+        boardTitleFix()
+      });
+      headerAction(); // 헤더 인터렉션
+    });
+
+
+    function boardTitleFix(){
+      var st = $(window).scrollTop();
+      var wrapT = $(".view_info").offset().top;
+      var $el = $(".view_info_inner");
+      var headerH = $("header").outerHeight();
+      if (wrapT <= st + headerH) {
+         $el.addClass("fixed");
+      } else {
+         $el.removeClass("fixed");
+      }
+    }
+  </script>
+</body>
+
+</html>

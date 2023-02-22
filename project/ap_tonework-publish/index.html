@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>프로젝트 파일리스트</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+  <style type="text/css">
+  *{margin: 0; padding: 0;box-sizing: border-box;}
+  body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, table, caption, tr, th, td, thead, tbody, tfoot, form, fieldset, p, hr, blockquote, address{margin: 0; padding: 0;}
+  ul, ol{list-style: none;}
+  a{color: #000; text-decoration: underline;}
+  img{border:0;}
+  address, em{ font-style: normal; }
+  label, input{vertical-align: middle;}
+  input{outline: none}
+  table, tr, th, td{border-collapse: collapse; border-spacing:0;}
+  caption{width: 100%; height: 30px;}
+  body{padding: 0 20px;font-size: 16px;font-family: 'Noto Sans KR', sans-serif;}
+  h1, h2, h3, h4, h5, h6{font-weight: bold;}
+  p{line-height: 1.5;}
+  .clearfix:after{content:'';display: block;clear: both;}
+  .wrapper{width:100%; margin:auto; }
+  table{width:100%; border-bottom:1px solid #f4f4f4; margin-bottom:50px;border-top:3px solid #d2d6de;}
+  h1{font-size:2rem; font-weight: normal; margin:40px 0;}
+  h2{font-size:1rem; font-weight: normal; margin-bottom:20px;}
+  hr{margin-bottom:50px;}
+  table tr th{font-weight: normal; border-right:1px solid #f4f4f4; border-bottom:1px solid #f4f4f4;background-color:#fff;}
+  table tr td:first-child{width:15%;padding-left: 20px;text-align: left;}
+  table tr td:nth-of-type(2){width:15%;}
+  table tr td:nth-of-type(3){width:15%;}
+  table tr td:nth-of-type(4){width:15%;}
+  table tr td:nth-of-type(5){width:40%;}
+  table tr th, table tr td{padding:10px;font-size: 16px;text-align: center;}
+  table tr th:last-child{border-right:none;}
+  table tr td{padding: 5px;font-size: 14px;border-bottom:1px solid #f4f4f4; border-right:1px solid #f4f4f4;color: #666;}
+  table tr td:last-child{border-right:none;}
+  table tr td a{display: block;width: 100%;height: 100%;}
+  table tr td.category{position: relative;padding: 10px;text-align: left;font-size: 15px;background-color: #f9f9f9;color: #1d1e25;}
+  table tr td.category:before{position: absolute;top: 0;left: 0;display: inline-block;width: 3px;height: 100%;background-color: #d2d6de;content: '';}
+  table tr:last-child td{border-bottom:none;}
+  .top{padding-bottom: 30px;}
+  .top ul{float: left;margin-bottom:20px;}
+  .top ul li{float: left; margin-right:10px; line-height:25px;}
+  .top ul li:first-child,.top ul li:nth-of-type(8){font-size:1rem;}
+  .top ul li:nth-of-type(2) span,.top ul li:nth-of-type(4),.top ul li:nth-of-type(6),.top ul li:nth-of-type(9),.top ul li:nth-of-type(11){ text-align: center; border-radius: 50%;}
+  .top ul{margin-bottom:50px;}
+  .r{background-color: #a55eea; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+  .r:before{content: 'R';}
+  .w{background-color: #20bf6b; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+  .w:before{content: 'W';}
+  .m{background-color: #f7b731; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+  .m:before{content: 'M';}
+  .end{background-color: #eb3b5a; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px; font-weight: bold;}
+  .end:before{content: '완';}
+  .ing{background-color: #2d98da; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px; font-weight: bold;}
+  .ing:before{content: '진';}
+  .modify{color:#fff; display:inline-block; width:auto; height:25px; padding: 0 5px;border-radius: 30px; line-height: 25px; font-weight: bold; background-color:#39c4cd; text-align: center;}
+  .modify:before{content: '수정';}
+  .t_em{color: #e10e0e;}
+  .t_re{color: #046ac9;}
+  .t_pu{color: #17ae03;}
+  .t_lg{color: #c904b4;}
+  .status{float:right;width:300px}
+  .status span{font-size: 16px;color: #666;}
+  .status #progress{overflow: hidden;float: left;display:block; width:100%; height:20px;margin-bottom: 5px;background:#eee;border-radius:30px;}
+  .status #progress em{display:block; height:100%; background:#eb3b5a;border-radius:30px;}
+  .status #finish{color:#1352a2}
+  .status #total{display: block;}
+  .status .percent{display: block;float: right;}
+  .list.none a{text-decoration:line-through;color:#aeaeae;cursor:not-allowed;}
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1>TONEWORK 퍼블 현황</h1>
+      <div class="top clearfix">
+        <ul>
+          <li>구분 : </li>
+          <li><span class="r"></span></li>
+          <li>반응형</li>
+          <li><span class="w"></span></li>
+          <li>WEB</li>
+          <li><span class="m"></span></li>
+          <li>모바일&nbsp;&nbsp;&nbsp;/ </li>
+          <li>상태 : </li>
+          <li><span class="end"></span></li>
+          <li>완료</li>
+          <li><span class="ing"></span></li>
+          <li>진행중&nbsp;&nbsp;&nbsp;/ </li>
+          <li><span class="modify"></span></li>
+          <li>수정</li>
+        </ul>
+        <div class="status"><span id="progress"><em></em></span> <span id="total"></span></div>
+      </div>
+    </header>
+    <div class="content">
+      <table>
+        <tr>
+          <th>페이지</th>
+          <th>파일명</th>
+          <th>구분</th>
+          <th>상태</th>
+          <th>참고사항</th>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">MAIN</th>
+        </tr>
+        <tr class="list">
+          <td>MAIN</td>
+          <td><a href="/html/main.html" target="_blank">main.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td>
+            <!-- <p class="t_em">2022.11.03 수정</p> -->
+          </td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">브랜드</th>
+        </tr>
+        <tr class="list">
+          <td>브랜드소개</td>
+          <td><a href="/html/brand_about.html" target="_blank">brand_about.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>스토어</td>
+          <td><a href="/html/brand_store.html" target="_blank">brand_store.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">제품</th>
+        </tr>
+        <tr class="list">
+          <td>제품 목록</td>
+          <td><a href="/html/product_list.html" target="_blank">product_list.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>제품 상세</td>
+          <td><a href="/html/product_view.html" target="_blank">product_view.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>제품상세(팝업)</td>
+          <td><a href="/html/product_modal_popup.html" target="_blank">product_modal_popup.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">피부측정</th>
+        </tr>
+        <tr class="list">
+          <td>피부측정</td>
+          <td><a href="/html/skin_tone.html" target="_blank">skin_tone.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">이벤트</th>
+        </tr>
+        <tr class="list">
+          <td>목록</td>
+          <td><a href="/html/event_list.html" target="_blank">event_list.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>상세보기</td>
+          <td><a href="/html/event_view.html" target="_blank">event_view.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>당첨자 발표</td>
+          <td><a href="/html/event_result_list.html" target="_blank">event_result_list.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">커뮤니티</th>
+        </tr>
+        <tr class="list">
+          <td>커뮤니티 메인</td>
+          <td><a href="/html/community.html" target="_blank">cummunity.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>공지사항 리스트</td>
+          <td><a href="/html/news_list.html" target="_blank">news_list.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>공지사항 상세</td>
+          <td><a href="/html/news_view.html" target="_blank">news_view.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>FAQ</td>
+          <td><a href="/html/faq.html" target="_blank">faq.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>Q&A</td>
+          <td><a href="/html/contact.html" target="_blank">contact.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>제품리뷰</td>
+          <td><a href="/html/best_review.html" target="_blank">best_review.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>제품리뷰(팝업)</td>
+          <td><a href="/html/review_modal_popup.html" target="_blank">review_modal_popup.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="end"></span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="category" colspan="5">마이페이지</th>
+        </tr>
+        <tr class="list">
+          <td>마이페이지 홈</td>
+          <td><a href="/html/mypage_01.html" target="_blank">mypage_01.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>컬러내역</td>
+          <td><a href="/html/mypage_02.html" target="_blank">mypage_02.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>어센틱컬러 내역</td>
+          <td><a href="/html/mypage_03.html" target="_blank">mypage_03.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>구매 내역</td>
+          <td><a href="/html/mypage_04.html" target="_blank">mypage_04.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>나의 문의</td>
+          <td><a href="/html/mypage_05.html" target="_blank">mypage_05.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+        <tr class="list">
+          <td>내정보보기</td>
+          <td><a href="/html/mypage_06.html" target="_blank">mypage_06.html</a></td>
+          <td><span class="r"></span></td>
+          <td><span class="ing"></span></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+	<script type="text/javascript" src="./resources/js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function(){
+			var $content = $(".content table"),
+				total = $content.find(".list").length,
+				finish = $content.find(".list .end").length,
+				progress = Math.floor((finish) / total * 100);
+      console.log(total, finish);
+			$("#progress em").css("width", progress + "%");
+			$("#total").html(finish+" / "+total+"page"+"<span class='percent'>진행률 "+ progress +"%</span>");
+		});
+	</script>
+</body>
+
+</html>

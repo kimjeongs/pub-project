@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="sub">
+    <!-- header -->
+    <header>
+      <script>include.header();</script>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+
+      <section class="mypage board_view"> <!--페이지 클래스 -->
+         <!-- sub_top_about -->
+         <div class="sub_top_about">
+            <!-- mypage_tit_wrap -->
+            <div class="mypage_tit_wrap">
+               <h2 class="tit serif">MY QUESTION</h2>               
+            </div>
+            <!-- // mypage_tit_wrap -->
+            <div class="view_info">
+               <div class="view_info_inner">
+                  <div class="top_line">
+                     <span class="top_line_ico"></span>
+                  </div>
+                  <h3>리뷰 작성 혜택이 궁금해요</h3>
+                  <dl class="info_text">
+                     <dt class="tit">2023.05.15</dt>
+                     <dd class="date">사이트 이용</dd>
+                  </dl>
+                  <a href="#" class="go_back">LIST</a>
+               </div>
+            </div>
+         </div>
+         <!-- // sub_top_about -->
+         <!-- grid_wrap -->
+         <div class="grid_wrap">
+            <!-- view_cnt -->
+            <div class="view_cnt">
+               <div class="view_cnt_area">
+                  <p>안녕하세요. 톤워크 담당자님. 톤워크를 아주 좋아하는 사용자입니다.<br><br>
+                     제품을 사용하고 너무 좋아서 리뷰를 남겼는데 혹시 혜택이 있나요?<br>리뷰 작성한 화면 캡처해서 같이 보내드려요.<br><br>
+                     바쁘시겠지만 확인해 주시면<br>너무너무 감사하겠습니다 ^^b
+                  </p>
+               </div>
+               <!-- download_lst -->
+               <div class="download_lst">
+                  <a href="" download="" class="download_file">톤워크 닷컴 리뉴얼 메뉴얼.PDF</a>
+                  <a href="" download="" class="download_file">톤워크 닷컴 리뉴얼 메뉴얼.PDF</a>
+               </div>
+               <!-- // download_lst -->
+               <!-- answer_box -->
+               <div class="answer_box bubble">
+                  <div class="comment_info">
+                    <p class="admin_photo"></p> <!-- 관리자일 경우 -->
+                    <p class="user_name">
+                      <strong>관리자</strong>
+                      <span class="date">2023.05.01 12:00:00</span>
+                    </p>
+                  </div>
+                  <p class="comment_text">
+                     안녕하세요. 톤워크 닷컴입니다.<br>소중한 리뷰를 작성하신 모든 분께 소정의 사은품을 제공하고 있습니다.<br>
+                     <span class="comment_img">
+                        <img src="/resources/images/mypage/answer_img.png" alt>
+                     </span>
+                     사이트 이용에 문의사항이 있으실 경우 언제든 문의 부탁드리겠습니다.<br>
+                     나를 있는 그대로 빛나게 하는 어센틱 컬러 맞춤 AI 솔루션 브랜드, 톤워크<br> 감사합니다.
+                  </p>
+               </div>
+               <!-- // answer_box -->
+            </div>
+            <!-- // view_cnt -->
+            <!-- page_ctrl -->
+            <div class="page_ctrl">
+               <div class="prev_page">
+                  <div class="icon_arrow"></div>
+                  <button class="btn_page" id="">
+                     <span>이전글</span>
+                     <p>피부 측정한 결과를 어디서 확인할 수 있나요?</p>
+                  </button>
+               </div>
+               <div class="next_page">
+                  <button class="btn_page" id="">
+                     <span>다음글</span>
+                     <p>상품, 이벤트 혜택 안내를 받고 싶어요.</p>
+                  </button>
+                  <div class="icon_arrow"></div>
+               </div>
+            </div>
+            <!-- page_ctrl -->
+        </div>
+        <!-- // grid_wrap -->
+      </section>
+
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <script>include.quickBtn();</script>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+        boardTitleFix()
+      });
+      headerAction(); // 헤더 인터렉션
+    });
+
+
+    function boardTitleFix(){
+      var st = $(window).scrollTop();
+      var wrapT = $(".view_info").offset().top;
+      var $el = $(".view_info_inner");
+      var headerH = $("header").outerHeight();
+      if (wrapT <= st + headerH) {
+         $el.addClass("fixed");
+      } else {
+         $el.removeClass("fixed");
+      }
+    }
+  </script>
+</body>
+
+</html>

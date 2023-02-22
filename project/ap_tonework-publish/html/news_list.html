@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="sub">
+    <!-- header -->
+    <header>
+      <script>include.header();</script>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+
+      <section class="gap_80 news_list"> <!--페이지 클래스 -->
+        
+        <!-- sub_top_about -->
+        <div class="sub_top_about">
+          <h2>NEWS</h2>
+          <p class="about_text">새로운 소식과 공지를 확인해 보세요.</p>
+        </div>
+        <!-- // sub_top_about -->
+
+        <!-- grid_wrap -->
+        <div class="grid_wrap">
+
+          <!-- tbl_top -->
+          <div class="tbl_top">
+            <p class="total_num">TOTAL<span>36</span></p>
+
+            <!-- search_opt -->
+            <div class="search_opt inp_wrap">
+              <!-- select_box -->
+              <div class="select_box">
+                <div class="select_box_value selected"><span class="selected">제목</span></div>
+                <div class="select_box_list">
+                  <ul>
+                      <li class="selected"><span>제목</span></li>
+                      <li><span>내용</span></li>
+                  </ul>
+                </div>                
+              </div>
+              <!-- // select_box -->
+              <!-- input -->
+              <div class="input_group search_inp">
+                <input type="text" id="" class="input_text" value="" placeholder="검색어를 입력하세요.">
+                <button class="btn_search">검색</button> 
+              </div>
+              <!-- // input -->
+            </div>
+            <!-- // search_opt -->
+
+          </div>
+          <!-- // tbl_top -->
+
+          <!-- tbl_list -->
+          <ul class="tbl_list">
+            <li>
+              <div class="tbl_date">
+                <span>2023.06</span>
+                <strong>23</strong>
+              </div>
+              <div class="tbl_type">이벤트 안내</div>
+              <a href="#" class="tbl_tit">구매 리뷰 작성 혜택 변경 안내</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.06</span>
+                <strong>05</strong>
+              </div>
+              <div class="tbl_type">이벤트 안내</div>
+              <a href="#" class="tbl_tit">베이스피커 체험단 우수 후기자 발표</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.05</span>
+                <strong>28</strong>
+              </div>
+              <div class="tbl_type">긴급 공지</div>
+              <a href="#" class="tbl_tit">주문 폭증에 따른 배송지연 안내</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.05</span>
+                <strong>15</strong>
+              </div>
+              <div class="tbl_type">배송 공지</div>
+              <a href="#" class="tbl_tit">새로운 택배 포장 서비스 진행에 따른 공지</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.05</span>
+                <strong>03</strong>
+              </div>
+              <div class="tbl_type">이벤트 안내</div>
+              <a href="#" class="tbl_tit">톤워크 카카오톡 플러스친구 할인쿠폰 관련 안내</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.04</span>
+                <strong>24</strong>
+              </div>
+              <div class="tbl_type">긴급 공지</div>
+              <a href="#" class="tbl_tit">주문 폭증에 따른 배송지연 안내</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.04</span>
+                <strong>16</strong>
+              </div>
+              <div class="tbl_type">결제 안내</div>
+              <a href="#" class="tbl_tit">아모레퍼시픽카드 혜택 적용 가능한 간편결제 안내</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.04</span>
+                <strong>02</strong>
+              </div>
+              <div class="tbl_type">결제 안내</div>
+              <a href="#" class="tbl_tit">무통장 입금 주문 입금기한 변경</a>
+            </li>
+            <li>
+              <div class="tbl_date">
+                <span>2023.03</span>
+                <strong>20</strong>
+              </div>
+              <div class="tbl_type">안내</div>
+              <a href="#" class="tbl_tit">톤워크 브랜드 사이트 런칭</a>
+            </li>
+          </ul>
+          <!-- // tbl_list -->
+
+          <!-- paging_box -->
+          <div class="paging_box">
+            <a href="#" class="btn_prev">이전</a>
+            <a href="#" class="page_num">1</a>
+            <a href="#" class="page_num">2</a>
+            <a href="#" class="page_num">3</a>
+            <a href="#" class="page_num">4</a>
+            <a href="#" class="page_num">5</a>
+            <a href="#" class="btn_next">다음</a>
+          </div>
+          <!-- // paging_box -->
+
+        </div>
+        <!-- // grid_wrap -->
+      </section>
+
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <script>include.quickBtn();</script>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      headerAction(); // 헤더 인터렉션
+    });
+  </script>
+</body>
+
+</html>

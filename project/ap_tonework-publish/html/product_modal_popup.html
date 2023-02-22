@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+   <script>include.favicon();</script>
+	<script>include.styles();</script>
+   <script>include.scripts();</script>
+   <script>include.title();</script>
+</head>
+
+<body>
+   <!-- wrap -->
+   <div id="wrap" class="sub">
+      <!-- header -->
+      <header>
+         <script>include.header();</script>
+      </header>
+       <!-- // header -->
+      <!-- container -->
+      <main id="sub_container">
+
+         <section class="gap_80 board_view"> <!--페이지 클래스 -->
+            <!-- sub_top_about -->
+            <div class="sub_top_about">
+               <h2></h2>
+               <p class="about_text"></p>
+            </div>
+            <!-- // sub_top_about -->
+            <!-- grid_wrap -->
+            <div class="grid_wrap">
+            <button class="btn btn_xl btn_radius btn_secondary" onclick="openPopup('#modalPop01')">Opne Review Modal Popup</button>
+            </div>
+         <!-- // grid_wrap -->
+         </section>
+
+      </main>
+      <!-- // container -->
+
+      <!-- footer -->
+      <footer class="footer">
+         <script>include.footer();</script>
+      </footer>
+      <!-- // footer -->
+
+      <!-- quick_btn -->
+      <script>include.quickBtn();</script>
+      <!-- // quick_btn -->
+
+   </div>
+   <!-- // wrap -->
+
+   <div id="modalPop01" class="modal_wrap ingred_modal">
+      <div class="modal">
+         <button type="button" class="btn btn_sm modal_close ico_48"><span class="blind">닫기</span></button>
+         <div class="cont">
+
+            <!-- ingred_box -->
+            <div class="ingred_box">
+               <h3 class="tit">전성분 보기</h3>
+               <!-- top -->
+               <div class="top">
+                  <!-- select_warp -->
+                  <div class="select_warp">
+                     <!-- select_box -->
+                     <div class="select_box">
+                        <div class="select_box_value"><span>언어선택</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>한국어(KOREAN)</span></li>
+                              <li><span>영어(ENGLISH)</span></li>
+                           </ul>
+                        </div>                
+                     </div>
+                     <!-- // select_box -->
+
+                     <!-- select_box -->
+                     <div class="select_box">
+                        <div class="select_box_value"><span>유형선택</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>파운데이션</span></li>
+                           </ul>
+                        </div>                
+                     </div>
+                     <!-- // select_box -->
+
+                     <!-- select_box -->
+                     <div class="select_box">
+                        <div class="select_box_value"><span>제형 선택</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>글로우</span></li>
+                           </ul>
+                        </div>                
+                     </div>
+                     <!-- // select_box -->
+
+                     <!-- select_box -->
+                     <div class="select_box">
+                        <div class="select_box_value"><span>호수 선택</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>3</span></li>
+                           </ul>
+                        </div>                
+                     </div>
+                     <!-- // select_box -->
+
+                     <!-- select_box -->
+                     <div class="select_box">
+                        <div class="select_box_value"><span>피부톤 선택</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>C1</span></li>
+                           </ul>
+                        </div>                
+                     </div>
+                     <!-- // select_box -->
+                  </div>
+                  <!-- // select_warp -->
+                  
+                  <button class="btn btn_sm btn_primary hov_right">
+                     <span class="hov_right_text">확인</span>
+                  </button>
+               </div>
+               <!-- //top -->
+
+               <!-- result -->
+               <div class="result">
+                  <!-- no_data -->
+                  <div class="no_data">
+                     <p>호수를 선택해 주시면,<br>전성분을 확인하실 수 있습니다.</p>
+                  </div>
+                  <!-- // no_data -->
+
+                  <!-- ingred_data -->
+                  <dl class="ingred_data">
+                     <dt>글로우<span>3C1</span></dt>
+                     <dd>정제수, 사이클로펜타실록세인, 트라이메틸실록시실리케이트, 사이클로헥사실록세인, 티타늄디옥사이드, 카프릴릴메티콘, 부틸렌글라이콜, 마이카, 피이지/피피지-18/18다이메티콘, 소듐클로라이드, 다이메티콘/비닐다이메티콘크로스폴리머, 다이스테아다이모늄헥토라이트, 폴리메틸실세스퀴옥세인, 피이지-10다이메티콘, 알루미나, 알루미늄하이드록사이드, 펜틸렌글라이콜, 1,2-헥산다이올, 트라이에톡시카프릴릴실레인, 향료, 카프릴릴글라이콜, 글리세릴카프릴레이트, 시메티콘, 메티콘, 잔탄검, 다이소듐이디티에이, 보론나이트라이드, 메틸메타크릴레이트크로스폴리머, 틴옥사이드 [+/- 티타늄디옥사이드 (CI 77891), 황색산화철, 적색산화철, 흑색산화철]</dd>
+                  </dl>
+                  <!-- // ingred_data -->
+               </div>
+               <!-- // result -->
+            </div>
+            <!-- // ingred_box -->
+
+         </div>
+
+      </div>
+
+   </div>
+
+<script>
+   $(document).ready(function (){
+      $(window).resize(function(event){
+         ww = $(window).width();
+         quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      headerAction(); // 헤더 인터렉션
+   });
+</script>
+</html>

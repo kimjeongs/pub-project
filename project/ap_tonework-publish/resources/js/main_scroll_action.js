@@ -5,18 +5,31 @@ $(document).ready(function () {
     tween = new TimelineMax(),
     tween2 = new TimelineMax(),
     controller,
-    //logoSize = w * 72.9 / 100,
+    logoController,
+    logo_Size,
     size = w,
     delay = 500,
     timer = null,
-    skinH = $(".main_cnt_02").height()/2;
+    skinH = $(".main_cnt_02").height();
     
-    let logo_controller = new ScrollMagic.Controller();
-    tween.fromTo('.main header .logo', .5, {left:100, top: 120, width:1024}, {left:40, top:30, width:240});
-    new ScrollMagic.Scene({triggerElement: "#trigger1", duration: "50%", triggerHook:0, tweenChanges: true})
+
+    function logoSize() {
+        if(w >= 1600) {
+            logo_Size = 1400
+        } else {
+            logo_Size = 1024
+        }
+    }
+    
+    function logoMagic() {
+        logoSize();
+        logoController = new ScrollMagic.Controller();
+        tween.fromTo('.main header .logo', .5, {left:100, top: 120, width:logo_Size}, {left:40, top:30, width:240});
+        new ScrollMagic.Scene({triggerElement: "#trigger1", duration: "50%", triggerHook:0, offset:90, tweenChanges: true})
         .setTween(tween)
         //.addIndicators() // add indicators (requires plugin)
-        .addTo(logo_controller);
+        .addTo(logoController);
+    }
     
     function makeScrollMagic() {
         // init controller
@@ -33,6 +46,7 @@ $(document).ready(function () {
 
         new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, tweenChanges: true})
         .setPin(".main_cnt_02")
+        .setClassToggle('.main_cnt_02', 'on')
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
@@ -52,29 +66,31 @@ $(document).ready(function () {
         .addTo(controller);
     }
     
-    /* 초기화
+    /* 초기화 */
     function sizeIt() {
         w = window.innerWidth;
         let newSize = w;
         if (newSize != size) {
             size = newSize;
-            TweenMax.set(".basepicker_list .ico_star", { clearProps: "all" });
-            tween2.clear();
-            controller.destroy(true);
+            //TweenMax.set(".basepicker_list .ico_star", { clearProps: "all" });
+            tween.clear();
+            logoController.destroy(true);
             setTimeout(function() {
-                makeScrollMagic();
+                logoMagic();
             }, 10);
         }
     }
-    */
-    /* 리이즈시 초기화
+    
+    /* 리이즈시 초기화 */
     $(window).on('resize', function() {
         clearTimeout(timer);
         timer = setTimeout(function() {sizeIt()}, delay);
     });
-    */
 
     $(window).on('load', function() {
-        if ($(".main").length > 0) {makeScrollMagic();}
+        if ($(".main").length > 0) {
+            makeScrollMagic();
+            logoMagic();
+        }
     });
 });

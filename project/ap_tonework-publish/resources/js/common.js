@@ -383,7 +383,7 @@ function headerAction(){
 
 function mainSnsSwiper() {
 	const mainSnsSwiper = new Swiper(".main_sns_swiper", {
-		slidesPerView: 4,
+		slidesPerView: 1.3,
 		loop: false,
         freeMode: true,
         preloadImages: true,
@@ -392,13 +392,11 @@ function mainSnsSwiper() {
         followFinger : true,
 		observer: true,
 		observeParents: true,
-        /*breakpoints: {        
-            768: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 16,
-            }
-        },*/
+        breakpoints: {
+            769: {
+                slidesPerView: 4,
+            },
+        },
 	});
 }
 
@@ -425,6 +423,13 @@ function quickBtn(){
         colorTargetis.addClass("active");
         if($("#wrap").hasClass("main") || $("#container").hasClass("brand_story")){
             if(st >= quick_btn_b && $("footer").hasClass("active")){
+                colorTargetis.css({"position":"absolute", "bottom":fh + 20});
+            } else {
+                colorTargetis.removeAttr("style");
+            }
+        } else if($(".product_view").length > 0){
+            $(".quick_btn").addClass("top");
+            if(st >= quick_btn_b){
                 colorTargetis.css({"position":"absolute", "bottom":fh + 20});
             } else {
                 colorTargetis.removeAttr("style");
@@ -723,7 +728,7 @@ function colorMouseAct() { // color select mouse Action
     if (body) {
         const   bodyItems           = body.querySelector('.color_select'),
                 bodyColumns         = bodyItems.querySelectorAll('.color_list li'),
-                speed               = 0.02;
+                speed               = 0.007;
         let     positionX           = 0,
                 coordsXPercent      = 0;
     
@@ -806,6 +811,51 @@ function colorLoading(){ // 컬러 select 로딩
         
         colorMouseAct();
     },100);
+}
+
+/* 모바일 컬러 셀렉트 */
+function colorSwiper() {
+    const color_t = $(".m_color_swiper");
+    let colorSwiper = undefined,
+    colorChk = color_t.find("li").find("input:checked"),
+    colorIdx = 0;
+        
+    colorChk.each(function(){
+        if(!$(this).is("checked")){
+            colorIdx = $(this).closest("li").index();
+        } else {
+            colorIdx = 1;
+        }
+    });
+
+    function initSwiper(){
+        /*if (ww < 1264 && colorSwiper == undefined) {*/
+        if (colorSwiper == undefined) {
+            colorSwiper = new Swiper(".m_color_swiper .swiper", {
+                slidesPerView: "auto",
+                loop: false,
+                freeMode: true,
+                centeredSlides: false,
+                preloadImages: true,
+                updateOnImagesReady: true,
+                spaceBetween : 0,
+                initialSlide : colorIdx,
+                followFinger : true,
+                observer: true,
+                observeParents: true,
+            });
+        } else if (ww >= 1264 && colorSwiper != undefined) {
+            colorSwiper.destroy();
+            colorSwiper = undefined;
+        }
+    }
+
+    initSwiper();
+    
+    $(window).on('resize', function () {
+        initSwiper();
+    });
+    
 }
 
 // 제품 목록
@@ -959,7 +1009,7 @@ function brandStore() {
     let targetContTop = [];
     const dist = 400;
     let winW;
-    const tbW = 768;
+    const tbW = 767;
 
     $(window).on('resize scroll',function(e) {
         if(e.type == 'scroll' && winW > tbW) { //window scroll

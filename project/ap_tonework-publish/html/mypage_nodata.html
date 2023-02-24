@@ -30,8 +30,7 @@
                      <!-- profile_img -->
                      <div class="profile_img">
                         <!-- photo_box -->
-                        <div class="photo_box">
-                           <img src="/resources/images/mypage/img_profile_default.svg" alt="">
+                        <div class="photo_box type_01"><!-- type_01 ~ type_06 -->
                            <!-- 
                               컬러 없는 경우 : 클래스 no_color 추가
                               <div class="face_color no_color"></div>
@@ -43,12 +42,8 @@
                         <!-- btn_box -->
                         <div class="btn_box btn_sm_circle">
                            <div class="btn_box_inner">
-                              <button class="btn_box_btn"
-                                 onclick="openPopup('#modalPop01')"></button>
-                              <!-- mypage_modal_popup.html -->
-                              <div class="btn_box_icon">
-                                 <i class="ico_26 ico_edit"></i>
-                              </div>
+                              <button class="btn_box_btn" onclick="openPopup('#modalPop01')"></button><!-- mypage_modal_popup.html -->
+                              <div class="btn_box_icon"><i class="ico_26 ico_edit"></i></div>
                               <div class="btn_box_bg"></div>
                            </div>
                         </div>
@@ -57,7 +52,7 @@
                      <!-- // profile_img -->
                      <!-- profile_info -->
                      <div class="profile_info">
-                        <p class="user_name"><em>이유빈</em>님의 어센틱컬러</p>
+                        <p class="user_name"><em>이유빈</em>님의 어센틱 컬러를 확인하세요.</p>
                         <a href="" class="color_code">START</a>
                      </div>
                      <!-- // profile_info -->
@@ -68,20 +63,19 @@
             </div>
             <!-- // mypage_top -->
             <!-- mypage_cont -->
-            <div class="mypage_cont">
+            <div class="mypage_cont mypage_home">
                <!-- grid_wrap -->
                <div class="grid_wrap">
-                  <!-- my_nodata -->
-                  <div class="my_nodata">
-                     <p>컬러 맞춤 AI 솔루션을 통한<br>나의 어센틱 컬러를 확인해보세요.</p>
-                     <!-- btn_box -->
-                     <div class="btn_box black btn_arrow">
-                        <div class="btn_box_inner">
-                           <a href="#"></a>
-                           <span><i>측정하기</i></span>
-                        </div>
+                  <!-- mypage_tit_wrap -->
+                  <div class="mypage_tit_wrap btm_line">
+                     <div class="tbl_top">
+                        <p class="total_num">COLOR HISTORY</p>
                      </div>
-                     <!-- // btn_box -->
+                  </div>
+                  <!-- // mypage_tit_wrap -->
+                  <!-- my_nodata -->
+                  <div class="my_nodata">                    
+                     <p><em>아직 나의 컬러 히스토리가 없습니다.</em>컬러 맞춤 AI 솔루션을 통한<br>나의 어센틱 컬러를 확인해보세요.</p>
                   </div>
                   <!--// my_nodata -->
                </div>

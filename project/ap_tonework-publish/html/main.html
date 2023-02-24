@@ -198,8 +198,8 @@
                 <h2 class="serif">
                   <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
                   <span class="text_action">
-                    <strong>SKINTONE FINDER</strong>
-                    <strong>SHADE PICKER</strong>
+                    <strong>TONE FINDER</strong>
+                    <strong>TONE PICKER</strong>
                   </span>
                 </h2>
               </div>
@@ -215,13 +215,13 @@
             <!-- // grid -->
             <!-- grid -->
             <div class="grid img_cnt">
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2 left_img">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_1 left_img">
                 <img src="/resources/images/main/img_skintone_small.png" alt="">
                 <span class="cover_img">
                   <img src="/resources/images/main/img_shade_small.png" alt="">
                 </span>
               </div>
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_3">
                 <img src="/resources/images/main/img_skintone_large.png" alt="">
                 <span class="cover_img">
                   <img src="/resources/images/main/img_shade_large.png" alt="">
@@ -232,7 +232,7 @@
                     <a href="#" class="minute_link">3 minutes test 바로가기</a>
                     <a href="#" class="start_link">START 바로가기</a>
                     <div class="btn_box_text">
-                      <p>3 minutes test</p>
+                      <p>3 minutes <span class="text_br"></span>test</p>
                       <p>START!</p>
                     </div>
                     <div class="btn_box_bg"></div>
@@ -267,7 +267,7 @@
             <!-- grid -->
             <div class="grid product_wrap">
 
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_4">
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
@@ -285,7 +285,7 @@
                 <!-- // main_product_item -->
               </div>
 
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_4">
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
@@ -303,7 +303,7 @@
                 <!-- // main_product_item -->
               </div>
 
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_4">
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
@@ -321,7 +321,7 @@
                 <!-- // main_product_item -->
               </div>
 
-              <div class="grid_item pc_col_6 tbl_col_4 mo_col_2">
+              <div class="grid_item pc_col_6 tbl_col_4 mo_col_4">
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
@@ -507,7 +507,7 @@
               <li><a href="#">영상정보처리방침</a></li>
               <li><a href="#" target="_blank">뷰티포인트</a></li>
             </ul>
-            <p class="copy_right">ⓒ AMOREPACIFIC CORPORATION. All rights reserved.</p>
+            <p class="copy_right">ⓒ AMOREPACIFIC CORPORATION. <span>All rights reserved.</span></p>
           </div>
         </div>
       </div>
@@ -528,6 +528,7 @@
     $(document).ready(function (){
       $(window).resize(function(event){
         ww = $(window).width();
+        basepickerM(); // basepicker 모바일 반응형
         quickBtn();
       });
       $(window).scroll(function(event){
@@ -535,6 +536,7 @@
         quickBtn(); // 퀵버튼 위치
       });
       mySwiper = undefined;
+      basepickerM(); // basepicker 모바일 반응형
       mainSwiper(); // 스와이퍼 호출
       mainSnsSwiper(); // SNS Swiper 호출
       headerAction(); // 헤더 인터렉션

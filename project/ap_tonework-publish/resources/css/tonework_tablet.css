@@ -2,8 +2,8 @@
     h2 {font-size:7.6rem}
     .product_view .prdv_top .grid_item:nth-child(1) {order:2}
     .product_view .prdv_top .grid_item:nth-child(2) {order:1}
-    .product_view .prdv_top .grid_item:nth-child(3) {order:3}    
-    .main_cnt_03 .grid_wrap {padding-top:50px}
+    .product_view .prdv_top .grid_item:nth-child(3) {order:3}
+    .main_cnt_03 .grid_wrap {padding:200px 20px 150px}
     .main_cnt_04 .grid_wrap {}
     .skin_finder .img_cnt {margin-top:16px}
     .event_list .grid_item:nth-child(even) {grid-column: 5 / span 4 !important;}
@@ -146,6 +146,7 @@
     header {height:80px}
     .gnb .gnb_list {display:none;}
     .gnb .gnb_info {display:none;}
+    .main header .logo {width:240px !important;position:static}
     .main_top img {object-position:left;}
     .main_top .swiper-pagination {width:100%;}
     .main_cnt_01 .inner_cnt {padding:120px 0 120px 20px}
@@ -160,10 +161,19 @@
     .flow_container {padding-bottom:30px}
     .flow_text {font-size:12rem;line-height:9.8rem;height:9.8rem}
     .flow_text i {height:9.8rem}
-    
-    .main_cnt_02 .grid_wrap {padding-top:40px}
-    .skin_finder h2 {margin-left:74px}
-    .skin_finder .about {margin-left:105px;margin-top:-16px}
+    .main_cnt_02 {margin-top:10px;padding-top:80px}
+    .skin_finder h2 {margin-left:54px}
+    .skin_finder .about {height:52px;margin-left:80px;margin-top:-16px;font-size:1.6rem;line-height:2.6rem}
+    .main_cnt_04 .grid_wrap {padding:120px 20px}
+    .main_product h2 {line-height:9.2rem}
+    .main_product h2 + span {font-size:1.6rem;line-height:2.3rem;padding:9px 0 0 24px;}
+    .main_product .product_wrap {margin-top:24px}
+    .main_product_item .about_info dt {font-size:2.4rem;line-height:3.2rem}
+    .main_product_item .about_info .name {font-size:1.6rem;line-height:2rem}
+    .main_product_item .about_info .price {font-size:1.6rem;line-height:2.3rem}
+    .with_tonework h2 {font-size:4.8rem}
+    .with_tonework h2 span {font-size:2.4rem;}
+    .with_tonework .main_sns_swiper {margin-top:5px}
     
 }
 @media only screen and (max-width: 1200px) {
@@ -173,4 +183,8 @@
 @media only screen and (max-width: 1020px) {
 	/* 리뷰 모달 팝업 */
 	.review_modal .review_img{flex: 0 0 50%;}
+}
+@media only screen and (max-width: 880px) {
+	.footer_util {flex-direction:column;align-items:flex-start}
+    .footer_util .copy_right {margin-top:40px}
 }

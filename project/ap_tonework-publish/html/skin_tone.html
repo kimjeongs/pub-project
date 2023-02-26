@@ -2,15 +2,36 @@
 <html lang="ko">
 
 <head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css"></link>
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/swiper.min.css">
+  <link rel="stylesheet" href="../resources/css/tonework_pc.css">
+  <link rel="stylesheet" href="../resources/css/tonework_tablet.css">
+  <link rel="stylesheet" href="../resources/css/tonework_mobile.css">
+  <script src="../resources/js/jquery-3.6.0.min.js"></script>
+  <script src="../resources/js/swiper.min.js"></script>
+  <script src="../resources/js/scrollmagic/ScrollMagic.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/debug.addIndicators.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/TweenMax.min.js"></script>
+  <script src="../resources/js/scrollmagic/plugins/animation.gsap.js"></script>
+  <script src="../resources/js/common.js"></script>
+  <title>TONEWORK</title>
+
+  <link rel="stylesheet" href="../resources/css/skin.css">
+</head>
+
+<!-- <head>
   <script src="/inc/pb_include.js"></script>
   <script>include.meta();</script>
   <script>include.favicon();</script>
   <script>include.styles();</script>
   <script>include.scripts();</script>
   <script>include.title();</script>
-
-  <link rel="stylesheet" href="/resources/css/skin.css">
-</head>
+</head> -->
 
 <body>
   <!-- wrap -->
@@ -23,27 +44,30 @@
     <!-- container -->
     <main id="container">
 
+      <!-- skin tone -->
       <section class="skin_tone"> <!--페이지 클래스 -->
-        <!-- skin tone -->
+
+        <!-- top visual -->
         <section class="top_visual">
           <!-- brand_philosophy -->
           <dl class="brand_philosophy motion_wrap">
             <dt class="serif tit">
-              <p><span class="motion_txt">FIND</span></p>
-              <p><span class="motion_txt">YOUR</span></p>
-              <p><span class="motion_txt">COLOR</span></p>
+              <p><span class="motion_item">FIND</span></p>
+              <p><span class="motion_item">YOUR</span></p>
+              <p><span class="motion_item">COLOR</span></p>
             </dt>
             <dd>
-              <p class="text"><span class="motion_txt">어센텍 컬러 맞춤 AI 솔루션으로 나를 있는 그대로 빛나게 하는 나만의 색을 찾아보세요</span></p>
+              <p class="text"><span class="motion_item">어센텍 컬러 맞춤 AI 솔루션으로 나를 있는 그대로 빛나게 하는 나만의 색을 찾아보세요</span></p>
               <span class="ani_line"></span>
             </dd>
           </dl>
           <!-- // brand_philosophy -->
         </section>
+        <!-- //top visual -->
 
-        <div class="grid_wrap">
-          <!-- tone finder -->
-          <section class="tone_cont tone_finder">
+        <!-- tone finder -->
+        <section class="tone_cont tone_finder">
+          <div class="grid_wrap">
             <h2 class="section_tit">
               <em><span>TONE</span></em>
               <em><span>FINDER</span></em>
@@ -61,95 +85,98 @@
               <!-- // btn_box -->
             </div>
             <!-- // tone cont btn -->
-            <ul class="step-cont grid">
+            <ul class="step_cont grid">
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder01.png" alt="step1">
+                  <img src="../resources/images/skintone/img_tonefinder01.png" alt="step1">
                 </div>
                 <span class="step">step1</span>
                 <p class="img_txt">밝은 빛이 골고루 드는 장소를 골라</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder02.png" alt="step2">
+                  <img src="../resources/images/skintone/img_tonefinder02.png" alt="step2">
                 </div>
                 <span class="step">step2</span>
                 <p class="img_txt">쉐이드 카드를 밀착하고 가이드라인에 맞춰요.</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder03.png" alt="step3">
+                  <img src="../resources/images/skintone/img_tonefinder03.png" alt="step3">
                 </div>
                 <span class="step">step3</span>
                 <p class="img_txt">내 피부 톤에 매칭된 컬러를 확인하고</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder04.png" alt="step4">
+                  <img src="../resources/images/skintone/img_tonefinder04.png" alt="step4">
                 </div>
                 <span class="step">step4</span>
                 <p class="img_txt">취향에 따라 밝기와 톤을 자유롭게 조정하세요.</p>
               </li>
             </ul>
             <i class="ico_star_b"></i>
-          </section>
-          <!-- tone finder -->
-        
-          <!-- tone picker -->
-          <section class="tone_cont tone_picker">
+          </div>
+        </section>
+        <!-- //tone finder -->
+      
+        <!-- tone picker -->
+        <section class="tone_cont tone_picker change_bg">
+          <div class="grid_wrap">
             <h2 class="section_tit">
               <em><span>TONE</span></em>
-              <em><span>FINDER</span></em>
+              <em><span>PICKER</span></em>
             </h2>
-            <p class="tit_txt">이미 만들어진 컬러에 피부톤을 맞추지 마세요.<br>있는 그대로의 모습을 더 빛나게 하는 어센틱 컬러 찾기</p>
+            <p class="tit_txt">빠르고 간편한 파운데이션 컬러 찾기<br>지금 내 파우치에서 시작해보세요!</p>
             <!-- tone cont btn -->
             <div class="tone_cont_btn">
               <!-- btn_box -->
               <div class="btn_box">
                 <div class="btn_box_inner">
                   <a href="javascript:;"></a>
-                  <span><i>3 minutes test</i></span>
+                  <span><i>Start</i></span>
                 </div>
               </div>
               <!-- // btn_box -->
             </div>
             <!-- // tone cont btn -->
-            <ul class="step-cont grid">
+            <ul class="step_cont grid">
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder01.png" alt="step1">
+                  <img src="../resources/images/skintone/img_tonepicker01.png" alt="step1">
                 </div>
                 <span class="step">step1</span>
-                <p class="img_txt">밝은 빛이 골고루 드는 장소를 골라</p>
+                <p class="img_txt">사용하고 있는 제품을 입력하고</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder02.png" alt="step2">
+                  <img src="../resources/images/skintone/img_tonepicker02.png" alt="step2">
                 </div>
                 <span class="step">step2</span>
-                <p class="img_txt">쉐이드 카드를 밀착하고 가이드라인에 맞춰요.</p>
+                <p class="img_txt">톤워크의 150쉐이드 중 매칭 컬러를 확인해요.</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder03.png" alt="step3">
+                  <img src="../resources/images/skintone/img_tonepicker03.png" alt="step3">
                 </div>
                 <span class="step">step3</span>
-                <p class="img_txt">내 피부 톤에 매칭된 컬러를 확인하고</p>
+                <p class="img_txt">내 취향에 따른 컬러 카운셀링으로</p>
               </li>
               <li class="grid_item pc_col_3 tbl_col_4 mo_col_12">
                 <div class="img">
-                  <img src="/resources/images/skintone/img_tonefinder04.png" alt="step4">
+                  <img src="../resources/images/skintone/img_tonepicker04.png" alt="step4">
                 </div>
                 <span class="step">step4</span>
-                <p class="img_txt">취향에 따라 밝기와 톤을 자유롭게 조정하세요.</p>
+                <p class="img_txt">밝기와 톤을 자유롭게 미세조정할 수 있어요.</p>
               </li>
             </ul>
-            <i class="ico_star_b"></i>
-          </section>
-          <!-- //tone picker -->
-        </div>
-        <!-- //skin tone -->
+          </div>
+        </section>
+        <!-- //tone picker -->
+
       </section>
+      <!-- //skin tone -->
+
     </main>
     <!-- // container -->
 
@@ -179,7 +206,7 @@
     });
   </script>
 
-  <script src="/resources/js/skin.js"></script>
+  <script src="../resources/js/skin.js"></script>
 </body>
 
 </html>

@@ -49,22 +49,89 @@
         </div>
         <div class="gnb">
           <ul class="gnb_list">
-            <li><a href="">ABOUT US</a></li>
-            <li><a href="">FIND YOUR COLOR</a></li>
-            <li><a href="">PRODUCT</a></li>
-            <li><a href="">EVENT</a></li>
-            <li><a href="">COMMUNITY</a></li>
+            <li class="depth_01">
+              <a href="javascript:;" data-href="/html/brand_about.html" onclick="gnbListToggle(this);">ABOUT US</a>
+              <ul class="depth_02">
+                <li><a href="">브랜드 스토리</a></li>
+                <li><a href="">스토어</a></li>
+              </ul>
+            </li>
+            <li class="depth_01">
+              <a href="javascript:;" data-href="/html/" onclick="gnbListToggle(this);">FIND YOUR COLOR</a>
+              <ul class="depth_02">
+                <li><a href="">톤파인더</a></li>
+                <li><a href="">톤피커</a></li>
+              </ul>
+            </li>
+            <li class="depth_01">
+              <a href="javascript:;" data-href="/html/product_list.html" onclick="gnbListToggle(this);">PRODUCT</a>
+            </li>
+            <li class="depth_01">
+              <a href="javascript:;" data-href="/html/event_list.html" onclick="gnbListToggle(this);">EVENT</a>
+              <ul class="depth_02">
+                <li><a href="">이벤트</a></li>
+                <li><a href="">당첨자 발표</a></li>
+              </ul>
+            </li>
+            <li class="depth_01">
+              <a href="javascript:;" data-href="/html/news_list.html" onclick="gnbListToggle(this);">COMMUNITY</a>
+              <ul class="depth_02">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="">고객 게시판</a></li>
+                <li><a href="">제폼 리뷰</a></li>
+              </ul>
+            </li>
           </ul>
           <div class="gnb_info">
-            <a href="" class="gnb_info_my">
-              <span class="ico_26">회원정보</span>
-            </a>
-            <a href="" class="gnb_info_lang">
-              <span class="ico_26">언어설정</span>
-              <span class="ico_16 arrow"></span>
-            </a>
+            <div class="depth_01">
+              <a href="javascript:;" class="gnb_info_my">
+                <span class="ico_26">회원정보</span>
+              </a>
+              <ul class="depth_02">
+                <!-- 로그인 상태 일 경우 -->
+                <li class="my_page mo_menu"><a href="">마이페이지</a></li>
+                <li><a href="">어센틱컬러 리포트</a></li>
+                <li><a href="">문의내역</a></li>
+                <li><a href="">내 정보</a></li>
+                <li class="log_out mo_menu">
+                  <a href="">로그아웃</a>
+                </li>
+                <!-- // 로그인 상태 일 경우 -->
+
+                <!-- 로그아웃 상태 일 경우 
+                <li class="log_in mo_menu">
+                  <a href="">로그인</a>
+                </li>
+                <!-- // 로그아웃 상태 일 경우 -->
+              </ul>
+            </div>
+            <div class="depth_01 lang_set">
+              <a href="" class="gnb_info_lang">
+                <span class="ico_26">언어설정</span>
+              </a>
+              <ul class="depth_02">
+                <li class="mo_menu">
+                  <input type="radio" id="lang_ko" name="lang_set" checked>
+                  <label for="lang_ko">KR</label>
+                </li>
+                <li class="mo_menu">
+                  <input type="radio" id="lang_en" name="lang_set">
+                  <label for="lang_en">EN</label>
+                </li>
+              </ul>
+            </div>
+
+            <span class="ico_16 arrow"></span>
           </div>
         </div>
+        <!-- 모바일 메뉴 활성화 버튼 -->
+        <button type="button" class="btn_gnb_menu" onclick="gnbAction();">
+          <span class="top"></span>
+          <span class="title">메뉴</span>
+          <span class="bottom"></span>
+        </button>
+        <!-- // 모바일 메뉴 활성화 버튼 -->
       </div>
     </header>
     <!-- // header -->
@@ -246,6 +313,83 @@
           <!-- // grid_wrap -->
         </div>
         <!-- // inner_cnt -->
+      </section>
+
+      <section class="tone_picker">
+          <!-- grid_wrap -->
+          <div class="grid_wrap">
+            <!-- mo_cnt_01 -->
+            <div class="mo_cnt_01">
+              <h2 class="serif mo_tit">
+                <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
+                <strong>TONE FINDER</strong>
+              </h2>
+
+              <p class="mo_tit_about">더 이상 만들어진 컬러에 당신을 맞추지 마세요<br>있는 그대로의 모습을 더 빛나게 하는 어센틱 컬러 찾기</p>
+              
+              <div class="img_cnt">
+                <div class="left_img">
+                  <img src="/resources/images/main/img_skintone_small.png" alt="">
+                </div>
+                <div class="right_img">
+                  <img src="/resources/images/main/img_skintone_large.png" alt="">
+                </div>
+
+                <!-- btn_box -->
+                <div class="btn_box">
+                  <div class="btn_box_inner">
+                    <a href="#" class="minute_link">3 minutes test 바로가기</a>
+                    <div class="btn_box_text">
+                      <p>3 minutes <span class="text_br"></span>test</p>
+                    </div>
+                    <div class="btn_box_bg"></div>
+                  </div>
+                </div>
+                <!-- // btn_box -->
+              </div>
+
+            </div>
+            <!-- // mo_cnt_01 -->
+
+            <!-- mo_cnt_02 -->
+            <div class="mo_cnt_02">
+              <h2 class="serif mo_tit">
+                <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
+                <strong>TONE PICKER</strong>
+              </h2>
+
+              <p class="mo_tit_about">빠르고 간편한 나의 어센틱 컬러 찾기,<br>내 파우치에서 시작해보세요!</p>
+              
+              <!-- img_cnt -->
+              <div class="img_cnt">
+                <div class="left_img">
+                  <img src="/resources/images/main/img_shade_small.png" alt="">
+                </div>
+                <div class="right_img">
+                  <img src="/resources/images/main/img_shade_large.png" alt="">
+                </div>
+
+                <!-- btn_box -->
+                <div class="btn_box">
+                  <div class="btn_box_inner">
+                    <a href="#" class="start_link">START 바로가기</a>
+                    <div class="btn_box_text">
+                      <p>START!</p>
+                    </div>
+                    <div class="btn_box_bg"></div>
+                  </div>
+                </div>
+                <!-- // btn_box -->
+
+              </div>
+              <!-- // img_cnt -->
+
+            </div>
+            <!-- // mo_cnt_02 -->
+
+          </div>
+          <!-- // grid_wrap -->
+        
       </section>
       <!-- // main_cnt_02 -->
       

@@ -30,8 +30,7 @@
                      <!-- profile_img -->
                      <div class="profile_img">
                         <!-- photo_box -->
-                        <div class="photo_box">
-                           <img src="/resources/images/mypage/img_profile_default.svg" alt>
+                        <div class="photo_box type_01"><!-- type_01 ~ type_06 -->
                            <!-- 
                               컬러 없는 경우 : 클래스 no_color 추가
                               <div class="face_color no_color"></div>
@@ -372,32 +371,57 @@
    <!-- // wrap -->
    <script>
       $(document).ready(function () {
-         $(window).resize(function (event) {
+        $(window).resize(function (event) {
             ww = $(window).width();
             quickBtn();
+            historySwiper();//컬러 히스토리 슬라이드
+            
          });
          $(window).scroll(function (event) {
             headerAction(); // 헤더 액션
             quickBtn(); // 퀵버튼 위치
          });
          headerAction(); // 헤더 인터렉션
-         historySwiper()
+         //컬러 히스토리 슬라이드
+         var historySlide = undefined;
+         function historySwiper() {
+            if (ww > 768 && historySlide == undefined) {
+               historySlide = new Swiper(".history_swiper", {
+                  slidesPerView: 3.34,
+                  preloadImages: true,
+                  updateOnImagesReady: true,
+                  spaceBetween: 16,
+                  observer: true,
+                  observeParents: true,
+                  navigation: {
+                     nextEl: ".color_history .swiper-button-next",
+                     prevEl: ".color_history .swiper-button-prev"
+                  },
+               });
+            } else if (ww <= 768 && historySlide != undefined) {
+               historySlide.destroy();
+               historySlide = undefined;
+            }
+         }
+         historySwiper();
+         colorFlipCard();
       });
-      //컬러 히스토리 슬라이드
-      function historySwiper() {
-         const historySwiperSwiper = new Swiper(".history_swiper", {
-            slidesPerView: 3.34,
-            preloadImages: true,
-            updateOnImagesReady: true,
-            spaceBetween: 16,
-            observer: true,
-            observeParents: true,
-            navigation: {
-               nextEl: ".color_history .swiper-button-next",
-               prevEl: ".color_history .swiper-button-prev"
-            },
-         });
-      };
+      //컬러히스토리 모바일클릭 플립카드
+      function colorFlipCard() {
+         $('.color_history .flip_card').click(function() {
+            var ww = $(window).width();
+            console.log($(this))
+            if(ww < 768 && !$(this).hasClass('open')){
+               $(this).addClass('open')
+            }else if(ww < 768 && $(this).hasClass('open')){
+               $(this).removeClass('open')
+            }else if(ww > 768 || $(this).hasClass('open')){
+               $(this).removeClass('open')
+            }            
+         })
+       
+         
+      }
    </script>
 </body>
 

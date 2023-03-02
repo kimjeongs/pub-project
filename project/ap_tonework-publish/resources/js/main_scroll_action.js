@@ -8,7 +8,7 @@ $(document).ready(function () {
     logoController,
     logo_Size,
     size = w,
-    delay = 500,
+    delay = 100,
     timer = null,
     skinH = $(".main_cnt_02").height();
     
@@ -74,15 +74,27 @@ $(document).ready(function () {
             size = newSize;
             //TweenMax.set(".basepicker_list .ico_star", { clearProps: "all" });
             tween.clear();
+            tween2.clear();
             logoController.destroy(true);
+            controller.destroy(true);
             setTimeout(function() {
                 logoMagic();
+                makeScrollMagic();
             }, 10);
         }
     }
     
     /* 리이즈시 초기화 */
     $(window).on('resize', function() {
+        if(this.resizeTO) {
+            clearTimeout(this.resizeTO);
+        }
+        this.resizeTO = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 0);
+    });
+
+    $(window).on('resizeEnd', function() {
         clearTimeout(timer);
         timer = setTimeout(function() {sizeIt()}, delay);
     });

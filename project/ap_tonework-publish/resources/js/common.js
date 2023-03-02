@@ -259,9 +259,9 @@ $(document).ready(function () {
     $('.inputTextarea').bind('input paste', function() {
         $(this).trigger('keyup');
     });
-
-    //브랜드 스토어
-    brandStore();
+    
+    brandStore();//브랜드 스토어
+    skinToneColor();//피부측청
 
 }) //ready
 
@@ -361,8 +361,8 @@ function mainSwiperPlay(event) {
 function headerAction(){
     st = $(this).scrollTop();
     wh = $(window).height();
-    let header = $("header"),
-    st_sum;
+    const header = $("header");
+    let st_sum;
     if(wh < 700) {
         wh = 700;
         st_sum = st/wh *100;
@@ -378,7 +378,56 @@ function headerAction(){
         } else {
             header.removeClass("on");
         }
-    }    
+    }
+}
+
+function gnbAction(){
+    const header = $("header");
+    let menu_btn = $(".btn_gnb_menu"),
+    gnbList = $(".gnb");
+    
+    menu_btn.toggleClass("active");
+
+    if (gnbList.hasClass("active")){
+        gnbList.removeClass("active");
+    } else {
+        setTimeout(function(){
+            gnbList.addClass("active");
+        }, 500);
+    }
+
+    header.toggleClass("active");
+    return false;
+}
+
+function gnbListToggle(event) {
+    let $this = $(event);
+    if (ww >= 1264) {
+        let href = $this.data("href");
+        location.href = href;
+    } else {
+        let depth_01 = $this.parent(".depth_01"),
+        depth_02 = depth_01.find(".depth_02"),
+        other = depth_01.siblings(".depth_01")
+        other_depth_02 = other.find(".depth_02");
+        if(depth_01.hasClass("active")){
+            depth_01.removeClass("active");
+            depth_02.stop().slideUp(function(){
+                setTimeout(function(){
+                    depth_02.removeAttr("style");
+                }, 300);
+            });
+        } else {
+            other.removeClass("active");
+            other_depth_02.slideUp(function(){
+                setTimeout(function(){
+                    other_depth_02.removeAttr("style");
+                }, 300);
+            });
+            depth_01.addClass("active");
+            depth_02.stop().slideDown();
+        }
+    }
 }
 
 function mainSnsSwiper() {
@@ -492,8 +541,7 @@ function slide_toggle(event) {
 // 이벤트 뷰 상품 슬라이드
 function rcpSwiper() {
 	const rcpSwiper = new Swiper(".rcp_swiper", {
-		slidesPerView: 3,
-        centeredSlides: true,
+		slidesPerView: 1,
 		loop: true,
         preloadImages: true,
         updateOnImagesReady: true,
@@ -505,13 +553,16 @@ function rcpSwiper() {
             nextEl: ".rcp_swiper .swiper-button-next",
             prevEl: ".rcp_swiper .swiper-button-prev"
         },
-        /*breakpoints: {        
-            768: {
+        breakpoints: {        
+            769: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
-                spaceBetween: 16,
+            },
+            1264: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
             }
-        },*/
+        },
 	});
 }
 
@@ -866,7 +917,7 @@ function prdListAction(){
    var regex = /[^0-9]/g; //숫자추출 정규식
    var gridPadding = $('.grid_wrap').css('padding-left').replace(regex, "")
 
-   var prdListTitAct = TweenMax.fromTo('.prd_list_tit', 0.5,{left:0, top: -286, fontSize: "9.64vw", textAlign:"center"},{left:gridPadding,  top:-prdListTitH, fontSize: "4.79vw", textAlign:"left"});
+   var prdListTitAct = TweenMax.fromTo('.prd_list_tit', 0.5,{left:0, top: -286, fontSize: "clamp(92px, 9.46vw, 176px)", textAlign:"center"},{left:gridPadding,  top:-prdListTitH, fontSize: "clamp(92px, 4.79vw, 92px)", textAlign:"left"});
    var prdListWrapAct = TweenMax.fromTo('.prd_list_wrap', 0.5,{paddingTop:0},{paddingTop:204});
    
    
@@ -1009,10 +1060,10 @@ function brandStore() {
     let targetContTop = [];
     const dist = 400;
     let winW;
-    const tbW = 767;
+    const moW = 768;
 
     $(window).on('resize scroll',function(e) {
-        if(e.type == 'scroll' && winW > tbW) { //window scroll
+        if(e.type == 'scroll' && winW > moW) { //window scroll
             const scroll = $(this).scrollTop();
             for (let i = 0; i < targetCont.length; i++) {
                 if (scroll > targetContTop[i] - dist) {
@@ -1041,4 +1092,186 @@ function brandStore() {
             marginRight : -margin
         })
     } fullCont();
+}
+
+//피부측청
+function skinToneColor() {
+    const skinTone = $('.skin_tone'),
+        toneCont = skinTone.find('.tone_cont'),
+        toneContLen = toneCont.length,
+        toneContTit = toneCont.find('.section_tit'),
+        topVisual = skinTone.find('.top_visual'),
+        topTxtBox = skinTone.find('.brand_philosophy'),
+        stepCont = $('.step_cont'),
+        stepContLen = $('.step_cont').length,
+        motionWrap = $('.motion_wrap'),
+        motionItem = motionWrap.find('.motion_item'),
+        subContainer = skinTone.parent('#sub_container'),
+        footer = subContainer.siblings('.footer');
+        
+    let topTrigger = topVisual.height() / 2,
+        winH = $(window).height(),
+        winW = $(window).width(),
+        tbW = 1263,
+        moW = 768,
+        speed = 500,
+        toneContTopArr = [],
+        stepTopArr = [],
+        topMargin,
+        toneContTop,
+        lastH;
+
+    //window resize
+    $(window).on('resize',function() {
+        topTrigger = topVisual.height() / 2;
+        winH = $(window).height();
+        winW = $(window).width();
+        toneContTopArr = [];
+        stepTopArr = [];
+
+        savTop();
+        reWid(winW, tbW);
+    })
+
+    //window scroll
+    $(window).on('scroll', function() {
+        let scroll = $(this).scrollTop();
+        let dist = winH / 3;    
+
+        //top visual
+        topAction(scroll, topTrigger);
+
+        // tone cont motion
+        toneContActive(scroll, dist, winW);
+
+        //change background
+        changeBg(scroll);
+    })
+
+    //tone cont top 구하기
+    function savTop() {
+        topMargin = parseInt(skinTone.find('.skin_tone_finder').css('margin-top'));
+            toneCont.each(function() {
+            toneContTop = $(this).offset().top - topMargin;
+            toneContTopArr.push(toneContTop);
+        })
+        lastH = toneCont.last().height();
+        toneContTopArr.push((toneContTopArr[toneContLen-1] + lastH ));
+
+        //stetp top 값
+        stepCont.each(function() {
+            let stepTop = $(this).offset().top - topMargin;
+            stepTopArr.push(stepTop);
+        })
+    };
+
+    //top visual
+    function topAction(scroll, topTrigger) {
+        if(scroll > topTrigger) {
+            topTxtBox.addClass('active');
+            skinTone.find('.skin_tone_finder').addClass('active');
+            motionWrap.find('.ani_line').removeClass('active');
+        } else {
+            topTxtBox.removeClass('active');
+            skinTone.find('.skin_tone_finder').removeClass('active');
+            motionWrap.find('.ani_line').addClass('active');
+        }
+    }
+
+    //tone cont motion
+    function toneContActive(scroll, dist) {
+        //title
+        for (let i = 0; i < toneContLen; i++) {
+            if(scroll > toneContTopArr[i] - dist && scroll < toneContTopArr[i+1] - dist) {
+                toneContTit.eq(i).addClass('active');
+            } else {
+                toneContTit.eq(i).removeClass('active');
+            }
+        }
+
+        //img
+        dist = winH;
+        let gap;
+        let stepLiH = stepCont.find('li').height(); 
+        
+        if (winW > 768) {
+            gap = 90;
+        } else {
+            gap = stepLiH;
+        }
+
+        for(let i = 0; i < stepContLen; i++) {
+            let stepTopDist = stepTopArr[i] - dist;
+
+            if(scroll > stepTopDist) {
+                const stepLi = stepCont.eq(i).find('li');
+                const stepLiLen = stepLi.length;
+                
+                for (let j = 0; j <= stepLiLen; j++) {
+                    if (scroll > stepTopDist + (j * gap) - (gap-100) ) {
+                        stepLi.eq(j).addClass('ir')
+                    } else {
+                        stepLi.eq(j-1).removeClass('ir')
+                    }
+                }
+            }
+        }
+    }
+
+    //change background
+    function changeBg(scroll) {
+        if(scroll > toneContTopArr[1] - 200) {
+            toneCont.addClass('change_bg');
+        } else {
+            toneCont.removeClass('change_bg');
+        }
+    }
+
+    //motion 
+    function motionIr() {
+        if (motionWrap.length) {
+            motionItem.each(function(i) {
+                setTimeout((i) => {
+                    $(this).addClass('ir');
+                }, speed * i)
+            })
+            setTimeout(() => {
+                motionWrap.find('.ani_line').addClass('active');
+                setTimeout(() => {
+                    block();
+                }, speed * 3)
+            }, speed * motionItem.length);
+        }
+    } motionIr();
+
+    //resize Width
+    function reWid(winW, tbW) {
+        if(winW <= tbW) {
+            stepCont.css('display','grid');
+        } else {
+            stepCont.css('display','flex');
+        }
+    } reWid(winW, tbW);
+
+    //초기화
+    function init() {
+        subContainer.css('padding-bottom', 0);
+        toneCont.css('display','none');
+        footer.css('display','none');
+    } init();
+
+    //컨텐츠 푸터 block
+    function block() {
+        toneCont.css('display','block');
+        footer.css('display','block');
+        savTop(); //컨텐츠 block 후 top 값 구하기
+    }
+    //검색옵션 버튼
+    $('.btn_search_opt').click(function() {
+        if($(this).hasClass('open')){
+            $(this).removeClass('open')
+        }else{
+            $(this).addClass('open')
+        }         
+    })
 }

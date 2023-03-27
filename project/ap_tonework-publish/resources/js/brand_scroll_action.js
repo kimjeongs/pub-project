@@ -14,11 +14,13 @@ $(document).ready(function () {
         $line03 = $(".brd_ani_line03"),
         controller;
     
-    setTimeout(function() {
-        brand_wrp.addClass("active");
-        brandScrollMagic();
-    }, 4400);
+    // setTimeout(function() {
+    //     brand_wrp.addClass("active");
+    //     brandScrollMagic();
+    // }, 4400);
         
+    brand_wrp.addClass("active");
+    brandScrollMagic();
 
     function pathPrepare01($el) {
         let lineLength = $el[0].getTotalLength();

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <script src="/inc/pb_include.js"></script>
+   <script>include.meta();</script>
+   <script>include.favicon();</script>
+   <script>include.styles();</script>
+   <script>include.scripts();</script>
+   <script>include.title();</script>
+   <link rel="stylesheet" href="/resources/css/prism.css"/>
+   <style type="text/css">
+      #wrap.sub {min-width: 960px;}
+      #sub_container{padding-bottom: 0;}
+      .gnb, .btn_gnb_menu{display: none;}
+		.guide {padding: 80px 50px 100px 50px; background:#f5f5f5;}
+		.tit_guide01 { margin-bottom: 30px; padding-bottom: 10px; line-height: 26px; font-size: 24px; border-bottom: 1px solid #333; }
+		.tit_guide02 { margin-bottom: 20px; padding-bottom: 10px; line-height: 20px; font-size: 18px; border-bottom: 1px solid #999; }
+		.txt_guide_info {font-size:18px; font-weight: 500; margin-bottom:30px;}
+		.txt_guide_info.code {margin-top: 32px; padding:0 10px 16px; background-color: #1C1C1B; color: #fff;font-size: 14px;line-height: 1.4;}
+		.guide_tab { margin-bottom: 40px; border-top: 1px solid #aaa; border-left: 1px solid #aaa; }
+		.guide_tab:after { content: ""; display: block; clear: both; }
+		.guide_tab .tab_list { width: 25%; text-align: center; float: left; }
+      .guide_tab .tab_list::after{display: none !important;}
+		.guide_tab .tab_list a { display: block; padding: 10px 0; line-height: 18px; font-size: 14px; border-bottom: 1px solid #aaa; border-right: 1px solid #aaa; background:#fff;}
+		.guide_tab .tab_list.current a { color: #fff; background: #333; }
+      .guide_tab_content.tab_cont{ padding: 0;}
+		.guide_tab_content > div { display: none; }
+		.guide_tab_content > .on { display: block; }
+		.sec_guide { margin-bottom: 20px; padding: 20px 0; }
+		.sec_guide:last-child { margin: 0; }
+		.txt_guide_description { margin-top: 40px; color: #7a7a7a; }
+		.guide_box { padding: 40px; border: 1px solid #afafaf; background:#fff;}
+		.guide_box + .guide_box { margin-top: 20px; }
+		.guide_box p {font-size:16px;}
+		.guide_box pre { margin: 30px 0 0 0; }
+		hr { margin: 25px 0; border: 0 none; border-bottom: 1px dashed #ccc; }
+		.language-markup {font-size: 14px !important;}
+		.btn_area{margin-top: 0;}
+		.btn_area span a{ margin:4px;}
+		.board_menu{margin-top:0;}
+		.pricing_person{margin: 0;}
+		.swiper-container{height:15px; margin-top: 30px;}
+		.swiper-container .swiper-pagination{left: 50%; transform: translateX(-50%);}
+		.search_wrap{padding:30px 0;}
+		.search_wrap .search_box .search_txt{margin-bottom: 0;}
+		.board_pager{margin-top: 0;}
+		.function::before{display: none;}
+		.function_list_menu{overflow-y: hidden; overflow-x: auto;}
+
+      .guide_flex_box{display: flex;justify-content:flex-start;align-items: flex-end; gap: 12px;}
+      .guide_flex_boxj .btn_lg_circle.btn_box{flex:0 0 autoD}
+      .guide_flex_box li{ flex: 1 1 0; text-align: left; }
+		.guide_flex_box li > div{height: 100px;}
+      .guide_flex_box strong{font-weight: 600;}
+      .guide_type {padding: 16px 0; font-size: 16px;}
+      .guide_flex_box .btn_lg_circle.btn_box{flex: 0 0 auto;margin: 70px 0 0;}
+      .guide_flex_box .more_paging{width: auto;}
+      .guide_flex_box.grayscale {flex-wrap: wrap;gap: 0;}
+      .guide_flex_box.grayscale li{ flex: 1 0 auto; width: calc(100%/7);}
+		@media screen and (max-width: 767px) {
+			.guide {padding: 20px 0 0;}
+		}
+	</style>
+</head>
+
+<body>
+   <!-- wrap -->
+   <div id="wrap" class="sub">
+      <!-- header -->
+      <header>
+         <script>include.header();</script>
+      </header>
+      <!-- // header -->
+      <!-- container -->
+      <main id="sub_container">
+         <section class="guide"><!--페이지 클래스 -->
+            <h1 class="tit_guide01">Component</h1>
+            <ul class="guide_tab tab_menu text_tab">
+               <li class="current tab_list" data-tab="tab1"><a href="#color">컬러</a></li>
+               <li class="tab_list" data-tab="tab2"><a href="#button">버튼</a></li>
+               <li class="tab_list" data-tab="tab3"><a href="#form">폼 관련</a></li>
+               <li class="tab_list" data-tab="tab4"><a href="#paging">페이징</a></li>
+            </ul>
+            <div class="guide_tab_content tab_cont">
+               <!-- 탭 - 컬러 -->
+               <div class="sec_guide tab_cont_item current" id="tab1">
+                  <h2 class="tit_guide02">컬러</h2>
+                  <div class="guide_box">
+                     <p class="txt_guide_info">Point color</p>
+                     <ul class="guide_flex_box">
+                        <li>
+                           <strong>Black</strong>
+                           <div style="background-color:#1C1C1B;"></div>
+                           <p>#1C1C1B</p>
+                        </li>
+                        <li>
+                           <strong>PANTONE 379 U</strong>
+                           <div style="background-color:#DBF068;"></div>
+                           <p>#DBF068</p>
+                        </li>
+                        <li>
+                           <strong>PANTONE 9143C</strong>
+                           <div style="background-color:#E3DCC2;"></div>
+                           <p>#E3DCC2</p>
+                        </li>
+                        <li>
+                           <strong>Background</strong>
+                           <div style="background-color:#F0ECE9;"></div>
+                           <p>#F0ECE9</p>
+                        </li>
+                     </ul>
+                     <hr>
+                     <p class="txt_guide_info">Text color</p>
+                     <ul class="guide_flex_box">
+                        <li>
+                           <strong>Red</strong>
+                           <div style="background-color:#D72222;"></div>
+                           <p>#D72222</p>
+                        </li>
+                        <li>
+                           <strong>Yellow</strong>
+                           <div style="background-color:#FFC107;"></div>
+                           <p>#FFC107</p>
+                        </li>
+                        <li>
+                           <strong>Green</strong>
+                           <div style="background-color:#26A769;"></div>
+                           <p>#26A769</p>
+                        </li>
+                        <li>
+                           <strong>Blue</strong>
+                           <div style="background-color:#0036B1;"></div>
+                           <p>#0036B1</p>
+                        </li>
+                        <li>
+                           <strong>Disabled</strong>
+                           <div style="background-color:#F7F7F7;"></div>
+                           <p>#F7F7F7</p>
+                        </li>
+                     </ul>
+                     <hr>
+                     <p class="txt_guide_info">Grayscale color</p>
+                     <ul class="guide_flex_box grayscale">
+                        <li>
+                           <div style="background-color:#FFFFFF;"></div>
+                           <p>#FFFFFF</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#F5F5F5;"></div>
+                           <p>#F5F5F5</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#F0F0F0;"></div>
+                           <p>#F0F0F0</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#DBDBDB;"></div>
+                           <p>#DBDBDB</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#BFBFBF;"></div>
+                           <p>#BFBFBF</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#999999;"></div>
+                           <p>#999999</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#868686;"></div>
+                           <p>#868686</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#76777A;"></div>
+                           <p>#76777A</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#5e5e5e;"></div>
+                           <p>#5e5e5e</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#525252;"></div>
+                           <p>#525252</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#404040;"></div>
+                           <p>#404040</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#303030;"></div>
+                           <p>#303030</p>
+                        </li>
+                        <li>
+                           <div style="background-color:#1C1C1B;"></div>
+                           <p>#1C1C1B</p>
+                        </li>
+                     </ul>
+                     <textarea name="code" class="language-markup">
+                        <p class="c_point">컬러 : #DBF068</p>
+                        <p class="c_black">컬러 : #1C1C1B</p>
+                        <p class="c_red">컬러 : #D72222</p>
+                        <p class="c_yellow">컬러 : #FFC107</p>
+                        <p class="c_green">컬러 : #26A769</p>
+                        <p class="c_blue">컬러 : #0036B1</p>
+                     </textarea>
+                  </div>
+               </div>
+               <!-- 탭 - 버튼 -->
+               <div class="sec_guide tab_cont_item" id="tab2">
+                  <p class="tit_guide02">Button</p>
+                  <div class="guide_box">
+                     <p class="txt_guide_info">Arrow Button</p>
+                     <div class="guide_flex_box">
+                        <!-- btn_arrow -->
+                        <div class="btn_box btn_arrow">
+                           <div class="btn_box_inner">
+                              <a href="#"></a>
+                              <span><i>문의하기</i></span>
+                           </div>
+                        </div>
+                        <!-- btn_arrow black -->
+                        <div class="btn_box btn_arrow black">
+                           <div class="btn_box_inner">
+                              <a href="#"></a>
+                              <span><i>문의하기</i></span>
+                           </div>
+                        </div>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                         <!-- btn_arrow -->
+                        <div class="btn_box btn_arrow">
+                           <div class="btn_box_inner">
+                              <a href="#"></a>
+                              <span><i>문의하기</i></span>
+                           </div>
+                        </div>
+                        <!-- btn_arrow black -->
+                        <div class="btn_box btn_arrow black">
+                           <div class="btn_box_inner">
+                              <a href="#"></a>
+                              <span><i>문의하기</i></span>
+                           </div>
+                        </div>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Icon Button</p>
+                     <div class="guide_flex_box">
+                        <!-- btn_sm_circle : 버튼 사용 경우 -->
+                        <div class="btn_box btn_sm_circle">
+                           <div class="btn_box_inner">
+                              <button class="btn_box_btn"></button>
+                              <div class="btn_box_icon"><i class="ico_26 ico_edit"></i></div>
+                              <div class="btn_box_bg"></div>
+                           </div>
+                        </div>
+                        <!-- btn_sm_circle : a 태그 사용 경우 -->
+                        <div class="btn_box btn_sm_circle">
+                           <div class="btn_box_inner">
+                             <a href="#" class="btn_box_btn"></a>
+                             <div class="btn_box_icon"><i class="ico_26 ico_insta"></i></div>
+                             <div class="btn_box_bg"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <!-- btn_sm_circle : 버튼 사용 경우 -->
+                        <div class="btn_box btn_sm_circle">
+                           <div class="btn_box_inner">
+                              <button class="btn_box_btn"></button>
+                              <div class="btn_box_icon"><i class="ico_26 ico_edit"></i></div>
+                              <div class="btn_box_bg"></div>
+                           </div>
+                        </div>
+                        <!-- btn_sm_circle : a 태그 사용 경우 -->
+                        <div class="btn_box btn_sm_circle">
+                           <div class="btn_box_inner">
+                             <a href="#" class="btn_box_btn"></a>
+                             <div class="btn_box_icon"><i class="ico_26 ico_insta"></i></div>
+                             <div class="btn_box_bg"></div>
+                           </div>
+                        </div>                     
+                     </textarea>
+                     
+                     <hr>
+
+                     <p class="txt_guide_info">Hover Fade Right Button</p>
+                     <div class="guide_flex_box">
+                        <button class="btn btn_md btn_primary hov_right">
+                           <span class="hov_right_text">컬러히스토리 등록하기</span>
+                        </button>
+                        <!-- 아이콘과 같이 쓰는 경우 -->
+                        <button class="btn btn_md btn_primary hov_right">
+                           <i class="ico_attach ico_26"></i>
+                           <span class="hov_right_text">파일 업로드</span>
+                        </button>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <button class="btn btn_md btn_primary hov_right">
+                           <span class="hov_right_text">컬러히스토리 등록하기</span>
+                        </button>
+
+                        <!-- 아이콘과 같이 쓰는 경우 -->
+                        <button class="btn btn_md btn_primary hov_right">
+                           <i class="ico_attach ico_26"></i>
+                           <span class="hov_right_text">파일 업로드</span>
+                        </button>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Advanced</p>
+                     <div class="guide_flex_box">
+                        <div class="btn_box btn_lg_circle">
+                           <div class="btn_box_inner">
+                               <button type="submit" id="">문의내용 보내기</button>
+                               <div class="btn_box_text hov_right_text">
+                                  <p>SEND!</p>
+                               </div>
+                               <div class="btn_box_bg"></div>
+                            </div>
+                         </div>
+                        <!-- 페이지 더보기 -->
+                        <div class="more_paging">
+                           <div class="btn_box">
+                              <div class="btn_box_inner">
+                                <a href="javascript:void(0);" class="more_btn"></a>
+                                <div class="btn_box_text">
+                                  <p><strong>MORE 1</strong><span>/</span>5</p>
+                                </div>
+                                <div class="btn_box_bg"></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <div class="btn_box btn_lg_circle">
+                           <div class="btn_box_inner">
+                               <button type="submit" id="">문의내용 보내기</button>
+                               <div class="btn_box_text hov_right_text">
+                                  <p>SEND!</p>
+                               </div>
+                               <div class="btn_box_bg"></div>
+                            </div>
+                        </div>
+
+                        <!-- 페이지 더보기 -->
+                        <div class="more_paging">
+                           <div class="btn_box">
+                              <div class="btn_box_inner">
+                                <a href="javascript:void(0);" class="more_btn"></a>
+                                <div class="btn_box_text">
+                                  <p><strong>MORE 1</strong><span>/</span>5</p>
+                                </div>
+                                <div class="btn_box_bg"></div>
+                              </div>
+                           </div>
+                        </div>
+                     </textarea>
+                  </div>      
+               </div>
+               <!-- 탭 - 폼 -->
+               <div class="sec_guide tab_cont_item" id="tab3">
+                  <p class="tit_guide02">Form</p>
+                  <div class="guide_box">
+                     <p class="txt_guide_info">Input Box</p>
+                     <p class="guide_type">Default</p>
+                     <div class="input_group">
+                        <input class="input_text" type="text" name="" id="" placeholder="톤워크">
+                     </div>                   
+                     <p class="guide_type">Disabled</p>
+                     <div class="input_group">
+                        <input class="input_text" type="text" name="" id="" placeholder="톤워크" disabled>
+                     </div>
+                     <p class="guide_type">Success</p>
+                     <div class="input_group">
+                        <input class="input_text input_success" type="text" name="" id="" placeholder="톤워크">
+                     </div>
+                     <p class="guide_type">Error</p>
+                     <div class="input_group">
+                        <input class="input_text input_error" type="text" name="" id="" placeholder="톤워크">
+                     </div>
+                     <p class="guide_type">with Icon</p>
+                     <div class="input_group search_inp">
+                        <input type="text" id="" class="input_text" value="" placeholder="검색어를 입력하세요.">
+                        <button class="btn_search">검색</button>
+                     </div>
+                     <textarea name="code" class="language-markup">
+<!-- Default -->
+<div class="input_group">
+   <input class="input_text" type="text" name="" id="" placeholder="톤워크">
+</div>
+
+<!-- Disabled -->
+<div class="input_group">
+   <input class="input_text" type="text" name="" id="" placeholder="톤워크" disabled>
+</div>
+
+<!-- Success -->
+<div class="input_group">
+   <input class="input_text input_success" type="text" name="" id="" placeholder="톤워크">
+</div>
+
+<!-- Error -->
+<div class="input_group">
+   <input class="input_text input_error" type="text" name="" id="" placeholder="톤워크">
+</div>
+
+<!-- with Icon -->
+<div class="input_group search_inp">
+   <input type="text" id="" class="input_text" value="" placeholder="검색어를 입력하세요.">
+   <button class="btn_search">검색</button>
+</div>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Default Textarea </p>
+                     <div class="text_area">
+                        <textarea name="" id="" rows="3" maxlength="300" placeholder="톤워크"></textarea>
+                        <p class="num"><strong>0</strong><span>/</span>300</p>
+                     </div>
+                     <div class="txt_guide_info code">
+<xmp>
+   <div class="text_area">
+      <textarea name="" id="" rows="3" maxlength="300" placeholder="톤워크"></textarea>
+      <p class="num"><strong>0</strong><span>/</span>300</p>
+   </div>
+</xmp>
+                     </div>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Dropdowns</p>
+                     <div class="select_box">
+                        <div class="select_box_value selected"><span class="selected">Option1</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li class="selected"><span>Option1</span></li>
+                              <li><span>Option2</span></li>
+                              <li><span>Option3</span></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <div class="select_box">
+                        <div class="select_box_value selected"><span class="selected">Option1</span></div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li class="selected"><span>Option1</span></li>
+                              <li><span>Option2</span></li>
+                              <li><span>Option3</span></li>
+                           </ul>
+                        </div>
+                     </div>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Check Box</p>
+                    
+                      <div class="input_check_wrap">
+                        <span>
+                          <input type="checkbox" id="check-1-1" class="input_check" name="check-item-1">
+                          <label for="check-1-1">CheckBox 체크전</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" id="check-1-2" class="input_check" name="check-item-1" checked>
+                          <label for="check-1-2">CheckBox 체크후</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" id="check-1-3" class="input_check" name="check-item-1" disabled>
+                          <label for="check-1-3">CheckBox 체크전 disabled</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" id="check-4" class="input_check" name="check-item-1" checked disabled>
+                          <label for="check-1-4">CheckBox 체크후 disabled</label>
+                        </span>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <div class="input_check_wrap">
+                           <span>
+                             <input type="checkbox" id="check-1-1" class="input_check" name="check-item-1">
+                             <label for="check-1-1">CheckBox 체크전</label>
+                           </span>
+                           <span>
+                             <input type="checkbox" id="check-1-2" class="input_check" name="check-item-1" checked>
+                             <label for="check-1-2">CheckBox 체크후</label>
+                           </span>
+                           <span>
+                             <input type="checkbox" id="check-1-3" class="input_check" name="check-item-1" disabled>
+                             <label for="check-1-3">CheckBox 체크전 disabled</label>
+                           </span>
+                           <span>
+                             <input type="checkbox" id="check-4" class="input_check" name="check-item-1" checked disabled>
+                             <label for="check-1-4">CheckBox 체크후 disabled</label>
+                           </span>
+                         </div>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Radio Box</p>  
+                     <div class="input_radio_wrap">
+                        <span>
+                          <input type="radio" id="radio-1-1" class="input_radio" name="radio-item-1">
+                          <label for="radio-1-1">Radio 체크전</label>
+                        </span>
+                        <span>
+                          <input type="radio" id="radio-1-2" class="input_radio" name="radio-item-1" checked>
+                          <label for="radio-1-2">Radio 체크후</label>
+                        </span>
+                        <span>
+                          <input type="radio" id="radio-1-3" class="input_radio" name="radio-item-1" disabled>
+                          <label for="radio-1-3">Radio 체크전 disabled</label>
+                        </span>
+                        <span>
+                          <input type="radio" id="radio-1-4" class="input_radio" name="radio-item-1" checked disabled>
+                          <label for="radio-1-4">Radio 체크후 disabled</label>
+                        </span>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <div class="input_radio_wrap">
+                           <span>
+                             <input type="radio" id="radio-1-1" class="input_radio" name="radio-item-1">
+                             <label for="radio-1-1">Radio 체크전</label>
+                           </span>
+                           <span>
+                             <input type="radio" id="radio-1-2" class="input_radio" name="radio-item-1" checked>
+                             <label for="radio-1-2">Radio 체크후</label>
+                           </span>
+                           <span>
+                             <input type="radio" id="radio-1-3" class="input_radio" name="radio-item-1" disabled>
+                             <label for="radio-1-3">Radio 체크전 disabled</label>
+                           </span>
+                           <span>
+                             <input type="radio" id="radio-1-4" class="input_radio" name="radio-item-1" checked disabled>
+                             <label for="radio-1-4">Radio 체크후 disabled</label>
+                           </span>
+                        </div>
+                     </textarea>
+                     
+                     <hr>
+
+                     <p class="txt_guide_info">Form Select Box</p>                    
+                     <div class="select_box form_select_box">
+                        <div id="inquiryType" class="select_box_value">
+                           <span>문의 유형</span>
+                        </div>
+                        <div class="select_box_list">
+                           <ul>
+                              <li><span>상품</span></li>
+                              <li><span>피부측정</span></li>
+                              <li><span>주문/배송</span></li>
+                              <li><span>사이트이용</span></li>
+                           </ul>
+                        </div>
+                        <label for="inquiryType">문의 유형</label>
+                     </div>
+                     <textarea name="code" class="language-markup">
+                        <div class="select_box form_select_box">
+                           <div id="inquiryType" class="select_box_value">
+                              <span>문의 유형</span>
+                           </div>
+                           <div class="select_box_list">
+                              <ul>
+                                 <li><span>상품</span></li>
+                                 <li><span>피부측정</span></li>
+                                 <li><span>주문/배송</span></li>
+                                 <li><span>사이트이용</span></li>
+                              </ul>
+                           </div>
+                           <label for="inquiryType">문의 유형</label>
+                        </div>
+                     </textarea>
+                     
+                     <hr>
+
+                     <p class="txt_guide_info">Form Input Text</p>  
+                     <div class="input_group form_input_group">
+                        <input type="text" id="formInp" class="input_text" value="" placeholder="" required=""/>
+                        <label for="formInp">제목</label>
+                     </div>
+                     <textarea name="code" class="language-markup">            
+                        <div class="input_group form_input_group">
+                           <input type="text" id="formInp" 
+                                 class="input_text" 
+                                 value="" 
+                                 placeholder="" 
+                                 required=""/>
+                           <label for="formInp">제목</label>
+                        </div>
+                     </textarea>
+
+                     <hr>
+
+                     <p class="txt_guide_info">Form Textarea</p>  
+                     <div class="text_area form_text_area">
+                        <textarea name="" id="inquiryContent" 
+                                  required="" rows="10" 
+                                  maxlength="1000" 
+                                  placeholder=""></textarea>
+                        <label for="inquiryContent">내용</label>
+                        <p class="num"><strong>0</strong><span>/</span>1000</p>
+                     </div>
+                     <div class="txt_guide_info code">
+<xmp>
+   <div class="text_area form_text_area">
+      <textarea name="" id="inquiryContent" 
+                required="" rows="10" 
+                maxlength="1000" 
+                placeholder="톤워크">
+      </textarea>
+      <label for="inquiryContent">내용</label>
+      <p class="num"><strong>0</strong><span>/</span>1000</p>
+   </div>
+</xmp>
+                     </div>
+                  </div>
+                  <!-- ./guide_box -->
+               </div>
+               <!-- 탭 - 페이징 -->
+               <div class="sec_guide tab_cont_item" id="tab4">
+                  <p class="tit_guide02">Paging</p>
+                  <div class="guide_box">
+                     <p class="txt_guide_info">Default</p>
+                     <div class="paging_box">
+                        <a href="#" class="btn_prev">이전</a>
+                        <a href="#" class="page_num on">1</a>
+                        <a href="#" class="page_num">2</a>
+                        <a href="#" class="page_num">3</a>
+                        <a href="#" class="page_num">4</a>
+                        <a href="#" class="page_num">5</a>
+                        <a href="#" class="btn_next">다음</a>
+                     </div>
+                  </div>
+                  <textarea name="code" class="language-markup">
+                     <div class="paging_box">
+                        <a href="#" class="btn_prev">이전</a>
+                        <a href="#" class="page_num on">1</a>
+                        <a href="#" class="page_num">2</a>
+                        <a href="#" class="page_num">3</a>
+                        <a href="#" class="page_num">4</a>
+                        <a href="#" class="page_num">5</a>
+                        <a href="#" class="btn_next">다음</a>
+                     </div>
+                  </textarea>
+               </div>
+            </div>
+         </section>
+      </main>
+      <!-- // container -->
+
+   </div>
+   <!-- // wrap -->
+   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+   <script src="/resources/js/prism.js" type="text/javascript"></script>
+   <script>
+      $(document).ready(function () {         
+         $(window).resize(function (event) {
+            ww = $(window).width();
+            quickBtn();
+         });
+         $(window).scroll(function (event) {
+            headerAction(); // 헤더 액션
+            quickBtn(); // 퀵버튼 위치
+         });
+         headerAction(); // 헤더 인터렉션
+
+         // prism textarea 변환
+         $("textarea[name='code']").each(function(i, block) {
+            var className = $(block).attr('class');
+            var sourceCode = $(block).html();
+            var prefix = "<pre"; var commandOption = $(block).attr('command-line');
+            if ( commandOption !== undefined ) {
+               var user = commandOption.split(" ")[0] || "user";
+               var host = commandOption.split(" ")[1] || "localhost";
+               prefix += " class='command-line' data-user='" + user + "' data-host='" + host + "'>";
+            }
+            else {
+               prefix += " class='line-numbers'>";
+            };
+            prefix += "<code class='" + className + "'>"; var postfix = "</code></pre>"; $(block).after(prefix + sourceCode + postfix); $(block).remove();
+         });
+          //폼 셀렉트박스
+         $(".form_select_box .select_box_list li").each(function(){
+            $(this).on("click",function(){
+               selectBoxAddClass(this)
+            })
+         })
+      });
+      //폼 셀렉트 박스
+      function selectBoxAddClass(el) {
+         $(el).parents(".select_box").addClass("has_value")
+      }
+   </script>
+</body>
+
+</html>

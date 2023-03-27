@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css"></link>
+  <link rel="stylesheet" href="/resources/css/font.css">
   <link rel="stylesheet" href="/resources/css/style.css">
   <link rel="stylesheet" href="/resources/css/swiper.min.css">
   <link rel="stylesheet" href="/resources/css/tonework_pc.css">
@@ -50,38 +51,55 @@
         <div class="gnb">
           <ul class="gnb_list">
             <li class="depth_01">
-              <a href="javascript:;" data-href="/html/brand_about.html" onclick="gnbListToggle(this);">ABOUT US</a>
+              <a href="javascript:;" data-href="/html/brand_about.html" onclick="gnbListToggle(this);"><span>ABOUT US</span></a>
               <ul class="depth_02">
                 <li><a href="">브랜드 스토리</a></li>
                 <li><a href="">스토어</a></li>
               </ul>
             </li>
             <li class="depth_01">
-              <a href="javascript:;" data-href="/html/" onclick="gnbListToggle(this);">FIND YOUR COLOR</a>
+              <a href="javascript:;" data-href="/html/" onclick="gnbListToggle(this);"><span>DISCOVER YOUR TONE</span></a>
               <ul class="depth_02">
-                <li><a href="">톤파인더</a></li>
-                <li><a href="">톤피커</a></li>
+                <li><a href="/html/skin_tone.html#skinToneFinder">톤파인더</a></li>
+                <li><a href="/html/skin_tone.html#skinTonePicker">톤피커</a></li>
               </ul>
             </li>
             <li class="depth_01">
-              <a href="javascript:;" data-href="/html/product_list.html" onclick="gnbListToggle(this);">PRODUCT</a>
+              <a href="javascript:;" data-href="/html/product_list.html" onclick="gnbListToggle(this);"><span>PRODUCT</span></a>
+              <ul class="depth_02">
+                <li class="mo"><a href="#">전체보기</a></li>
+                <li><a href="">페이스(Face)</a></li>
+                <li><a href="">립(LIP)</a></li>
+              </ul>
             </li>
             <li class="depth_01">
-              <a href="javascript:;" data-href="/html/event_list.html" onclick="gnbListToggle(this);">EVENT</a>
+              <a href="javascript:;" data-href="/html/event_list.html" onclick="gnbListToggle(this);"><span>ISSUE</span></a>
               <ul class="depth_02">
-                <li><a href="">이벤트</a></li>
+                <li><a href="">브랜드 이슈</a></li>
                 <li><a href="">당첨자 발표</a></li>
               </ul>
             </li>
             <li class="depth_01">
-              <a href="javascript:;" data-href="/html/news_list.html" onclick="gnbListToggle(this);">COMMUNITY</a>
+              <a href="javascript:;" data-href="/html/news_list.html" onclick="gnbListToggle(this);"><span>COMMUNITY</span></a>
               <ul class="depth_02">
+                <li class="mo"><a href="">커뮤니티 홈</a></li>
                 <li><a href="">공지사항</a></li>
-                <li><a href="">FAQs</a></li>
-                <li><a href="">고객 게시판</a></li>
-                <li><a href="">제폼 리뷰</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Q&A</a></li>
+                <li><a href="">Review</a></li>
               </ul>
             </li>
+            <!-- 모바일에서만 보여질 마이페이지 메뉴 -->
+            <li class="depth_01 mo_mypage">
+              <a href="javascript:;" data-href="/html/mypage_home.html" onclick="gnbListToggle(this);"><span>MY PAGE</span></a>
+              <ul class="depth_02">
+                <li><a href="">컬러 히스토리</a></li>
+                <li><a href="">어센틱컬러 리포트</a></li>
+                <li><a href="">문의내역</a></li>
+                <li><a href="">내정보</a></li>
+              </ul>
+            </li>
+            <!-- // 모바일에서만 보여질 마이페이지 메뉴 -->
           </ul>
           <div class="gnb_info">
             <div class="depth_01">
@@ -90,7 +108,7 @@
               </a>
               <ul class="depth_02">
                 <!-- 로그인 상태 일 경우 -->
-                <li class="my_page mo_menu"><a href="">마이페이지</a></li>
+                <li class="my_page mo_menu"><a href="">컬러 히스토리</a></li>
                 <li><a href="">어센틱컬러 리포트</a></li>
                 <li><a href="">문의내역</a></li>
                 <li><a href="">내 정보</a></li>
@@ -155,7 +173,7 @@
                   <img src="/resources/images/@sample_thum_01.png" alt="샘플 썸네일">
                   <a href="#" class="btn_play" data-video="" onclick="mainSwiperPlay(this);">재생버튼</a>
                 </div>
-                <video class="video_cnt" src="/resources/images/@sample_video.mp4"></video>
+                <video class="video_cnt" src="/resources/images/@sample_video.mp4" muted playsinline></video>
               </div>
             </div>
             <div class="swiper-slide">
@@ -164,7 +182,7 @@
                   <img src="/resources/images/@sample_thum_02.png" alt="샘플 썸네일">
                   <a href="#" class="btn_play" data-video="youtube" onclick="mainSwiperPlay(this);">재생버튼</a>
                 </div>
-                <div data-url="_ZAgIHmHLdc" class="video_cnt"></div>
+                <div data-url="Bt7xdb99_4s" class="video_cnt"></div>
               </div>
             </div>
           </div>
@@ -210,7 +228,7 @@
           <div class="basepicker_wrap">
 
             <div class="basepicker_list">
-              <h2 class="basepicker_tit serif">BASEPICKER <span class="text_br"></span>TO TONEWORK</h2>
+              <h2 class="basepicker_tit serif">TONEWORK <span class="text_br"></span>WHO WE ARE</h2>
               <!-- basepicker_about -->
               <div class="basepicker_about">
                 <img class="about_img" src="/resources/images/main/img_main_about.png" alt="">
@@ -242,10 +260,10 @@
         <!-- // inner_cnt -->
         <div class="flow_container">
           <div class="flow_text">
-            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
-            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
-            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
-            <div class="flow_wrap"><span>2 TEXTURES</span><i></i>150 SHADES<i></i><span>2 CATEGORY. BASE PICKER TO TONEWORK</span><i></i></div>
+            <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
+            <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
+            <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
+            <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
           </div>
         </div>
       </section>
@@ -296,10 +314,10 @@
                 <!-- btn_box -->
                 <div class="btn_box">
                   <div class="btn_box_inner">
-                    <a href="#" class="minute_link">3 minutes test 바로가기</a>
-                    <a href="#" class="start_link">START 바로가기</a>
+                    <a href="/html/skin_tone.html#skinToneFinder" class="minute_link">Coming Soon 바로가기</a>
+                    <a href="/html/skin_tone.html#skinTonePicker" class="start_link">START 바로가기</a>
                     <div class="btn_box_text">
-                      <p>3 minutes <span class="text_br"></span>test</p>
+                      <p>Coming Soon</p>
                       <p>START!</p>
                     </div>
                     <div class="btn_box_bg"></div>
@@ -318,7 +336,6 @@
       <section class="tone_picker">
           <!-- grid_wrap -->
           <div class="grid_wrap">
-            <!-- mo_cnt_01 -->
             <div class="mo_cnt_01">
               <h2 class="serif mo_tit">
                 <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
@@ -335,7 +352,7 @@
                   <img src="/resources/images/main/img_skintone_large.png" alt="">
                 </div>
 
-                <!-- btn_box -->
+                
                 <div class="btn_box">
                   <div class="btn_box_inner">
                     <a href="#" class="minute_link">3 minutes test 바로가기</a>
@@ -345,11 +362,10 @@
                     <div class="btn_box_bg"></div>
                   </div>
                 </div>
-                <!-- // btn_box -->
+                
               </div>
 
             </div>
-            <!-- // mo_cnt_01 -->
 
             <!-- mo_cnt_02 -->
             <div class="mo_cnt_02">
@@ -360,7 +376,6 @@
 
               <p class="mo_tit_about">빠르고 간편한 나의 어센틱 컬러 찾기,<br>내 파우치에서 시작해보세요!</p>
               
-              <!-- img_cnt -->
               <div class="img_cnt">
                 <div class="left_img">
                   <img src="/resources/images/main/img_shade_small.png" alt="">
@@ -368,8 +383,7 @@
                 <div class="right_img">
                   <img src="/resources/images/main/img_shade_large.png" alt="">
                 </div>
-
-                <!-- btn_box -->
+                
                 <div class="btn_box">
                   <div class="btn_box_inner">
                     <a href="#" class="start_link">START 바로가기</a>
@@ -379,13 +393,10 @@
                     <div class="btn_box_bg"></div>
                   </div>
                 </div>
-                <!-- // btn_box -->
 
               </div>
-              <!-- // img_cnt -->
 
             </div>
-            <!-- // mo_cnt_02 -->
 
           </div>
           <!-- // grid_wrap -->
@@ -396,6 +407,7 @@
       <!-- main_cnt_03 -->
       <div id="trigger4" class="spacer s0"></div>
       <section class="main_cnt_03">
+        <div class="main_bg"></div>
         <!-- inner_cnt -->
         <div class="inner_cnt">
           <!-- grid_wrap -->
@@ -404,7 +416,7 @@
             <div class="grid">
               <div class="grid_item pc_col_12 tbl_col_8 mo_col_4">
                 <h2 class="serif">PRODUCTS</h2>
-                <span>나를 위한 진짜 맞춤 파운데이션,<br>BASE PICKER</span>
+                <span>나를 위한 맞춤 메이크업<br>TONEWORK</span>
               </div>
               <!-- // grid -->
             </div>
@@ -415,9 +427,9 @@
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
-                    <dt>BASE PICK WIDE FOUNDATION TO GO</dt>
+                    <dt>베이스피커 와이드 파운데이션 투고 글로우</dt>
                     <dd>
-                      <p class="name">베이스피커 와이드 파운데이션 투고 15g</p>
+                      <p class="name">디테일하게 구성된 쉐이드로 진짜 나의 톤을 찾아보세요.</p>
                       <p class="price">40,000</p>
                     </dd>
                   </dl>
@@ -433,9 +445,9 @@
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
-                    <dt>BASE PICK WIDE FOUNDATION</dt>
+                    <dt>베이스피커 와이드 파운데이션 글로우</dt>
                     <dd>
-                      <p class="name">베이스피커 와이드 파운데이션 20g</p>
+                      <p class="name">디테일하게 구성된 쉐이드로 진짜 나의 톤을 찾아보세요.</p>
                       <p class="price">40,000</p>
                     </dd>
                   </dl>
@@ -451,14 +463,14 @@
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
-                    <dt>BASE PICK WIDE FOUNDATION TO GO</dt>
+                    <dt>베이스피커 와이드 파운데이션 투고 세미매트</dt>
                     <dd>
-                      <p class="name">베이스피커 와이드 파운데이션 투고 15g</p>
+                      <p class="name">디테일하게 구성된 쉐이드로 진짜 나의 톤을 찾아보세요.</p>
                       <p class="price">40,000</p>
                     </dd>
                   </dl>
                   <div class="img_box">
-                    <img src="/resources/images/main/img_main_product01.png" alt="">
+                    <img src="/resources/images/main/img_main_product03.png" alt="">
                   </div>
                   <a href="#" class="product_link">상품 바로가기</a>
                 </div>
@@ -469,14 +481,14 @@
                 <!-- main_product_item -->
                 <div class="main_product_item">
                   <dl class="about_info">
-                    <dt>BASE PICK WIDE FOUNDATION</dt>
+                    <dt>베이스피커 와이드 파운데이션 세미매트</dt>
                     <dd>
-                      <p class="name">베이스피커 와이드 파운데이션 20g</p>
+                      <p class="name">디테일하게 구성된 쉐이드로 진짜 나의 톤을 찾아보세요.</p>
                       <p class="price">40,000</p>
                     </dd>
                   </dl>
                   <div class="img_box">
-                    <img src="/resources/images/main/img_main_product02.png" alt="">
+                    <img src="/resources/images/main/img_main_product04.png" alt="">
                   </div>
                   <a href="#" class="product_link">상품 바로가기</a>
                 </div>
@@ -551,6 +563,7 @@
       <div class="grid_wrap">
         <!-- footer_top -->
         <div class="footer_top">
+          <button class="footer_toggle" onclick="m_footerToggle();">푸터 상세보기</button>
           <!-- footer_logo -->
           <div class="footer_logo">
             <img src="/resources/images/common/logo_fotter.svg" alt="">
@@ -575,12 +588,12 @@
             <li class="item_box">
               <dl>
                 <dt>
-                  <a href="#">FIND YOU COLOR</a>
+                  <a href="#">DISCOVER YOUR TONE</a>
                 </dt>
                 <dd>
                   <ul class="depth">
-                    <li><a href="#">스킨톤파인더</a></li>
-                    <li><a href="#">쉐이드피커</a></li>
+                    <li><a href="/html/skin_tone.html#skinToneFinder">톤파인더</a></li>
+                    <li><a href="/html/skin_tone.html#skinTonePicker">톤피커</a></li>
                   </ul>
                 </dd>
               </dl>
@@ -592,8 +605,9 @@
                 </dt>
                 <dd>
                   <ul class="depth">
-                    <li><a href="#">페이스</a></li>
-                    <li><a href="#">립</a></li>
+                    <li class="mo"><a href="#">전체보기</a></li>
+                    <li><a href="#">페이스(Face)</a></li>
+                    <li><a href="#">립(LIP)</a></li>
                   </ul>
                 </dd>
               </dl>
@@ -601,11 +615,12 @@
             <li class="item_box">
               <dl>
                 <dt>
-                  <a href="#">EVENT</a>
+                  <a href="#">ISSUE</a>
                 </dt>
                 <dd>
                   <ul class="depth">
-                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">브랜드 이슈</a></li>
+                    <li><a href="#">당첨자 발표</a></li>
                   </ul>
                 </dd>
               </dl>
@@ -617,10 +632,11 @@
                 </dt>
                 <dd>
                   <ul class="depth">
+                    <li class="mo"><a href="">커뮤니티 홈</a></li>
                     <li><a href="#">공지사항</a></li>
-                    <li><a href="#">자주묻는 질문</a></li>
-                    <li><a href="#">고객 게시판</a></li>
-                    <li><a href="#">제품 리뷰</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">Review</a></li>
                   </ul>
                 </dd>
               </dl>

@@ -25,7 +25,7 @@
         
         <!-- sub_top -->
         <div class="sub_top">
-          <h2><span>고객 대표 리뷰!</span></h2>
+          <h2><span>제품 리뷰</span></h2>
           <dl class="tit_about">
             <dt class="serif">BEST REVIEW</dt>
             <dd>고객님들의 생생한 이야기를 바로 확인해 보세요.</dd>
@@ -35,8 +35,8 @@
 
         <!-- swiper -->
         <div class="review_slide">
-          <ul class="slide_wrapper">
-            <li class="slide_item" style="background:#9B582B"><!-- 컬러 코드값 입력 -->
+          <ul class="slide_wrapper slide-wrapper">
+            <li class="slide_item swiper-slide" style="background:#9B582B"><!-- 컬러 코드값 입력 -->
               <div class="review_left">
                 <div class="point_box">
                   <span></span>
@@ -52,7 +52,7 @@
                 <img src="/resources/images/review/img_best_review01.png" alt="">
               </div>
             </li>
-            <li class="slide_item" style="background:#C79067"><!-- 컬러 코드값 입력 --> 
+            <li class="slide_item swiper-slide" style="background:#C79067"><!-- 컬러 코드값 입력 --> 
               <div class="review_left">
                 <div class="point_box">
                   <span></span>
@@ -69,7 +69,7 @@
                 <img src="/resources/images/review/img_best_review02.png" alt="">
               </div>
             </li>
-            <li class="slide_item" style="background:#C6845D"><!-- 컬러 코드값 입력 -->
+            <li class="slide_item swiper-slide" style="background:#C6845D"><!-- 컬러 코드값 입력 -->
               <div class="review_left">
                 <div class="point_box">
                   <span></span>
@@ -97,75 +97,80 @@
 
             <!-- review_top -->
             <div class="grid review_top">
-              <p class="grid_item pc_col_2 tbl_col_1 mo_col_1 total_num">TOTAL<span>36</span></p>
-              <dl class="grid_item pc_col_10 tbl_col_7 mo_col_3 filter_item">
+              <p class="grid_item pc_col_2 tbl_col_8 mo_col_4 total_num">TOTAL<span>36</span></p>
+              <button class="btn_search_opt" type="button">검색옵션<i></i></button>
+              <dl class="grid_item pc_col_10 tbl_col_8 mo_col_4 filter_item">
                 <dt>Filters</dt>
-                <dd>
-                  <!-- select_box -->
-                  <div class="select_box">
-                    <div class="select_box_value"><span>옵션1</span></div>
-                    <div class="select_box_list">
-                      <ul>
-                          <li><span>파운데이션</span></li>
-                          <li><span>쿠폰</span></li>
-                      </ul>
-                    </div>                
-                  </div>
-                  <!-- // select_box -->
+                <dd class="review_sel_swiper">
+                  <!-- swiper-wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- select_box -->
+                    <div class="select_box swiper-slide">
+                      <div class="select_box_value"><span>옵션1</span></div>
+                      <div class="select_box_list">
+                        <ul>
+                            <li><span>파운데이션</span></li>
+                            <li><span>쿠폰</span></li>
+                        </ul>
+                      </div>                
+                    </div>
+                    <!-- // select_box -->
 
-                  <!-- select_box -->
-                  <div class="select_box">
-                    <div class="select_box_value"><span>옵션2</span></div>
-                    <div class="select_box_list">
-                      <ul>
-                          <li><span>호수</span></li>
-                      </ul>
-                    </div>                
-                  </div>
-                  <!-- // select_box -->
+                    <!-- select_box -->
+                    <div class="select_box swiper-slide">
+                      <div class="select_box_value"><span>옵션2</span></div>
+                      <div class="select_box_list">
+                        <ul>
+                            <li><span>호수</span></li>
+                        </ul>
+                      </div>                
+                    </div>
+                    <!-- // select_box -->
 
-                  <!-- select_box -->
-                  <div class="select_box">
-                    <div class="select_box_value selected"><span>좋아요 순</span></div>
-                    <div class="select_box_list">
-                      <ul>
-                          <li><span>베스트 순</span></li>
-                          <li><span>최신순</span></li>
-                          <li><span  class="selected">좋아요 순</span></li>
-                          <li><span>별점 높은 순</span></li>
-                          <li><span>별점 낮은 순</span></li>
-                      </ul>
-                    </div>                
-                  </div>
-                  <!-- // select_box -->
+                    <!-- select_box -->
+                    <div class="select_box swiper-slide">
+                      <div class="select_box_value selected"><span>좋아요 순</span></div>
+                      <div class="select_box_list">
+                        <ul>
+                            <li><span>베스트 순</span></li>
+                            <li><span>최신순</span></li>
+                            <li><span  class="selected">좋아요 순</span></li>
+                            <li><span>별점 높은 순</span></li>
+                            <li><span>별점 낮은 순</span></li>
+                        </ul>
+                      </div>                
+                    </div>
+                    <!-- // select_box -->
 
-                  <div class="input_check_wrap">
-                    <span>
-                      <input type="checkbox" id="check-1" class="input_check">
-                      <label for="check-1">포토리뷰</label>
-                    </span>
-                  </div>
+                    <div class="input_check_wrap swiper-slide">
+                      <span>
+                        <input type="checkbox" id="check-1" class="input_check">
+                        <label for="check-1">포토리뷰</label>
+                      </span>
+                    </div>
 
-                  <div class="input_check_wrap">
-                    <span>
-                      <input type="checkbox" id="check-2" class="input_check">
-                      <label for="check-2">발색력</label>
-                    </span>
-                  </div>
+                    <div class="input_check_wrap swiper-slide">
+                      <span>
+                        <input type="checkbox" id="check-2" class="input_check">
+                        <label for="check-2">발색력</label>
+                      </span>
+                    </div>
 
-                  <div class="input_check_wrap">
-                    <span>
-                      <input type="checkbox" id="check-3" class="input_check">
-                      <label for="check-3">지속력</label>
-                    </span>
-                  </div>
+                    <div class="input_check_wrap swiper-slide">
+                      <span>
+                        <input type="checkbox" id="check-3" class="input_check">
+                        <label for="check-3">지속력</label>
+                      </span>
+                    </div>
 
-                  <div class="input_check_wrap">
-                    <span>
-                      <input type="checkbox" id="check-4" class="input_check">
-                      <label for="check-4">사용감</label>
-                    </span>
+                    <div class="input_check_wrap swiper-slide">
+                      <span>
+                        <input type="checkbox" id="check-4" class="input_check">
+                        <label for="check-4">사용감</label>
+                      </span>
+                    </div>
                   </div>
+                  <!-- // swiper-wrapper -->
                 </dd>
               </dl>
             </div>
@@ -213,79 +218,80 @@
 
                       <!-- point_details -->
                       <div class="point_details">
-
-                        <span class="point_list">
-                          <span class="type_tit">발속력</span>
-                          <!-- 별점 -->
-                          <div class="starpoint_wrap">
-                            <div class="starpoint_box">                              
-                              <label for="star_opt_m01_1_1" class="label_star" title="1"><span class="blind">1점</span></label>
-                              <label for="star_opt_m01_1_2" class="label_star" title="2"><span class="blind">2점</span></label>
-                              <label for="star_opt_m01_1_3" class="label_star" title="3"><span class="blind">3점</span></label>
-                              <label for="star_opt_m01_1_4" class="label_star" title="4"><span class="blind">4점</span></label>
-                              <label for="star_opt_m01_1_5" class="label_star" title="5"><span class="blind">5점</span></label>
-                              <div class="star_radio_wrap">
-                                <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_1" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_2" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_3" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_4" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_5" class="star_radio" disabled checked>
-                                <span class="starpoint_bg"></span>
+                        <div class="point_list_wrap">
+                          <span class="point_list">
+                            <span class="type_tit">발속력</span>
+                            <!-- 별점 -->
+                            <div class="starpoint_wrap">
+                              <div class="starpoint_box">                              
+                                <label for="star_opt_m01_1_1" class="label_star" title="1"><span class="blind">1점</span></label>
+                                <label for="star_opt_m01_1_2" class="label_star" title="2"><span class="blind">2점</span></label>
+                                <label for="star_opt_m01_1_3" class="label_star" title="3"><span class="blind">3점</span></label>
+                                <label for="star_opt_m01_1_4" class="label_star" title="4"><span class="blind">4점</span></label>
+                                <label for="star_opt_m01_1_5" class="label_star" title="5"><span class="blind">5점</span></label>
+                                <div class="star_radio_wrap">
+                                  <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_1" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_2" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_3" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_4" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_1" id="star_opt_m01_1_5" class="star_radio" disabled checked>
+                                  <span class="starpoint_bg"></span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <!-- // 별점 -->
-                        </span>
+                            <!-- // 별점 -->
+                          </span>
 
-                        <span class="point_list">
-                          <span class="type_tit">지속력</span>
-                          <!-- 별점 -->
-                          <div class="starpoint_wrap">
-                            <div class="starpoint_box">
-                              <label for="star_opt_m01_2_1" class="label_star" title="1"><span class="blind">1점</span></label>
-                              <label for="star_opt_m01_2_2" class="label_star" title="2"><span class="blind">2점</span></label>
-                              <label for="star_opt_m01_2_3" class="label_star" title="3"><span class="blind">3점</span></label>
-                              <label for="star_opt_m01_2_4" class="label_star" title="4"><span class="blind">4점</span></label>
-                              <label for="star_opt_m01_2_5" class="label_star" title="5"><span class="blind">5점</span></label>
-                              <div class="star_radio_wrap">
-                                <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_1" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_2" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_3" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_4" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_5" class="star_radio" disabled checked>
-                                <span class="starpoint_bg"></span>
+                          <span class="point_list">
+                            <span class="type_tit">지속력</span>
+                            <!-- 별점 -->
+                            <div class="starpoint_wrap">
+                              <div class="starpoint_box">
+                                <label for="star_opt_m01_2_1" class="label_star" title="1"><span class="blind">1점</span></label>
+                                <label for="star_opt_m01_2_2" class="label_star" title="2"><span class="blind">2점</span></label>
+                                <label for="star_opt_m01_2_3" class="label_star" title="3"><span class="blind">3점</span></label>
+                                <label for="star_opt_m01_2_4" class="label_star" title="4"><span class="blind">4점</span></label>
+                                <label for="star_opt_m01_2_5" class="label_star" title="5"><span class="blind">5점</span></label>
+                                <div class="star_radio_wrap">
+                                  <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_1" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_2" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_3" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_4" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_2" id="star_opt_m01_2_5" class="star_radio" disabled checked>
+                                  <span class="starpoint_bg"></span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <!-- // 별점 -->
-                        </span>
+                            <!-- // 별점 -->
+                          </span>
 
-                        <span class="point_list">
-                          <span class="type_tit">사용감</span>
-                          <!-- 별점 -->
-                          <div class="starpoint_wrap">
-                            <div class="starpoint_box">
-                              <label for="star_opt_m01_3_1" class="label_star" title="1"><span class="blind">1점</span></label>
-                              <label for="star_opt_m01_3_2" class="label_star" title="2"><span class="blind">2점</span></label>
-                              <label for="star_opt_m01_3_3" class="label_star" title="3"><span class="blind">3점</span></label>
-                              <label for="star_opt_m01_3_4" class="label_star" title="4"><span class="blind">4점</span></label>
-                              <label for="star_opt_m01_3_5" class="label_star" title="5"><span class="blind">5점</span></label>
-                              <div class="star_radio_wrap">
-                                <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_1" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_2" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_3" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_4" class="star_radio" disabled>
-                                <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_5" class="star_radio" disabled checked>
-                                <span class="starpoint_bg"></span>
+                          <span class="point_list">
+                            <span class="type_tit">사용감</span>
+                            <!-- 별점 -->
+                            <div class="starpoint_wrap">
+                              <div class="starpoint_box">
+                                <label for="star_opt_m01_3_1" class="label_star" title="1"><span class="blind">1점</span></label>
+                                <label for="star_opt_m01_3_2" class="label_star" title="2"><span class="blind">2점</span></label>
+                                <label for="star_opt_m01_3_3" class="label_star" title="3"><span class="blind">3점</span></label>
+                                <label for="star_opt_m01_3_4" class="label_star" title="4"><span class="blind">4점</span></label>
+                                <label for="star_opt_m01_3_5" class="label_star" title="5"><span class="blind">5점</span></label>
+                                <div class="star_radio_wrap">
+                                  <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_1" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_2" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_3" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_4" class="star_radio" disabled>
+                                  <input type="radio" name="star_opt_m01_3" id="star_opt_m01_3_5" class="star_radio" disabled checked>
+                                  <span class="starpoint_bg"></span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <!-- // 별점 -->
-                        </span>
+                            <!-- // 별점 -->
+                          </span>
 
-                        <span class="point_mall">(아리따움몰에서 작성한 리뷰)</span>
+                          <span class="point_mall">(아리따움몰에서 작성한 리뷰)</span>
+                        </div>
 
-                        <div class="answer_box review">
+                        <div class="answer_box bubble review">
                           <div class="comment_info">
                             <p class="ico_16 ico_reply"></p>
                             <p class="user_name">
@@ -305,14 +311,16 @@
                     <button type="button" class="review_more" onclick="reviewMore(this);">더보기</button>
 
                     <p class="product_name">파운데이션 세미매트 21.5N1 20G</p>
-                    <ul class="product_img">
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_01.png" alt="">
-                      </li>
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_02.png" alt="">
-                      </li>
-                    </ul>
+                    <div class="product_img_slide">
+                      <ul class="product_img">
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_01.png" alt="">
+                        </li>
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_02.png" alt="">
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
@@ -372,11 +380,13 @@
                     <!-- // review_details -->
 
                     <p class="product_name">파운데이션 세미매트 21.5N1 20G</p>
-                    <ul class="product_img">
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_03.png" alt="">
-                      </li>
-                    </ul>
+                    <div class="product_img_slide">
+                      <ul class="product_img">
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_03.png" alt="">
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
@@ -519,14 +529,16 @@
                     <!-- // review_details -->
 
                     <p class="product_name">파운데이션 글로우 22C2 20G</p>
-                    <ul class="product_img">
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_04.png" alt="">
-                      </li>
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_05.png" alt="">
-                      </li>
-                    </ul>
+                    <div class="product_img_slide">
+                      <ul class="product_img">
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_04.png" alt="">
+                        </li>
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_05.png" alt="">
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
@@ -586,14 +598,16 @@
                     <!-- // review_details -->
 
                     <p class="product_name">파운데이션 글로우 22C2 20G</p>
-                    <ul class="product_img">
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_06.png" alt="">
-                      </li>
-                      <li>
-                        <img src="/resources/images/@sample_modal_review_07.png" alt="">
-                      </li>
-                    </ul>
+                    <div class="product_img_slide">
+                      <ul class="product_img">
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_06.png" alt="">
+                        </li>
+                        <li>
+                          <img src="/resources/images/@sample_modal_review_07.png" alt="">
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
@@ -653,13 +667,15 @@
       $(window).resize(function(event){
         ww = $(window).width();
         quickBtn();
+        initSelSwiper(); // 검색 옵션 스와이퍼
       });
       $(window).scroll(function(event){
         headerAction(); // 헤더 액션
         quickBtn(); // 퀵버튼 위치
       });
       headerAction(); // 헤더 인터렉션
-      reviewSwiper();
+      reviewSwiper(); // 리뷰 스와이퍼
+      initSelSwiper(); // 검색 옵션 스와이퍼
     });
   </script>
 </body>

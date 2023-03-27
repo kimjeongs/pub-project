@@ -30,22 +30,9 @@
                      <h2 class="tit serif">MY INFO</h2>
                   </div>
                   <!-- // mypage_tit_wrap -->
+
+                  <!-- S: 수정 -->
                   <ul class="tbl_list tbl_my_info">
-                     <li>
-                        <dl class="info_col">
-                           <dt>통합고객번호</dt>
-                           <dd>AP023456293</dd>
-                        </dl>
-                        <dl class="info_col customer_state">
-                           <dt>고객상태</dt>
-                           <!-- 고객상태 :
-                              - 활성상태일때 "active" 
-                              - 휴면상태일때 "inactive" 
-                           -->
-                           <dd><span class="active">활성</span></dd>
-                           <!-- <dd><span class="inactive">휴면</span></dd> --> 
-                        </dl>
-                     </li>
                      <li>
                         <dl class="info_col">
                            <dt>성명</dt>
@@ -66,19 +53,49 @@
                            <dd>010-1234-5678</dd>
                         </dl>
                      </li>
+                     <!-- <li>
+                        <dl class="info_col customer_state">
+                           <dt>고객상태</dt>
+                          // 고객상태 :
+                          //    - 활성상태일때 "active" 
+                          //    - 휴면상태일때 "inactive" 
+                           //
+                           <dd><span class="active">활성</span></dd>
+                           //<dd><span class="inactive">휴면</span></dd>
+                        </dl>
+                     </li> -->
                      <li>
+                        <dl class="info_col several">
+                           <dt>개인정보 수집 및 동의</dt>
+                           <dd>
+                              2023-05-20 15:35:41 동의함
+                              <div class="btn-cont">
+                                 <button class="btn btn_border_white btn_code">
+                                    <span class="hov_right_text">동의철회</span>
+                                 </button>
+                              </div>
+                              <p class="txt_info">
+                                 ※ 측정후 지급된 코드를 입력해 주세요. <br>
+                                 ※ 입력된 코드에 따라 컬러 히스토리에 측정결과를 확인해 볼 수 있습니다.
+                              </p>
+                           </dd>
+                        </dl>
+                     </li>
+                     <!-- <li>
                         <dl class="info_col">
                            <dt>컬러 히스토리 등록</dt>
                            <dd>
-                              <button class="btn btn_primary hov_right btn_code" onclick="openPopup('#modalPop01')"><!-- mypage_modal_popup.html -->
+                              <button class="btn btn_primary hov_right btn_code" onclick="openPopup('#modalPop01')">//mypage_modal_popup.html
                                  <span class="hov_right_text">컬러 코드 입력</span>
                               </button>
                            </dd>
                         </dl>
-                     </li>
+                     </li> -->
                   </ul>
-                   <!-- btn_box -->
-                   <div class="btn_box btn_arrow">
+                  <!-- E: 수정 -->
+
+                  <!-- btn_box -->
+                  <div class="btn_box btn_arrow">
                      <div class="btn_box_inner">
                         <a href="#"></a>
                         <span><i>내정보 수정하기</i></span>

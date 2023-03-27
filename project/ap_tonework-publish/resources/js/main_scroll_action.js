@@ -43,13 +43,13 @@ $(document).ready(function () {
         .setClassToggle('.circle_info', 'off')
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-
+        
         new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, tweenChanges: true})
         .setPin(".main_cnt_02")
         .setClassToggle('.main_cnt_02', 'on')
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-
+        
         new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, offset:skinH, tweenChanges: true})
         .setClassToggle(".main_cnt_02", "active")
         //.addIndicators() // add indicators (requires plugin)

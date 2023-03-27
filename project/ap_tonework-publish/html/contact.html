@@ -8,7 +8,6 @@
 	<script>include.styles();</script>
   <script>include.scripts();</script>
   <script>include.title();</script>
-  <link rel="stylesheet" href="/resources/css/contact_responsive.css">
 </head>
 
 <body>
@@ -27,7 +26,7 @@
          <div class="grid_wrap">
             <!-- contact_info -->
             <div class="contact_info">
-               <h2 class="serif">Get in touch</h2>
+               <h2 class="serif">VOICE OF&nbsp;YOU</h2><!-- 230320 문구수정 -->
                <div class="grid">
                   <!-- info_text -->
                   <div class="grid_item pc_col_6 tbl_col_4 mo_col_4 info_text">
@@ -44,15 +43,18 @@
                         </dl>
                         <dl>
                            <dt>상담내역 확인</dt>
-                           <dd>상담 신청시, 작성한 이메일을 통해서 확인<br><br>
-                              톤워크 닷컴 홈페이지 로그인 후 MY 나의 문의에서 확인<br>
-                              (상담내역은 회원 상담 최대 3년까지 확인하실 수 있습니다)</dd>
+                           <dd>
+                              <p>
+                                 톤워크 닷컴 로그인 후 마이페이지 &gt; 문의내역(고객문의)을 확인해 주세요                              
+                              </p>
+                           </dd>
                         </dl>
                         <dl>
                            <dt>주의사항</dt>
-                           <dd>상담은 접수된 건부터 순차적으로 진행됩니다.<br>
-                              답변 완료시까지는 평균적으로 영업일 기준 2일이 소요되며,
-                              문의가 많은 경우 다소 지연될 수 있습니다.</dd>
+                           <dd>
+                              답변 완료시까지는 평균적으로 영업일 기준 2일이 소요되며, 문의가 많을 경우 다소 지연될 수 있습니다<br>
+                              브랜드와 관계없는 홍보글 또는 비방글, 기타 게시판의 취지에 맞지 않는 내용은 삭제 조치될 수 있습니다
+                           </dd>
                         </dl>
                      </div>
                   </div>
@@ -60,7 +62,8 @@
                   <!-- info_img -->
                   <div class="grid_item pc_col_5 pc_start_8 tbl_col_4 tbl_start_5 mo_col_4 mo_start_1 info_img">
                      <img src="/resources/images/main/ico_200_star.svg" class="ico_star" alt>
-                     <img src="/resources/images/contact/img_contactus.png" alt>
+                     <img class="img_pc" src="/resources/images/contact/img_contactus.png" alt><!-- pc 이미지 클래스 : img_pc -->
+                     <img class="img_mo" src="/resources/images/contact/img_contactus_mo.png" alt><!-- mo 이미지 클래스 : img_mo -->
                   </div>
                   <!-- // info_img -->
                </div>
@@ -171,16 +174,17 @@
       });
       headerAction(); // 헤더 인터렉션
 
-      $(".select_box_list li").each(function(){
-         $(this).on("click",function(){
-            selectBoxAddClass(this)
-         })
-      })
    });
    
+   /* 230321 폼 셀렉트박스 공통으로 뺌
+   $(".select_box_list li").each(function(){
+      $(this).on("click",function(){
+         selectBoxAddClass(this)
+      })
+   })
    function selectBoxAddClass(el) {
       $(el).parents(".select_box").addClass("has_value")
-   }
+   } */
   </script>
 </body>
 

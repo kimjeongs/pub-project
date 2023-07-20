@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.ico">
-  <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css"></link>
+  <link rel="stylesheet" href="https://use.typekit.net/zjv6udh.css">
   <link rel="stylesheet" href="/resources/css/font.css">
   <link rel="stylesheet" href="/resources/css/style.css">
   <link rel="stylesheet" href="/resources/css/swiper.min.css">
@@ -60,8 +60,8 @@
             <li class="depth_01">
               <a href="javascript:;" data-href="/html/" onclick="gnbListToggle(this);"><span>DISCOVER YOUR TONE</span></a>
               <ul class="depth_02">
-                <li><a href="/html/skin_tone.html#skinToneFinder">톤파인더</a></li>
-                <li><a href="/html/skin_tone.html#skinTonePicker">톤피커</a></li>
+                <li><a href="/html/skin_tone.html#skinToneFinder">톤워크 바이미</a></li>
+                <li><a href="/html/skin_tone.html#skinTonePicker">톤링커</a></li>
               </ul>
             </li>
             <li class="depth_01">
@@ -96,6 +96,7 @@
                 <li><a href="">컬러 히스토리</a></li>
                 <li><a href="">어센틱컬러 리포트</a></li>
                 <li><a href="">문의내역</a></li>
+                <li><a href="">나의 리뷰</a></li>
                 <li><a href="">내정보</a></li>
               </ul>
             </li>
@@ -111,6 +112,7 @@
                 <li class="my_page mo_menu"><a href="">컬러 히스토리</a></li>
                 <li><a href="">어센틱컬러 리포트</a></li>
                 <li><a href="">문의내역</a></li>
+                <li><a href="">나의 리뷰</a></li>
                 <li><a href="">내 정보</a></li>
                 <li class="log_out mo_menu">
                   <a href="">로그아웃</a>
@@ -170,25 +172,27 @@
             <div class="swiper-slide">
               <div class="video_box">
                 <div class="video_thum active">
-                  <img src="/resources/images/@sample_thum_01.png" alt="샘플 썸네일">
+                  <!-- 썸네일 & 버튼 사용시 <img src="/resources/images/@sample_thum_01.png" alt="샘플 썸네일"> -->
                   <a href="#" class="btn_play" data-video="" onclick="mainSwiperPlay(this);">재생버튼</a>
                 </div>
-                <video class="video_cnt" src="/resources/images/@sample_video.mp4" muted playsinline></video>
+                <video class="video_cnt" src="/resources/images/@sample_video.mp4" muted playsinline loop poster="/resources/images/@sample_thum_01.png"></video>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="video_box">
                 <div class="video_thum active">
-                  <img src="/resources/images/@sample_thum_02.png" alt="샘플 썸네일">
+                  <!-- 썸네일 사용시 <img src="/resources/images/@sample_thum_02.png" alt="샘플 썸네일"> -->
                   <a href="#" class="btn_play" data-video="youtube" onclick="mainSwiperPlay(this);">재생버튼</a>
                 </div>
                 <div data-url="Bt7xdb99_4s" class="video_cnt"></div>
               </div>
             </div>
+            
           </div>
           <div class="swiper-pagination"></div>
         </div>
         <!-- // 메인 슬라이드 -->
+        
         <div class="main_top_about">
           <dl class="text_box">
             <dt>ONE’S AUTHENTIC COLOR</dt>
@@ -259,17 +263,26 @@
         </div>
         <!-- // inner_cnt -->
         <div class="flow_container">
+          <ul class="flow_text">
+            <li class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></li>
+            <li class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></li>    
+            <li class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></li>
+            <li class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></li>        
+          </ul>
+        </div>
+
+        <!-- <div class="flow_container">
           <div class="flow_text">
             <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
             <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
             <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
             <div class="flow_wrap"><span>TONEWORK</span><i></i>DISCOVER YOUR TONE<i></i><span>YOUR AUTHENTIC COLOR</span><i></i></div>
           </div>
-        </div>
+        </div> -->
+
       </section>
       <!-- // main_cnt_01 -->
 
-      
       <!-- main_cnt_02 -->
       <div id="trigger3" class="spacer s0"></div>
       <section class="main_cnt_02">
@@ -282,17 +295,17 @@
               <div class="grid_item pc_col_12 tbl_col_8 mo_col_4">
                 <h2 class="serif">
                   <img src="/resources/images/icon/icon_26_star_outline.svg" class="ico_star" alt="">
-                  <span class="text_action">
-                    <strong>TONE FINDER</strong>
-                    <strong>TONE PICKER</strong>
+                  <span class="text_action rolling_wrap">
+                    <strong class="item serif">TONEWORK BY ME</strong>
+                    <strong class="item serif">TONE LINKER</strong>
                   </span>
                 </h2>
               </div>
               <div class="grid_item pc_col_6 tbl_col_8 mo_col_4">
                 <div class="about">
-                  <div class="text_action">
-                    <p>더 이상 만들어진 컬러에 당신을 맞추지 마세요<br>있는 그대로의 모습을 더 빛나게 하는 어센틱 컬러 찾기</p>
-                    <p>빠르고 간편한 나의 어센틱 컬러 찾기,<br>내 파우치에서 시작해보세요!</p>
+                  <div class="text_action rolling_wrap">
+                    <p class="item">더 이상 만들어진 컬러에 당신을 맞추지 마세요<br>있는 그대로의 모습을 더 빛나게 하는 어센틱 컬러 찾기</p>
+                    <p class="item">빠르고 간편한 나의 어센틱 컬러 찾기,<br>내 파우치에서 시작해보세요!</p>
                   </div>
                 </div>
               </div>
@@ -301,16 +314,20 @@
             <!-- grid -->
             <div class="grid img_cnt">
               <div class="grid_item pc_col_6 tbl_col_4 mo_col_1 left_img">
-                <img src="/resources/images/main/img_skintone_small.png" alt="">
-                <span class="cover_img">
-                  <img src="/resources/images/main/img_shade_small.png" alt="">
-                </span>
+                <div class="rolling_wrap roll_img01">
+                  <img class="item" src="/resources/images/main/img_skintone_small.png" alt="">
+                  <span class="cover_img item">
+                    <img src="/resources/images/main/img_shade_small.png" alt="">
+                  </span>
+                </div>
               </div>
               <div class="grid_item pc_col_6 tbl_col_4 mo_col_3">
-                <img src="/resources/images/main/img_skintone_large.png" alt="">
-                <span class="cover_img">
-                  <img src="/resources/images/main/img_shade_large.png" alt="">
-                </span>
+                <div class="rolling_wrap roll_img02">
+                  <img class="item" src="/resources/images/main/img_skintone_large.png" alt="">
+                  <span class="cover_img item">
+                    <img src="/resources/images/main/img_shade_large.png" alt="">
+                  </span>
+                </div>
                 <!-- btn_box -->
                 <div class="btn_box">
                   <div class="btn_box_inner">
@@ -592,8 +609,8 @@
                 </dt>
                 <dd>
                   <ul class="depth">
-                    <li><a href="/html/skin_tone.html#skinToneFinder">톤파인더</a></li>
-                    <li><a href="/html/skin_tone.html#skinTonePicker">톤피커</a></li>
+                    <li><a href="/html/skin_tone.html#skinToneFinder">톤워크 바이미</a></li>
+                    <li><a href="/html/skin_tone.html#skinTonePicker">톤링커</a></li>
                   </ul>
                 </dd>
               </dl>
@@ -683,13 +700,17 @@
 
   </div>
   <!-- // wrap -->
-  <script src="/resources/js/main_scroll_action.js"></script>
+  <script rel="preload" src="/resources/js/main_scroll_action.js"></script>
   <script>
     $(document).ready(function (){
       $(window).resize(function(event){
         ww = $(window).width();
         basepickerM(); // basepicker 모바일 반응형
         quickBtn();
+
+        if (ww > 768) {
+          mainAutoRolling(); // main_cnt_02
+        }
       });
       $(window).scroll(function(event){
         headerAction(); // 헤더 액션
@@ -700,6 +721,43 @@
       mainSwiper(); // 스와이퍼 호출
       mainSnsSwiper(); // SNS Swiper 호출
       headerAction(); // 헤더 인터렉션
+      
+      if (ww > 768) {
+        mainAutoRolling(); // main_cnt_02
+      }
+
+      //메인 슬라이드 동영상 자동 재생
+      $('.btn_play').trigger('click');
+
+      //텍스트 흐름
+      if (ww <= 768) {
+        textFlow();
+      }
+      function textFlow() {
+        let boxleft = 0;
+        let listWid = parseFloat($('.flow_text .flow_wrap').outerWidth());
+        let len = parseFloat($('.flow_text .flow_wrap').length);
+        let total = listWid*len;
+
+        console.log(listWid,total)
+        $('.flow_text').css({'width':total});
+        let timer = setInterval(move,15);
+
+        function move(){
+          boxleft -=1;
+          if(boxleft < -listWid){
+            nextlist();
+            boxleft = 0;
+          }
+          $('.flow_text').css({
+            left: boxleft
+          })
+        }
+        function nextlist(){
+          $('.flow_text .flow_wrap').first().appendTo('.flow_text');
+        }
+      } 
+      
     });
   </script>
 </body>

@@ -44,16 +44,17 @@ $(document).ready(function () {
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
         
-        new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, tweenChanges: true})
-        .setPin(".main_cnt_02")
-        .setClassToggle('.main_cnt_02', 'on')
-        //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+        // new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "100%", triggerHook:0, tweenChanges: true})
+        new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "100%", triggerHook:0, tweenChanges: true})
+        // .setPin(".main_cnt_02")
+        // .setClassToggle('.main_cnt_02', 'on')
+        // .addIndicators() // add indicators (requires plugin)
+        .addTo(controller)
         
-        new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, offset:skinH, tweenChanges: true})
-        .setClassToggle(".main_cnt_02", "active")
-        //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+        // new ScrollMagic.Scene({triggerElement: "#trigger3", duration: "200%", triggerHook:0, offset:skinH, tweenChanges: true})
+        // .setClassToggle(".main_cnt_02", "active")
+        // .addIndicators() // add indicators (requires plugin)
+        // .addTo(controller);
 
         new ScrollMagic.Scene({triggerElement: "#trigger4", triggerHook:1, tweenChanges: true})
         //.addIndicators() // add indicators (requires plugin)
@@ -99,10 +100,21 @@ $(document).ready(function () {
         timer = setTimeout(function() {sizeIt()}, delay);
     });
 
-    $(window).on('load', function() {
-        if ($(".main").length > 0) {
-            makeScrollMagic();
-            logoMagic();
-        }
-    });
+    makeScrollMagic();
+    logoMagic();
+
+    // let winW = $(window).width();     
+    // if(winW > 1440) {
+    //     $('body').css('overflow','hidden');
+    // }   
+    // $(window).on('load', function() {
+    //     makeScrollMagic();
+    //     logoMagic();
+    //     if(winW > 1440) {
+    //         setTimeout(() => {
+    //             $('body').css('overflow','visible');
+    //         }, 200);
+    //     }
+    // });
+
 });

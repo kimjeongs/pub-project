@@ -9,6 +9,7 @@ var include = {
   scripts: function () {
     document.write('<script src="/resources/js/jquery-3.6.0.min.js"></script>');
     document.write('<script src="/resources/js/swiper.min.js"></script>');
+    document.write('<script src="/resources/js/jquery-ui.min.js"></script>');
     document.write(
       '<script src="/resources/js/scrollmagic/ScrollMagic.js"></script>'
     );
@@ -31,6 +32,9 @@ var include = {
     document.write('<link rel="stylesheet" href="/resources/css/style.css">');
     document.write(
       '<link rel="stylesheet" href="/resources/css/swiper.min.css">'
+    );
+    document.write(
+      '<link rel="stylesheet" href="/resources/css/jquery-ui.min.css">'
     );
     document.write(
       '<link rel="stylesheet" href="/resources/css/tonework_pc.css">'
@@ -108,10 +112,10 @@ var include = {
     );
     document.write('<ul class="depth_02">');
     document.write(
-      '<li><a href="/html/skin_tone.html#skinToneFinder" onclick="gnbAction();">톤파인더</a></li>'
+      '<li><a href="/html/skin_tone.html#skinToneFinder" onclick="gnbAction();">톤워크 바이미</a></li>'
     );
     document.write(
-      '<li><a href="/html/skin_tone.html#skinTonePicker" onclick="gnbAction();">톤피커</a></li>'
+      '<li><a href="/html/skin_tone.html#skinTonePicker" onclick="gnbAction();">톤링커</a></li>'
     );
     document.write("</ul>");
     document.write("</li>");
@@ -155,6 +159,7 @@ var include = {
     document.write('<li><a href="">컬러 히스토리</a></li>');
     document.write('<li><a href="">어센틱컬러 리포트</a></li>');
     document.write('<li><a href="">문의내역</a></li>');
+    document.write('<li><a href="">나의 리뷰</a></li>');
     document.write('<li><a href="">내정보</a></li>');
     document.write("</ul>");
     document.write("</li>");
@@ -172,6 +177,7 @@ var include = {
     );
     document.write('<li><a href="">어센틱컬러 리포트</a></li>');
     document.write('<li><a href="">문의내역</a></li>');
+    document.write('<li><a href="">나의 리뷰</a></li>');
     document.write('<li><a href="">내 정보</a></li>');
     document.write('<li class="log_out mo_menu">');
     document.write('<a href="">로그아웃</a>');
@@ -260,10 +266,10 @@ var include = {
     document.write("<dd>");
     document.write('<ul class="depth">');
     document.write(
-      '<li><a href="/html/skin_tone.html#skinToneFinder">톤파인더</a></li>'
+      '<li><a href="/html/skin_tone.html#skinToneFinder">톤워크 바이미</a></li>'
     );
     document.write(
-      '<li><a href="/html/skin_tone.html#skinTonePicker">톤피커</a></li>'
+      '<li><a href="/html/skin_tone.html#skinTonePicker">톤링커</a></li>'
     );
     document.write("</ul>");
     document.write("</dd>");

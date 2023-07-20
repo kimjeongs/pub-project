@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="sub">
+    <!-- header -->
+    <header>
+      <script>include.header();</script>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+      <section class="gap_80"> <!--페이지 클래스 -->
+        <!-- sub_top_about -->
+        <div class="sub_top_about">
+          <h2></h2>
+          <p class="about_text"></p>
+        </div>
+        <!-- // sub_top_about -->
+        <!-- grid_wrap -->
+        <div class="grid_wrap"></div>
+        <!-- // grid_wrap -->
+      </section>
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+    <!-- quick_btn -->
+    <script>include.quickBtn();</script>
+    <!-- // quick_btn -->
+
+  </div>
+  <!-- // wrap -->
+
+  <div class="modal_wrap info_modal open">
+    <div class="modal_inner">
+        <div class="modal">
+          <div class="cont">
+              <div class="swiper info-modal-swiper">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <div class="img"><img src="/resources/images/img_popup01(without-text).png" alt></div>
+                        <!-- 텍스트 사용시 추가-->
+                        <div class="text_wrap">
+                          <strong class="tit">톤워크 닷컴 그랜드 오픈 텍스트 사용 텍스트 사용 텍스트 사용</strong>
+                          <p class="txt">나를 있는 그대로 빛나게 하는 어센텍 컬러 맞춤<br>AI 솔루션 톤워크닷컴을 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요</p>
+                        </div>
+                        <!-- //텍스트 사용시 추가-->
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <div class="img"><img src="/resources/images/img_popup02(without-text).png" alt></div>
+                        <!-- 텍스트 사용시 추가-->
+                        <div class="text_wrap type02"><!-- color: black 사용시 type02 클래스 추가-->
+                          <strong class="tit">톤워크 닷컴 1줄만 허용 1줄만 허용허용 허용허용</strong>
+                          <p class="txt">2줄 허용 나를 있는 그대로 빛나게 하는 어센텍 컬러 맞춤<br>AI 솔루션 톤워크닷컴을 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요 만나보세요</p>
+                        </div>
+                        <!-- //텍스트 사용시 추가-->
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#"><div class="img"><img src="/resources/images/img_popup01.png" alt></div></a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#"><div class="img"><img src="/resources/images/img_popup02.png" alt></div></a>
+                    </li>
+                  </ul>
+                  <div class="slide_btn swiper-button-next"><span class="blind">이전 사진</span></div>
+                  <div class="slide_btn swiper-button-prev"><span class="blind">다음 사진</span></div>
+                  <div class="swiper-pagination"></div>
+              </div>
+          </div>
+          <div class="modal_footer">
+            <button type="button" class="not_today modal_close"><span>오늘 그만보기</span></button>
+            <button type="button" class="modal_close"><span>닫기</span></button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<script>
+  $(document).ready(function (){
+    $(window).resize(function(event){
+        ww = $(window).width();
+        quickBtn();
+    });
+    $(window).scroll(function(event){
+      quickBtn(); // 퀵버튼 위치
+    });
+    infoPopSwiper();
+  });
+</script>
+</body>
+</html>

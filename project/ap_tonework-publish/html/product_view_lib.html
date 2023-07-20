@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+  <script>include.favicon();</script>
+	<script>include.styles();</script>
+  <script>include.scripts();</script>
+  <script>include.title();</script>
+
+  <style>
+    .write_slide {display: block;}
+  </style>
+</head>
+
+<body>
+  <!-- wrap -->
+  <div id="wrap" class="sub">
+    <!-- header -->
+    <header>
+      <script>include.header();</script>
+    </header>
+    <!-- // header -->
+    <!-- container -->
+    <main id="sub_container">
+
+      <section class="gap_60 product_view"> <!--페이지 클래스 -->
+        
+        <!-- grid_wrap -->
+        <div class="grid_wrap">
+
+          <!-- write_slide -->
+          <div class="write_slide">
+            <!-- write_slide_inner -->
+            <div class="write_slide_inner">
+                <h3>
+                  <span class="serif">WRITE A REVIEW</span>
+                </h3>
+
+                <!-- write_form -->
+                <div class="write_form">
+                  <p class="about">표시는 필수항목입니다.</p>
+                  <ul class="write_form_list">
+
+                    <!-- 20230719 추가-->
+                    <li>
+                      <div class="tit">제품명</div>
+                      <div class="cnt">
+                        <dl class="prdv_item">
+                          <dt  class="prdv_item_photo">
+                            <img src="/resources/images/product/thumb80@2x.png" alt="">
+                          </dt>
+                          <dd>
+                            <p class="prdv_item_tit">비건 365+ 리퀴드립스틱</p>
+                            <span class="prdv_item_about">3.2g</span>
+                          </dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tit">유형</div>
+                      <div class="cnt">
+                        <p>리퀴드립스틱</p>
+                        <!--
+                        <div class="input_radio_wrap">
+                          <span>
+                            <input type="radio" id="radio-1-1" class="input_radio" name="radio-item-1">
+                            <label for="radio-1-1">파운데이션</label>
+                          </span>
+                          <span>
+                            <input type="radio" id="radio-1-2" class="input_radio" name="radio-item-1">
+                            <label for="radio-1-2">파운데이션 투고</label>
+                          </span>
+                        </div>
+                        -->
+                        
+                      </div>
+                    </li>
+                    <li class="vt">
+                      <div class="tit essential">호수</div>
+                      <!-- cnt -->
+                      <div class="cnt">
+
+                      <!-- lib wrap -->
+                      <div class="lib_num_wrap">
+
+                        <!-- lib select -->
+                        <div class="numberpicker select_box">
+                          <div class="select_box_value">
+                            <input type="text" id="selectNumber" placeholder="선택하세요." inputmode="none">
+                            <input type="text" id="datepicker" inputmode="none">
+                          </div>
+                        </div>
+                        <!-- //lib select -->
+
+                      </div>
+                      <!-- // lib wrap-->
+
+                      </div>
+                      <!-- // cnt -->
+                    </li>
+                    <!-- //20230719 추가-->
+
+                  </ul>
+
+                </div>
+                <!-- // write_form -->
+              
+            </div>
+            <!-- // write_slide_inner -->
+          </div>
+          <!-- // write_slide -->
+
+        </div>
+        <!-- // grid_wrap -->
+        
+      </section>
+
+    
+
+    </main>
+    <!-- // container -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <script>include.footer();</script>
+    </footer>
+    <!-- // footer -->
+
+  </div>
+  <!-- // wrap -->
+  <script>
+    $(document).ready(function (){
+      $(window).resize(function(event){
+        ww = $(window).width();
+        colorSwiper(); // 모바일 컬러 선택
+        quickBtn();
+      });
+      $(window).scroll(function(event){
+        headerAction(); // 헤더 액션
+        quickBtn(); // 퀵버튼 위치
+      });
+      headerAction(); // 헤더 인터렉션
+      prdSwiper(); // 제품상세 스와이퍼
+      colorAction(); // 컬러 셀렉트 인터렉션
+      totalScore(); // 스코어 총점 계산
+      scroll_drag(); // 쓰기 컬러 선택 드래그 마우스 기능 추가
+      colorSwiper(); // 모바일 컬러 선택
+    });
+  </script>
+
+
+  <!-- 20230719 추가 -->
+  <script>
+    $(function(){
+      $.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+      $.datepicker._updateDatepicker = function(inst) {
+        $.datepicker._updateDatepicker_original(inst);
+        var afterShow = this._get(inst, 'afterShow');
+        if (afterShow)
+          afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
+      }
+
+      $('#datepicker').datepicker({
+        dateFormat: '#mmdd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        monthNames: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        defaultDate:new Date(2023, 0, 1),
+        todayHighlight:false,
+        showWeek: false,
+        selectOtherMonths: true,
+        afterShow : function(inst) {
+          const other = $('.ui-datepicker-other-month'),
+                firstTr = $('.ui-datepicker-calendar tbody').find('tr:first-child'),
+                lastTr = $('.ui-datepicker-calendar tbody').find('tr:last-child'),
+                firstOther = firstTr.find(other),
+                firstOtherLen = firstOther.length,
+                firstLineEnd = firstTr.find('.ui-datepicker-week-end').last().find('a'),
+                firstLineEndIdx = firstLineEnd.data('date'),
+                datepickerDiv = $('#ui-datepicker-div'),
+                numberpicker = $('.numberpicker'),
+                datepicker = $('#datepicker');
+
+          numberpicker.parents('#wrap').siblings('#ui-datepicker-div').addClass('numberpicker-div');
+          other.remove();
+
+          if(firstOtherLen !== 0) {
+            for(let i = 0; i < firstOtherLen; i++){
+              let html = `<td class=" " data-handler="selectDay" data-event="click" data-month="" data-year=""><a class="ui-state-default" href="#" aria-current="false" data-date="0">0</a></td>`;
+
+              firstTr.prepend(html);
+            }
+          }
+
+          $('.ui-datepicker-calendar td').each(function(i) {
+            $(this).find('a').text(i+1);
+            $(this).find('a').attr('data-date', i+1);
+          })
+
+          for(let i = 0; i < firstOtherLen; i++){            
+            $('.ui-datepicker-calendar td').last().remove();
+          }
+
+          let targetMonth = datepickerDiv.find('.ui-datepicker-month').text();
+          if(targetMonth == 2 && lastTr.find('td').text() > 28) {
+            lastTr.find('td').last().remove();
+          }
+          
+          datepicker.focus(function() {
+            datepickerDiv.show();
+          })
+
+          $('.ui-datepicker-calendar td a').click(function(e) {
+            e.preventDefault();
+
+            let month  = $(this).parents(datepickerDiv).find('.ui-datepicker-month').text();
+            let day  = $(this).data("date");
+            let target = $(this).parent('td').index();
+            
+            if (month < 10) month = '0' + month;
+            if (day < 10) day = '0' + day;         
+            $('#selectNumber').val('#'+ month + day);
+
+            if ($(this).is(firstLineEnd)){
+              $('#selectNumber').val('#'+ month + '07');
+            } 
+
+            if(target < firstOtherLen ) {
+              datepickerDiv.hide();           
+            }    
+            numberpicker.removeClass('on');
+          })
+
+          $(window).resize(function() {
+            datepickerDiv.hide(); 
+          });
+
+          datepicker.on('click',function() {
+            if(numberpicker.hasClass('on')) {
+              datepickerDiv.hide(); 
+            } else {
+              datepickerDiv.show(); 
+            }
+          })
+        },
+      });
+    })
+  </script>
+  <!-- //20230719 추가 -->
+
+
+</body>
+
+</html>

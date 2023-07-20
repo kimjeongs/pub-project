@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<script src="/inc/pb_include.js"></script>
+	<script>include.meta();</script>
+   <script>include.favicon();</script>
+	<script>include.styles();</script>
+   <script>include.scripts();</script>
+   <script>include.title();</script>
+</head>
+
+<body>
+   <!-- wrap -->
+   <div id="wrap" class="sub">
+      <!-- header -->
+      <header>
+         <script>include.header();</script>
+      </header>
+       <!-- // header -->
+      <!-- container -->
+      <main id="sub_container">
+
+         <section class="gap_80"> <!--페이지 클래스 -->
+            <!-- sub_top_about -->
+            <div class="sub_top_about">
+               <h2></h2>
+               <p class="about_text"></p>
+            </div>
+            <!-- // sub_top_about -->
+            <!-- grid_wrap -->
+            <div class="grid_wrap">
+               <button class="btn btn_xl btn_radius btn_secondary" onclick="openPopup('#modalPop01')">회원정보 수정</button>
+            </div>
+         <!-- // grid_wrap -->
+         </section>
+
+      </main>
+      <!-- // container -->
+
+      <!-- footer -->
+      <footer class="footer">
+         <script>include.footer();</script>
+      </footer>
+      <!-- // footer -->
+
+      <!-- quick_btn -->
+      <script>include.quickBtn();</script>
+      <!-- // quick_btn -->
+
+   </div>
+   <!-- // wrap -->
+
+   <!-- modalPop01 -->
+   <div id="modalPop01" class="modal_wrap mypage_modal">
+      <div class="modal">
+         <button type="button" class="btn btn_sm modal_close ico_48"><span class="blind">닫기</span></button>
+         <div class="cont">
+            <h3 class="tit">회원정보 수정</h3>
+            <ul class="dot_list">
+               <li>톤워크닷컴은 회원님의 개인정보를 신중하게 취급하며, 회원님의 동의없이는 기재하신 회원정보가 공개 되지 않습니다</li>
+               <li>보다 다양한 서비스를 받으시려면 정확힌 정보를 항상 유지해 주셔야 합니다</li>
+               <li>공공장소에서 PC를 사용 중일 경우, 비밀번호가 타인에게 노출되지 않도록 주의해 주시기 바랍니다</li>
+            </ul>
+            <div class="user_info">아이디 : <span class="user_id">honggil</span></div>
+            <div class="input_group">
+               <input class="input_text" type="password" name="" id="" placeholder="본인 확인을 위한 비밀번호 입력">
+               <button class="btn btn_md btn_primary hov_right">
+                  <span class="hov_right_text">확인</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- // modalPop01 -->
+
+</body>
+</html>
